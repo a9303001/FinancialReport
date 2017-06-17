@@ -1,0 +1,46 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest"
+      ]
+    },
+    "yfinance": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/Alex2Yang97/yahoo-finance-mcp",
+        "--with",
+        "mcp<2",
+        "yahoo-finance-mcp"
+      ],
+      "env": {
+        "PYTHONPATH": ".claude/mcp-patch"
+      }
+    },
+    "sec-edgar-mcp": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/stefanoamorelli/sec-edgar-mcp.git",
+        "sec-edgar-mcp"
+      ],
+      "env": {
+        "SEC_EDGAR_USER_AGENT": "FinancialReport Research (a9303002@gmail.com)"
+      }
+    },
+    "pymupdf4llm-mcp": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "pymupdf4llm-mcp@latest",
+        "--with",
+        "mcp<2",
+        "pymupdf4llm-mcp",
+        "stdio"
+      ]
+    }
+  }
+}

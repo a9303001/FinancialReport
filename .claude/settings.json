@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "mcp__brightdata",
+      "mcp__brightdata__*",
+      "mcp__firecrawl-mcp",
+      "mcp__firecrawl-mcp__*",
+      "mcp__Apify",
+      "mcp__Apify__*",
+      "mcp__playwright",
+      "mcp__playwright__*",
+      "mcp__github",
+      "mcp__github__*",
+      "mcp__yfinance",
+      "mcp__yfinance__*",
+      "mcp__sec-edgar-mcp",
+      "mcp__sec-edgar-mcp__*",
+      "mcp__pymupdf4llm-mcp",
+      "mcp__pymupdf4llm-mcp__*",
+      "mcp__Exa",
+      "mcp__Exa__*",
+      "WebSearch",
+      "WebFetch",
+      "*",
+      "mcp__*",
+      "read_file(*)",
+      "write_file(*)",
+      "read_url(*)",
+      "command(*)",
+      "PowerShell(*)",
+      "Bash(*)"
+    ]
+  }
+}
