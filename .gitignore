@@ -1,0 +1,19 @@
+### Windows
+# Windows thumbnail cache files
+Thumbs.db
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+.zettel-notes
+
+# Windows shortcuts
+*.lnk
+
+*.pyc
+scratch_convert/
+# Playwright MCP run artifacts (snapshots, console logs)
+.playwright-mcp/
