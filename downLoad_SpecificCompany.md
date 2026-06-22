@@ -1,4 +1,4 @@
 /goal
-6458新晃工業 日股
+6121新普, 台股
 
 執行CollectsentimentAndReports skill

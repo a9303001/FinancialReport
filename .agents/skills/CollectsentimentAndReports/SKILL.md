@@ -93,7 +93,7 @@ graph TD
 
 > **【執行邏輯】逐源抓取、立即存檔**
 > 1. 範圍：**過去二個月內**。
-> 2. 爬完一個網站，立刻寫入檔案 (`{YYYYMM}_{SOURCE_ID}.md`)，直接覆蓋舊檔。
+> 2. 爬完一個網站，立刻寫入檔案 (`{YYYYMM}_{SOURCE_ID}.md`)。**【重要：附加模式 Append】**如果 `FinancialReport/{COMPANY_FOLDER_NAME}/{YYYYMM}_{SOURCE_ID}.md` 檔案已經有「輿情與新聞」存在，請直接補充新資料進去，**不要把舊的「輿情與新聞」砍掉或覆蓋**。
 > 3. **絕對不要**等所有網站爬完才存檔。
 > 4. **嚴禁**訪問 `macrotrends.net` 和 GitHub `a9303001/FinancialReport`。
 
