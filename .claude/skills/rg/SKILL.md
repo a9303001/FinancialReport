@@ -40,4 +40,4 @@ description: 當 Gemini 或 Claude 需要使用 ripgrep（rg）進行搜尋時�
 ## 注意事項
 - 路徑含空白或中文時，務必用雙引號包住。
 - 若 `D:\Prog_install\ripgrep\rg.exe` 不存在，先回報缺口，再考慮其他搜尋方式。
-- 版本確認：`& "D:\Prog_install\ripgrep\rg.exe" --version`（目前為 ripgrep 15.1.0）。
+- 版本確認：`& "D:\Prog_install\ripgrep\rg.exe" --version`。
