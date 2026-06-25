@@ -1,4 +1,3 @@
 /goal
-6121新普, 台股
-
+9435光通訊，日股
 執行CollectsentimentAndReports skill
