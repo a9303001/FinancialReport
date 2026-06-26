@@ -34,3 +34,25 @@
 - **關鍵要點與分析**:
   - **無營運中斷**：官方強調未造成服務中斷，但涉及客戶隱私外洩。
   - **短期商譽受損**：市場對金融科技公司的資安事件較為敏感，是近期的短期利空因子。
+
+---
+
+## 2. 補充更新 (2026-06-26)
+
+### 🎯 資安事件升級：三宗聯邦集體訴訟纏身
+- **來源連結**: [News is My Business](https://newsismybusiness.com/evertec-hit-with-3-class-action-lawsuits-over-data-breach/) ／ [ClassAction.org](https://www.classaction.org/data-breach-lawsuits/evertec-june-2026) ／ [GuruFocus](https://www.gurufocus.com/news/8907967/evertec-evtc-investigates-data-breach-incident)
+- **發布時間**: 2026-06-12（訴訟提起）／2026-06-09（8-K 揭露）
+- **核心觀點與論述**:
+  > "Evertec is facing three proposed federal class-action lawsuits over the cybersecurity incident, filed June 12 in the U.S. District Court for the District of Puerto Rico. Plaintiffs allege Evertec failed to use reasonable cybersecurity measures to safeguard personal information including names, contact information, and transaction records."
+- **關鍵要點與分析**:
+  - **法律風險具體化**：資安事件已從「揭露」升級為「訴訟」——6/12 於波多黎各聯邦地院遭三名原告（Maribel Torres、Maria Aquino、Miguel Álvarez）分別提起集體訴訟，指控未採取合理資安措施。
+  - **潛在賠償與合規成本**：8-K（6/9）證實外洩資料可能含交易紀錄與支付卡號。除商譽受損外，訴訟與和解、監管罰款及補救（信用監控）成本將構成中期財務不確定性。
+
+### 🎯 內部人持續加碼：Brian Smith 再買進
+- **來源連結**: [TipRanks Insider Trading](https://www.tipranks.com/news/insider-trading/evertec-insider-makes-bold-move-with-fresh-share-purchase-insider-trading-news)
+- **發布時間**: 2026-06-12
+- **核心觀點與論述**:
+  > "Director Brian John Smith purchased 16,202 shares of Evertec stock, in a transaction valued at $427,894."
+- **關鍵要點與分析**:
+  - **逢低承接訊號延續**：在資安訴訟與目標價下調的利空中，董事 Brian Smith 於 6/12 再買進 16,202 股（約 42.8 萬美元，均價約 26.4 美元），延續 5-6 月的內部人增持趨勢。
+  - **管理層信心 vs. 市場疑慮**：內部人用真金白銀表態，與分析師下調目標價形成對比，是散戶判斷底部的重要參考訊號。
