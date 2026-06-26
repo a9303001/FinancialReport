@@ -7,10 +7,11 @@ description: 掃描 FinancialReport 內所有公司資料夾，將財報（PDF/H
 
 ## 概覽
 
-每次執行此 Skill 時，依序執行以下五個 Phase：
+每次執行此 Skill 時，依序執行以下流程（若 Phase 0 檢查失敗則直接跳至 Phase 4）：
 
 | Phase | 任務說明 | 是否每次都執行？ |
 |-------|---------|---------------|
+| **Phase 0** | 環境依賴檢查 (`markitdown.exe`) | **是，每次最優先執行** |
 | **Phase 1** | 將 PDF/HTML 財報轉換為 `.md` 檔案 | 僅在有未轉換的檔案時執行 |
 | **Phase 2** | 清除所有 `.md` 檔案中的 XBRL / iXBRL **XML 標籤** | **是，每次都執行** |
 | **Phase 2.5** | 清除所有 `.md` 檔案中的 **XBRL 純文字 Blob**（iXBRL R-section 殘留） | **是，每次都執行** |
@@ -51,6 +52,21 @@ description: 掃描 FinancialReport 內所有公司資料夾，將財報（PDF/H
     $OutputEncoding = [System.Text.Encoding]::UTF8
     ```
   - 若使用 Python `subprocess`，設定 `encoding='utf-8'`，並在環境變數加入 `PYTHONIOENCODING=utf-8`。
+
+---
+
+## Phase 0 — 環境依賴檢查 (Environment Dependency Check)
+> **此 Phase 為最優先執行步驟，請 Claude 與 Gemini 務必嚴格遵守。**
+
+在執行任何轉換或掃描之前，**必須**先檢查系統中是否存在以下執行檔：
+`D:\Prog_install\FinanceTool\Scripts\markitdown.exe`
+
+- **若檔案存在**：繼續執行後續的 Phase 1 ~ Phase 4。
+- **若檔案不存在**：
+  1. **立即中止**所有後續的轉換與清理動作（完全跳過 Phase 1, Phase 2, Phase 2.5, Phase 3）。
+  2. 直接跳至 **Phase 4**，在 `FinancialReport` 根目錄產生 `conversion_summary.md`。
+  3. 在 `conversion_summary.md` 報告的最上方明確說明：
+     `錯誤：找不到執行檔 D:\Prog_install\FinanceTool\Scripts\markitdown.exe，轉換程序已中止。`
 
 ---
 
@@ -230,7 +246,9 @@ for line in lines:
 
 ## Phase 4 — 產生總結報告
 
-所有 Phase 執行完畢後，在 `FinancialReport` 根目錄產生 **`conversion_summary.md`**，並在最終回覆中以 Markdown 格式呈現。
+所有 Phase 執行完畢（或因 Phase 0 失敗而提早中止）後，在 `FinancialReport` 根目錄產生 **`conversion_summary.md`**，並在最終回覆中以 Markdown 格式呈現。
+
+> **注意：** 若在 Phase 0 發現缺少 `markitdown.exe`，請在此總結報告的最上方加入醒目提示，說明：`找不到執行檔 D:\Prog_install\FinanceTool\Scripts\markitdown.exe，轉換程序已中止。`，其餘統計數據可留空或填 0。
 
 ### 報告結構
 
