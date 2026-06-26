@@ -45,3 +45,18 @@
 ### 10. (株)RS Technologies【3445】：株価チャート - Yahoo!ファイナンス
 - **連結**：[https://finance.yahoo.co.jp/quote/3445.T/chart](https://finance.yahoo.co.jp/quote/3445.T/chart)
 - **主要觀點與內容**：(株)RS Technologies【3445】の株式チャート推移をご覧いただけます。Yahoo!ファイナンスでは株価速報、チャート、ランキング、ポートフォリオ、ニュース、掲示板など投資判断に役立つ情報を掲載しています。
+
+---
+
+## 補充更新（2026-06-26，資料範圍延伸至 2026-06-26）
+
+- **分析時間**：2026-06-26
+- **新增資料範圍**：2026-06-10 ~ 2026-06-26（補充先前分析後之缺口期間）
+
+### 來源存取狀況
+- Yahoo!ファイナンス 掲示板（討論板）頁面本次嘗試直接抓取時回應 HTTP 500 / 暫時無法顯示，依防爬蟲規則放棄重試，改以新聞/分析網站的具體股價反應資料佐證市場情緒。
+- note.com 搜尋到多篇個人投資部落格針對 RS Technologies 的基本面分析（如 yokato10 帳號的「ほったらかしの割安投資」系列），但確認發文時間為 2025年8月24日，超出本次「過去兩個月」窗口，故不納入本次輿情統計，僅供未來研究參考。
+
+### 11. 蓄電池出資消息後之股價表現（具體數據，可驗證）
+- **連結**：[https://minkabu.jp/stock/3445](https://minkabu.jp/stock/3445)、[https://www.moomoo.com/ja/stock/3445-JP/news](https://www.moomoo.com/ja/stock/3445-JP/news)、[https://jp.investing.com/equities/rs-technologies-co-ltd](https://jp.investing.com/equities/rs-technologies-co-ltd)
+- **主要觀點與內容**：6/19公告系統用蓄電事業出資後，6/22報導「RSテクノが3日続伸」；6/23 moomoo報價7,230日圓（+2.41%／+170日圓，當日高7,490／低7,130）；6/24 投資情報網顯示前日收盤7,230、6/24收盤回落至6,850日圓。可見消息面驅動的上漲在數日後出現獲利回吐，波動明顯放大，呼應 Simply Wall St 對「股價可能已過熱、長期執行風險」的警示（詳見 202606_GoogleNews.md）。
