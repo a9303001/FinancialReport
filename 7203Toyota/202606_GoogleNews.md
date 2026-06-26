@@ -155,3 +155,47 @@
 > トヨタ自動車[7203]：譲渡制限付株式報酬としての自己株式の処分に関するお知らせ 2026年5月8日(適時開示) ：日経会社情報DIGITAL - 日本経済新聞
 
 ---
+
+## 補充更新 (2026-06-26) — 最新兩週新增
+
+### 🎯 美國關稅抹平北美獲利，FY2026 北美罕見營業虧損約 19 億美元
+- **來源連結**: [WardsAuto](https://www.wardsauto.com/news/us-tariffs-erase-all-of-toyotas-north-america-profits-in-fy2026/819825/) / [Investing.com](https://www.investing.com/news/company-news/toyota-fy2026-slides-tariffs-drive-profit-decline-despite-volume-gains-93CH-4671170)
+- **發布時間**: 2026-06
+- **核心觀點與論述**: > "US tariffs erase all of Toyota's North America profits in FY2026... a rare operating loss of $1.9 billion."
+- **關鍵要點與分析**:
+  - 美國關稅 FY2026 衝擊約 ¥1.38~1.4 兆日圓（約 89 億美元）；北美由盈轉虧約 19 億美元。
+  - 全年營收創高 ¥50.68 兆（+5.5%），但營業利益 ¥3.77 兆（-21.5%）；FY2027 指引營業利益 ¥3.0 兆（再降約 20%）。
+
+### 🎯 押注 EV 與美國在地製造對沖關稅，BEV 銷量年增 168%
+- **來源連結**: [Yahoo Finance](https://finance.yahoo.com/markets/article/toyota-bets-big-on-evs-and-us-manufacturing-as-tariff-costs-mount-192446874.html)
+- **發布時間**: 2026-06
+- **核心觀點與論述**: > "Toyota bets big on EVs and US manufacturing as tariff costs mount."
+- **關鍵要點與分析**:
+  - BEV 銷量 FY2026 達約 14.5 萬台（+168.4%），FY2027 估約 24.3 萬台；美國市場 BEV 由 1 款增至 4 款。
+  - 3 月宣布美國投資 10 億美元（肯塔基、印第安納），生產第二款 EV，並擴大 Camry/RAV4 油電與 Grand Highlander 產能。
+
+### 🎯 第121回定時股東會 6/17 召開、6 議案全數通過、股價續跌嫌氣円高
+- **來源連結**: [日本経済新聞](https://www.nikkei.com/article/DGXZQOFL123RC0S5A610C2000000/) / [招集通知](https://global.toyota/pages/global_toyota/ir/stock/2026_shareholders_meeting_convocation_jp.pdf)
+- **發布時間**: 2026-06-17
+- **核心觀點與論述**: > "トヨタ株価が続落 円高嫌気、株主総会で6議案は可決。"
+- **關鍵要點與分析**:
+  - 6 項議案（含設置審計委員會、董事報酬等）全數可決；豐田章男續任會長、近健太任社長兼 CEO。
+  - 當日因日圓升值（円高）續跌，市場聚焦 FX 對獲利影響。
+
+### 🎯 豐田自動織機私有化 TOB：要約提至每股 ¥18,800，Elliott 反對
+- **來源連結**: [Globe and Mail](https://www.theglobeandmail.com/investing/markets/stocks/TYIDF/pressreleases/652726/toyota-industries-moves-closer-to-privatization-as-tender-offer-period-extended/) / [TipRanks](https://www.tipranks.com/news/company-announcements/toyota-industries-to-pursue-share-consolidation-and-delisting-in-group-led-take-private-deal)
+- **發布時間**: 2026-06-01 前後
+- **核心觀點與論述**: > "Toyota raised its tender offer to 18,800 yen ($118.50) per share... Elliott rejected the revised offer, calling the bid inadequate."
+- **關鍵要點與分析**:
+  - 集團主導豐田自動織機（Toyota Industries）私有化，要約價較初案 +15%；股份合併 6/3 生效、6/1 下市、資本準備金削減 6/15 生效。
+  - 維權基金 Elliott 拒絕並呼籲反對，少數股東抗爭。與 Toyota FY2026 約 ¥3.66 兆庫藏/回購相關。
+
+### 🎯 全固體電池量產時程：目標 2027~2028 量產（較舊計畫延後）
+- **來源連結**: [Toyota Global Newsroom](https://global.toyota/en/newsroom/corporate/41100223.html) / [InsideEVs](https://insideevs.com/news/732940/japan-toyota-solid-state-production/)
+- **發布時間**: 2026-06
+- **核心觀點與論述**: > "Toyota targets 2027–2028 for its first solid-state battery production model."
+- **關鍵要點與分析**:
+  - 全固體電池量產時程數度延後（2020→2023→2026→現指 2027~2028）；METI 已認證下世代 BEV 電池量產計畫。
+  - 利空：時程一再遞延削弱「電池技術領先」敘事；利多：政府背書與量產路線圖逐步落地。
+
+---
