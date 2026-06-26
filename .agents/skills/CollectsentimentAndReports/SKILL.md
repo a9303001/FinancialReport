@@ -141,9 +141,15 @@ graph TD
 
 ---
 
-## 6. Phase 5 — 產出最終狀態報告
+## 6. Phase 5 — 產出最終狀態報告與推送至儲存庫
 
-完成 Phase 4 後，請將最終報告產出至 `FinancialReport/CollectsentimentAndReports_Summary.md`
+完成 Phase 4 後，請將最終報告產出至 `FinancialReport/CollectsentimentAndReports_Summary.md`。
+
+> [!IMPORTANT]
+> **報告產出後，必須將所有新增與變更的檔案push to repo `master` branch：**
+> 1. 執行 `git add .`
+> 2. 執行 `git commit -m "Auto-collect sentiment and reports"`
+> 3. 執行 `git push origin master`
 ```markdown
 # 任務執行最終報告 - YYYY/MM
 
