@@ -1,4 +1,4 @@
 /goal
-5306桂盟，tw
+03606福耀玻璃，hk
 
 執行CollectsentimentAndReports skill
