@@ -1,4 +1,4 @@
 /goal
-03606福耀玻璃，hk
+UHS，US
 
 執行CollectsentimentAndReports skill

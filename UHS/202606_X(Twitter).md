@@ -8,14 +8,7 @@
 
 ## 1. 焦點討論串與新聞整理
 
-### 🎯 股價觸及 52 周新低與技術圖表討論
-- **來源連結**: [X (Twitter)](https://x.com/search?q=UHS+stock)
-- **發布時間**: 2026-05-29
-- **核心觀點與論述**:
- - @TheWizardFi: "UHS has touched a new 52-week low. The selloff seems overdone given the strong Q1 results, but technically it needs to reclaim key moving averages."
-- **關鍵要點與分析**:
- - **市場情緒**：多位交易員指出，股價相較於 52 周高點大幅修正，部分人將其歸咎於加州醫護人員薪資通膨壓力以及對未來 EBITDA 展望的疑慮。
- - **估值修復期盼**：部分技術分析推文提到，日線已超賣，近期有築底反彈的跡象。
+
 
 ### 🎯 行為健康部門總裁離職與監管隱憂
 - **來源連結**: [X (Twitter)](https://x.com/search?q=UHS+Peterson+resigns)
