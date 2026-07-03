@@ -169,19 +169,9 @@ graph TD
 > **【重要：已知有效做法，請直接採用，不要重複踩坑】**
 
 **雪球抓取 SOP（已驗證有效）：**
-0. 雪球是港股、A 股輿情的核心來源，但因 JS 動態渲染，抓取難度高。以下是實際測試結果：
-
-| 工具 | 對 `xueqiu.com/S/{代號}` 的結果 | 建議 |
-| :--- | :--- | :--- |
-| 內建 `read_url_content` | ❌ 只拿到 HTML 骨架，無討論貼文 | 嘗試一次後直接放棄，進入 MCP 流程 |
-| `firecrawl_scrape` | ❌ 只拿到快取的公司基本資料頁，無最新討論 | 嘗試一次後放棄，進入下一個 MCP |
-| `brightdata scrape_as_markdown` | ✅ **成功** — 正確抓到當日真實討論貼文、機構研報 | **直接使用這個工具** |
-| `apify` | 未測試 | firecrawl 失敗後才輪到此工具 |
-| `playwright` | 未測試 | brightdata 失敗後才輪到此工具 |
-
-**雪球抓取 SOP（已驗證有效）：**
+0. 雪球是港股、A 股輿情的核心來源，但因 JS 動態渲染，抓取難度高。
 1. 直接跳過內建工具，呼叫 `brightdata scrape_as_markdown` 抓取 `https://xueqiu.com/S/{代號}`
-2. 若 brightdata 失敗，再依序嘗試 `firecrawl_scrape` → `apify` → `playwright`
+2. 若 brightdata 失敗，再依序嘗試`firecrawl_scrape` → `apify` → `playwright`
 3. 若抓到的頁面有有趣的深度文章連結（如「一文梳理…」等專欄文），可再用 brightdata 抓取該文章頁面，補充詳細論述
 4. **只記錄真實存在於頁面上的貼文、連結、時間戳**，不可補充訓練資料知識
 
