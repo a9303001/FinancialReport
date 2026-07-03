@@ -1,4 +1,5 @@
-# Routines.md — 每日輪替執行排程 (Daily Rotation Schedule)
+# Routines
+— 每日輪替執行排程 (Daily Rotation Schedule)
 
 > **[Claude  執行指引]**
 > 1. 取得今日的「日」(Day of the Month，1 ~ 31)。
