@@ -248,23 +248,26 @@ graph TD
 
 > [!IMPORTANT]
 > ## 🏆 黃金規則（最重要，一句話記住）
-> **任何網站，只要用內建工具（`WebFetch` / `read_url`）抓不到資料（空白、報錯、被擋、內容只剩選單框架），都不可以馬上放棄，也不可以直接改用 WebSearch 摘要 —— 一定要先換一個 MCP 抓取工具（`firecrawl_scrape` 等）再試一次。MCP 也失敗，才可以放棄或改用搜尋摘要。**
+> **任何網站，只要用內建工具（`WebFetch` / `read_url` / `WebSearch`）抓不到資料（空白、報錯、被擋、內容只剩選單框架、搜尋工具回報「網域被封鎖 / 爬蟲不可存取」），都不可以馬上放棄，也不可以直接改用 WebSearch 摘要打發 —— 一定要把 `firecrawl-mcp`、`brightdata`、`apify`、`playwright` 這四個 MCP 抓取工具都各試過一次。四個 MCP 全部失敗，才可以放棄或改用搜尋摘要。**
 >
-> 順序永遠是：**內建工具 → (失敗) → MCP 工具 → (再失敗) → 才放棄**。中間那步 MCP **不可以跳過**。
+> 順序永遠是：**內建工具 → (失敗) → firecrawl-mcp → brightdata → apify → playwright（依序，每個失敗就換下一個）→ (四個都失敗) → 才放棄**。中間任何一個 MCP **都不可以跳過**（除非該環境確實沒連上某個 MCP，才略過那一個）。
+>
+> ⚠️ **本次 session 的真實教訓（務必記住）**：曾發生 `WebSearch` 對 `reddit.com` / `reuters.com` 回傳 `API Error: 400 ... not accessible to our user agent`（這是**網站主動封鎖 AI 爬蟲的 user-agent**，屬於「被擋」的一種）。當時 AI 誤以為「這是固定限制、無法可解」就直接跳過，**沒有改用 MCP 工具**——這是錯的。「被網站封鎖」正是黃金規則要你換 MCP 工具的典型情況，**不是**放棄理由。詳見 7.2.2。
 
 **核心原則：先用內建工具爬，失敗再換 MCP 工具爬。每種工具最多嘗試 1 次。**
 
 ```mermaid
 graph TD
-    A["第1步：內建工具抓取<br>(WebFetch / read_url)"] -->|"成功(有拿到實質內容)"| S["✅ 完成，記錄內容"]
-    A -->|"失敗(空白/報錯/被擋)"| C["第2步：換 MCP 工具抓取<br>(firecrawl_scrape 優先)"]
-    C -->|成功| S
-    C -->|"還是失敗"| F["❌ 才可以放棄該網站<br>記錄至 Phase 5 報告"]
+    A["第1步：內建工具抓取<br>(WebFetch / read_url / WebSearch)"] -->|"成功(有拿到實質內容)"| S["✅ 完成，記錄內容"]
+    A -->|"失敗(空白/報錯/被擋/網域被封鎖)"| C["第2步：換 MCP 工具抓取<br>firecrawl→brightdata→apify→playwright<br>(這個工具拒絕或失敗就換下一個)"]
+    C -->|"任一 MCP 成功"| S
+    C -->|"整條 MCP 鏈都失敗"| F["❌ 才可以放棄該網站<br>記錄至 Phase 5 報告"]
 ```
 
 **什麼叫「抓不到資料 / 失敗」？（符合任一項就算失敗，就要換 MCP）**
 - 回傳空白、或內容極少、或只有網頁框架/選單，沒有真正的文字（常見於 JS 動態渲染網站，見 7.2.1）。
 - 被擋：Cloudflare 驗證頁、HTTP 403 / 429。
+- **網站端封鎖爬蟲**：`WebSearch` / 內建工具回報 `not accessible to our user agent`、`domain not accessible`、`400` 網域封鎖類錯誤（常見於 Reddit、Reuters，見 7.2.2）。**這也算「被擋」，一樣要換 MCP，不是放棄理由。**
 - 連不上或斷線：逾時、Read Timeout、EOF、Connection Reset、任何 Socket/Network Error。
 - （完整清單見 7.3）
 
@@ -274,21 +277,34 @@ graph TD
 | **第 1 次** | 使用內建工具（`read_url` / `read_url_content` / `WebFetch`）嘗試抓取目標頁面。 |
 | **失敗** | 進入第二階段。 |
 
-#### 第二階段：MCP 工具（最多 1 次）
-| 次數 | 動作 |
-| :--- | :--- |
-| **第 1 次** | 改用 MCP 工具（優先順序：`firecrawl_scrape` → `brightdata/scrape_as_markdown` → `apify` → `playwright`）嘗試抓取。 |
-| **失敗** | **立刻放棄該網站**，記錄在 Phase 5 報告中，嘗試下一個替代來源。 |
+#### 第二階段：MCP 工具（四個依序全試，每個工具最多 1 次）
+> **這四個 MCP 要依序全部試過**，不是試一個就算數。任一個成功就停；某個失敗（含被拒）就換下一個。
+
+| 順序 | MCP 工具 | 動作 |
+| :---: | :--- | :--- |
+| 1 | `firecrawl-mcp`（`firecrawl_scrape`） | 第一個試。失敗或被拒 → 換第 2 個。 |
+| 2 | `brightdata`（`scrape_as_markdown`） | 第二個試。失敗或被拒 → 換第 3 個。 |
+| 3 | `apify` | 第三個試。失敗或被拒 → 換第 4 個。 |
+| 4 | `playwright` | 第四個試（最後一個）。 |
+| ✅ 成功 | — | 任一工具成功抓到實質內容即停，記錄內容。 |
+| ❌ 四個全失敗 | — | 四個 MCP 全試過都失敗，才可以**放棄該網站**，記錄在 Phase 5 報告，嘗試下一個替代來源。 |
+
+- **「明確拒絕該網站」也算這個工具失敗**：有些 MCP 工具會對特定網站直接回「we do not support this site」（例如 **Firecrawl 平台級不支援 `reddit.com`**）。這**不算該網站真的抓不到**，要**往下一個 MCP 工具**繼續試，不要停在第一個。
+- **某個 MCP 沒連上就略過那一個**：若當下環境確實沒連上某個 MCP（工具不存在），就跳過它、試下一個，但要在報告註明「{該MCP} 未連線」。其餘有連上的都要試。
+
+> [!TIP]
+> 「MCP 工具明確拒絕某站」與「MCP 工具抓失敗（逾時/空白/被擋）」都算這個工具在這一站失敗，往下換工具即可，不要對同一個工具重試。
+> **替代路徑**：若整條 MCP 鏈對某網站都不支援（如 Reddit），可改用 MCP 的**搜尋**功能（如 `firecrawl_search`）搜該站內容當替代，取得的仍算「有嘗試過 MCP」，比只用內建 WebSearch 摘要好。
 
 #### 重試上限總結
 | 項目 | 上限 |
 | :--- | :--- |
 | 內建工具嘗試次數 | **最多 1 次** |
-|每個MCP 工具嘗試次數 | **每個 MCP 工具最多 1 次** |
-| 單一 URL 總嘗試次數 | **最多 2 次**（1 + 1） |
+| 每個 MCP 工具嘗試次數 | **每個 MCP 工具最多 1 次**（同一工具不重試，失敗就換鏈中下一個） |
+| 單一 URL 總嘗試次數 | **內建 1 次 + MCP 鏈各 1 次**（例：WebFetch 1 + firecrawl 1 + brightdata 1…，鏈跑完即止） |
 
 > [!WARNING]
-> **嚴格禁止無限重試。** 超過上限後必須立刻放棄該 URL，轉向替代來源。
+> **嚴格禁止對「同一個工具」無限重試。** 一個工具失敗就換下一個工具；整條鏈（內建 + 所有 MCP）都試完仍失敗，才放棄該 URL，轉向替代來源。
 
 ### 7.2.1 已知 JS 動態渲染網站清單（幾乎一定要用 MCP 才抓得到）
 
@@ -304,6 +320,19 @@ graph TD
 > [!WARNING]
 > **絕對不可以「沒試過 MCP 就用 WebSearch 摘要取代」。** 只有在 MCP 工具也抓失敗（或環境確實沒有任何 MCP 工具）時，才可以改用 WebSearch 摘要，而且要在該筆內容加註：「⚠️ MCP 抓取失敗/不可用，以下為 WebSearch 摘要，非原始頁面逐字引述」。這樣 Phase 5 報告的「MCP 使用紀錄」才對得上實際動作。
 
+### 7.2.2 已知會「封鎖爬蟲」的網站清單（要換 MCP，不是放棄）
+
+下面這幾個網站，用內建工具（含 `WebSearch`）常常回「被封鎖 / user-agent 不可存取」的錯誤。這跟 7.2.1 的「JS 空白頁」原因不同（一個是網站主動封鎖爬蟲，一個是前端渲染），但**處理方式一樣**：看到就照黃金規則換 MCP 工具再試，不是放棄理由。
+
+| 網站 | 網域 | 常見錯誤 | 建議做法 |
+| :--- | :--- | :--- | :--- |
+| Reddit | `reddit.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；**Firecrawl 也會回「we do not support this site」** | Firecrawl 拒絕 → 換 brightdata / apify / playwright 抓；整條鏈都不行 → 改用 `firecrawl_search` 搜該站內容當替代 |
+| Reuters | `reuters.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；文章頁常有 DataDome/PerimeterX 真人驗證牆 | 換 `firecrawl_scrape` 抓公司頁通常可讀（能拿到新聞列表與財報摘要），但「Load more」翻頁可能被驗證牆擋，取得已載入部分即可 |
+| Bloomberg | `bloomberg.com` | 搜尋多半只回股價報價頁，深度文章有付費牆 | 屬付費牆限制，非封鎖；MCP 也難突破付費牆，取得摘要即可，並在報告註明「付費牆限制」 |
+
+> [!NOTE]
+> 這張表會隨經驗累積增補。**每次遇到新的「封鎖爬蟲」網站，處理完後把它加進這張表**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
+
 ### 7.3 即時放棄條件 (Fail-Fast Conditions)
 
 遇到以下情況，**代表該階段的嘗試失敗**（直接跳至下一階段或放棄，**禁止重試**）：
@@ -314,7 +343,11 @@ graph TD
 - **Read Timeout**（伺服器有回應但讀取資料時超時）
 - **EOF / Connection Reset**（伺服器中斷連線，錯誤訊息含 `EOF`、`Connection reset`、`forcibly closed`）
 - **任何形式的 Socket / Network Error**（如 `ECONNREFUSED`、`EHOSTUNREACH`）
-- **回傳內容空白、內容極少、或只有網頁框架/選單（沒有實際文字）**：常見於 JS 動態渲染網站（雪球、MOPS 進階查詢、moomoo 等，見 7.2.1）。這也算「內建工具失敗」，一樣要照 7.2 黃金規則換 MCP 工具再試，不可直接放棄或跳到 WebSearch 摘要。
+- **網站端封鎖爬蟲**：`WebSearch` / 內建工具回 `not accessible to our user agent`、`domain not accessible`、`400` 網域封鎖類錯誤（常見於 Reddit、Reuters，見 7.2.2）。
+- **回傳內容空白、內容極少、或只有網頁框架/選單（沒有實際文字）**：常見於 JS 動態渲染網站（雪球、MOPS 進階查詢、moomoo 等，見 7.2.1）。
+
+> [!IMPORTANT]
+> 這裡的「即時放棄」指的是**放棄「用這個工具/這一次嘗試」，而不是放棄「這個網站」**。上述所有失敗（含網站封鎖爬蟲、JS 空白頁）都要照 7.2 黃金規則**先換 MCP 工具再試一次**，MCP（整條鏈）也失敗，才是真的放棄該網站、轉下一個替代來源。**唯一例外**是 Read Timeout / EOF / 逾時這類純網路錯誤，且已換過 MCP 仍失敗時，才「見到即放棄、零重試」，不要空等或反覆重試同一個 URL。
 
 > [!CAUTION]
 > **Read Timeout 與 EOF 是最容易讓 AI Agent 卡死的錯誤類型。** 遇到時必須「見到即放棄、零重試」，立刻切換至搜尋順序中的下一個來源。絕對不可以啟動背景下載任務後空等。
