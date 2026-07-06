@@ -1,10 +1,3 @@
-## ) Git 推送規則（Git Push Policy）
-- **排程輪替任務（每日輪替排程 / CollectsentimentAndReports skill）執行完成後，一律直接 push 到 `master` branch，不需要開 Pull Request、不需要走 feature branch、不需要人工確認。**
-- 若因遠端已更新導致一般 push 被拒，允許以 `git push --force-with-lease origin master` 強制推送（force push）。
-- 此規則為使用者明確授權，優先於預設的「開發分支 + PR」保護流程。
-
----
-
 ## ) 核心原則
 - 每次回答問題前都先把我的問題即時翻譯成英文(考慮美國日常用法)，再開始回答問題
 - 盡可能進行 **deep research**，能搜尋就搜尋，資訊要新、要可驗證

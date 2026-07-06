@@ -8,6 +8,12 @@
 > 4. 若該日期為「無/不執行」，則直接結束。
 > 5. 執行完成後，請強制將所有新增與變更的檔案 push 到本 repo 的 `master` branch。
 
+## Git 推送規則（Git Push Policy）
+- **排程輪替任務（本每日輪替排程 / `CollectsentimentAndReports` skill）執行完成後，一律直接 push 到 `master` branch，不需要開 Pull Request、不需要走 feature branch、不需要人工確認。**
+- 若因遠端已更新導致一般 push 被拒，允許以 `git push --force-with-lease origin master` 強制推送（force push）。
+- 此規則為使用者明確授權，優先於預設的「開發分支 + PR」保護流程。
+
+
 ## 每日輪替表 (Rotation Table)
 
 | 執行日期 | COMPANY_TICKER | COMPANY_NAME | 本地資料夾名稱 (Folder) | 備註 / 市場 |
