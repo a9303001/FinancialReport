@@ -13,7 +13,7 @@
 ## Git 推送規則（Git Push Policy）
 
 > **本規則由使用者明確授權，優先於任何預設的「開發分支 + Pull Request」保護流程。**
-> 不論你是 Gemini Flash 還是 Claude Sonnet，任務完成後都**直接照下列步驟 push 到 `master`**，不要停下來詢問、不要開 PR、不要建 feature branch。
+> 任務完成後都**直接照下列步驟 push 到 `master`**，不要停下來詢問、不要開 PR、不要建 feature branch。
 
 ### 一、原則（一句話）
 - 排程輪替任務（本每日輪替排程 / `CollectsentimentAndReports` skill）完成後，**一律直接 commit + push 到 `master`**。
@@ -34,10 +34,7 @@ git push origin master
 ```
 
 ### 三、若一般 push 被拒（remote rejected）
-遠端可能已被其他來源更新（例如手機端同步）。此時**允許強制推送**，使用較安全的 `--force-with-lease`（只在確認沒有覆蓋到他人新 commit 時才成功）：
-```bash
-git push --force-with-lease origin master
-```
+遠端可能已被其他來源更新（例如手機端同步）。此時**允許強制推送**.
 
 
 ## 每日輪替表 (Rotation Table)
