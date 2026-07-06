@@ -1,17 +1,43 @@
 # Routines
 — 每日輪替執行排程 (Daily Rotation Schedule)
 
-> **[Claude  執行指引]**
+> **[執行指引 — Gemini Flash / Claude Sonnet 皆適用]**
 > 1. 取得今日的「日」(Day of the Month，1 ~ 31)。
-> 2. 對照下方表格的「執行日期」。
-> 3. 若有對應公司，呼叫 `CollectsentimentAndReports` skill，並帶入對應的 `COMPANY_TICKER` 與 `COMPANY_NAME`。
-> 4. 若該日期為「無/不執行」，則直接結束。
-> 5. 執行完成後，請強制將所有新增與變更的檔案 push 到本 repo 的 `master` branch。
+> 2. 對照下方「每日輪替表」的「執行日期」欄。
+> 3. 若當日有對應公司 → 呼叫 `CollectsentimentAndReports` skill，帶入該列的 `COMPANY_TICKER` 與 `COMPANY_NAME`。
+> 4. 若當日標記為「無/不執行 (Skip)」→ 不做任何事，直接結束。
+> 5. skill 執行完成後 → 依照下方「Git 推送規則」把所有新增與變更的檔案 push 到 `master`。
+
+---
 
 ## Git 推送規則（Git Push Policy）
-- **排程輪替任務（本每日輪替排程 / `CollectsentimentAndReports` skill）執行完成後，一律直接 push 到 `master` branch，不需要開 Pull Request、不需要走 feature branch、不需要人工確認。**
-- 若因遠端已更新導致一般 push 被拒，允許以 `git push --force-with-lease origin master` 強制推送（force push）。
-- 此規則為使用者明確授權，優先於預設的「開發分支 + PR」保護流程。
+
+> **本規則由使用者明確授權，優先於任何預設的「開發分支 + Pull Request」保護流程。**
+> 不論你是 Gemini Flash 還是 Claude Sonnet，任務完成後都**直接照下列步驟 push 到 `master`**，不要停下來詢問、不要開 PR、不要建 feature branch。
+
+### 一、原則（一句話）
+- 排程輪替任務（本每日輪替排程 / `CollectsentimentAndReports` skill）完成後，**一律直接 commit + push 到 `master`**。
+- ❌ 不開 Pull Request　❌ 不建 feature branch　❌ 不等人工確認。
+
+### 二、標準推送步驟（依序執行）
+```bash
+# 1) 切到 master 並同步遠端最新狀態（避免 push 被拒）
+git checkout master
+git pull --ff-only origin master
+
+# 2) 加入所有變更並 commit（訊息請寫明本次輪替的公司與內容）
+git add -A
+git commit -m "<例：Add Toyota (7203) 2026-07-06 sentiment & summary>"
+
+# 3) 推送到 master
+git push origin master
+```
+
+### 三、若一般 push 被拒（remote rejected）
+遠端可能已被其他來源更新（例如手機端同步）。此時**允許強制推送**，使用較安全的 `--force-with-lease`（只在確認沒有覆蓋到他人新 commit 時才成功）：
+```bash
+git push --force-with-lease origin master
+```
 
 
 ## 每日輪替表 (Rotation Table)
