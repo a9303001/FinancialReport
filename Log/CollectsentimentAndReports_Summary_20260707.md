@@ -13,12 +13,16 @@
 | `UHS` | StockTitan / UHS IR | `202607_Official_IR.md` | 更新成功（新增 Q2 財報公布日 7/27） |
 | `UHS` | Yahoo Finance | `202607_GoogleNews.md` | 更新成功（新增 Q2 前瞻共識 + 估值折價分析） |
 | `UHS` | Reddit r/ValueInvesting | `202607_Reddit.md` | 更新成功（新增「Cheap Growing Cash Cow」多方論述） |
+| `UHS` | Seeking Alpha | `202607_SeekingAlpha.md` | 新建成功（7/6「Cash Trap to Value Trap」Hold 空方論述） |
+| `UHS` | Simply Wall St | `202607_GoogleNews.md` | 追加成功（7/3 Q1 營收為同業最快 + 合理價 $213.82） |
 
 ### 本次新增/更新的輿情重點（2026/07/03–07/06 新內容）
 1. **Q2 2026 財報日程（7/6 最新）**：UHS 將於 **7/27 盤後**發布 Q2 財報，**7/28 上午 9:00 (ET)** 舉行法說會。營運規模：約 101,500 名員工、30 家急症醫院、逾 340 家行為健康機構。
 2. **Q2 分析師共識（7/3）**：預估 Q2 稀釋 EPS **$5.66（年增 5.8%）**；FY2026 EPS 預估 **$23.47（+8%）**。20 位分析師共識「適度買進」，平均目標價 **$210.12**（約 +32.7%），最高 $310。過去 52 週股價 -14.2%，落後 XLV +21%。
 3. **估值折價分析（7/4）**：YTD **-28%**，本益比僅 **6.3x**（產業平均 25.9x），Simply Wall St 合理 P/E 19.9x。爭論核心：深度折價機會 vs. 政策/行為健康「價值陷阱」。Q1 2026 買回 67.5 萬股。
 4. **Reddit 價值論述（6/22）**：EPS 6 年由 $9.16 → $23.42，靠庫藏股（年買回 4%–11%）；內部人持股 >16%。風險：TalkSpace 近 $10 億併購整合、Medicaid 工作要求新規、利率、訴訟。
+5. **Seeking Alpha 空方論述（7/6，本輪新增）**：Given Mahlangu 給予 **Hold**，主張低估值是「有原因的便宜」—— 現金轉換率偏低、預期利潤率壓縮。行為健康部門（BHS，毛利率較高）面臨政策逆風恐拖累整體利潤率；短期債務暴增至 **$7.56 億**、現金被高額應收帳款卡住，凸顯短期流動性隱憂。與 Reddit 多方形成鮮明對照。
+6. **Simply Wall St（7/3，本輪新增）**：2026 Q1 營收成長**超預期且為主要醫院同業最快**；董事會維持每股 **$0.20** 季度股利＋持續回購。社群敘事合理價 **$213.82**（+35%），預估 2029 營收 $207 億／盈餘 $15 億。核心風險仍為 Medicaid 政策與補充性給付削減。
 
 ## 2. 失敗或被擋網站
 - 無整條 MCP 鏈全滅的來源。Reddit 依 §2.4 預期會擋內建工具，故直接改用 **Bright Data** `scrape_as_markdown` 成功抓取原文貼文。
@@ -32,6 +36,6 @@
 ## 5. 本次執行使用的 MCP
 | MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
 | :--- | :--- | :--- |
-| Firecrawl | `firecrawl_search` | 搜尋 UHS 最新新聞與 Reddit/社群討論連結 |
+| Firecrawl | `firecrawl_search`、`firecrawl_scrape` | 搜尋 UHS 最新新聞；抓取 Seeking Alpha 與 Simply Wall St 文章原文 |
 | Bright Data | `scrape_as_markdown` | 抓取 Reddit r/ValueInvesting 原文貼文（內建工具/Firecrawl 不支援 Reddit） |
 | 內建工具 | `WebFetch`、`WebSearch` | 讀取 Yahoo Finance / StockTitan 新聞正文 |

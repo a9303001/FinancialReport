@@ -45,3 +45,18 @@
   - **利多（深度折價）**：以傳統估值指標看，UHS 明顯被低估，本益比僅個位數，具高安全邊際。
   - **風險（價值陷阱疑慮）**：Medicare 給付政策變動、行為健康營運壓力，以及低估值究竟是機會還是「價值陷阱」的爭論仍未定論。
   - **買回庫藏股**：UHS 持續積極買回庫藏股（2026 Q1 買回 67.5 萬股），但需留意公司仍有較高負債與資本支出需求。
+
+### 🎯 Q1 營收成長為同業之最，市場重評多空敘事（Simply Wall St，7/7 新增）
+- **來源連結**: [Simply Wall St - UHS Is Up 9.6% After Fastest Peer Revenue Growth This Quarter](https://simplywall.st/stocks/us/healthcare/nyse-uhs/universal-health-services/news/universal-health-services-uhs-is-up-96-after-fastest-peer-re)
+- **發布時間**: 2026-07-03
+- **核心觀點與論述**:
+  > "In the past quarter, Universal Health Services (NYSE: UHS) reported revenue growth that exceeded analyst expectations and was the fastest among major hospital chains, even as the broader hospital sector delivered mixed first-quarter results and more cautious revenue guidance."
+  >
+  > "the board's recent decision to maintain its US$0.20 per share quarterly dividend stands out... It also sits alongside ongoing buybacks."
+  >
+  > "Universal Health Services' narrative projects $20.7 billion revenue and $1.5 billion earnings by 2029... a $213.82 fair value, a 35% upside to its current price."
+- **關鍵要點與分析**:
+  - **利多（相對強勢）**：最新一季（2026 Q1）UHS 營收成長**超越分析師預期，且為主要醫院連鎖同業中最快**；同期整體醫院板塊繳出好壞參半的 Q1 與更保守的營收指引，凸顯 UHS 的個別執行力優於產業趨勢。
+  - **股東回報**：董事會維持每股 **$0.20** 季度股利，並持續庫藏股回購，在股價疲弱期間展現對總報酬的重視。
+  - **估值錨點**：Simply Wall St 社群敘事給予合理價 **$213.82**（對現價約 +35%），並預估 2029 年營收 **$207 億美元**、盈餘 **$15 億美元**（以最新約 6,350 萬股換算，約每股營收 $326、每股盈餘 $23.6）。
+  - **風險（未解疑慮）**：即使 Q1 營收亮眼，未來 **Medicaid 政策變動與補充性給付（supplemental payments）遭削減**的風險仍是投資人最需警惕之處；悲觀派分析師（2028 估營收約 $190 億、盈餘 $14 億）仍以給付/政策風險為由給出遠低於現價的估值。
