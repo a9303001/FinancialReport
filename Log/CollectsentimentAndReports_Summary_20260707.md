@@ -15,6 +15,8 @@
 | `UHS` | Reddit r/ValueInvesting | `202607_Reddit.md` | 更新成功（新增「Cheap Growing Cash Cow」多方論述） |
 | `UHS` | Seeking Alpha | `202607_SeekingAlpha.md` | 新建成功（7/6「Cash Trap to Value Trap」Hold 空方論述） |
 | `UHS` | Simply Wall St | `202607_GoogleNews.md` | 追加成功（7/3 Q1 營收為同業最快 + 合理價 $213.82） |
+| `UHS` | Insider Monkey | `202607_GoogleNews.md` | 追加成功（GW 大學醫療服務移轉協議 / Capital Medical Group） |
+| `UHS` | Yahoo Finance / Insider Monkey | `202607_GoogleNews.md` | 追加成功（TD Cowen 5 月醫院調查下修依據 + UBS 醫院 AI 順風論述） |
 
 ### 本次新增/更新的輿情重點（2026/07/03–07/06 新內容）
 1. **Q2 2026 財報日程（7/6 最新）**：UHS 將於 **7/27 盤後**發布 Q2 財報，**7/28 上午 9:00 (ET)** 舉行法說會。營運規模：約 101,500 名員工、30 家急症醫院、逾 340 家行為健康機構。
@@ -23,6 +25,8 @@
 4. **Reddit 價值論述（6/22）**：EPS 6 年由 $9.16 → $23.42，靠庫藏股（年買回 4%–11%）；內部人持股 >16%。風險：TalkSpace 近 $10 億併購整合、Medicaid 工作要求新規、利率、訴訟。
 5. **Seeking Alpha 空方論述（7/6，本輪新增）**：Given Mahlangu 給予 **Hold**，主張低估值是「有原因的便宜」—— 現金轉換率偏低、預期利潤率壓縮。行為健康部門（BHS，毛利率較高）面臨政策逆風恐拖累整體利潤率；短期債務暴增至 **$7.56 億**、現金被高額應收帳款卡住，凸顯短期流動性隱憂。與 Reddit 多方形成鮮明對照。
 6. **Simply Wall St（7/3，本輪新增）**：2026 Q1 營收成長**超預期且為主要醫院同業最快**；董事會維持每股 **$0.20** 季度股利＋持續回購。社群敘事合理價 **$213.82**（+35%），預估 2029 營收 $207 億／盈餘 $15 億。核心風險仍為 Medicaid 政策與補充性給付削減。
+7. **GW 大學醫療服務移轉協議（7/7 二次更新，原始事件 5/26）**：喬治華盛頓大學（GW）、Medical Faculty Associates 與 UHS 三方協議，將臨床服務移轉至新設的醫師主導非營利執業團體 **Capital Medical Group**，涵蓋 GW Hospital、Cedar Hill Regional Medical Center 及相關門診據點；過渡期後 UHS 承擔醫師執業營運的財務責任。屬強化「醫師主導照護輸送」的垂直整合，分析師平均上漲空間約 35.1%。
+8. **TD Cowen 下修依據 + UBS AI 論述（7/7 二次更新，7/4 文）**：TD Cowen 6/22 下修目標價 $230→$197（仍隱含 +24%、維持買進），依據為 **5 月醫院調查顯示營收較去年幾乎持平、手術量走弱**，據此下修 2026/2027 成長預期。UBS 則看好醫院是 AI 效率最大受惠者，UHS 已在帳務/給付、排班、臨床文件部署 AI，可望維持相對非營利醫院的優勢。
 
 ## 2. 失敗或被擋網站
 - 無整條 MCP 鏈全滅的來源。Reddit 依 §2.4 預期會擋內建工具，故直接改用 **Bright Data** `scrape_as_markdown` 成功抓取原文貼文。
@@ -36,6 +40,6 @@
 ## 5. 本次執行使用的 MCP
 | MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
 | :--- | :--- | :--- |
-| Firecrawl | `firecrawl_search`、`firecrawl_scrape` | 搜尋 UHS 最新新聞；抓取 Seeking Alpha 與 Simply Wall St 文章原文 |
+| Firecrawl | `firecrawl_search`、`firecrawl_scrape` | 搜尋 UHS 最新新聞；抓取 Seeking Alpha、Simply Wall St、Insider Monkey（GW 協議）、Yahoo Finance（Extreme Value）文章原文 |
 | Bright Data | `scrape_as_markdown` | 抓取 Reddit r/ValueInvesting 原文貼文（內建工具/Firecrawl 不支援 Reddit） |
 | 內建工具 | `WebFetch`、`WebSearch` | 讀取 Yahoo Finance / StockTitan 新聞正文 |
