@@ -5,10 +5,15 @@
 > 1. 取得今日的「日」(Day of the Month，1 ~ 31)。
 > 2. 對照下方輪替表的「執行日期」。
 > 3. 若**無**對應公司（表格未列出的日期），什麼事都不要做（skip），直接結束。
-> 4. 分析除了參考 repo 內該公司資料夾的既有資料，也需要從網路deep research，**不需要 push 到 repo**。
+> 4. 分析除了參考 repo 內該公司資料夾的既有資料，也需要從網路deep research。
 > 5. 若有對應公司，分析最新投資風險分析與重大消息：公司近期財報表現、重大公告與市場異動風險提示，著重投資風險和利多。
 > 6. 若有對應公司，針對該公司同步執行 `個股分析規則`（@AGENTS.md），並額外分析表格中的「額外分析項目」。
-> 7. **不需要 push 到 repo**，直接在對話中回覆分析報告
+> 7. ** push 到 financialReportRepo\StockAnalysisHistory**，也在對話中回覆分析報告
+
+## git force push to master branch
+本規則由使用者明確授權，優先於任何預設的「開發分支 + Pull Request」保護流程。
+任務完成後都直接 push 到  master ，不要停下來詢問、不要開 PR、不要建 feature branch。
+
 
 
 ---
