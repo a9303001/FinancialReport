@@ -4,15 +4,15 @@
 
 ---
 
-## ★ 最新結論摘要（固定置頂 · 更新於 2026-07-12 00:20 台北）
+## ★ 最新結論摘要（固定置頂 · 更新於 2026-07-12 02:23 台北）
 
 | 項目 | 最新數值 | 備註 |
 |---|---|---|
 | **現價** | **$155.57** | 7/11 收；6/26 為 $145.69 → 兩週反彈約 +6.8%；市值 ~$9.42B；仍處近 52 週低檔區、YTD 約 -28% |
-| **TTM PE** | **6.60x** | 較自身近十年均值低約 55%；產業均值 ~26x、同業 ~21x |
+| **TTM PE** | **6.60x** | 較自身近十年均值低約 55%；近 3 年均值 12.0x、近 5 年 11.9x；產業均值 ~26x、同業 ~21x |
 | **Forward PE** | **6.61x** | 市場幾乎不給成長溢價 |
-| **目標價（均值）** | **$213.82（約 +35.7%）** | 共識「Moderate Buy」（20 位：7 強買 / 12 持有 / 1 賣出） |
-| **下一催化（近→遠）** | ① **7/21 CMS Medicaid 定向給付新規意見截止** → ② **7/27 盤後 Q2 財報、7/28 法說** | Q2 EPS 共識 **$5.66（+5.8% YoY）**；FY26E **$23.47（+8%）**、FY27E **$25.40（+8.2%）** |
+| **目標價（均值）** | **~$216–219（約 +39–41%）** | 共識「Buy／Moderate Buy」；區間分歧擴大（低 $165／高 $310）。近期個別下修：**RBC $216→$190、Baird $241→$204**；先前 TD Cowen $230→$197、Cantor Neutral $194 |
+| **下一催化（近→遠）** | ① **7/21 CMS Medicaid 定向給付新規（CMS-2449-P）意見截止（約 10 天內）** → ② **7/27 盤後 Q2 財報、7/28 09:00 ET 法說** | Q2 EPS 共識 **$5.66（+5.8% YoY）**；FY26E **$23.47（+8%）**、FY27E **$25.40（+8.2%）** |
 
 **低 PE 主因 Top 3（依重要性）**
 1. **政策/給付尾端風險**（Medicaid 工作要求、provider tax 上限、加州補充給付未展期、CMS 定向給付新規）— 估值折價的「主敘事」。
@@ -24,6 +24,13 @@
 ---
 
 ## 🕒 更新紀錄
+
+### 2026-07-12 02:23（第 5 版 · 更新分析師目標價分歧 + 補 RBC/Baird 下修 + 確認 CMS 條款細節）
+- **核心敘事無翻轉**：七大低 PE 主因全部維持有效。市場快照：股價仍為 **$155.57**、TTM/Fwd PE 6.60/6.61x，未見新催化改變定價。
+- **🔧 更新目標價區間（重要）**：多來源共識均值上移至 **~$216–219**（MarketBeat $218.63、TipRanks $218.92、Investing.com $215.76／17 位），但**分歧擴大**（低 $165、高 $310）。→ 反映市場對「政策 vs 反彈」的兩極看法，非一致樂觀。
+- **✅ 新增空方訊號**：近期個別分析師續砍目標價——**RBC Capital $216→$190、Baird $241→$204**（延續 TD Cowen $230→$197 的成長減速主題）。已併入多空對照表「目標價」列。
+- **✅ 確認 CMS-2449-P 條款細節**：NPRM（2026/05/20，Federal Register 2026/05/22 刊登）落實 WFTC 第 71116 條，SDP 上限自 2025/07/04 起生效之評等期間封頂＝擴張州 100%／非擴張州 110% Medicare 費率；**另禁止 provider-tax 再分配安排**（州不得要求 provider 將 SDP 款項回流至協會／顧問等第三方）。意見截止 **7/21**（約 10 天內）。此為結構性壓縮加州補充給付的機制確認。
+- **缺口狀態不變**：Q2 實績（7/27）仍為最大待驗證點。
 
 ### 2026-07-12 00:20（第 4 版 · 補齊 5 年殖利率 + 修正股息金額 + 細化 CMS 新規條款 + 補 FY27E）
 - **核心敘事無翻轉**：七大低 PE 主因全部維持有效。市場快照：股價 **$155.57**（自 6/26 $145.69 反彈 +6.8%，但估值仍卡在 6.6x）、TTM/Fwd PE 6.60/6.61x、目標價 $213.82 不變。
@@ -87,7 +94,7 @@
 | 護城河 | 精神病床牌照/CON 准入壁壘強 | BHS 高毛利正被政策侵蝕 |
 | 資本回報 | 積極回購（2025 ~$8.99 億）+內部人持股 >16% | 靠縮股撐 EPS、股息微薄（殖利率 ~0.51%）、家族控制折價 |
 | 政策 | 政策一旦明朗即估值修復 | 加州補充給付、CMS 定向給付新規、工作要求為尾端風險 |
-| 目標價 | 均值 $213.82（+37%）、Simply Wall St 合理價 ~$213 | TD Cowen 下修至 $197、Cantor Neutral $194 |
+| 目標價 | 均值 ~$216–219（+39%）、高估 $310、Simply Wall St 合理價 ~$213 | 續砍：RBC $190、Baird $204、TD Cowen $197、Cantor $194；低估 $165 |
 
 ---
 
@@ -161,4 +168,9 @@
 - [stockanalysis.com — UHS Dividend History](https://stockanalysis.com/stocks/uhs/dividend/)
 - [Yahoo Finance — UHS Q2 2026 earnings preview（FY26E $23.47、FY27E $25.40）](https://finance.yahoo.com/healthcare/articles/universal-health-services-quarterly-earnings-171311429.html)
 - [UHS IR — Q2 2026 Earnings Call（7/27 盤後、7/28 法說）](https://ir.uhs.com/events/event-details/q2-2026-universal-health-services-earnings-conference-call)
+- [MarketBeat — UHS Forecast（目標價共識 ~$218.6）](https://www.marketbeat.com/stocks/NYSE/UHS/forecast/)
+- [TipRanks — UHS Forecast（目標價 ~$218.9）](https://www.tipranks.com/stocks/uhs/forecast)
+- [Investing.com — UHS Consensus（17 位；均值 $215.76、高 $310、低 $165）](https://www.investing.com/equities/universal-health-services-consensus-estimates)
+- [Federal Register — CMS-2449-P（2026/05/22 刊登，意見截止 7/21）](https://www.federalregister.gov/documents/2026/05/22/2026-10292/medicaid-program-medicaid-managed-care-state-directed-payments-and-medicaid-fee-for-service-targeted)
+- [Holland & Knight — CMS 提案將 SDP 封頂於 Medicare 費率](https://www.hklaw.com/en/insights/publications/2026/06/hr-1-and-beyond-understanding-cms-proposal-to-cap-medicaid)
 - 本地檔案：`UHS/UHS_10K_2024-12-31.md`、`UHS/UHS_10K_2025-12-31.md`、`UHS/2026Q1-10-Q.md`、`UHS/202607_*`（GoogleNews / Reddit / SeekingAlpha / Official_IR / X / Xueqiu）
