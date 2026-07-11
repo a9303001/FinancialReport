@@ -1,4 +1,4 @@
-/loop 1h /goal
+/loop 3h /goal
 
 
 ## 0. Session 執行方式（最重要 · 每次開全新 session）
@@ -16,13 +16,14 @@
 - 深入探討低本益比背後的成因，至少涵蓋：
   - 獲利品質、成長性疑慮、產業與市場情緒
   - 法遵／訴訟、政策風險（Medicaid、加州補充給付等）、資本結構與治理
+ - 分析結果 **update 到** `UHS/hourAnalysisResult.md`。
 
 ---
 
 ## 2. 資料來源（Data Sources · 依序）
 
-1. **前一輪的 `UHS/hourAnalysisResult.md`** — 作為延續與比對的基準（每次先讀回）。
-2. **`UHS/` 資料夾**內的財報與輿情檔（10-K、10-Q、GoogleNews、Reddit、SeekingAlpha、X、Xueqiu、Official_IR 等）。
+1. **前一輪的 `hourAnalysisResult.md`** — 作為延續與比對的基準（每次先讀回）。
+2. FinancialReport repo 內的財報與輿情檔。
 3. **網路搜尋（web search）** — 取得最新股價、PE、財報、新聞與市場動態，並與本地資料交叉驗證。
 
 ---
@@ -35,12 +36,11 @@
 
 ---
 
-## 4. 輸出規範（Output · 每次都要 optimize + rearrange）
+## 4. 輸出hourAnalysisResult.md規範(Output · 每次都要 optimize + rearrange）
 
-- 分析結果 **update 到** `UHS/hourAnalysisResult.md`。
 - **延續而非重寫**：於檔首新增一段「更新紀錄 + 時間戳記」，比對前一輪結論，補新資訊、修正舊觀點。
 - **每次更新都要同步「優化與重新編排」內容（optimize & rearrange）**，讓 user 一眼看得懂：
-  1. 檔首固定放「**最新結論摘要**」（現價、TTM/Forward PE、低 PE 主因 Top 3、目標價、下一催化事件）。
+  1. 檔首固定放「**最新結論摘要**」
   2. 相同主題**合併去重**，不要讓同一觀點散落多段、也不要無限堆疊舊內容。
   3. 用**表格／條列**呈現數據與多空對照，段落簡潔、標題清楚。
   4. 過舊或已被推翻的內容**收斂或移除**，只保留「仍有效」與「有變化」的重點。
@@ -50,4 +50,3 @@
 ## 5. 收尾（Finalize）
 
 - 每小時分析完就 **commit + push**，並 **merge 回 `master` 分支**（不必等整個 session 結束）。
-- Commit 訊息寫清楚本輪更新重點（例如：補算 ROE 年序、更新 Q2 財報實績等）。
