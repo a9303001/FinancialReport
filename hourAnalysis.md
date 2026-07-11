@@ -18,5 +18,5 @@
 - 若資料缺失，需明確註記缺口與可能原因
 
 ## 收尾（Finalize）
-- 每hkur分析完就 **merge into master branch**（合併回 master 分支）
+- 每hour分析完就 **merge into master branch**（合併回 master 分支）
 不用等到整個session結束才merge
