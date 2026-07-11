@@ -5,7 +5,7 @@
 
 - **每次觸發都開一個「全新 session」執行**（fresh session per run），**不要**綁定同一個持久化 session。
 - **原因**：若綁定固定 session，一旦該 session 消失／逾時／被回收，整條每小時排程就會失效、無法再 hour 執行。改為每次開新 session，可確保排程長期穩定、不中斷。
-- **狀態延續靠檔案、不靠 session**：每次都是空白 session，所以「上一輪的分析結論」一律從 `UHS/hourAnalysis.md` 讀回來延續，而非依賴 session 記憶。
+- **狀態延續靠檔案、不靠 session**：每次都是空白 session，所以「上一輪的分析結論」一律從 `UHS/hourAnalysisResult.md` 讀回來延續，而非依賴 session 記憶。
 - **排程設定對應**：對應的 Routine 應設為 `create_new_session_on_fire = true`（每次 fire 產生新 session），**不要**使用 `persist_session` / 固定 `persistent_session_id`。
 
 ---
@@ -21,7 +21,7 @@
 
 ## 2. 資料來源（Data Sources · 依序）
 
-1. **前一輪的 `UHS/hourAnalysis.md`** — 作為延續與比對的基準（每次先讀回）。
+1. **前一輪的 `UHS/hourAnalysisResult.md`** — 作為延續與比對的基準（每次先讀回）。
 2. **`UHS/` 資料夾**內的財報與輿情檔（10-K、10-Q、GoogleNews、Reddit、SeekingAlpha、X、Xueqiu、Official_IR 等）。
 3. **網路搜尋（web search）** — 取得最新股價、PE、財報、新聞與市場動態，並與本地資料交叉驗證。
 
@@ -37,7 +37,7 @@
 
 ## 4. 輸出規範（Output · 每次都要 optimize + rearrange）
 
-- 分析結果 **update 到** `UHS/hourAnalysis.md`。
+- 分析結果 **update 到** `UHS/hourAnalysisResult.md`。
 - **延續而非重寫**：於檔首新增一段「更新紀錄 + 時間戳記」，比對前一輪結論，補新資訊、修正舊觀點。
 - **每次更新都要同步「優化與重新編排」內容（optimize & rearrange）**，讓 user 一眼看得懂：
   1. 檔首固定放「**最新結論摘要**」（現價、TTM/Forward PE、低 PE 主因 Top 3、目標價、下一催化事件）。
