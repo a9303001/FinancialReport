@@ -1,10 +1,4 @@
-# loop.md — UHS PE 低估分析循環任務
-
-## 執行指令
-- 使用 `/goal`
-
-## 執行頻率
-- 每一小時執行一次（hourly）
+/loop 1hour /goal
 
 ## 任務目標（Goal）
 - 分析為什麼美股 **UHS（Universal Health Services）** 的本益比（PE）< 8，為什麼這麼低？
