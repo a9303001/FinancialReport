@@ -1,4 +1,4 @@
-/loop 1hour /goal
+/loop 1h /goal
 
 
 ## 0. Session 執行方式（最重要 · 每次開全新 session）
