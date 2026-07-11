@@ -1,11 +1,5 @@
 /loop 1hour /goal
 
-# UHS 低本益比逐時分析 — 執行規格（Driver Spec）
-
-> **本檔用途**：這是「每小時自動分析 UHS 為何低本益比」的**任務指令檔**。
-> 排程每小時觸發一次，讀取本檔並依下列規格執行，把結果寫進 `UHS/hourAnalysis.md`。
-
----
 
 ## 0. Session 執行方式（最重要 · 每次開全新 session）
 
