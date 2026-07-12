@@ -4,26 +4,37 @@
 
 ---
 
-## ★ 最新結論摘要（固定置頂 · 更新於 2026-07-12 18:36 台北）
+## ★ 最新結論摘要（固定置頂 · 更新於 2026-07-12 20:11 台北）
 
 | 項目 | 最新數值 | 備註 |
 |---|---|---|
-| **現價** | **$155.57** | 與 7/11 收盤持平（24h +0.24%）；市值 ~$9.42B；52 週區間 $140.08–$246.33，仍處低檔區、YTD 約 -28% |
-| **TTM PE** | **6.60x**（另有來源 6.48x，計算基期略異） | 較自身近十年均值低約 55%；近 3 年均值 12.0x、近 5 年 11.9x；產業均值 ~26x、同業 ~21x |
+| **現價** | **$155.57** | 與 7/11 收盤持平；市值 ~$9.42B；52 週區間 $140.08–$246.33，仍處低檔區、YTD 約 -28% |
+| **TTM PE** | **6.60x**（另有來源 6.43–6.48x，計算基期略異） | 較自身近十年均值低約 55%；近 3 年均值 12.0x、近 5 年 11.9x |
 | **Forward PE** | **6.61x** | 市場幾乎不給成長溢價 |
-| **目標價（均值）** | **~$213–219（約 +37–41%）** | 分析師評等：8 買／9 持有／2 賣（偏兩極）；區間 $165–$310。**續砍：Barclays（7/8）Overweight→Equalweight、PT $216→$179**；RBC $216→$190、Baird $241→$204、TD Cowen $230→$197、Cantor Neutral $194 |
+| **【本輪新增】同業 PE 對照** | **UHS 6.6x ≪ HCA ~13.0–16.7x、THC ~13.4–13.7x、ACHC ~12.8x**；CYH 因虧損 PE 失真（0.8x，EPS 為負） | UHS PE 約為 HCA/THC **一半**，顯示折價**非純產業共性、UHS 個股折價確實存在**（見四.4 缺口更新） |
+| **產業估值基準** | 醫院業 TTM EV/EBITDA **6.60x**（5年區間 6.34–10.66x、中值 8.33x）vs S&P500 **18.23x** | Zacks：醫院業 Rank #107（前 43%）；UHS Zacks Rank #3（Hold 等級） |
+| **目標價（均值）** | **~$213–232（約 +37–49%）** | 分析師評等分歧：來源不一（8 買/9 持/2 賣 或 13 位中 8 買/4 持/1 賣）；區間 $165–$310。**續砍陣營**：Barclays（7/8）OW→EW、PT $179；RBC $190、Baird $204、TD Cowen $197、Cantor $194 |
 | **下一催化（近→遠）** | ① **7/21 CMS-2449-P 意見截止**（AHA 已正式反對）→ ② **7/27 盤後 Q2 財報、7/28 09:00 ET 法說** | Q2 EPS 共識 **$5.66（+5.8% YoY）**；FY26E **$23.47（+8%）**、FY27E **$25.40（+8.2%）** |
+| **【本輪新增】訴訟動態** | **25 州＋DC 於 6/29 對 CMS 提告**（Case 1:26-cv-12962, D.Mass），挑戰 Medicaid 工作要求 IFR 過度收窄「medically frail」豁免定義 | 對 UHS 屬**間接中性偏正向**：若州政府訴訟成功，可延緩/限縮工作要求造成的 Medicaid 除籍潮，緩解主因 1 的下行速度（但短期仍是政策不確定性） |
 
 **低 PE 主因 Top 3（依重要性）**
-1. **政策/給付尾端風險**（Medicaid 工作要求、provider tax 上限、加州補充給付未展期、CMS-2449-P 定向給付新規——CMS 估算全國 10 年省 **$774.8B**（自身宣稱 >$500B）、AHA 已正式發聲反對）— 估值折價的「主敘事」。
+1. **政策/給付尾端風險**（Medicaid 工作要求[現遭 25 州訴訟挑戰]、provider tax 上限[CMS 已於 1/29 定案，10 年聯邦省 $78B]、加州補充給付未展期、CMS-2449-P 定向給付新規[CMS 估算全國 10 年省 $774.8B]）— 估值折價的「主敘事」。
 2. **成長「非線性」疑慮**（獲利呈 V 型：2022–23 探底 → 24–25 強彈；市場定價的是「反彈能否持續」，而非過去獲利品質）。
 3. **治理與資本結構折價**（Miller 家族超級投票權控制；資本回報高度偏向庫藏股、股息僅 ~0.51%）。
 
-> **一句話總結**：UHS 帳面獲利品質其實不差（ROE ~21%、負債比率 52.7%、FCF 殖利率 ~13%），但市場把價格壓在個位數 PE，定價的是**前瞻政策風險 + 成長增速下修**，而非歷史基本面；近期 Barclays 降評與 IPPS 給付調升形成「一空一多」拉鋸，尚未打破區間 → 典型「便宜有原因」與「錯殺」的拉鋸持續中。
+> **一句話總結**：UHS 帳面獲利品質其實不差（ROE ~21%、負債比率 52.7%、FCF 殖利率 ~13%），但市場把價格壓在個位數 PE，定價的是**前瞻政策風險 + 成長增速下修**，而非歷史基本面。**本輪同業 PE 比對證實**：UHS 的折價**不能只用「醫院業整體估值偏低」解釋**——HCA、THC、ACHC 的 PE 都是 UHS 的 2 倍左右，代表市場對 UHS 給了**額外的個股特有折價**（家族治理+成長非線性疑慮權重更高）；同時 25 州對工作要求規則的訴訟，是近期唯一對主因 1 的「政策風險」略偏正向的新變數。
 
 ---
 
 ## 🕒 更新紀錄
+
+### 2026-07-12 20:11（第 7 版 · 補齊同業 PE 相對估值缺口 + 新增 25 州告 CMS 工作要求訴訟 + 確認 provider tax 定案金額）
+- **核心敘事無翻轉**：七大低 PE 主因全部維持有效；股價與 PE 較上次更新（18:36）持平（$155.57、TTM/Fwd PE 6.60/6.61x）。
+- **✅ 補齊上輪最大缺口——同業相對估值比較**：UHS TTM PE **6.6x**，對比 **HCA 13.0–16.7x（各來源不一）、THC 13.4–13.7x、ACHC（BHS 純業者）~12.8x**；CYH 因虧損（TTM EPS -$3.68）PE 失真，改用其他倍數評價。**結論：UHS 折價幅度約為主要同業的一半，證實「個股特有折價」確實存在，而非單純「醫院業整體估值偏低」**。佐證數據：醫院業（Zacks Medical-Hospital）TTM EV/EBITDA 6.60x（5年區間 6.34–10.66x、中值 8.33x）vs S&P 500 18.23x——即便以產業基準看，UHS 仍在區間下緣，同業卻多站在中高段。
+- **✅ 新增政策訴訟動態**：**25 州＋DC 於 2026/6/29 在麻州聯邦地院對 CMS 提告**（Case No. 1:26-cv-12962），主張 CMS 於 6/3 發布的工作要求 IFR（Interim Final Rule）不當收窄「medically frail（醫療脆弱）」豁免定義，要求申請者證明病況「顯著影響」工作/志工/就學能力才可豁免，變相加速 Medicaid 除籍。**此訴訟對 UHS 屬中性偏正向**：若原告州政府取得初步禁制令或最終勝訴，可延緩/縮小工作要求造成的病患除籍規模，降低主因 1（政策風險）的下行速度；但短期內規則是否維持、訴訟時程仍不確定，暫不改變「政策尾端風險」的核心定價邏輯。
+- **✅ 確認 provider tax 規則已定案（非僅提案階段）**：CMS 於 **2026/1/29** 已正式定案「non-uniform provider tax」規則（Federal Register 2/2 刊登，關閉部分州 provider tax loophole），CMS 估算**州 provider tax 年收入規模 $24B**，該規則將使**聯邦支出 10 年減少 $78B**。此為主因 1「provider tax 上限」子項的具體量化補充（區別於仍在意見期的 CMS-2449-P SDP 新規，兩者疊加壓縮州端 Medicaid 財源）。
+- **目標價來源分歧擴大**：Yahoo/stockanalysis 部分來源顯示 13 位分析師均值上修至 **$232.08**（8 買/4 持/1 賣），與 Investing.com 17 位均值 $215.76、MarketBeat $218.63 並存——反映不同資料商取樣時間點/涵蓋分析師不同，非單一「上修」訊號，需持續觀察下次財報前是否收斂。
+- **缺口狀態**：Q2 實績（7/27）仍為最大待驗證點；2020/2021 淨利與 ROE 仍為外部近似值未經本地更早年報核對。
 
 ### 2026-07-12 18:36（第 6 版 · 新增 Barclays 降評 + IPPS +2.4% 給付調升利多 + AHA 正式反對 CMS-2449-P + 補全國影響金額）
 - **核心敘事無翻轉**：七大低 PE 主因全部維持有效；股價與 PE 較上次更新（02:23）幾乎持平（$155.57、TTM/Fwd PE 6.60/6.61x），本輪為「訊號更新」而非「轉折」。
@@ -63,9 +74,10 @@
 ## 一、核心結論 — 為什麼 PE < 8？（七大主因，依重要性排序）
 
 **➤ 主因 1｜Medicaid / 政策風險是最大壓制因子（估值折價「主敘事」）**
-- 2025 年中通過的 Medicaid 法案引入 **工作要求（work requirements）**，並對 **provider tax / directed payment（定向補充給付）設上限**，直接威脅 UHS 主營收與利潤率。
+- 2025 年中通過的 Medicaid 法案引入 **工作要求（work requirements）**，並對 **provider tax / directed payment（定向補充給付）設上限**，直接威脅 UHS 主營收與利潤率。**Provider tax 規則已於 2026/1/29 正式定案**（關閉「non-uniform provider tax」漏洞），CMS 估算州 provider tax 年收入規模 **$24B**，此規則將使聯邦支出 **10 年減少 $78B**——為政策風險提供具體量化錨點。
 - **未納入 2026 指引的加州補充給付計畫（California directed payment）** 若無法展期，是明確的 invalidation 訊號。
 - **CMS 定向給付提案新規（CMS-2449-P）**：將 SDP 給付上限**擴大適用至所有 SDP**，擴張州封頂於 Medicare 費率 **100%**、非擴張州 **110%**；**加州（擴張州）→ 100% 上限**，直接壓縮加州補充給付上行空間。意見截止 **2026/07/21**（Q2 財報前）。
+- **【v7 新增·部分抵銷風險】25 州＋DC 於 2026/6/29 對 CMS 提告**（D.Mass, Case 1:26-cv-12962），挑戰 CMS 於 6/3 發布的工作要求 IFR 過度收窄「medically frail」豁免定義。若州政府取得禁制令或勝訴，可延緩/縮小工作要求導致的病患除籍規模，為政策風險提供罕見的下行速度緩衝，但訴訟結果與時程仍不確定。
 - 市場給的是「政策不確定性折價」：獲利再好，只要給付政策尾端風險未解除，PE 就壓在個位數 → **「營運表現 vs 股價表現脫節」的核心來源。**
 
 **➤ 主因 2｜成長「非線性」疑慮：獲利呈 V 型，市場質疑反彈可持續性**
@@ -98,12 +110,13 @@
 | 面向 | 多方（低估/安全邊際） | 空方（合理折價/價值陷阱） |
 |---|---|---|
 | 估值 | PE 6.6x、FCF 殖利率 ~13%、P/FCF < 10x | 「便宜有原因」，反映政策+成長下修 |
+| **【本輪新增】同業比較** | 產業整體估值偏低（醫院業 EV/EBITDA 6.6x vs S&P 500 18.23x）——「產業共性」提供部分正當性 | **UHS PE 6.6x 仍僅為 HCA(13–17x)/THC(13.4–13.7x)/ACHC(12.8x) 之半**，證實個股特有折價 |
 | 獲利品質 | ROE ~21%、負債比率 52.7%、OPM ~101% | 現金轉換率低、AR 卡現金、短債飆 $7.56 億 |
 | 成長 | 23→25 淨利強彈、Q2 指引 +5.8% | 淨利 V 型，反彈可持續性存疑；手術量走弱 |
 | 護城河 | 精神病床牌照/CON 准入壁壘強 | BHS 高毛利正被政策侵蝕 |
 | 資本回報 | 積極回購（2025 ~$8.99 億）+內部人持股 >16% | 靠縮股撐 EPS、股息微薄（殖利率 ~0.51%）、家族控制折價 |
-| 政策 | **IPPS FY27 提案 +2.4% 給付調升**（7/2 單日 +5.3%）、政策一旦明朗即估值修復 | 加州補充給付、CMS-2449-P 定向給付新規（AHA 正式反對、全國 10 年 -$774.8B）、工作要求為尾端風險 |
-| 目標價 | 均值 ~$213–219（+37–41%）、高估 $310、Simply Wall St 合理價 ~$213 | 續砍：**Barclays $216→$179（降評 OW→EW）**、RBC $190、Baird $204、TD Cowen $197、Cantor $194；低估 $165 |
+| 政策 | **IPPS FY27 提案 +2.4% 給付調升**（7/2 單日 +5.3%）；**25 州＋DC 告 CMS 挑戰工作要求 IFR**，若勝訴可緩解除籍潮 | 加州補充給付、CMS-2449-P 定向給付新規（AHA 正式反對、全國 10 年 -$774.8B）、provider tax 規則已定案（10 年聯邦省 $78B）、工作要求為尾端風險 |
+| 目標價 | 均值 ~$213–232（+37–49%，來源不一）、高估 $310、Simply Wall St 合理價 ~$213 | 續砍：**Barclays $216→$179（降評 OW→EW）**、RBC $190、Baird $204、TD Cowen $197、Cantor $194；低估 $165 |
 
 ---
 
@@ -148,10 +161,23 @@
 - **殖利率**：~0.51%（全年股息 $0.80／每季 $0.20；派息率 ~3.3%）。**5 年殖利率中位數 ≈ 0.5%**（區間 ~0.4%–0.65%，歷年皆極低；股息 5 年 CAGR ~32%，但基數極小，資本回報主軸為庫藏股）。
 - **淨槓桿**：1.70x（由 2.00x 改善；2026/04 信貸修訂 +$9 億額度）。
 
+### 3.5 【v7 新增】同業相對估值比較（回應四.4 長期缺口）
+| 公司 | Ticker | TTM PE | 備註 |
+|---|---|---|---|
+| Universal Health Services | UHS | **6.60x** | 本檔分析標的 |
+| HCA Healthcare | HCA | 13.0x–16.7x（來源不一） | 業界最大營利醫院集團 |
+| Tenet Healthcare | THC | 13.4x–13.7x | 2026E EPS $17.61（+5%），Zacks Rank #3 |
+| Acadia Healthcare（純 BHS 業者） | ACHC | ~12.8x | 2026E EPS $1.50、2027E $1.72（+14.8%）；可對照 UHS BHS 部門估值折價幅度 |
+| Community Health Systems | CYH | 0.8x（**失真**，TTM EPS -$3.68） | 財務壓力大、正處分非核心資產去槓桿；PE 不具比較意義 |
+| 產業基準（Zacks Medical-Hospital） | — | EV/EBITDA 6.60x（5年區間 6.34–10.66x，中值 8.33x） | vs S&P 500 EV/EBITDA 18.23x |
+
+- **結論**：UHS PE（6.6x）僅約 HCA／THC／ACHC 的 **40–50%**，即便產業整體估值遠低於大盤（EV/EBITDA 6.6x vs 18.2x），**UHS 仍站在同業區間最下緣**——證實「個股特有折價」確實存在，而非單純「醫院股整體不受青睞」可完全解釋。此發現強化主因 3（治理/資本結構折價）與主因 2（成長非線性疑慮）在**同業相對**意義下的權重。
+
 ---
 
 ## 四、資料缺口與搜尋狀態（強制回報）
-- ✅ **本輪（v6）補齊**：Barclays 降評與目標價下修（$216→$179）、IPPS FY27 +2.4% 給付調升（正向反例）、AHA 對 CMS-2449-P 正式反對聲明、CMS-2449-P 全國 10 年財政影響金額（-$774.8B）、UHS 2025 Q3 一次性 SDP 認列 $90M 背景。
+- ✅ **本輪（v7）補齊**：**同業相對估值比較**（HCA/THC/ACHC/CYH PE 對照，證實 UHS 個股特有折價）、25 州＋DC 告 CMS 挑戰工作要求 IFR（案號 1:26-cv-12962）、provider tax 規則定案金額確認（10 年聯邦省 $78B，2026/1/29 定案）、產業 EV/EBITDA 基準（6.60x vs S&P 500 18.23x，Zacks）。
+- ✅ 前輪（v6）補齊：Barclays 降評與目標價下修（$216→$179）、IPPS FY27 +2.4% 給付調升（正向反例）、AHA 對 CMS-2449-P 正式反對聲明、CMS-2449-P 全國 10 年財政影響金額（-$774.8B）、UHS 2025 Q3 一次性 SDP 認列 $90M 背景。
 - ✅ 前輪（v5）補齊：分析師目標價分歧擴大、RBC/Baird 目標價下修、CMS-2449-P 條款細節（SDP 上限、禁止 provider-tax 再分配）。
 - ✅ 前輪（v4）補齊：5 年殖利率中位數（~0.5%）、修正股息金額（全年 $0.80）、補 FY27E EPS $25.40。
 - ✅ 前輪（v3）補齊：5 年 ROE 年序（2020–2025）、淨利 V 型（2022–24 以本地 10-K 核對）。
@@ -160,13 +186,15 @@
   1. **Q2 2026 實績**（排定 7/27 盤後，尚未公布）→ 下一大驗證點；財報後即時比對 vs $5.66、指引是否納入加州補充給付。
   2. 2020/2021 淨利、ROE、殖利率為 macrotrends／外部近似值，未由本地更早年報逐年核對（標為近似）。
   3. 7/21 CMS 意見截止後的最終規則方向與市場解讀（規則尚在提案階段）。
-  4. **同業相對估值比較**（HCA、CYH、THC、CHE 等醫院股 PE／目標價變化）尚未系統性補齊，無法明確判斷 UHS 折價是「產業共性」或「個股特有」。
+  4. **25 州告 CMS 工作要求訴訟**（Case 1:26-cv-12962）後續進展（初步禁制令聽證日期尚未查得），需持續追蹤。
+  5. CYH 因虧損 PE 失真，尚未補上 EV/EBITDA 或 P/S 等替代倍數與 UHS 直接比較。
 
 ## 五、下一hour待辦（延續用）
 1. 追蹤 **7/21 CMS 定向給付新規（CMS-2449-P）**意見截止後的市場解讀與 UHS 股價反應（重點：加州 100% 上限的財務衝擊估算）。
 2. 追蹤 7/27 Q2 財報前的共識變化；財報後即時比對實績 vs $5.66、指引是否納入加州補充給付、full-year guidance 是否上修。
-3. 補齊同業（HCA/CYH/THC）PE 相對估值比較，判斷折價屬產業共性或個股特有。
+3. 追蹤 **25 州告 CMS 工作要求訴訟**（1:26-cv-12962）是否取得初步禁制令，評估對主因 1 政策風險的實質影響。
 4. 若有更早年報（2020/2021），逐年核對淨利與 ROE，將近似值升級為實測值。
+5. 補上 CYH 的 EV/EBITDA 或 P/S 倍數，讓「同業比較」表在 PE 失真情況下仍可比較。
 
 ---
 
@@ -193,4 +221,12 @@
 - [Healthcare Dive — Trump administration proposes cracking down on Medicaid state-directed payments](https://www.healthcaredive.com/news/trump-administration-proposes-cracking-down-medicaid-state-directed-payments/820794/)
 - [onhealthcare.tech — CMS-2449-P 全國 10 年財政影響估算（-$774.8B 中間情境）](https://www.onhealthcare.tech/p/cms-2449-p-recasts-medicaid-state-1ed)
 - [fullratio.com — UHS PE Ratio](https://fullratio.com/stocks/nyse-uhs/pe-ratio)
+- 【v7 新增】[Macrotrends — HCA Healthcare PE Ratio](https://www.macrotrends.net/stocks/charts/HCA/hca-healthcare/pe-ratio)
+- 【v7 新增】[Macrotrends — Tenet Healthcare (THC) PE Ratio](https://www.macrotrends.net/stocks/charts/THC/tenet-healthcare/pe-ratio)
+- 【v7 新增】[stockanalysis.com — Community Health Systems (CYH) Statistics & Valuation](https://stockanalysis.com/stocks/cyh/statistics/)
+- 【v7 新增】[ycharts / fullratio — Acadia Healthcare (ACHC) PE Ratio](https://fullratio.com/stocks/nasdaq-achc/pe-ratio)
+- 【v7 新增】[TradingView / Zacks — Hospital Stocks Industry Outlook（EV/EBITDA 6.60x vs S&P500 18.23x；THC/UHS/ACHC/CYH 2026E EPS）](https://www.tradingview.com/news/zacks:90ea027f5094b:0-zacks-industry-outlook-highlights-tenet-healthcare-universal-health-services-acadia-healthcare-and-community-health-systems/)
+- 【v7 新增】[Georgetown CCF — 25 States Sue CMS Over Medicaid Work Requirement "Medically Frail" Exemption（Case 1:26-cv-12962, filed 6/29/2026）](https://ccf.georgetown.edu/2026/07/02/medicaid-work-reporting-requirements-states-ask-a-federal-court-to-protect-medically-frail-individuals-from-cms-overreach/)
+- 【v7 新增】[The Hill — Dozens of States Sue Trump Administration Over 'Frail' Medicaid Work Requirement Exemption](https://thehill.com/policy/healthcare/5946392-lawsuit-trump-medicaid-exemptions/)
+- 【v7 新增】[KFF Health News — Finalized CMS Rule Sets Limits on State Provider Taxes Funding Medicaid（定案 2026/1/29；州 provider tax 年收入 $24B；聯邦 10 年省 $78B）](https://kffhealthnews.org/morning-breakout/finalized-cms-rule-sets-limits-on-state-provider-taxes-funding-medicaid/)
 - 本地檔案：`UHS/UHS_10K_2024-12-31.md`、`UHS/UHS_10K_2025-12-31.md`、`UHS/2026Q1-10-Q.md`、`UHS/202607_*`（GoogleNews / Reddit / SeekingAlpha / Official_IR / X / Xueqiu）
