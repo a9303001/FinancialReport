@@ -4,26 +4,35 @@
 
 ---
 
-## ★ 最新結論摘要（固定置頂 · 更新於 2026-07-12 02:23 台北）
+## ★ 最新結論摘要（固定置頂 · 更新於 2026-07-12 18:36 台北）
 
 | 項目 | 最新數值 | 備註 |
 |---|---|---|
-| **現價** | **$155.57** | 7/11 收；6/26 為 $145.69 → 兩週反彈約 +6.8%；市值 ~$9.42B；仍處近 52 週低檔區、YTD 約 -28% |
-| **TTM PE** | **6.60x** | 較自身近十年均值低約 55%；近 3 年均值 12.0x、近 5 年 11.9x；產業均值 ~26x、同業 ~21x |
+| **現價** | **$155.57** | 與 7/11 收盤持平（24h +0.24%）；市值 ~$9.42B；52 週區間 $140.08–$246.33，仍處低檔區、YTD 約 -28% |
+| **TTM PE** | **6.60x**（另有來源 6.48x，計算基期略異） | 較自身近十年均值低約 55%；近 3 年均值 12.0x、近 5 年 11.9x；產業均值 ~26x、同業 ~21x |
 | **Forward PE** | **6.61x** | 市場幾乎不給成長溢價 |
-| **目標價（均值）** | **~$216–219（約 +39–41%）** | 共識「Buy／Moderate Buy」；區間分歧擴大（低 $165／高 $310）。近期個別下修：**RBC $216→$190、Baird $241→$204**；先前 TD Cowen $230→$197、Cantor Neutral $194 |
-| **下一催化（近→遠）** | ① **7/21 CMS Medicaid 定向給付新規（CMS-2449-P）意見截止（約 10 天內）** → ② **7/27 盤後 Q2 財報、7/28 09:00 ET 法說** | Q2 EPS 共識 **$5.66（+5.8% YoY）**；FY26E **$23.47（+8%）**、FY27E **$25.40（+8.2%）** |
+| **目標價（均值）** | **~$213–219（約 +37–41%）** | 分析師評等：8 買／9 持有／2 賣（偏兩極）；區間 $165–$310。**續砍：Barclays（7/8）Overweight→Equalweight、PT $216→$179**；RBC $216→$190、Baird $241→$204、TD Cowen $230→$197、Cantor Neutral $194 |
+| **下一催化（近→遠）** | ① **7/21 CMS-2449-P 意見截止**（AHA 已正式反對）→ ② **7/27 盤後 Q2 財報、7/28 09:00 ET 法說** | Q2 EPS 共識 **$5.66（+5.8% YoY）**；FY26E **$23.47（+8%）**、FY27E **$25.40（+8.2%）** |
 
 **低 PE 主因 Top 3（依重要性）**
-1. **政策/給付尾端風險**（Medicaid 工作要求、provider tax 上限、加州補充給付未展期、CMS 定向給付新規）— 估值折價的「主敘事」。
+1. **政策/給付尾端風險**（Medicaid 工作要求、provider tax 上限、加州補充給付未展期、CMS-2449-P 定向給付新規——CMS 估算全國 10 年省 **$774.8B**（自身宣稱 >$500B）、AHA 已正式發聲反對）— 估值折價的「主敘事」。
 2. **成長「非線性」疑慮**（獲利呈 V 型：2022–23 探底 → 24–25 強彈；市場定價的是「反彈能否持續」，而非過去獲利品質）。
-3. **治理與資本結構折價**（Miller 家族超級投票權控制；資本回報高度偏向庫藏股、股息僅 0.57%）。
+3. **治理與資本結構折價**（Miller 家族超級投票權控制；資本回報高度偏向庫藏股、股息僅 ~0.51%）。
 
-> **一句話總結**：UHS 帳面獲利品質其實不差（ROE ~21%、負債比率 52.7%、FCF 殖利率 ~13%），但市場把價格壓在個位數 PE，定價的是**前瞻政策風險 + 成長增速下修**，而非歷史基本面 → 典型「便宜有原因」與「錯殺」的拉鋸。
+> **一句話總結**：UHS 帳面獲利品質其實不差（ROE ~21%、負債比率 52.7%、FCF 殖利率 ~13%），但市場把價格壓在個位數 PE，定價的是**前瞻政策風險 + 成長增速下修**，而非歷史基本面；近期 Barclays 降評與 IPPS 給付調升形成「一空一多」拉鋸，尚未打破區間 → 典型「便宜有原因」與「錯殺」的拉鋸持續中。
 
 ---
 
 ## 🕒 更新紀錄
+
+### 2026-07-12 18:36（第 6 版 · 新增 Barclays 降評 + IPPS +2.4% 給付調升利多 + AHA 正式反對 CMS-2449-P + 補全國影響金額）
+- **核心敘事無翻轉**：七大低 PE 主因全部維持有效；股價與 PE 較上次更新（02:23）幾乎持平（$155.57、TTM/Fwd PE 6.60/6.61x），本輪為「訊號更新」而非「轉折」。
+- **✅ 新增空方訊號**：**Barclays（7/8）將 UHS 由 Overweight 降評至 Equalweight，目標價由 $216 下修至 $179**，理由為「有待更明朗的量能、payor mix、Medicaid 削減影響」——與 RBC、Baird、TD Cowen 同屬「維持樂觀但下修目標價/評等」陣營，續強化「成長非線性疑慮」（主因 2）與「政策風險」（主因 1）。
+- **✅ 新增多方訊號（部分抵銷）**：CMS 於 FY2027 IPPS 提案中對醫院提出 **+2.4% 給付費率調升**，帶動 UHS 股價於 7/2 單日 **+5.3%**（stockstory 報導）——顯示「政策」並非全面利空，急症照護（AHS）端的常規給付調整仍偏正向，僅 Medicaid SDP／州補充給付端為主要壓力來源。此為本輪唯一新增的正向催化，已納入多空對照表。
+- **✅ 確認 AHA 正式反對 CMS-2449-P**：AHA 資深副總裁 Ashley Thompson 公開聲明「（給付削減）將限制 Medicaid 病患就醫、迫使醫院縮減服務甚至關閉」，為醫院產業界對此規則的官方立場，強化「政策不確定性折價」的產業一致性（非僅 UHS 個股問題）。
+- **✅ 補全國影響量級**：CMS-2449-P 對 SDP 的全國 10 年財政影響，第三方估算（onhealthcare.tech）中間情境 **-$774.8B（聯邦 -$510.1B／州 -$264.4B）**，區間 $408.4B–$989.7B；CMS 官方口徑「逾 $500B」。此數字說明規則影響範疇是「全產業結構性緊縮」而非個股特有事件，UHS 折價需與同業（HCA、CYH、THC 等）比較是否合理（尚待補齊同業比較——見缺口）。
+- **背景補充（非新事件，供脈絡）**：UHS 於 2025 Q3 曾一次性認列 **$90M** 淨補充給付（來自「近期核准的」Medicaid SDP 計畫），顯示此類給付對單季損益的重要性與波動性，佐證「政策端給付若被壓縮，對獲利的邊際衝擊不小」。
+- **缺口狀態**：Q2 實績（7/27）仍為最大待驗證點；新增缺口——同業（HCA/CYH/THC）PE 相對估值比較，用以判斷 UHS 折價是否為「產業共同現象」或「UHS 特有折價」。
 
 ### 2026-07-12 02:23（第 5 版 · 更新分析師目標價分歧 + 補 RBC/Baird 下修 + 確認 CMS 條款細節）
 - **核心敘事無翻轉**：七大低 PE 主因全部維持有效。市場快照：股價仍為 **$155.57**、TTM/Fwd PE 6.60/6.61x，未見新催化改變定價。
@@ -93,8 +102,8 @@
 | 成長 | 23→25 淨利強彈、Q2 指引 +5.8% | 淨利 V 型，反彈可持續性存疑；手術量走弱 |
 | 護城河 | 精神病床牌照/CON 准入壁壘強 | BHS 高毛利正被政策侵蝕 |
 | 資本回報 | 積極回購（2025 ~$8.99 億）+內部人持股 >16% | 靠縮股撐 EPS、股息微薄（殖利率 ~0.51%）、家族控制折價 |
-| 政策 | 政策一旦明朗即估值修復 | 加州補充給付、CMS 定向給付新規、工作要求為尾端風險 |
-| 目標價 | 均值 ~$216–219（+39%）、高估 $310、Simply Wall St 合理價 ~$213 | 續砍：RBC $190、Baird $204、TD Cowen $197、Cantor $194；低估 $165 |
+| 政策 | **IPPS FY27 提案 +2.4% 給付調升**（7/2 單日 +5.3%）、政策一旦明朗即估值修復 | 加州補充給付、CMS-2449-P 定向給付新規（AHA 正式反對、全國 10 年 -$774.8B）、工作要求為尾端風險 |
+| 目標價 | 均值 ~$213–219（+37–41%）、高估 $310、Simply Wall St 合理價 ~$213 | 續砍：**Barclays $216→$179（降評 OW→EW）**、RBC $190、Baird $204、TD Cowen $197、Cantor $194；低估 $165 |
 
 ---
 
@@ -142,18 +151,22 @@
 ---
 
 ## 四、資料缺口與搜尋狀態（強制回報）
-- ✅ **本輪（v4）補齊**：5 年殖利率中位數（~0.5%）、修正股息金額（全年 $0.80）、細化 CMS-2449-P 條款（加州 100% 上限）、補 FY27E EPS $25.40。
-- ✅ 前輪（v3）補齊：5 年 ROE 年序（2020–2025）、淨利 V 型（2022–24 以本地 10-K 核對）、7/21 CMS 政策催化。
+- ✅ **本輪（v6）補齊**：Barclays 降評與目標價下修（$216→$179）、IPPS FY27 +2.4% 給付調升（正向反例）、AHA 對 CMS-2449-P 正式反對聲明、CMS-2449-P 全國 10 年財政影響金額（-$774.8B）、UHS 2025 Q3 一次性 SDP 認列 $90M 背景。
+- ✅ 前輪（v5）補齊：分析師目標價分歧擴大、RBC/Baird 目標價下修、CMS-2449-P 條款細節（SDP 上限、禁止 provider-tax 再分配）。
+- ✅ 前輪（v4）補齊：5 年殖利率中位數（~0.5%）、修正股息金額（全年 $0.80）、補 FY27E EPS $25.40。
+- ✅ 前輪（v3）補齊：5 年 ROE 年序（2020–2025）、淨利 V 型（2022–24 以本地 10-K 核對）。
 - ✅ 既有：2024 & 2025 10-K、2026 Q1 10-Q（本地）、多平台輿情（6–7 月）、最新股價/PE（web）。
 - ⚠️ **仍缺**：
   1. **Q2 2026 實績**（排定 7/27 盤後，尚未公布）→ 下一大驗證點；財報後即時比對 vs $5.66、指引是否納入加州補充給付。
   2. 2020/2021 淨利、ROE、殖利率為 macrotrends／外部近似值，未由本地更早年報逐年核對（標為近似）。
   3. 7/21 CMS 意見截止後的最終規則方向與市場解讀（規則尚在提案階段）。
+  4. **同業相對估值比較**（HCA、CYH、THC、CHE 等醫院股 PE／目標價變化）尚未系統性補齊，無法明確判斷 UHS 折價是「產業共性」或「個股特有」。
 
 ## 五、下一hour待辦（延續用）
 1. 追蹤 **7/21 CMS 定向給付新規（CMS-2449-P）**意見截止後的市場解讀與 UHS 股價反應（重點：加州 100% 上限的財務衝擊估算）。
 2. 追蹤 7/27 Q2 財報前的共識變化；財報後即時比對實績 vs $5.66、指引是否納入加州補充給付、full-year guidance 是否上修。
-3. 若有更早年報（2020/2021），逐年核對淨利與 ROE，將近似值升級為實測值。
+3. 補齊同業（HCA/CYH/THC）PE 相對估值比較，判斷折價屬產業共性或個股特有。
+4. 若有更早年報（2020/2021），逐年核對淨利與 ROE，將近似值升級為實測值。
 
 ---
 
@@ -173,4 +186,11 @@
 - [Investing.com — UHS Consensus（17 位；均值 $215.76、高 $310、低 $165）](https://www.investing.com/equities/universal-health-services-consensus-estimates)
 - [Federal Register — CMS-2449-P（2026/05/22 刊登，意見截止 7/21）](https://www.federalregister.gov/documents/2026/05/22/2026-10292/medicaid-program-medicaid-managed-care-state-directed-payments-and-medicaid-fee-for-service-targeted)
 - [Holland & Knight — CMS 提案將 SDP 封頂於 Medicare 費率](https://www.hklaw.com/en/insights/publications/2026/06/hr-1-and-beyond-understanding-cms-proposal-to-cap-medicaid)
+- [StreetInsider — Barclays Downgrades UHS to Equalweight（7/8，PT $216→$179）](https://www.streetinsider.com/Downgrades/Barclays+Downgrades+Universal+Health+Services+(UHS)+to+Equalweight/26743843.html)
+- [StockTitan — UHS Q2 2026 Earnings Date（7/27 盤後、7/28 法說）](https://www.stocktitan.net/news/UHS/universal-health-services-inc-announces-date-for-second-quarter-2026-d0wuueapq0f2.html)
+- [FinancialContent/StockStory — Why UHS Stock Is Up Today（7/2，IPPS +2.4% 給付調升 +5.3%）](https://markets.financialcontent.com/stocks/article/stockstory-2026-7-2-why-universal-health-services-uhs-stock-is-up-today)
+- [AHA News — CMS Issues Proposed Rule on Medicaid Supplemental Payments（AHA 正式回應 CMS-2449-P）](https://www.aha.org/news/headline/2026-05-20-cms-issues-proposed-rule-medicaid-supplemental-payments)
+- [Healthcare Dive — Trump administration proposes cracking down on Medicaid state-directed payments](https://www.healthcaredive.com/news/trump-administration-proposes-cracking-down-medicaid-state-directed-payments/820794/)
+- [onhealthcare.tech — CMS-2449-P 全國 10 年財政影響估算（-$774.8B 中間情境）](https://www.onhealthcare.tech/p/cms-2449-p-recasts-medicaid-state-1ed)
+- [fullratio.com — UHS PE Ratio](https://fullratio.com/stocks/nyse-uhs/pe-ratio)
 - 本地檔案：`UHS/UHS_10K_2024-12-31.md`、`UHS/UHS_10K_2025-12-31.md`、`UHS/2026Q1-10-Q.md`、`UHS/202607_*`（GoogleNews / Reddit / SeekingAlpha / Official_IR / X / Xueqiu）
