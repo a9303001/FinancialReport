@@ -1,9 +1,6 @@
-/schedule 3h /goal
+/goal
 
-## 0. Create routines
-Name: HourAnalysis
-Model: latest opus
----
+使用latest OPUS
 
 ## 1. 任務目標（Goal）
 
