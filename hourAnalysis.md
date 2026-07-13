@@ -39,6 +39,7 @@
   4. 過舊或已被推翻的內容**收斂或移除**，只保留「仍有效」與「有變化」的重點。
 - 每次都要重新整理 hourAnalysisResult.md 內容，不要有流水帳
 - hourAnalysisResult.md要讓user看的懂
+- hourAnalysisResult.md不需要record每個版本的history
 ### 4.1 **每股化** 
 - 所有提到的財務數字都要嘗試**每股化** ，讓我可以做每股分析
 
