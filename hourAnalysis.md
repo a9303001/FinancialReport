@@ -49,4 +49,4 @@
 
 ## 5. 收尾（Finalize）
 
-- 每小時分析完就 **commit + push**，並 **merge 回 `master` 分支**（不必等整個 session 結束）。
+- 每次分析完就 **commit + push**，並 **merge 回 `master` 分支**（不必等整個 session 結束）。
