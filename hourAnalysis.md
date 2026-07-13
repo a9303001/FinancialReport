@@ -1,14 +1,14 @@
 /goal
 
-使用latest OPUS
+使用latest claude OPUS model
 
 ## 1. 任務目標（Goal）
 
-- 分析為什麼美股 **UHS（Universal Health Services, NYSE: UHS）** 的本益比（PE）長期 **< 8**、為什麼這麼低。
+- 分析**03606福耀玻璃**，分析03606福耀玻璃適不適合拿來投資
 - 深入探討低本益比背後的成因，至少涵蓋：
   - 獲利品質、成長性疑慮、產業與市場情緒
   - 法遵／訴訟、政策風險（Medicaid、加州補充給付等）、資本結構與治理
- - 分析結果 **update 到** `UHS/hourAnalysisResult.md`。
+ - 分析結果 **update 到** `03606福耀玻璃/hourAnalysisResult.md`。
 
 
 ---
