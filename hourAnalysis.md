@@ -48,14 +48,14 @@
 ---
 
 ## 4. 輸出 hourAnalysisResult.md 規範（Output · 每次都要 optimize + rearrange）
-- **延續而非重寫**：於檔首新增一段「更新紀錄 + 時間戳記」，比對前一輪結論，補新資訊、修正舊觀點。
+- **延續而非重寫**：於檔尾新增一段「更新紀錄 + 時間戳記」，比對前一輪結論，補新資訊、修正舊觀點。
 - **每次更新都要同步「優化與重新編排」內容（optimize & rearrange）**，讓 user 一眼看得懂：
   1. 檔首固定放「**最新結論摘要**」（含關鍵數據表格）
   2. 相同主題**合併去重**，不要讓同一觀點散落多段、也不要無限堆疊舊內容
   3. 用**表格／條列**呈現數據與多空對照，段落簡潔、標題清楚
   4. 過舊或已被推翻的內容**收斂或移除**，只保留「仍有效」與「有變化」的重點
 - 每次都要重新整理 hourAnalysisResult.md 內容，不要有流水帳
-- hourAnalysisResult.md 要讓 user 看得懂
+- hourAnalysisResult.md 要讓 user 看得懂，簡單易懂
 - hourAnalysisResult.md 不需要 record 每個版本的 history
 
 ### 4.1 每股化
