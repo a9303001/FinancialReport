@@ -54,9 +54,10 @@
   2. 相同主題**合併去重**，不要讓同一觀點散落多段、也不要無限堆疊舊內容
   3. 用**表格／條列**呈現數據與多空對照，段落簡潔、標題清楚
   4. 過舊或已被推翻的內容**收斂或移除**，只保留「仍有效」與「有變化」的重點
-- 每次都要重新整理 hourAnalysisResult.md 內容，不要有流水帳
-- hourAnalysisResult.md 要讓 user 看得懂，簡單易懂
-- hourAnalysisResult.md 不需要 record 每個版本的 history
+5. 每次都要重新整理 hourAnalysisResult.md 內容，不要有流水帳
+6.  hourAnalysisResult.md 要讓 user 看得懂，簡單易懂
+7. hourAnalysisResult.md 不需要 record 每個版本的 history
+8. 思考下一次想要分析的項目
 
 ### 4.1 每股化
 - 所有提到的財務數字都要嘗試**每股化**，讓我可以做每股分析
