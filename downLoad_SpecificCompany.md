@@ -1,4 +1,4 @@
 /goal
-03606福耀玻璃，hk
+    9022JR東海，JP
 
 執行CollectsentimentAndReports skill
