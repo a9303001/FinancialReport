@@ -108,6 +108,7 @@ graph TD
 | 網站 | 網域 | 為什麼內建工具常抓不到 |
 | :--- | :--- | :--- |
 | 雪球 (Xueqiu) | `xueqiu.com` | 內容由前端 JS 動態載入，直接抓常只拿到空白外殼（實戰 SOP 見 §2.7） |
+| 股市爆料同學會 (CMoney) | `cmoney.tw` | 頁面是 SSR 殼，`__NUXT__` 內 `articles` 為空陣列，貼文全由前端打 API 載入 → **不要爬頁面，直接打官方 API，SOP 見 §2.8** |
 | MOPS 台股進階查詢頁 | `mops.twse.com.tw` | 查詢頁需 JS 互動/POST 才出結果，直接 GET 常抓不到清單 |
 | moomoo 社區/新聞 | `moomoo.com` | 正文常由 JS 載入，直接抓常只拿到標題與版型 |
 | 東方財富股吧 | `guba.eastmoney.com` | 部分列表頁需 JS 分頁載入，抓不到完整貼文 |
@@ -159,6 +160,61 @@ graph TD
 2. 若 brightdata 失敗，再依序 `firecrawl_scrape` → `apify` → `playwright`。
 3. 若頁面有深度專欄連結（如「一文梳理…」），可再用 brightdata 抓該文章頁補充論述。
 4. **只記錄真實存在於頁面上的貼文、連結、時間戳**，不可補充訓練資料知識（見 §5.0 防幻覺）。
+
+### 2.8 實戰範例：股市爆料同學會（CMoney）API 抓取 SOP（2026-07-19 驗證有效）
+
+> **結論先講：不要爬網頁、不要開瀏覽器，直接打 CMoney 官方 API。** 兩支 curl 就能拿到某股票討論區的「全部歷史貼文＋留言」的乾淨 JSON，比任何 MCP 爬蟲都快且完整。此 SOP 於 2026-07-19 在 2249 湧盛實測：一次抓下 294 篇貼文＋567 則留言（2021~2026 全部歷史）。
+
+**背景**：`https://www.cmoney.tw/forum/stock/{股票代號}`（`api.cmoney.tw/forum/...` 是同一頁）是 Nuxt SSR 殼，HTML 裡只有標題與股價 meta，貼文列表是空的（§2.3）。前端實際是先拿「訪客 token」再打 ForumOcean API，我們直接模仿它。
+
+**步驟 1：取得訪客 token（免帳號、免登入）**
+
+```bash
+curl -s -X POST "https://www.cmoney.tw/api/identity/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=guest&client_id=cmstockcommunity-web"
+# 回傳 JSON，取其中的 access_token（JWT，效期約 24 小時）
+```
+
+**步驟 2：抓貼文列表（cursor 分頁）**
+
+```bash
+curl -s "https://www.cmoney.tw/api/mach/api/Article/Stocks/{股票代號}/AllLatest?fetchCount=20" \
+  -H "Authorization: Bearer {access_token}" \
+  -H "X-Version: 3.0"
+```
+
+- 回傳 `{ "articles": [...], "hasNext": true/false, "nextCursor": <數字> }`。
+- **分頁方式**：下一頁帶 `&cursor={nextCursor}`，直到 `hasNext=false`。**注意：`skipCount`/`offset` 在這支 API 無效**（會一直回同一頁，曾因此誤以為抓到 300 篇其實是同 20 篇重複——務必用 `cursor` 並以文章 `id` 去重驗證）。
+- 型別段（`AllLatest` 位置）可用：`AllLatest`（最新，抓輿情用這個）、`AllHottest`（最熱）、`news`（相關新聞）。填錯會回 400 `不支援的類型: xxx`。
+- 每篇文章重點欄位：`id`（文章 ID）、`content.text`（內文）、`content.multiMedia`（附圖）、`createTime`（**毫秒** timestamp）、`commentCount`、`emojiCount`（like/dislike/laugh…）。
+- 文章原文網址 = `https://www.cmoney.tw/forum/article/{id}`（寫報告引用來源時用）。
+
+**步驟 3：抓留言（逐篇，選擇性）**
+
+```bash
+curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50&offset=0" \
+  -H "Authorization: Bearer {access_token}" \
+  -H "X-Version: 2.0"
+```
+
+- **注意版本不同：留言 API 用 `X-Version: 2.0`**（3.0 會回 UnsupportedApiVersion）；參數名是 `fetch` / `offset`（不是 fetchCount）。
+- 只對 `commentCount > 0` 的文章呼叫即可，省請求數。
+
+**常見錯誤對照（照著修，不要換工具重試）**：
+
+| 症狀 | 原因 → 修法 |
+| :--- | :--- |
+| 回 HTML 而不是 JSON | 打錯路徑。正確 base 是 `www.cmoney.tw/api/mach/api/...`（不是 `/mach/api/...` 也不是 `forumocean.cmoney.tw`） |
+| 400 `UnsupportedApiVersion` | 缺 `X-Version` header，或版本錯（文章列表 3.0、留言 2.0） |
+| 401（無 body） | 缺 `Authorization: Bearer`，或 token 過期 → 回步驟 1 重拿 |
+| 400 `不支援的類型: xxx` | 型別段拼錯 → 用 `AllLatest` / `AllHottest` / `news` |
+| 每頁內容都一樣 | 用了 `skipCount` 分頁 → 改用 `cursor`，並以文章 `id` 去重 |
+
+**其他注意**：
+- 請求間隔 0.3~0.5 秒即可，未見封鎖；仍遵守 §2.6 頻率原則。
+- 美股同學會有對應端點 `.../api/Article/USStocks/{代號}/{型別}`（同一套 token 與 header，未逐一驗證型別值）。
+- 抓回的是結構化 JSON，直接依 §5.3 範本整理成 Markdown；`createTime` 記得除以 1000 再轉日期。
 
 ---
 
@@ -263,7 +319,7 @@ graph TD
 ### 5.1 搜尋來源 (Sources)
 > 標 ⚠️ 者為 JS 動態渲染或會封鎖爬蟲的網站，抓不到時一律照 **§2 通用抓取規則** 換 MCP，不要當成「這站沒資料」而略過。
 
-- **台股**：鉅亨網, MoneyDJ, 經濟日報, PTT 股市板, Dcard 理財, 股市爆料同學會, 財報狗社群, etc...
+- **台股**：鉅亨網, MoneyDJ, 經濟日報, PTT 股市板, Dcard 理財, 股市爆料同學會（✅ 有官方 API，直接照 §2.8 SOP 打 API，不要爬網頁）, 財報狗社群, etc...
 - **美股**：Yahoo Finance, Bloomberg（⚠️ 付費牆，見 §2.4）, Reuters（⚠️ 封鎖爬蟲，見 §2.4）, X (Twitter), Reddit（⚠️ 封鎖爬蟲，見 §2.4）, Seeking Alpha, etc...
 - **港股**：香港經濟日報, 雪球（⚠️ `xueqiu.com`，只抓討論、不抓財報，SOP 見 §2.7）, moomoo 社區（⚠️ JS 渲染）, 東方財富股吧（⚠️ JS 渲染）, LIHKG, etc...
 - **日股**：日本經濟新聞, Yahoo Finance JP 掲示板, note（`https://note.com/search?q={股票代號}`）, 5ch, X (Twitter), etc...
