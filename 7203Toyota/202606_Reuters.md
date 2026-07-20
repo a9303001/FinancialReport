@@ -35,6 +35,7 @@
 - **核心觀點與論述**: > "Toyota raised its tender offer to 18,800 yen ($118.50) per share... Elliott Investment Management rejected the revised offer, calling the bid inadequate."
 - **關鍵要點與分析**:
  - Toyota 集團主導豐田自動織機（Toyota Industries）私有化，要約價提高至每股 ¥18,800（較初始提案 +15%）。
+ - **【附註｜2026-07-20，以 hourAnalysisResult.md §3.8 為準】** ¥18,800 為中間階段報價；最終要約價再上修至 **¥20,600/股**（2026/3/2 與 Elliott 協議後），要約 2026/3/24 完成、2026/6/1 下市。
  - 維權基金 Elliott 拒絕修訂後要約，稱對價不足並呼籲其他股東反對，少數股東出現抗爭。
  - 股份合併 6/3 生效、預計 6/1 下市，資本準備金削減 6/15 生效。此交易與 Toyota FY2026 高達約 ¥3.66 兆的自社股買回/庫藏相關，牽動集團治理與資本配置。
 

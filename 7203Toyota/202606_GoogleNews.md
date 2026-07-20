@@ -183,6 +183,7 @@
  - 當日因日圓升值（円高）續跌，市場聚焦 FX 對獲利影響。
 
 ### 🎯 豐田自動織機私有化 TOB：要約提至每股 ¥18,800，Elliott 反對
+> **【附註｜2026-07-20，以 hourAnalysisResult.md §3.8 為準】** ¥18,800 為中間階段報價；最終要約價再上修至 **¥20,600/股**（2026/3/2 與 Elliott 協議後），要約 2026/3/24 完成、Toyota Industries 已於 2026/6/1 下市。
 - **來源連結**: [Globe and Mail](https://www.theglobeandmail.com/investing/markets/stocks/TYIDF/pressreleases/652726/toyota-industries-moves-closer-to-privatization-as-tender-offer-period-extended/) / [TipRanks](https://www.tipranks.com/news/company-announcements/toyota-industries-to-pursue-share-consolidation-and-delisting-in-group-led-take-private-deal)
 - **發布時間**: 2026-06-01 前後
 - **核心觀點與論述**: > "Toyota raised its tender offer to 18,800 yen ($118.50) per share... Elliott rejected the revised offer, calling the bid inadequate."

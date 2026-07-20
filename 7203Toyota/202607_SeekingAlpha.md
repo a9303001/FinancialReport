@@ -19,6 +19,7 @@
   > "Toyota Motor (TM) raised the buyout offer to minority shareholders of Toyota Industries (TYIDY) (TYIDF) after investor pushback to 18,800..."
 - **關鍵要點與分析**:
   - 事件：Toyota 因投資人反彈，將對 Toyota Industries（豐田自動織機，7201）少數股東的收購報價上調至 18,800 日圓。
+  - **【附註｜2026-07-20，以 hourAnalysisResult.md §3.8 為準】** ¥18,800 為中間階段報價；最終要約價再上修至 **¥20,600/股**（2026/3/2 與 Elliott 達成協議後），要約 2026/3/24 完成、Toyota Industries 已於 2026/6/1 下市。
   - 反映集團內交叉持股整併/公司治理議題，市場關注對現金流與集團結構的影響。
 
 ### 🎯 主題二：財報前瞻——油價、日圓、新領導層為 Q3 報告前的風險
