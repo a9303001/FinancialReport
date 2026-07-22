@@ -291,7 +291,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 > **【執行邏輯】逐源抓取、立即存檔**
 > 1. 範圍：**過去三個月內**。
-> 2. 爬完一個網站，立刻寫入檔案（`{YYYYMM}_{SOURCE_ID}.md`）。**【重要：附加模式 Append】** 若該檔已有「輿情與新聞」，請補充新資料進去，**不要砍掉或覆蓋舊內容**。
+> 2. 爬完一個網站，立刻寫入檔案（`{YYYY}_{SOURCE_ID}.md`，**整年一份、不再按月分檔**）。**【重要：附加模式 Append】** 若該檔已有「輿情與新聞」，請補充新資料進去，**不要砍掉或覆蓋舊內容**（同一年、同一來源全部累加到同一個檔）。
 > 3. **絕對不要**等所有網站爬完才存檔。
 > 4. **嚴禁**訪問 `macrotrends.net` 和 GitHub `a9303001/FinancialReport`。
 > 5. **抓取遇阻**（空白、被擋、JS 渲染）一律回到 **§2 通用抓取規則** 處理，禁止直接跳過用 WebSearch 摘要打發。
@@ -332,10 +332,10 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 5. **每筆記錄必須有真實來源佐證**：必須能在爬取結果中找到對應原文，才能寫入檔案。若爬取結果沒有，就不寫、不補充。
 
 ### 5.3 Markdown 存檔範本
-檔名：`FinancialReport/{COMPANY_FOLDER_NAME}/{YYYYMM}_{SOURCE_ID}.md`
+檔名：`FinancialReport/{COMPANY_FOLDER_NAME}/{YYYY}_{SOURCE_ID}.md`（**日期只到「年」，整年一份**；例：`2026_PTT.md`）
 
 ```markdown
-# [{代碼} {公司名稱}] 輿情討論整理 - [{來源網站}] ({YYYY}/{MM})
+# [{代碼} {公司名稱}] 輿情討論整理 - [{來源網站}] ({YYYY})
 
 - **分析時間**：YYYY-MM-DD
 - **資料範圍**：過去三個月
@@ -361,7 +361,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 若 §2 整條工具鏈均失敗，**必須**用以下格式誠實記錄，禁止改用 AI 生成內容填充：
 
 ```markdown
-# [{代碼} {公司名稱}] 輿情討論整理 - [{來源網站}] ({YYYY}/{MM})
+# [{代碼} {公司名稱}] 輿情討論整理 - [{來源網站}] ({YYYY})
 
 - **分析時間**：YYYY-MM-DD
 - **抓取結果**：❌ 失敗
@@ -409,7 +409,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 | 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
 | :--- | :--- | :--- | :--- |
 | `2881富邦金` | 財報狗 | `2881_AnnualReport_2024.pdf` | 下載成功 |
-| `2881富邦金` | PTT | `202606_PTT.md` | 更新成功 |
+| `2881富邦金` | PTT | `2026_PTT.md` | 更新成功 |
 
 ## 2. 失敗或被擋網站
 - **來源**: [網站名稱](URL)
