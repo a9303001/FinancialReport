@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "permissions": {
+    "allow": [
+      "mcp__brightdata",
+      "mcp__firecrawl-mcp",
+      "mcp__Apify",
+      "mcp__playwright",
+      "mcp__github",
+      "WebSearch",
+      "WebFetch"
+    ]
+  }
+}
