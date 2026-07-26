@@ -5,7 +5,6 @@
 ## 1. 任務目標（Gol）
 
 > **載入並執行 `StockAnalysis` Skill**，傳入以下參數：
-`COMPANY_TICKER`: `3445.JP` and `688432.SH`
  `COMPANY_NAME` : `3445 RS科技 及其中國子公司有研硅（688432.SH)` 
  `MARKET` : `日股and 中股` 
  `COMPANY_FOLDER` : `3445RS` |

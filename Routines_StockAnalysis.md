@@ -24,7 +24,6 @@
 
 | 參數 | 來源 |
 | :--- | :--- |
-| `COMPANY_TICKER` | 輪替表「代碼/公司」欄 |
 | `COMPANY_NAME` | 輪替表「代碼/公司」欄 |
 | `MARKET` | 輪替表「市場」欄 |
 | `COMPANY_FOLDER` | 對應 `FinancialReport/` 底下的公司資料夾名稱 |

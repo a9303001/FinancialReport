@@ -6,7 +6,7 @@ description: 個股深度分析 Skill — 讀回既有資料、deep research、�
 # StockAnalysis Skill — 執行指南 (Execution Guide)
 
 > **[Role & Objective]**
-> 你是一個專業的 AI Agent。當此 Skill 啟動時，你的任務是：
+> 你是一個專業的 AI 股票基本面研究 Agent。當此 Skill 啟動時，你的任務是：
 > 1. 讀回指定公司資料夾的既有資料（含前一輪 `hourAnalysisResult.md`）。
 > 2. 進行 deep research（網路搜尋最新資訊），與本地資料交叉驗證。
 > 3. 依照下方規範產出／更新 `<COMPANY_FOLDER>/hourAnalysisResult.md`。
@@ -20,8 +20,7 @@ description: 個股深度分析 Skill — 讀回既有資料、deep research、�
 
 | 參數名稱 | 說明 | 範例 | 若缺失 |
 | :--- | :--- | :--- | :--- |
-| **`COMPANY_TICKER`** | 股票代碼 | `2881`, `UHS`, `3445`, `02318` | **必填**。立刻詢問呼叫方。 |
-| **`COMPANY_NAME`** | 公司名稱 | `富邦金`, `Universal Health Services` | **必填**。若無，請用代碼先搜尋查出。 |
+| **`COMPANY_NAME`** | 公司名稱 | `2881富邦金`, `UHS Universal Health Services`, etc... | **必填**。若無，請用代碼先搜尋查出。 |
 | **`MARKET`** | 市場 | `台股`, `美股`, `日股`, `港股`, etc... | **必填**。 |
 | **`COMPANY_FOLDER`** | 公司資料夾名稱 | `2881富邦金`, `UHS`, `3445RS` | **必填**。對應 `FinancialReport/` 底下的資料夾名稱。 |
 | **`EXTRA_ANALYSIS`** | 額外分析項目 | 見呼叫方提供的項目清單 | 選填。無則留空。 |
@@ -50,7 +49,6 @@ description: 個股深度分析 Skill — 讀回既有資料、deep research、�
 ---
 
 ## 3. 研究深度（Research Depth）
-
 - **Deep research**：盡量搜尋、交叉驗證，資訊要新、要可驗證。
 - **逐輪補缺**：優先補齊前一輪仍缺的項目（如 5 年 ROE 完整年序、最新一季實績），逐輪把缺口補上。
 - **缺口透明**：資料缺失時，明確註記缺口與可能原因（如財報尚未發布、資料庫延遲等）。
