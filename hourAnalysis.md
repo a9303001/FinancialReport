@@ -2,7 +2,7 @@
 
 使用latest claude OPUS model 
 
-# hourAnalysis — 手動個股分析
+# hourAnalysis — 個股分析
 
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
 
