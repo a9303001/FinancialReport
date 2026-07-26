@@ -1,37 +1,26 @@
 /goal
 使用latest claude OPUS model 
 
-# Routines
-— 每日輪替執行排程 (Daily Rotation Schedule)
+# Routines — 每日輪替執行排程 (Daily Rotation Schedule)
 
-## 1. 任務定義與執行流程（Task Definition & Workflow）
-
->  每次觸發時，依下列步驟執行；**只有 Step 3 命中才有後續動作**。
+> 每次觸發時，依下列步驟執行；**只有 Step 3 命中才有後續動作**。
 
 | Step | 動作 |
 | :-: | :-- |
 | 1 | 取得今日的「日」（Day of Month，1~31）。 |
-| 2 | 對照下方 `## 每日輪替表` 的「執行日期」，鎖定今日對應的 `<COMPANY_FOLDER>`（代碼/公司）。 |
-| 3 | **無對應公司** → 直接 skip 結束，不做任何事；**有對應公司** → 進入 Step 4。 |
-| 4 | 從輪替表中取出該公司的所有參數（代碼、名稱、市場、COMPANY_FOLDER、額外分析項目、是否為 REIT），呼叫 `StockAnalysis` Skill 執行分析。 |
+| 2 | 對照下方 `## 每日輪替表` 的「執行日期」，鎖定今日對應的公司。 |
+| 3 | **無對應公司** → 直接 skip 結束；**有對應公司** → 進入 Step 4。 |
+| 4 | 從輪替表取出參數，**載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`）。 |
 | 5 | 確認 `<COMPANY_FOLDER>/hourAnalysisResult.md` 已更新 → 在對話中回覆分析報告。 |
 
----
+### Step 4 參數對照
 
-## 2. 執行分析（Invoke StockAnalysis Skill）
-
-> **載入並執行 `StockAnalysis` Skill**（位於 `.agents/skills/StockAnalysis/SKILL.md`），傳入從輪替表中取得的參數：
-
-| 參數 | 來源 |
+| Skill 參數 | 來源 |
 | :--- | :--- |
 | `COMPANY_NAME` | 輪替表「代碼/公司」欄 |
 | `MARKET` | 輪替表「市場」欄 |
 | `COMPANY_FOLDER` | 對應 `FinancialReport/` 底下的公司資料夾名稱 |
 | `EXTRA_ANALYSIS` | 輪替表「額外分析項目」欄 |
-| `IS_REIT` | 輪替表中標記為 REIT 的標的設為 `true`，其餘 `false` |
-
----
-
 
 ---
 ## 每日輪替表 (Rotation Table)
