@@ -237,6 +237,7 @@
   1. 收購 Sinqia 與 Dimensa 帶來的 D&A 攤銷、債務與整合成本對 GAAP EPS 的衝擊
   2. 主要客戶 Popular 續約折扣與 2026 年資安集體訴訟事件對 GAAP EPS 的影響
 
+
 ---
 
 - 執行日期: 20
