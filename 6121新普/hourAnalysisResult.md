@@ -269,7 +269,7 @@ $$\begin{aligned}
 | **BBU** | Backup Battery Unit（備援電池模組） | 安裝於伺服器機櫃之備用電池，斷電時毫秒級反應持續供電以保存資料。 |
 | **CSP** | Cloud Service Provider（雲端服務供應商） | 指 AWS、Microsoft Azure、Google Cloud、Meta 等大型資料中心買家。 |
 | **OPM** | Operating Profit Margin Ratio（營運效率指標） | 自定義公式 `(營業利益率 ÷ 稅前淨利率) × 100%`，衡量獲利來自本業的純度。 |
-| **ROE** | Return on Equity（股東權益報酬率） | 衡量公司運用股東資金創造利利潤效率之指標。 |
+| **ROE** | Return on Equity（股東權益報酬率） | 衡量公司運用股東資金創造利潤效率之指標。 |
 | **CAGR** | Compound Annual Growth Rate（年化複合成長率）| 衡量一段期間內（如 5 年、10 年）平均每年複合成長之百分比。 |
 | **HVDC** | High Voltage Direct Current（高壓直流電） | 新一代 AI 伺服器（400V/800V）所採用之高效能供電架構。 |
 | **1260H 清單** | Section 1260H of NDAA | 美國國防部公布之中國軍工企業名單，禁止美國實體採購其電池相關產品。 |
