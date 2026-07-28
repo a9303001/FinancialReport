@@ -312,7 +312,7 @@
 - 執行日期: 27
 - `COMPANY_NAME`：6902 Denso
 - `MARKET`：日股
-- `COMPANY_FOLDER`：6902Denso（尚未建立，首次執行時建立）
+- `COMPANY_FOLDER`：6902Denso
 - `EXTRA_ANALYSIS`：無
 
 ---
