@@ -1,9 +1,6 @@
 /goal
-
 使用latest claude OPUS model 
-
 # hourAnalysis — 個股分析
-
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
 - `COMPANY_NAME`：8433 弘帆
 - `MARKET`：台股
