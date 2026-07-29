@@ -184,11 +184,10 @@
 - `MARKET`：台股
 - `COMPANY_FOLDER`：6121新普
 - `EXTRA_ANALYSIS`：
-  1. 有相關 AI 議題利多嗎？
-  2. 有什麼 AI 產品嗎？
-  3. 未來三年 EPS 預估
-  4. 筆電電池多久換一次
-  5. AES-KY佔EPS比重?
+  1. 未來三年 EPS 預估
+  2. 筆電電池多久換一次
+  2.1. OEM電池和AM電池各佔新普EPS多少?毛利率各是多少?
+  3. AES-KY佔EPS比重?
 
 
 ---
