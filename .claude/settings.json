@@ -3,10 +3,15 @@
   "permissions": {
     "allow": [
       "mcp__brightdata",
+      "mcp__brightdata__*",
       "mcp__firecrawl-mcp",
+      "mcp__firecrawl-mcp__*",
       "mcp__Apify",
+      "mcp__Apify__*",
       "mcp__playwright",
+      "mcp__playwright__*",
       "mcp__github",
+      "mcp__github__*",
       "WebSearch",
       "WebFetch"
     ]
