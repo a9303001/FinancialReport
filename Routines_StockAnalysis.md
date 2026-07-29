@@ -185,8 +185,7 @@
 - `COMPANY_FOLDER`：6121新普
 - `EXTRA_ANALYSIS`：
   1. 未來三年 EPS 預估
-  2. 筆電電池多久換一次
-  2.1. OEM電池和AM電池各佔新普EPS多少?毛利率各是多少?
+  2. 未來三年世界筆電預估銷售量
   3. AES-KY佔EPS比重?
 
 
