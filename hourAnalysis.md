@@ -1,19 +1,30 @@
 /goal
 使用latest claude OPUS model 
-# hourAnalysis — 個股分析
+#  個股分析1
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-- `COMPANY_NAME`：8433 弘帆
-- `MARKET`：台股
-- `COMPANY_FOLDER`：8433弘帆
+  - `COMPANY_NAME`：01426 春泉產業信託 REIT
+- `MARKET`：港股
+- `COMPANY_FOLDER`：01426春泉Reit
 - `EXTRA_ANALYSIS`：
-  1. 未來 3 年 EPS 預估
-  2. US 關稅對 EPS 影響
-  3. 產線轉移到東南亞進度？效益？
-  4. 越南輸美關稅對 EPS 影響
-  5. 弘帆前 5 大客戶是誰？營收集中度多少？
-  6. 髮飾配件 vs 小家電/電子代工之營收占比與毛利率差異？
-  7. 新台幣每升值 1% 對 EPS 影響多少？（匯率敏感度）
-  8. 全球髮飾/美妝配件 OEM 前 5 大競爭者市佔？弘帆護城河在哪？
-  9. 自有品牌（Daylite 等）占比與毛利率 vs OEM 業務差異？
-  10. 越南廠什麼時候蓋的?每股折舊多少?預估何時折舊結束?
-  11. 越南廠獲利為每股多少?
+  1. 每股營業現金流量、每股營運現金流（FFO）、每股調整後營運現金流（AFFO）
+  2. 所有財務數據都要換算成每股多少港幣
+  3. 每年收的管理費用是怎麼算的，佔淨值百分比是多少?
+  4. 北京華貿中心（China Central Place）土地使用權2053到期,到時續期要每股多少錢?有什麼風險
+  
+  
+ ---
+ #  個股分析2
+> **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
+  
+  - `COMPANY_NAME`：87001 匯賢產業信託 REIT
+- `MARKET`：港股
+- `COMPANY_FOLDER`：87001匯賢Reit
+- `EXTRA_ANALYSIS`：
+  1. 最新一期配息（人民幣）換算出來的年殖利率是多少
+  2. 人民幣負債佔總負債比重（%）
+  3. 港幣負債佔總負債比重（%）
+  4. 港幣債務轉置成人民幣債務計劃，對配息影響
+  5. 港幣債務還剩多少（單位: 人民幣）？多久可還完
+  6. 所有財務數據都要換算成每股多少人民幣（e.g. 債務每股多少人民幣）
+  7. 每年收的管理費用是怎麼算的，佔淨值百分比是多少?
+  9. 土地使用權到期後,到時續期要每股多少錢?有什麼風險?
