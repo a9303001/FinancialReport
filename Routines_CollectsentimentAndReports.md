@@ -1,7 +1,5 @@
 # Routines
 — 每日輪替執行排程 (Daily Rotation Schedule)
-
-> **[執行指引 — Gemini Flash / Claude Sonnet 皆適用]**
 > 1. 取得今日的「日」(Day of the Month，1 ~ 31)。
 > 2. 對照下方「每日輪替表」的「執行日期」欄。
 > 3. 若當日有對應公司 → 呼叫 `CollectsentimentAndReports` skill，帶入該列的 `COMPANY_TICKER` 與 `COMPANY_NAME`。
