@@ -80,15 +80,30 @@ OPM(%) = (營業利益率 / 稅前淨利率)*100%
 - **連結**：`https://github.com/a9303001/FinancialReport`
 - **分支名稱（極重要）**：預設分支為 `master`（絕對不可使用 `main`，否則會 404）。
 - **說明**：每個公司設有獨立資料夾（資料夾名稱即為公司名稱）。
- - 公司資料夾內可能有年報檔、季報檔及其他有用分析文件。
+  - 公司資料夾內可能有年報檔、季報檔及其他有用分析文件。
 
 - **AI 讀取策略（請強制依序嘗試下列方法，直到成功為止）**：
- 1. ** 【優選】GitHub 工具直接讀取**：
- - 使用 AI Chat 可用的 GitHub 工具讀取 `https://github.com/a9303001/FinancialReport/tree/master/` 來抓取財報檔案清單。
- 2. **【次選】API 查詢與 Raw 讀取（僅前面失敗時使用）**：
- - **步驟一**：呼叫 `https://api.github.com/repos/a9303001/FinancialReport/contents/<公司名稱>` 取得檔案列表 JSON。
- - **步驟二**：組合出 Raw 網址並讀取：`https://raw.githubusercontent.com/a9303001/FinancialReport/master/<公司名稱>/<檔案名稱>`
- - **注意**：若遇到 `403 Forbidden`，表示 API 額度耗盡，請立即回報並改用其他官方財報來源。
+
+  1. **【最優選】本機檔案系統直接讀取（Workspace 已 clone）**：
+     - 本 repo 已 clone 至本機 `d:\FinancialReport`，**必須優先使用檔案系統工具**（如 `list_dir`、`view_file`、`grep_search`）直接讀取。
+     - **列出公司資料夾**：`list_dir d:\FinancialReport\<公司名稱>\`
+     - **讀取檔案內容**：`view_file d:\FinancialReport\<公司名稱>\<檔案名稱>`
+     - **搜尋關鍵字**：`grep_search` 在 `d:\FinancialReport\<公司名稱>\` 下搜尋
+     - **優勢**：零網路延遲、無 API 限制、可讀取任意大小檔案。
+     - **注意**：若本機資料可能不是最新，需執行 `git pull` 同步後再讀取。
+
+  2. **【次選】GitHub MCP 工具讀取（僅本機資料夾不存在時使用）**：
+     - 使用已安裝的 GitHub MCP 工具，讀取 `a9303001/FinancialReport` repo 中 `<公司名稱>` 資料夾的檔案清單與內容。
+     - **分支**：務必指定 `master`（不可用 `main`）。
+
+  3. **【第三選】GitHub API 查詢與 Raw 讀取（僅前述方法皆失敗時使用）**：
+     - **步驟一**：呼叫 `https://api.github.com/repos/a9303001/FinancialReport/contents/<公司名稱>` 取得檔案列表 JSON。
+     - **步驟二**：組合 Raw 網址並讀取：`https://raw.githubusercontent.com/a9303001/FinancialReport/master/<公司名稱>/<檔案名稱>`
+     - **注意**：若遇到 `403 Forbidden`，表示 API 額度耗盡，請立即回報並跳至下一方法。
+
+  4. **【末選】瀏覽器工具爬取（僅前述方法皆失敗時使用）**：
+     - 使用 `browser_subagent` 或 `read_url_content` 開啟 `https://github.com/a9303001/FinancialReport/tree/master/<公司名稱>` 擷取檔案清單與內容。
+
 
 **B. 用你覺得最好的方式搜尋**
 
