@@ -2,7 +2,7 @@
 使用latest claude OPUS model 
 
 ## 全域參數 (Global Parameters)
-強制變更`<OUTPUT_FILENAME>` to  hourAnalysisResult_gemini.md
+<OUTPUT_FILENAME>` : hourAnalysisResult.md
 
 #  個股分析1
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
