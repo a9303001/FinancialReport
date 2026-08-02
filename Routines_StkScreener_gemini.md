@@ -292,7 +292,7 @@ git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemin
 
 ```markdown
 # 全市場選股篩選結果（Gemini）
-> 更新時間：YYYY-MM-DD HH:mm　｜　累計執行輪次：第 N 輪
+> 更新時間：YYYY-MM-DD HH:mm　
 > 篩選條件：市佔前3 ∪ 產品市佔前3、PE 5~15、營業利益率>10%、
 > 財務安全（一般產業 負債比率<70%／銀行 CAR≥10.5%／金控 集團資本適足率≥100%／保險 RBC≥200%／REIT LTV<50%）、
 > 排除美國普通股 ADR 與美國 OTC（**ADR 特別股不排除**）
