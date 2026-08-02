@@ -33,7 +33,7 @@
 
 **第 1 步 · 讀回結果檔**
 打開 `Routines_StkScreenerResult_gemini.md`。
-- **檔案不存在** → 用 §5 模板建一份空骨架，標記「第 1 輪」，**直接跳到第 4 步**（沒有上一輪可修）。
+- **檔案不存在** → 用 §5 模板建一份空骨架，，**直接跳到第 4 步**（沒有上一輪可修）。
 - **檔案存在** → 記住這 4 件事：目前 Top 50、候選池、待查清單、「七、留待下次」寫了什麼。
 
 **第 2 步 · 修上一輪的錯（至少 5 處）**
@@ -143,7 +143,7 @@ git pull --rebase
 然後看 `git diff --stat`：**刪除行數若明顯多於新增行數，先確認不是誤刪個股區塊**，確認無誤再提交。
 
 ```bash
-git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemini): 第 N 輪完成 — 新增 X 檔 / 修正 Y 處（完成市場：台/美/港/日）" && git push
+git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemini): 完成 — 新增 X 檔 / 修正 Y 處（完成市場：台/美/港/日）" && git push
 ```
 
 最後 merge 到 `master`。
@@ -281,7 +281,7 @@ git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemin
 
 - ⛔ **嚴禁**因為「本輪沒重新查證」就刪掉既有個股區塊，或改寫成 `（待補）`、`（同上輪）` 這類佔位符。
   **沒複查 = 保留原文，不是清空。**
-- 每個個股區塊都要有 `本區塊最後更新：YYYY-MM-DD（第 N 輪）`。
+- 每個個股區塊都要有 `本區塊最後更新：YYYY-MM-DD`。
 - 個股**落榜**時：把該區塊從「四」移除，並在「二、修正紀錄」寫明落榜原因與日期。
   只是**掉出 Top 50 但仍合格** → 移到「五、候選池」。
 - **寫檔後自我檢查**：個股區塊數 = 「三」的排名筆數。少了就是誤刪，從 git 歷史還原後重寫。
