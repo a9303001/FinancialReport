@@ -12,7 +12,9 @@
 ## §0 這份工作是什麼（先讀這段，讀完再往下）
 
 這是**每次觸發就跑一次**的排程。
-一次執行 = 讀回上次結果 → 修錯 → **補寫個股說明** → 新分析 40 檔 → 重排名 → 寫檔 → 提交。
+一次執行 = 讀回上次結果 → 修錯 → **補寫個股說明** → 新分析 40 檔 → 重排名 → 寫檔 → **用 GitHub MCP merge 進 `master`**。
+
+🔴 **每一次執行的最後一定要 merge 進 `master` 分支**（第 16 步），沒 merge 就等於這次白做。
 
 **一次跑不完是正常的，不算失敗。** 做多少算多少，沒做完的寫進交棒區塊，下次接著跑。
 
@@ -38,7 +40,7 @@
 | :-: | :--- | :--- |
 | **1** | 每次**只抽 40 檔**：台股 10、美股 10、港股 10、日股 10。**禁止把整個市場的股票全抓進來篩。** | 全抓會爆 usage limit，跑不完也存不了檔 |
 | **2** | **每一檔進榜的股票，都要在「四、個股詳細」有自己的區塊**，內含「為什麼進 Top 50 / 優點 / 缺點」。 | 這是主產出，缺了就等於沒做 |
-| **3** | **做完一個市場就寫檔一次**（共 4 次寫檔）。寫檔時**不要下 git 指令**。四個市場都做完，才 commit + push + merge，**整次只提交這 1 次**。 | 中途斷線時，已做的還在 |
+| **3** | **做完一個市場就寫檔一次**（共 4 次寫檔）。寫檔時**不要碰 GitHub、不要下 git 指令**。四個市場都做完，才**用 GitHub MCP Server 把整份檔案送進 `master` 分支**，**整次只送這 1 次**。<br>🔴 **每一次執行都必須 merge 進 `master`**，提前收尾也一樣，沒有例外（做法見第 16 步）。 | 中途斷線時，已做的還在；成果一定要落到 `master`，下次才讀得到 |
 | **4** | 這次沒抽到的股票、沒補完的說明，**下次繼續做**。 | 慢慢累積 > 一次做完 |
 
 > 心法：**存得住的 10 檔（有完整說明），勝過跑到一半全丟的 40 檔。**
@@ -161,7 +163,7 @@
 - 把這個市場的 10 檔，**追加**到「十、已分析股票清單」。
 - 在「一、執行摘要」的 Checkpoint 完成度打勾。
 
-> ⛔ **這裡不要下任何 git 指令**（不 add、不 commit、不 push、不 merge）。git 全部留到第 16 步。
+> ⛔ **這裡不要碰 GitHub**（不要呼叫 GitHub MCP、不要下 git 指令）。上傳與 merge 全部留到第 16 步做一次。
 
 **第 9 步 · 換下一個市場**
 - 還有市場沒做 → 回到第 4 步。
@@ -200,7 +202,7 @@ C = 「四」裡面，同時有「① 為什麼進 Top 50」「② 優點」「�
 | :--- | :--- | :--- |
 | B 不能比 A 少太多 | `B ≥ A − 10` | 缺口 > 10 → 下次第 3B 步只補說明、不抽新股 |
 | 有區塊就要寫完整 | `C = B` | 有殘缺區塊 → **當場補完**，不可留到下次 |
-| 沒有誤刪 | `B ≥ 上次的 B − 本次落榜檔數` | 少得比落榜檔數還多 = 誤刪 → 從 git 歷史還原後重寫 |
+| 沒有誤刪 | `B ≥ 上次的 B − 本次落榜檔數` | 少得比落榜檔數還多 = 誤刪 → 用 GitHub MCP 的 `get_file_contents`（`ref="master"`）把上一版讀回來，補回被刪的區塊後再送出 |
 
 > 為什麼要扣落榜檔數？個股落榜時區塊會一起移除，B 本來就會減少，這是正常的，不算誤刪。
 > 例：上次 B = 30，這次有 2 檔落榜 → B = 28 正常；B = 24 就是誤刪了 4 檔，要還原。
@@ -211,25 +213,112 @@ C = 「四」裡面，同時有「① 為什麼進 Top 50」「② 優點」「�
 - `B < A` → 在「七、留待下次」寫明：`尚有 N 檔待補個股說明：<代號清單>`
 - `B = A` → 在「八、下次想分析的部分」寫下次要補的分析維度
 
-**第 16 步 · 🏁 唯一一次提交**
-依序執行：
+**第 16 步 · 🏁 用 GitHub MCP 把結果 merge 進 `master`（每一次執行都必須做到）**
 
-```bash
-git pull --rebase
+> **這一步的終點不是「檔案寫好了」，是「GitHub 上的 `master` 分支已經看得到這次的內容」。**
+> 沒 merge 進 `master` = 這次執行**算失敗**，因為下次執行第 1 步會從 `master` 讀檔，讀不到就等於白做。
+
+**🔧 這一步用 GitHub MCP Server 做，不要用 git 指令。**（真的叫不動 MCP 才走 16-E 的備援）
+
+**先記住這 3 個固定值，下面每個工具呼叫都會用到：**
+
+| 參數 | 值 |
+| :--- | :--- |
+| `owner` | `a9303001` |
+| `repo` | `FinancialReport` |
+| `branch` / `base` | `master` ⛔ **不可以填 `main`，填 `main` 會 404** |
+
+> MCP 工具名稱依版本可能是 `create_or_update_file` 或 `github.create_or_update_file` 或 `mcp__github__create_or_update_file`。
+> **看到哪個就用哪個，功能一樣。** 下面只寫功能名稱。
+
+---
+
+**16-A · 先讀 `master` 上這個檔案目前的 `sha`**
+
+呼叫 **`get_file_contents`**：
+
+```json
+{ "owner": "a9303001", "repo": "FinancialReport", "path": "Routines_StkScreenerResult_gemini.md", "ref": "master" }
 ```
 
-然後看 `git diff --stat`：**刪除行數若明顯多於新增行數，先確認不是誤刪個股區塊**，確認無誤再提交。
+- 回傳裡有一個 `sha` 欄位（一長串英數字）→ **把它記下來**，16-B 要用。
+- 若回傳「檔案不存在」→ 這是第一次建檔，16-B 的 `sha` 就**整個欄位不要填**。
 
-```bash
-git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemini): 新增 X 檔 / 補說明 Z 檔 / 修正 Y 處（完成市場：台/美/港/日）" && git push
+**16-B · 🔴 直接把完整檔案內容寫進 `master`（這就是 merge，最推薦、最不會錯）**
+
+呼叫 **`create_or_update_file`**：
+
+```json
+{
+  "owner": "a9303001",
+  "repo": "FinancialReport",
+  "path": "Routines_StkScreenerResult_gemini.md",
+  "branch": "master",
+  "message": "StkScreener(gemini): 新增 X 檔 / 補說明 Z 檔 / 修正 Y 處（完成市場：台/美/港/日）",
+  "content": "<這次寫好的整份檔案內容，從第一行到最後一行，一字不漏>",
+  "sha": "<16-A 拿到的 sha>"
+}
 ```
 
-最後 merge 到 `master`。
+- ⚠️ `content` 要放**整份檔案**，不是只有這次新增的部分。少貼的部分會被當成「刪掉」。
+- ⚠️ 貼之前先自己看一眼：「四、個股詳細」的區塊數有沒有比上次少？少了就是漏貼，**停下來重貼**，不要送出。
+- ✅ 這個工具寫進去的 commit 直接落在 `master` 上，**不需要再做任何 merge 動作**，16-B 成功 = 本步驟完成，跳到 16-D。
 
-- ⛔ **commit message 不要寫「第 N 輪」。** 只寫做了什麼、完成哪些市場。
-- 提前收尾也**一定要走完這步**。例：只跑完台股就沒額度 → 一樣 commit，訊息照實寫：
+**16-C · （只有在 16-B 失敗時才做）改走「分支 → PR → merge」**
+
+16-B 若回報 `sha` 不符、409 衝突、或分支被保護，代表有人同時改過檔案。照下面 4 個動作做：
+
+| 順序 | 呼叫哪個工具 | 參數重點 |
+| :-: | :--- | :--- |
+| 1 | **`get_file_contents`** | 重新讀一次 `master` 的最新內容與 `sha`；**把別人新增的內容併進你手上的版本**（⛔ 不可覆蓋掉別人的個股區塊） |
+| 2 | **`create_branch`** | `{"owner":"a9303001","repo":"FinancialReport","branch":"stkscreener-gemini-YYYY-MM-DD","from_branch":"master"}` |
+| 3 | **`create_or_update_file`** | 同 16-B，但 `branch` 改成剛剛建的那個分支名 |
+| 4 | **`create_pull_request`** | `{"owner":"a9303001","repo":"FinancialReport","title":"StkScreener(gemini): …","head":"stkscreener-gemini-YYYY-MM-DD","base":"master"}` → 記下回傳的 PR 編號 |
+| 5 | **`merge_pull_request`** | `{"owner":"a9303001","repo":"FinancialReport","pullNumber":<剛才的編號>,"merge_method":"squash"}` |
+
+- 🔴 **第 5 個動作（merge_pull_request）是必做的。** 只開 PR 不 merge = 沒進 `master` = 這次執行算失敗。
+- PR 若因衝突無法 merge → 回到第 1 個動作重新併一次內容，再走一遍。
+
+**16-D · 🔴 驗證真的進 `master` 了（不可省略）**
+
+再呼叫一次 **`get_file_contents`**：
+
+```json
+{ "owner": "a9303001", "repo": "FinancialReport", "path": "Routines_StkScreenerResult_gemini.md", "ref": "master" }
+```
+
+檢查 2 件事，兩件都對才算完成：
+
+1. 內容裡的「更新日期」是**今天**。
+2. 「四、個股詳細」的區塊數 **≥ 這次執行前的數量 − 本次落榜檔數**（沒有被誤刪）。
+
+任一項不對 → 回 16-B 重做。
+
+**16-E · 備援：GitHub MCP 完全叫不動時，才改用 git 指令**
+
+```bash
+git pull --rebase && git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemini): 新增 X 檔 / 補說明 Z 檔 / 修正 Y 處（完成市場：台/美/港/日）" && git push origin master
+```
+
+若當下不在 `master` 分支上，要先合併再推：
+
+```bash
+git checkout master && git pull --rebase origin master && git merge --no-ff <原本的分支名> -m "Merge StkScreener(gemini) 本次結果進 master" && git push origin master
+```
+
+用備援時，要在回報中寫明「GitHub MCP 不可用，改用 git CLI」。
+
+---
+
+**⛔ 這一步的禁止事項**
+
+- **commit message 不要寫「第 N 輪」。** 只寫做了什麼、完成哪些市場。
+- **不可以停在「檔案寫好但沒送進 GitHub」。**
+- **不可以停在「開了 PR 但沒 merge」。**
+- **不可以把 `branch` / `base` 填成 `main`。** 這個 repo 的主分支是 `master`。
+- **不可以為了省事只上傳片段內容。** `content` 一律是整份檔案。
+- 提前收尾也**一定要走完 16-A ～ 16-D**。例：只跑完台股就沒額度 → 一樣要 merge 進 `master`，訊息照實寫：
   `StkScreener(gemini): 部分完成 — 新增 5 檔 / 補說明 8 檔 / 修正 6 處（完成市場：台/美，港日留待下次）`
-- ⛔ **絕對不可以停在「已寫檔但沒 commit」的狀態。**
 
 ---
 
@@ -551,7 +640,9 @@ git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemin
 5. **REIT**：另須套用 `AGENTS.md §REIT分析規則`（股價淨值比、租金報酬率、空租率等），財務安全一律走 LTV。
 6. **ADR 特別股**：屬合格標的。入榜時要額外標註「與原股 / 普通股 ADR 的價差百分比」與「股息預扣稅結構」（例：`PBR.A` vs `PBR` vs `PETR4.SA`）。
 7. **流通股數**：過去 2 年在外流通股數變化 > 10% 者，要在「② 優點」或「③ 缺點與風險」註明原因與對 EPS 的影響。
-8. **一致性**：`TOP_N`、權重、公式**不得每次自行更動**。確有必要調整 → 改本檔，並在 commit message 說明。
+8. **每次都要 merge 進 `master`**：每一次執行結束前，一律用 **GitHub MCP Server** 把 `Routines_StkScreenerResult_gemini.md` 送進 `a9303001/FinancialReport` 的 **`master`** 分支（⛔ 不是 `main`），做法見第 16 步。
+   **沒 merge 進 `master` = 這次執行未完成**，因為下次執行的第 1 步是從 `master` 讀回結果檔。
+9. **一致性**：`TOP_N`、權重、公式**不得每次自行更動**。確有必要調整 → 改本檔，並在 commit message 說明。
    **本檔公式一旦修改，下次必須把既有榜單全部依新公式重算並重排**，⛔ 不得新舊公式混用（混用會讓分數不可比、排名失去意義）。
 
 ---
@@ -573,11 +664,13 @@ git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemin
 - 達到上限就停，**不准續做**。
 - **補說明優先於抽新股。** 榜單已滿 50 檔但說明只有 12 檔 → 這次一檔新股都不要抽，全部拿來補說明。
 - **每做完一個市場（10 檔）就寫檔一次**；補說明時**每 5 檔寫檔一次**。這條不得省略。
-- **git commit / merge 整次只做 1 次**，放在四市場都跑完（或提前收尾）之後。
+- **上傳 GitHub（第 16 步）整次只做 1 次**，放在四市場都跑完（或提前收尾）之後。
+  🔴 **但這 1 次一定要做，而且一定要用 GitHub MCP 送進 `master`。** 每一次執行的終點都是「`master` 上有這次成果」，提前收尾也不例外。
 - 資料查詢依 §6 順序**尋獲即止**，不要為了補齊漂亮數字反覆搜尋同一項目。
 - **初篩階段只查 6 道門檻要用的數字**，不要順手把年報全讀完。
-- 察覺用量吃緊 → **立即停止新增分析** → 把手上結果寫檔（§4）→ 未完成事項寫進「七、留待下次」→ **再做唯一一次 commit** 收尾。
-  **寧可少做，也不要做到一半沒寫檔沒提交。**
+- 察覺用量吃緊 → **立即停止新增分析** → 把手上結果寫檔（§4）→ 未完成事項寫進「七、留待下次」→ **再做唯一一次「GitHub MCP 送進 `master`」** 收尾。
+  **寧可少做，也不要做到一半沒寫檔、沒送進 `master`。**
+  ⚠️ 收尾一定要預留額度給第 16 步：`get_file_contents → create_or_update_file(branch=master) → 驗證` 這三個動作**不可因為額度用完而略過**。
 
 ---
 
@@ -609,7 +702,7 @@ git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemin
               ④ 踢出條件（≥2 點）／⑤ 門檻查驗／⑥ 財務數據／⑦ 分數拆解
 [ ] 7a. ❌ 確認沒有「先全部評分、最後才補說明」
 [ ] 8. 🔴 CHECKPOINT 寫檔：依 §4 增量寫檔；「十、已分析清單」追加本市場 10 檔；勾選 Checkpoint 完成度
-[ ] 8a. ⛔ 這裡不要下 git commit / push / merge
+[ ] 8a. ⛔ 這裡不要碰 GitHub（不呼叫 GitHub MCP、不下 git 指令）
 [ ] 9. 還有市場沒做 → 回第 4 項；額度吃緊 → 跳到第 10 項
 
 【收尾（整次只做一次）】
@@ -621,7 +714,17 @@ git add Routines_StkScreenerResult_gemini.md && git commit -m "StkScreener(gemin
         A =「三」的排名筆數　B =「四」的區塊數　C =「四」裡三段齊全的區塊數
         B ≥ A − 10？　C = B？　B ≥ 上次的 B − 本次落榜檔數？　→ 任一不符，當場修正
 [ ] 15. 決定下次重點（B < A → 寫進「七」；B = A → 寫進「八」）
-[ ] 16. 🏁 唯一一次提交：git pull --rebase → 檢查 diff 無誤刪 → add → commit → push → merge master
+[ ] 16. 🏁 用 GitHub MCP Server 送進 master（每一次執行都必須做，做法見第 16 步）
+        owner=a9303001　repo=FinancialReport　branch=master（⛔ 不是 main）
+[ ] 16a. get_file_contents(ref="master") → 記下 sha
+[ ] 16b. 🔴 create_or_update_file(branch="master", content=整份檔案, sha=剛才的 sha)
+         ⛔ content 必須是整份檔案，不是片段
+[ ] 16c. 若 16b 失敗（sha 不符／衝突／分支保護）→ 重讀合併內容 → create_branch →
+         create_or_update_file(該分支) → create_pull_request(base="master") → 🔴 merge_pull_request
+[ ] 16d. 🔴 驗證：再 get_file_contents(ref="master") → 更新日期是今天？個股區塊數沒變少？
+         任一不對 → 回 16b 重做
+[ ] 16e. GitHub MCP 完全叫不動時才用 git CLI 備援，並在回報中寫明
         訊息：StkScreener(gemini): 新增 X 檔 / 補說明 Z 檔 / 修正 Y 處（完成市場：…）
         ⛔ 訊息裡不要出現「第 N 輪」
+        ⛔ 不可停在「開了 PR 沒 merge」或「檔案寫好沒上傳」
 ```
