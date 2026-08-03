@@ -1,24 +1,156 @@
-name: Auto merge all PRs
+name: Auto merge into master
 
+# 觸發時機：
+#   create  -> MCP create_branch / 網頁建立分支（只處理 branch，忽略 tag）
+#   push    -> 分支被建立或被推新 commit（含 merge_pull_request 合併進非 master 分支後的結果）
+#   pull_request -> PR 被開啟 / 更新 / 轉草稿
+#   workflow_dispatch -> 手動補救指定分支
 on:
+  create:
+  push:
+    branches-ignore:
+      - master
   pull_request:
     types: [opened, reopened, synchronize, ready_for_review, converted_to_draft]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 要合併進 master 的分支名稱
+        required: true
 
 permissions:
   contents: write
   pull-requests: write
 
+# 同一個 head branch 只跑最新一次，避免 create + push 重複觸發打架
+concurrency:
+  group: >-
+    auto-merge-${{ github.event.pull_request.head.ref
+      || inputs.branch
+      || github.event.ref
+      || github.ref }}
+  cancel-in-progress: true
+
+env:
+  BASE_BRANCH: master
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GH_REPO: ${{ github.repository }}
+
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
+    # create 事件也會在建立 tag 時觸發，只放行 branch
+    if: github.event_name != 'create' || github.event.ref_type == 'branch'
     steps:
+      - name: Resolve head branch
+        id: head
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+          CREATE_REF: ${{ github.event.ref }}
+          INPUT_BRANCH: ${{ inputs.branch }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          IS_FORK: ${{ github.event.pull_request.head.repo.fork }}
+        run: |
+          set -euo pipefail
+          case "$EVENT_NAME" in
+            pull_request)      BRANCH="$PR_BRANCH" ;;
+            create)            BRANCH="$CREATE_REF" ;;
+            push)              BRANCH="${GITHUB_REF#refs/heads/}" ;;
+            workflow_dispatch) BRANCH="$INPUT_BRANCH" ;;
+            *)                 BRANCH="" ;;
+          esac
+
+          SKIP=false
+          if [ -z "$BRANCH" ] || [ "$BRANCH" = "$BASE_BRANCH" ]; then
+            echo "::notice::分支為空或已是 $BASE_BRANCH，略過。"
+            SKIP=true
+          fi
+          if [ "${IS_FORK:-false}" = "true" ]; then
+            echo "::notice::來自 fork 的 PR，GITHUB_TOKEN 權限不足以自動合併，略過。"
+            SKIP=true
+          fi
+
+          {
+            echo "branch=$BRANCH"
+            echo "pr=${PR_NUMBER:-}"
+            echo "skip=$SKIP"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Find or create PR into master
+        id: pr
+        if: steps.head.outputs.skip == 'false'
+        env:
+          BRANCH: ${{ steps.head.outputs.branch }}
+          PR_FROM_EVENT: ${{ steps.head.outputs.pr }}
+        run: |
+          set -euo pipefail
+          PR="$PR_FROM_EVENT"
+
+          if [ -z "$PR" ]; then
+            PR=$(gh pr list --head "$BRANCH" --base "$BASE_BRANCH" --state open \
+                   --json number --jq '.[0].number // empty')
+          fi
+
+          if [ -z "$PR" ]; then
+            echo "沒有既有 PR，嘗試建立 $BRANCH -> $BASE_BRANCH"
+            if OUT=$(gh pr create --base "$BASE_BRANCH" --head "$BRANCH" \
+                       --title "Auto merge: $BRANCH -> $BASE_BRANCH" \
+                       --body "由 auto-merge workflow 自動建立（事件：${{ github.event_name }}）。" 2>&1); then
+              PR="${OUT##*/}"
+            else
+              echo "$OUT"
+              case "$OUT" in
+                *"No commits between"*|*"no commits between"*)
+                  echo "::notice::$BRANCH 與 $BASE_BRANCH 沒有差異，無須合併。"
+                  echo "pr=" >> "$GITHUB_OUTPUT"; exit 0 ;;
+                *"already exists"*)
+                  PR=$(gh pr list --head "$BRANCH" --base "$BASE_BRANCH" --state open \
+                         --json number --jq '.[0].number // empty') ;;
+                *)
+                  echo "::error::建立 PR 失敗"; exit 1 ;;
+              esac
+            fi
+          fi
+
+          echo "pr=$PR" >> "$GITHUB_OUTPUT"
+
       - name: Mark ready (in case it is a draft)
-        run: gh pr ready "$PR_URL"
+        if: steps.pr.outputs.pr != ''
+        run: gh pr ready "${{ steps.pr.outputs.pr }}" || true
+
+      - name: Merge into master (retry on race / behind base)
+        if: steps.pr.outputs.pr != ''
         env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Merge immediately
-        run: gh pr merge --merge --delete-branch "$PR_URL"
-        env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ steps.pr.outputs.pr }}
+        run: |
+          set -uo pipefail
+          for attempt in 1 2 3 4 5; do
+            STATE=$(gh pr view "$PR" --json state --jq .state)
+            if [ "$STATE" = "MERGED" ]; then
+              echo "::notice::PR #$PR 已合併。"; exit 0
+            fi
+            if [ "$STATE" = "CLOSED" ]; then
+              echo "::warning::PR #$PR 已被關閉，不合併。"; exit 0
+            fi
+
+            if gh pr merge "$PR" --merge --delete-branch; then
+              echo "::notice::PR #$PR 已合併進 $BASE_BRANCH。"; exit 0
+            fi
+
+            STATUS=$(gh pr view "$PR" --json mergeStateStatus --jq .mergeStateStatus)
+            echo "第 $attempt 次合併失敗，mergeStateStatus=$STATUS"
+            case "$STATUS" in
+              DIRTY)
+                gh pr comment "$PR" --body "❌ auto-merge 失敗：與\`$BASE_BRANCH\`有衝突，需要人工處理。" || true
+                echo "::error::PR #$PR 與 $BASE_BRANCH 衝突，需人工解決。"; exit 1 ;;
+              BEHIND)
+                gh pr update-branch "$PR" || true ;;
+              UNKNOWN|"")
+                : ;;  # GitHub 尚在計算可合併性，等下一輪
+            esac
+            sleep $((attempt * 10))
+          done
+
+          gh pr comment "$PR" --body "❌ auto-merge 重試 5 次仍失敗，需要人工檢查。" || true
+          echo "::error::PR #$PR 重試後仍無法合併。"; exit 1
