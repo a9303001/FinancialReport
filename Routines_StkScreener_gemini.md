@@ -5,7 +5,7 @@
 
 > **規格檔**：`Google Drive/FinancialReport/Routines_StkScreener_gemini.md` — 每次執行先從 Drive 讀本檔
 > **輸出檔**：`Google Drive/FinancialReport/Routines_StkScreenerResult_gemini.md` — 讀寫同一檔
-> **.gdoc 轉碼規則**：若 Gemini Spark API / Google Drive 產出 `.gdoc` 捷徑檔（`Routines_StkScreenerResult_gemini.md.gdoc`），必須自動擷取其內容並轉譯成標準 Markdown 格式，存至 `Routines_StkScreenerResult_gemini.md`。
+> **.gdoc 轉碼規則**：若 Gemini Spark API / Google Drive 產出 `.gdoc` 捷徑檔（`Routines_StkScreenerResult_gemini.md.gdoc`），必須自動擷取其內容並轉譯成標準 Markdown 格式，存至 `Google Drive/FinancialReport/Routines_StkScreenerResult_gemini.md`。
 > **上位規則**：`AGENTS.md`
 
 ---
