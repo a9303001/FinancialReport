@@ -5,6 +5,7 @@
 
 > **規格檔**：`Google Drive/FinancialReport/Routines_StkScreener_gemini.md` — 每次執行先從 Drive 讀本檔
 > **輸出檔**：`Google Drive/FinancialReport/Routines_StkScreenerResult_gemini.md` — 讀寫同一檔
+> **.gdoc 轉碼規則**：若 Gemini Spark API / Google Drive 產出 `.gdoc` 捷徑檔（`Routines_StkScreenerResult_gemini.md.gdoc`），必須自動擷取其內容並轉譯成標準 Markdown 格式，存至 `Routines_StkScreenerResult_gemini.md`。
 > **上位規則**：`AGENTS.md`
 
 ---
@@ -91,6 +92,7 @@
 **步驟 0**：從 Drive 讀本規格檔，依讀到的這版執行。讀不到 → 放棄。
 
 **步驟 1**：從 Drive 讀結果檔，🔴 記下 fileId 和 modifiedTime。
+- **.gdoc 自動轉碼與同步**：若發現 Gemini Spark API 產出 `Routines_StkScreenerResult_gemini.md.gdoc`（Google Doc 指標檔），應立即讀取 Doc 內容並自動整理轉譯為標準 Markdown 格式，更新覆寫至 `googleDriveSync\FinancialReport\Routines_StkScreenerResult_gemini.md`。
 - 確定不存在（資料夾找得到但沒這檔）→ 用 §G 骨架新建，跳到步驟 6。
 - 🔴 讀取失敗（連不上 / 沒權限）≠ 不存在 → 放棄。用空骨架覆蓋累積成果是最嚴重的毀損。
 - 找到多個同名檔 → 取 `modifiedTime` 最新的那份。
