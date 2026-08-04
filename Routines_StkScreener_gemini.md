@@ -13,7 +13,7 @@
 ## ⚡ 速查卡（只讀這 10 行也能做對 80%）
 
 ```
-1. 你沒有 git、也不用 GitHub。唯一儲存位置 = Google Drive。
+1. 唯一儲存位置 = Google Drive
    讀檔 = 在 Drive 的 FinancialReport 資料夾裡用檔名開檔、讀全文
    寫檔 = 用同一個 fileId 覆寫（update）同一個檔案 ← 寫完就生效，不必再做別的
 2. 資料夾 = 我的雲端硬碟/FinancialReport
