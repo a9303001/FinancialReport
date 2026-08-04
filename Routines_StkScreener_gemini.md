@@ -3,31 +3,13 @@
 
 # Routines — 全市場選股篩選（Stock Screener · Gemini 專用版）
 
-**儲存位置（唯一）**：**Google Drive** 的 `FinancialReport` 資料夾（我的雲端硬碟／My Drive 底下）
-**規格檔（本檔）**：`Routines_StkScreener_gemini.md` — 每次執行**從 Google Drive 讀取本檔**後才開始做事
+**儲存位置（唯一）**： 資料夾（我的雲端硬碟／My Drive 底下）
+**規格檔（本檔）**：`**Google Drive**\\FinancialReport\\Routines_StkScreener_gemini.md` — 每次執行**從 Google Drive 讀取本檔**後才開始做事
 **輸出檔（唯一）**：`Routines_StkScreenerResult_gemini.md` — 讀、寫都在**同一個 Google Drive 資料夾**
 **上位規則**：`AGENTS.md`。本檔只補「篩選 / 評分 / 寫說明 / 存檔」的做法。
 
 ---
 
-## ⚡ 速查卡（只讀這 10 行也能做對 80%）
-
-```
-1. 唯一儲存位置 = Google Drive
-   讀檔 = 在 Drive 的 FinancialReport 資料夾裡用檔名開檔、讀全文
-   寫檔 = 用同一個 fileId 覆寫（update）同一個檔案 ← 寫完就生效，不必再做別的
-2. 資料夾 = 我的雲端硬碟/FinancialReport
-   規格檔 = Routines_StkScreener_gemini.md　輸出檔 = Routines_StkScreenerResult_gemini.md
-3. 寫進去的內容一定是「整份檔案」。只寫片段 = 其餘全部被覆蓋掉。
-4. fileId：開場讀檔時記下來，整次執行都用同一個（⛔ 不要每次重新用檔名搜尋，會建出重複檔）。
-5. 一次執行分好幾次存：做完一個市場存一次、補說明每 5 檔存一次、收尾再存一次。
-   🛑 Drive 讀或寫失敗 → 直接放棄本次執行（§1.4），沒有備援：不另存、不換位置、不貼 chat。
-6. 每次最多處理 20 檔（台5/美5/港5/日5）。⛔ 禁止整個市場全抓。
-7. 「四、個股詳細」才是產出，排名表只是目錄。有排名沒說明 = 這次算失敗。
-8. 補說明 優先於 抽新股。
-9. 送出前數：`## ` 開頭剛好 9 行（一~九），不多不少。
-10. chat 只回 10 行摘要（§0.2），⛔ 一個字的檔案內容都不要貼。
-```
 
 ---
 
@@ -71,9 +53,9 @@
 
 ## §1 📤 SAVE 動作（全檔最常用，先背起來）
 
-**「寫檔」= 用 Google Drive 工具，把整份檔案覆寫回 Drive 上的 `Routines_StkScreenerResult_gemini.md`。** 本檔說「SAVE」「寫檔」「存檔」都是指這一件事。
+**「寫檔」= 用 Google Drive 工具，把整份檔案覆寫回 Drive 上的 **輸出檔（唯一）**
+。** 本檔說「SAVE」「寫檔」「存檔」都是指這一件事。
 
-> 工具名稱依環境可能叫 Google Drive 連結器（Google Workspace / @Google 雲端硬碟）、Drive MCP、或 Drive API（`files.list` / `files.get` / `files.update` / `files.create`）。**環境給你哪個就用哪個，動作都一樣：找到檔案 → 讀全文 → 覆寫全文。**
 
 ### 1.1 四個動作
 
@@ -96,34 +78,8 @@
 > 記法：**「一次執行只認一個 fileId，從頭到尾覆寫同一個檔案。」**
 > ⛔ **嚴禁**每次 SAVE 都用檔名新建一次 → 會在資料夾裡堆出 `…(1).md`、`…(2).md` 一堆重複檔，下次讀檔就分不出哪個才是本尊。
 
-**③ 呼叫 Drive 的「更新檔案」動作**
 
-```
-資料夾：我的雲端硬碟/FinancialReport
-檔名　：Routines_StkScreenerResult_gemini.md
-fileId：<動作 ② 決定的 fileId>
-MIME　：text/markdown（純文字 Markdown，⛔ 不要存成 Google 文件格式）
-內容　：<整份檔案內容>
-```
-
-對應 Drive API 寫法（有 API 可用時）：
-
-```
-PATCH https://www.googleapis.com/upload/drive/v3/files/<fileId>?uploadType=media
-Content-Type: text/markdown
-<整份檔案內容>
-```
-
-檔案不存在時改用新建：
-
-```
-POST https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart
-metadata: { "name": "Routines_StkScreenerResult_gemini.md",
-            "parents": ["<FinancialReport 資料夾的 folderId>"],
-            "mimeType": "text/markdown" }
-```
-
-**④ 記下這次寫入的時間與結果**（`modifiedTime`），下一次 SAVE 前用來確認檔案沒有被別人改過。
+**④ 記下這次寫入的時間與結果**（`modifiedTime`）
 
 ### 1.2 🔴 送出前的 3 秒體檢（每次 SAVE 都要做，防檔案壞掉）
 
@@ -138,20 +94,8 @@ metadata: { "name": "Routines_StkScreenerResult_gemini.md",
 > ①～④ 是**檔案壞掉的唯一常見原因**：整份重貼時貼漏、貼重、或把兩段黏在一起。花 3 秒數一下，比下次花整輪修便宜。
 > ⑤ 是 Drive 特有的：**覆寫沒有版本鎖，後寫的直接蓋掉先寫的。** 不先讀就蓋，別人（或另一次排程）剛存的成果會整個消失。
 
-### 1.3 SAVE 失敗怎麼辦
 
-**先看是不是「同一步原樣重送一次就會好」的暫時性問題。不是的話，一律走 §1.4 直接放棄。**
-
-| 錯誤訊息 | 意思 | 怎麼處理 |
-| :--- | :--- | :--- |
-| 逾時 / 無回應 | 網路或服務問題（暫時性） | **先重讀確認是不是其實已經寫成功了**；沒寫成功才**原樣重送 1 次**。再失敗 → §1.4 放棄 |
-| `401` / `invalid credentials` | 連結器授權過期（暫時性） | 重新連結 Google 雲端硬碟後**重送 1 次**。再失敗 → §1.4 放棄 |
-| `404` / `File not found` | fileId 失效，或檔案被移動 / 刪除 / 丟進垃圾桶 | 在 `FinancialReport` 資料夾用完整檔名重新搜尋 → 找到就用新的 fileId 重送；**真的找不到才**依 §1.1 ② 新建一份 |
-| 找到**多個同名檔案** | 之前誤用「新建」造成重複檔 | 取 `modifiedTime` **最新**的那一份為準，記下它的 fileId；其餘同名檔在 chat 列出來請人工刪除，⛔ 不要自己刪 |
-| `403` / `insufficientFilePermissions` | Drive 授權不足，或該檔案是唯讀 / 只有檢視權限 | 確認已授權 Google 雲端硬碟存取、且對該資料夾有**編輯權**；仍不行 → **§1.4 放棄** |
-| `403` / `storageQuotaExceeded` | 雲端硬碟空間已滿 | 無法自行解決 → **§1.4 放棄**，並在 chat 明確寫「Drive 空間不足」 |
-
-### 1.4 🛑 Google Drive 失敗處理（強制 · 直接放棄，無備援）
+### 1.4 🛑 Google Drive 失敗處理（強制 · 直接放棄）
 
 **只要 Google Drive 讀或寫失敗，且不是 §1.3 那種「重送 1 次就好」的暫時性問題，就直接放棄本次執行。**
 
