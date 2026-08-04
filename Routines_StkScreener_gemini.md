@@ -3,8 +3,9 @@
 
 # Routines — 全市場選股篩選（Stock Screener · Gemini 專用版）
 
-**輸出檔（唯一）**：`Routines_StkScreenerResult_gemini.md`（repo 根目錄）
-**repo**：`a9303001/FinancialReport`　**分支**：`master`（⛔ 不是 `main`）
+**儲存位置（唯一）**：**Google Drive** 的 `FinancialReport` 資料夾（我的雲端硬碟／My Drive 底下）
+**規格檔（本檔）**：`Routines_StkScreener_gemini.md` — 每次執行**從 Google Drive 讀取本檔**後才開始做事
+**輸出檔（唯一）**：`Routines_StkScreenerResult_gemini.md` — 讀、寫都在**同一個 Google Drive 資料夾**
 **上位規則**：`AGENTS.md`。本檔只補「篩選 / 評分 / 寫說明 / 存檔」的做法。
 
 ---
@@ -12,12 +13,13 @@
 ## ⚡ 速查卡（只讀這 10 行也能做對 80%）
 
 ```
-1. 你沒有 git。唯一工具 = GitHub MCP Server。
-   讀檔 = get_file_contents(ref="master")
-   寫檔 = create_or_update_file(branch="master")   ← branch 填 master，寫進去就是 merge，不必再做別的
-2. owner=a9303001  repo=FinancialReport  path=Routines_StkScreenerResult_gemini.md
-3. content 一定是「整份檔案」。只傳片段 = 其餘全部被刪掉。
-4. sha：第 1 次用開場讀檔拿到的；之後每次用「上一次寫檔回傳的新 sha」。收到 409 就重讀再寫。
+1. 你沒有 git、也不用 GitHub。唯一儲存位置 = Google Drive。
+   讀檔 = 在 Drive 的 FinancialReport 資料夾裡用檔名開檔、讀全文
+   寫檔 = 用同一個 fileId 覆寫（update）同一個檔案 ← 寫完就生效，不必再做別的
+2. 資料夾 = 我的雲端硬碟/FinancialReport
+   規格檔 = Routines_StkScreener_gemini.md　輸出檔 = Routines_StkScreenerResult_gemini.md
+3. 寫進去的內容一定是「整份檔案」。只寫片段 = 其餘全部被覆蓋掉。
+4. fileId：開場讀檔時記下來，整次執行都用同一個（⛔ 不要每次重新用檔名搜尋，會建出重複檔）。
 5. 一次執行分好幾次存：做完一個市場存一次、補說明每 5 檔存一次、收尾再存一次。
 6. 每次最多處理 20 檔（台5/美5/港5/日5）。⛔ 禁止整個市場全抓。
 7. 「四、個股詳細」才是產出，排名表只是目錄。有排名沒說明 = 這次算失敗。
@@ -38,13 +40,13 @@
 | **「四、個股詳細」** | **每檔一個區塊：為什麼進榜 + 優點 + 缺點** | **最重要** |
 
 - 這是**每次觸發就跑一次**的排程。做多少算多少，**一次跑不完是正常的，不算失敗**。
-- 一次執行 = 讀回上次結果 → 修錯 → 補寫個股說明 → 最多處理 20 檔 → 重排名 → 存回 `master`。
-- 心法：**已經存進 `master` 的 5 檔（有完整說明），勝過還在腦袋裡的 20 檔。**
+- 一次執行 = 讀回上次結果 → 修錯 → 補寫個股說明 → 最多處理 20 檔 → 重排名 → 存回 **Google Drive**。
+- 心法：**已經存進 Google Drive 的 5 檔（有完整說明），勝過還在腦袋裡的 20 檔。**
 - ⛔ **不要編「第 N 輪」。** 要標時間就寫日期 `YYYY-MM-DD`。
 
 ### 0.2 chat 回覆長什麼樣
 
-**檔案** = 完整報告（在 `master` 上）。**chat** = 只放「這次做了什麼」的摘要，約 10 行，照抄下面模板：
+**檔案** = 完整報告（在 Google Drive 上）。**chat** = 只放「這次做了什麼」的摘要，約 10 行，照抄下面模板：
 
 ```
 ✅ StkScreener(gemini) — 2026-08-03
@@ -53,13 +55,13 @@
 - 結果：新入榜 3 檔｜落榜 1 檔｜修正 6 處
 - 榜單：38 / 50 檔（尚在建置中）
 - 說明完成度：A=38　B=36　C=36
-- SAVE 4 次：台股 → 美股 → 港股 → 收尾；全部已進 master，已用 get_file_contents 驗證
+- SAVE 4 次：台股 → 美股 → 港股 → 收尾；全部已寫入 Google Drive，已重新讀檔驗證
 - 留待下次：日股未跑；第 12~14 名共 3 檔待補說明
 ```
 
 | ⛔ chat 裡不要出現 | 為什麼 |
 | :--- | :--- |
-| 整份結果檔 / Top 50 表格 / 任何個股區塊 / `content` 參數 / JSON 請求 | 檔案已經在 `master` 上，貼一次等於白花一次額度 |
+| 整份結果檔 / Top 50 表格 / 任何個股區塊 / 寫檔用的完整內容 | 檔案已經在 Google Drive 上，貼一次等於白花一次額度 |
 | 逐檔敘述「我分析了 A，它的 PE 是…」 | 摘要只要數字統計，不要逐檔展開 |
 
 > ✅ 唯一可以在 chat 出現的長內容：**SAVE 連續失敗 3 次時**（見 §1.4）。
@@ -68,45 +70,59 @@
 
 ## §1 📤 SAVE 動作（全檔最常用，先背起來）
 
-**「寫檔」= 呼叫 GitHub MCP，直接寫進 `master`。** 本檔說「SAVE」「寫檔」「存檔」都是指這一件事。
+**「寫檔」= 用 Google Drive 工具，把整份檔案覆寫回 Drive 上的 `Routines_StkScreenerResult_gemini.md`。** 本檔說「SAVE」「寫檔」「存檔」都是指這一件事。
 
-> 工具名稱依版本可能叫 `create_or_update_file` / `github.create_or_update_file` / `mcp__github__create_or_update_file`。**看到哪個就用哪個，功能一樣。**
+> 工具名稱依環境可能叫 Google Drive 連結器（Google Workspace / @Google 雲端硬碟）、Drive MCP、或 Drive API（`files.list` / `files.get` / `files.update` / `files.create`）。**環境給你哪個就用哪個，動作都一樣：找到檔案 → 讀全文 → 覆寫全文。**
 
 ### 1.1 四個動作
 
-**① 準備 `content` = 整份檔案**
+**① 準備寫入內容 = 整份檔案**
 
 - 從第一行到最後一行全部放進去，不是只放這次新增的部分。
-- **沒放進去的內容 = 你要求刪掉它。**
-- 🔴 「整份檔案」指**送進 MCP 的 `content` 參數**要完整，**不是**要貼進 chat。
+- **沒放進去的內容 = 你要求刪掉它**（Drive 的覆寫是整檔取代，不是附加）。
+- 🔴 「整份檔案」指**送給 Drive 工具的檔案內容**要完整，**不是**要貼進 chat。
 
-**② 準備 `sha`**
+**② 確認 `fileId`（寫到哪一個檔案）**
 
-| 情況 | `sha` 填什麼 |
+| 情況 | `fileId` 填什麼 |
 | :--- | :--- |
-| 這次執行的**第 1 次 SAVE** | 開場讀檔（步驟 1）回傳的 `sha` |
-| **第 2 次以後**的 SAVE | **上一次 SAVE 回傳的新 `sha`** |
-| 檔案不存在（第一次建檔） | **`sha` 欄位整個不要填** |
-| 不確定手上的 sha 是不是最新 | 重新 `get_file_contents(ref="master")` 拿一次，不要用猜的 |
+| 這次執行的**第 1 次 SAVE** | 開場讀檔（步驟 1）記下的 `fileId` |
+| **第 2 次以後**的 SAVE | **同一個 `fileId`**（Drive 的 fileId 覆寫後不會變） |
+| 檔案不存在（第一次建檔） | 在 `FinancialReport` 資料夾**新建**檔案，並記下新拿到的 `fileId` |
+| 手上沒有 fileId | 在 `FinancialReport` 資料夾裡用**完整檔名**搜尋一次；⛔ 不要用猜的、也不要直接新建 |
 
-> ⚠️ **sha 每寫一次就變。** 拿舊 sha 送第二次必收 `409 Conflict`。
-> 記法：**「上一次吐給我的 sha，就是下一次要用的 sha。」**
+> ⚠️ **fileId 不會變，但「內容」會被整個取代。** 覆寫是後寫贏，所以送出前一定要確認手上的內容是最新的（見 §1.2）。
+> 記法：**「一次執行只認一個 fileId，從頭到尾覆寫同一個檔案。」**
+> ⛔ **嚴禁**每次 SAVE 都用檔名新建一次 → 會在資料夾裡堆出 `…(1).md`、`…(2).md` 一堆重複檔，下次讀檔就分不出哪個才是本尊。
 
-**③ 呼叫 `create_or_update_file`**
+**③ 呼叫 Drive 的「更新檔案」動作**
 
-```json
-{
-  "owner": "a9303001",
-  "repo": "FinancialReport",
-  "path": "Routines_StkScreenerResult_gemini.md",
-  "branch": "master",
-  "message": "StkScreener(gemini): <這次做了什麼，例：完成台股 5 檔>",
-  "content": "<整份檔案內容>",
-  "sha": "<動作 ② 決定的 sha>"
-}
+```
+資料夾：我的雲端硬碟/FinancialReport
+檔名　：Routines_StkScreenerResult_gemini.md
+fileId：<動作 ② 決定的 fileId>
+MIME　：text/markdown（純文字 Markdown，⛔ 不要存成 Google 文件格式）
+內容　：<整份檔案內容>
 ```
 
-**④ 記下回傳的新 `sha`**，下一次 SAVE 要用它。
+對應 Drive API 寫法（有 API 可用時）：
+
+```
+PATCH https://www.googleapis.com/upload/drive/v3/files/<fileId>?uploadType=media
+Content-Type: text/markdown
+<整份檔案內容>
+```
+
+檔案不存在時改用新建：
+
+```
+POST https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart
+metadata: { "name": "Routines_StkScreenerResult_gemini.md",
+            "parents": ["<FinancialReport 資料夾的 folderId>"],
+            "mimeType": "text/markdown" }
+```
+
+**④ 記下這次寫入的時間與結果**（`modifiedTime`），下一次 SAVE 前用來確認檔案沒有被別人改過。
 
 ### 1.2 🔴 送出前的 3 秒體檢（每次 SAVE 都要做，防檔案壞掉）
 
@@ -114,56 +130,70 @@
 | :--- | :--- | :--- |
 | **① 大標題數** | `## ` 開頭的行**剛好 9 行**，依序是 一、二、三、四、五、六、七、八、九 | 有重複或缺漏 → **停下來修好再送**，⛔ 不要送出 |
 | **② 標題獨占一行** | 每個 `## ` / `### ` 都自己一行，後面不接表格或內文 | 出現 `## 五、候選池17.2 \| 11.2 \|…` 這種黏在一起的 → 拆開 |
-| **③ 個股區塊數** | `### 第 N 名：` 的行數 ≥ 上次的數量 − 本次落榜檔數 | 少太多 = 漏貼 → 重新讀 master 補回來 |
+| **③ 個股區塊數** | `### 第 N 名：` 的行數 ≥ 上次的數量 − 本次落榜檔數 | 少太多 = 漏貼 → 重新從 Drive 讀檔補回來 |
 | **④ 名次不重複** | `第 1 名` ~ `第 N 名` 每個號碼只出現一次 | 有重號 → 依總分重編 |
+| **⑤ 沒有被別人蓋掉** | 手上的內容是以**這次執行最後一次讀到／寫入的版本**為基礎 | 檔案的 `modifiedTime` 比你上次寫入的時間還新 → 有人改過 → **先重讀 Drive**，把新內容併進來再送 |
 
-> 這 4 項是**檔案壞掉的唯一常見原因**：整份重貼時貼漏、貼重、或把兩段黏在一起。花 3 秒數一下，比下次花整輪修便宜。
+> ①～④ 是**檔案壞掉的唯一常見原因**：整份重貼時貼漏、貼重、或把兩段黏在一起。花 3 秒數一下，比下次花整輪修便宜。
+> ⑤ 是 Drive 特有的：**覆寫沒有版本鎖，後寫的直接蓋掉先寫的。** 不先讀就蓋，別人（或另一次排程）剛存的成果會整個消失。
 
 ### 1.3 SAVE 失敗怎麼辦
 
 | 錯誤訊息 | 意思 | 怎麼處理 |
 | :--- | :--- | :--- |
-| `409 Conflict` / `sha does not match` | sha 過期（最常見） | 重新 `get_file_contents(ref="master")` 拿最新 sha 與內容 → 把 master 上有、你手上沒有的內容併進來 → 用新 sha 重送 |
-| `422` / `sha wasn't supplied` | 漏填 sha | 同上，補上 sha 再送 |
-| `404 Not Found` | branch/repo/owner 填錯 | 檢查是不是把 `master` 打成 `main`；owner 要是 `a9303001` |
-| `403` / `protected branch` | master 不允許直接寫 | 走 §1.4 的 PR 備援 |
-| 逾時 / 無回應 | 網路或服務問題 | **原樣重送一次**（sha 會擋住重複寫入） |
+| `404` / `File not found` | fileId 失效，或檔案被移動 / 刪除 / 丟進垃圾桶 | 在 `FinancialReport` 資料夾用完整檔名重新搜尋 → 找到就用新的 fileId 重送；真的沒有 → 依 §1.1 ② **新建**一份 |
+| `403` / `insufficientFilePermissions` | Drive 授權不足，或該檔案是唯讀 / 只有檢視權限 | 確認已授權 Google 雲端硬碟存取、且對該資料夾有**編輯權**；仍不行 → 走 §1.4 的另存備援 |
+| `403` / `storageQuotaExceeded` | 雲端硬碟空間已滿 | 無法自行解決 → 直接走 §1.4，並在 chat 明確寫「Drive 空間不足」 |
+| `401` / `invalid credentials` | 連結器授權過期 | 重新連結 Google 雲端硬碟後重送一次 |
+| 找到**多個同名檔案** | 之前誤用「新建」造成重複檔 | 取 `modifiedTime` **最新**的那一份為準，記下它的 fileId；其餘同名檔在 chat 列出來請人工刪除，⛔ 不要自己刪 |
+| 逾時 / 無回應 | 網路或服務問題 | **先重讀確認是不是其實已經寫成功了**，沒寫成功才原樣重送 |
 
-### 1.4 PR 備援（只有遇到 `403 protected branch` 才用）
+### 1.4 另存備援（只有 `403 權限不足 / 空間不足` 這類**確定無法覆寫**時才用）
 
-| 順序 | 工具 | 參數重點 |
+| 順序 | 動作 | 重點 |
 | :-: | :--- | :--- |
-| 1 | `create_branch` | `{"owner":"a9303001","repo":"FinancialReport","branch":"stkscreener-gemini-YYYY-MM-DD","from_branch":"master"}` |
-| 2 | `create_or_update_file` | 同 §1.1，但 `branch` 改成剛建的分支名 |
-| 3 | `create_pull_request` | `{"owner":"a9303001","repo":"FinancialReport","title":"StkScreener(gemini): …","head":"stkscreener-gemini-YYYY-MM-DD","base":"master"}` → 記下 PR 編號 |
-| 4 | 🔴 `merge_pull_request` | `{"owner":"a9303001","repo":"FinancialReport","pullNumber":<編號>,"merge_method":"squash"}` |
+| 1 | 在同一個 `FinancialReport` 資料夾**新建**檔案 | 檔名：`Routines_StkScreenerResult_gemini_YYYY-MM-DD.md`（帶當天日期，避免再撞名） |
+| 2 | 把**整份檔案內容**寫進這個備援檔 | 內容規格與 §1.1 完全相同 |
+| 3 | 🔴 在 chat 寫明一行 | `⚠️ 主檔無法覆寫，本次結果已另存為 Routines_StkScreenerResult_gemini_YYYY-MM-DD.md，請人工合併回主檔` |
 
-🔴 **第 4 步是必做的。只開 PR 不 merge = 沒進 `master` = 這次白做。**
+🔴 **第 3 步是必做的。只另存不講 = 下次執行讀主檔會讀到舊資料，這次等於白做。**
 
-**重試上限**：同一次 SAVE 最多 3 次。3 次都失敗時：
+**重試上限**：同一次 SAVE 最多 3 次。3 次都失敗時（連備援檔也建不起來）：
 
-1. chat 寫明一行：`⚠️ 本次 SAVE 未能進 master，原因：<錯誤訊息>`。
-2. **只輸出「這次新做、還沒進 master 的那幾個個股區塊」**，讓人可以手動補貼。⛔ 不要輸出整份檔案。
+1. chat 寫明一行：`⚠️ 本次 SAVE 未能寫入 Google Drive，原因：<錯誤訊息>`。
+2. **只輸出「這次新做、還沒存進 Drive 的那幾個個股區塊」**，讓人可以手動補貼。⛔ 不要輸出整份檔案。
 3. 新做的區塊超過 3 檔 → 只輸出前 3 檔，其餘寫 `其餘 N 檔本次遺失，已列入下次待辦`。
 
-⛔ **不要因為 MCP 失敗就假裝成功。**
+⛔ **不要因為 Drive 寫入失敗就假裝成功。**
 
 ---
 
 ## §2 執行步驟（由上往下做）
 
-### 【開場：步驟 1～5】
+### 【開場：步驟 0～5】
+
+**步驟 0 · 先從 Google Drive 讀本規格檔**
+
+```
+資料夾：我的雲端硬碟/FinancialReport
+檔名　：Routines_StkScreener_gemini.md
+```
+
+讀到後**依這一版的內容執行**（門檻、公式、模板都以 Drive 上這份為準，⛔ 不要憑記憶做）。
+讀不到 → 在 chat 寫明 `⚠️ 無法從 Google Drive 讀取規格檔`，並說明試過的資料夾與檔名，然後停止本次執行。
 
 **步驟 1 · 讀回上次結果**
 
-```json
-{ "owner": "a9303001", "repo": "FinancialReport", "path": "Routines_StkScreenerResult_gemini.md", "ref": "master" }
+```
+資料夾：我的雲端硬碟/FinancialReport
+檔名　：Routines_StkScreenerResult_gemini.md
 ```
 
-🔴 **回傳的 `sha` 立刻記下來**，第 1 次 SAVE 要用。
+🔴 **`fileId` 與 `modifiedTime` 立刻記下來**，整次執行的 SAVE 都要用。
 
-- **檔案不存在** → 用 §6 模板建空骨架，**直接跳到步驟 6**（第 1 次 SAVE 不填 sha）。
-- **讀到檔案** → 除了 sha，記住這 5 件事：
+- **檔案不存在** → 用 §6 模板建空骨架，**直接跳到步驟 6**（第 1 次 SAVE 走 §1.1 ② 的「新建」）。
+- **找到多個同名檔** → 依 §1.3 取 `modifiedTime` 最新的那一份。
+- **讀到檔案** → 除了 fileId，記住這 5 件事：
   1. 目前 Top 50 有哪些股票
   2. 🔴 **「四、個股詳細」目前有幾個區塊**（步驟 5、14 要用）
   3. 候選池有誰　4. 待查清單有誰　5. 「七、留待下次」寫了什麼
@@ -285,8 +315,8 @@
 StkScreener(gemini): 完成台股 5 檔（新增 2 檔入榜）
 ```
 
-> ⚠️ **記下回傳的新 sha**，下一個市場要用。
-> ✅ SAVE 成功 = 這個市場的成果已在 `master` 上，之後斷線也不白做。
+> ⚠️ **記下這次寫入後的 `modifiedTime`**，下一個市場 SAVE 前要用來確認沒被別人蓋掉。
+> ✅ SAVE 成功 = 這個市場的成果已在 Google Drive 上，之後斷線也不白做。
 > ⛔ **不可以「四個市場都做完才 SAVE 一次」。**
 
 **步驟 11 · 換下一個市場**
@@ -322,7 +352,7 @@ C = 「四」裡面，同時有「① 為什麼進 Top 50」「② 優點」「�
 | :--- | :--- | :--- |
 | B 不能比 A 少太多 | `B ≥ A − 5` | 缺口 > 5 → 下次步驟 5 只補說明、不抽新股 |
 | 有區塊就要寫完整 | `C = B` | 有殘缺區塊 → **當場補完**，不可留到下次 |
-| 沒有誤刪 | `B ≥ 上次的 B − 本次落榜檔數` | 少得比落榜檔數還多 = 誤刪 → `get_file_contents(ref="master")` 讀回上一版，補回被刪的區塊再送出 |
+| 沒有誤刪 | `B ≥ 上次的 B − 本次落榜檔數` | 少得比落榜檔數還多 = 誤刪 → 從 Drive 重讀結果檔（必要時用 Drive 的「版本紀錄」還原上一版），補回被刪的區塊再送出 |
 
 > 為什麼要扣落榜檔數？落榜時區塊會一起移除，B 本來就會減少，這是正常的。
 > 例：上次 B=30，這次 2 檔落榜 → B=28 正常；B=24 就是誤刪了 4 檔，要還原。
@@ -347,9 +377,9 @@ StkScreener(gemini): 新增 X 檔 / 補說明 Z 檔 / 修正 Y 處（完成市�
 StkScreener(gemini): 部分完成 — 新增 5 檔 / 補說明 8 檔 / 修正 6 處（完成市場：台/美，港日留待下次）
 ```
 
-**16-2 🔴 驗證真的進 `master` 了（不可省略）**
+**16-2 🔴 驗證真的寫進 Google Drive 了（不可省略）**
 
-再呼叫一次 `get_file_contents(ref="master")`，檢查 3 件事，全對才算完成：
+用同一個 `fileId` 再讀一次 Drive 上的結果檔，檢查 3 件事，全對才算完成：
 1. 更新日期是**今天**
 2. 「四、個股詳細」的區塊數 **≥ 執行前的數量 − 本次落榜檔數**
 3. `## ` 大標題**剛好 9 個**，沒有重複
@@ -358,8 +388,8 @@ StkScreener(gemini): 部分完成 — 新增 5 檔 / 補說明 8 檔 / 修正 6 
 
 **16-3 🔴 chat 只回摘要**（照 §0.2 模板，約 10 行），然後結束。
 
-⛔ 不貼整份檔案、不貼 Top 50 表格、不貼個股區塊、不貼 `content` 參數。
-理由：完整報告已在 `master` 上（16-2 已驗證），在 chat 再貼一次是純粹浪費額度。
+⛔ 不貼整份檔案、不貼 Top 50 表格、不貼個股區塊、不貼寫檔用的完整內容。
+理由：完整報告已在 Google Drive 上（16-2 已驗證），在 chat 再貼一次是純粹浪費額度。
 提前收尾也一樣：照模板回摘要，沒做完的寫在「留待下次」那一行。
 
 ---
@@ -648,8 +678,8 @@ StkScreener(gemini): 部分完成 — 新增 5 檔 / 補說明 8 檔 / 修正 6 
 
 > ⚠️ **注意區分兩件事**：
 > - **「增量更新」** 講的是**你要動哪些區塊**（沒查證的區塊原文照留，不要重寫）。
-> - **SAVE 送出時的 `content`** 仍然要放**整份檔案**（含那些原文照留的區塊）。
-> **「增量」不等於「只上傳一部分」。上傳只傳片段 = 其餘內容被當成刪除。**
+> - **SAVE 寫回 Google Drive 的內容** 仍然要放**整份檔案**（含那些原文照留的區塊）。
+> **「增量」不等於「只寫一部分」。Drive 覆寫是整檔取代，只寫片段 = 其餘內容被當成刪除。**
 
 | 區塊 | 每次怎麼處理 |
 | :--- | :--- |
@@ -690,25 +720,25 @@ StkScreener(gemini): 部分完成 — 新增 5 檔 / 補說明 8 檔 / 修正 6 
 - 資料查詢**尋獲即止**，不要為了補齊漂亮數字反覆搜尋同一項目。
 - **初篩階段只查 6 道門檻要用的數字**，不要順手把年報全讀完。
 - 察覺用量吃緊 → **立即停止新增分析** → 整理成完整檔案（§7）→ 未完成寫進「七」→ **馬上 SAVE** 收尾。
-  **寧可少做，也不要做到一半沒 SAVE。** ⚠️ **永遠預留額度給 SAVE**（只花 1 次 MCP 呼叫，不可略過）。
-  💡 每個市場做完就 SAVE，就算中途斷掉，**已 SAVE 的市場都還在 `master` 上**，下次接著跑就好。
+  **寧可少做，也不要做到一半沒 SAVE。** ⚠️ **永遠預留額度給 SAVE**（只花 1 次 Drive 寫檔，不可略過）。
+  💡 每個市場做完就 SAVE，就算中途斷掉，**已 SAVE 的市場都還在 Google Drive 上**，下次接著跑就好。
 
 ---
 
 ## §9 全域規則
 
 1. **語言**：繁體中文。專有名詞首次出現附英文：`中文（English）`。
-2. **不編輪次**：結果檔、摘要、MCP 的 `message` 一律**不寫「第 N 輪」**，要標時間就用 `YYYY-MM-DD`。
+2. **不編輪次**：結果檔、摘要、chat 回報一律**不寫「第 N 輪」**，要標時間就用 `YYYY-MM-DD`。
 3. **不得憑空生成數字**：查不到就寫查不到，並列出試過的來源。這條**優先於**「把表格填滿」，也**優先於**「把榜單湊滿 50 名」。
 4. **資料時效**：一律取最新可得資料，逾期認定與標記依 §3.4。
 5. **REIT**：另須套用 `AGENTS.md §REIT分析規則`（股價淨值比、租金報酬率、空租率等），財務安全一律走 LTV。
 6. **ADR 特別股**：屬合格標的。入榜時額外標註「與原股 / 普通股 ADR 的價差百分比」與「股息預扣稅結構」（例：`PBR.A` vs `PBR` vs `PETR4.SA`）。
 7. **流通股數**：過去 2 年在外流通股數變化 > 10% 者，要在「② 優點」或「③ 缺點與風險」註明原因與對 EPS 的影響。
-8. **一定要進 `master`**：每次執行結束前，一律用 GitHub MCP 把結果檔送進 `master`（⛔ 不是 `main`），做法見 §1。
-   **沒進 `master` = 這次執行未完成**，因為下次執行的步驟 1 就是從 `master` 讀回結果檔。
-9. **一致性**：`TOP_N`、權重、公式**不得每次自行更動**。確有必要調整 → 改本檔，並在 `message` 說明。
+8. **一定要寫進 Google Drive**：每次執行結束前，一律把結果檔覆寫回 Drive 的 `FinancialReport` 資料夾，做法見 §1。
+   **沒寫進 Drive = 這次執行未完成**，因為下次執行的步驟 1 就是從 Drive 讀回結果檔。
+9. **一致性**：`TOP_N`、權重、公式**不得每次自行更動**。確有必要調整 → 改 Drive 上的本規格檔，並在 chat 摘要說明。
    **本檔公式一旦修改，下次必須把既有榜單全部依新公式重算並重排**，⛔ 不得新舊公式混用。
-10. **chat 只回摘要**：分析內容一律寫進檔案並送進 `master`，chat 只照 §0.2 模板寫約 10 行。唯一例外：SAVE 連續失敗 3 次時，依 §1.4 只輸出「新做、還沒進 master 的區塊」。
+10. **chat 只回摘要**：分析內容一律寫進檔案並存進 Google Drive，chat 只照 §0.2 模板寫約 10 行。唯一例外：SAVE 連續失敗 3 次時，依 §1.4 只輸出「新做、還沒存進 Drive 的區塊」。
 
 ---
 
@@ -716,9 +746,11 @@ StkScreener(gemini): 部分完成 — 新增 5 檔 / 補說明 8 檔 / 修正 6 
 
 ```
 【開場】
-[ ] 1. get_file_contents(owner=a9303001, repo=FinancialReport,
-       path=Routines_StkScreenerResult_gemini.md, ref="master")
-       🔴 記下回傳的 sha　（檔案不存在 → 用 §6 骨架，跳到第 6 項）
+[ ] 0. 從 Google Drive 的 FinancialReport 資料夾讀本規格檔 Routines_StkScreener_gemini.md
+       🔴 依讀到的這一版執行（讀不到 → 回報後停止）
+[ ] 1. 從同一個資料夾讀結果檔 Routines_StkScreenerResult_gemini.md
+       🔴 記下 fileId 與 modifiedTime　（檔案不存在 → 用 §6 骨架新建，跳到第 6 項）
+       （找到多個同名檔 → 取 modifiedTime 最新的那份）
 [ ] 2. 修上次至少 5 處錯 → 寫進「二、修正紀錄」
 [ ] 2a. 結構修復（不計入 5 處）：重複大標題 / 標題黏著內文 / 「四」裡的待補清單 /
         「第 N 輪」/「十、已分析股票清單」→ 全部清掉，確認 `## ` 剛好 9 個
@@ -741,10 +773,11 @@ StkScreener(gemini): 部分完成 — 新增 5 檔 / 補說明 8 檔 / 修正 6 
         必含：定位／①≥3 點／②≥3 點／③≥3 點／④≥2 點／⑤ 門檻查驗／⑥ 財務數據／⑦ 分數拆解
 [ ] 9b. ❌ 確認沒有「先全部評分、最後才補說明」
 [ ] 10. 依 §7 增量併進整份檔案；未進榜者寫進「五」／「六」；Checkpoint 打勾
-[ ] 10a. 🔴 §1.2 三秒體檢（## 剛好 9 個／標題獨占一行／區塊數沒變少／名次不重複）
-[ ] 10b. 🔴 SAVE：create_or_update_file(branch="master", content=整份檔案, sha=手上的 sha)
-         message 例：StkScreener(gemini): 完成台股 5 檔（新增 2 檔入榜）
-         🔴 記下回傳的新 sha　⛔ 不可以「四個市場都做完才存一次」
+[ ] 10a. 🔴 §1.2 體檢（## 剛好 9 個／標題獨占一行／區塊數沒變少／名次不重複／沒被別人蓋掉）
+[ ] 10b. 🔴 SAVE：用手上的 fileId 覆寫 Drive 上的 Routines_StkScreenerResult_gemini.md，
+         內容 = 整份檔案（MIME: text/markdown）
+         🔴 記下新的 modifiedTime　⛔ 不可以「四個市場都做完才存一次」
+         ⛔ 不可以每次都用檔名新建（會堆出重複檔）
 [ ] 11. 還有市場沒做 → 回第 6 項；額度吃緊 → 跳第 12 項
 
 【收尾】
@@ -756,14 +789,16 @@ StkScreener(gemini): 部分完成 — 新增 5 檔 / 補說明 8 檔 / 修正 6 
 [ ] 15. 決定下次重點（B < A → 寫「七」；B = A → 寫「八」）
 [ ] 16. 🏁 §1.2 體檢 → 最後一次 SAVE
         message：StkScreener(gemini): 新增 X 檔 / 補說明 Z 檔 / 修正 Y 處（完成市場：…）
-[ ] 16a. 🔴 驗證：get_file_contents(ref="master") → 日期是今天？區塊數沒變少？## 剛好 9 個？
+[ ] 16a. 🔴 驗證：用同一個 fileId 重讀 Drive 上的結果檔
+         → 日期是今天？區塊數沒變少？## 剛好 9 個？
 [ ] 16b. 🔴 chat 只回 §0.2 摘要（約 10 行）就結束，⛔ 不貼任何檔案內容
 
 【全程都要記得】
-⛔ 你沒有 git 指令，只有 GitHub MCP Server
-⛔ branch / ref 一律 master，不是 main（填 main 會 404）
-⛔ content 一律是整份檔案，不是片段（這是「送進 MCP 的參數」，不是「貼進 chat」）
+⛔ 你沒有 git、也不用 GitHub，讀寫一律在 Google Drive 的 FinancialReport 資料夾
+⛔ 檔名要完整正確：規格檔 Routines_StkScreener_gemini.md／結果檔 Routines_StkScreenerResult_gemini.md
+⛔ 寫入內容一律是整份檔案，不是片段（Drive 覆寫 = 整檔取代；這是「寫進檔案」，不是「貼進 chat」）
 ⛔ 同一個大標題只能出現一次，⛔ 不要在檔尾再貼一份新的「## 四」
-🔴 每次 SAVE 後記下新 sha，下次用它（用舊 sha 會 409）
+🔴 一次執行只認一個 fileId，從頭到尾覆寫同一個檔案（⛔ 不要每次新建，會出現重複檔）
+🔴 覆寫前先確認檔案沒被別人改過（modifiedTime），被改過就先重讀再合併
 🔴 排名表不是產出，「四、個股詳細」才是
 ```
