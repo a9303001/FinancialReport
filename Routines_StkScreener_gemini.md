@@ -5,7 +5,6 @@
 
 > **規格檔**：`Routines_StkScreener_gemini.md`（每次執行前必讀）
 > **輸出檔**：`Routines_StkScreenerResult_gemini.md`（讀寫同一檔）
-> **上位規則**：`AGENTS.md`
 
 ---
 
