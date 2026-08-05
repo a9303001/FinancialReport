@@ -1,11 +1,10 @@
 /goal
-/deepresearch
+
 
 # 全市場選股篩選（Stock Screener · Gemini spark 版）
 
-> **規格檔**：`Google Drive/FinancialReport/Routines_StkScreener_gemini.md` — 每次執行先從 Drive 讀本檔
-> **輸出檔**：`Google Drive/FinancialReport/Routines_StkScreenerResult_gemini.md` — 讀寫同一檔
-> **.gdoc 轉碼規則**：若 Gemini Spark API / Google Drive 產出 `.gdoc` 捷徑檔（`Routines_StkScreenerResult_gemini.md.gdoc`），必須自動擷取其內容並轉譯成標準 Markdown 格式，存至 `Google Drive/FinancialReport/Routines_StkScreenerResult_gemini.md`。
+> **規格檔**：`<FinancialReport Repo>\Routines_StkScreener_gemini.md` — 每次執行先從 repo 讀本檔
+> **輸出檔**：`<FinancialReport Repo>\Routines_StkScreenerResult_gemini.md` — 讀寫同一檔
 > **上位規則**：`AGENTS.md`
 
 ---
@@ -21,7 +20,7 @@
 | 分數精度 | 子項小數第 2 位 → 維度分四捨五入到第 1 位 → 加總 |
 | SAVE 次數 | 不設上限，不佔 20 檔額度 |
 | 市場順序 | 台股 → 美股 → 港股 → 日股（固定，一個做完再換下一個） |
-| 時間標記 | 用 `YYYY-MM-DD`，不編「第 N 輪」 |
+| 時間標記 | 用 `YYYY-MM-DD_hh:mm:ss`，不編「第 N 輪」 |
 
 **最重要的產出**：「四、個股詳細」每檔一個完整區塊（為什麼進榜 + 優點 + 缺點）。排名表只是附產物。
 
@@ -29,19 +28,18 @@
 
 1. 🔴 **每次執行都必須檢查結果檔內容是否有誤，查到錯就直接改結果檔**，不是只在「二」記一筆就算數。檢查清單見 §C 步驟 2 與 §C 步驟 2b（算術重驗）。
 2. 🔴 **每個數字都要能被別人用同一份公式重算出來**。分數拆解的各子項加總 = 維度分；五個維度分加總 = 總分。對不上就是錯，當場重算。
-3. 🔴 **沒寫回 Google Drive = 沒做**。
+3. 🔴 **沒寫回 repo（commit + push）= 沒做**。
 
 ---
 
 ## B. SAVE 規則
 
-「SAVE」= 用 Google Drive 工具，把**整份檔案**覆寫回 Google Drive上的輸出檔。
+「SAVE」= 把**整份結果檔**寫入 `Routines_StkScreenerResult_gemini.md`
 
-### B.1 每次 SAVE 做 4 件事
+### B.1 每次 SAVE 做 3 件事
 
-1. **準備完整內容**：從第一行到最後一行全部放進去。沒放進去的內容 = 被刪除（Drive 覆寫是整檔取代）。
-2. **用同一個 fileId**：開場讀檔記下的 fileId，整次執行都用同一個。檔案不存在才新建並記下新 fileId。
-3. **送出前體檢**（每次都做）：
+1. **準備完整內容**：從第一行到最後一行全部放進去。沒放進去的內容 = 被刪除（覆寫是整檔取代）。
+2. **送出前體檢**（每次都做）：
 
 | 檢查 | 通過條件 |
 | :--- | :--- |
@@ -52,9 +50,9 @@
 | 🔴 分數加總 | 本次新增／改動的每個區塊，⑦ 子項加總 = 維度分、維度分加總 = 總分 |
 | 🔴 三↔四 一致 | 「三」的總分、PE、安全指標值 = 「四」同一檔的數字 |
 | 名次由高到低 | 「三」依總分降冪；同分依 §E.3.6 排序 |
-| 沒被覆蓋 | 手上的 `modifiedTime` 是最新的；別人改過 → 先重讀合併再送 |
+| 無外部衝突 | `git status` 確認沒有未預期的外部變更；有衝突 → 先 `git pull` 合併再寫入 |
 
-4. **記下新的 modifiedTime**，下次 SAVE 前比對。
+3. **寫入**：體檢通過後寫入檔案
 
 ### B.2 SAVE 時機
 
@@ -68,20 +66,6 @@
 - 「一、二、三、五、六、七、八、九」每次重寫；「四」增量更新。
 - 落榜的從「四」移除，在「二」寫明原因。只掉出 Top 50 但仍合格 → 移到「五」。
 
-### B.4 Drive 失敗處理
-
-讀或寫失敗（非暫時性問題） → **直接放棄本次執行**。暫時性問題最多原樣重送 1 次。
-
-放棄時在 chat 回報一行：
-```
-⚠️ 本次放棄執行 — Google Drive <讀/寫> 失敗：<錯誤訊息>
-   目標：FinancialReport/Routines_StkScreenerResult_gemini.md
-   已成功 SAVE：<N> 次；未存檔的 <M> 檔本次捨棄
-```
-
-已 SAVE 成功的市場照算，未存的捨棄。
-
-⛔ 不建備援檔、不另存新檔名、不換儲存位置、不把內容貼進 chat 當備份、不假裝成功。
 
 ---
 
@@ -89,13 +73,11 @@
 
 ### 開場（步驟 0～5）
 
-**步驟 0**：從 Drive 讀本規格檔，依讀到的這版執行。讀不到 → 放棄。
+**步驟 0**：從 repo 讀本規格檔（`<FinancialReport Repo>\Routines_StkScreener_gemini.md`），依讀到的這版執行。讀不到 → 放棄。
 
-**步驟 1**：從 Drive 讀結果檔，🔴 記下 fileId 和 modifiedTime。
-- **.gdoc 自動轉碼與同步**：若發現 Gemini Spark API 產出 `Routines_StkScreenerResult_gemini.md.gdoc`（Google Doc 指標檔），應立即讀取 Doc 內容並自動整理轉譯為標準 Markdown 格式，更新覆寫至 `googleDriveSync\FinancialReport\Routines_StkScreenerResult_gemini.md`。
-- 確定不存在（資料夾找得到但沒這檔）→ 用 §G 骨架新建，跳到步驟 6。
-- 🔴 讀取失敗（連不上 / 沒權限）≠ 不存在 → 放棄。用空骨架覆蓋累積成果是最嚴重的毀損。
-- 找到多個同名檔 → 取 `modifiedTime` 最新的那份。
+**步驟 1**：從 repo 讀結果檔（`<FinancialReport Repo>\Routines_StkScreenerResult_gemini.md`）。
+- 確定不存在 → 用 §G 骨架新建，跳到步驟 6。
+- 🔴 讀取失敗 ≠ 不存在 → 放棄。用空骨架覆蓋累積成果是最嚴重的毀損。
 - 讀到檔案 → 記住：目前 Top 50 名單、「四」的區塊數、候選池、待查清單、「七」的內容。
 
 **步驟 2**：🔴 **逐項檢查結果檔內容是否有誤，查到就直接改結果檔**，至少 **5 處**，全部寫進「二、修正紀錄」。真找不到 5 處 → 寫「已逐項複查、無誤」（但步驟 2b 的算術重驗仍必做）。
@@ -179,7 +161,7 @@
 
 **步驟 10**：🔴 SAVE（做完一個市場就存）
 - 新增/更新的區塊 →「四」；通過但沒進 Top 50 →「五」；資料不足 →「六」；Checkpoint 打勾
-- 做 §B.1 體檢 → SAVE → 記下 modifiedTime
+- 做 §B.1 體檢 → 寫入檔案 → `git add` + `git commit` + `git push`
 
 **步驟 11**：還有市場 → 回步驟 6；額度吃緊 → 跳步驟 12（這不算失敗）。
 
@@ -204,27 +186,26 @@ A = 「三」排名筆數　　B = 「四」區塊數　　C = 「四」裡 ①�
 | :--- | :--- | :--- |
 | B ≥ A − 5 | ✅ | 下次步驟 5 只補說明 |
 | C = B | ✅ | 有殘缺 → 當場補完 |
-| B ≥ 上次 B − 落榜數 | ✅ | 少太多 = 誤刪 → 從 Drive 重讀補回 |
+| B ≥ 上次 B − 落榜數 | ✅ | 少太多 = 誤刪 → 用 `git checkout` 從上一版還原補回 |
 
 把 A / B / C 寫進「一」。
 
 **步驟 15**：B < A → 「七」寫待補清單；B = A → 「八」寫下次分析重點。
 
-**步驟 16**：🏁 最後一次 SAVE → 用同一 fileId 重讀驗證（日期是今天、區塊數沒少、大標題 9 個）→ chat 只回摘要：
+**步驟 16**：🏁 最後一次 SAVE → 重讀結果檔驗證（日期是今天、區塊數沒少、大標題 9 個）→ chat 只回摘要：
 
 ```
-✅ StkScreener(gemini) — YYYY-MM-DD
+✅ StkScreener(gemini) — YYYY-MM-DD_hh:mm:ss
 - 完成市場：台/美/港 ⬜日（Checkpoint ✅✅✅⬜）
 - 額度使用：補說明 X 檔 + 新分析 Y 檔（合計 Z / 20）
 - 結果：新入榜 X 檔｜落榜 X 檔｜修正 X 處（其中算術重算 X 處）
 - 榜單：X / 50 檔（尚在建置中）
 - 說明完成度：A=XX　B=XX　C=XX
 - 算術重驗：已重算 X 檔，加總全部對上 ✅
-- SAVE X 次：全部已寫入 Drive，已重新讀檔驗證
 - 留待下次：…
 ```
 
-⛔ chat 不貼整份檔案、不貼表格、不貼區塊、不逐檔展開。完整報告在 Drive 上。
+⛔ chat 不貼整份檔案、不貼表格、不貼區塊、不逐檔展開。完整報告在 repo 裡。
 
 ---
 
@@ -429,7 +410,7 @@ A = 「三」排名筆數　　B = 「四」區塊數　　C = 「四」裡 ①�
 
 ```markdown
 # 全市場選股篩選結果（Gemini）
-> 更新日期：YYYY-MM-DD HH:mm
+> 更新日期：YYYY-MM-DD hh:mm:ss
 > 篩選條件：市佔前3 ∪ 產品市佔前3、PE 5~15、營業利益率>10%、
 > 財務安全（一般 負債比<70%／銀行 CAR≥10.5%／金控 集團資本適足率≥100%／保險 RBC≥200%／REIT LTV<50%）、
 > 排除普通股 ADR 與 OTC（ADR 特別股不排除）
@@ -493,10 +474,10 @@ A = 「三」排名筆數　　B = 「四」區塊數　　C = 「四」裡 ①�
 3. ADR 特別股入榜時標註與原股價差 % 與預扣稅結構。
 4. 過去 2 年流通股數變化 > 10% → 在優點或缺點註明原因與對 EPS 影響。
 5. 結果檔只到「九」。舊版「十、已分析股票清單」已廢除（以前分析過的未來還是會重抽）。
-6. 公式、權重、門檻不得每次自行更動。確需調整 → 改 Drive 上的本規格檔並說明，下次全部依新公式重算。
-7. 每次執行結束前一律把結果覆寫回 Drive。沒寫進 Drive = 未完成。
-8. 讀寫一律在 Google Drive 的 FinancialReport 資料夾。沒有 git，不用 GitHub。
-9. 寫入內容一律是整份檔案（Drive 覆寫 = 整檔取代）。
+6. 公式、權重、門檻不得每次自行更動。確需調整 → 改 repo 裡的本規格檔並說明，下次全部依新公式重算。
+7. 每次執行結束前一律把結果寫入 repo 並 commit + push。沒 push = 未完成。
+8. 讀寫一律在本機 repo `d:\FinancialReport`。結果檔路徑：`Routines_StkScreenerResult_gemini.md`。
+9. 寫入內容一律是整份檔案（覆寫 = 整檔取代）。
 10. 同一個大標題只能出現一次。
 11. 🔴 **每次執行都必須檢查結果檔內容是否有誤，有誤就直接改結果檔**（步驟 2 / 2a / 2b），不得只在「二」記錄而不修正、也不得留著已知錯誤到下次。
 12. 🔴 分數只要對不上就以 §E 公式重算為準，不是以舊檔寫的數字為準。舊檔的數字沒有豁免權。
