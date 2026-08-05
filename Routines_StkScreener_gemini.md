@@ -1,15 +1,10 @@
 /goal
-
-
 # 全市場選股篩選（Stock Screener · Gemini 版）
-
 > **規格檔**：`Routines_StkScreener_gemini.md`（每次執行前必讀）
 > **輸出檔**：`Routines_StkScreenerResult_gemini.md`（讀寫同一檔）
-
 ---
 
 ## 1. 核心參數與不可違反原則 (Invariants)
-
 ### 1.1 執行參數表
 | 參數 | 規範值 | 說明 |
 | :--- | :--- | :--- |
@@ -126,9 +121,7 @@ graph TD
 | **4** | **財務安全指標** | 依產業別適用專屬指標（見 §3.2 表格） | 指標未達標即剔除 |
 | **5** | **排除普通股 ADR** | 排除普通股 ADR（但原股合格、或 ADR 特別股如 `PBR.A` 視為合格） | 命中則剔除 |
 | **6** | **排除美國 OTC** | 僅接受 NYSE、NASDAQ、NYSE American 上市標的；排除 Pink Sheet / OTC | 命中則剔除 |
-
 > 註：ETF、封閉式基金（CEF）一律排除。
-
 ---
 
 ### 3.2 產業專屬財務安全門檻（取代門檻 4）
