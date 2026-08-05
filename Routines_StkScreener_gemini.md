@@ -3,8 +3,8 @@
 
 # 全市場選股篩選（Stock Screener · Gemini 版）
 
-> **規格檔**：`d:\FinancialReport\Routines_StkScreener_gemini.md`（每次執行前必讀）
-> **輸出檔**：`d:\FinancialReport\Routines_StkScreenerResult_gemini.md`（讀寫同一檔）
+> **規格檔**：`Routines_StkScreener_gemini.md`（每次執行前必讀）
+> **輸出檔**：`Routines_StkScreenerResult_gemini.md`（讀寫同一檔）
 > **上位規則**：`AGENTS.md`
 
 ---
