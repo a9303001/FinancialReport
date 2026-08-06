@@ -38,7 +38,8 @@
       "mcp__playwright",
       "mcp__github",
       "WebSearch",
-      "WebFetch"
+      "WebFetch",
+      "mcp__playwright__browser_navigate"
     ]
   }
 }
