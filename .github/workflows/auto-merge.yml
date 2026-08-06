@@ -1,35 +1,45 @@
 name: Auto merge into master
 
 # 觸發時機：
-#   create  -> MCP create_branch / 網頁建立分支（只處理 branch，忽略 tag）
-#   push    -> 分支被建立或被推新 commit（含 merge_pull_request 合併進非 master 分支後的結果）
-#   pull_request -> PR 被開啟 / 更新 / 轉草稿
-#   workflow_dispatch -> 手動補救指定分支
+#   push              -> 分支被建立或被推新 commit
+#                        （建立分支時 GitHub 也會發 push 事件，故不再另掛 create，
+#                          避免 create/push 兩條路徑同時搶著建 PR 而產生重複 PR）
+#   pull_request      -> PR 被開啟 / 重開 / 更新 / 由草稿轉正式
+#   workflow_dispatch -> 手動補救指定分支，或手動清理已合併分支
+#   schedule          -> 每日清理已合併進 master 的殘留分支
 on:
-  create:
   push:
     branches-ignore:
       - master
   pull_request:
-    types: [opened, reopened, synchronize, ready_for_review, converted_to_draft]
+    types: [opened, reopened, synchronize, ready_for_review]
+  schedule:
+    - cron: '17 3 * * *'
   workflow_dispatch:
     inputs:
       branch:
-        description: 要合併進 master 的分支名稱
-        required: true
+        description: 要合併進 master 的分支名稱（留空則只執行分支清理）
+        required: false
+        default: ''
+      cleanup_dry_run:
+        description: 分支清理只列出、不實際刪除
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
   pull-requests: write
 
-# 同一個 head branch 只跑最新一次，避免 create + push 重複觸發打架
+# 同一個 head branch 只跑一條 pipeline。
+# 注意：key 必須在所有事件間一致，否則 push 與 pull_request 會各跑一份而重複建 PR。
+#   workflow_dispatch -> inputs.branch
+#   pull_request      -> github.head_ref（純分支名）
+#   push              -> github.ref_name（純分支名，不含 refs/heads/）
+# cancel-in-progress 設為 false：合併途中被砍掉會留下「PR 已建但未合併」的中間狀態。
 concurrency:
-  group: >-
-    auto-merge-${{ github.event.pull_request.head.ref
-      || inputs.branch
-      || github.event.ref
-      || github.ref }}
-  cancel-in-progress: true
+  group: auto-merge-${{ inputs.branch || github.head_ref || github.ref_name }}
+  cancel-in-progress: false
 
 env:
   BASE_BRANCH: master
@@ -38,38 +48,51 @@ env:
 
 jobs:
   auto-merge:
+    name: Merge branch into master
     runs-on: ubuntu-latest
-    # create 事件也會在建立 tag 時觸發，只放行 branch
-    if: github.event_name != 'create' || github.event.ref_type == 'branch'
+    timeout-minutes: 15
+    # schedule 只做清理，不做合併
+    if: github.event_name != 'schedule'
+    outputs:
+      merged_branch: ${{ steps.merge.outputs.merged_branch }}
     steps:
       - name: Resolve head branch
         id: head
         env:
           EVENT_NAME: ${{ github.event_name }}
-          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
-          CREATE_REF: ${{ github.event.ref }}
+          PR_BRANCH: ${{ github.head_ref }}
+          PUSH_BRANCH: ${{ github.ref_name }}
           INPUT_BRANCH: ${{ inputs.branch }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BASE: ${{ github.event.pull_request.base.ref }}
           IS_FORK: ${{ github.event.pull_request.head.repo.fork }}
         run: |
           set -euo pipefail
           case "$EVENT_NAME" in
             pull_request)      BRANCH="$PR_BRANCH" ;;
-            create)            BRANCH="$CREATE_REF" ;;
-            push)              BRANCH="${GITHUB_REF#refs/heads/}" ;;
+            push)              BRANCH="$PUSH_BRANCH" ;;
             workflow_dispatch) BRANCH="$INPUT_BRANCH" ;;
             *)                 BRANCH="" ;;
           esac
 
           SKIP=false
-          if [ -z "$BRANCH" ] || [ "$BRANCH" = "$BASE_BRANCH" ]; then
-            echo "::notice::分支為空或已是 $BASE_BRANCH，略過。"
+          reason=""
+          if [ -z "$BRANCH" ]; then
+            reason="未解析出分支名稱（手動執行時可留空以只做清理）"
+            SKIP=true
+          elif [ "$BRANCH" = "$BASE_BRANCH" ]; then
+            reason="分支已是 $BASE_BRANCH"
+            SKIP=true
+          elif [ "${IS_FORK:-false}" = "true" ]; then
+            reason="來自 fork 的 PR，GITHUB_TOKEN 權限不足以自動合併"
+            SKIP=true
+          elif [ -n "${PR_BASE:-}" ] && [ "$PR_BASE" != "$BASE_BRANCH" ]; then
+            # 只接管以 master 為 base 的 PR，避免誤把 PR 合進其他分支
+            reason="PR 的 base 是 $PR_BASE 而非 $BASE_BRANCH"
             SKIP=true
           fi
-          if [ "${IS_FORK:-false}" = "true" ]; then
-            echo "::notice::來自 fork 的 PR，GITHUB_TOKEN 權限不足以自動合併，略過。"
-            SKIP=true
-          fi
+
+          [ "$SKIP" = "true" ] && echo "::notice::略過：$reason"
 
           {
             echo "branch=$BRANCH"
@@ -83,74 +106,185 @@ jobs:
         env:
           BRANCH: ${{ steps.head.outputs.branch }}
           PR_FROM_EVENT: ${{ steps.head.outputs.pr }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           set -euo pipefail
-          PR="$PR_FROM_EVENT"
 
-          if [ -z "$PR" ]; then
-            PR=$(gh pr list --head "$BRANCH" --base "$BASE_BRANCH" --state open \
-                   --json number --jq '.[0].number // empty')
+          # 一次撈完同 head/base 的所有 open PR。歷史上 push 與 create 兩條路徑
+          # 曾同時建 PR，造成同一分支出現多個重複 PR（#186~#190），這裡一併收斂：
+          # 保留編號最小的那個，其餘關閉。
+          mapfile -t OPEN_PRS < <(
+            gh pr list --head "$BRANCH" --base "$BASE_BRANCH" --state open \
+              --json number --jq 'sort_by(.number) | .[].number'
+          )
+
+          PR="${OPEN_PRS[0]:-}"
+
+          if [ "${#OPEN_PRS[@]}" -gt 1 ]; then
+            for dup in "${OPEN_PRS[@]:1}"; do
+              echo "::warning::關閉重複 PR #$dup（保留 #$PR）"
+              gh pr close "$dup" \
+                --comment "🔁 與 #$PR 重複，由 auto-merge workflow 自動關閉。" || true
+            done
+          fi
+
+          # PR 事件帶進來的編號優先（它就是本次事件的主角）
+          if [ -n "$PR_FROM_EVENT" ]; then
+            PR="$PR_FROM_EVENT"
           fi
 
           if [ -z "$PR" ]; then
             echo "沒有既有 PR，嘗試建立 $BRANCH -> $BASE_BRANCH"
             if OUT=$(gh pr create --base "$BASE_BRANCH" --head "$BRANCH" \
                        --title "Auto merge: $BRANCH -> $BASE_BRANCH" \
-                       --body "由 auto-merge workflow 自動建立（事件：${{ github.event_name }}）。" 2>&1); then
-              PR="${OUT##*/}"
+                       --body "由 auto-merge workflow 自動建立（事件：${EVENT_NAME}）。" 2>&1); then
+              # 不解析 stdout（可能混入警告訊息），直接回查最可靠
+              PR=$(gh pr list --head "$BRANCH" --base "$BASE_BRANCH" --state open \
+                     --json number --jq '.[0].number // empty')
             else
               echo "$OUT"
               case "$OUT" in
-                *"No commits between"*|*"no commits between"*)
+                *[Nn]"o commits between"*)
                   echo "::notice::$BRANCH 與 $BASE_BRANCH 沒有差異，無須合併。"
                   echo "pr=" >> "$GITHUB_OUTPUT"; exit 0 ;;
                 *"already exists"*)
                   PR=$(gh pr list --head "$BRANCH" --base "$BASE_BRANCH" --state open \
                          --json number --jq '.[0].number // empty') ;;
                 *)
-                  echo "::error::建立 PR 失敗"; exit 1 ;;
+                  echo "::error::建立 PR 失敗：$OUT"; exit 1 ;;
               esac
             fi
           fi
 
+          if [ -z "$PR" ]; then
+            echo "::notice::找不到也建不出可合併的 PR，結束。"
+          fi
           echo "pr=$PR" >> "$GITHUB_OUTPUT"
 
-      - name: Mark ready (in case it is a draft)
-        if: steps.pr.outputs.pr != ''
-        run: gh pr ready "${{ steps.pr.outputs.pr }}" || true
-
       - name: Merge into master (retry on race / behind base)
+        id: merge
         if: steps.pr.outputs.pr != ''
         env:
           PR: ${{ steps.pr.outputs.pr }}
+          BRANCH: ${{ steps.head.outputs.branch }}
         run: |
           set -uo pipefail
+
+          fail() {
+            gh pr comment "$PR" --body "$1" || true
+            echo "::error::$2"
+            exit 1
+          }
+
           for attempt in 1 2 3 4 5; do
-            STATE=$(gh pr view "$PR" --json state --jq .state)
-            if [ "$STATE" = "MERGED" ]; then
-              echo "::notice::PR #$PR 已合併。"; exit 0
-            fi
-            if [ "$STATE" = "CLOSED" ]; then
-              echo "::warning::PR #$PR 已被關閉，不合併。"; exit 0
+            # 一次取回所有欄位，省下三次 API 往返
+            read -r STATE IS_DRAFT MERGE_STATE < <(
+              gh pr view "$PR" --json state,isDraft,mergeStateStatus \
+                --jq '[.state, (.isDraft|tostring), (.mergeStateStatus // "UNKNOWN")] | @tsv'
+            )
+
+            case "$STATE" in
+              MERGED) echo "::notice::PR #$PR 已合併。"
+                      echo "merged_branch=$BRANCH" >> "$GITHUB_OUTPUT"; exit 0 ;;
+              CLOSED) echo "::warning::PR #$PR 已被關閉，不合併。"; exit 0 ;;
+            esac
+
+            # 草稿無法合併，先轉正式（auto-merge 的既定行為）
+            if [ "$IS_DRAFT" = "true" ]; then
+              gh pr ready "$PR" || true
             fi
 
             if gh pr merge "$PR" --merge --delete-branch; then
-              echo "::notice::PR #$PR 已合併進 $BASE_BRANCH。"; exit 0
+              echo "::notice::PR #$PR 已合併進 $BASE_BRANCH。"
+              echo "merged_branch=$BRANCH" >> "$GITHUB_OUTPUT"
+              exit 0
             fi
 
-            STATUS=$(gh pr view "$PR" --json mergeStateStatus --jq .mergeStateStatus)
-            echo "第 $attempt 次合併失敗，mergeStateStatus=$STATUS"
-            case "$STATUS" in
+            echo "第 $attempt 次合併失敗，mergeStateStatus=$MERGE_STATE"
+            case "$MERGE_STATE" in
               DIRTY)
-                gh pr comment "$PR" --body "❌ auto-merge 失敗：與\`$BASE_BRANCH\`有衝突，需要人工處理。" || true
-                echo "::error::PR #$PR 與 $BASE_BRANCH 衝突，需人工解決。"; exit 1 ;;
+                fail "❌ auto-merge 失敗：與 \`$BASE_BRANCH\` 有衝突，需要人工處理。" \
+                     "PR #$PR 與 $BASE_BRANCH 衝突，需人工解決。" ;;
+              BLOCKED)
+                # 缺少必要審查／必過檢查未通過：改掛 auto-merge 由 GitHub 接手，不再空轉重試
+                if gh pr merge "$PR" --merge --auto --delete-branch; then
+                  echo "::notice::PR #$PR 被分支保護規則擋下，已改用 GitHub auto-merge 待條件滿足後自動合併。"
+                  exit 0
+                fi
+                fail "❌ auto-merge 失敗：PR 被分支保護規則擋下（BLOCKED），需要人工處理。" \
+                     "PR #$PR 被 branch protection 擋下。" ;;
               BEHIND)
                 gh pr update-branch "$PR" || true ;;
-              UNKNOWN|"")
-                : ;;  # GitHub 尚在計算可合併性，等下一輪
+              *)
+                # UNKNOWN/UNSTABLE/空值：GitHub 仍在計算可合併性或檢查執行中，等下一輪
+                : ;;
             esac
-            sleep $((attempt * 10))
+
+            [ "$attempt" -lt 5 ] && sleep $((attempt * 10))
           done
 
-          gh pr comment "$PR" --body "❌ auto-merge 重試 5 次仍失敗，需要人工檢查。" || true
-          echo "::error::PR #$PR 重試後仍無法合併。"; exit 1
+          fail "❌ auto-merge 重試 5 次仍失敗，需要人工檢查。" "PR #$PR 重試後仍無法合併。"
+
+  # 刪除所有「已經合併進 master」的殘留分支。
+  # gh pr merge --delete-branch 偶爾會失效（合併後又被新的 push 重建分支等），
+  # 這個 job 負責把漏網的分支收乾淨。
+  cleanup-merged-branches:
+    name: Delete branches already merged into master
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: auto-merge
+    # 只在「排程 / 手動執行 / 本次真的完成了一次合併」時才跑，
+    # 不要每次 push 都掃一輪分支列表。
+    if: >-
+      always() && (
+        github.event_name == 'schedule'
+        || github.event_name == 'workflow_dispatch'
+        || needs['auto-merge'].outputs.merged_branch != ''
+      )
+    steps:
+      - name: Delete merged branches
+        env:
+          DRY_RUN: ${{ inputs.cleanup_dry_run }}
+        run: |
+          set -euo pipefail
+
+          DEFAULT_BRANCH=$(gh api "repos/$GH_REPO" --jq .default_branch)
+
+          # 有 open PR 的分支一律保留，避免刪掉正在進行中的工作
+          mapfile -t KEEP < <(gh pr list --state open --json headRefName --jq '.[].headRefName')
+
+          deleted=0; kept=0
+          while read -r branch protected; do
+            [ -z "$branch" ] && continue
+            if [ "$branch" = "$BASE_BRANCH" ] || [ "$branch" = "$DEFAULT_BRANCH" ]; then
+              continue
+            fi
+            if [ "$protected" = "true" ]; then
+              echo "保留 $branch（受保護分支）"; kept=$((kept + 1)); continue
+            fi
+            for k in "${KEEP[@]:-}"; do
+              if [ "$branch" = "$k" ]; then
+                echo "保留 $branch（尚有 open PR）"; kept=$((kept + 1)); continue 2
+              fi
+            done
+
+            # identical / behind 代表該分支的 commit 全部已在 master 上
+            STATUS=$(gh api "repos/$GH_REPO/compare/$BASE_BRANCH...$branch" --jq .status 2>/dev/null || echo "error")
+            case "$STATUS" in
+              identical|behind)
+                if [ "${DRY_RUN:-false}" = "true" ]; then
+                  echo "[dry-run] 會刪除 $branch（已合併，狀態：$STATUS）"
+                else
+                  echo "刪除 $branch（已合併，狀態：$STATUS）"
+                  gh api -X DELETE "repos/$GH_REPO/git/refs/heads/$branch" || \
+                    echo "::warning::刪除 $branch 失敗"
+                fi
+                deleted=$((deleted + 1)) ;;
+              ahead|diverged)
+                echo "保留 $branch（有未合併的 commit，狀態：$STATUS）"; kept=$((kept + 1)) ;;
+              *)
+                echo "::warning::無法比對 $branch，保留。"; kept=$((kept + 1)) ;;
+            esac
+          done < <(gh api --paginate "repos/$GH_REPO/branches" --jq '.[] | [.name, (.protected|tostring)] | @tsv')
+
+          echo "::notice::分支清理完成：刪除 $deleted 個、保留 $kept 個。"
