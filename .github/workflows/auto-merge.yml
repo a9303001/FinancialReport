@@ -4,19 +4,22 @@ name: Auto merge into master
 #   push              -> 分支被建立或被推新 commit
 #                        （建立分支時 GitHub 也會發 push 事件，故不再另掛 create，
 #                          避免 create/push 兩條路徑同時搶著建 PR 而產生重複 PR）
-#   pull_request      -> PR 被開啟 / 重開 / 由草稿轉正式
-#                        ※ 刻意不掛 synchronize：對同 repo 的 PR，推 commit 一定也會發 push 事件，
-#                          兩者同時掛會讓每次推送跑兩條 pipeline（被 concurrency 排隊後純屬浪費）。
+#   pull_request      -> PR 被開啟 / 重開 / 由草稿轉正式 / 推新 commit(synchronize)
+#                        掛上 synchronize 當作安全網：由自動化(GITHUB_TOKEN / GitHub App)推的
+#                        commit 有時不會另發 push 事件，靠 synchronize 再補一條合併路徑。
+#                        同 repo 若 push 與 synchronize 同時發，concurrency 會以 head branch 收斂成一條。
 #   workflow_dispatch -> 手動補救指定分支，或手動清理已合併分支
-#   schedule          -> 每日清理已合併進 master 的殘留分支
+#   schedule          -> 每 15 分鐘「掃描並合併所有 open PR 進 master」＋清理已合併分支。
+#                        這是最重要的保證：由 GITHUB_TOKEN / GitHub App 建立的 PR、或推分支時
+#                        沒觸發到 push/pull_request 事件的分支，都會在下一次排程被掃到並自動合併。
 on:
   push:
     branches-ignore:
       - master
   pull_request:
-    types: [opened, reopened, ready_for_review]
+    types: [opened, reopened, ready_for_review, synchronize]
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
     inputs:
       branch:
@@ -358,6 +361,143 @@ jobs:
           fail "❌ auto-merge 重試 ${MAX_ATTEMPTS} 次仍無法合併（最後狀態：\`$LAST_STATE\`），需要人工檢查。" \
                "PR #$PR 重試 ${MAX_ATTEMPTS} 次後仍無法合併，mergeStateStatus=$LAST_STATE。"
 
+  # 安全網：掃描「所有以 master 為 base 的 open PR」，逐一合併進 master。
+  # 這是「確保所有 PR / 分支 / push 都自動合併」的最終保證：
+  # 由自動化(GITHUB_TOKEN / GitHub App)建立的 PR、或推送時沒觸發到 push/pull_request
+  # 事件的分支，event-driven 的 auto-merge job 不會跑到；此 job 每 15 分鐘（或手動）
+  # 把它們全部掃出來合併，補上事件漏掉的缺口。
+  sweep-open-prs:
+    name: Sweep all open PRs into master
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pull-requests: write
+    # 只在排程或手動執行時掃全庫，避免每次 push / PR 事件都掃一輪 open PR 清單。
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    # 自成一條 concurrency，避免兩次排程同時掃描互踩；不取消進行中的合併。
+    concurrency:
+      group: auto-merge-sweep
+      cancel-in-progress: false
+    outputs:
+      swept: ${{ steps.sweep.outputs.swept }}
+    steps:
+      - name: Merge every open PR targeting master
+        id: sweep
+        env:
+          FAIL_MARKER: '<!-- auto-merge-failure -->'
+        run: |
+          set -euo pipefail
+
+          OWNER="${GH_REPO%%/*}"
+
+          # 一次撈出所有以 master 為 base 的 open PR（含草稿），連同判斷合併所需欄位。
+          PR_TSV=$(
+            gh pr list --base "$BASE_BRANCH" --state open --limit "$GH_LIST_LIMIT" \
+              --json number,isDraft,mergeStateStatus,headRefName,headRepositoryOwner \
+              --jq '.[] | [.number, (.isDraft|tostring), (.mergeStateStatus // "UNKNOWN"), .headRefName, (.headRepositoryOwner.login // "")] | @tsv'
+          ) || PR_TSV=""
+
+          if [ -z "$PR_TSV" ]; then
+            echo "::notice::沒有以 $BASE_BRANCH 為 base 的 open PR，無須掃描。"
+            echo "swept=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          swept=false
+
+          # 刪 head ref：合併成功後清掉分支，失敗只提示，交由清理 job 收尾。
+          delete_head_ref() {
+            gh api -X DELETE "repos/$GH_REPO/git/refs/heads/$1" >/dev/null 2>&1 \
+              && echo "已刪除分支 $1" \
+              || echo "::notice::分支 $1 未刪除（可能已不存在）。"
+          }
+
+          # 同一則衝突留言只留一次，避免洗版。
+          comment_once() {
+            local pr="$1" body="$2"
+            if gh pr view "$pr" --json comments --jq '.comments[].body' 2>/dev/null \
+                 | grep -qF "$FAIL_MARKER"; then
+              return 0
+            fi
+            gh pr comment "$pr" --body "${FAIL_MARKER}"$'\n'"$body" || true
+          }
+
+          while IFS=$'\t' read -r PR IS_DRAFT INIT_STATE BRANCH HEAD_OWNER; do
+            [ -z "$PR" ] && continue
+            echo "=== 處理 PR #$PR（branch=$BRANCH draft=$IS_DRAFT state=$INIT_STATE）==="
+
+            # fork 來的 PR：GITHUB_TOKEN 為唯讀，無法自動合併，略過。
+            if [ -n "$HEAD_OWNER" ] && [ "$HEAD_OWNER" != "$OWNER" ]; then
+              echo "::notice::PR #$PR 來自 fork（$HEAD_OWNER），token 唯讀無法合併，略過。"
+              continue
+            fi
+
+            merged=false
+            for attempt in 1 2 3 4; do
+              if ! PR_JSON=$(gh pr view "$PR" --json state,isDraft,mergeStateStatus \
+                    --jq '[.state,(.isDraft|tostring),(.mergeStateStatus // "UNKNOWN")] | @tsv'); then
+                echo "::warning::gh pr view #$PR 失敗（第 $attempt 次），稍後重試。"; sleep 5; continue
+              fi
+              IFS=$'\t' read -r STATE DRAFT MS <<< "$PR_JSON"
+              echo "  state=$STATE draft=$DRAFT mergeStateStatus=$MS"
+
+              case "$STATE" in
+                MERGED) merged=true; break ;;
+                CLOSED) echo "  PR #$PR 已關閉，略過。"; break ;;
+              esac
+
+              # 草稿無法合併，先轉正式（auto-merge 一貫行為）。
+              if [ "$DRAFT" = "true" ]; then
+                echo "  PR #$PR 是草稿，轉為正式..."
+                gh pr ready "$PR" || echo "::warning::PR #$PR 轉正式失敗，下一輪重試。"
+                sleep 5; continue
+              fi
+
+              case "$MS" in
+                BEHIND)
+                  echo "  PR #$PR 落後 base，更新分支..."
+                  gh pr update-branch "$PR" || echo "::warning::PR #$PR update-branch 失敗。"
+                  sleep 5; continue ;;
+                DIRTY)
+                  echo "::warning::PR #$PR 與 $BASE_BRANCH 有衝突，需人工處理。"
+                  comment_once "$PR" "❌ auto-merge sweep：\`$BRANCH\` 與 \`$BASE_BRANCH\` 有衝突，需人工解決後才能自動合併。"
+                  break ;;
+                BLOCKED)
+                  echo "  PR #$PR 被分支保護規則擋下，改掛 GitHub auto-merge..."
+                  if gh pr merge "$PR" --merge --auto; then
+                    echo "::notice::PR #$PR 已啟用 GitHub auto-merge，條件滿足後自動合併。"; break
+                  fi
+                  echo "::warning::PR #$PR 無法啟用 GitHub auto-merge，下一輪重試。"
+                  sleep 5; continue ;;
+              esac
+
+              # CLEAN / UNSTABLE / HAS_HOOKS / UNKNOWN：直接嘗試合併。
+              if gh pr merge "$PR" --merge; then
+                merged=true; break
+              fi
+              # 合併指令回非 0 不代表沒成功，重新確認。
+              if [ "$(gh pr view "$PR" --json state --jq .state 2>/dev/null)" = "MERGED" ]; then
+                merged=true; break
+              fi
+              echo "::warning::PR #$PR 第 $attempt 次合併未成，重試..."
+              sleep 5
+            done
+
+            if [ "$merged" = "true" ]; then
+              echo "::notice::PR #$PR 已合併進 $BASE_BRANCH。"
+              delete_head_ref "$BRANCH"
+              swept=true
+            fi
+          done <<< "$PR_TSV"
+
+          echo "swept=$swept" >> "$GITHUB_OUTPUT"
+          {
+            echo "## 🔁 Auto-Merge Sweep"
+            echo "- 掃描所有以 \`$BASE_BRANCH\` 為 base 的 open PR 並嘗試合併。"
+            echo "- 本次至少完成一次合併：\`$swept\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
   # 刪除所有「已經合併進 master」的殘留分支。
   # 合併後的刪 ref 偶爾會失效（分支又被新的 push 重建、API 短暫失敗等），
   # 這個 job 負責把漏網的分支收乾淨。
@@ -365,17 +505,18 @@ jobs:
     name: Delete branches already merged into master
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: auto-merge
+    needs: [auto-merge, sweep-open-prs]
     permissions:
       contents: write
       pull-requests: read
-    # 只在「排程 / 手動執行 / 本次真的完成了一次合併」時才跑，
+    # 只在「排程 / 手動執行 / 本次真的完成了一次合併（event 或 sweep）」時才跑，
     # 不要每次 push 都掃一輪分支列表。
     if: >-
       always() && (
         github.event_name == 'schedule'
         || github.event_name == 'workflow_dispatch'
         || needs['auto-merge'].outputs.merged_branch != ''
+        || needs['sweep-open-prs'].outputs.swept == 'true'
       )
     steps:
       - name: Delete merged branches
