@@ -92,8 +92,9 @@ OUTPUT_FILENAME: hourAnalysisResult.md
 - `COMPANY_FOLDER`：7203Toyota
 - `EXTRA_ANALYSIS`：
   1. 自駕車計劃？中國與特斯拉自駕車對 TM 未來 EPS 的影響？TM 有無因應計劃？
-  2. 如果財務數據單位是美元時，要轉成日元
-  3. 未來 2 年 EPS 預估
+  2. 美國關稅對EPS影響?關稅稅率是多少?
+  3. 如果財務數據單位是美元時，要轉成日元
+  4. 未來 2 年 EPS 預估
 
 ---
 
