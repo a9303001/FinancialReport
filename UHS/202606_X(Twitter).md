@@ -9,7 +9,6 @@
 ## 1. 焦點討論串與新聞整理
 
 
-
 ### 🎯 行為健康部門總裁離職與監管隱憂
 - **來源連結**: [X (Twitter)](https://x.com/search?q=UHS+Peterson+resigns)
 - **發布時間**: 2026-05-28

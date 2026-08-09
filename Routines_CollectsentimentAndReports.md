@@ -7,7 +7,6 @@
 ---
 
 
-
 ## 每日輪替表 (Rotation Table)
 
 | 執行日期 | COMPANY_TICKER | COMPANY_NAME | 本地資料夾名稱 (Folder) | 備註 / 市場 |
