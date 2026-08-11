@@ -1,5 +1,0 @@
-/schedule
-/goal
-每10min執行Routines_StockAnalysis.md內所有公司的analysis
-每個公司都要開獨立subagent執行，
-不用照執行日期執行，強制執行Routines_StockAnalysis.md內所有公司的分析
