@@ -6,15 +6,11 @@
 
 #  個股分析1
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-- `COMPANY_NAME`： `00883`  `中國海洋石油`
-- `MARKET`： 港股/中股雙重上市 (600938)
-- `COMPANY_FOLDER`： `00883中國海洋石油`
+- `COMPANY_NAME`：03606 福耀玻璃（中股: 600660 福耀玻璃）
+- `MARKET`：港股/中股
+- `COMPANY_FOLDER`：03606福耀玻璃
 - `EXTRA_ANALYSIS`：
-  1. 油價對eps的影響
-  2. 2.油價50美元，預估eps多少
-  2. 油價損益平衡點
-  3. 未来油價預估
-  4. 未來三年EPS預估
-  5. 与00857中石油，00386中石化兩家公司比較投資價值
-
-
+  1. 中美貿易戰影響及對 EPS 影響
+  2. AI 自駕車對玻璃需求影響?對eps影響?
+  3. 電動車對玻璃需求影響?對eps影響?
+  4. 所有數據要每股化

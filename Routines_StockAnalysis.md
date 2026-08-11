@@ -281,7 +281,10 @@ OUTPUT_FILENAME: hourAnalysisResult.md
 - `COMPANY_FOLDER`：03606福耀玻璃
 - `EXTRA_ANALYSIS`：
   1. 中美貿易戰影響及對 EPS 影響
-  2. AI 對玻璃需求影響
+  2. AI 自駕車對玻璃需求影響?對eps影響?
+  3. 電動車對玻璃需求影響?對eps影響?
+  4. 所有數據要每股化
+
 
 ---
 
