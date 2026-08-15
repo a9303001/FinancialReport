@@ -1,5 +1,5 @@
 # 第 4 名：3470 Marimo地方創生REIT (マリモ地方創生リート投資法人 / Marimo Regional Revitalization REIT Investment Corp.)
-> **最後更新日期**：2026-08-12
+> **最後更新日期**：2026-08-16
 > **計價幣別**：JPY (日圓)
 
 ## 一、一句話定位與核心摘要
