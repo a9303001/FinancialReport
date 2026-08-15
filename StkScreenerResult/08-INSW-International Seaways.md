@@ -1,4 +1,4 @@
-### 第 08 名：INSW International Seaways — 總分 84.6 / 100（美股／一般）
+### 第 8 名：INSW International Seaways — 總分 84.6 / 100（美股／一般）
 - **本區塊最後更新**：2026-08-15
 - **一句話定位**：美股最大船隊規模大型原油與成品油遠洋油輪船東，營運 VLCC、Suezmax、Aframax 及 LR1/LR2 等多元化油輪船隊。
 
