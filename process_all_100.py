@@ -92,10 +92,12 @@ def main():
             # recalculate total: 22.2 + 10.7 + 17.2 + 17.4 + 10.0 = 77.5
             stk['score'] = 77.5
 
-    # Merge new stocks
-    all_candidates = list(existing_stocks)
+    # Deduplicate by code (new stocks take precedence)
+    candidates_dict = {}
+    for stk in existing_stocks:
+        candidates_dict[stk['code']] = stk
     for n in new_stocks_data:
-        all_candidates.append({
+        candidates_dict[n['code']] = {
             'old_rank': 999,
             'code': n['code'],
             'name': n['name'],
@@ -113,9 +115,10 @@ def main():
             'fpath': None,
             'is_new': True,
             'gen': n['content_gen']
-        })
+        }
         
-    print(f"Total candidate pool: {len(all_candidates)} stocks.")
+    all_candidates = list(candidates_dict.values())
+    print(f"Total unique candidate pool: {len(all_candidates)} stocks.")
     
     # Sort according to Section 6.7
     # 1. Total score desc
@@ -145,7 +148,8 @@ def main():
     written_files = []
     for rank_idx, stk in enumerate(top100, start=1):
         rank_str = f"{rank_idx:02d}" if rank_idx < 100 else f"{rank_idx:03d}"
-        fname = f"{rank_str}-{stk['code']}-{stk['name']}.md"
+        clean_name = re.sub(r'[\/\\:\*\?\"<>\|]', '', stk['name']).strip()
+        fname = f"{rank_str}-{stk['code']}-{clean_name}.md"
         fpath = os.path.join('StkScreenerResult', fname)
         
         if stk.get('is_new'):
