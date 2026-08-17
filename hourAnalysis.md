@@ -277,7 +277,6 @@
   - **日本**：minkabu.jp、kabutan.jp、Yahoo Finance JP、5ch
   - **中國／香港**：雪球（xueqiu）、東方財富股吧、富途社區、LIHKG
   - **英文圈**：Reddit、Seeking Alpha、X（Twitter）、TipRanks
-  - **台灣**：PTT、財報狗、股市爆料同學會
 - 另須確認 GitHub 財報庫 `https://github.com/a9303001/FinancialReport` 是否已存有該公司之輿情檔案。
 
 ### Step 10：提煉下一輪追蹤項目（Next Iteration Topics）
