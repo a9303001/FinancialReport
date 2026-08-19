@@ -39,7 +39,8 @@
       "mcp__github",
       "WebSearch",
       "WebFetch",
-      "mcp__playwright__browser_navigate"
+      "mcp__playwright__browser_navigate",
+      "mcp__Claude_Code_Remote__get_session"
     ]
   }
 }
