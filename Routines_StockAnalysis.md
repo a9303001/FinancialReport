@@ -294,21 +294,25 @@ OUTPUT_FILENAME: hourAnalysisResult.md
 ---
 
 - 執行日期: 23
-- `COMPANY_NAME`：9022 JR 東海
-- `MARKET`：日股
-- `COMPANY_FOLDER`：9022JR東海
+- `COMPANY_NAME`：01816中廣核電力 / 中股雙重上市 (003816)
+- `MARKET`：港股
+- `COMPANY_FOLDER`：01816中廣核電力
 - `EXTRA_ANALYSIS`：
-  1. 磁浮列車（リニア中央新幹線）對未來 10 年 EPS 影響
+  1. 未來10年每年新增核電機組，每機組貢獻多少EPS
+  2. 未來10年EPS預估
+  3. 未來10年每股配息預估
+  4. 每股化，港幣
 
 ---
 
 - 執行日期: 24
-- `COMPANY_NAME`：01378 中國宏橋
-- `MARKET`：港股
-- `COMPANY_FOLDER`：01378中國宏橋
+- `COMPANY_NAME`：9503關西電力
+- `MARKET`：日股
+- `COMPANY_FOLDER`：9503關西電力
 - `EXTRA_ANALYSIS`：
-  1. 煤炭/鋁土礦價格對毛利率影響，以及對沖情況
-  2. 過去 10 年 ROE 長期偏低的原因與未來改善空間
+  1. 未來10年每年新增核電機組，每每機組貢獻多少EPS
+  2. 未來10年EPS預估
+
 
 ---
 
