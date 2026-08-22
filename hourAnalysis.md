@@ -1,31 +1,17 @@
 /goal
 使用latest claude OPUS model 
 
-## 全域參數 (Global Parameters)
-<OUTPUT_FILENAME>` : hourAnalysisResult.md
 
-#  個股分析1
+# 個股分析1
+><OUTPUT_FILENAME>` : hourAnalysisResult.md
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-- `COMPANY_NAME`：01816中廣核電力 / 中股雙重上市 (003816)
+- `COMPANY_NAME`：00546 阜豐
 - `MARKET`：港股
-- `COMPANY_FOLDER`：01816中廣核電力
+- `COMPANY_FOLDER`：00546阜豐
 - `EXTRA_ANALYSIS`：
-  1. 未來10年每年新增核電機組，每機組貢獻多少EPS
-  2. 未來10年EPS預估
-  3. 未來10年每股配息預估
-  4. 每度電賣價是怎麼決定的?
-  5. 目前每度成本和賣價差多少%
-  6. 未來10年每年發電量預估(TWh)
-  7. 每股化，港幣
+  1. 味精、蘇氨酸、賴氨酸等主要產品價格趨勢對營收與毛利率的影響
+  2. 味精、蘇氨酸、賴氨酸在中國有健康疑慮嗎？有越來越少人使用嗎？
 
 ---
-#  個股分析2
-- `COMPANY_NAME`：`8002` `丸紅`
-- `MARKET`： 日股
-- `COMPANY_FOLDER`：`8002丸紅`
-- `EXTRA_ANALYSIS`：
-1. 各農作物佔營收比重
-2. 各農作物佔EPS比重
-3. 農作物漲跌對8002丸紅影響
-4. 美國關稅和美伊戰爭，烏俄戰爭對其影響?利多?利空?對EPS影響
-4. 未來3年EPS預估
+# 房地產分析
+run AnalysisResult\ChinaStateAnalysis.md 
