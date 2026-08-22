@@ -21,4 +21,4 @@ This database contains fundamental analysis, historical financial data, and risk
 - **風險與利多 (Risks & Positives):** 強制要求分析過去兩年的年報及最新季報中的潛在隱憂（風險）與成長動能（利多），不可只敘述基本面。
 
 ---
-© Financial Report Analysis. 投資有風險，報告僅供參考。
+© Financial Report Analysis. 投資有風險，報告僅供參考。˙
