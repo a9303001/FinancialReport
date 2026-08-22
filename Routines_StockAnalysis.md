@@ -235,12 +235,10 @@ OUTPUT_FILENAME: hourAnalysisResult.md
 ---
 
 - 執行日期: 18
-- `COMPANY_NAME`：1333 Umios
-- `MARKET`：日股
-- `COMPANY_FOLDER`：1333Umios
+- `COMPANY_NAME`：CF
+- `MARKET`：美股
+- `COMPANY_FOLDER`：CF
 - `EXTRA_ANALYSIS`：
-  1. 營業利益率偏低（約 2-3%）的主因分析與改善計畫
-  2. 負債比率、利息支出及對淨利潤的潛在影響
 
 ---
 
@@ -256,17 +254,12 @@ OUTPUT_FILENAME: hourAnalysisResult.md
 ---
 
 - 執行日期: 20
-- `COMPANY_NAME`：3252 地主
-- `MARKET`：日股
-- `COMPANY_FOLDER`：3252地主
+- `COMPANY_NAME`：01571信邦控股
+- `MARKET`：港股
+- `COMPANY_FOLDER`：01571信邦控股
 - `EXTRA_ANALYSIS`：
-  1. 日本少子化與空屋率上升對公司代管業務的長期威脅?
-  2. 建築成本上漲與高負債率對利潤率及財務安全性的影響
-  3. 市佔率和競爭對手分析
-  4. 持有土地都位於何處
-  5. 日股 地主株式會社（JINUSHI Co., Ltd., 股票代號：3252） 與 JINUSHI REIT 的關係
-  6. JINUSHI REIT持有人都是誰
-  7. eps來源比重是租金???還是賣土所得??過去五年每年的EPS來源比重各是多少????
+N/A
+
 
 ---
 
