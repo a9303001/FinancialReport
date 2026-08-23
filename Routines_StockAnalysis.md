@@ -219,8 +219,8 @@ OUTPUT_FILENAME: hourAnalysisResult.md
 - `MARKET`：港股
 - `COMPANY_FOLDER`：00546阜豐
 - `EXTRA_ANALYSIS`：
-  1. 味精、蘇氨酸、賴氨酸等主要產品價格趨勢對營收與毛利率的影響
-  2. 味精、蘇氨酸、賴氨酸在中國有健康疑慮嗎？有越來越少人使用嗎？
+  1. 有哪些產品，各佔eps比重
+  2. 各產品的主要競爭對手，市佔率 
 
 ---
 
