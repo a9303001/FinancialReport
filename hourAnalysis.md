@@ -13,5 +13,17 @@
   2. 各產品的主要競爭對手，市佔率 
 
 ---
+# 個股分析2
+><OUTPUT_FILENAME>` : hourAnalysisResult.md
+> **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
+- `COMPANY_NAME`：INGR宜瑞安
+- `MARKET`：美股
+- `COMPANY_FOLDER`：INGR宜瑞安
+- `EXTRA_ANALYSIS`：
+  1. 有哪些產品，各佔eps比重
+  2. 各產品的主要競爭對手，市佔率
+  3. 未來三年EPS
+
+---
 # 房地產分析
 run AnalysisResult\ChinaStateAnalysis.md 
