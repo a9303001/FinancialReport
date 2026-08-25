@@ -4,6 +4,8 @@
 > 2. 對照下方「每日輪替表」的「執行日期」欄。
 > 3. 若當日有對應公司 → 呼叫 `CollectsentimentAndReports` skill，帶入該列的 `COMPANY_TICKER` 與 `COMPANY_NAME`。
 > 4. 若當日標記為「無/不執行 (Skip)」→ 不做任何事，直接結束。
+> 5. 每個月一號要執行ArrangePublicOpinionMd skill
+
 ---
 
 
