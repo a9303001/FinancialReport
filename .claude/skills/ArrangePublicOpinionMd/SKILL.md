@@ -71,6 +71,7 @@ python .claude/skills/ArrangePublicOpinionMd/scripts/arrange_public_opinion.py -
 | 制式機器檔名 | EDINET `^S\d{3}[A-Z0-9]{4}\.md$`、SEC XBRL `^[a-z]{2,6}-\d{8}\.md$`、`^ltn\d+\.md$`、純數字編號 `^\d{8,}\.md$`、8 碼日期開頭公告 `^\d{8}(?![_\-\d])`、選股排名 `^\d{2}-[0-9A-Za-z]{2,6}-.*\.md$` |
 | 台股財報代碼 | `F04`、`FE4`、`FI4`、`_AI[0-9A-Z]`（如 `2025_2881_20260612F04.md`、`202601_2881_AI1.md`） |
 | 分析產出／系統檔 | `*Analysis*.md`、`*_Summary_*.md`、`conversion_summary.md`、`README.md`、`index.md`、`prompt.md`、`AGENTS.md`、`CLAUDE.md`、`Routines_*.md`、`*_reconciliation_*.md` |
+| 個人投資筆記／估值速記 | `Orange.md`（不分大小寫）——非輿情彙整、非公司年報季報，僅為個人估值筆記，一律不納入、不刪除 |
 | 輸出檔本身 | `{YYYY}_PublicOpinion.md`（含 `_part{n}`）、舊版 `{YYYY}_輿情彙整.md` → 不併入自己、不刪除，依 §4.1 遷移 |
 
 ※ `財報狗`／`StatementDog` 是輿情來源，**不算財報**（regex 用 `財報(?!狗)`）。

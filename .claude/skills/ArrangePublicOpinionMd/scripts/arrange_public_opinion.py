@@ -56,7 +56,7 @@ BLACK_REGEX = [
     r'_AI[0-9A-Z](_|\.)',                   # 台股財報 AI 系列
     r'(?<![A-Za-z])[Qq][1-4](?![A-Za-z])',  # 季度（避免誤中 Xueqiu1 之類）
     r'(?i)analysis|_summary_|conversion_summary|_reconciliation_',
-    r'(?i)^(readme|index|prompt|agents|claude)\.md$',
+    r'(?i)^(readme|index|prompt|agents|claude|orange)\.md$',
     r'(?i)^Routines_',
     MERGED_RE.pattern,                      # 輸出檔本身（舊版 {YYYY}_輿情彙整.md 見 §4.1 遷移規則）
 ]
@@ -300,7 +300,8 @@ class Report:
 
 
 SYSTEM_RULE_HINT = ('analysis', '_summary_', 'conversion_summary', 'readme',
-                    'index', 'prompt', 'agents', 'claude', 'routines', '_reconciliation_')
+                    'index', 'prompt', 'agents', 'claude', 'routines', '_reconciliation_',
+                    'orange')
 
 
 def classify(path: Path, company: str, rep: Report) -> tuple[bool, str]:
