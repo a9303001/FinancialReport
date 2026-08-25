@@ -26,7 +26,7 @@ description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／�
 | 項目 | 固定行為 |
 | :--- | :--- |
 | 處理範圍 | **全部**公司資料夾 |
-| `discard/` | **一併處理**（`discard/` 底下的每個公司資料夾都照做） |
+| `discard/` | **完全不處理**（底下的公司資料夾一律跳過） |
 | 年份 | **全部**年份，一年一份彙整檔 |
 | 是否實際動檔 | **實際寫檔與刪檔**（沒有 dry-run 模式） |
 
@@ -58,20 +58,14 @@ description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／�
 
 ### 2.1 公司資料夾判定
 
-「公司資料夾」= 下列兩處的目錄，**兩處都要處理**：
-
-1. `ROOT` 底下的第一層目錄
-2. `ROOT/discard/` 底下的第一層目錄（已淘汰的公司，處理方式與一般公司完全相同）
-
-但**排除**以下非公司目錄：
+「公司資料夾」= `ROOT` 底下的第一層目錄，但**排除**以下非公司目錄：
 
 ```
-.git  .github  .claude  .agents  Log  Prompt  AnalysisResult  StkScreenerResult
+.git  .github  .claude  .agents  Log  Prompt  AnalysisResult  StkScreenerResult  discard
 ```
 
-- `discard` 本身不是公司資料夾，是容器：**不要**把 `discard/` 當成一家公司，要進去逐一處理它底下的公司。
+- **`discard/` 完全不處理**：底下的公司資料夾（已淘汰的股票）一律跳過，不合併、不刪檔、不改名。
 - 每個公司資料夾只掃**第一層**，不再往下遞迴。
-- `discard/{公司}` 的彙整檔就寫在 `discard/{公司}/{YYYY}_PublicOpinion.md`，不要搬到 `ROOT` 底下。
 
 ---
 
@@ -320,17 +314,12 @@ import hashlib, re, os, datetime
 from pathlib import Path
 
 SKIP_DIRS = {'.git', '.github', '.claude', '.agents', 'Log', 'Prompt',
-             'AnalysisResult', 'StkScreenerResult'}
+             'AnalysisResult', 'StkScreenerResult', 'discard'}
 
 def company_dirs(root: Path) -> list[Path]:
-    """ROOT 底下的公司資料夾 + discard/ 底下的公司資料夾（兩處都要處理）。"""
-    dirs = [d for d in sorted(root.iterdir())
-            if d.is_dir() and d.name not in SKIP_DIRS and d.name != 'discard']
-    discard = root / 'discard'
-    if discard.is_dir():
-        dirs += [d for d in sorted(discard.iterdir())
-                 if d.is_dir() and d.name not in SKIP_DIRS]
-    return dirs
+    """ROOT 底下的公司資料夾（不含 discard/，不遞迴）。"""
+    return [d for d in sorted(root.iterdir())
+            if d.is_dir() and d.name not in SKIP_DIRS]
 
 BLACK_KEYWORDS = [
     'annual', '年報', 'annualreport', '有価証券報告書', 'interim', '中報', '中期報告',
