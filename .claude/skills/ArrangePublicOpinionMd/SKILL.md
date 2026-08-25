@@ -19,17 +19,18 @@ description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／�
 
 ---
 
-## 0. 執行參數 (Parameters)
+## 0. 執行範圍（固定，無參數）
 
-| 參數名稱 | 說明 | 預設值 |
-| :--- | :--- | :--- |
-| **`ROOT`** | FinancialReport repo 根目錄 | 目前工作目錄（Windows 本機通常是 `d:\FinancialReport`） |
-| **`COMPANY`** | 只處理指定公司資料夾（可多個） | 空 = **全部**公司資料夾 |
-| **`YEAR`** | 只處理指定年份（如 `2026`） | 空 = **全部**年份 |
-| **`DRY_RUN`** | `true` 時只產生報告、**完全不寫檔也不刪檔** | `false` |
-| **`INCLUDE_DISCARD`** | 是否處理 `discard/` 底下的公司 | `false` |
+**本 Skill 沒有任何執行參數，也不接受切換。每次執行都是同一套行為，不要反問使用者：**
 
-> 使用者若沒指定參數，就用預設值全跑，不要反問。
+| 項目 | 固定行為 |
+| :--- | :--- |
+| 處理範圍 | **全部**公司資料夾 |
+| `discard/` | **一併處理**（`discard/` 底下的每個公司資料夾都照做） |
+| 年份 | **全部**年份，一年一份彙整檔 |
+| 是否實際動檔 | **實際寫檔與刪檔**（沒有 dry-run 模式） |
+
+> 文中的 `ROOT` 一律指 FinancialReport repo 根目錄（本機 clone，Windows 通常是 `d:\FinancialReport`），不是可調整的參數。
 
 ---
 
@@ -42,7 +43,7 @@ description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／�
 | **Phase 2** | 分類：輿情檔 / 排除檔（年報季報公告等） | **是** |
 | **Phase 3** | 依年份分組 → 合併寫入 `{YYYY}_PublicOpinion.md` | 有輿情檔時 |
 | **Phase 4** | 完整性驗證（逐檔比對） | **是** |
-| **Phase 5** | 驗證通過才刪除原檔 | `DRY_RUN=false` 且驗證通過 |
+| **Phase 5** | 驗證通過才刪除原檔 | **是**（§5.1 檢查全過即刪） |
 | **Phase 6** | 產生總結報告 `Log/ArrangePublicOpinionMd_Summary_{yyyyMMdd}.md` | **是** |
 
 ---
@@ -60,14 +61,20 @@ description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／�
 
 ### 2.1 公司資料夾判定
 
-「公司資料夾」= `ROOT` 底下的第一層目錄，但**排除**以下非公司目錄：
+「公司資料夾」= 下列兩處的目錄，**兩處都要處理**：
+
+1. `ROOT` 底下的第一層目錄
+2. `ROOT/discard/` 底下的第一層目錄（已淘汰的公司，處理方式與一般公司完全相同）
+
+但**排除**以下非公司目錄：
 
 ```
-.git  .github  .claude  .agents  Log  Prompt  AnalysisResult  StkScreenerResult  discard
+.git  .github  .claude  .agents  Log  Prompt  AnalysisResult  StkScreenerResult
 ```
 
-- `discard/` 底下也是公司資料夾，但**預設不處理**（`INCLUDE_DISCARD=true` 時才處理，處理方式相同）。
-- 只掃**該公司資料夾的第一層**，不遞迴進子目錄。
+- `discard` 本身不是公司資料夾，是容器：**不要**把 `discard/` 當成一家公司，要進去逐一處理它底下的公司。
+- 每個公司資料夾只掃**第一層**，不再往下遞迴。
+- `discard/{公司}` 的彙整檔就寫在 `discard/{公司}/{YYYY}_PublicOpinion.md`，不要搬到 `ROOT` 底下。
 
 ---
 
@@ -247,7 +254,6 @@ AGENTS.md  CLAUDE.md    Routines_*.md          *_reconciliation_*.md
 | C3 | 原檔內容**去除所有空白與 `#` 後的前 200 個字元**，能在同樣正規化的彙整檔內容中找到（`#` 要去掉，因為 §4.3 會下降標題階層） | 不刪該檔 |
 | C4 | 彙整檔 size ≥ 本次所有已併入原檔 size 總和 × 0.95 | 不刪任何檔（表示併入不完整） |
 | C5 | 該檔未命中 §3.1 黑名單 | 不刪該檔（雙重保險） |
-| C6 | `DRY_RUN=false` | 不刪任何檔 |
 
 ### 5.2 刪除規則（嚴格執行）
 
@@ -317,7 +323,17 @@ import hashlib, re, os, datetime
 from pathlib import Path
 
 SKIP_DIRS = {'.git', '.github', '.claude', '.agents', 'Log', 'Prompt',
-             'AnalysisResult', 'StkScreenerResult', 'discard'}
+             'AnalysisResult', 'StkScreenerResult'}
+
+def company_dirs(root: Path) -> list[Path]:
+    """ROOT 底下的公司資料夾 + discard/ 底下的公司資料夾（兩處都要處理）。"""
+    dirs = [d for d in sorted(root.iterdir())
+            if d.is_dir() and d.name not in SKIP_DIRS and d.name != 'discard']
+    discard = root / 'discard'
+    if discard.is_dir():
+        dirs += [d for d in sorted(discard.iterdir())
+                 if d.is_dir() and d.name not in SKIP_DIRS]
+    return dirs
 
 BLACK_KEYWORDS = [
     'annual', '年報', 'annualreport', '有価証券報告書', 'interim', '中報', '中期報告',
