@@ -56,9 +56,6 @@ description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／�
 | git 可用 | `git status` 可執行 | 仍可執行，但報告中註明「無 git 保護，刪除不可復原」 |
 | 工作區乾淨 | `git status --porcelain` 無未提交的 `.md` 變更 | **先提醒使用者**：本 Skill 會刪檔，建議先提交或 stash；使用者堅持則繼續 |
 
-> [!IMPORTANT]
-> 本 Skill 會**刪除檔案**。在 git repo 內執行時，刪除可用 `git checkout` 復原；不在 git repo 內則**無法復原**，必須在報告中明確警告。
-
 ### 2.1 公司資料夾判定
 
 「公司資料夾」= 下列兩處的目錄，**兩處都要處理**：
