@@ -1,6 +1,6 @@
 ---
 name: ArrangePublicOpinionMd
-description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／新聞／討論區」.md 依年份合併成單一 {YYYY}_輿情彙整.md，驗證內容完整併入後自動刪除原始零散 md。年報、季報、公司公告 report 一律不納入、不刪除。
+description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／新聞／討論區」.md 依年份合併成單一 {YYYY}_PublicOpinion.md，驗證內容完整併入後自動刪除原始零散 md。年報、季報、公司公告 report 一律不納入、不刪除。
 ---
 /goal
 # ArrangePublicOpinionMd Skill — 執行指南 (Execution Guide)
@@ -8,7 +8,7 @@ description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／�
 > **[Role & Objective]**
 > 你是一個檔案整理 Agent。當此 Skill 啟動時，你的任務是：
 > 1. 掃描每個**公司資料夾**內零散的「輿情／新聞／討論區」`.md` 檔。
-> 2. 依**年份**分組，合併成同一份 `{YYYY}_輿情彙整.md`（放在該公司資料夾內）。
+> 2. 依**年份**分組，合併成同一份 `{YYYY}_PublicOpinion.md`（放在該公司資料夾內）。
 > 3. **驗證**原檔內容確實已寫入彙整檔後，**刪除原始的零散 `.md`**。
 > 4. 產出總結報告。
 >
@@ -40,7 +40,7 @@ description: 掃描 FinancialReport 內所有公司資料夾，將「輿情／�
 | **Phase 0** | 前置檢查（目錄、git 狀態） | **是** |
 | **Phase 1** | 掃描公司資料夾，列出所有 `.md` 候選 | **是** |
 | **Phase 2** | 分類：輿情檔 / 排除檔（年報季報公告等） | **是** |
-| **Phase 3** | 依年份分組 → 合併寫入 `{YYYY}_輿情彙整.md` | 有輿情檔時 |
+| **Phase 3** | 依年份分組 → 合併寫入 `{YYYY}_PublicOpinion.md` | 有輿情檔時 |
 | **Phase 4** | 完整性驗證（逐檔比對） | **是** |
 | **Phase 5** | 驗證通過才刪除原檔 | `DRY_RUN=false` 且驗證通過 |
 | **Phase 6** | 產生總結報告 `Log/ArrangePublicOpinionMd_Summary_{yyyyMMdd}.md` | **是** |
@@ -113,7 +113,9 @@ AGENTS.md  CLAUDE.md    Routines_*.md          *_reconciliation_*.md
 
 #### D. 彙整檔本身
 
-`{YYYY}_輿情彙整.md` 是**輸出檔**，不是輸入檔：不可被併入自己，也不可被刪除（重跑時當作 merge 目標，見 §4.4）。
+`{YYYY}_PublicOpinion.md` 是**輸出檔**，不是輸入檔：不可被併入自己，也不可被刪除（重跑時當作 merge 目標，見 §4.4）。
+
+舊版命名 `{YYYY}_輿情彙整.md`（本 Skill 早期版本的輸出檔）同樣視為輸出檔：**不可併入、不可刪除**，改依 §4.1 的遷移規則改名。
 
 ### 3.2 白名單（未命中黑名單，且符合任一即視為輿情檔）
 
@@ -155,20 +157,26 @@ AGENTS.md  CLAUDE.md    Routines_*.md          *_reconciliation_*.md
 | 6 | 檔案 mtime | 修改時間的年份 | → 該年（**必須在報告中標記「年份為推定」**） |
 
 - 年份必須落在 `2000`–`當年+1` 之間，否則退回下一優先序。
-- **不合併跨年**：2025 的輿情絕不寫進 `2026_輿情彙整.md`。
+- **不合併跨年**：2025 的輿情絕不寫進 `2026_PublicOpinion.md`。
 
 ---
 
-## 4. Phase 3 — 合併寫入 `{YYYY}_輿情彙整.md`
+## 4. Phase 3 — 合併寫入 `{YYYY}_PublicOpinion.md`
 
 ### 4.1 輸出路徑與檔名
 
 ```
-{ROOT}/{公司資料夾}/{YYYY}_輿情彙整.md
+{ROOT}/{公司資料夾}/{YYYY}_PublicOpinion.md
 ```
 
 - 每個公司、每個年份**一份**。
+- 檔名一律用**英文**：`{YYYY}_PublicOpinion.md`（超過 20 MB 才切成 `{YYYY}_PublicOpinion_part{n}.md`）。
 - 該年只有 1 個輿情檔時**照樣合併**（等於正規化檔名），不要跳過。
+
+**舊版檔名遷移（每次執行時先做）**：若資料夾內存在舊版命名 `{YYYY}_輿情彙整.md`，
+1. `{YYYY}_PublicOpinion.md` **不存在** → 直接改名（`git mv "{YYYY}_輿情彙整.md" "{YYYY}_PublicOpinion.md"`），內容原封不動，之後以它為 merge 目標。
+2. 兩者**都存在** → 把舊檔當成一般來源檔併入新檔（保留其 `source-file` 註記），通過 §5 驗證後才刪除舊檔。
+3. 遷移結果要寫進 Phase 6 報告。
 
 ### 4.2 排序規則
 
@@ -223,7 +231,7 @@ AGENTS.md  CLAUDE.md    Routines_*.md          *_reconciliation_*.md
 
 ### 4.5 寫入安全
 
-- 先寫暫存檔（`{YYYY}_輿情彙整.md.tmp`）→ 確認大小 > 0 且內容可讀 → 才原子性取代正式檔 → 刪暫存檔。
+- 先寫暫存檔（`{YYYY}_PublicOpinion.md.tmp`）→ 確認大小 > 0 且內容可讀 → 才原子性取代正式檔 → 刪暫存檔。
 - 寫入失敗 → 保留原檔、記錄錯誤、**跳過該公司的刪除步驟**，繼續下一家。
 
 ---
@@ -280,7 +288,7 @@ git checkout HEAD -- "<公司資料夾>/<被刪檔名>"
 
 | 公司 | 年份 | 彙整檔 | 本次併入 | 已刪除 | 備註 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `2881富邦金` | 2026 | `2026_輿情彙整.md` | 8 | 8 | — |
+| `2881富邦金` | 2026 | `2026_PublicOpinion.md` | 8 | 8 | — |
 
 ### Section 3 — 排除清單（要看得出「為什麼沒動它」）
 
@@ -332,7 +340,8 @@ BLACK_REGEX = [
     r'_AI[0-9A-Z](_|\.)',                # 台股財報 AI 系列
     r'[Qq][1-4]',                        # 季度
     r'(?i)houranalysis|analysis|_summary_|conversion_summary',
-    r'^\d{4}_輿情彙整(_part\d+)?\.md$',   # 輸出檔本身
+    r'^\d{4}_PublicOpinion(_part\d+)?\.md$',   # 輸出檔本身
+    r'^\d{4}_輿情彙整(_part\d+)?\.md$',        # 舊版輸出檔（見 §4.1 遷移規則）
 ]
 WHITE_REGEX = [
     r'^\d{4}(0[1-9]|1[0-2])_.+\.md$',
@@ -435,7 +444,7 @@ git rm "d:\FinancialReport\2881富邦金\202607_PTT.md"
 | 彙整檔寫入失敗 | 記錄 → **該公司該年度完全不刪檔** → 繼續下一家 |
 | 年份無法判定 | 用 mtime 推定並標記；若 mtime 也異常 → 列入人工確認清單，不動該檔 |
 | 檔案內容為空（0 bytes） | 不併入；列入報告的「空檔清單」，**不自動刪除** |
-| 同年份輿情檔 > 200 個 | 照樣合併；若彙整檔超過 20 MB，改切成 `{YYYY}_輿情彙整_part{n}.md`，並在 part1 頂部列出所有 part |
+| 同年份輿情檔 > 200 個 | 照樣合併；若彙整檔超過 20 MB，改切成 `{YYYY}_PublicOpinion_part{n}.md`，並在 part1 頂部列出所有 part |
 | 使用者中途中斷 | 已寫入的彙整檔保留；未驗證的原檔一律不刪 |
 
 ---
