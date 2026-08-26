@@ -12,6 +12,8 @@
       "args": [
         "--from",
         "git+https://github.com/Alex2Yang97/yahoo-finance-mcp",
+        "--with",
+        "mcp<2",
         "yahoo-finance-mcp"
       ]
     }
