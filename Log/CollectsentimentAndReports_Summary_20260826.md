@@ -3,34 +3,27 @@
 ## 1. 成功紀錄
 | 股號/名稱 | 資料來源 | 檔案名稱 | 狀態 |
 |:----------|:---------|:---------|:-----|
-| `2832台產` | 公開資訊觀測站 / 財報庫 | `2832_AnnualReport_2024.md` | 已存在且最新（2024 年報） |
-| `2832台產` | 公開資訊觀測站 / 財報庫 | `2832_AnnualReport_2025.md` | 已存在且最新（2025 年報） |
-| `2832台產` | 公開資訊觀測站 / 財報庫 | `2832_quarter_2026Q1.md` | 已存在且最新（2026 Q1 季報） |
-| `2832台產` | CMoney 股市爆料同學會、PTT Stock、Yahoo 股市、鉅亨網、Dcard | `2026_PublicOpinion.md` (含 2026/08 輿情) | 輿情與新聞更新彙整成功 |
-| `8433弘帆` | 臺灣證券交易所 (TWSE) / 財報狗 | `8433_annual_2024.md`, `8433_annual_2025.md`, `8433_Quarter_2026Q2.md` | 財報齊備 (2年報+最新2026 Q2季報下載並轉換成功) |
-| `8433弘帆` | CMoney 官方 API、鉅亨網、工商時報、PTT Stock | `202608_輿情新聞.md` | 輿情收集更新成功 |
-| `UHS Universal Health Services` | SEC EDGAR / 官方財報 | `UHS_10K_2024-12-31.md`, `UHS_10K_2025-12-31.md`, `UHS_10Q_2026-06-30.md` | 財報齊備 (2年報+最新Q2季報) |
-| `UHS Universal Health Services` | Seeking Alpha、Reddit、TipRanks、Zacks、PR Newswire | `202608_輿情新聞.md` | 輿情更新成功 |
+| 8433 弘帆 | 公開資訊觀測站 / TWSE | 8433_Quarter_2026Q2.md | 下載並轉換成功 |
+| 8433 弘帆 | CMoney、鉅亨網、工商時報、PTT、Dcard、財報狗 | 202608_輿情新聞.md | 輿情更新成功 |
 
 ## 2. 失敗或被擋網站
-- **來源**: [雪球](https://xueqiu.com) (針對 2832 台產、8433 弘帆)
-  - **原因**: 雪球無台股 2832 與 8433 獨立代碼頁與專屬討論。
-  - **已試過的 MCP**: brightdata / firecrawl-mcp
-- **來源**: [格隆匯](https://www.gelonghui.com) (針對 2832 台產、8433 弘帆)
-  - **原因**: 格隆匯搜尋 `弘帆` / `台湾产物保险` 僅有無關之工商登記或泛產業報告，無個股深度研報。
-  - **已試過的 MCP**: firecrawl-mcp (`firecrawl_search`)
+- **來源**: [雪球 (Xueqiu)](https://xueqiu.com/S/8433)
+- **原因**: 該平台無台股 8433 獨立專屬討論板塊
+- **已試過的 MCP**: brightdata scrape_as_markdown
+- **來源**: [格隆匯 (Gelonghui)](https://www.gelonghui.com)
+- **原因**: 該平台主要覆蓋港 A 股與中概股，無台股 8433 深度研報
+- **已試過的 MCP**: firecrawl_search
 
 ## 3. 資料缺失說明
-- **2832 台產**：2026 Q2 季報法定申報截止日為 8 月底，董事會訂於 8 月 28 日召開審議。
-- **8433 弘帆**：2026 Q2 合併財務報告書已由 TWSE 伺服器成功下載並轉換為 `8433_Quarter_2026Q2.md`（上半年累計 EPS 2.79 元，單季 EPS 1.43 元），財報完整齊全。
-- **UHS**：2026 Q3 季報尚未發布，最新季報為 2026 Q2（`UHS_10Q_2026-06-30.md`）。
+- 官方未發布英文版財報（AIA），已確認下載官方正式發布之繁體中文版核閱財報。
 
 ## 4. 異常檔案刪除紀錄
-- `8433_Quarter_2026Q2.pdf` 於轉換 Markdown 成功且通過 CID 亂碼檢驗後依規範刪除原始 PDF 檔。
+- 無異常檔案被刪除（原始 PDF 轉換後正常清理）。
 
 ## 5. 本次使用的 MCP（強制填寫）
 | MCP 名稱 | 工具 | 用途 |
 |:---------|:-----|:-----|
-| Firecrawl | `firecrawl_search` | 檢索格隆匯全站關於 8433 弘帆之專題報導 |
-| Bright Data | `scrape_as_markdown` | 嘗試抓取雪球 8433 代碼頁面 |
-| CMoney API | Native REST (Bearer Guest Token) | 取得股市爆料同學會 8433 最新社群貼文、營收討論與留言 |
+| Firecrawl | irecrawl_scrape | 抓取 StatementDog 財報目錄與 TWSE 電子書端點 |
+| Firecrawl | irecrawl_search | 檢索格隆匯站內 8433 研報 |
+| Bright Data | scrape_as_markdown | 探測雪球 8433 討論版塊 |
+| CMoney API | curl / API | 呼叫 CMoney 官方 API 取得股市爆料同學會貼文與留言 |
