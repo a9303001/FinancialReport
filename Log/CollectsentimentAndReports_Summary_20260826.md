@@ -1,51 +1,77 @@
-# 任務執行最終報告 — 2026/08/26（每日輪替：Day 26 → 6361 荏原製作所）
+# 任務執行最終報告 — 2026/08/26（每日輪替：Day 27 → 6902 DENSO）
 
-- **公司**：`6361` Ebara Corporation（荏原製作所）
-- **市場**：日股（TSE: 6361）＋ 美股 ADR（EBCOY / EBARF）
-- **本地資料夾**：`6361荏原製作所/`
-- **執行月份輿情檔**：`202608_輿情新聞.md`
+- **公司**：6902 DENSO Corporation（デンソー株式会社）
+- **市場**：日股（TSE: 6902）＋ 美股 ADR（DNZOY）
+- **本地資料夾**：6902Denso/
+- **執行月份輿情檔**：202608_輿情新聞.md
+
+---
 
 ## 1. 成功紀錄
 
 | 股號/名稱 | 資料來源 | 產生的檔案 / 下載的財報檔名 | 狀態/備註 |
 | :--- | :--- | :--- | :--- |
-| `6361荏原製作所` | Ebara IR 官網（Firecrawl 擷取） | `6361_Quarter_2026Q2.md` | **新增**：2026 Q2（截至 2026-06-30，2026-08-14 發布）季報，全 29 頁 Markdown 解析成功 |
-| `6361荏原製作所` | （既有） | `6361_AnnualReport_2024.md` | 已存在，跳過 |
-| `6361荏原製作所` | （既有） | `6361_AnnualReport_2025.md` | 已存在，跳過 |
-| `6361荏原製作所` | （既有） | `6361_Quarter_2026Q1.md` | 已存在，跳過 |
-| `6361荏原製作所` | 株探、みんかぶ、Yahoo JP 掲示板、TipRanks/Seeking Alpha、雪球/格隆匯、PTT | `202608_輿情新聞.md` | 輿情更新成功（6 大來源，全部 ✅ 真實抓取） |
+| 6902Denso | DENSO IR 官網 / TDnet / XJ-Storage | 6902_AnnualReport_2026.md | **新增**：FY2026 全年決算短信 (Year ended Mar 31, 2026)，Markdown 轉換成功，0 (cid:) 亂碼 |
+| 6902Denso | DENSO IR 官網 (2026/06/15) | 6902_AnnualReport_2026_Full.md | **新增**：FY2026 完整英文年報 (Financial Report 2026, 123 頁)，Markdown 轉換成功，0 (cid:) 亂碼 |
+| 6902Denso | DENSO IR 官網 (2026/07/31) | 6902_Quarter_2027Q1.md | **新增**：FY2027 Q1 季報決算短信 (Three Months ended Jun 30, 2026)，Markdown 轉換成功，0 (cid:) 亂碼 |
+| 6902Denso | （既有） | 6902_AnnualReport_2024.md | 已存在，保留 |
+| 6902Denso | （既有） | 6902_AnnualReport_2025.md | 已存在，保留 |
+| 6902Denso | （既有） | 6902_Quarter_2026Q3.md | 已存在，保留 |
+| 6902Denso | Yahoo JP 掲示板、株探、みんかぶ、Yahoo US、Seeking Alpha、雪球、格隆匯、富途牛牛 | 202608_輿情新聞.md | 輿情收集成功（日、美、中三地來源完整記錄，全為真實爬取無捏造） |
 
-**輿情 6 來源摘要（皆為真實抓取原文，無捏造）**：
-- **株探 Kabutan**：2026 Q2 決算速報，營收 4,907 億日圓（+9.4%），營業利益 506.7 億日圓（+1.2%），全年營收上修至 1.053 兆日圓，年間配息增至 66 日圓；技術面 200 日均線（200MA）支撐反彈觀察。
-- **みんかぶ Minkabu**：專業法人目標價 6,454 日圓（Buy），Minkabu 目標價 5,405 日圓（Buy），散戶目標 2,812 日圓（Sell / 擔憂循環高檔估值）。
-- **Yahoo!ファイナンス 掲示板 (Yahoo JP)**：買進 41%、觀望 47%、賣出 12%；多方看好 AI 半導體擴產大型訂單激增與熊本廠震後快速復工；空方關注信用買殘增加與中東局勢對能源部門小幅拖累。
-- **Seeking Alpha / TipRanks**：8 月順利完成 100 億日圓庫藏股回購（178 萬股），分析師給予 Buy 評級與最高 7,900 日圓目標價。
-- **雪球 Xueqiu / 格隆匯**：全球 CMP 與高端乾式真空泵雙寡頭龍頭地位（AMAT 60% vs Ebara 30%），受惠先進製程與先進封裝電鍍/CMP 需求。
-- **PTT 股市板**：台灣南科新廠完工投產，搭配台積電等在地化供應鏈需求擴大。
+### 輿情來源核心摘要（皆為真實抓取原文）：
+1. **日本市場 (Yahoo!ファイナンス 掲示板 & ニュース)**：
+   - 2026 年 8 月 25 日商用化推出「DENSO Digital Product Passport Solution for Battery」數位電池護照服務，符合歐洲 Battery Pass Ready 標準。
+   - 散戶與價值投資者關注 PBR 約 0.94 倍、PER 11~13 倍、配息殖利率達 3.85%，具高安全邊際；空方擔憂美國關稅潛在影響。
+2. **日本市場 (Minkabu / Kabutan)**：
+   - 機構共識評級為「Buy」，Minkabu AI 診斷為「割安（低估）」。
+   - 聚焦全固態電池、SiC/GaN 功率半導體、SDV 軟體定義架構及 2026 年 8 月 3 日發布之治理改革報告。
+3. **英文圈 (Yahoo Finance US / Zacks / Just Auto)**：
+   - 戰略調整：撤回對羅姆（Rohm）全面收購要約，轉為深化 SiC 研發合作聯盟，美股投資人正面看待避免過度舉債。
+   - 攜手印度 Sona Comstar 深耕動力傳動與電動化模組，擴展新興市場；全球 48V 微混系統與數位座艙 HUD 穩居龍頭。
+4. **華語圈 (雪球 / 格隆匯 / 富途牛牛 / 財報狗)**：
+   - 智駕突破：聯合地平線（Horizon Robotics）基於征程 6 系列奪得一汽豐田新車型智駕定點。
+   - 資產瘦身聚焦高毛利電動化與半導體核心；FactSet 分析師平均目標價 2,122 日圓。
+
+---
 
 ## 2. 失敗或被擋網站
 
-- **Ebara 官網 IR PDF 原始下載**：直連遭 Akamai Bot Protection 403 阻擋 → 依 §2.1 黃金規則切換至 Firecrawl PDF 模式成功擷取全 29 頁。
-- **Bright Data Xueqiu 直連**：因 robots.txt 限制回傳 `bad_endpoint` → 依 §2.1 換至 Firecrawl 成功檢索雪球與格隆匯。
+| 來源/網站 | 原因 | 已嘗試之 MCP 與處理結果 |
+| :--- | :--- | :--- |
+| inance.yahoo.co.jp | 內建 
+ead_url_content 權限逾時 | 依 §2.1 黃金規則切換至 irecrawl_scrape，成功抓取掲示板與新聞全文 |
+| xueqiu.com 關鍵字搜尋 | Bright Data 遇到 robots.txt 限制 | 依 §2.1 換至 irecrawl_search，成功檢索出羅姆案與地平線合作討論 |
+
+---
 
 ## 3. 資料缺失說明
 
-- 本次財報包含最新 2 年報（2024、2025）及最新季報（2026 Q2，2026-08-14 最新發布），資料齊全無缺漏。
+- 本次財報涵蓋 DENSO 最新 2 年報（2025、2026 Full Financial Report）以及最新季報（2027 Q1，截至 2026-06-30，於 2026-07-31 最新發布），財報與決算短信完整無缺漏。
+
+---
 
 ## 4. 異常檔案刪除紀錄
 
-| 刪除檔案 | 原因 |
-| :--- | :--- |
-| `6361_Quarter_2026Q2.pdf` (515 bytes) | 遭 Akamai 回傳 403 錯誤頁面（< 10KB），依 §4.2 驗證規則刪除，改以 Firecrawl 完整轉換後的 `.md` 存檔 |
+| 檔案名稱 | 處理方式 | 原因 |
+| :--- | :--- | :--- |
+| 6902_AnnualReport_2026.pdf | 轉換後刪除原始 PDF | 依 Convert2md Step 1.4 規範，驗證 Markdown 轉換品質完整（0 cid 亂碼）後清除 PDF 來源檔 |
+| 6902_AnnualReport_2026_Full.pdf | 轉換後刪除原始 PDF | 同上，驗證 123 頁英文年報 Markdown 轉換成功後清除原始 PDF |
+| 6902_Quarter_2027Q1.pdf | 轉換後刪除原始 PDF | 同上，驗證 15 頁 Q1 決算短信 Markdown 轉換成功後清除原始 PDF |
+
+---
 
 ## 5. 本次執行使用的 MCP（強制填寫）
 
-| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
+| MCP 名稱 | 工具名稱 | 用途 |
 | :--- | :--- | :--- |
-| Firecrawl | `firecrawl_scrape` | 抓取 Ebara 官網 2026 Q2 財報 PDF（全 29 頁解析為 Markdown）、抓取株探決算速報與技術分析頁面 |
-| Firecrawl | `firecrawl_search` | 檢索雪球與格隆匯對 6361 荏原製作所之深度討論與產業報告 |
-| Bright Data | `scrape_as_markdown` | 抓取 Yahoo!ファイナンス 日本股市 6361.T 掲示板留言（成功解鎖防爬） |
+| **Firecrawl** | irecrawl_scrape | 抓取 DENSO 官方 IR 決算公告頁面、Yahoo Finance JP 掲示板與新聞、Kabutan、Minkabu、Yahoo Finance US |
+| **Firecrawl** | irecrawl_search | 搜尋 Seeking Alpha、Reddit、格隆匯、雪球關於 DENSO / DNZOY 的最新社群討論與新聞 |
+| **Bright Data** | scrape_as_markdown | 抓取雪球 (xueqiu.com) DNZOY 頁面數據 |
 
-## 6. 備註
+---
 
-- 依輪替排程，本輪完成 Day 26（`6361 荏原製作所`），下一輪預定為 Day 27（`6902 DENSO`）。
+## 6. 輪替排程狀態
+
+- **本輪執行日期**：Day 27（6902 DENSO）✅ 執行完成
+- **下一輪預定日期**：Day 28（6605 帝寶）
