@@ -7,7 +7,7 @@
 | `2832台產` | 公開資訊觀測站 / 財報庫 | `2832_AnnualReport_2025.md` | 已存在且最新（2025 年報） |
 | `2832台產` | 公開資訊觀測站 / 財報庫 | `2832_quarter_2026Q1.md` | 已存在且最新（2026 Q1 季報） |
 | `2832台產` | CMoney 股市爆料同學會、PTT Stock、Yahoo 股市、鉅亨網、Dcard | `2026_PublicOpinion.md` (含 2026/08 輿情) | 輿情與新聞更新彙整成功 |
-| `8433弘帆` | 公開資訊觀測站 / 財報狗 | `8433_annual_2024.md`, `8433_annual_2025.md`, `8433_quarter_2026Q1.md` | 財報齊備 (2年報+最新Q1季報，Q2自結已收錄) |
+| `8433弘帆` | 公開資訊觀測站 / 財報狗 | `8433_annual_2024.md`, `8433_annual_2025.md`, `8433_Quarter_2026Q2.md` | 財報齊備 (2年報+最新2026 Q2季報轉換成功) |
 | `8433弘帆` | CMoney 官方 API、鉅亨網、工商時報、PTT Stock | `202608_輿情新聞.md` | 輿情更新成功 |
 | `UHS Universal Health Services` | SEC EDGAR / 官方財報 | `UHS_10K_2024-12-31.md`, `UHS_10K_2025-12-31.md`, `UHS_10Q_2026-06-30.md` | 財報齊備 (2年報+最新Q2季報) |
 | `UHS Universal Health Services` | Seeking Alpha、Reddit、TipRanks、Zacks、PR Newswire | `202608_輿情新聞.md` | 輿情更新成功 |
