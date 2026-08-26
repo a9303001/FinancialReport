@@ -9,14 +9,18 @@
 | `00857 中石油` | HKEXnews（現有 2024/2025 年報 + 2026Q1 季報） | `00857_Quarter_2026Q1.md` | 財報齊備（2026中報預計8/28發布） |
 | `00386 中石化` | HKEXnews | `00386_Quarter_2026Q2.md` | 最新 2026 中期報告下載並轉換成功 |
 | `00386 中石化` | 雪球、格隆匯、新浪財經、PTT | `202608_輿情新聞.md` | 輿情收集完成 |
+| `8002 丸紅` | 官方 IR / EDINET / IR Bank | `8002_AnnualReport_2025.md`<br>`8002_AnnualReport_2026.md`<br>`8002_Quarter_2027Q1.md` | 現有最新 2 年報 + 1 季報齊備驗證完畢（2027Q1於2026/8/3發布） |
+| `8002 丸紅` | Yahoo Finance JP、株探 (Kabutan)、Minkabu、note.com、雪球 (Xueqiu)、格隆匯 (Gelonghui)、Seeking Alpha | `202608_輿情新聞.md` | 跨平台多空輿情與深度專欄收集完成並存檔 |
 
 ## 2. 失敗或被擋網站
-- **來源**: 無重大阻擋
-- **說明**: 雪球採用 Bright Data `scrape_as_markdown` 成功解析動態渲染頁面；格隆匯採用 Firecrawl `firecrawl_search` 成功取得最新報導與公告。
+- **來源**: 5ch (5ch.net)
+- **原因**: 5ch 搜尋引擎無特定專屬討論串，討論分散於日經大盤實況串；已按規範記錄狀態。
+- **已試過的 MCP**: Firecrawl (`firecrawl_scrape`, `firecrawl_search`)
 
 ## 3. 資料缺失說明
 - **00883 中國海洋石油**：董事會於 2026 年 8 月 26 日盤後召開審批 2026 中期業績，目前最新季報為 2026Q1。
 - **00857 中石油**：董事會定於 2026 年 8 月 28 日召開審批 2026 中期業績，目前最新季報為 2026Q1。
+- **8002 丸紅**：官方最新季報為 2026 年 8 月 3 日發布之 2027 年 3 月期 第 1 四半期決算短信，已妥善建檔轉換；無其他缺漏。
 
 ## 4. 異常檔案刪除紀錄
 - 刪除 `00386中石化` 舊版季報 `00386_Quarter_2026Q1.md`（已由最新 2026Q2 中期報告取代）。
@@ -25,5 +29,6 @@
 ## 5. 本次使用的 MCP（強制填寫）
 | MCP 名稱 | 工具 | 用途 |
 |:---------|:-----|:-----|
-| Bright Data | `scrape_as_markdown` | 抓取雪球 (Xueqiu) 00883, 00857, 00386 即時討論輿情 |
-| Firecrawl | `firecrawl_search` | 搜尋格隆匯 (Gelonghui) 00883, 00857, 00386 最新深度報導與公告 |
+| Bright Data | `scrape_as_markdown` | 抓取雪球 (Xueqiu) 即時討論輿情 |
+| Firecrawl | `firecrawl_scrape` | 爬取 Yahoo Finance JP BBS、株探 (Kabutan)、Minkabu、note.com 深度專欄、雪球 (Xueqiu)、格隆匯 (Gelonghui)、Seeking Alpha 全文 |
+| Firecrawl | `firecrawl_search` | 檢索格隆匯 (Gelonghui)、Seeking Alpha、雪球最新報導與精確 URL |
