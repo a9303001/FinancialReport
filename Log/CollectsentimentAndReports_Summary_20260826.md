@@ -7,23 +7,31 @@
 | `2832台產` | 公開資訊觀測站 / 財報庫 | `2832_AnnualReport_2025.md` | 已存在且最新（2025 年報） |
 | `2832台產` | 公開資訊觀測站 / 財報庫 | `2832_quarter_2026Q1.md` | 已存在且最新（2026 Q1 季報） |
 | `2832台產` | CMoney 股市爆料同學會、PTT Stock、Yahoo 股市、鉅亨網、Dcard | `2026_PublicOpinion.md` (含 2026/08 輿情) | 輿情與新聞更新彙整成功 |
+| `8433弘帆` | 公開資訊觀測站 / 財報狗 | `8433_annual_2024.md`, `8433_annual_2025.md`, `8433_quarter_2026Q1.md` | 財報齊備 (2年報+最新Q1季報，Q2自結已收錄) |
+| `8433弘帆` | CMoney 官方 API、鉅亨網、工商時報、PTT Stock | `202608_輿情新聞.md` | 輿情更新成功 |
+| `UHS Universal Health Services` | SEC EDGAR / 官方財報 | `UHS_10K_2024-12-31.md`, `UHS_10K_2025-12-31.md`, `UHS_10Q_2026-06-30.md` | 財報齊備 (2年報+最新Q2季報) |
+| `UHS Universal Health Services` | Seeking Alpha、Reddit、TipRanks、Zacks、PR Newswire | `202608_輿情新聞.md` | 輿情更新成功 |
 
 ## 2. 失敗或被擋網站
-- **來源**: [雪球](https://xueqiu.com)
-  - **原因**: Bright Data scrape_as_markdown 遭遇 robots.txt/KYC 限制；改用 Firecrawl 爬取成功，但社群無 2832 個股專屬討論。
+- **來源**: [雪球](https://xueqiu.com) (針對 2832 台產、8433 弘帆)
+  - **原因**: 雪球無台股 2832 與 8433 獨立代碼頁與專屬討論。
   - **已試過的 MCP**: brightdata / firecrawl-mcp
-- **來源**: [格隆匯](https://www.gelonghui.com)
-  - **原因**: 搜尋 `2832` / `台湾产物保险` 回傳之文章均為數字包含 2832 百萬美元之泛產業報告，無台股 2832 深度個股研報。
-  - **已試過的 MCP**: firecrawl-mcp (`firecrawl_scrape`)
+- **來源**: [格隆匯](https://www.gelonghui.com) (針對 2832 台產、8433 弘帆)
+  - **原因**: 格隆匯搜尋 `弘帆` / `台湾产物保险` 僅有無關之工商登記或泛產業報告，無個股深度研報。
+  - **已試過的 MCP**: firecrawl-mcp (`firecrawl_search`)
 
 ## 3. 資料缺失說明
-- **2026 Q2 季報**：經查證公開資訊觀測站（MOPS）與重大訊息，臺灣產物保險董事會訂於 **2026 年 8 月 28 日** 召開提報 115 年上半年度（2026 Q2）財務報告。因當前日期為 2026 年 8 月 26 日，該份季報尚未正式審議發布，故目前目錄內已包含最新可取得之 2024、2025 年報與 2026 Q1 季報。
+- **2832 台產**：2026 Q2 季報法定申報截止日為 8 月底，董事會訂於 8 月 28 日召開審議。
+- **8433 弘帆**：2026 Q2 合併財報已於 8 月 7 日董事會通過（累計上半年 EPS 2.79 元），完整電子書待公開資訊觀測站發布；目錄中已完整具備 2024、2025 年報與 2026 Q1 季報，最新損益數據已完整收錄於 `202608_輿情新聞.md`。
+- **UHS**：2026 Q3 季報尚未發布，最新季報為 2026 Q2（`UHS_10Q_2026-06-30.md`）。
 
 ## 4. 異常檔案刪除紀錄
-- 無異常或毀損檔案需刪除。零散輿情檔案已依 `ArrangePublicOpinionMd` 規範驗證並安全併入 `2026_PublicOpinion.md`。
+- 無異常或毀損檔案需刪除。
 
 ## 5. 本次使用的 MCP（強制填寫）
 | MCP 名稱 | 工具 | 用途 |
 |:---------|:-----|:-----|
-| Firecrawl | `firecrawl_scrape` | 抓取格隆匯與雪球搜尋頁面驗證輿情 |
-| Bright Data | `scrape_as_markdown` | 嘗試抓取雪球社群討論 |
+| Firecrawl | `firecrawl_search` | 檢索格隆匯全站關於 8433 弘帆之專題報導 |
+| Bright Data | `scrape_as_markdown` | 嘗試抓取雪球 8433 代碼頁面 |
+| CMoney API | Native REST (Bearer Guest Token) | 取得股市爆料同學會 8433 最新社群貼文、營收討論與留言 |
+
