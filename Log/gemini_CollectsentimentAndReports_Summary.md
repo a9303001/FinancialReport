@@ -2,7 +2,7 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 6 |
-| **last_executed_companies** | 7203 Toyota |
+| **last_executed_date** | 8 |
+| **last_executed_companies** | 2832 台產 |
 | **last_executed_time** | 2026-08-26 20:42 |
-| **next_date** | 7 |
+| **next_date** | 9 |
