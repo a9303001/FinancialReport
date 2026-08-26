@@ -2,7 +2,7 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 7 |
-| **last_executed_companies** | UHS Universal Health Services |
-| **last_executed_time** | 2026-08-26 20:41 |
-| **next_date** | 8 |
+| **last_executed_date** | 6 |
+| **last_executed_companies** | 7203 Toyota |
+| **last_executed_time** | 2026-08-26 20:42 |
+| **next_date** | 7 |
