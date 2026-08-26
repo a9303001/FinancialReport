@@ -6,6 +6,16 @@
         "-y",
         "@playwright/mcp@latest"
       ]
+    },
+    "akshare-mcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with", "git+https://github.com/ttjslbz001/akshare_mcp_server",
+        "--with", "mcp<2.0.0",
+        "python", "-c",
+        "import asyncio; from mcp_server_akshare import main; asyncio.run(main())"
+      ]
     }
   }
 }
