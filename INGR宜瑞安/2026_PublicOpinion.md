@@ -1,3 +1,204 @@
+# [INGR宜瑞安] 2026 年 輿情彙整
+
+> 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
+> 不含年報、季報、公司公告 report。
+> 最後彙整時間：2026-08-26 20:44｜本次併入：2 檔｜累計併入：2 檔
+
+## 目錄
+
+- [2026-08 · 08-26](#2026-08--08-26)
+- [2026-08 · 1](#2026-08--1)
+
+<!-- body:start -->
+
+## 2026-08 · 08-26
+
+<!-- source-file: 2026-08-26.md | bytes: 6432 | sha1: 5061464dd530 | merged-at: 2026-08-26 -->
+
+Skip to content
+
+Home page Seeking Alpha - Power to Investors
+
+    Spotlight
+    Analysis
+    Portfolio
+    Upgrade
+
+INGR
+Ingredion Incorporated
+$105.03-1.10 (-1.04%)4:00 PM 08/25/26
+NYSE | $USD | Post-Market: $105.03 7:30 PM
+Comments
+Ingredion: Tate & Lyle Acquisition Creates A Compelling Risk-Reward
+by Mare Evidence Lab
+N
+New Adams
+This stock has stunk to high heaven for months, still crawling (slowly) back from it's morass.
+Aug 24, 2026
+10:42 AM
+View
+Here are the major earnings before the open Tuesday
+V
+Vance's Boss
+@GR Value Difficult to give credit to a perma bear that was bearish since 2017 and gave Kohl's a buy rating.
+Aug 04, 2026
+4:57 AM
+View
+Here are the major earnings before the open Tuesday
+Rather-not
+I don’t buy it.
+
+It’s a ripoff.
+Aug 03, 2026
+8:12 PM
+View
+Here are the major earnings before the open Tuesday
+GR Value
+@SivBum Right but let's be real here. It's barely up from 11/2025's highs. It's up with inflation. I'm not saying it can't get to 7700 or 8200 or something to track inflation but eventually it'll collapse, probably within 2-5 years. In the meantime, stocks are overvalued. Yeah, they can fluctuate up 10% based on the majors over 12 or 18 months but it's wholly unremarkable.
+
+In fact, perversely, the higher stocks go, the more earnings and margins are required, the more debt and inequality expands which will hasten a collapse. Hence, the smart guy is holding what he bought far cheaper, but divesting new money and risk in general. Anyway, it's wholly unremarkable to watch. Get to 7700 or 8200 over months, let the losers who watch every single 0.3% uptick go bananas, and then go back down 5-10% and rinse and repeat. My main conclusion is, this is a "who cares" market that is overvalued and medium term severely risky.
+Aug 03, 2026
+7:56 PM
+View
+Here are the major earnings before the open Tuesday
+SivBum
+Only 0.12% off ATH despite of all that instability and uncertainty that investors hate:
+
+12/31/25 6845.50 FY25-Close
+6/2/26 7620.90 ATH-Intraday
+6/2/26 7609.78 ATH-Close
+8/3/26 7600.50 YTD 11.03%
+8/3/26 YTD off ATH -0.12%
+Aug 03, 2026
+7:31 PM
+View
+10 mid-cap consumer staple stocks with lowest momentum grades
+thirdcamper
+So they're all buys?
+Jun 24, 2026
+12:14 PM
+View
+Tate & Lyle: Does Planned Ingredion Takeover Represent A 10% Arbitrage Opportunity?
+by Retirement Pot
+M
+Mr Bad Example
+U.S. investors should mind the tax on dividends from foreign companies. This impacts the yield calculation.
+Jun 20, 2026
+3:36 PM
+View
+Ingredion: Tate & Lyle Acquisition Creates A Compelling Risk-Reward
+by Mare Evidence Lab
+BM Cashflow Detective
+I find it particularly interesting that, with this transaction, Ingredion is further reducing its reliance on traditional agricultural commodity cycles and increasing the share of products where know-how, formulation expertise, and customer relationships matter more than the raw material price alone.
+
+At the same time, food manufacturers worldwide are benefiting from trends such as functional ingredients, sugar reduction, clean labels, and protein-focused products, areas where combined R&D capabilities can generate significant added value.
+
+It is also noteworthy that many investors reflexively judge acquisitions based on the resulting increase in debt, whereas the true value lies in the higher and more stable cash flows expected in the future.
+
+If management executes the integration with discipline, today’s debt load might well look like a temporary bridge rather than a permanent problem in hindsight.
+
+The market currently seems more focused on the smoke from the Argo incident than on the long-term earnings power of the merged company.
+
+Long $INGR 💸🕵♂️
+
+Sometimes, the most attractive opportunities arise precisely when the stock market prices a temporary construction site as if it would never see the finished building.
+Jun 20, 2026
+12:44 PM
+View
+Tate & Lyle: Does Planned Ingredion Takeover Represent A 10% Arbitrage Opportunity?
+by Retirement Pot
+A
+123AL
+Good to know that $INGR is taking over this very old UK business! I think I will have to wait as I was contemplating starting $INGR position.
+Jun 16, 2026
+3:45 PM
+View
+Key deals this week: GSK, Incyte, Ingredion, OpenAI, and more
+t
+trag
+"Roku selling itself"
+
+I've heard that before. Interesting that Bloomberg comes out with this speculation just as the stock hits a short term low of 116.
+Jun 13, 2026
+6:27 PM
+View
+Key deals this week: GSK, Incyte, Ingredion, OpenAI, and more
+LenceFlatu
+*"losing Wars is bad!"* and other deep thoughts for the week
+Jun 13, 2026
+3:29 PM
+View
+Ingredion is said to near $3.6B deal for Tate & Lyle as London market loses another mainstay
+H
+Half-bagger
+Bring it on!
+Jun 07, 2026
+9:36 PM
+View
+Ingredion declares $0.82 dividend
+D
+DividendJoe
+👍🏽
+May 21, 2026
+3:23 AM
+View
+Ingredion: Oversold After Argo Issues, Acquisition Could Change The Story
+by IWA Research
+High Sharpe
+let me know if this works: api.iagentx.ai/...
+May 19, 2026
+7:37 AM
+View
+Ingredion: Oversold After Argo Issues, Acquisition Could Change The Story
+by IWA Research
+High Sharpe
+recent report: i do not have a position currently. api.iagentx.ai/...
+May 18, 2026
+1:25 PM
+View
+Ingredion: Oversold After Argo Issues, Acquisition Could Change The Story
+by IWA Research
+thirdcamper
+@New Adams Personally, I put fair value at $150 and think it has a lot more potential than $7/share.
+May 18, 2026
+11:56 AM
+View
+Ingredion: Oversold After Argo Issues, Acquisition Could Change The Story
+by IWA Research
+IWA Research
+@New Adams it's a $7 increase based on a relatively high discount rate despite their solid quality, which can get lower on macro improvements and renewed confidence. It's not the best and certainly not a Strong Buy though.
+May 18, 2026
+11:49 AM
+View
+Ingredion: Oversold After Argo Issues, Acquisition Could Change The Story
+by IWA Research
+N
+New Adams
+A $7 increase in share is not a great buy.
+May 18, 2026
+11:46 AM
+View
+Ingredion: Oversold After Argo Issues, Acquisition Could Change The Story
+by IWA Research
+IWA Research
+@thirdcamper Thank you for reading!
+May 18, 2026
+8:54 AM
+View
+Ingredion: Oversold After Argo Issues, Acquisition Could Change The Story
+by IWA Research
+thirdcamper
+Agree, $INGR a strong buy. Silly cheap right now.
+May 18, 2026
+8:38 AM
+View
+
+---
+
+## 2026-08 · 1
+
+<!-- source-file: 2026-08-26_1.md | bytes: 11354 | sha1: 05a4ea54bbbc | merged-at: 2026-08-26 -->
+
 Skip to content
 
 Home page Seeking Alpha - Power to Investors
@@ -128,3 +329,5 @@ Comments
 
 If you type a company or ETF ticker symbol in capital letters we will automatically link to the symbol page. You can remove the link by deleting the $ in the comment.
 More Trending News
+
+---

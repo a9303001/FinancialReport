@@ -2,7 +2,7 @@
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
 > 不含年報、季報、公司公告 report。
-> 最後彙整時間：2026-08-25 11:06｜本次併入：6 檔｜累計併入：6 檔
+> 最後彙整時間：2026-08-26 20:44｜本次併入：1 檔｜累計併入：7 檔
 
 ## 目錄
 
@@ -12,8 +12,10 @@
 - [2026-07 · reuters](#2026-07--reuters)
 - [2026-07 · seekingalpha_dnzoy](#2026-07--seekingalpha_dnzoy)
 - [2026-07 · yahoo_finance_jp](#2026-07--yahoo_finance_jp)
+- [2026-08 · 輿情新聞](#2026-08--輿情新聞)
 
 <!-- body:start -->
+
 
 ## 2026-05 · note
 
@@ -307,5 +309,144 @@
 
 ---
 （附記：該掲示板當日大量貼文為閒聊〔含作家東野圭吾、藝人話題〕、純漲跌與放空喊單，依 §5.2 過濾規則僅保留與基本面/事件相關者。所引用之貼文編號、時間、內容均為 firecrawl 實際抓取頁面上存在者，未經改寫。）
+
+---
+## 2026-08 · 輿情新聞
+
+<!-- source-file: 202608_輿情新聞.md | bytes: 10533 | sha1: b116f475fd86 | merged-at: 2026-08-26 -->
+
+### [6902 DENSO (デンソー)] 輿情與新聞整理 (2026/08)
+
+- **分析月份**：2026/08
+- **資料範圍**：過去三個月（2026年5月 ~ 2026年8月）
+- **最後更新**：2026-08-26 14:25
+
+---
+
+#### [Yahoo Finance JP (掲示板 / ニュース)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl MCP (firecrawl_scrape)
+- **抓取結果**：✅ 成功
+- **來源頁面**：
+  - [Yahoo!ファイナンス 掲示板 (6902.T)](https://finance.yahoo.co.jp/quote/6902.T/bbs)
+  - [Yahoo!ファイナンス ニュース (6902.T)](https://finance.yahoo.co.jp/quote/6902.T/news)
+
+##### 🎯 歐盟電池法規應對：推出數位電池護照服務（DENSO Digital Product Passport Solution for Battery）
+- **來源連結**: [トレーダーズ・ウェブ / ウエルスアドバイザー](https://finance.yahoo.co.jp/news/detail/09f8c612e53f37b0e6047746f4d6401978b3f88c)
+- **發布時間**: 2026-08-25 07:33 / 16:03
+- **核心觀點**:
+  > "デンソーは25日、自動車メーカーや電池メーカーなどの欧州電池規則への対応とバッテリーのトレーサビリティを支援するため、バッテリーパスポートの生成・管理を行うバッテリーパスポートサービス「DENSO Digital Product Passport Solution for Battery」の提供を同日より開始すると発表した。"
+- **關鍵要點**:
+  - DENSO 於 2026 年 8 月 25 日正式推出「DENSO Digital Product Passport Solution for Battery」服務，依據歐洲 Battery Pass Ready 聯盟規範，為電池產品生成專屬數位電池護照。
+  - 協助車廠與電池業者自供應鏈高效收集電池成分、碳足跡及溯源數據，並透過 QR Code 提供終端用戶查閱，強化在歐洲電動車法規環境下的競爭力與合規軟體服務佈局。
+
+##### 🎯 估值與長期投資價值討論：PBR 0.94倍與高殖利率支撐
+- **來源連結**: [Yahoo!ファイナンス 掲示板 No.81888 / No.81865](https://finance.yahoo.co.jp/quote/6902.T/forum/81888)
+- **發布時間**: 2026-08-25 ~ 2026-08-26
+- **核心觀點**:
+  > "現在の指標水準（PBR 0.94倍、PER約13.4倍、配当利回り3.8%台）は、過去のデンソーの評価レンジから見ても明確にディスカウントされており、長期目線での投資妙味は十分に高まっている水準です。"
+- **關鍵要點**:
+  - 散戶與長期投資人普遍認為目前股價落在 1,900~2,000 日圓區間，PBR 低於 1 倍（約 0.94 倍）、殖利率達 3.8% 以上，評價具備高度防禦性與重估潛力。
+  - 部分投資人提及近兩年股價在 2,000 日圓附近盤整，屬於「夏枯れ相場」（夏季淡季量縮整理），但具備充沛現金流（Cash Rich）與豐田集團強固後盾。
+
+##### 🎯 潛在風險與政策變數：北美關稅言論衝擊與豐田全固態電池展望
+- **來源連結**: [Yahoo!ファイナンス 掲示板 No.81871 / No.81886](https://finance.yahoo.co.jp/quote/6902.T/forum/81871)
+- **發布時間**: 2026-08-26
+- **核心觀點**:
+  > "トランプ米大統領が表明したカナダ製自動車・部品に対する50％関税は、日系自動車メーカーにも打撃となる。"
+  > "トヨタ自動車グループの全固体電池の開発が全世界の自動車業界の覇権地図を塗り替える...デンソーで製造しようとしている。"
+- **關鍵要點**:
+  - 利空隱憂：投資人高度關注美國政局對加拿大/墨西哥汽車零組件可能加徵關稅的言論，憂慮衝擊日系車廠在北美的供應鏈成本。
+  - 利多期待：豐田集團推進全固態電池量產計畫，市場預期 DENSO 將在電池模組與關鍵零組件製造扮演關鍵角色。
+
+#### [Minkabu / Kabutan (日本市場)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl MCP (firecrawl_scrape)
+- **抓取結果**：✅ 成功
+- **來源頁面**：
+  - [Minkabu (みんかぶ 6902)](https://minkabu.jp/stock/6902)
+  - [Kabutan (株探 6902 ニュース)](https://kabutan.jp/stock/news?code=6902)
+
+##### 🎯 市場評價與機構目標價：分析師共識「買進」、AI診斷「割安」
+- **來源連結**: [Minkabu 6902 株価診断](https://minkabu.jp/stock/6902)
+- **發布時間**: 2026-08-26
+- **核心觀點**:
+  > "デンソー【6902】株価参考指標：PER(調整後) 11.79倍、PBR 0.94~1.01倍、配当利回り 3.85%、時価総額 5.59兆円。アナリスト予想「買い」、株価診断「割安」、目標株価 1,955円。"
+- **關鍵要點**:
+  - Minkabu 平台統計顯示，法人機構與分析師評等維持「買進（Buy）」評級，8月4日評等日報亦維持「最上位」評級。
+  - AI 財務模型診斷判定處於「割安（低估）」區間，殖利率 3.85% 在東證 Prime 具備高度吸引力。
+
+##### 🎯 關鍵戰略主題佈局：功率半導體、全固態電池、電池溯源
+- **來源連結**: [Kabutan 6902 テーマ / Minkabu 関連テーマ](https://kabutan.jp/stock/?code=6902)
+- **發布時間**: 2026-08-26
+- **核心觀點**:
+  > "関連テーマ：全固体電池、パワー半導体、自動運転車、トレーサビリティー、EV充電、コネクテッドカー、JPXプライム150。"
+- **關鍵要點**:
+  - 市場熱搜與資金關注焦點集中於：(1) 功率半導體（SiC 碳化矽及與羅姆/台積電 JASM 合作鏈）、(2) 豐田集團全固態電池量產零組件、(3) 歐盟新電池法之數位溯源服務。
+  - 2026 年 8 月 3 日公司正式更新揭露最新版《Corporate Governance Report》（企業治理報告書），持續推進政策保有株（交叉持股）縮減與資本效率提升。
+
+#### [英文市場 (Yahoo Finance US / Zacks / Just Auto / GlobeNewswire)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl MCP (firecrawl_scrape & firecrawl_search)
+- **抓取結果**：✅ 成功
+- **來源頁面**：
+  - [Yahoo Finance DNZOY News](https://finance.yahoo.com/quote/DNZOY/news/)
+  - [Seeking Alpha DNZOY](https://seekingalpha.com/symbol/DNZOY)
+
+##### 🎯 戰略調整：撤回羅姆（Rohm）全面收購案，聚焦精準戰略合作
+- **來源連結**: [Just Auto / Yahoo Finance](https://finance.yahoo.com/markets/stocks/articles/denso-withdraws-offer-acquire-rohm-085902074.html)
+- **發布時間**: 2026-05 ~ 2026-08
+- **核心觀點**:
+  > "Denso withdraws offer to acquire Rohm. The company focuses on collaborative development in silicon carbide (SiC) power semiconductors without taking on excessive acquisition liabilities."
+- **關鍵要點**:
+  - DENSO 正式撤回對功率半導體大廠羅姆（Rohm）之全面公開收購提案，轉為深化 SiC 功率半導體專利與產能戰略聯盟。
+  - 外資法人與美股 ADR 投資人普遍解讀為利多，避免了過度舉債收購的財務風險，同時確保次世代電動車逆變器關鍵晶片之穩定供應。
+
+##### 🎯 印度與新興市場擴張：與 Sona Comstar 結盟攻動力傳動系統
+- **來源連結**: [Just Auto / Yahoo Finance](https://finance.yahoo.com/technology/articles/sona-comstar-denso-team-powertrain-170919159.html)
+- **發布時間**: 2026-06 ~ 2026-08
+- **核心觀點**:
+  > "Sona Comstar and Denso team up on powertrain systems in India, leveraging local manufacturing capabilities and global technology expertise to capture growing demand."
+- **關鍵要點**:
+  - 面對歐美 EV 增長放緩，DENSO 加速搶進印度等高增長新興市場，與 Sona Comstar 共同開發動力總成與電氣化模組，分散市場風險。
+
+##### 🎯 產業市場地位：48V 輕混與數位座艙市佔率領先
+- **來源連結**: [GlobeNewswire 48V Systems & Digital Cockpit Market Report](https://finance.yahoo.com/technology/articles/asia-pacific-automotive-48v-systems-080200467.html)
+- **發布時間**: 2026-07 ~ 2026-08
+- **核心觀點**:
+  > "Asia-Pacific Automotive 48V Systems Market Report 2026-2035: Evaluating $37.6 Billion Forecast, Denso maintains dominant market share alongside Bosch, Continental, and Valeo."
+- **關鍵要點**:
+  - 全球混合動力（HEV/MHEV）需求旺盛，DENSO 的 48V 輕混啟動發電機、電動水泵與熱管理系統需求強勁，成為支撐 2026 財年營收創下 7.54 兆日圓歷史新高的核心功臣。
+
+#### [華語市場 (雪球 / 格隆匯 / 富途牛牛 / 財報狗)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl MCP (firecrawl_search & firecrawl_scrape) & BrightData MCP
+- **抓取結果**：✅ 成功
+- **來源頁面**：
+  - [雪球 (xueqiu.com/S/DNZOY)](https://xueqiu.com/S/DNZOY)
+  - [格隆匯 (gelonghui.com)](https://www.gelonghui.com/news/5288625)
+  - [富途牛牛 (futunn.com/hk/stock/6902-JP)](https://www.futunn.com/hk/stock/6902-JP)
+
+##### 🎯 智慧駕駛與晶片合作：聯合地平線（Horizon Robotics）攻下豐田智駕量產定點
+- **來源連結**: [格隆匯 / 雪球](https://www.gelonghui.com/news/5288625)
+- **發布時間**: 2026-06 ~ 2026-08
+- **核心觀點**:
+  > "地平线征程6B驶入量产快车道，博世、电装（DENSO）等全球顶级Tier1供应商均已选择征程6B作为高性价比智驾方案的开发基座...据悉地平线联合电装基于J6M方案成功拿下了一汽丰田量产定点。"
+- **關鍵要點**:
+  - DENSO 積極補強在中國與全球市場的自動駕駛算力與演算法生態，與地平線深度合作征程 6 系列（J6B / J6M）晶片架構，成功拿下豐田一汽合資車型之智駕系統量產訂單。
+  - 此舉被華語社群與機構視為日系 Tier 1 在智慧化（智能化/SDV）轉型中的關鍵突破。
+
+##### 🎯 資本結構與業務瘦身：出售非核心業務、聚焦電氣化與半導體
+- **來源連結**: [富途牛牛 6902-JP 研報 / 公告](https://www.futunn.com/hk/stock/6902-JP)
+- **發布時間**: 2026-05 ~ 2026-08
+- **核心觀點**:
+  > "电装持续剥离传统燃油车非核心零部件业务（如空调软管管路及部分陶瓷制品），并将资金与研发集中于电动化、功率半导体制程及软件定义汽车领域。"
+- **關鍵要點**:
+  - 機構分析師多數維持「超配（Overweight）」評級，FactSet 調查之平均目標價約為 2,122 日圓（相較目前約 1,922 日圓具備約 10% 上行空間）。
+  - 部分外資（如法巴）給予較為謹慎的 1,670 日圓預估，主要擔憂中國新能源車價格戰壓低零組件毛利率，以及傳統燃油車產量萎縮。
 
 ---

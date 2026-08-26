@@ -2,7 +2,7 @@
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
 > 不含年報、季報、公司公告 report。
-> 最後彙整時間：2026-08-25 11:06｜本次併入：22 檔｜累計併入：22 檔
+> 最後彙整時間：2026-08-26 20:44｜本次併入：2 檔｜累計併入：24 檔
 
 ## 目錄
 
@@ -28,8 +28,11 @@
 - [2026-08 · X(Twitter)](#2026-08--xtwitter)
 - [2026-08 · Xueqiu](#2026-08--xueqiu)
 - [2026-12 · 56-10](#2026-12--56-10)
+- [2026-08 · 08-26](#2026-08--08-26)
+- [2026-08 · 輿情新聞](#2026-08--輿情新聞)
 
 <!-- body:start -->
+
 
 ## 2026-06 · 06-22
 
@@ -1472,5 +1475,223 @@ Thomas Lott
 * 坎伯蘭 (Cumberland) 或相關訴訟的和解金額超出保險覆蓋部分超過 1 億美元。
 
 發現於 [swing-finder.org](https://swing-finder.org)
+
+---
+## 2026-08 · 08-26
+
+<!-- source-file: 2026-08-26.md | bytes: 11996 | sha1: 8e88e459823c | merged-at: 2026-08-26 -->
+
+Skip to content
+
+UHS forecasts $2.61B-$2.72B 2026 adjusted EBITDA less NCI while planning to stay “highly active” in buybacks
+Comments
+
+    Spotlight
+    Analysis
+    Portfolio
+    Upgrade
+
+    Earnings Call Insights
+
+UHS forecasts $2.61B-$2.72B 2026 adjusted EBITDA less NCI while planning to stay “highly active” in buybacks
+Jul 28, 2026, 1:04 PM ETUniversal Health Services, Inc. (UHS) StockAI-Generated Earnings Calls Insights
+
+    Comments
+
+Follow us on Google for latest news »
+
+Earnings Call Insights: Universal Health Services (UHS) Q2 2026
+Management View
+
+    “Overall, our second quarter of 2026 featured a rebound in Acute Care volumes, Behavioral Health volumes that were consistent with recent trends, continued expense management and exchange trends that progressed in line with our expectations.” (CEO, President & Director Marc Miller)
+    “During the quarter, we also benefited from the approval of the Florida DPP program for 2025, which was not contemplated in our original outlook.” (CEO Miller)
+    “In Acute Care, we added 177 licensed beds in 3 hospitals during the second quarter.” (CEO Miller) “These new beds represent a 2.5% increase to our same-facility bed capacity.” (CEO Miller)
+    “We continue to make strong progress in our integration planning for the pending Talkspace acquisition, which we expect to close in mid-August of this year.” (CEO Miller) “Talkspace represents not only a unique opportunity for us to accelerate our presence in the outpatient market, but also creates the nation's first end-to-end continuum of behavioral health care services...” (CEO Miller)
+    “We’ve increased our professional and general liability reserves and now assume higher anticipated operating losses at our de novo hospital in Washington, D.C. as well as San Antonio, Texas Behavioral Hospital...” (CEO Miller)
+    “Our share repurchase activity during the second quarter... accelerated to $320 million as compared to $127 million in the first quarter of 2026.” (CEO Miller) “Given the strength of our balance sheet... we intend to remain highly active with our share repurchase program at these levels.” (CEO Miller)
+    “The company reported adjusted EPS of $5.98 for the second quarter of 2026.” (Executive VP, CFO & Secretary Steve Filton)
+
+Outlook
+
+    “Our updated 2026 forecast is in a range of $2.61 billion to $2.72 billion... a decrease of approximately $50 million from our prior outlook at the $2.66 billion midpoint.” (CFO Filton)
+    “We now expect Acute Care adjusted admissions to be in a range of 1.5% to 2.5% and Behavioral Health adjusted patient days to be in a range of 1% to 2% as compared to our prior range of 2% to 3% for both segments.” (CFO Filton)
+    “We now expect the net benefit from Medicaid supplemental funding to be approximately $1.5 billion for the year... an increase of approximately $150 million from our prior outlook.” (CFO Filton)
+    “We now include $50 million of impact associated with the Texas Behavioral Health facility that is in the process of being recertified.” (CFO Filton) “We are increasing our professional and general liability expense estimate for the full year by approximately $50 million...” (CFO Filton)
+
+Financial Results
+
+    “Second quarter adjusted EBITDA less NCI was $678 million...” (CFO Filton) “When excluding the $100 million out-of-period Florida DPP benefit... our Q2 adjusted EBITDA less NCI fell short of our internal expectations, primarily attributable to... $28 million attributable to higher professional and general liability reserves... approximately $20 million attributable to the San Antonio Behavioral facility... and approximately $15 million attributable to... Cedar Hill...” (CFO Filton)
+    “Second quarter cash generated from operating activities was $44.3 million as compared to $549 million during the same period last year.” (CFO Filton) “During the second quarter of 2026, we spent $228 million on capital expenditures...” (CFO Filton)
+    “We ended the quarter with cash of $139 million, total debt of $4.85 billion and net leverage of 1.8x.” (CFO Filton) “As of June 30, 2026, we had $978 million of repurchase authorization available...” (CFO Filton)
+
+Q&A
+
+    Ann Hynes, Mizuho: “focused on the Acute Care volume change” and whether pressure was “non-ACA related”; Executive VP Filton: “we're... reflective of our first half performance” and cited “continued shift of certain elective and outpatient procedures into alternate site settings, ASCs, freestanding imaging.”
+    Andrew Mok, Barclays: asked about “drivers of that back half acceleration”; Executive VP Filton: cited the added “177 beds,” Cedar Hill’s year-over-year swing (“We lost $25 million in the third quarter of last year at Cedar Hill”), Behavioral headcount moderation, and “more normal growth trends in Nevada.”
+    Matthew Gillmor, KeyBanc: asked if Florida DPP could recur in 2026 and other opportunities; Executive VP Filton: “we're not certain what the impact of the 2026 approved program would be... [and] have not... included it in our guidance.”
+    Jason Cassorla, Guggenheim: asked if Behavioral demand was changing and about “malpractice reserve headwinds”; Executive VP Filton: outpatient has been “growing a little bit slower than we originally imagined,” and on reserves, “Difficult for us to predict... [with] increase in the severity of claims... difficult for us to control that.”
+    Pito Chickering, Deutsche Bank: asked about surgical mix and outlook; Executive VP Filton: “overall surgical volume was down 0.8%” with “an increase in inpatient surgeries and a slight decline in outpatient surgeries,” and said UHS is “very focused on investing... that will be revenue producing... robotics... more advanced imaging.”
+    Ryan Langston, TD Cowen: asked about ED growth vs admissions and buyback pacing; Executive VP Filton: ED conversion pressure reflects ER use as “primary care doctors,” and on buybacks, “We'll certainly meet [the] $800 million to $900 million... if not exceed that.”
+    Albert Rice, UBS: asked about 2028 supplemental ratchets and uncompensated care; Executive VP Filton: outlined productivity and revenue-cycle work, plus shifting Behavioral outpatient mix as “much more Medicare-centric,” and said exchange declines were “offset almost on a direct one-for-one basis... to an increase in self-pay volumes.”
+    Craig Hettenbach, Morgan Stanley: asked about Talkspace integration and outpatient ramp plus FED/ASC investment; Executive VP Filton: cited geographic/therapist-capacity limits and Talkspace’s “panel of over 6,000 therapists,” and said UHS has “somewhere around 40 [freestanding EDs]... another 5 to 10” in development.
+    Benjamin Hendrix, RBC: asked about professional fees; Executive VP Filton: guidance embeds “7%, 8%, 9% increase range annually,” with mitigation via hiring, rebids, and reducing “locums coverage.”
+    Andrew Cooper, Raymond James: asked what is dragging Cedar Hill and capital allocation; Executive VP Filton: demand is strong in the ER but physician base “has been lacking,” while added beds are in proven markets (Lakewood Ranch, Henderson, Inland Rancho), and capital allocation remains tilted to organic/outpatient plus buybacks.
+    Benjamin Rossi, JPMorgan: asked about Florida de novo ramp and denials; Executive VP Filton: Florida hospital’s Q2 “drag... about $15 million” and “very consistent with our expectations,” while denials saw “no significant change.”
+
+Sentiment Analysis
+
+    Slightly negative (analysts) with recurring pressure on guidance revisions, exchange/self-pay, malpractice reserves, and de novo ramps, including questions on “puts and takes to the guidance revision” (Andrew Mok, Barclays) and whether malpractice increases are “structural” (Jason Cassorla, Guggenheim).
+    Slightly positive (management) with emphasis on demand and capital deployment, including “we remain highly active with our share repurchase program” (CEO Miller) alongside measured language on uncertainties such as “Difficult for us to predict” (CFO Filton) on liability trends.
+    Versus Q1, management shifted from reiterating guidance to explicitly updating it, including “a decrease of approximately $50 million from our prior outlook” (CFO Filton), while analysts continued focusing on exchange dynamics and supplemental payments (with added attention to 2028 policy risk in Q2).
+
+Quarter-over-quarter Comparison
+
+    Q2 replaced Q1’s “We are reiterating the financial and operating forecasts” (CFO Filton, Q1) with an updated 2026 EBITDA range of “$2.61 billion to $2.72 billion” and lowered same-facility volume ranges (CFO Filton, Q2).
+    Q2 introduced specific incremental headwinds not framed the same way in Q1, including “$50 million of impact associated with the Texas Behavioral Health facility” and a higher full-year professional and general liability estimate “by approximately $50 million.” (CFO Filton, Q2)
+    Q2 amplified capital return language, with buybacks rising to “$320 million” vs “$127 million” in Q1 (CEO Miller), and management called the share price “a compelling opportunity” (CEO Miller).
+
+Risks and Concerns
+
+    “Exchange volumes declined approximately 15%” and management said declines were “offset almost on a direct one-for-one basis” by self-pay. (CFO Filton)
+    “We stopped receiving reimbursement at the end of April” at the San Antonio Behavioral facility and “do not expect to receive reimbursement... until we regain certification... which we anticipate in 2027,” with expected losses “between $5 million and $10 million per quarter.” (CFO Filton)
+    “Higher claim severity across all health care settings” drove higher liability reserves, and management said it is “difficult... to control” broader settlement/verdict dynamics. (CFO Filton)
+
+Final Takeaway
+
+Management emphasized a Q2 rebound in Acute Care volumes, the unplanned Florida DPP benefit, and an accelerated buyback pace, while revising 2026 expectations to reflect slower volume trends, higher professional and general liability costs, and incremental losses tied to the San Antonio Behavioral recertification process and a slower Cedar Hill ramp. Executives framed Talkspace’s expected mid-August close and its “over 6,000 therapists” as central to accelerating outpatient Behavioral growth, alongside continued investment in capacity additions and freestanding ED expansion.
+
+Read the full Earnings Call Transcript
+Fresh Stock Ideas, Every Day
+Explore diverse investing perspectives with daily analysis from experts across the market.
+Subscribe to Stock Ideas
+More on Universal Health Services
+
+    Universal Health Services, Inc. (UHS) Q2 2026 Earnings Call Transcript
+    Universal Health Services: From A Cash Trap To A Value Trap
+    Universal Health Services, Inc. (UHS) Presents at Goldman Sachs 47th Annual Global Healthcare Conference 2026 Transcript
+    Universal Health Services slips as EPS guidance lowered, Q2 bottom line missed
+    Stocks making big moves after hours: WELL, UHS, ESI
+
+Seeking Alpha's Disclaimer: This article was automatically generated by an AI tool based on content available on the Seeking Alpha website, and has not been curated or reviewed by humans. Due to inherent limitations in using AI-based tools, the accuracy, completeness, or timeliness of such articles cannot be guaranteed. This article is intended for informational purposes only. Seeking Alpha does not take account of your objectives or your financial situation and does not offer any personalized investment advice. Seeking Alpha is not a licensed securities dealer, broker or US investment adviser or investment bank.
+
+---
+
+## 2026-08 · 輿情新聞
+
+<!-- source-file: 202608_輿情新聞.md | bytes: 9415 | sha1: d18e630e7bba | merged-at: 2026-08-26 -->
+
+### [UHS Universal Health Services] 輿情與新聞整理 (2026/08)
+
+- **分析月份**：2026/08
+- **資料範圍**：過去三個月（2026年6月 ~ 2026年8月）
+- **最後更新**：2026-08-26 20:40
+
+---
+
+#### [Seeking Alpha 社群與專欄分析]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：firecrawl_scrape / brightdata
+- **抓取結果**：✅ 成功
+
+##### 🎯 [看多觀點：大幅修正後估值極具吸引力，行為健康與 Talkspace 整合為新動能]
+- **來源連結**: [https://seekingalpha.com/article/4927056-universal-health-services-valuations-look-attractive-after-a-meaningful-correction](https://seekingalpha.com/article/4927056-universal-health-services-valuations-look-attractive-after-a-meaningful-correction)
+- **發布時間**: 2026-07-29
+- **核心觀點**:
+  > "I am initiating coverage on Universal Health Services with a Buy rating and a 24-month investment horizon, citing attractive valuations. UHS’s behavioral health segment offers robust EBITDA margins and geographic diversification, with growth potential from the Talkspace acquisition and UK expansion. Despite concerns from the OBBBA and recent earnings misses, UHS’s strong credit profile, healthy cash flows, and low leverage support continued capital allocation flexibility. UHS trades at a forward EV/EBITDA of 5.72 versus a sector median of 12.78, indicating a meaningful valuation gap and capped downside."
+- **關鍵要點**:
+  - 行為健康業務具備高 EBITDA 利潤率與跨區域佈局，Talkspace 併購有助於加速向門診及虛擬醫療拓展。
+  - 公司槓桿率低、現金流健康，為持續的股票回購提供充裕彈性。
+  - 前瞻 EV/EBITDA 僅 5.72 倍，遠低於醫療板塊中位數 12.78 倍，具備顯著估值修復空間。
+
+##### 🎯 [謹慎/看空觀點：現金轉換率低、保險政策逆風與流動性隱憂]
+- **來源連結**: [https://seekingalpha.com/article/4919972-universal-health-services-stock-from-cash-trap-to-value-trap](https://seekingalpha.com/article/4919972-universal-health-services-stock-from-cash-trap-to-value-trap)
+- **發布時間**: 2026-07-06
+- **核心觀點**:
+  > "Universal Health Services is rated a hold due to a low valuation that is supported by a low cash conversion rate and an expectation of margin compression. While the AHS segment continues to grow healthy, the higher-margin segment (BHS) is faced with a policy headwind that will likely lead to overall margin contraction. The current state on the balance sheet presents short-term liquidity concerns as cash continues to be trapped by high levels of accounts receivable while short-term debt spiked to $756 million."
+- **關鍵要點**:
+  - 應收帳款增加壓抑現金轉換效率，短期負債上升帶來流動性關注。
+  - 行為健康部門（BHS）面臨聯邦 Medicaid 補貼政策收緊與重新認證等不確定性，可能導致毛利率承壓。
+
+---
+
+#### [Reddit 投資社群 (r/ValueInvesting / r/stocks)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：brightdata scrape_as_markdown
+- **抓取結果**：✅ 成功
+
+##### 🎯 [討論主題：UHS 是否為被市場過度懲罰的便宜優質資產？]
+- **來源連結**: [https://www.reddit.com/r/ValueInvesting/comments/1u21hxd/is_uhs_undervalued/](https://www.reddit.com/r/ValueInvesting/comments/1u21hxd/is_uhs_undervalued/)
+- **發布時間**: 2026-05 ~ 2026-06
+- **核心觀點**:
+  > "I've been looking into UHS stock lately, as it's trading near its 52w low and the fundamentals seem solid... trailing P/E = 6.12, price to book = 1.20, current Ratio = 1.05. The business has been growing steadily, and costs seem to be under control, with gross margins increasing. Cash flow is positive (in 2025 FCF is $824M plus $967M of buybacks) and growing. I've read that the stock is down because the market is already pricing in potential wage increases (nurse shortage) and possible future reductions in federal payments."
+- **關鍵要點**:
+  - 社群投資人聚焦於本益比僅約 6~7 倍的低估值，認為歷史低點已充分反映了護理師薪資上升與 Medicaid 政策風險。
+  - 充沛的自由現金流與持續大規模庫藏股回購（Buybacks）是散戶看多的核心支柱。
+
+##### 🎯 [深度分析主題：UHS - 以合理價格買進優質醫院運營商]
+- **來源連結**: [https://www.reddit.com/r/ValueInvesting/comments/1tofz44/universal_health_services_nyseuhs/](https://www.reddit.com/r/ValueInvesting/comments/1tofz44/universal_health_services_nyseuhs/)
+- **發布時間**: 2026-05 ~ 2026-06
+- **核心觀點**:
+  > "Universal Health Services is one of the largest for-profit hospital operators in the US, running acute care hospitals and a much larger behavioral health network across the US, UK, and Puerto Rico... Net leverage 1.70x, with an April 2026 credit amendment adding $900M of capacity (including $400M for the Talkspace deal). No near-term refinancing risk against the 2029 facility... The shares have been sold down to multi-year lows on Medicaid policy fears despite the operating performance, which is the disconnect that makes the name interesting."
+- **關鍵要點**:
+  - 淨槓桿比僅 1.70x，且 2026 年 4 月完成信貸額度展延，無近期的再融資壓力。
+  - 潛在隱憂包括自保險訴訟準備金（Malpractice/Liability Reserves）以及特定設施（如聖安東尼奧機構認證與 Cedar Hill 營運）的短期虧損。
+
+---
+
+#### [重大新聞與官方公告]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：search_web / firecrawl
+- **抓取結果**：✅ 成功
+
+##### 🎯 [Talkspace 併購案正式完成交割]
+- **來源連結**: [https://www.prnewswire.com/news-releases/universal-health-services-inc-completes-acquisition-of-talkspace-inc-20260817.html](https://www.prnewswire.com/news-releases/universal-health-services-inc-completes-acquisition-of-talkspace-inc-20260817.html)
+- **發布時間**: 2026-08-17
+- **核心觀點**:
+  - UHS 於 2026 年 8 月 17 日以每股 5.25 美元（總估值約 8.35 億美元）正式完成對線上心理諮商平台 Talkspace, Inc. 的收購。
+  - 透過 Talkspace 超過 6,000 名執業心理師網絡，UHS 得以打通線上門診與線下住院/日間照護體系，構建全美首個涵蓋急性與行為健康的端到端醫療照護閉環。
+
+##### 🎯 [2026 Q2 財報公布與全年展望下修]
+- **來源連結**: [https://www.uhs.com/investor-relations/press-releases/](https://www.uhs.com/investor-relations/press-releases/)
+- **發布時間**: 2026-07-27
+- **核心觀點**:
+  - **Q2 財務數據**：營收達 46.4 億美元（年增 8.3%），調整後每股盈餘（EPS）為 5.98 美元。第二季受惠於佛羅里達州 Medicaid 補貼（DPP）確認 1.0 億美元（淨利益約 7,200 萬美元）。
+  - **財測調整**：將 2026 全年調整後 EBITDA 預測區間修訂為 26.1 億至 27.2 億美元（中位數下調約 5,000 萬美元），全年調整後 EPS 指引調整為 22.28 至 23.65 美元。
+  - **下修原因**：醫療糾紛與責任自保準備金全年預估增加約 5,000 萬美元、德州聖安東尼奧行為健康設施重新認證期間預期損失約 5,000 萬美元，以及商業保險（Exchange）病患轉為自費（Self-pay）導致的病患結構轉變。
+
+---
+
+#### [格隆匯 Gelonghui]
+
+- **抓取時間**：2026-08-26
+- **抓取結果**：❌ 過去三個月無實質深度中文專欄
+- **搜尋嘗試紀錄**：
+  - 已嘗試：`firecrawl_search` 搜尋 `site:gelonghui.com UHS OR "环球健康服务"`
+  - **結論**：格隆匯近年針對美股 UHS 之中文深度專欄較少，近三個月僅有零星板塊聯動快訊，無獨立專題報導。
+
+---
+
+#### [華爾街券商與分析師機構觀點 (TipRanks / Zacks / Barchart)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：search_web / 內建工具
+- **抓取結果**：✅ 成功
+
+##### 🎯 [完成 11 億美元優先擔保債券發行以優化資本結構]
+- **來源連結**: [https://www.tipranks.com/news/company-announcements/universal-health-services-completes-1-1-billion-senior-secured-notes-offering](https://www.tipranks.com/news/company-announcements/universal-health-services-completes-1-1-billion-senior-secured-notes-offering)
+- **發布時間**: 2026-08-20
+- **核心觀點**:
+  - UHS 於 2026 年 8 月 20 日順利完成總額 11 億美元的優先擔保票據發行，包含 6 億美元 2031 年到期 5.500% 票據與 5 億美元 2036 年到期 6.000% 票據。
+  - 本次發債資金主要用於置換部分短期循環信貸、支持 Talkspace 併購案後的流動性需求，並維持健康的資產負債表結構。
+
+##### 🎯 [Zacks 與市場共識：低估值支撐但面臨短期盈餘下修壓力]
+- **來源連結**: [https://www.zacks.com/stock/news/2315000/universal-health-services-uhs-stock-moves-downward-on-guidance-cut](https://www.zacks.com/stock/news/2315000/universal-health-services-uhs-stock-moves-downward-on-guidance-cut)
+- **發布時間**: 2026-08-15
+- **核心觀點**:
+  - 市場分析師給予 UHS 「Hold」中性評級，目標價均值約在 183 ~ 215 美元區間。
+  - 分析師指出，雖然 2026 Q2 EPS 達 5.98 美元略優於市場預期，但全年 EBITDA 指引中位數下調 5,000 萬美元引發市場短期估值重估；然而以歷史與同業對比，UHS 本益比（P/E）已降至 6~7 倍，下檔空間受到穩健的自由現金流與股票回購保護。
 
 ---

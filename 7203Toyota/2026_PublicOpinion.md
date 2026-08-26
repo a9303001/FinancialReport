@@ -2,7 +2,7 @@
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
 > 不含年報、季報、公司公告 report。
-> 最後彙整時間：2026-08-25 11:06｜本次併入：18 檔｜累計併入：18 檔
+> 最後彙整時間：2026-08-26 20:44｜本次併入：1 檔｜累計併入：19 檔
 
 ## 目錄
 
@@ -24,8 +24,10 @@
 - [2026-08 · SeekingAlpha](#2026-08--seekingalpha)
 - [2026-08 · Xueqiu](#2026-08--xueqiu)
 - [2026-08 · YahooFinanceJP](#2026-08--yahoofinancejp)
+- [2026-08 · 輿情新聞](#2026-08--輿情新聞)
 
 <!-- body:start -->
+
 
 ## 2026-06 · GoogleNews
 
@@ -1144,5 +1146,256 @@
 
 #### 2. 情緒總結
 - 日本散戶端：**偏多**（買い ~83%），對財測上修與庫藏股給予正面評價；賣壓意見極少（強く売りたい 6.49%、売りたい 0%）。
+
+---
+## 2026-08 · 輿情新聞
+
+<!-- source-file: 202608_輿情新聞.md | bytes: 14407 | sha1: 0cc12dee6819 | merged-at: 2026-08-26 -->
+
+### [7203 / TM 豐田汽車 (Toyota Motor)] 輿情與新聞整理 (2026/08)
+
+- **分析月份**：2026/08
+- **資料範圍**：過去三個月 (2026/05 ~ 2026/08)
+- **最後更新**：2026-08-26 20:40
+
+---
+
+#### [Yahoo Finance JP 掲示板 (7203.T)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl scrape_as_markdown
+- **抓取結果**：✅ 成功
+- **板塊情緒**：強く買いたい 63.51%、買いたい 10.81%、様子見 8.11%、売りたい 1.35%、強く売りたい 16.22%（買進意向合計達 74.32%）
+
+##### 🎯 產能調升與內需強勁
+- **來源連結**: [Yahoo Finance JP 7203.T 掲示板 No.1611814](https://finance.yahoo.co.jp/quote/7203.T/forum/1611814)
+- **發布時間**: 2026-08-26 20:44
+- **核心觀點**:
+  > "安心、安定、世界で支持されるトヨタ車。トヨタ11月国内生産計画、日当たり1万4400台後半の高水準、9、10月も上方修正（日刊産業新聞）。特に10月は同1万4500台を超える水準となる計画だ。"
+- **關鍵要點**:
+  - 豐田 2026 年 11 月日本國內日產量預計達 1.44 萬台後半，年增約 18%。
+  - 9 月與 10 月產量計畫亦持續上修，產能利用率維持高檔。
+
+##### 🎯 關稅威脅與北美供應鏈隱憂
+- **來源連結**: [Yahoo Finance JP 7203.T 掲示板 No.1611817 / No.1611784](https://finance.yahoo.co.jp/quote/7203.T/forum/1611784)
+- **發布時間**: 2026-08-26 17:51 / 20:54
+- **核心觀點**:
+  > "トヨタとホンダは近年カナダでの生産を拡大しており、2025年のカナダ総生産の76.5%を両社で占める。Fitchの分析でも、対米輸出に占めるカナダ製の割合はトヨタが約12%、ホンダが約9%と最も高い。"
+- **關鍵要點**:
+  - 特朗普針對加拿大產汽車擬徵收高額關稅，市場熱議豐田北美供應鏈對加拿大製造的曝險（對美出口中加拿大製佔比約 12%）。
+  - 部份投資人憂心中國電動車與插電混動在全球市場（南美、東南亞、中東）的擴張對豐田造成長期競爭壓力。
+
+---
+
+#### [株探 Kabutan (7203)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl scrape_as_markdown
+- **抓取結果**：✅ 成功
+- **估值指標**：PER 11.2倍、PBR 0.97倍、殖利率 (利回り) 3.26%、信用倍率 7.14倍、時價總額 44兆8,066億日圓。
+
+##### 🎯 特朗普關稅言論引發股價短暫回檔
+- **來源連結**: [株探 7203 材料新聞](https://kabutan.jp/stock/news?code=7203&b=n202608250718)
+- **發布時間**: 2026-08-25 14:24
+- **核心觀點**:
+  > "トヨタ---続落、トランプ大統領がカナダ産自動車に50％の関税と表明。トヨタやホンダが軟調。"
+- **關鍵要點**:
+  - 受美國前總統特朗普擬對加拿大進口汽車徵稅言論影響，汽車股短線受壓。
+
+##### 🎯 券商調升目標價至 3,700 日圓
+- **來源連結**: [株探 7203 材料新聞](https://kabutan.jp/stock/news?code=7203&b=n202608240664)
+- **發布時間**: 2026-08-24 14:30
+- **核心觀點**:
+  > "トヨタは小幅に３日続伸、国内大手証券は目標株価３７００円に引き上げ。"
+- **關鍵要點**:
+  - 日本國內大型證券商上調豐田目標價至 3,700 日圓，看好其油電混合車利潤率與庫藏股回購效益。
+
+---
+
+#### [みんかぶ Minkabu (7203)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Bright Data scrape_as_markdown
+- **抓取結果**：✅ 成功
+
+##### 🎯 社群與分析師綜合評價
+- **來源連結**: [みんかぶ 7203](https://minkabu.jp/stock/7203)
+- **發布時間**: 2026-08-26
+- **核心觀點**:
+  > "株価診断：割安、目標株価：3,374円、アナリスト予想：買い、個人予想：売り、総合評価：買い。"
+- **關鍵要點**:
+  - 專業分析師一致維持「買進（買い）」評級，平均目標價 3,374 日圓；
+  - 系統量化診斷顯示當前股價（約 3,070 日圓）處於「割安（低估）」區間；
+  - 個人散戶情緒在短線回檔中呈現分歧（個人預測偏保守，但板塊買進熱度高達 74%）。
+
+---
+
+#### [日本經濟新聞 Nikkei (7203)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl scrape_as_markdown
+- **抓取結果**：✅ 成功
+
+##### 🎯 供應鏈與物流優化、新研發效率提升
+- **來源連結**: [日經會社情報 7203 新聞](https://www.nikkei.com/nkd/company/news/?scode=7203)
+- **發布時間**: 2026-08-24 ~ 2026-08-26
+- **核心觀點**:
+  > "トヨタが国内物流を効率化 ダイハツなどと部品配送を統一、新法にらむ。トヨタ、スポーツ車の空力実験を初公開 開発期間は3分の１に短縮。"
+- **關鍵要點**:
+  - 豐田針對日本國內物流法規變革，攜手大發等集團子公司統一零組件配送以抗通膨與司機短缺。
+  - 公開全新風洞空力實驗技術，將車輛空氣動力學開發期縮短三分之二。
+  - 旗下訂閱品牌 KINTO 推出認證中古車銷售業務，活化租賃回收車輛價值。
+
+---
+
+#### [Seeking Alpha (TM)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl scrape_as_markdown
+- **抓取結果**：✅ 成功
+
+##### 🎯 財報獲利強勁、調升全年財測與實施 1 兆日圓庫藏股
+- **來源連結**: [Seeking Alpha - Mike Zaccardi: Toyota Struggling Through Macro Tensions, But There's A Path To EPS Growth](https://seekingalpha.com/article/4929879-toyota-struggling-through-macro-tensions-but-theres-a-path-to-eps-growth)
+- **發布時間**: 2026-08-04 10:10 EDT
+- **核心觀點**:
+  > "Toyota Motor Corporation is reiterated as a Buy, with attractive valuation despite lackluster technicals... Management raised FY 2027 guidance, expects operating income of 3.4 trillion yen, and announced a 1 trillion yen share repurchase with plans to retire 200 million shares. TM faces risks from global economic softness, USDJPY volatility, China EV competition, and supply chain pressures, but earnings growth is expected to return by FY 2029."
+- **關鍵要點**:
+  - 重申「買進（Buy）」評級；
+  - 2027 財年 Q1 營收年增 10.4%，管理層調升全財年指引，預估營業利潤達 3.4 兆日圓；
+  - 宣布 1 兆日圓股票回購計畫，並預計註銷 2 億股流通在外普通股；
+  - 雖然面臨日圓匯率波動、中國電動車競爭與宏觀疲軟，但中長期 EPS 增長路徑明確。
+
+##### 🎯 估值具吸引力、油電混合車（HEV）主導全球紅利
+- **來源連結**: [Seeking Alpha - APAC Research: Toyota's Sustained Slide Results In An Upgrade To Buy](https://seekingalpha.com/article/4918934-toyotas-sustained-slide-results-in-an-upgrade-to-buy)
+- **發布時間**: 2026-06-30 15:15 EDT
+- **核心觀點**:
+  > "Toyota is upgraded to buy after a prolonged share price decline and improving fundamentals. TM's focus on hybrids positions it well amid rising fuel prices and sluggish EV adoption, especially compared to U.S. automakers reliant on trucks and SUVs. TM's solid margins, revenue growth, and global brand justify a modest valuation premium."
+- **關鍵要點**:
+  - 全球純電動車（BEV）需求放緩，豐田油電混動車（HEV/PHEV）全球熱銷，獲利護城河穩固；
+  - 本益比 P/E 僅約 9 倍，股息殖利率逾 3%，提供良好安全邊際。
+
+---
+
+#### [雪球 Xueqiu (TM)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Bright Data scrape_as_markdown
+- **抓取結果**：✅ 成功
+
+##### 🎯 澳洲與海外市場競爭動態
+- **來源連結**: [雪球 蓋世汽車專欄](https://xueqiu.com/5675075225/406452007)
+- **發布時間**: 2026-08-25 10:36
+- **核心觀點**:
+  > "澳大利亞汽車市場正在經歷一場罕見的權力轉移。長期以來，這裡幾乎是日本汽車品牌的‘主場’。憑藉耐用、保值以及覆蓋廣泛的經銷商網絡，豐田連續23年穩居澳大利亞新車銷量榜首。2025年，在澳大利亞每年約120萬輛的新車市場中，豐田銷售約24萬輛，市場份額達到20%。但如今，來自中國的電車正在加大進攻力道..."
+- **關鍵要點**:
+  - 豐田在澳洲市場擁有 20% 份額與長期通路壁壘，但正面臨比亞迪等中國新能源品牌的挑戰；
+  - 另一篇專欄《7月，比亞迪掀翻豐田的爽文，沒有在澳大利亞上演》（2026-08-13）則指出，豐田在皮卡（Hilux）與油電休旅（RAV4）等傳統優勢領域仍具極強客戶黏著度。
+
+##### 🎯 宏觀匯率與日系車企獲利韌性討論
+- **來源連結**: [雪球 智通財經/新浪財經轉載](https://xueqiu.com/3338215700/405338663)
+- **發布時間**: 2026-08-17 17:40
+- **核心觀點**:
+  > "在最近一季財報中，豐田（TM.US）、本田（HMC.US）和日產（NSANY.US）得益於日元的歷史性走弱與混動熱銷，業績表現亮眼——前兩家公司上調了全年盈利預期... 但中東地緣局勢與日元升值預期將成為後續觀察重點。"
+
+---
+
+#### [格隆匯 Gelonghui (TM.US / 7203.JP)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl scrape_as_markdown
+- **抓取結果**：✅ 成功
+
+##### 🎯 Q1 淨利驚人、日賺 7 億元人民幣
+- **來源連結**: [格隆匯 實時快訊](https://m.gelonghui.com/live/2591836)
+- **發布時間**: 2026-08-04 05:26
+- **核心觀點**:
+  > "豐田汽車今日發布2027財年第一財季（2026年4月1日至6月30日）業績快報。財報顯示，豐田本季度營業總收入達13.53萬億日元，同比增長10.38%；歸母淨利潤達1.48萬億日元，同比大幅增長75.56%。按當前匯率折算，單季淨利潤約634億元人民幣，相當於每天淨賺約7億元。"
+- **關鍵要點**:
+  - 豐田 Q1 單季淨利潤高達 1.48 兆日圓（約 634 億人民幣），展現全球汽車龍頭頂級的現金創造力；
+  - 獲利增長動能來自北美與歐洲油電混動車熱銷及高階車型（Lexus）銷售比重提升。
+
+---
+
+#### [富途牛牛 Futunn / Moomoo (TM-US)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl scrape_as_markdown
+- **抓取結果**：✅ 成功
+
+##### 🎯 SEC 6-K 官方重大公告
+- **來源連結**: [Futunn / Moomoo TM-US Announcement](https://www.moomoo.com/stock/TM-US/announcement?from=futunn)
+- **發布時間**: 2026-08-04 ~ 2026-08-07
+- **核心觀點**:
+  > "Toyota Reports Q1 FY2027 Results: Net Income Surges 75.6% YoY to ¥1.48T; Announces Share Repurchase Program. Toyota Motor Sets Treasury Stock Disposal Price at 2,983.5 Yen for Employee Share-Based Compensation."
+- **關鍵要點**:
+  - 2026-08-04：申報 6-K 財報，確認 Q1 淨利潤大幅成長 75.6% 至 1.48 兆日圓；
+  - 2026-08-07：公布庫藏股轉讓給員工之股權激勵定價為每股 2,983.5 日圓；
+  - 董事與高階主管（包含佐藤恒治社長、宮崎洋一副社長等）持續依計畫進行信託增持。
+
+---
+
+#### [鉅亨網 Anue Cnyes (TM-US)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl scrape_as_markdown
+- **抓取結果**：✅ 成功
+
+##### 🎯 2026 上半年全球銷量穩居第一、北美混動強勁抗衡中國疲軟
+- **來源連結**: [鉅亨網 - 中國需求疲弱、中東局勢衝擊 豐田Toyota上半年全球銷量年減2.8%仍居全球第一](https://news.cnyes.com/news/id/6554857)
+- **發布時間**: 2026-07-31 16:30
+- **核心觀點**:
+  > "豐田Toyota(TM-US)公布，2026年上半年（1至6月）全球共賣出539萬輛汽車，較去年同期減少2.8%，是近兩年來首度出現銷售下滑。不過，豐田仍穩坐全球汽車銷售冠軍，銷量高於德國福斯集團的413萬輛。北美市場上半年賣出145萬輛，年增0.9%；日本國內市場年增4.4%達110萬輛；中國市場銷量年減17.1%至69.4萬輛。"
+- **關鍵要點**:
+  - 2026 上半年全球銷量 539 萬輛，連續多年力壓福斯（413萬輛）蟬聯世界第一；
+  - 北美（145 萬輛，+0.9%）與日本本土（110 萬輛，+4.4%）是主要支撐支柱；
+  - 中國市場（69.4 萬輛，-17.1%）與中東市場受價格戰及地緣政治衝擊出現明顯回落。
+
+---
+
+#### [香港經濟日報 HKET]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl search
+- **抓取結果**：✅ 成功
+
+##### 🎯 產能調整與美日貿易戰略
+- **來源連結**: [香港經濟日報 - 日本｜豐田擬在日銷售美國製汽車](https://inews.hket.com/article/4056559/)
+- **發布時間**: 2026-07 / 2026-08
+- **核心觀點**:
+  > "豐田預告三款在美國生產的車型，包括Camry房車、Highlander SUV和Tundra農夫車將於日本上市，此舉有助於平衡美日雙邊貿易並因應潛在關稅壓力。"
+- **關鍵要點**:
+  - 透過調配美日雙向生產與進出口結構，積極降低單一市場關稅政策衝擊。
+
+---
+
+#### [CMoney 股市爆料同學會 (TM)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：CMoney 官方 API (Bearer Guest Token)
+- **抓取結果**：✅ 成功
+
+##### 🎯 估值比較與特斯拉對照分析
+- **來源連結**: [CMoney 股市爆料同學會](https://www.cmoney.tw/forum/stock/TM)
+- **發布時間**: 2026-08
+- **核心觀點**:
+  > "Tesla 市值達 1.5 兆美元約為豐田汽車的五倍，天價估值反映市場對未來高度期待（本益比達 375 倍）；相比之下，Toyota (TM) 年獲利穩健、本益比僅約 8~11 倍，核心造車與現金流基本面扎實，兩者代表不同投資風格。"
+- **關鍵要點**:
+  - 社群投資人討論集中於傳統車廠龍頭（豐田）低估值與高現金流優勢，對比新創電車（特斯拉）的高估值風險。
+
+---
+
+#### [Reddit (r/stocks & r/investing)]
+
+- **抓取時間**：2026-08-26
+- **抓取方式**：Firecrawl search
+- **抓取結果**：✅ 成功
+
+##### 🎯 估值與全球龍頭競爭力討論
+- **來源連結**: [Reddit r/stocks - Mega Cap stocks with P/E under 30](https://www.reddit.com/r/stocks/comments/1dnsu18/there_are_only_20_mega_cap_stocks_with_a_pe_under/)
+- **發布時間**: 2026-06 ~ 2026-08
+- **核心觀點**:
+  > "TM is one of the rare mega-cap global leaders trading at a single-digit to low-teens P/E ratio with strong dividend payout and massive free cash flow, thriving on the pragmatic hybrid strategy while pure-EV pure-plays struggle with margins."
+- **關鍵要點**:
+  - 歐美散戶社群對 TM 的投資論點集中在「低本益比」、「高自由現金流」、「混合動力策略在電動車普及放緩期的極大優勢」。
 
 ---
