@@ -1,8 +1,8 @@
-# 任務執行最終報告 — 2026/08/26（每日輪替：Day 27 → 6902 DENSO）
+# 任務執行最終報告 — 2026/08/26（每日輪替：Day 28 → 6605 帝寶）
 
-- **公司**：6902 DENSO Corporation（デンソー株式会社）
-- **市場**：日股（TSE: 6902）＋ 美股 ADR（DNZOY）
-- **本地資料夾**：6902Denso/
+- **公司**：6605 帝寶工業股份有限公司（DEPO Auto Parts Industrial Co., Ltd.）
+- **市場**：台股（TWSE: 6605）
+- **本地資料夾**：6605帝寶/
 - **執行月份輿情檔**：202608_輿情新聞.md
 
 ---
@@ -11,27 +11,23 @@
 
 | 股號/名稱 | 資料來源 | 產生的檔案 / 下載的財報檔名 | 狀態/備註 |
 | :--- | :--- | :--- | :--- |
-| 6902Denso | DENSO IR 官網 / TDnet / XJ-Storage | 6902_AnnualReport_2026.md | **新增**：FY2026 全年決算短信 (Year ended Mar 31, 2026)，Markdown 轉換成功，0 (cid:) 亂碼 |
-| 6902Denso | DENSO IR 官網 (2026/06/15) | 6902_AnnualReport_2026_Full.md | **新增**：FY2026 完整英文年報 (Financial Report 2026, 123 頁)，Markdown 轉換成功，0 (cid:) 亂碼 |
-| 6902Denso | DENSO IR 官網 (2026/07/31) | 6902_Quarter_2027Q1.md | **新增**：FY2027 Q1 季報決算短信 (Three Months ended Jun 30, 2026)，Markdown 轉換成功，0 (cid:) 亂碼 |
-| 6902Denso | （既有） | 6902_AnnualReport_2024.md | 已存在，保留 |
-| 6902Denso | （既有） | 6902_AnnualReport_2025.md | 已存在，保留 |
-| 6902Denso | （既有） | 6902_Quarter_2026Q3.md | 已存在，保留 |
-| 6902Denso | Yahoo JP 掲示板、株探、みんかぶ、Yahoo US、Seeking Alpha、雪球、格隆匯、富途牛牛 | 202608_輿情新聞.md | 輿情收集成功（日、美、中三地來源完整記錄，全為真實爬取無捏造） |
+| `6605帝寶` | 公開資訊觀測站 (MOPS/TWSE) | `6605_Quarter_2026Q2.md` | **新增**：115 年第 2 季 (2026 Q2) 合併財務報告書，轉換成功，0 (cid:) 亂碼 |
+| `6605帝寶` | （既有） | `6605_2024_annual.md` | 已存在，保留 |
+| `6605帝寶` | （既有） | `6605_2025_annual.md` | 已存在，保留 |
+| `6605帝寶` | （既有） | `6605_2026_Q1.md` | 已存在，保留 |
+| `6605帝寶` | 股市爆料同學會 (CMoney API)、工商時報、經濟日報、鉅亨網、PTT 股市板 | `202608_輿情新聞.md` | **新增**：輿情收集成功（涵蓋 2026/05~2026/08 過去三個月真實討論與新聞整理） |
 
 ### 輿情來源核心摘要（皆為真實抓取原文）：
-1. **日本市場 (Yahoo!ファイナンス 掲示板 & ニュース)**：
-   - 2026 年 8 月 25 日商用化推出「DENSO Digital Product Passport Solution for Battery」數位電池護照服務，符合歐洲 Battery Pass Ready 標準。
-   - 散戶與價值投資者關注 PBR 約 0.94 倍、PER 11~13 倍、配息殖利率達 3.85%，具高安全邊際；空方擔憂美國關稅潛在影響。
-2. **日本市場 (Minkabu / Kabutan)**：
-   - 機構共識評級為「Buy」，Minkabu AI 診斷為「割安（低估）」。
-   - 聚焦全固態電池、SiC/GaN 功率半導體、SDV 軟體定義架構及 2026 年 8 月 3 日發布之治理改革報告。
-3. **英文圈 (Yahoo Finance US / Zacks / Just Auto)**：
-   - 戰略調整：撤回對羅姆（Rohm）全面收購要約，轉為深化 SiC 研發合作聯盟，美股投資人正面看待避免過度舉債。
-   - 攜手印度 Sona Comstar 深耕動力傳動與電動化模組，擴展新興市場；全球 48V 微混系統與數位座艙 HUD 穩居龍頭。
-4. **華語圈 (雪球 / 格隆匯 / 富途牛牛 / 財報狗)**：
-   - 智駕突破：聯合地平線（Horizon Robotics）基於征程 6 系列奪得一汽豐田新車型智駕定點。
-   - 資產瘦身聚焦高毛利電動化與半導體核心；FactSet 分析師平均目標價 2,122 日圓。
+1. **股市爆料同學會 CMoney (官方 API 抓取)**：
+   - 2026 年 8 月 7 日董事會通過半年報，上半年累計營收 96.10 億元，累計 EPS 7.71 元；推算 Q2 單季 EPS 約 3.30 元（較去年 Q2 匯損低基期大幅增長 650%）。市場關注之昆山廠搬遷補償金（約 8 億元新台幣，每股約 6 元）尚未認列。
+   - 6/24 法說會確立美國 232 關稅降至 15% 且不累加，北美客戶重啟拉貨；法人預估 2026 全年 EPS 15.0~18.7 元。
+   - 7 月單月營收 17.28 億元（年增 24.28%），創十年同期新高。
+2. **財經媒體 (工商時報 / 經濟日報 / 鉅亨網)**：
+   - 宣布量產全台首個 OLED 汽車尾燈，並建立 Micro LED 投影、ADB 智慧頭燈與雷射光源技術平台。
+   - 德商賓士設計專利訴訟更審判決賠償 1,049 萬元，對公司財務業務無重大影響。
+   - 規劃泰國春武里府設廠（預計 2027 年底至 2028 年 Q1 完工），並擴充浙江寧波廠自動化設備。
+3. **PTT 股市板 (Stock)**：
+   - 討論聚焦美國 232 關稅降至 15%、State Farm 保險擴大採用 AM 件理賠紅利、以及帝寶完整龐大車燈模具庫之競爭優勢。
 
 ---
 
@@ -39,15 +35,13 @@
 
 | 來源/網站 | 原因 | 已嘗試之 MCP 與處理結果 |
 | :--- | :--- | :--- |
-| inance.yahoo.co.jp | 內建 
-ead_url_content 權限逾時 | 依 §2.1 黃金規則切換至 irecrawl_scrape，成功抓取掲示板與新聞全文 |
-| xueqiu.com 關鍵字搜尋 | Bright Data 遇到 robots.txt 限制 | 依 §2.1 換至 irecrawl_search，成功檢索出羅姆案與地平線合作討論 |
+| `mops.twse.com.tw` (POST 查詢) | 內建 requests 遇到資安阻擋頁面 (FOR SECURITY REASONS...) | 依 §2.1 黃金規則切換至 Playwright MCP 模擬瀏覽器自動化查詢與下載，成功取得 2026 Q2 財報 PDF |
 
 ---
 
 ## 3. 資料缺失說明
 
-- 本次財報涵蓋 DENSO 最新 2 年報（2025、2026 Full Financial Report）以及最新季報（2027 Q1，截至 2026-06-30，於 2026-07-31 最新發布），財報與決算短信完整無缺漏。
+- 本次成功下載並轉換 2026 年第二季最新季報（2026 Q2，於 2026-08-14 於 MOPS 上傳申報），搭配既有的 2024 年報、2025 年報、2026 Q1 季報，財報資料完整且最新。
 
 ---
 
@@ -55,9 +49,7 @@ ead_url_content 權限逾時 | 依 §2.1 黃金規則切換至 irecrawl_scrape�
 
 | 檔案名稱 | 處理方式 | 原因 |
 | :--- | :--- | :--- |
-| 6902_AnnualReport_2026.pdf | 轉換後刪除原始 PDF | 依 Convert2md Step 1.4 規範，驗證 Markdown 轉換品質完整（0 cid 亂碼）後清除 PDF 來源檔 |
-| 6902_AnnualReport_2026_Full.pdf | 轉換後刪除原始 PDF | 同上，驗證 123 頁英文年報 Markdown 轉換成功後清除原始 PDF |
-| 6902_Quarter_2027Q1.pdf | 轉換後刪除原始 PDF | 同上，驗證 15 頁 Q1 決算短信 Markdown 轉換成功後清除原始 PDF |
+| `6605_Quarter_2026Q2.pdf` | 轉換後刪除原始 PDF | 依 Convert2md Step 1.4 規範，驗證 Markdown 轉換品質完整（0 cid 亂碼）後清除原始 PDF |
 
 ---
 
@@ -65,13 +57,12 @@ ead_url_content 權限逾時 | 依 §2.1 黃金規則切換至 irecrawl_scrape�
 
 | MCP 名稱 | 工具名稱 | 用途 |
 | :--- | :--- | :--- |
-| **Firecrawl** | irecrawl_scrape | 抓取 DENSO 官方 IR 決算公告頁面、Yahoo Finance JP 掲示板與新聞、Kabutan、Minkabu、Yahoo Finance US |
-| **Firecrawl** | irecrawl_search | 搜尋 Seeking Alpha、Reddit、格隆匯、雪球關於 DENSO / DNZOY 的最新社群討論與新聞 |
-| **Bright Data** | scrape_as_markdown | 抓取雪球 (xueqiu.com) DNZOY 頁面數據 |
+| **Playwright** | `browser_navigate` / `browser_snapshot` / `browser_type` / `browser_click` / `browser_evaluate` | 模擬瀏覽器登入 MOPS 公開資訊觀測站，查詢並取得 6605 帝寶 2026 Q2 合併財報 PDF 下載連結 |
+| **Firecrawl** | `firecrawl_search` | 檢索最新財報與新聞資料 |
 
 ---
 
 ## 6. 輪替排程狀態
 
-- **本輪執行日期**：Day 27（6902 DENSO）✅ 執行完成
-- **下一輪預定日期**：Day 28（6605 帝寶）
+- **本輪執行日期**：Day 28（6605 帝寶）✅ 執行完成
+- **下一輪預定日期**：Day 29（00883 中國海洋石油 + 00857 中石油 + 00386 中石化）
