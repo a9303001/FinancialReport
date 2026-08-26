@@ -112,6 +112,7 @@ graph TD
 | MOPS 台股進階查詢頁 | `mops.twse.com.tw` | 查詢頁需 JS 互動/POST 才出結果，直接 GET 常抓不到清單 |
 | moomoo 社區/新聞 | `moomoo.com` | 正文常由 JS 載入，直接抓常只拿到標題與版型 |
 | 東方財富股吧 | `guba.eastmoney.com` | 部分列表頁需 JS 分頁載入，抓不到完整貼文 |
+| 格隆匯 (Gelonghui) | `gelonghui.com` | Nuxt.js SSR 架構，搜尋結果與文章列表由前端 JS 動態載入，`read_url_content` 只能取得 HTML/CSS 骨架（實戰 SOP 見 §2.9） |
 
 ### 2.4 已知會「封鎖爬蟲」的網站清單（要換 MCP，不是放棄）
 
@@ -215,6 +216,57 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 - 請求間隔 0.3~0.5 秒即可，未見封鎖；仍遵守 §2.6 頻率原則。
 - 美股同學會有對應端點 `.../api/Article/USStocks/{代號}/{型別}`（同一套 token 與 header，未逐一驗證型別值）。
 - 抓回的是結構化 JSON，直接依 §5.3 範本整理成 Markdown；`createTime` 記得除以 1000 再轉日期。
+
+### 2.9 實戰範例：格隆匯（Gelonghui）抓取 SOP（2026-08-26 驗證有效）
+
+> **結論先講：用 `firecrawl_scrape`，basic proxy 即可，每頁僅 1 credit。** 格隆匯是港股、A 股、中概股輿情的重要來源（研報摘要、深度分析文、即時公告），但因 Nuxt.js SSR 架構，內建工具必定失敗。此 SOP 於 2026-08-26 在 03606 福耀玻璃實測驗證有效。
+
+**背景**：`https://www.gelonghui.com/search?keyword={公司名稱}` 是 Nuxt SSR 殼（HTML 含 `data-n-head-ssr` 標記），搜尋結果由前端 JS 動態載入。`read_url_content` 回傳約 290KB 的 HTML，但全是 CSS/JS 框架代碼（icon font、VideoJS 播放器樣式等），完全沒有文章列表。
+
+**步驟 1：搜尋文章列表**
+
+```
+firecrawl_scrape → https://www.gelonghui.com/search?keyword={公司名稱}
+```
+
+- 回傳完整搜尋結果（實測福耀玻璃取得 257 篇），每篇含：標題、摘要、作者、發布時間、文章 URL（`/p/{id}` 格式）。
+- 第一頁約 18 篇結果，通常已足夠涵蓋近三個月輿情。
+- basic proxy 即可，1 credit。
+
+**步驟 2：（可選）用 firecrawl_search 補充**
+
+```
+firecrawl_search → {公司名稱} {股票代碼} site:gelonghui.com
+```
+
+- 回傳 10 筆結果，含標題、摘要、URL。
+- 特色：也會包含格隆匯託管的 PDF 研報連結（如券商研報 PDF），可做額外補充。
+- 2 credits。
+
+**步驟 3：抓取單篇深度文章**
+
+```
+firecrawl_scrape → https://www.gelonghui.com/p/{文章id}
+```
+
+- 從步驟 1 的結果中篩選近三個月內、有實質分析內容的文章 URL。
+- 回傳完整文章正文的乾淨 Markdown，含標題、發布時間、瀏覽量、全部段落、財務數據等。
+- basic proxy，1 credit/篇。
+
+**工具優先順序（此站專用）**：
+
+| 順序 | 工具 | 說明 |
+| :--- | :--- | :--- |
+| ① | `firecrawl_scrape` | **首選**，basic proxy 即可完整爬取搜尋頁與文章頁 |
+| ② | `firecrawl_search` | 輔助搜尋，可找到 PDF 研報連結 |
+| ③ | `brightdata` / `apify` / `playwright` | 僅 firecrawl 失敗時遞補 |
+| ❌ | 內建 `read_url_content` | **必定失敗**，不要嘗試 |
+
+**注意事項**：
+- 格隆匯搜尋頁翻頁機制暫未測試，建議優先從第一頁（約 18 篇）篩選即可。
+- 格隆匯快訊（`/news/{id}`）與文章（`/p/{id}`）是不同路徑，兩者都可用 `firecrawl_scrape` 爬取。
+- 遵守 §2.6 頻率原則，同網域間隔 3 秒。
+- **只記錄真實存在於頁面上的內容**，不可補充訓練資料知識（見 §5.0 防幻覺）。
 
 ---
 
