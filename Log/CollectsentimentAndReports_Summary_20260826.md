@@ -20,4 +20,5 @@
 ## 5. 本次使用的 MCP（強制填寫）
 | MCP 名稱 | 工具 | 用途 |
 | :--- | :--- | :--- |
-| （若無使用） | — | 本次未使用 MCP，僅使用內建工具 |
+| `firecrawl-mcp` | `firecrawl_scrape` | 抓取 Yahoo Finance JP 掲示板即時討論與 Minkabu 平台評價資訊 |
+| `native/python` | `urllib` / `markitdown` | 下載 IR Bank 決算短信與說明資料 PDF 並轉換為 Markdown |
