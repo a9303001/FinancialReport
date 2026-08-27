@@ -12,3 +12,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+# Python bytecode (the yfinance MCP patch regenerates this on every server start)
+__pycache__/
+*.py[cod]

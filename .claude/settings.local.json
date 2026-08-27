@@ -44,7 +44,10 @@
       "mcp__yfinance__get_historical_stock_prices",
       "mcp__yfinance__get_stock_actions",
       "mcp__yfinance__get_stock_info",
-      "mcp__yfinance__get_yahoo_finance_news"
+      "mcp__yfinance__get_yahoo_finance_news",
+      "Bash(mkdir -p /home/user/FinancialReport/.claude/mcp-patch)",
+      "Bash(PYTHONPATH=.claude/mcp-patch uvx --from git+https://github.com/Alex2Yang97/yahoo-finance-mcp --with 'mcp<2' python -c ' *)",
+      "Bash(rm -rf .claude/mcp-patch/__pycache__ && tail -3 .gitignore && printf '\\\\n# Python bytecode \\(the yfinance MCP patch regenerates this on every server start\\)\\\\n__pycache__/\\\\n*.py[cod]\\\\n' >> .gitignore && echo \"--- 新 .gitignore 尾端 ---\" && tail -4 .gitignore)"
     ]
   }
 }
