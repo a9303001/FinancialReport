@@ -15,7 +15,10 @@
         "--with",
         "mcp<2",
         "yahoo-finance-mcp"
-      ]
+      ],
+      "env": {
+        "PYTHONPATH": ".claude/mcp-patch"
+      }
     }
   }
 }
