@@ -40,7 +40,11 @@
       "WebSearch",
       "WebFetch",
       "mcp__playwright__browser_navigate",
-      "mcp__Claude_Code_Remote__get_session"
+      "mcp__Claude_Code_Remote__get_session",
+      "mcp__yfinance__get_historical_stock_prices",
+      "mcp__yfinance__get_stock_actions",
+      "mcp__yfinance__get_stock_info",
+      "mcp__yfinance__get_yahoo_finance_news"
     ]
   }
 }
