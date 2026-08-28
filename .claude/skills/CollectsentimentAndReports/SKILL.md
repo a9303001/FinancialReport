@@ -34,6 +34,7 @@ description: 收集個股「最新財務報告」與「輿情討論/新聞」
 | 網路搜尋 | `WebSearch` | `search_web` / `google_search` |
 | 抓取網頁內容 | `WebFetch` | `read_url` / `read_url_content` |
 | MCP 進階爬取（內建失敗時） | `firecrawl_scrape` 等 MCP 工具 | 同（已連接的 MCP 工具） |
+| 呼叫 Apify Actor（結構化資料，如 Reddit，見 §2.9） | `mcp__Apify__call-actor` + `mcp__Apify__get-dataset-items` | 同（已連接的 Apify MCP 工具） |
 | 讀寫本機檔案 | `Read` / `Edit` / `Write` | `view_file` / `write_file` / `edit_file` |
 | 執行指令 / 下載 | `Bash`（`curl` 等） | `run_shell_command` |
 
@@ -119,7 +120,7 @@ graph TD
 
 | 網站 | 網域 | 常見錯誤 | 建議做法 |
 | :--- | :--- | :--- | :--- |
-| Reddit | `reddit.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；**Firecrawl 也會回「we do not support this site」** | Firecrawl 拒絕 → 換 brightdata / apify / playwright；整條鏈都不行 → 改用 `firecrawl_search` 搜該站內容當替代 |
+| Reddit | `reddit.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；**Firecrawl 也會回「we do not support this site」** | **不要照 §2.1 順序逐一試 firecrawl/brightdata/playwright，直接跳到 Apify Reddit Actor**（已驗證最快最準，SOP 見 §2.9） |
 | Reuters | `reuters.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；文章頁常有 DataDome/PerimeterX 真人驗證牆 | 換 `firecrawl_scrape` 抓公司頁通常可讀（能拿到新聞列表與財報摘要）；「Load more」翻頁可能被驗證牆擋，取得已載入部分即可 |
 | Bloomberg | `bloomberg.com` | 搜尋多半只回股價報價頁，深度文章有付費牆 | 屬付費牆限制、非封鎖；MCP 也難突破付費牆，取得摘要即可並在報告註明「付費牆限制」 |
 
@@ -215,6 +216,73 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 - 請求間隔 0.3~0.5 秒即可，未見封鎖；仍遵守 §2.6 頻率原則。
 - 美股同學會有對應端點 `.../api/Article/USStocks/{代號}/{型別}`（同一套 token 與 header，未逐一驗證型別值）。
 - 抓回的是結構化 JSON，直接依 §5.3 範本整理成 Markdown；`createTime` 記得除以 1000 再轉日期。
+
+### 2.9 實戰範例：Reddit 抓取 SOP（Apify Actor，2026-08-28 驗證有效）
+
+> **結論先講：Reddit 不要照 §2.1 順序逐一試 firecrawl → brightdata → playwright，直接跳到 Apify 的 Reddit Actor。** 內建工具與 Firecrawl 對 `reddit.com` 都明確不支援（§2.4），但 Apify 上的 Reddit 專用 Actor 可以直接用關鍵字＋股票代號搜尋，免登入、無 rate limit、結果乾淨。此 SOP 於 2026-08-28 實測有效：搜尋 `wallstreetbets` 版的 `NVDA` 關鍵字，成功抓到真實貼文與留言（含標題、原文、時間、作者、URL）。
+
+**背景**：`reddit.com` 是英文圈輿情的重要來源（`r/wallstreetbets`、`r/stocks`、`r/investing` 等）。內建 `WebSearch`/`read_url` 對 reddit.com 常回 `400 not accessible to our user agent`；Firecrawl 對 reddit.com 會直接回「we do not support this site」。不需要浪費時間依序試這些工具，改用 Apify 的 Reddit Actor 是目前驗證最有效的做法。
+
+**步驟 1：確認可用的 Reddit Actor**
+- 目前驗證有效：`trudax/reddit-scraper-lite`（pay-per-event 計費，約 $0.004 美元/則結果，便宜且不需登入）。
+- 若此 Actor 失效或改版，才需要用 Apify 的 Actor 搜尋工具（Claude 是 `mcp__Apify__search-actors`，Gemini 用對應已連接的 Apify MCP 工具）搜關鍵字 `"Reddit"`，換一個評分高、月用量大的替代 Actor。
+
+**步驟 2：呼叫 Actor 搜尋該公司股票的討論**
+
+呼叫方式（Claude 用 `mcp__Apify__call-actor`，Gemini 用對應已連接的 Apify MCP 工具）：
+
+```json
+{
+  "actor": "trudax/reddit-scraper-lite",
+  "input": {
+    "searches": ["{COMPANY_TICKER 或公司英文名}"],
+    "searchCommunityName": "wallstreetbets",
+    "searchPosts": true,
+    "sort": "new",
+    "maxItems": 10,
+    "maxPostCount": 10
+  },
+  "waitSecs": 45,
+  "callOptions": { "maxTotalChargeUsd": 0.1 }
+}
+```
+
+| 參數 | 說明 |
+| :--- | :--- |
+| `searches` | 關鍵字陣列。**必須用股票代號（如 `NVDA`）或公司英文全名，絕對不可用「stock」這種泛用字**（原因見下方 ⚠️ 警告，已實測踩雷） |
+| `searchCommunityName` | 鎖定 subreddit，可依序試 `wallstreetbets`、`stocks`、`investing`，或該產業專屬版；不填則搜全站，雜訊會變多 |
+| `sort` | 填 `"new"` 抓最新貼文（配合本 Skill「近三個月輿情」的範圍）|
+| `maxItems` / `maxPostCount` | 控制抓取則數，測試/單次任務用 5~10 即可，避免超支 |
+| `callOptions.maxTotalChargeUsd` | **必填，不填會直接報錯**（Apify 對 pay-per-event 型 Actor 要求至少設定費用上限，實測低於 `$0.04` 會報 `Maximum cost per run is less than the allowed minimum`，建議填 `0.1`）|
+
+> [!WARNING]
+> ⚠️ **關鍵字絕對不可用泛用詞（如單獨的 "stock"）。** 實測搜尋 `"stock"` 且未鎖定 `searchCommunityName` 時，抓回的是「Toyota Tundra 拖車避震（stock suspension）」「樂團周邊補貨（back in stock）」等完全無關內容——因為 "stock" 在英文口語裡意思很廣（庫存、股票、原廠零件都算），AI 執行本 SOP 時**必須**搭配股票代號或公司全名，並盡量加上 `searchCommunityName` 鎖定財經板，才能抓到真正的股票討論。
+
+**步驟 3：取得結果**
+
+Actor 執行後會回傳 `status`（`SUCCEEDED`/`RUNNING`）與 `datasetId`。不論是否跑完，都可直接用 `datasetId` 呼叫 `mcp__Apify__get-dataset-items`（Gemini 用對應工具）取結果，不必死等：
+
+```json
+{ "datasetId": "{回傳的 datasetId}", "clean": true, "fields": "title,communityName,url,createdAt,username,body" }
+```
+
+回傳欄位說明：`title`（貼文/留言標題）、`communityName`（所屬 subreddit）、`url`（真實貼文/留言網址）、`createdAt`（發布時間）、`body`（正文或留言內容）、`username`（作者帳號）。**只保留 `title`/`body` 有實質內容、且明確與該公司/代號相關的項目**，依 §5.2 過濾規則排除無關留言（如 `AutoModerator` 的制式公告、單純表情符號回覆）。
+
+**步驟 4：寫入輿情檔案**
+
+依 §5.3 範本，將整理後的結果寫入 `{yyyyMM}_輿情新聞.md` 的 `## [Reddit]` 章節：
+- 來源連結：填 `url`（必須是爬取結果中真實存在的網址，不可捏造）
+- 發布時間：填 `createdAt`
+- 核心觀點：引述 `body` 原文，不可改寫或用訓練資料補充（見 §5.0 防幻覺規則）
+
+**常見錯誤對照（照著修，不要換工具重試）**：
+
+| 症狀 | 原因 → 修法 |
+| :--- | :--- |
+| `Maximum cost per run is less than the allowed minimum of $0.04` | 沒設定 `callOptions.maxTotalChargeUsd`，或設太低 → 補上 `"maxTotalChargeUsd": 0.1` 之類的值 |
+| 抓到大量無關內容（卡車、家具、遊戲周邊等） | 關鍵字太泛用（如單獨用 `"stock"`）→ 換成股票代號 + `searchCommunityName` |
+| Actor 一直顯示 `status: "RUNNING"` | 屬正常現象，直接拿回傳的 `datasetId` 呼叫 `get-dataset-items` 也能取得目前已抓到的部分結果，不需要空等或反覆輪詢 |
+| 找不到指定 Actor 或 Actor 已下架 | 用 Apify 的 Actor 搜尋工具，關鍵字填 `"Reddit"`，改選 `monthlyUsers` 高、有評分的替代 Actor |
 
 ---
 
@@ -330,7 +398,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 > 標 ⚠️ 者為 JS 動態渲染或會封鎖爬蟲的網站，抓不到時一律照 **§2 通用抓取規則** 換 MCP，不要當成「這站沒資料」而略過。
 
 - **台股**：鉅亨網, MoneyDJ, 經濟日報, PTT 股市板, Dcard 理財, 股市爆料同學會（✅ 有官方 API，直接照 §2.8 SOP 打 API，不要爬網頁）, 財報狗社群, etc...
-- **美股**：Yahoo Finance, Bloomberg（⚠️ 付費牆，見 §2.4）, Reuters（⚠️ 封鎖爬蟲，見 §2.4）, X (Twitter), Reddit（⚠️ 封鎖爬蟲，見 §2.4）, Seeking Alpha, etc...
+- **美股**：Yahoo Finance, Bloomberg（⚠️ 付費牆，見 §2.4）, Reuters（⚠️ 封鎖爬蟲，見 §2.4）, X (Twitter), Reddit（⚠️ 內建工具/Firecrawl 不支援，**直接用 Apify Reddit Actor，SOP 見 §2.9**）, Seeking Alpha, etc...
 - **港股**：香港經濟日報, 雪球（⚠️ `xueqiu.com`，只抓討論、不抓財報，SOP 見 §2.7）, moomoo 社區（⚠️ JS 渲染）, 東方財富股吧（⚠️ JS 渲染）, LIHKG, etc...
 - **日股**：日本經濟新聞, Yahoo Finance JP 掲示板, note（`https://note.com/search?q={股票代號}`）, 5ch, X (Twitter), etc...
 
