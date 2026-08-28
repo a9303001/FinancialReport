@@ -323,13 +323,10 @@ N/A
 ---
 
 - 執行日期: 26
-- `COMPANY_NAME`：6361 荏原製作所（Ebara Corp）
-- `MARKET`：日股
-- `COMPANY_FOLDER`：6361荏原製作所
+- `COMPANY_NAME`：1264德麥
+- `MARKET`：台股
+- `COMPANY_FOLDER`：1264德麥
 - `EXTRA_ANALYSIS`：
-  1. 半導體事業對未來 EPS 影響？
-  2. 與同業比較毛利率偏低原因？
-  3. 公司有什麼應對策略嗎？
 
 ---
 
