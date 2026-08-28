@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "enableAllProjectMcpServers": true,
   "permissions": {
-    "defaultMode": "auto",
+    "defaultMode": "bypassPermissions",
     "allow": [
       "mcp__brightdata",
       "mcp__brightdata__*",
@@ -14,6 +14,12 @@
       "mcp__playwright__*",
       "mcp__github",
       "mcp__github__*",
+      "mcp__yfinance",
+      "mcp__yfinance__*",
+      "mcp__Claude_Code_Remote",
+      "mcp__Claude_Code_Remote__*",
+      "mcp__Exa",
+      "mcp__Exa__*",
       "WebSearch",
       "WebFetch"
     ]
