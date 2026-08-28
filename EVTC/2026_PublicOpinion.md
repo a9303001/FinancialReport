@@ -2,7 +2,7 @@
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
 > 不含年報、季報、公司公告 report。
-> 最後彙整時間：2026-08-25 11:06｜本次併入：11 檔｜累計併入：11 檔
+> 最後彙整時間：2026-08-28 04:49｜本次併入：5 檔｜累計併入：16 檔
 
 ## 目錄
 
@@ -17,8 +17,14 @@
 - [2026-07 · SeekingAlpha](#2026-07--seekingalpha)
 - [2026-07 · StockTitan](#2026-07--stocktitan)
 - [2026-07 · YahooFinance](#2026-07--yahoofinance)
+- [2026-08 · News](#2026-08--news)
+- [2026-08 · Reddit](#2026-08--reddit)
+- [2026-08 · SeekingAlpha](#2026-08--seekingalpha)
+- [2026-08 · StockTitan](#2026-08--stocktitan)
+- [2026-08 · YahooFinance](#2026-08--yahoofinance)
 
 <!-- body:start -->
+
 
 ## 2026-06 · 06-28
 
@@ -512,5 +518,193 @@ EVTC（艾沃特）未來折舊與併購攤銷的問題，我需要去翻你上�
 #### 2. 搜尋狀態說明
 - Yahoo Finance conversations（社群討論區）以 built-in 工具擷取時多為導覽/行情外殼，無新增可驗證之 7 月實質貼文；本檔以 StockTwits 可驗證內容＋Yahoo/IR 財報日資訊為主。
 - Q2 2026 財報日 2026-07-29（來源交叉驗證：StockTwits、Google Finance、Evertec IR）。
+
+---
+## 2026-08 · News
+
+<!-- source-file: 202608_News.md | bytes: 2892 | sha1: 3c81de387982 | merged-at: 2026-08-28 -->
+
+### [EVTC EVERTEC] 輿情討論整理 - [綜合新聞 News] (2026/08)
+
+- **分析時間**：2026-08-19
+- **資料範圍**：過去三個月（重點 2026/08 Q2 財報後）
+- **來源網站**：The Globe and Mail、Investing.com、StockStory、Simply Wall St
+- **抓取方式**：內建工具（WebSearch / WebFetch）
+
+---
+
+#### 1. 焦點討論串與新聞整理
+
+##### 🎯 Evertec 上調 2026 全年展望、Q2 業績超預期
+- **來源連結**: [The Globe and Mail — Evertec Raises 2026 Outlook Amid Strong Q2 Performance](https://www.theglobeandmail.com/investing/markets/stocks/EVTC/pressreleases/3676459/evertec-raises-2026-outlook-amid-strong-q2-performance/)
+- **發布時間**: 2026-08-04
+- **核心觀點與論述**:
+  > Q2 2026 營收 2.748 億美元，年增 20%；調整後 EBITDA 年增 18% 至 1.093 億美元；調整後 EPS 年增 18% 至 1.05 美元，優於市場預估的 0.95 美元（營收預估 2.606 億美元）。
+- **關鍵要點與分析**:
+  - 公司上調全年展望：固定匯率營收成長 14.5%~15.6%，調整後 EBITDA 利潤率維持 39%~40%，調整後 EPS 成長上看 11.7%。
+  - 全年營收指引區間約 10.85 億~10.95 億美元（隱含 16.4%~17.5% 成長），調整後 EPS 3.94~4.04 美元。
+  - **每股化**：Q2 營收 2.748 億美元 ÷ 約 5,980 萬股 ≈ 每股營收約 4.60 美元。
+
+##### 🎯 拉美（LatAm）成長為財報超預期主力
+- **來源連結**: [Investing.com — EVERTEC Q2 2026 slides: LatAm growth drives earnings beat](https://www.investing.com/news/company-news/evertec-q2-2026-slides-latam-growth-drives-earnings-beat-93CH-4836081)
+- **發布時間**: 2026-08-05
+- **核心觀點與論述**:
+  > 拉丁美洲區營收成長約 52%，波多黎各（Puerto Rico）業務提供穩定基本盤；拉美業務占比已擴大至總營收 40% 以上。
+- **關鍵要點與分析**:
+  - LatAm Payments and Solutions 成為最大營運分部，Q2 營收 1.229 億美元、分部調整後 EBITDA 3,970 萬美元（去年同期 2,340 萬美元）。
+  - 成長動能主要來自巴西併購案（Dimensa、Tecnobank）併入貢獻。
+
+##### 🎯 股價反應與買回擴大
+- **來源連結**: [Simply Wall St — EVERTEC (EVTC) Is Up 5.8% After Raising 2026 Revenue Outlook And Expanding Buybacks](https://simplywall.st/stocks/us/diversified-financials/nyse-evtc/evertec/news/evertec-evtc-is-up-58-after-raising-2026-revenue-outlook-and)
+- **發布時間**: 2026-08-05
+- **核心觀點與論述**:
+  > 財報後股價盤中漲 4.63% 至 32.55 美元、盤後再漲 4.3% 至 33.95 美元，逼近 52 週高點（區間 21.81~37.71 美元）。公司將股票回購授權擴大至 1.5 億美元。
+- **關鍵要點與分析**:
+  - 近 90 天股價報酬約 +35%，但近 1 年總股東報酬仍為 -12.94%（顯示先前基期偏低）。
+  - 買回授權擴大至 2027/12/31 前 1.5 億美元，釋出資本回饋訊號。
+
+---
+
+## 2026-08 · Reddit
+
+<!-- source-file: 202608_Reddit.md | bytes: 1046 | sha1: 0121cd9c2aff | merged-at: 2026-08-28 -->
+
+### [EVTC EVERTEC] 輿情討論整理 - [Reddit] (2026/08)
+
+- **分析時間**：2026-08-19
+- **抓取結果**：❌ 失敗（Reddit 全鏈被擋）
+
+#### 搜尋嘗試紀錄
+
+- 已嘗試：內建工具 WebSearch → Reddit 對內建 user-agent 回封鎖（§2.4 已知封鎖清單）。
+- 已嘗試：firecrawl_search（限定 reddit.com）→ 回 HTTP 402（Firecrawl 額度用盡/需付費）。
+- 已嘗試：brightdata scrape_as_markdown（`reddit.com/search`）→ 回「Residential (no KYC) access mode 不支援此站，需填 KYC」。
+- 已嘗試：apify/rag-web-browser（`reddit.com/search`）→ Actor 執行成功但抓取請求失敗（0 succeeded, 1 failed，Reddit 反爬阻擋）。
+- 已嘗試：playwright → 本次 session MCP 伺服器斷線/重連中，無法使用。
+- **結論**：本次無法取得 Reddit 對 EVTC 的真實輿情，非 AI 生成，請下次重新嘗試。Reddit 相關的多空觀點已改由 Yahoo Finance / Seeking Alpha / StockTitan 等可抓取來源涵蓋（見同資料夾 202608 其他檔案）。
+
+---
+
+## 2026-08 · SeekingAlpha
+
+<!-- source-file: 202608_SeekingAlpha.md | bytes: 2435 | sha1: 43d70169d73b | merged-at: 2026-08-28 -->
+
+### [EVTC EVERTEC] 輿情討論整理 - [Seeking Alpha] (2026/08)
+
+- **分析時間**：2026-08-19
+- **資料範圍**：過去三個月
+- **來源網站**：Seeking Alpha
+- **抓取方式**：內建工具（WebSearch）
+
+---
+
+#### 1. 焦點討論串與新聞整理
+
+##### 🎯 Dimensa 併購完成後上調全年營收指引
+- **來源連結**: [Seeking Alpha — EVERTEC forecasts $1.073B-$1.085B 2026 revenue following Dimensa close](https://seekingalpha.com/news/4587893-evertec-forecasts-1_073b-1_085b-2026-revenue-following-dimensa-close)
+- **發布時間**: 2026-05（Dimensa 完成後）
+- **核心觀點與論述**:
+  > 管理層在完成 Dimensa 併購後上調 2026 營收與獲利指引，指出市場機會擴大；Dimensa 在 2026 年預期為中性至略微增益，綜效預計 2027 年顯現。
+- **關鍵要點與分析**:
+  - Dimensa 帶來保險等新垂直領域，並提供顯著交叉銷售（cross-sell）機會，擴大巴西客戶基礎與產品線。
+
+##### 🎯 拉美業務占比擴大至 40% 以上
+- **來源連結**: [Seeking Alpha — Evertec outlines 2026 revenue growth of up to 11.2% and expands LATAM business to over 40% of total revenue](https://seekingalpha.com/news/4558405-evertec-outlines-2026-revenue-growth-of-up-to-11_2-percent-and-expands-latam-business-to-over)
+- **發布時間**: 2026 上半年
+- **核心觀點與論述**:
+  > 拉美業務占總營收已超過 40%，LatAm Payments & Solutions 分部 2026 年預期以中 20%（mid-20%）速度成長，成為公司主要成長引擎。
+- **關鍵要點與分析**:
+  - 營運重心由波多黎各單一市場，逐步轉向拉美（尤其巴西）多元市場，降低區域集中度。
+
+##### 🎯 Q2 業績簡報：拉美驅動、獲利短期承壓
+- **來源連結**: [Seeking Alpha — EVERTEC, Inc. 2026 Q2 Results Earnings Call Presentation](https://seekingalpha.com/article/4930467-evertec-inc-2026-q2-results-earnings-call-presentation)
+- **發布時間**: 2026-08-05
+- **核心觀點與論述**:
+  > 財報將較高的營收與大幅下滑的淨利並陳，並更新全年展望；Q2 營收 2.748 億美元（去年 2.296 億），淨利 541 萬美元（去年 4,047 萬美元）。
+- **關鍵要點與分析**:
+  - 市場關注點：投資人聚焦拉美擴張綜效能否在 2027 年兌現，以及一次性稅務/合資減損拖累是否為短期現象。
+  - 近 90 天股價報酬約 +35%，但近 1 年總股東報酬 -12.94%。
+
+---
+
+## 2026-08 · StockTitan
+
+<!-- source-file: 202608_StockTitan.md | bytes: 2758 | sha1: da89e7c95753 | merged-at: 2026-08-28 -->
+
+### [EVTC EVERTEC] 輿情討論整理 - [StockTitan] (2026/08)
+
+- **分析時間**：2026-08-19
+- **資料範圍**：過去三個月（重點 2026/08 Q2 10-Q）
+- **來源網站**：StockTitan
+- **抓取方式**：內建工具（WebFetch）
+
+---
+
+#### 1. 焦點討論串與新聞整理
+
+##### 🎯 營收成長但淨利受稅務與合資減損重擊
+- **來源連結**: [StockTitan — EVERTEC (NYSE:EVTC) grows Q2 2026 revenue but earnings drop on tax and JV hit](https://www.stocktitan.net/sec-filings/EVTC/10-q-evertec-inc-quarterly-earnings-report-9e25be088bc2.html)
+- **發布時間**: 2026-08-06
+- **核心觀點與論述**:
+  > Q2 2026 營收 2.748 億美元（去年同期 2.296 億）；但歸屬普通股股東淨利驟降至 540 萬美元（每股稀釋 0.09 美元），去年同期為 4,050 萬美元（每股 0.62 美元）。上半年淨利 2,920 萬美元（每股 0.48 美元），低於去年同期 7,320 萬美元（每股 1.15 美元）。
+- **關鍵要點與分析（淨利下滑三大主因）**:
+  - **稅率飆升**：有效稅率暴增至 74.7%，來自「為支應 Dimensa 併購而動用之海外子公司股利相關稅負」及「資本損失之評價備抵」。
+  - **合資減損**：退出一項拉美合資事業（JV），認列 890 萬美元減損損失（列為權益投資損失）。
+  - **利息成本上升**：利息費用由 1,670 萬美元增至 2,030 萬美元。
+- **每股化**：合資減損 890 萬美元 ÷ 約 5,980 萬股 ≈ 每股約 0.15 美元的一次性衝擊。
+
+##### 🎯 分部表現與併購布局
+- **來源連結**: [StockTitan — EVTC 10-Q](https://www.stocktitan.net/sec-filings/EVTC/10-q-evertec-inc-quarterly-earnings-report-9e25be088bc2.html)
+- **發布時間**: 2026-08-06
+- **核心觀點與論述**:
+  > 拉美支付與解決方案分部成最大分部，Q2 營收 1.229 億美元、分部調整後 EBITDA 3,970 萬美元（去年 2,340 萬）。其他分部：波多黎各及加勒比支付服務 4,070 萬美元、商戶收單 5,230 萬美元、企業解決方案 5,880 萬美元。
+- **關鍵要點與分析**:
+  - **併購**：Dimensa S.A.（巴西，2026/4/30 完成，約 1.99 億美元）；Tecnobank（巴西，2025/10 收購 75%，約 1.5 億美元）；BB Chain（巴西，2026/7/31 收購 67%，約 560 萬美元）。
+  - **資本結構**：總負債 12.9 億美元（2025 年底 11.0 億）；上半年營運現金流 9,070 萬美元；商譽 10.7 億美元。
+  - **股數變化**：在外流通股由 6,180 萬股降至 5,980 萬股（因買回）。上半年回購 259 萬股、金額 6,700 萬美元；季配息維持每股 0.05 美元。
+  - **客戶集中度改善**：最大客戶 Popular, Inc. 占 Q2 營收比重由去年 31% 降至約 24%，客戶依賴風險下降。
+
+---
+
+## 2026-08 · YahooFinance
+
+<!-- source-file: 202608_YahooFinance.md | bytes: 2344 | sha1: 4d409fe441c1 | merged-at: 2026-08-28 -->
+
+### [EVTC EVERTEC] 輿情討論整理 - [Yahoo Finance] (2026/08)
+
+- **分析時間**：2026-08-19
+- **資料範圍**：過去三個月
+- **來源網站**：Yahoo Finance
+- **抓取方式**：內建工具（WebSearch）
+
+---
+
+#### 1. 焦點討論串與新聞整理
+
+##### 🎯 獲利下滑、指引調高與買回同時發生，投資故事轉變
+- **來源連結**: [Yahoo Finance — How EVERTEC's Profit Drop, Higher Guidance And Buybacks Has Changed Its Investment Story](https://finance.yahoo.com/markets/stocks/articles/evertec-profit-drop-higher-guidance-031920120.html)
+- **發布時間**: 2026-08
+- **核心觀點與論述**:
+  > 本季呈現「營收升、淨利大幅降、指引上修、擴大買回」的複雜組合。投資人須權衡：成長來自拉美併購（正面），但短期獲利被稅務與合資減損侵蝕（負面）。
+- **關鍵要點與分析**:
+  - 利多：拉美擴張帶動營收動能、指引調高、買回授權擴大至 1.5 億美元。
+  - 利空：有效稅率 74.7% 異常偏高、890 萬美元合資減損、利息費用上升、總負債升至 12.9 億美元。
+
+##### 🎯 Q2 財報電話會議重點
+- **來源連結**: [Yahoo Finance — Evertec Q2 Earnings Call Highlights](https://finance.yahoo.com/markets/stocks/articles/evertec-q2-earnings-call-highlights-060353298.html)
+- **發布時間**: 2026-08
+- **核心觀點與論述**:
+  > 管理層強調拉美（尤其巴西）為成長核心，Dimensa 綜效預計 2027 年顯現；波多黎各業務維持穩定基本盤。
+- **關鍵要點與分析**:
+  - 分部：拉美 Payments & Solutions Q2 營收 1.229 億美元、分部調整後 EBITDA 3,970 萬美元。
+  - 客戶集中度：Popular, Inc. 占比由 31% 降至約 24%。
+
+##### 🎯 分析師評價分歧
+- **來源連結**: [Yahoo Finance — Should Value Investors Buy Evertec (EVTC) Stock?](https://finance.yahoo.com/markets/stocks/articles/value-investors-buy-evertec-evtc-134003360.html)
+- **發布時間**: 2026-08
+- **核心觀點與論述**:
+  > 部分分析師維持中性（Hold）評等；TipRanks 的 AI 分析（Spark）給予「Neutral」，指 EVTC 因財報電話會議後上修展望與穩健的基本獲利能力而評分高於平均。
+- **關鍵要點與分析**:
+  - 多空拉鋸：成長故事（拉美）vs. 短期獲利品質疑慮（稅務、減損、負債）。
 
 ---
