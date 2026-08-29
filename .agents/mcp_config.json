@@ -34,7 +34,11 @@
     "pymupdf4llm-mcp": {
       "command": "uvx",
       "args": [
+        "--from",
         "pymupdf4llm-mcp@latest",
+        "--with",
+        "mcp<2",
+        "pymupdf4llm-mcp",
         "stdio"
       ]
     }
