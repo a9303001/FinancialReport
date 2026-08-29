@@ -6,6 +6,17 @@
         "-y",
         "@playwright/mcp@latest"
       ]
+    },
+    "sec-edgar-mcp": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/stefanoamorelli/sec-edgar-mcp.git",
+        "sec-edgar-mcp"
+      ],
+      "env": {
+        "SEC_EDGAR_USER_AGENT": "FinancialReport Research Bot (mcp-bot@financialreport.local)"
+      }
     }
   }
 }
