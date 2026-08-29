@@ -7,19 +7,6 @@
         "@playwright/mcp@latest"
       ]
     },
-    "yfinance": {
-      "command": "uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/Alex2Yang97/yahoo-finance-mcp",
-        "--with",
-        "mcp<2",
-        "yahoo-finance-mcp"
-      ],
-      "env": {
-        "PYTHONPATH": ".claude/mcp-patch"
-      }
-    },
     "sec-edgar-mcp": {
       "command": "uvx",
       "args": [
@@ -28,7 +15,7 @@
         "sec-edgar-mcp"
       ],
       "env": {
-        "SEC_EDGAR_USER_AGENT": "FinancialReport Research Bot (a9303002@gmail.com)"
+        "SEC_EDGAR_USER_AGENT": "FinancialReport Research (a9303002@gmail.com)"
       }
     }
   }
