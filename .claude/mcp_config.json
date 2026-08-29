@@ -30,6 +30,13 @@
       "env": {
         "SEC_EDGAR_USER_AGENT": "FinancialReport Research (a9303002@gmail.com)"
       }
+    },
+    "pymupdf4llm-mcp": {
+      "command": "uvx",
+      "args": [
+        "pymupdf4llm-mcp@latest",
+        "stdio"
+      ]
     }
   }
 }
