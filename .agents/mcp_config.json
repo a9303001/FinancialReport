@@ -28,7 +28,7 @@
         "sec-edgar-mcp"
       ],
       "env": {
-        "SEC_EDGAR_USER_AGENT": "FinancialReport Research Bot (a9303002@gmail.com)"
+        "SEC_EDGAR_USER_AGENT": "FinancialReport Research (a9303002@gmail.com)"
       }
     },
     "pymupdf4llm-mcp": {

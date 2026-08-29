@@ -17,9 +17,9 @@ description: 掃描 FinancialReport 內所有公司資料夾，使用 pymupdf4ll
 
 | # | 規則 |
 |---|------|
-| 1 | 轉檔**只能**用 MCP 工具 `convert_pdf_to_markdown`。**不可**用 shell 指令、subprocess、markitdown、pdftotext 或任何其他工具。 |
+| 1 | 轉檔**只能**用 MCP 工具 `convert_pdf_to_markdown`。|
 | 2 | 所有路徑一律用**絕對路徑**。不可用相對路徑。 |
-| 3 | `image_path` **必須**指向暫存目錄，**絕不可**指向公司資料夾（否則會塞滿圖片檔）。 |
+| 3 | `image_path` **必須**指向公司資料夾。 |
 | 4 | 刪檔一律透過本文件提供的 Python 腳本執行。**禁止**在刪除指令中使用萬用字元 `*`。 |
 | 5 | 單一檔案失敗時，**記錄後繼續下一個**，不可中止整批。 |
 | 6 | 只能刪三種檔案：①轉換成功的來源 PDF ②CID 檢查失敗的 `.md` ③暫存圖片。**其他一律不可刪**（尤其是人工筆記、`.git`、設定檔）。 |
@@ -31,7 +31,7 @@ description: 掃描 FinancialReport 內所有公司資料夾，使用 pymupdf4ll
 | 名詞 | 意思 | 範例 |
 |------|------|------|
 | `<REPO>` | FinancialReport 儲存庫根目錄的絕對路徑 | `D:\FinancialReport` 或 `/home/user/FinancialReport` |
-| `<SCRATCH>` | 暫存工作目錄的絕對路徑（放腳本與圖片，與 `<REPO>` 分開） | 系統 temp / scratch 目錄 |
+| `<SCRATCH>` | 暫存工作目錄的絕對路徑 |  |
 | 公司資料夾 | `<REPO>` 底下每個以公司名命名的子資料夾 | `<REPO>/UHS` |
 | 待轉換 PDF | 同目錄下**沒有**同名 `.md`，或同名 `.md` 大小為 0 的 PDF | — |
 
