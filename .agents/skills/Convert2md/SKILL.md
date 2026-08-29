@@ -1,213 +1,325 @@
 ---
 name: Convert2md
-description: 掃描 FinancialReport 內所有公司資料夾，使用 pymupdf4llm-mcp（MCP 工具 convert_pdf_to_markdown）將 PDF 財報轉換為 Markdown，偵測轉換品質不佳（CID 亂碼過多）並自動刪除轉換失敗的檔案，最後產生轉換總結報告。本 skill 僅負責 PDF → Markdown 轉換。
+description: 掃描 FinancialReport 內所有公司資料夾，使用 pymupdf4llm-mcp（MCP 工具 convert_pdf_to_markdown）將 PDF 財報轉換為 Markdown，檢查轉換品質（CID 亂碼）並刪除失敗檔案，最後產生轉換總結報告。本 skill 只做 PDF → Markdown，不處理 HTML。
 ---
-/goal
-# Convert2md Skill — 完整執行說明
 
-## 概覽
+# Convert2md — PDF 轉 Markdown
 
-本 Skill **僅負責一件事**：把公司資料夾內的 PDF 財報，透過 `pymupdf4llm-mcp` MCP 工具轉換成 Markdown（`.md`）檔案。不處理 HTML、不做 XBRL/iXBRL 標籤清理，這些不在本 skill 範圍內。
+## 這個 Skill 做什麼
 
-每次執行此 Skill 時，依序執行以下流程：
+**一句話**：把公司資料夾裡的 PDF 財報，用 MCP 工具轉成 `.md` 檔，轉壞的刪掉，最後寫一份報告。
 
-| Phase | 任務說明 | 是否每次都執行？ |
-|-------|---------|-----------------|
-| **Phase 0** | 環境依賴檢查（確認 `pymupdf4llm-mcp` 的 `convert_pdf_to_markdown` 工具可用） | **是，最優先** |
-| **Phase 1** | PDF → Markdown 轉換 + **轉換品質（CID 亂碼）檢查** | 有未轉換的 PDF 時執行 |
-| **Phase 2** | 產生總結報告 `conversion_summary.md` | **是，每次都執行** |
-
-> [!IMPORTANT]
-> **與舊版的關鍵差異**：
-> 1. **PDF 轉換改用 `pymupdf4llm-mcp` MCP 工具**（`convert_pdf_to_markdown`），完全移除 `markitdown.exe` / Python subprocess / PowerShell 呼叫方式。這是一個標準 MCP 工具呼叫，任何支援 MCP 的 AI 執行者（Claude、Gemini 等）呼叫方式完全相同，**不再需要**平台專屬的路徑轉譯或編碼設定。
-> 2. **不再處理 HTML 檔案**。本 skill 的職責縮小為單純的 PDF → Markdown 轉換；HTML 財報的轉換與 XBRL/iXBRL 標籤清理不屬於本 skill 範圍，如有需要請另建 skill 處理。
-> 3. 不嘗試清理 PDF CID 亂碼字元。若轉出的 `.md` 檔仍含有過多 CID 亂碼，直接判定為**轉換失敗**，刪除該 `.md` 檔，並在 `conversion_summary.md` 中記錄。
+**本 Skill 不做**：HTML 轉換、XBRL 標籤清理、財報內容分析。這些都不在範圍內，不要做。
 
 ---
 
-## 執行環境規範
+## 絕對規則（開始前先讀完）
 
-> [!IMPORTANT]
-> **AI 執行關鍵原則（Claude / Gemini 皆適用）：**
-> PDF 一律使用 MCP 工具 `convert_pdf_to_markdown`（由 `pymupdf4llm-mcp` server 提供），直接以工具呼叫方式執行，**不透過終端機、subprocess 或 shell 指令**。這個工具在任何作業系統、任何具備 MCP 能力的 AI 執行環境中呼叫方式都一致，因此不會有 Windows 路徑、中文亂碼或編碼設定等平台專屬問題。
+| # | 規則 |
+|---|------|
+| 1 | 轉檔**只能**用 MCP 工具 `convert_pdf_to_markdown`。**不可**用 shell 指令、subprocess、markitdown、pdftotext 或任何其他工具。 |
+| 2 | 所有路徑一律用**絕對路徑**。不可用相對路徑。 |
+| 3 | `image_path` **必須**指向暫存目錄，**絕不可**指向公司資料夾（否則會塞滿圖片檔）。 |
+| 4 | 刪檔一律透過本文件提供的 Python 腳本執行。**禁止**在刪除指令中使用萬用字元 `*`。 |
+| 5 | 單一檔案失敗時，**記錄後繼續下一個**，不可中止整批。 |
+| 6 | 只能刪三種檔案：①轉換成功的來源 PDF ②CID 檢查失敗的 `.md` ③暫存圖片。**其他一律不可刪**（尤其是人工筆記、`.git`、設定檔）。 |
 
-### `convert_pdf_to_markdown` 工具參數說明
+---
 
-| 參數 | 必填 | 說明 |
+## 名詞定義
+
+| 名詞 | 意思 | 範例 |
 |------|------|------|
-| `file_path` | 是 | 來源 PDF 的**絕對路徑** |
-| `save_path` | 建議填寫 | 輸出 `.md` 的資料夾絕對路徑（**建議填入與來源 PDF 相同的資料夾**）。填寫後工具會直接把 Markdown 寫入該資料夾，避免整份轉換內容佔用大量對話 context，特別是年報這類大檔案。 |
-| `image_path` | 建議填寫 | 圖片輸出資料夾絕對路徑。**務必指定到暫存目錄（非公司資料夾內）**，例如 scratch/temp 路徑；若留空，工具預設會把擷取出的圖片存到與 PDF 相同資料夾，造成公司資料夾被大量不必要的圖片檔污染。財報分析只需要文字與表格內容，不需保留圖片。 |
-
-呼叫範例（概念示意，實際以該工具當下的呼叫介面為準）：
-- `file_path` = `<公司資料夾絕對路徑>/report.pdf`
-- `save_path` = `<公司資料夾絕對路徑>`（與 PDF 同資料夾）
-- `image_path` = `<暫存目錄絕對路徑>`（例如系統 scratch/tmp 目錄，與財報資料夾分開）
-
-呼叫完成後：
-1. 確認回傳結果中的 `.md` 檔路徑（若使用 `save_path`，工具會回傳實際寫入的檔案路徑）。
-2. 確認實際輸出的檔名是否與來源 PDF 對應（副檔名改為 `.md`，其餘檔名一致）；若工具產生的檔名不同，需**重新命名**成與來源 PDF 對應的名稱，以符合後續掃描規則（Step 1.1）。
-3. 轉換過程中產生的暫存圖片檔（`image_path` 指向的目錄）**不需要**保留於財報資料夾中，分析完成後可忽略或清除暫存目錄本身（不要清除公司資料夾）。
+| `<REPO>` | FinancialReport 儲存庫根目錄的絕對路徑 | `D:\FinancialReport` 或 `/home/user/FinancialReport` |
+| `<SCRATCH>` | 暫存工作目錄的絕對路徑（放腳本與圖片，與 `<REPO>` 分開） | 系統 temp / scratch 目錄 |
+| 公司資料夾 | `<REPO>` 底下每個以公司名命名的子資料夾 | `<REPO>/UHS` |
+| 待轉換 PDF | 同目錄下**沒有**同名 `.md`，或同名 `.md` 大小為 0 的 PDF | — |
 
 ---
 
-## Phase 0 — 環境依賴檢查
+## 執行流程（照順序做，共 5 步）
 
-> [!IMPORTANT]
-> 此 Phase 為最優先執行步驟，任何 AI（Claude / Gemini）務必嚴格遵守。
-
-| 檢查項目 | 結果 | 動作 |
-|---------|------|------|
-| MCP 工具 `convert_pdf_to_markdown`（`pymupdf4llm-mcp`）是否可呼叫 | ✅ 可用 | 繼續執行 Phase 1 |
-| MCP 工具 `convert_pdf_to_markdown`（`pymupdf4llm-mcp`）是否可呼叫 | ❌ 不可用 | **立即中止**所有轉換，跳過 Phase 1，直接進入 Phase 2 產生報告，並在報告最上方寫明：`錯誤：找不到 pymupdf4llm-mcp 的 convert_pdf_to_markdown 工具，轉換程序已中止。` |
-
----
-
-## Phase 1 — PDF 轉換為 Markdown
-
-### Step 1.1 — 掃描待轉換檔案
-
-遞迴掃描 `FinancialReport` 底下所有公司子資料夾，對每個 `.pdf` 檔案判斷：
-
-| 條件 | 動作 |
-|------|------|
-| 同目錄已存在**同名** `.md` 且大小 > 0 bytes | **跳過**（已轉換） |
-| 同名 `.md` 不存在，或大小為 0 bytes | **執行轉換** |
-
-### Step 1.2 — 執行轉換
-
-呼叫 MCP 工具 `convert_pdf_to_markdown`（`pymupdf4llm-mcp`），參數依上方「`convert_pdf_to_markdown` 工具參數說明」設定：
-- `file_path` = 該 PDF 的絕對路徑
-- `save_path` = 該 PDF 所在的公司資料夾絕對路徑
-- `image_path` = 暫存目錄絕對路徑（非公司資料夾）
-
-### Step 1.3 — 轉換品質檢查（CID 亂碼密度）
-
-> [!IMPORTANT]
-> **核心規則：此步驟針對所有新轉出的 `.md` 檔執行。** `pymupdf4llm` 對嵌入式字型（CIDFont）的解碼能力通常優於舊版工具，CID 亂碼機率大幅降低，但仍可能因少數特殊字型而發生，故仍需檢查把關。
-
-轉換完成後（`.md` 存在且大小 > 0），**立即**對轉出的 `.md` 執行 CID 亂碼密度檢查。
-
-#### 什麼是 CID 亂碼？
-
-PDF 轉 Markdown 時，部分 PDF 使用嵌入式字型（CIDFont），轉換工具無法正確解碼這些字元，產生大量 `(cid:XX)` 標籤或其他不可讀的亂碼字元。這類檔案即使保留也**完全沒有閱讀價值**。
-
-#### 偵測方法
-
-使用以下 Python 邏輯計算 CID 亂碼密度：
-
-```python
-import re
-
-def check_cid_density(md_content: str) -> tuple[bool, float, int]:
-    """
-    檢查 .md 檔案的 CID 亂碼密度。
-
-    回傳值：
-        - is_failure: bool  — True 表示亂碼過多，應判定為轉換失敗
-        - cid_ratio: float  — CID 標籤佔總字元數的比例
-        - cid_count: int    — CID 標籤出現次數
-    """
-    cid_pattern = re.compile(r'\(cid:\d+\)')
-    cid_matches = cid_pattern.findall(md_content)
-    cid_count = len(cid_matches)
-
-    # 計算 CID 標籤佔據的總字元數
-    cid_chars = sum(len(m) for m in cid_matches)
-    total_chars = len(md_content)
-
-    if total_chars == 0:
-        return True, 1.0, 0  # 空檔案也視為失敗
-
-    cid_ratio = cid_chars / total_chars
-
-    # 判定標準：CID 標籤佔比 >= 5% 或 CID 出現次數 >= 50 次
-    is_failure = (cid_ratio >= 0.05) or (cid_count >= 50)
-
-    return is_failure, cid_ratio, cid_count
+```
+步驟 1  執行腳本 A  → 產生待轉換清單 convert_tasks.json
+步驟 2  檢查工具    → convert_pdf_to_markdown 能不能用？
+步驟 3  逐一轉檔    → 對清單中每個 PDF 呼叫一次 MCP 工具
+步驟 4  執行腳本 B  → 品質檢查 + 刪檔 + 產生報告
+步驟 5  回報結果    → 把報告內容貼給使用者看
 ```
 
-#### 判定標準
+---
 
-| 條件（符合**任一**即為失敗） | 說明 |
-|----------------------------|------|
-| CID 標籤字元佔總字元數 ≥ 5% | 表示內容中有大量不可讀的亂碼 |
-| CID 標籤 `(cid:\d+)` 出現次數 ≥ 50 次 | 即使比例不高，數量多也代表轉換品質差 |
+## 步驟 1 — 產生待轉換清單
 
-#### 判定結果處理
+把下面的腳本存成 `<SCRATCH>/scan_pending.py`，然後執行：
 
-| 結果 | 動作 |
+```
+python <SCRATCH>/scan_pending.py <REPO> <SCRATCH>
+```
+
+```python
+# scan_pending.py — 掃描所有待轉換的 PDF
+import json, os, sys
+
+REPO = os.path.abspath(sys.argv[1])
+SCRATCH = os.path.abspath(sys.argv[2])
+SKIP_DIRS = {".git", ".github", ".claude", ".agents", "Log",
+             "node_modules", "__pycache__", ".venv"}
+
+pending, skipped, total = [], 0, 0
+for dirpath, dirnames, filenames in os.walk(REPO):
+    dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+    for fn in filenames:
+        if not fn.lower().endswith(".pdf"):
+            continue
+        total += 1
+        pdf = os.path.abspath(os.path.join(dirpath, fn))
+        md = os.path.splitext(pdf)[0] + ".md"
+        # 已存在同名且非空的 .md → 視為已轉換，跳過
+        if os.path.exists(md) and os.path.getsize(md) > 0:
+            skipped += 1
+            continue
+        pending.append({
+            "company": os.path.basename(dirpath),
+            "pdf": pdf,
+            "md": md,
+            "save_path": os.path.abspath(dirpath),
+        })
+
+os.makedirs(SCRATCH, exist_ok=True)
+out = os.path.join(SCRATCH, "convert_tasks.json")
+with open(out, "w", encoding="utf-8") as f:
+    json.dump({"repo": REPO, "scratch": SCRATCH, "total_pdf": total,
+               "skipped": skipped, "pending": pending},
+              f, ensure_ascii=False, indent=2)
+
+print(f"總 PDF 數: {total} / 已轉換跳過: {skipped} / 待轉換: {len(pending)}")
+print(f"清單檔: {out}")
+for i, t in enumerate(pending, 1):
+    print(f"{i}. {t['pdf']}")
+```
+
+**如果印出「待轉換: 0」** → 跳過步驟 2、3，直接做步驟 4。
+
+---
+
+## 步驟 2 — 檢查工具可用性
+
+確認 MCP 工具 `convert_pdf_to_markdown`（來自 `pymupdf4llm-mcp` server）存在且可呼叫。
+
+| 情況 | 動作 |
 |------|------|
-| ✅ 通過（亂碼少） | 保留 `.md`，繼續後續流程 |
-| ❌ 失敗（亂碼多） | **立即刪除**該 `.md` 檔案，**不嘗試清理**，並記錄到失敗清單中（供 Phase 2 報告使用） |
+| ✅ 工具存在 | 繼續步驟 3 |
+| ❌ 工具不存在 | **停止轉檔**，跳到步驟 4，並在報告最上方寫：`錯誤：找不到 pymupdf4llm-mcp 的 convert_pdf_to_markdown 工具，轉換程序已中止。` |
+
+---
+
+## 步驟 3 — 逐一轉檔
+
+對步驟 1 清單中的**每一個** PDF，呼叫**一次** `convert_pdf_to_markdown`。
+
+### 參數怎麼填
+
+| 參數 | 填什麼 | 從哪來 |
+|------|--------|--------|
+| `file_path` | PDF 的絕對路徑 | 清單的 `pdf` 欄位 |
+| `save_path` | PDF 所在資料夾的絕對路徑 | 清單的 `save_path` 欄位 |
+| `image_path` | `<SCRATCH>/pdf_images` | 固定值，**不可**填公司資料夾 |
+
+### 實際範例
+
+假設清單中有這筆：
+
+```json
+{
+  "company": "UHS",
+  "pdf": "/home/user/FinancialReport/UHS/2024_10K.pdf",
+  "md": "/home/user/FinancialReport/UHS/2024_10K.md",
+  "save_path": "/home/user/FinancialReport/UHS"
+}
+```
+
+就這樣呼叫工具：
+
+```
+convert_pdf_to_markdown(
+    file_path  = "/home/user/FinancialReport/UHS/2024_10K.pdf",
+    save_path  = "/home/user/FinancialReport/UHS",
+    image_path = "<SCRATCH>/pdf_images"
+)
+```
+
+### 為什麼一定要填 `save_path`
+
+不填 `save_path` 的話，工具會把**整份 Markdown 內容當成回傳值吐出來**。年報動輒數十萬字，會塞爆對話 context。填了 `save_path`，工具直接寫檔並只回傳路徑。**一定要填。**
+
+### 呼叫完要做的事
+
+1. 看回傳的檔案路徑。
+2. **比對檔名**：輸出的 `.md` 檔名必須跟清單的 `md` 欄位一致（就是 PDF 檔名把 `.pdf` 換成 `.md`）。
+   - 一致 → 不用動。
+   - 不一致 → **改名**成清單 `md` 欄位的名字。否則步驟 4 會找不到檔案，誤判成轉換失敗。
+3. 若工具回傳錯誤 → 記下錯誤訊息，**繼續處理下一個 PDF**，不要停。
+
+---
+
+## 步驟 4 — 品質檢查、刪檔、產生報告
+
+把下面的腳本存成 `<SCRATCH>/verify_and_report.py`，然後執行：
+
+```
+python <SCRATCH>/verify_and_report.py <SCRATCH>/convert_tasks.json
+```
+
+這支腳本會自動完成：CID 亂碼檢查 → 刪除失敗的 `.md` → 刪除成功的來源 PDF → 清除暫存圖片 → 寫出 `<REPO>/Log/conversion_summary.md`。
+
+```python
+# verify_and_report.py — 品質檢查 + 清理 + 報告
+import json, os, re, shutil, sys
+from datetime import datetime
+
+CID_RE = re.compile(r'\(cid:\d+\)')
+
+def cid_check(path):
+    """回傳 (是否失敗, CID佔比, CID次數)"""
+    with open(path, encoding="utf-8", errors="replace") as f:
+        text = f.read()
+    hits = CID_RE.findall(text)
+    count, total = len(hits), len(text)
+    if total == 0:
+        return True, 1.0, 0          # 空檔 = 失敗
+    ratio = sum(len(h) for h in hits) / total
+    # 判定門檻：佔比 >= 5% 或 出現 >= 50 次
+    return (ratio >= 0.05 or count >= 50), ratio, count
+
+with open(sys.argv[1], encoding="utf-8") as f:
+    data = json.load(f)
+
+REPO, SCRATCH = data["repo"], data["scratch"]
+ok, empty, cid_fail = [], [], []
+
+for t in data["pending"]:
+    md = t["md"]
+    # A. .md 不存在或 0 KB → 轉換失敗
+    if not os.path.exists(md) or os.path.getsize(md) == 0:
+        if os.path.exists(md):
+            os.remove(md)
+        empty.append(t)
+        continue
+    # B. CID 亂碼檢查
+    failed, ratio, count = cid_check(md)
+    if failed:
+        os.remove(md)                        # 刪掉沒有閱讀價值的 .md
+        t.update(cid_ratio=round(ratio * 100, 2), cid_count=count)
+        cid_fail.append(t)
+        continue
+    # C. 通過 → 刪掉來源 PDF
+    if os.path.exists(t["pdf"]):
+        os.remove(t["pdf"])
+    ok.append(t)
+
+# 清除暫存圖片（只清 SCRATCH 底下，絕不碰公司資料夾）
+img_dir = os.path.join(SCRATCH, "pdf_images")
+if os.path.isdir(img_dir):
+    shutil.rmtree(img_dir, ignore_errors=True)
+
+# 產生報告
+log_dir = os.path.join(REPO, "Log")
+os.makedirs(log_dir, exist_ok=True)
+report = os.path.join(log_dir, "conversion_summary.md")
+
+L = []
+L.append("# PDF 轉換總結報告\n")
+L.append(f"產生時間：{datetime.now():%Y-%m-%d %H:%M:%S}\n")
+L.append("轉換工具：`pymupdf4llm-mcp` / `convert_pdf_to_markdown`\n")
+
+L.append("\n## Section 1 — 統計數據概覽\n")
+L.append("| 指標 | 數量 |")
+L.append("|------|------|")
+L.append(f"| 總掃描 PDF 檔案數 | {data['total_pdf']} |")
+L.append(f"| 跳過（已轉換） | {data['skipped']} |")
+L.append(f"| 本次嘗試轉換 | {len(data['pending'])} |")
+L.append(f"| 成功轉換 | {len(ok)} |")
+L.append(f"| 失敗：輸出 0 KB 或未產生 | {len(empty)} |")
+L.append(f"| 失敗：CID 亂碼過多（已刪除） | {len(cid_fail)} |")
+
+L.append("\n## Section 2 — 異常詳細清單\n")
+
+L.append("\n### 表格 A — 未產生或 0 KB 的檔案\n")
+L.append("| 公司名稱 | 原始 PDF | 預期的 .md | 可能原因 |")
+L.append("|---------|---------|-----------|---------|")
+for t in empty:
+    L.append(f"| {t['company']} | {os.path.basename(t['pdf'])} | "
+             f"{os.path.basename(t['md'])} | 工具未輸出內容（PDF 可能加密、損毀或為純掃描影像） |")
+if not empty:
+    L.append("| — | — | — | 無 |")
+
+L.append("\n### 表格 B — CID 亂碼過多（.md 已刪除）\n")
+L.append("| 公司名稱 | 原始 PDF | 被刪除的 .md | CID 次數 | CID 佔比 (%) |")
+L.append("|---------|---------|-------------|---------|-------------|")
+for t in cid_fail:
+    L.append(f"| {t['company']} | {os.path.basename(t['pdf'])} | "
+             f"{os.path.basename(t['md'])} | {t['cid_count']} | {t['cid_ratio']} |")
+if not cid_fail:
+    L.append("| — | — | — | — | 無 |")
+
+L.append("\n### 表格 C — 成功轉換的檔案\n")
+L.append("| 公司名稱 | 產出的 .md |")
+L.append("|---------|-----------|")
+for t in ok:
+    L.append(f"| {t['company']} | {os.path.basename(t['md'])} |")
+if not ok:
+    L.append("| — | 無 |")
+
+text = "\n".join(L) + "\n"
+with open(report, "w", encoding="utf-8") as f:
+    f.write(text)
+
+print(text)
+print(f"\n報告已寫入：{report}")
+```
+
+### 腳本 B 的刪檔行為（對照表）
+
+| 轉換結果 | `.md` | 來源 PDF | 理由 |
+|---------|-------|---------|------|
+| ✅ 成功（CID 檢查通過） | **保留** | **刪除** | 內容已轉成 md，PDF 不再需要 |
+| ❌ CID 亂碼過多 | **刪除** | **保留** | md 沒有閱讀價值；PDF 留著，日後換工具可重試 |
+| ❌ 未產生 / 0 KB | **刪除**（若存在） | **保留** | 同上，PDF 留著才有機會補救 |
+| ⏭️ 本來就已轉換過 | 不動 | 不動 | 不在本次待轉換清單內 |
+
+> **重點**：轉換失敗時**絕不刪來源 PDF**。刪了就永久失去資料。
 
 > [!CAUTION]
-> **不要嘗試清理 CID 亂碼**。經驗證，CID 亂碼過多的來源檔即使清理後，剩餘內容也幾乎無法閱讀。直接刪除是最正確的做法。
+> **不要嘗試修補 CID 亂碼。** 經驗證，CID 亂碼過多的檔案就算清理過，剩下的內容也讀不懂。直接刪除是唯一正確做法。
 
-### Step 1.4 — 轉換後清理
+### 什麼是 CID 亂碼
 
-品質檢查通過後，確認 `.md` 有效（存在且大小 > 0）：
+有些 PDF 用嵌入式字型（CIDFont），轉換工具解不開，就會輸出一堆 `(cid:123)` 這種東西：
 
-1. **刪除原始來源 PDF 檔案**。
-2. **刪除同資料夾內同名或對應相同報告期間的舊版 `.md` 檔案**，只保留最新版本。
-3. **刪除 PDF 轉換過程中產生於暫存目錄的圖片檔案**（`image_path` 指向的內容），這些檔案不屬於財報分析範圍，不應留在系統中累積。
+```
+(cid:20)(cid:45)(cid:88) 2024 (cid:12)(cid:33)(cid:71)(cid:19)
+```
 
-**安全防護規則（嚴格執行）：**
-
-| 規則 | 說明 |
-|------|------|
-| ❌ 刪除指令禁止使用萬用字元（`*`） | 必須指定精確的單一檔案路徑 |
-| ❌ 禁止刪除非自動生成的檔案 | 不可刪除人工分析筆記、`.git`、設定檔或手動撰寫的文件 |
-| ✅ 只允許刪除 | 已轉換成功的來源 PDF 檔、被取代的舊版同名 `.md` 檔，以及轉換過程中產生的暫存圖片檔 |
+這種檔案完全沒有閱讀價值。判定門檻：**CID 字元佔全文 ≥ 5%**，或 **出現 ≥ 50 次**，符合任一條就算失敗。
 
 ---
 
-## Phase 2 — 產生總結報告
+## 步驟 5 — 回報結果
 
-所有 Phase 執行完畢（或因 Phase 0 失敗而提早中止）後，在 `FinancialReport\Log` 資料夾產生 **`conversion_summary.md`**，並在最終回覆中以 Markdown 格式呈現。
+腳本 B 執行完會把報告全文印出來。把那份報告**原封不動**貼給使用者，並補一句話說明：本次掃描幾個 PDF、成功幾個、失敗幾個。
 
-> [!NOTE]
-> 若 Phase 0 發現 `convert_pdf_to_markdown` 工具不可用，在報告最上方加入醒目提示：`錯誤：找不到 pymupdf4llm-mcp 的 convert_pdf_to_markdown 工具，轉換程序已中止。`，其餘統計數據可留空或填 0。
-
-### 報告結構
-
-#### Section 1 — 統計數據概覽
-
-| 指標 | 數量 |
-|------|------|
-| 總掃描 PDF 檔案數 | |
-| 成功轉換數 | |
-| 跳過（已存在）數 | |
-| 轉換失敗數（含 CID 亂碼過多） | |
-| CID 亂碼判定失敗並刪除的檔案數 | |
-
-#### Section 2 — 異常詳細清單
-
-**表格 A — 輸出為 0 KB 的檔案**
-
-| 公司名稱 | 原始 PDF 檔案 | 生成的 .md | 可能原因 |
-|---------|-------------|-----------|---------|
-
-**表格 B — 轉換失敗的檔案（含程式錯誤）**
-
-| 公司名稱 | 原始 PDF 檔案 | 錯誤原因 / Stack Trace |
-|---------|-------------|----------------------|
-
-**表格 C — CID 亂碼過多判定失敗的檔案（轉換品質不佳）**
-
-> [!IMPORTANT]
-> 此表列出因 CID 亂碼密度超過門檻值而被判定為轉換失敗、`.md` 檔已被刪除的檔案。
-
-| 公司名稱 | 原始 PDF 檔案 | 被刪除的 .md 檔案 | CID 出現次數 | CID 佔比 (%) | 判定原因 |
-|---------|-------------|-----------------|------------|-------------|---------|
+若步驟 2 判定工具不可用，就在報告最前面加上那行錯誤訊息。
 
 ---
 
-## 異常處理規則
+## 錯誤處理速查表
 
-| 情況 | 必要動作 |
-|------|---------|
-| 單一檔案轉換失敗 | 記錄錯誤 → **繼續**處理下一個檔案，不可中止整個批次 |
-| 轉出的 `.md` CID 亂碼過多 | 刪除該 `.md` → 記錄到失敗清單 → 繼續處理下一個檔案 |
-| `pymupdf4llm-mcp` 工具不可用 | 中止所有轉換，於報告中註明 |
-| 所有錯誤 | 統一記錄至 `conversion_summary.md`，包含檔案路徑與原因 |
+| 遇到什麼 | 怎麼做 |
+|---------|--------|
+| 某個 PDF 呼叫工具回傳錯誤 | 記下錯誤訊息 → **繼續下一個** → 腳本 B 會把它歸到表格 A |
+| 工具輸出的 `.md` 檔名跟預期不同 | 改名成清單 `md` 欄位的名字 |
+| 工具輸出的 `.md` 是 0 KB | 不用手動處理，腳本 B 會刪掉並記錄 |
+| `convert_pdf_to_markdown` 工具不存在 | 跳過步驟 3，直接執行步驟 4，報告加註錯誤訊息 |
+| 待轉換清單是空的 | 跳過步驟 2、3，直接執行步驟 4（報告會顯示全部跳過） |
+| 公司資料夾出現一堆 `.png` / `.jpg` | 代表 `image_path` 填錯了。刪掉那些圖片，重填 `image_path` 為 `<SCRATCH>/pdf_images` |
