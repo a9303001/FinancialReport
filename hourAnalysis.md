@@ -26,7 +26,3 @@
   1. 有哪些產品，各佔eps比重
   2. 各產品的主要競爭對手，市佔率
   3. 未來三年EPS
-
----
-# 房地產分析
-run AnalysisResult\ChinaStateAnalysis.md 
