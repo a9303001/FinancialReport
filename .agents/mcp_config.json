@@ -6,6 +6,19 @@
         "-y",
         "@playwright/mcp@latest"
       ]
+    },
+    "yfinance": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/Alex2Yang97/yahoo-finance-mcp",
+        "--with",
+        "mcp<2",
+        "yahoo-finance-mcp"
+      ],
+      "env": {
+        "PYTHONPATH": ".claude/mcp-patch"
+      }
     }
   }
 }
