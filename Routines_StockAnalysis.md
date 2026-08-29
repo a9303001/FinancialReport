@@ -254,12 +254,15 @@ OUTPUT_FILENAME: hourAnalysisResult.md
 ---
 
 - 執行日期: 20
-- `COMPANY_NAME`：01571信邦控股
-- `MARKET`：港股
-- `COMPANY_FOLDER`：01571信邦控股
+- `COMPANY_NAME`：4979 OAT
+- `MARKET`：日股
+- `COMPANY_FOLDER`：4979OAT
 - `EXTRA_ANALYSIS`：
-N/A
-
+各產品市占率?
+各產品各提供 多少eps
+競爭對手
+國際和日本市占率
+有什麼投資風險嗎？
 
 ---
 

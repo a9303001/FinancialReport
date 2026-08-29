@@ -3,7 +3,7 @@
 
 
 # 個股分析1
-><OUTPUT_FILENAME>` : hourAnalysisResult.md
+<OUTPUT_FILENAME>` : hourAnalysisResult.md
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
 - `COMPANY_NAME`：03606 福耀玻璃（中股: 600660 福耀玻璃）
 - `MARKET`：港股/中股
@@ -17,12 +17,14 @@
 
 ---
 # 個股分析2
-><OUTPUT_FILENAME>` : hourAnalysisResult.md
+<OUTPUT_FILENAME>` : hourAnalysisResult.md
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-- `COMPANY_NAME`：INGR宜瑞安
-- `MARKET`：美股
-- `COMPANY_FOLDER`：INGR宜瑞安
+- `COMPANY_NAME`：4979 OAT
+- `MARKET`：日股
+- `COMPANY_FOLDER`：4979OAT
 - `EXTRA_ANALYSIS`：
-  1. 有哪些產品，各佔eps比重
-  2. 各產品的主要競爭對手，市佔率
-  3. 未來三年EPS
+各產品市占率?
+各產品各提供 多少eps
+競爭對手
+國際和日本市占率
+有什麼投資風險嗎？
