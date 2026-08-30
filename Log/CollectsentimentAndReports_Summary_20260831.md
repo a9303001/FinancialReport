@@ -8,25 +8,30 @@
 | `1301 極洋` (輪值 17) | IRBANK / TDNet / 極洋官網 IR | `1301_Quarter_2027Q1.md` | 2027年3月期 第1四半期決算短信（期間 2026/4/1～2026/6/30，2026/08/07 揭露）已成功轉為 Markdown（0 CID 亂碼） |
 | `1301 極洋` (輪值 17) | EDINET（金融廳官方） | `S100YE8K.md`, `S100W543.md` | 最新過去兩年年報（第103期 FY2026、第102期 FY2025 有價證券報告書）均已完整就緒 |
 | `1301 極洋` (輪值 17) | Yahoo! Finance JP 掲示板、株探 (Kabutan)、みんかぶ (Minkabu)、Note.com、富途牛牛、Reddit | `202608_輿情新聞.md` | 涵蓋 Yahoo! JP 掲示板散戶討論、Q1財報評價、10月起21品項調漲公告、美國蟹肉棒合資重組、中計 Gear Up Kyokuyo 2027 與高配息分析 |
+| `CF CF Industries` (輪值 18) | SEC EDGAR 官方 | `CF_AnnualReport_2024.md`, `CF_AnnualReport_2025.md`, `CF_Quarter_2026Q2.md` | 完整下載並轉換過去兩年年報（FY2024 10-K, FY2025 10-K）與最新季報（2026 Q2 10-Q） |
+| `CF CF Industries` (輪值 18) | 雪球、Seeking Alpha、The Motley Fool、Reddit r/stocks、CMoney 股市爆料同學會、官方 IR | `202608_輿情新聞.md` | 涵蓋 40 億美元 Blue Point 藍氨項目開工、Q2獲利大增、訴訟和解金、天然氣成本優勢護城河、ExxonMobil CCS 商業化運營與 20 億美元庫藏股回購 |
 
 ## 2. 封鎖與繞過/替代 MCP 記錄
+- **SEC EDGAR**:
+  - **狀態**: 使用官方 User-Agent Header 透過 SEC EDGAR 直連下載 10-K 及 10-Q 官方原始 HTML，並使用 BeautifulSoup 乾淨解析轉換為標準 Markdown 表格與文字。
 - **Reddit**:
-  - **狀態**: 依 SOP §2.9 呼叫 Apify Reddit Actor (`trudax/reddit-scraper-lite`) 進行全域與子版塊檢索。
-  - **結果**: 過去 3 個月內無針對 `1301 Kyokuyo Co., Ltd.`（極洋水產）之直接專題討論（僅有非上市同名造船廠文章），如實記錄無討論。
-- **Yahoo! Finance JP 掲示板**:
-  - **狀態**: 原生網路檢索與 `read_url_content` 順利抓取 2026/07～2026/08 最新貼文（包含 No.7152～No.7196），無阻擋現象。
+  - **狀態**: 依 SOP §2.9 呼叫 Apify Reddit Actor (`trudax/reddit-scraper-lite`) 成功檢索 `r/stocks` 關於地緣衝突與 CF Industries/MOO ETF 供需分析。
+- **雪球 Xueqiu**:
+  - **狀態**: 透過 Bright Data `search_engine` 與 `scrape_as_markdown` 成功抓取 2026/07 深度專題文章。
 
 ## 3. 缺漏與無效說明
-- **歐美社群（Reddit / Seeking Alpha）**：歐美投資社群對日本傳統水產類股關注度極低，無專門討論貼文，已依規範如實載明。
-- **華語討論區（雪球 / 股吧）**：華語社群對日股 1301 極洋之討論極少，主要集中於行情報價與基本財務指標轉發。
+- 無缺漏，CF 相關過去兩年年報、最新季報與近三個月跨國社群輿情均完整取得並就緒。
 
 ## 4. 暫存與清理檔案
 - `1301_Quarter_2027Q1.pdf` 於驗證 Markdown 無 CID 亂碼後已成功刪除。
-- 圖片暫存目錄 `scratch/pdf_images` 已完全清理。
+- `CF_AnnualReport_2024.htm`, `CF_AnnualReport_2025.htm`, `CF_Quarter_2026Q2.htm` 於轉換為 Markdown 驗證後已完全清理。
+- 圖片與暫存目錄已清理完畢。
 
 ## 5. 使用的 MCP（大寫，過去式「使用了」）
 | MCP 伺服器名稱 | 用到的工具/函式 | 用途說明 |
 | :--- | :--- | :--- |
-| **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 將 `1301_Quarter_2027Q1.pdf` 轉為 Markdown 格式並確認無 CID 亂碼 |
-| **Apify** | `call-actor`, `get-dataset-items` | 呼叫 `trudax/reddit-scraper-lite` 檢索 Reddit 平台上過去三個月關於 `1301` / `Kyokuyo` 的最新討論 |
-| **Bright Data** | `scrape_as_markdown` | （於 00546 批次中）抓取雪球個股頁與文章頁討論內容 |
+| **SEC-EDGAR-MCP** | `search_companies`, `get_company_info`, `get_recent_filings` | 查詢 CF CIK 編號與確認最新 10-K / 10-Q 申報清單與 Accession Number |
+| **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 將日股決算短信轉為 Markdown 格式 |
+| **Apify** | `call-actor`, `get-dataset-items` | 呼叫 `trudax/reddit-scraper-lite` 檢索 Reddit 平台討論 |
+| **Bright Data** | `search_engine`, `scrape_as_markdown` | 搜尋與抓取雪球個股專題筆記 |
+| **Exa** | `web_search_exa` | 搜尋 Seeking Alpha 深度專題、The Motley Fool 法說會逐字稿與投資人簡報重點 |
