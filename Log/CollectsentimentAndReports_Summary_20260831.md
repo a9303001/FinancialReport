@@ -1,46 +1,26 @@
-# 任務執行最終報告 - 2026/08/31
-
-**執行日期編號**：16  
-**公司**：00546 阜豐集團（Fufeng Group Limited / 港股 / 全球味精與氨基酸龍頭）
-
----
+# 任務執行最終報告 - 2026/08
 
 ## 1. 成功紀錄
-
 | 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
 | :--- | :--- | :--- | :--- |
-| `00546 阜豐` | 阜豐集團官網 IR / 香港交易所披露易 (HKEXnews) | `00546_Quarter_2026Q2.md` | 2026 中期報告（截至 2026 年 6 月 30 日止六個月中期業績公告，發布日 2026-08-28）驗證完整（0 CID 亂碼），連同現有 `00546_2025_annual_report.md` 及 `00546_AnnualReport_2024.md` 備齊最新 2 年報 + 1 季報/中期報告 |
-| `00546 阜豐` | 雪球 (Xueqiu)、東方財富股吧、富途牛牛/moomoo、智通財經、香港經濟日報 (HKET) | `00546阜豐/202608_輿情新聞.md` | 輿情新聞收集成功，涵蓋雪球哈薩克出海專欄、雙寡頭博弈與利潤分析、低估值討論、股吧週期反思、2026 中期業績及特別中期股息派發、6月中旬盈警重挫與管理層頻繁股份回購等實質資訊 |
+| `00546阜豐` | HKEXnews 披露易 / 官方發布 | `00546_Quarter_2026Q2.md` | 2026 中期業績公告（截至 2026 年 6 月 30 日止六個月）已成功轉為 Markdown |
+| `00546阜豐` | 雪球、東方財富股吧、格隆匯、智通財經、AAstocks、信報、CMoney API、Reddit | `202608_輿情新聞.md` | 輿情收集完成（涵蓋雪球哈薩克產能專欄與中報業績拆解、股吧散戶討論、中期派息與盈警新聞、CMoney 與 Reddit 檢索紀錄） |
 
----
-
-## 2. 失敗或被擋網站與無資料記錄
-
-| 來源 | 原因 | 已依 §2 換過的 MCP / 工具 |
-| :--- | :--- | :--- |
-| **Reddit** (`r/stocks`, `r/wallstreetbets`, 全站) | 00546 為港股標的，英文社群近三個月僅檢索到法門寺文化（扶風縣）與歷史高息股討論，無個股基本面貼文 | 依 §2.9 SOP 呼叫 Apify `trudax/reddit-scraper-lite` 檢索，依 §5.0 防幻覺規則誠實記錄無近期個股貼文 |
-| **台灣社群** (PTT / CMoney) | 港股標的，同學會 API 與 PTT 近三個月無實質討論貼文 | 依 §2.8 SOP 檢驗同學會 API 與 PTT 搜尋，誠實記錄無資料 |
-
----
+## 2. 失敗或被擋網站
+- **來源**: [Reddit](https://www.reddit.com)
+- **原因**: 平台對通用網頁爬蟲限制嚴格（內建與 Firecrawl 均無法直接抓取）。
+- **已依 §2 換過的 MCP**: 依 SOP §2.9 直接呼叫 Apify Reddit Actor (`trudax/reddit-scraper-lite`) 進行檢索，檢索成功但過去三個月無實質個股發文。
 
 ## 3. 資料缺失說明
-
-- **無資料缺失**：已備齊 2024、2025 年度年報與 2026 年最新中期報告 (`00546_Quarter_2026Q2.md`)，涵蓋範圍完整。
-
----
+- **台灣討論區（PTT / CMoney 爆料同學會）**：CMoney 透過訪客 Token 呼叫官方 API 檢索結果為 0 篇；PTT Stock 板近三個月無 00546 阜豐討論（過往討論多集中於 2025 年阿根廷投資案）。均已依規範如實記錄於輿情檔案。
+- **Reddit**：透過 Apify Actor 檢索 `00546` 及 `Fufeng`，經比對過濾後近三個月無有效投資討論串，已依規範如實記錄。
 
 ## 4. 異常檔案刪除紀錄
+- 轉換過程中產生的測試暫存圖片檔已依規則全數清理完成。
 
-- 依 Convert2md 規範檢查 `00546_Quarter_2026Q2.md` 確認 0 CID 亂碼，已清除來源 PDF (`00546_Quarter_2026Q2.pdf`) 及暫存圖片。無任何 CID 亂碼或無效檔案。
-
----
-
-## 5. 本次執行使用的 MCP 與工具（強制填寫）
-
-| MCP 服務名稱 / 工具 | 用到的工具/函式 | 用途說明 |
+## 5. 本次執行使用的 MCP（強制填寫，無則註明「未使用」）
+| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
 | :--- | :--- | :--- |
-| **Bright Data** | `scrape_as_markdown` | 依 §2.7 SOP 爬取雪球 00546 個股討論專頁與專欄文章 |
-| **Firecrawl** | `firecrawl_scrape`<br>`firecrawl_search` | 爬取富途牛牛/moomoo 新聞快訊、業績與回購公告 |
-| **Apify** | `call-actor` (`trudax/reddit-scraper-lite`)<br>`get-dataset-items` | 依 §2.9 SOP 檢索 Reddit 英文社群 00546 / Fufeng 相關討論 |
-| **內建搜尋與解析** | `search_web`<br>`read_url_content` | 檢索最新港股財經媒體（智通財經、香港經濟日報 HKET）報導與官方披露 |
-| **本機執行與轉檔** | `Convert2md` / Python verification | 驗證 0 CID 亂碼、Markdown 轉換驗證與進度追蹤記錄 |
+| **Bright Data** | `scrape_as_markdown` | 爬取雪球個股頁（`xueqiu.com/S/00546`）、雪球專欄文章及東方財富股吧頁取得真實討論原文 |
+| **Apify** | `call-actor`, `get-dataset-items` | 呼叫 `trudax/reddit-scraper-lite` 搜尋 Reddit 平台過去三個月關於 `00546` / `Fufeng` 之社群討論 |
+| **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 執行 `00546_Quarter_2026Q2.pdf` 轉 Markdown 格式與排除字型缺字 CID 亂碼 |
