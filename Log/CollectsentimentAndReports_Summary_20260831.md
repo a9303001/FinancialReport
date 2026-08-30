@@ -1,28 +1,32 @@
-# 任務執行最終報告 - 2026/08
+# 任務總結報告 - 2026/08/31
 
-## 1. 成功紀錄
-| 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
+## 1. 成功項目
+| 股號/名稱 | 資料來源 | 生成檔案/下戴檔名 | 狀態/備註 |
 | :--- | :--- | :--- | :--- |
-| `00546阜豐` | HKEXnews 披露易 / 官方發布 | `00546_Quarter_2026Q2.md` | 2026 中期業績公告（截至 2026 年 6 月 30 日止六個月）已成功轉為 Markdown |
-| `00546阜豐` | 雪球、東方財富股吧、格隆匯、智通財經、AAstocks、信報、CMoney API、Reddit | `202608_輿情新聞.md` | 輿情收集完成（涵蓋雪球哈薩克產能專欄與中報業績拆解、股吧散戶討論、中期派息與盈警新聞、CMoney 與 Reddit 檢索紀錄） |
-| `1301極洋` | 日本極洋官方 IR (`kyokuyo.co.jp`) / TDnet | `1301_Quarter_2027Q1.md` | 2027年3月期 第1四半期決算短信（FY2027 Q1，發布於 2026-08-07）下載並成功轉換為 Markdown，無 CID 亂碼 |
-| `1301極洋` | 株探 (Kabutan)、Yahoo! Finance JP 掲示板、Minkabu (みんかぶ)、note、Reddit、PTT、CMoney、雪球 | `2026_PublicOpinion.md` (已自動併入 202608 最新輿情) | 輿情收集完成（涵蓋 Q1 業績反彈、10月產品調漲、壽司郎供應鏈、大型鮪魚配額放寬、政策保有股票檢討、股東優待海鮮罐頭高滿意度等多空觀點） |
+| `00546 阜豐` (輪值 16) | HKEXnews 官方 / 披露易 | `00546_Quarter_2026Q2.md` | 2026 中期報告（截至 2026 年 6 月 30 日止六個月）已成功轉為 Markdown |
+| `00546 阜豐` (輪值 16) | 雪球、東方財富股吧、智通財經、格隆匯、AAstocks、富途、CMoney API、Reddit | `202608_輿情新聞.md` | 涵蓋雪球精華文章、股吧討論、業績點評新聞、CMoney 與 Reddit 檢索 |
+| `1301 極洋` (輪值 17) | IRBANK / TDNet / 極洋官網 IR | `1301_Quarter_2027Q1.md` | 2027年3月期 第1四半期決算短信（期間 2026/4/1～2026/6/30，2026/08/07 揭露）已成功轉為 Markdown（0 CID 亂碼） |
+| `1301 極洋` (輪值 17) | EDINET（金融廳官方） | `S100YE8K.md`, `S100W543.md` | 最新過去兩年年報（第103期 FY2026、第102期 FY2025 有價證券報告書）均已完整就緒 |
+| `1301 極洋` (輪值 17) | Yahoo! Finance JP 掲示板、株探 (Kabutan)、みんかぶ (Minkabu)、Note.com、富途牛牛、Reddit | `202608_輿情新聞.md` | 涵蓋 Yahoo! JP 掲示板散戶討論、Q1財報評價、10月起21品項調漲公告、美國蟹肉棒合資重組、中計 Gear Up Kyokuyo 2027 與高配息分析 |
 
-## 2. 失敗或被擋網站
-- **來源**: [Reddit](https://www.reddit.com)
-- **原因**: 平台對通用網頁爬蟲限制嚴格（內建與 Firecrawl 均無法直接抓取）。
-- **已依 §2 換過的 MCP**: 依 SOP §2.9 呼叫 Apify Reddit Actor / Web Search 進行檢索，檢索成功，歐美 `r/CannedSardines` 社群對極洋罐頭產品評價良好。
+## 2. 封鎖與繞過/替代 MCP 記錄
+- **Reddit**:
+  - **狀態**: 依 SOP §2.9 呼叫 Apify Reddit Actor (`trudax/reddit-scraper-lite`) 進行全域與子版塊檢索。
+  - **結果**: 過去 3 個月內無針對 `1301 Kyokuyo Co., Ltd.`（極洋水產）之直接專題討論（僅有非上市同名造船廠文章），如實記錄無討論。
+- **Yahoo! Finance JP 掲示板**:
+  - **狀態**: 原生網路檢索與 `read_url_content` 順利抓取 2026/07～2026/08 最新貼文（包含 No.7152～No.7196），無阻擋現象。
 
-## 3. 資料缺失說明
-- **台灣與華語討論區（PTT / CMoney / 雪球）**：1301 代號在台股為台塑，檢索「極洋」與「Kyokuyo」在 PTT、CMoney 爆料同學會及雪球社區近三個月無實質個股討論發文。已依防幻覺規範如實記錄。
+## 3. 缺漏與無效說明
+- **歐美社群（Reddit / Seeking Alpha）**：歐美投資社群對日本傳統水產類股關注度極低，無專門討論貼文，已依規範如實載明。
+- **華語討論區（雪球 / 股吧）**：華語社群對日股 1301 極洋之討論極少，主要集中於行情報價與基本財務指標轉發。
 
-## 4. 異常檔案刪除紀錄
-- 轉換過程中產生的測試暫存圖片檔與臨時 PDF (`1301_Quarter_2027Q1.pdf`) 已依 Convert2md 規範全數清理完成。
+## 4. 暫存與清理檔案
+- `1301_Quarter_2027Q1.pdf` 於驗證 Markdown 無 CID 亂碼後已成功刪除。
+- 圖片暫存目錄 `scratch/pdf_images` 已完全清理。
 
-## 5. 本次執行使用的 MCP（強制填寫，無則註明「未使用」）
-| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
+## 5. 使用的 MCP（大寫，過去式「使用了」）
+| MCP 伺服器名稱 | 用到的工具/函式 | 用途說明 |
 | :--- | :--- | :--- |
-| **Firecrawl** | `firecrawl_search`, `firecrawl_scrape` | 搜尋極洋官網最新 2027Q1 決算短信 PDF 連結，並爬取株探 (Kabutan) 決算速報/漲價新聞及 Yahoo! Finance JP 掲示板真實發文 |
-| **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 執行 `1301_Quarter_2027Q1.pdf` 轉 Markdown 格式與排除字型缺字 CID 亂碼 |
-| **Bright Data** | `scrape_as_markdown` | 爬取雪球個股頁（`xueqiu.com/S/00546`）、雪球專欄文章及東方財富股吧頁取得真實討論原文 |
-| **Apify** | `call-actor`, `get-dataset-items` | 呼叫 `trudax/reddit-scraper-lite` 搜尋 Reddit 平台過去三個月社群討論 |
+| **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 將 `1301_Quarter_2027Q1.pdf` 轉為 Markdown 格式並確認無 CID 亂碼 |
+| **Apify** | `call-actor`, `get-dataset-items` | 呼叫 `trudax/reddit-scraper-lite` 檢索 Reddit 平台上過去三個月關於 `1301` / `Kyokuyo` 的最新討論 |
+| **Bright Data** | `scrape_as_markdown` | （於 00546 批次中）抓取雪球個股頁與文章頁討論內容 |
