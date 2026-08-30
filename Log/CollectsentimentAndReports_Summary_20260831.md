@@ -1,7 +1,7 @@
 # 任務執行最終報告 - 2026/08/31
 
 **執行日期編號**：16  
-**公司**：00546 阜豐（港股 / 阜豐集團有限公司 / 00546.HK）
+**公司**：00546 阜豐集團（Fufeng Group Limited / 港股 / 全球味精與氨基酸龍頭）
 
 ---
 
@@ -9,29 +9,29 @@
 
 | 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
 | :--- | :--- | :--- | :--- |
-| 00546 阜豐 | HKEXnews 披露易 / 公司官網 IR | `00546_Quarter_2026Q2.md` | 下載 2026 中期業績公告（截至2026年6月30日止六個月）並完成 Markdown 轉換（0 CID 亂碼），來源 PDF 依規清除 |
-| 00546 阜豐 | 雪球 (Xueqiu)、東方財富股吧、智通財經、格隆匯、富途牛牛 (Moomoo)、香港經濟日報 (HKET) | `00546阜豐/202608_輿情新聞.md` | 輿情收集成功（含雪球專欄《阜豐的"又一次逆襲"：把產能搬進關稅長城之內》哈薩克出海深度分析、中報匯兌虧損與6月修復解讀、智通財經中報業績與派息報導、富途牛牛機構評級與股份回購紀錄） |
+| `00546 阜豐` | 阜豐集團官網 IR / 香港交易所披露易 (HKEXnews) | `00546_Quarter_2026Q2.md` | 2026 中期報告（截至 2026 年 6 月 30 日止六個月中期業績公告，發布日 2026-08-28）驗證完整（0 CID 亂碼），連同現有 `00546_2025_annual_report.md` 及 `00546_AnnualReport_2024.md` 備齊最新 2 年報 + 1 季報/中期報告 |
+| `00546 阜豐` | 雪球 (Xueqiu)、東方財富股吧、富途牛牛/moomoo、智通財經、香港經濟日報 (HKET) | `00546阜豐/202608_輿情新聞.md` | 輿情新聞收集成功，涵蓋雪球哈薩克出海專欄、雙寡頭博弈與利潤分析、低估值討論、股吧週期反思、2026 中期業績及特別中期股息派發、6月中旬盈警重挫與管理層頻繁股份回購等實質資訊 |
 
 ---
 
-## 2. 失敗或被擋網站
+## 2. 失敗或被擋網站與無資料記錄
 
 | 來源 | 原因 | 已依 §2 換過的 MCP / 工具 |
 | :--- | :--- | :--- |
-| Reddit (`r/stocks`, `r/wallstreetbets`) | 00546 為港股上市公司，英文社群過去三個月內無直接個股基本面討論貼文 | 依 §2.9 SOP 呼叫 Apify `trudax/reddit-scraper-lite` 檢索後依 §5.0 防幻覺規則誠實記錄無近期貼文 |
-| 台灣社群 (PTT / Dcard / CMoney) | 00546 為港股標的，台灣討論區無近期個股討論 | 依 §2.8 SOP 與內建搜尋檢索，誠實記錄無有效討論 |
+| **Reddit** (`r/stocks`, `r/wallstreetbets`, 全站) | 00546 為港股標的，英文社群近三個月僅檢索到法門寺文化（扶風縣）與歷史高息股討論，無個股基本面貼文 | 依 §2.9 SOP 呼叫 Apify `trudax/reddit-scraper-lite` 檢索，依 §5.0 防幻覺規則誠實記錄無近期個股貼文 |
+| **台灣社群** (PTT / CMoney) | 港股標的，同學會 API 與 PTT 近三個月無實質討論貼文 | 依 §2.8 SOP 檢驗同學會 API 與 PTT 搜尋，誠實記錄無資料 |
 
 ---
 
 ## 3. 資料缺失說明
 
-- **無資料缺失**：已備齊 2024 年報 (`00546_AnnualReport_2024.md`)、2025 年報 (`00546_2025_annual_report.md`) 與最新 2026 年中期報告 (`00546_Quarter_2026Q2.md`)。
+- **無資料缺失**：已備齊 2024、2025 年度年報與 2026 年最新中期報告 (`00546_Quarter_2026Q2.md`)，涵蓋範圍完整。
 
 ---
 
 ## 4. 異常檔案刪除紀錄
 
-- 依 Convert2md 規範刪除轉換成功之來源 PDF (`00546_Quarter_2026Q2.pdf`) 及暫存圖片。轉換後 `.md` 經 Python 驗證無任何 CID 亂碼。
+- 依 Convert2md 規範檢查 `00546_Quarter_2026Q2.md` 確認 0 CID 亂碼，已清除來源 PDF (`00546_Quarter_2026Q2.pdf`) 及暫存圖片。無任何 CID 亂碼或無效檔案。
 
 ---
 
@@ -39,8 +39,8 @@
 
 | MCP 服務名稱 / 工具 | 用到的工具/函式 | 用途說明 |
 | :--- | :--- | :--- |
-| **Bright Data** | `scrape_as_markdown` | 依 §2.7 SOP 爬取雪球 00546 專頁及專欄深度文章 |
-| **Firecrawl** | `firecrawl_scrape` | 爬取富途牛牛 / moomoo 00546 港股最新動態與回購新聞 |
-| **Apify** | `call-actor` (`trudax/reddit-scraper-lite`), `get-dataset-items` | 依 §2.9 SOP 檢索 Reddit 英文社群 00546 / Fufeng 討論 |
-| **內建搜尋與解析** | `search_web`, `read_url_content` | 檢索最新港股公告、智通財經/格隆匯/HKET 報導及東方財富股吧 |
-| **本機執行與轉檔** | `pymupdf4llm-mcp` / Python | PDF 完整性與 0 CID 亂碼檢驗、Convert2md 清理與進度檔更新 |
+| **Bright Data** | `scrape_as_markdown` | 依 §2.7 SOP 爬取雪球 00546 個股討論專頁與專欄文章 |
+| **Firecrawl** | `firecrawl_scrape`<br>`firecrawl_search` | 爬取富途牛牛/moomoo 新聞快訊、業績與回購公告 |
+| **Apify** | `call-actor` (`trudax/reddit-scraper-lite`)<br>`get-dataset-items` | 依 §2.9 SOP 檢索 Reddit 英文社群 00546 / Fufeng 相關討論 |
+| **內建搜尋與解析** | `search_web`<br>`read_url_content` | 檢索最新港股財經媒體（智通財經、香港經濟日報 HKET）報導與官方披露 |
+| **本機執行與轉檔** | `Convert2md` / Python verification | 驗證 0 CID 亂碼、Markdown 轉換驗證與進度追蹤記錄 |
