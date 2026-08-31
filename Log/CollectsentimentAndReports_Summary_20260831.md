@@ -105,3 +105,59 @@
 | **Apify** | `call-actor` (`trudax/reddit-scraper-lite`) | 嘗試呼叫 Reddit scraper 取得貼文 |
 | **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 執行 Convert2md 掃描轉換驗證流程 |
 
+---
+---
+
+# 任務執行最終報告 - 2026/08/31（排程輪替執行：第 18 輪）
+
+- **執行日期**：2026-08-31
+- **輪替日期編號**：18
+- **執行標的**：`CF` CF Industries Holdings, Inc.
+- **本地資料夾**：`CF/`
+- **所屬市場**：美股 (NYSE: CF)
+
+---
+
+## 1. 成功紀錄
+
+| 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
+| :--- | :--- | :--- | :--- |
+| `CF` | SEC EDGAR / 官網 IR | `CF_AnnualReport_2024.md` | 2024 年報 (Form 10-K，本地已完整收錄) |
+| `CF` | SEC EDGAR / 官網 IR | `CF_AnnualReport_2025.md` | 2025 年報 (Form 10-K，本地已完整收錄) |
+| `CF` | SEC EDGAR / 官網 IR | `CF_Quarter_2026Q2.md` | 2026 Q2 季報 (Form 10-Q，截至 2026-06-30，本地已完整收錄且為最新) |
+| `CF` | Reddit、Seeking Alpha、Yahoo Finance、Quartr 法說逐字稿、富途牛牛/Moomoo、雪球、CMoney API、PTT | `CF/202608_輿情新聞.md` | 輿情與重大新聞彙整（涵蓋 8/27 路易斯安那州 140 萬噸 Blue Point 藍氨廠動工、Q2 財報獲利與 Yazoo City 廠復原進度、中期循環 EBITDA 上修至 29 億美元/2030 年 33 億美元、季度股息上調 20% 至 $0.60/股、2021 年以來股數縮減 29%、華爾街最新評級區間 $125~$140、機構持倉與中東地緣政治供需分析） |
+
+---
+
+## 2. 失敗或被擋網站
+
+- **來源**: Apify Reddit Actor (`trudax/reddit-scraper-lite`)
+- **原因**: 帳號配額限制
+- **處理方式**: 依 §2 通用抓取規則 fallback 採用 Exa 與原生 Search Web 進行多維度檢索，成功取得 Reddit (`r/UsaNewsLive`, `r/EverHint`, `r/ClaudeCode`, `r/wallstreetbets`) 相關真實貼文、量化訊號與基本面討論，並完整收錄真實 URL 與原文。
+
+---
+
+## 3. 資料缺失說明
+
+- **財報資料**：經 `sec-edgar-mcp` 實時查詢確認，CF 最新 10-Q 為 2026 Q2（截至 2026-06-30），最新 2 份 10-K（2024、2025）均已完整收錄於本地，無資料缺失。
+- **輿情資料**：已完整涵蓋美股主流財經媒體、法說會關鍵訊息、專業量化/投資社群、華爾街券商評級與華語市場討論，資料詳實完整。
+
+---
+
+## 4. 異常檔案刪除紀錄
+
+- 本次無小於 10KB、無公司名稱或 CID 亂碼過多之異常檔案刪除。Convert2md 掃描確認目前無待轉換之 PDF/HTML 檔案。
+
+---
+
+## 5. 本次執行使用的 MCP（強制填寫，無則註明「未使用」）
+
+| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
+| :--- | :--- | :--- |
+| **sec-edgar-mcp** | `get_cik_by_ticker`, `get_company_info`, `get_company_facts` | 查詢並核實 CF Industries 最新 SEC EDGAR 申報紀錄與關鍵財務指標 |
+| **Exa** | `web_search_exa` | 檢索最新 Seeking Alpha、Yahoo Finance 新聞與法說會逐字稿重點 |
+| **Firecrawl** | `firecrawl_scrape` | 爬取富途牛牛/Moomoo 即時新聞與華爾街評級資料 |
+| **Bright Data** | `scrape_as_markdown` | 爬取雪球美股頁面驗證社群討論熱度 |
+| **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 執行 Convert2md 轉換檢查驗證流程 |
+| **內建工具 (pwsh / WebSearch / File)** | `run_command`, `search_web`, `write_to_file`, `view_file`, `list_dir` | 執行 CMoney 官方 API 檢索、全網多來源檢索及檔案維護管理 |
+
