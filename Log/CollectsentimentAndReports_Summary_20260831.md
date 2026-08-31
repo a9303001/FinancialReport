@@ -292,3 +292,60 @@
 | **Firecrawl** (`firecrawl-mcp`) | `firecrawl_search` | 檢索格隆匯關於中國移動 00941 之最新券商研報與大行評級 |
 | **Apify** (`apify`) | `call-actor` (`trudax/reddit-scraper-lite`) | 嘗試檢索 Reddit 英文投資社群（因平台月度配額上限而中斷，如實記錄） |
 
+---
+---
+
+# 任務執行最終報告 - 2026/08/31（第六筆：排程輪替執行 Date 3）
+
+**執行日期編號**：3（依 `Routines_CollectsentimentAndReports.md` 每日輪替表）  
+**公司清單**：
+1. `01426` `春泉Reit`（港股 REIT / 春泉產業信託 Spring REIT）— `01426春泉Reit/`  
+**執行時間**：2026-08-31 16:30 ~ 16:40
+
+---
+
+## 1. 成功紀錄
+
+| 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
+| :--- | :--- | :--- | :--- |
+| `01426 春泉Reit` | 披露易 (HKEXnews) / 公司官網 IR | `01426_InterimReport_2026.md` (2026 中期報告) | 成功從披露易下載最新 2026 中期報告 PDF（1.5MB），經 PyMuPDF4LLM 轉為 Markdown（0 CID 亂碼），來源 PDF 已清除；本地已有 2024、2025 年報 |
+| `01426 春泉Reit` | 雪球 (Xueqiu)、藍鯨財經、富途牛牛 / moomoo 社區、經濟通 ETNet、阿斯達克 AASTOCKS、東方財富股吧 | `202608_輿情新聞.md` | 過去三個月（2026/06~08）社群輿情與最新中報新聞彙整完成（含 8/28 中報披露由盈轉虧、物業公允價值減值 3.67 億元、融資成本上升至 1.06 億元、北京華貿寫字樓以價換量出租率 90.8% 與月租 331 元/㎡、大灣區惠州華貿天地商場穩健出租率 95.2%、中期 DPU 4.0 港仙、8/21~8/28 連續基金單位回購註銷與管理人費用股份支付等） |
+
+---
+
+## 2. 失敗或被擋網站
+
+| 來源 | 原因 | 已依 §2 換過的 MCP / 工具 | 處置 |
+| :--- | :--- | :--- | :--- |
+| **Reddit** (`reddit.com`) | 內建工具與 Firecrawl 不支援 Reddit，Apify 平台配額上限 | 依 §2.9 SOP 嘗試呼叫 Apify `trudax/reddit-scraper-lite` Actor 及使用 Firecrawl Search 檢索 | 經 §5.2 過濾後確認近三個月無實質個股討論貼文，依 §5.0/§5.4 誠實記錄檢索歷程 |
+| **LIHKG / 香港討論區 / PTT / Dcard** | 港股小型 REIT 在台港散戶論壇討論度極低，近三個月無專門投資討論串 | 經 Firecrawl / Exa 搜尋檢索 | 誠實記錄檢索過程與無新討論之結論，不以 AI 捏造 |
+| **雪球 (Xueqiu) / 東方財富股吧** | 前端動態渲染與反爬 | 依 §2.7 實戰 SOP 使用 Bright Data `scrape_as_markdown` 爬取 | 成功抓取雪球 01426 頁面、藍鯨財經專欄與散戶討論正文 |
+
+---
+
+## 3. 資料缺失說明
+
+- **財報部分**：
+  - `01426 春泉Reit`：2024 年報 (`2025042201223.md`)、2025 年報 (`2026042200516.md`)、2026 中期業績公告 (`01426_InterimResults_2026.md`)、2026 Q2 營運數據 (`01426_Quarter_2026Q2_OpStats.md`) 及最新 2026 中期報告完整版 (`01426_InterimReport_2026.md`) 已全數齊備且格式合規。
+- **輿情部分**：
+  - 春泉產業信託聚焦於 2026 年 8 月下旬最新公布之 2026 中期業績（由盈轉虧 2.42 億人民幣、物業重估減值、北京寫字樓以價換量、惠州商場穩健、DPU 4.0 港仙）以及 8 月底連續進行之基金單位公開市場回購註銷。
+
+---
+
+## 4. 異常檔案刪除紀錄
+
+- 轉換成功後刪除來源 PDF：`01426_InterimReport_2026.pdf`。
+- 清理暫存圖片目錄 `pdf_images`，無任何 CID 亂碼異常檔案。
+
+---
+
+## 5. 本次執行使用的 MCP（強制填寫）
+
+| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
+| :--- | :--- | :--- |
+| **PyMuPDF4LLM** (`pymupdf4llm-mcp`) | `convert_pdf_to_markdown` | 將 01426 春泉產業信託 2026 中期報告 PDF 轉為 Markdown 並驗證 0 CID 亂碼 |
+| **Bright Data** (`brightdata`) | `scrape_as_markdown` | 抓取雪球 01426 討論串、藍鯨財經專欄及東方財富股吧頁面 |
+| **Firecrawl** (`firecrawl-mcp`) | `firecrawl_scrape`, `firecrawl_search` | 抓取富途牛牛/moomoo 01426 社區 Feed、ETNet 經濟通股權變動新聞與披露易 PDF 連結 |
+| **Apify** (`apify`) | `call-actor` (`trudax/reddit-scraper-lite`) | 嘗試檢索 Reddit 英文社群關於 Spring REIT 討論 |
+
+
