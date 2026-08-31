@@ -7,6 +7,8 @@
 | `7203 Toyota` | Reddit, Xueqiu, note.com, Nikkei, Minkabu, Reuters, Seeking Alpha, PTT | `202608_輿情新聞.md` | ✅ 輿情與新聞更新成功（涵蓋日美中台 8 大平台，包含真實原文引述與真實 URL） |
 | `UHS Universal Health Services` | SEC EDGAR / 官網 IR | `UHS_10K_2024-12-31.md`<br>`UHS_10K_2025-12-31.md`<br>`UHS_10Q_2026-06-30.md` | ✅ 經檢核已完整涵蓋最新「2年報 + 1季報」（2024 10-K, 2025 10-K, 2026 Q2 10-Q 申報於 2026-08-07），本期無須重複下載 |
 | `UHS Universal Health Services` | Reddit r/ValueInvesting, S&P Global Ratings, PR Newswire, Becker's Hospital Review / Behavioral Health, Xueqiu, PTT | `202608_輿情新聞.md` | ✅ 輿情與新聞更新成功（涵蓋 Reddit 深度價值分析、S&P Global 評級調升為正面、8.35億美元 Talkspace 併購案完成、Q2 財報與全年度財測微調、猶他州校區執照撤銷等重大事件） |
+| `2832 台產` | 臺灣證券交易所電子書 (MOPS) | `2832_Quarter_2026Q2.md` | ✅ 下載並轉換成功（115 年第 2 季個別財務報告書，於 2026-08-31 14:17 申報上傳，IFRS 17 查核無保留意見，H1 EPS 3.33 元） |
+| `2832 台產` | 股市爆料同學會 (CMoney API)、工商時報、經濟日報、鉅亨網、PTT、Dcard | `202608_輿情新聞.md` | ✅ 輿情與新聞更新成功（收錄 2026/08/28 董事會通過半年報 EPS 3.33 元、減資效應、無息浮存金護城河與產險五強評比等實質討論） |
 
 ## 2. 失敗或被擋網站與 MCP 替代紀錄
 - **來源**: Apify Reddit Actor (`trudax/reddit-scraper-lite`)
@@ -18,13 +20,17 @@
 - **來源**: S&P Global Ratings（[https://www.spglobal.com/ratings/...](https://www.spglobal.com/ratings/)）
   - **原因**: Bright Data scrape_as_markdown 回傳前端框架外殼
   - **已依 §2 換過的 MCP**: 切換至 `Firecrawl`（`firecrawl_scrape`），成功完整抓取 S&P Global 官方評級報告正文與分析數據。
+- **來源**: 格隆匯 (Gelonghui) / 雪球 (Xueqiu) 針對 2832 台產搜尋
+  - **原因**: 搜尋 2832 台產 / 臺灣產物保險 無個股專屬深度討論文章
+  - **已依 §2 換過的 MCP**: Bright Data / Firecrawl，確認回傳為通用保險觀點或無符合個股專欄，已依 §5.4 誠實記錄於輿情檔中。
 
 ## 3. 資料缺失說明
 - **Toyota Motor Corp (7203 / TM)**：財報完整無缺失，最新發布之 FY2027 第一季（2026年4月~6月）決算已於 2026 年 8 月初公佈並收錄。
 - **Universal Health Services (UHS)**：財報完整無缺失，最新 2026 Q2 10-Q 於 2026-08-07 申報並收錄。PTT 股市板近三個月無專門標的文，已依規範於輿情檔中誠實記錄搜尋嘗試與冷門股狀態。
+- **臺灣產物保險 (2832 台產)**：財報完整無缺失（2024 年報、2025 年報、2026 Q1 季報、2026 Q2 季報均已收錄轉為 Markdown）。港陸平台（雪球、格隆匯）因台股純產險公司關注度較低，無專屬個股深度討論，已如實記錄。
 
 ## 4. 異常檔案刪除紀錄
-- 無。本次未下載小於 10KB、無公司名稱或 CID 亂碼之異常檔案。
+- 無。本次下載之 `2832_Quarter_2026Q2.pdf` (5.42 MB) 經 `pymupdf4llm-mcp` 成功轉換為 `.md`（0 處 CID 亂碼）後，依規範自動刪除來源 PDF。
 
 ## 5. 本次執行使用的 MCP（強制填寫）
 | MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
@@ -33,3 +39,4 @@
 | **Apify MCP** | `call-actor` (`trudax/reddit-scraper-lite`) | 依 §2.9 SOP 呼叫 Reddit 爬蟲 Actor 抓取 TM 與 UHS 討論（觸發月度上限後如實記錄並切換至 Bright Data）。 |
 | **Bright Data MCP** | `search_engine`<br>`scrape_as_markdown` | 搜尋並抓取 Reddit（r/ValueInvesting）、雪球（Xueqiu）討論板、PR Newswire 官方重大新聞稿及財經新聞。 |
 | **Firecrawl MCP** | `firecrawl_scrape` | 突破 JS 渲染與防爬阻擋，成功抓取 S&P Global Ratings 評級報告、Becker's Hospital Review 財報與營運利潤分析、Becker's Behavioral Health 猶他州執照撤銷專題報導。 |
+| **PyMuPDF4LLM MCP** | `convert_pdf_to_markdown` | 將 `2832_Quarter_2026Q2.pdf` 完整轉換為高品質 Markdown 格式 (`2832_Quarter_2026Q2.md`)。 |
