@@ -48,3 +48,60 @@
 | **Apify** | `call-actor` (`trudax/reddit-scraper-lite`) | 嘗試抓取 Reddit 討論串（配額超限後記錄） |
 | **Exa** | `web_search_exa` | 搜尋 Reddit 相關討論與最新研報驗證 |
 | **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 執行 Convert2md 掃描轉換驗證流程 |
+
+---
+---
+
+# 任務執行最終報告 - 2026/08/31（排程輪替執行：第 17 輪）
+
+- **執行日期**：2026-08-31
+- **輪替日期編號**：17
+- **執行標的**：`1301` 株式会社 極洋 (KYOKUYO CO., LTD.)
+- **本地資料夾**：`1301極洋/`
+- **所屬市場**：日股 (東証プライム 1301)
+
+---
+
+## 1. 成功紀錄
+
+| 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
+| :--- | :--- | :--- | :--- |
+| `1301 極洋` | EDINET / 官網 IR | `S100W543.md` | 第 102 期有價證券報告書（FY2025: 2024/4/1~2025/3/31，本地已完整轉換） |
+| `1301 極洋` | EDINET / 官網 IR | `S100YE8K.md` | 第 103 期有價證券報告書（FY2026: 2025/4/1~2026/3/31，本地已完整轉換） |
+| `1301 極洋` | 東証 TDnet / 官網 IR | `1301_Quarter_2027Q1.md` | 2027 年 3 月期 第 1 四半期決算短信（FY2027 Q1，發布日 2026-08-07，本地已完整轉換） |
+| `1301 極洋` | 株探 (Kabutan)、みんかぶ (Minkabu)、Yahoo!ファイナンス 掲示板、note.com、PR TIMES、Reddit | `1301極洋/202608_輿情新聞.md` | 輿情與重大新聞彙整（涵蓋 8/18 罐頭/香腸調價 10~25%、8/7 1Q 決算純益成長 29%、壽司郎/元氣壽司供應鏈需求、黑鮪魚配額擴增 25%、200 億日圓政策保有股期待、歐美 r/CannedSardines 社群口碑） |
+
+---
+
+## 2. 失敗或被擋網站
+
+- **來源**: Apify Reddit Actor (`trudax/reddit-scraper-lite`)
+- **原因**: 帳號月度額度限制 (`Monthly usage hard limit exceeded`)
+- **處理方式**: 依 §2 通用抓取規則 fallback 採用 Exa 與原生 Search Web 檢索 Reddit，成功取得 r/CannedSardines 海鮮罐頭社群針對極洋味噌鯖魚、沙丁魚罐頭之真實消費者評價並完整收錄。
+- **CMoney / PTT / 雪球**: 依規範檢索並誠實記錄：CMoney 與 PTT 代號 1301 主要討論台股台塑；雪球無日股 1301 專版，近三個月無極洋討論。
+
+---
+
+## 3. 資料缺失說明
+
+- **財報資料**：最新之 FY2027 Q1 決算短信已於 2026 年 8 月 7 日發布並已收錄於本地；最新 2 份年報（第 102 期、第 103 期有價證券報告書）均完整收錄，無資料缺失。
+- **輿情資料**：涵蓋日本主流財經媒體、社群討論板、深度專欄以及歐美消費社群，資料齊全。
+
+---
+
+## 4. 異常檔案刪除紀錄
+
+- 本次無小於 10KB、無公司名稱或 CID 亂碼過多之異常檔案刪除。Convert2md 掃描確認目前無待轉換之 PDF/HTML 檔案。
+
+---
+
+## 5. 本次執行使用的 MCP（強制填寫，無則註明「未使用」）
+
+| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
+| :--- | :--- | :--- |
+| **Firecrawl** | `firecrawl_scrape` | 抓取 Kabutan 新聞、Minkabu 評價、note.com 深度決算分析專欄 |
+| **Bright Data** | `scrape_as_markdown` | 爬取雪球日股頁面進行驗證 |
+| **Exa** | `web_search_exa` | 檢索 Reddit 海外社群討論與官方新聞發布 |
+| **Apify** | `call-actor` (`trudax/reddit-scraper-lite`) | 嘗試呼叫 Reddit scraper 取得貼文 |
+| **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 執行 Convert2md 掃描轉換驗證流程 |
+
