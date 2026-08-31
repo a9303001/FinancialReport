@@ -10,20 +10,21 @@
 | `01816 中廣核電力` | HKEXnews / 深交所 / 公司官網 | `01816_AnnualReport_2024.md` (2024 年報), `01816_AnnualReport_2025.md` (2025 年報), `01816_Quarter_2026Q1.md` (2026 Q1 季報), `01816_Quarter_2026H1.md` (2026 H1 中期業績公告) | 2026 中期業績公告於 2026-08-25 正式發布，已完整擷取並建檔 |
 | `01816 中廣核電力` | 雪球（專欄「排期表裡的確定性」/中報討論）、東方財富網（上網電價機制/董秘問答）、格隆匯、美銀證券研報、Reddit | `202608_輿情新聞.md` | 過去三個月（2026/06~08）社群輿情、電價機制、大行評級與新聞整理完成 |
 | `9503 關西電力` | IR Bank / 關西電力 IR / Yahoo!ファイナンス 掲示板 / 讀賣新聞 / 朝日新聞 / Minkabu / Kabutan | `9503_AnnualReport_2025.md` (2025 年報), `9503_AnnualReport_2026.md` (2026 年報), `9503_Quarter_2026Q1.md` (2027 Q1 季報), `202608_輿情新聞.md` | 現有財報經查核已為最新（2026 通期與 2027 Q1），8月最新輿情（8/28 乾式貯藏事前了解、8/27 箕面 900MW AI 資料中心合資、8/19 法人電價調漲、8/8 大飯3號機點檢）建檔完成 |
+| `PBR.A 巴西石油` | SEC EDGAR / 雪球 / 東方財富股吧 / Seeking Alpha / Reddit (r/dividends, r/stocks) | `PBR.A_AnnualReport_2024.md` (2024 年報), `PBR.A_AnnualReport_2025.md` (2025 年報), `PBR.A_Quarter_2026Q1.md` (2026 Q1 季報), `PBR.A_Quarter_2026Q2.md` (2026 Q2 季報), `202608_輿情新聞.md` | 現有財報經 SEC 查核已完整涵蓋 2024/2025 年報與 2026 Q2 季報；8月最新輿情（Q2超產10萬桶/天、赤道邊緣FZA-M-59勘探突破、贖回10億美元債券、8月宣派Q2股息）建檔完成 |
 
 ## 2. 失敗或被擋網站
 - **來源**: [股市爆料同學會 (cmoney.tw)](https://www.cmoney.tw)
   - **原因**: 網頁前端 Nuxt SSR 渲染，HTML 內貼文為空陣列。
-  - **已依 §2 換過的 MCP**: 依 §2.8 SOP 透過官方 REST API (guest token -> `/api/mach/api/Article/Stocks/5306/AllLatest`) 成功取得 49 篇真實貼文與留言。
-- **來源**: [東方財富股吧列表頁 (guba.eastmoney.com/list,003816.html)](https://guba.eastmoney.com/list,003816.html)
+  - **已依 §2 換過的 MCP**: 依 §2.8 SOP 透過官方 REST API (guest token -> `/api/mach/api/Article/Stocks/5306/AllLatest` 及 `/api/mach/api/Article/USStocks/PBR/AllLatest`) 抓取（PBR 美股版面僅有系統生成之 ETF 概覽文，無一般用戶原創深度討論）。
+- **來源**: [東方財富股吧列表頁 (guba.eastmoney.com/list,003816.html / list,usPBR.html)](https://guba.eastmoney.com)
   - **原因**: 列表頁採用前端非同步動態載入，直接抓取為空外殼。
-  - **已依 §2 換過的 MCP**: 依 §2 通用抓取規則切換為 `firecrawl_search` 與 `firecrawl_scrape` 直接抓取財富號深度文章與董秘問答原文。
+  - **已依 §2 換過的 MCP**: 依 §2 通用抓取規則切換為 Bright Data `scrape_as_markdown` 與 `firecrawl_scrape` 直接抓取財富號深度文章與董秘問答原文。
 - **來源**: [PTT 股市板 (ptt.cc/bbs/Stock)](https://www.ptt.cc/bbs/Stock/) / [Dcard 理財板 (dcard.tw)](https://www.dcard.tw)
-  - **原因**: 桂盟與中廣核電力在台灣社群過去三個月無專屬個股討論串。
+  - **原因**: 桂盟、中廣核電力與巴西石油在台灣社群過去三個月無專屬個股討論串（PTT 之 PBR 皆為股價淨值比指標）。
   - **處理**: 誠實記錄檢索歷程，嚴格依 §5.0 防幻覺規則不造假。
 - **來源**: [Reddit (reddit.com)](https://www.reddit.com)
   - **原因**: 內建搜尋與 Firecrawl 不支援 Reddit。
-  - **已依 §2 換過的 MCP**: 依 §2.9 SOP 呼叫 Apify `trudax/reddit-scraper-lite` Actor 完成檢索（確認 01816 近三個月無獨立新增討論）。
+  - **已依 §2 換過的 MCP**: 依 §2.9 SOP 呼叫 Apify `trudax/reddit-scraper-lite` Actor 完成檢索（成功提取 PBR 在 `r/dividends` 與 `r/stocks` 的真實討論貼文與觀點）。
 
 ## 3. 資料缺失說明
 - 財報部分：
@@ -31,8 +32,10 @@
   - 福耀玻璃 2026 年中期業績公告已於 2026-08-18 刊發，完整版《2026年中期報告》預計於 2026 年 9 月底前刊發。
   - 中廣核電力 2026 年半年度報告及中期業績公告已於 2026-08-25 刊發，已建檔為 `01816_Quarter_2026H1.md`，完整版中期報告將於 9 月底前刊發於披露易。
   - 關西電力最新年報為 2026 年 3 月期（2026-04-30 刊發），最新季報為 2027 年 3 月期第 1 四半期（2026-07-31 刊發）；第 2 四半期（Q2）預定於 2026 年 10 月下旬至 11 月初刊發。
+  - 巴西石油（Petrobras）最新年報為 2025 年度 Form 20-F，最新季報為 2026 Q2 季報（2026-08-07 申報 6-K）；2026 Q3 財報預計於 2026 年 11 月上旬申報。
 - 輿情部分：
   - 關西電力市場關注焦點集中於「福井縣對美浜/高浜發電所乾式貯藏設施給予事前了解（8/28）」、「與 CyrusOne 合資於大阪箕面興建第二座大規模 AI 資料中心 OSK2（8/27）」、「11月1日起調漲法人特別高壓/高壓電價約 10~15% 改善期ずれ差損（8/19）」以及「大飯發電所 3 號機 8/8 界磁喪失警報自動停止之檢測與復歸時程」。
+  - 巴西石油社群與市場核心關注點在於「Q2 FPSO 產能超預期釋放（超產 10 萬桶/天，日產量達 334 萬桶油當量）」、「赤道邊緣 FZA-M-59 區塊勘探重大突破並取得實質原油樣本」、「8 月批准 Q2 股息每 ADR 0.5298 美元分兩期派發」以及「提前贖回 10 億美元 2028 到期全球債券優化財務體質」。
 
 ## 4. 異常檔案刪除紀錄
 - 無（所有檔案皆大於 10KB、包含正確公司名稱與代碼，且無 CID 亂碼；Convert2md 全庫掃描 0 pending）。
@@ -40,9 +43,8 @@
 ## 5. 本次執行使用的 MCP（強制填寫，無則註明「未使用」）
 | MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
 | :--- | :--- | :--- |
-| **Firecrawl** (`firecrawl-mcp`) | `firecrawl_search` | 搜尋中廣核電力雪球專欄、東方財富、格隆匯 2026 年 8 月最新貼文與報導 URL |
-| **Firecrawl** (`firecrawl-mcp`) | `firecrawl_scrape` | 逐頁爬取雪球「排期表裡的確定性」專欄、中報討論、東方財富財富號文章 Markdown |
-| **Apify** (`apify`) | `call-actor` (`trudax/reddit-scraper-lite`) | 於 Reddit 搜尋 CGN Power / 01816 / KMC 鏈條等個股討論 |
-| **Apify** (`apify`) | `get-dataset-items` | 檢索 Apify Reddit Scraper 執行後的資料集結果 |
-| **Bright Data** (`brightdata`) | `scrape_as_markdown` | 嘗試抓取雪球主頁與智通財經頁面 |
+| **sec-edgar-mcp** (`sec-edgar-mcp`) | `get_cik_by_ticker`, `get_company_info`, `get_recent_filings` | 檢索巴西石油 SEC 申報紀錄，確認 2026 Q2 為最新申報季報 |
+| **Firecrawl** (`firecrawl-mcp`) | `firecrawl_search`, `firecrawl_scrape` | 搜尋中廣核電力雪球專欄、東方財富、格隆匯 2026 年 8 月最新貼文與報導 URL |
+| **Apify** (`apify`) | `call-actor` (`trudax/reddit-scraper-lite`), `get-dataset-items` | 於 Reddit 搜尋 CGN Power 及 PBR / Petrobras 之真實討論貼文 |
+| **Bright Data** (`brightdata`) | `scrape_as_markdown` | 抓取雪球（`xueqiu.com/S/PBR.A`）與東方財富網頁內容 |
 | **PyMuPDF4LLM** (`pymupdf4llm-mcp`) | `convert_pdf_to_markdown` | Convert2md 轉換引擎（本次掃描確認 0 pending） |
