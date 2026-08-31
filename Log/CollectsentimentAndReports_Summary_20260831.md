@@ -13,6 +13,7 @@
 | `PBR.A 巴西石油` | SEC EDGAR / 雪球 / 東方財富股吧 / Seeking Alpha / Reddit (r/dividends, r/stocks) | `PBR.A_AnnualReport_2024.md` (2024 年報), `PBR.A_AnnualReport_2025.md` (2025 年報), `PBR.A_Quarter_2026Q1.md` (2026 Q1 季報), `PBR.A_Quarter_2026Q2.md` (2026 Q2 季報), `202608_輿情新聞.md` | 現有財報經 SEC 查核已完整涵蓋 2024/2025 年報與 2026 Q2 季報；8月最新輿情（Q2超產10萬桶/天、赤道邊緣FZA-M-59勘探突破、贖回10億美元債券、8月宣派Q2股息）建檔完成 |
 | `1264 德麥` | MOPS / 財報狗 / 德麥 IR | `1264_AnnualReport_2024.md` (2024 年報), `1264_AnnualReport_2025.md` (2025 年報), `1264_Quarter_2026Q2.md` (2026 Q2 季報) | 從 MOPS / TWSE 成功下載 2024/2025 年報與 2026 Q2 季報，經 PyMuPDF4LLM 轉為 Markdown 並驗證 0 CID 錯誤 |
 | `1264 德麥` | CMoney 股市爆料同學會、德麥 8/18 法說會簡報、經濟日報、工商時報、鉅亨網、MoneyDJ、PTT、Dcard | `202608_輿情新聞.md` | 過去三個月（2026/06~08）社群輿情（德紐奶油停止合作、估值河流圖探底、H1 EPS 11.01元、法說會多元供應因應策略）整理完成 |
+| `6902 DENSO` | DENSO IR / EDINET / Yahoo! Finance JP / Minkabu / Kabutan / M&A Online / Simply Wall St | `6902_AnnualReport_2025.md` (2025 年報), `6902_AnnualReport_2026.md` / `6902_AnnualReport_2026_Full.md` (2026 年報), `6902_Quarter_2027Q1.md` (FY2027 Q1 季報), `202608_輿情新聞.md` | 現有財報經查核已為最新（2025/2026 年報與 2027 Q1 季報）；8月輿情完整補齊 8/27 Stellantis Jeep Cherokee 2馬達混動模組採用、8/28 日本精機取得 HUD 事業公告，檔案更新完成 |
 
 ## 2. 失敗或被擋網站
 - **來源**: [股市爆料同學會 (cmoney.tw)](https://www.cmoney.tw)
@@ -36,8 +37,10 @@
   - 關西電力最新年報為 2026 年 3 月期（2026-04-30 刊發），最新季報為 2027 年 3 月期第 1 四半期（2026-07-31 刊發）；第 2 四半期（Q2）預定於 2026 年 10 月下旬至 11 月初刊發。
   - 巴西石油（Petrobras）最新年報為 2025 年度 Form 20-F，最新季報為 2026 Q2 季報（2026-08-07 申報 6-K）；2026 Q3 財報預計於 2026 年 11 月上旬申報。
   - 德麥食品（1264）最新年報為 2025 年度（民國 114 年股東會年報，2026-05 刊印），最新季報為 2026 年 Q2 季報（民國 115 年第 2 季合併財務報告，2026-08-10 申報）；2026 Q3 季報法定申報截止日為 2026 年 11 月中旬。
+  - DENSO（6902）最新年報為 2026 年 3 月期（第 103 期有價證券報告書，2026-06-11 刊發），最新季報為 2027 年 3 月期第 1 四半期（2026-07-31 刊發）；第 2 四半期（Q2）預定於 2026 年 10 月下旬至 11 月初刊發。
 - 輿情部分：
   - 德麥社群與市場核心關注點在於「5/29重訊公告 9 月底終止與紐西蘭乳品商 Westland Dairy 業務往來之影響」、「8/18 法說會說明德國、阿根廷、美國乳品與法義麵粉替代因應進度」、「2026 H1 EPS 11.01 元獲利穩健」、「股價跌至價值河流圖最下緣之估值壓縮與定存安全邊際探討」。
+  - DENSO 社群與市場最新關注點包含「8/27 與 BluE Nexus、愛信共同開發之 2 馬達 HEV 模組獲 Stellantis Jeep Cherokee 採用」、「8/28 日本精機取得 DENSO HUD 抬頭顯示器事業」、「Q1 增收減益（營業利益 −21.5%）之獲利品質壓力與 74 円增配政策」。
 
 ## 4. 異常檔案刪除紀錄
 - 轉換成功後刪除來源 PDF：`1264_AnnualReport_2024.pdf`、`1264_AnnualReport_2025.pdf`、`1264_Quarter_2026Q2.pdf`。
@@ -51,3 +54,4 @@
 | **Apify** (`apify`) | `call-actor` (`trudax/reddit-scraper-lite`), `get-dataset-items` | 於 Reddit 搜尋 CGN Power 及 PBR / Petrobras 之真實討論貼文 |
 | **Bright Data** (`brightdata`) | `scrape_as_markdown` | 抓取雪球（`xueqiu.com/S/PBR.A`）與東方財富網頁內容 |
 | **PyMuPDF4LLM** (`pymupdf4llm-mcp`) | `convert_pdf_to_markdown` | Convert2md 轉換引擎（轉換 1264 德麥 2024/2025 年報與 2026 Q2 季報） |
+| **Exa** (`exa`) | `web_search_exa` | 搜尋 DENSO 8月下旬最新新聞、Stellantis 採用公告、日本精機 M&A 及日股即時資訊 |
