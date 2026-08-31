@@ -2,7 +2,7 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 29 |
-| **last_executed_companies** | 00883 中國海洋石油, 00857 中石油, 00386 中石化 |
-| **last_executed_time** | 2026-08-31 14:55 |
-| **next_date** | 30 |
+| **last_executed_date** | 30 |
+| **last_executed_companies** | 8002 丸紅 |
+| **last_executed_time** | 2026-08-31 15:35 |
+| **next_date** | 1 |

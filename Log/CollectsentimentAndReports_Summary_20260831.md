@@ -125,3 +125,59 @@
 | **Apify** (`apify`) | `call-actor` (`trudax/reddit-scraper-lite`), `get-dataset-items` | 檢索 Reddit 英文社群關於 CNOOC, PetroChina, Sinopec 討論 |
 | **Exa** (`exa`) | `web_search_exa` | 搜尋披露易 2026 中期業績官方 PDF 直連網址 |
 
+---
+---
+
+# 任務執行最終報告 - 2026/08/31（第三筆：排程輪替執行 Date 30）
+
+**執行日期編號**：30（依 `Routines_CollectsentimentAndReports.md` 每日輪替表）  
+**公司清單**：
+1. `8002` `丸紅`（日股 Marubeni Corp, 8002.T）— `8002丸紅/`  
+**執行時間**：2026-08-31 15:00 ~ 15:35
+
+---
+
+## 1. 成功紀錄
+
+| 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
+| :--- | :--- | :--- | :--- |
+| `8002 丸紅` | 丸紅官方 IR / EDINET (E02498) / IR Bank | `8002_AnnualReport_2025.md` (FY2025 年報), `8002_AnnualReport_2026.md` (FY2026 年報), `8002_Quarter_2027Q1.md` (2027/3 期 Q1 季報) | 現有財報經 EDINET 與官方 IR 查核已為最新且完整（2027/3期 Q1 於 2026-08-03 發布，8-05 審閱完成；Q2 預定 11 月上旬發布） |
+| `8002 丸紅` | 株探 (Kabutan)、Yahoo! Finance JP 掲示板、Reuters、Simply Wall St、みんかぶ (MINKABU)、丸紅官方新聞 / PR Times、Reddit (Apify) | `202608_輿情新聞.md` | 過去三個月（2026/06~08）社群輿情與重大新聞彙整完成（含 8/31 丸紅新電力參入需給調整市場、8/31 尾盤 523 萬股急拉翻紅至 4,928 円、三年期中期計畫上修至 1.35 兆投資/9,000億股東回報、CFO 預告 Q2 上修財測可能、銅價受惠 AI 展望、瑞穗 8/26 降評至中立目標價 5,380 円、P/E 低估 vs DCF 高估衝突分析） |
+
+---
+
+## 2. 失敗或被擋網站
+
+| 來源 | 原因 | 已依 §2 換過的 MCP / 工具 | 處置 |
+| :--- | :--- | :--- | :--- |
+| **Reddit** (`reddit.com`) | 內建工具與 Firecrawl 明確不支援 Reddit | 依 §2.9 SOP 呼叫 Apify `trudax/reddit-scraper-lite` Actor | 執行 2 次均成功回傳資料，但經 §5.2 過濾後確認近 3 個月無有效個股討論貼文，依 §5.0/§5.4 誠實記錄 |
+| **Reuters** (`reuters.com`) | 內建工具對 Reuters 回 400 | 依 §2 通用抓取規則切換為 Firecrawl `firecrawl_search` + `firecrawl_scrape` | 成功抓取 8/3 深度專訪與中期計畫上修全文 |
+| **Yahoo! Finance JP 掲示板** | 頁面動態渲染與反爬 | 依 §2 通用抓取規則使用 Bright Data `scrape_as_markdown` | 成功提取 8/26~8/31 完整討論貼文與情緒統計 |
+
+---
+
+## 3. 資料缺失說明
+
+- **財報部分**：
+  - `8002 丸紅`：2025、2026 年報，2027/3 期 Q1 季報（2026-08-03 發布）已全數齊備且格式合規。下一次 2027/3 期 Q2（中間期）決算預定於 2026 年 11 月上旬發布，屆時將有最新季報可下載。
+- **輿情部分**：
+  - 丸紅在日本本地市場關注度極高，涵蓋日文新聞、機構券商評等（瑞穗、東海東京等）、Yahoo 掲示板散戶討論（配當不滿、庫藏股評價、市值目標跳票批評）、Reuters 與 Simply Wall St 深度報導；英文 Reddit 散戶社群對日本個別商社討論度極低，均已詳實註記。
+
+---
+
+## 4. 異常檔案刪除紀錄
+
+- 本地現有 Markdown 財報均無 CID 亂碼與異常，無需清理或刪除。
+
+---
+
+## 5. 本次執行使用的 MCP（強制填寫）
+
+| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
+| :--- | :--- | :--- |
+| **Bright Data** (`brightdata`) | `scrape_as_markdown` | 抓取 Yahoo! Finance JP 掲示板 (8002.T/bbs)、株探 (Kabutan 8002) 與 みんかぶ (MINKABU) 最新頁面 |
+| **Firecrawl** (`firecrawl-mcp`) | `firecrawl_search`, `firecrawl_scrape` | 搜尋並抓取 Reuters 8/3 丸紅專訪全文與 Simply Wall St 估值報告 |
+| **Apify** (`apify`) | `call-actor` (`trudax/reddit-scraper-lite`), `get-dataset-items` | 檢索 Reddit 英文社群關於 Marubeni 之討論串 |
+| **Exa** (`exa`) | `web_search_exa` | 搜尋 Kabutan 8002 最新新聞與丸紅官方發布動態 |
+
+
