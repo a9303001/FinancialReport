@@ -161,3 +161,58 @@
 | **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 執行 Convert2md 轉換檢查驗證流程 |
 | **內建工具 (pwsh / WebSearch / File)** | `run_command`, `search_web`, `write_to_file`, `view_file`, `list_dir` | 執行 CMoney 官方 API 檢索、全網多來源檢索及檔案維護管理 |
 
+---
+---
+
+# 任務執行最終報告 - 2026/08/31（排程輪替執行：第 19 輪）
+
+- **執行日期**：2026-08-31
+- **輪替日期編號**：19
+- **執行標的**：`EVTC` EVERTEC, Inc.
+- **本地資料夾**：`EVTC/`
+- **所屬市場**：美股 (NYSE: EVTC)
+
+---
+
+## 1. 成功紀錄
+
+| 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
+| :--- | :--- | :--- | :--- |
+| `EVTC` | SEC EDGAR / 官網 IR | `EVTC_AnnualReport_2024.md` | 2024 年報 (Form 10-K，本地已完整收錄) |
+| `EVTC` | SEC EDGAR / 官網 IR | `EVTC_AnnualReport_2025.md` | 2025 年報 (Form 10-K，本地已完整收錄) |
+| `EVTC` | SEC EDGAR / 官網 IR | `EVTC_Quarter_2026Q2.md` | 2026 Q2 季報 (Form 10-Q，截至 2026-06-30，發布日 2026-08-06，本地已完整收錄且為最新) |
+| `EVTC` | SEC EDGAR (Form 8-K/4)、Seeking Alpha、Yahoo Finance、MarketBeat、Reddit (r/StockTitan, r/Quantisnow)、CMoney / 富途牛牛 | `EVTC/202608_輿情新聞.md` | 輿情與重大新聞彙整（涵蓋 2026 Q2 財報營收超預期年增 20%、上調全年營收指引至 10.85~10.95 億美元、Dimensa 併購整合綜效、智利 Transbank 與墨西哥 Clip 新約、股票回購擴大至 1.5 億美元、5月資安事件 Form 8-K 後續、8月 Form 4 內部人持股處分、華爾街目標價區間 $30~$40 / 平均 $35.00~$35.60 及華語市場護城河評價） |
+
+---
+
+## 2. 失敗或被擋網站
+
+- **來源**: Apify Reddit Actor (`trudax/reddit-scraper-lite`)
+- **原因**: 帳號月度額度限制 (`Monthly usage hard limit exceeded`)
+- **處理方式**: 依 §2 通用抓取規則 fallback 採用 Firecrawl search (site:reddit.com) 與 search_web 檢索，成功取得 Reddit (`r/StockTitan`, `r/Quantisnow`) 針對 EVTC 2026 Q2 財報發布與全年指引上修之真實討論與原文。
+
+---
+
+## 3. 資料缺失說明
+
+- **財報資料**：經 `sec-edgar-mcp` 實時檢索確認，EVTC 最新 10-Q 季報為 2026 Q2（申報日 2026-08-06，報告期截至 2026-06-30），最新 2 份 10-K 年報（2024、2025）均已完整收錄於本地，無資料缺失。
+- **輿情資料**：已完整涵蓋美股主流財經媒體、SEC 官方申報（8-K / 4）、華爾街券商評級與目標價、Reddit 投資社群與華語討論區觀點，資料詳實完整。
+
+---
+
+## 4. 異常檔案刪除紀錄
+
+- 本次無小於 10KB、無公司名稱或 CID 亂碼過多之異常檔案刪除。Convert2md 掃描確認目前無待轉換之 PDF/HTML 檔案。
+
+---
+
+## 5. 本次執行使用的 MCP（強制填寫，無則註明「未使用」）
+
+| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
+| :--- | :--- | :--- |
+| **sec-edgar-mcp** | `get_cik_by_ticker`, `get_company_info`, `get_recent_filings`, `analyze_8k`, `get_filing_content`, `analyze_form4_transactions` | 查詢並分析 EVTC 最新 SEC Filings（Form 10-Q, 8-K 資安公告, 8 月 Form 4 內部人交易） |
+| **Firecrawl** | `firecrawl_search` | 檢索 Reddit (`site:reddit.com`) 取得最新社群貼文與 Q2 業績討論 |
+| **Apify** | `call-actor` (`trudax/reddit-scraper-lite`) | 嘗試呼叫 Reddit scraper（因配額超限記錄並 fallback） |
+| **PyMuPDF4LLM** | `convert_pdf_to_markdown` | 執行 Convert2md 掃描轉換驗證流程 |
+| **內建工具 (pwsh / WebSearch / File)** | `run_command`, `search_web`, `replace_file_content`, `view_file`, `list_dir` | 檢索華爾街目標價、驗證財報與更新輿情維護 |
+
