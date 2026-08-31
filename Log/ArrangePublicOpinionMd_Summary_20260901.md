@@ -1,4 +1,4 @@
-# ArrangePublicOpinionMd 執行報告 2026-09-01 00:01
+# ArrangePublicOpinionMd 執行報告 2026-09-01 00:33
 
 > git 可用，刪除以 `git rm` 執行，可復原。
 
@@ -7,12 +7,12 @@
 | 指標 | 數量 |
 | :--- | :--- |
 | 掃描公司資料夾數 | 41 |
-| 掃描 `.md` 總數 | 320 |
-| 判定為輿情檔 | 37 |
+| 掃描 `.md` 總數 | 316 |
+| 判定為輿情檔 | 31 |
 | 排除：年報／季報／公告 | 191 |
 | 排除：分析報告／系統檔 | 52 |
-| 產生／更新的彙整檔數 | 34 |
-| 已刪除的原始檔數 | 9 |
+| 產生／更新的彙整檔數 | 30 |
+| 已刪除的原始檔數 | 3 |
 | 待人工確認（灰色地帶） | 2 |
 
 
@@ -21,15 +21,14 @@
 | 公司 | 年份 | 彙整檔 | 本次併入 | 已刪除 | 備註 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 00386中石化 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
-| 00546阜豐 | 2026 | 2026_PublicOpinion.md | 2 | 2 | — |
+| 00546阜豐 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 00857中石油 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 00883中國海洋石油 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 00941中國移動 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
-| 01426春泉Reit | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 01816中廣核電力 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
+| 01426春泉Reit | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
+| 01816中廣核電力 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
 | 02318中國平安 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 03606福耀玻璃 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 1264德麥 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
 | 1301極洋 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 2245詠勝昌 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 2249湧盛 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
@@ -48,10 +47,7 @@
 | 8433弘帆 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 87001匯賢Reit | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 9435光通訊 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
-| 9503關西電力 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
 | AES-KY | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
-| CF | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| EVTC | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
 | PBR巴西石油 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | UHS | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 
@@ -138,6 +134,7 @@
 | 1264德麥 | 1264_AnnualReport_2024.md | 年報／季報／公告／財報 | 黑名單關鍵字「annual」 |
 | 1264德麥 | 1264_AnnualReport_2025.md | 年報／季報／公告／財報 | 黑名單關鍵字「annual」 |
 | 1264德麥 | 1264_Quarter_2026Q2.md | 年報／季報／公告／財報 | 黑名單關鍵字「quarter」 |
+| 1264德麥 | 2026_PublicOpinion.md | 本 Skill 的輸出檔（不併入、不刪除） | §3.1-D |
 | 1264德麥 | hourAnalysisResult.md | 分析報告／系統檔 | 黑名單樣式 `(?i)analysis\|_summary_\|conversion_summary\|_reconciliation_` |
 | 1301極洋 | 1301_Quarter_2027Q1.md | 年報／季報／公告／財報 | 黑名單關鍵字「quarter」 |
 | 1301極洋 | 20260206_Q3決算短信.md | 年報／季報／公告／財報 | 黑名單關鍵字「決算短信」 |
@@ -306,6 +303,7 @@
 | AES-KY | 2026_PublicOpinion.md | 本 Skill 的輸出檔（不併入、不刪除） | §3.1-D |
 | AES-KY | 6781_Quarter_2026Q1.md | 年報／季報／公告／財報 | 黑名單關鍵字「quarter」 |
 | AES-KY | 6781_Quarter_2026Q2.md | 年報／季報／公告／財報 | 黑名單關鍵字「quarter」 |
+| CF | 2026_PublicOpinion.md | 本 Skill 的輸出檔（不併入、不刪除） | §3.1-D |
 | CF | CF_AnnualReport_2024.md | 年報／季報／公告／財報 | 黑名單關鍵字「annual」 |
 | CF | CF_AnnualReport_2025.md | 年報／季報／公告／財報 | 黑名單關鍵字「annual」 |
 | CF | CF_Quarter_2026Q2.md | 年報／季報／公告／財報 | 黑名單關鍵字「quarter」 |

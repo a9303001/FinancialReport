@@ -39,3 +39,47 @@
 | **Bright Data** | `search_engine` | 替代檢索 Reddit 上關於 2026 年福耀玻璃裝配與售後評價 |
 | **Apify** | `call-actor` | 嘗試執行 Reddit 專用爬取 Actor（記錄用量狀態） |
 | **Local File System** | `list_dir`, `view_file`, `replace_file_content` | 檔案系統盤點、日誌寫入與狀態更新 |
+
+---
+
+# 任務執行最終報告 - 2026/09 (Round 23)
+
+- **執行日期**：2026-09-01
+- **輪替日期編號**：23（上一輪：22）
+- **目標公司**：`01816 中廣核電力` (資料夾: `01816中廣核電力`)
+
+---
+
+## 1. 成功紀錄
+| 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
+| :--- | :--- | :--- | :--- |
+| `01816 中廣核電力` | 港交所披露易 (HKEXnews) / 深交所 (SZSE) / 公司官網 IR | `01816_AnnualReport_2024.md`<br>`01816_AnnualReport_2025.md`<br>`01816_Quarter_2026Q1.md`<br>`01816_Quarter_2026H1.md` | 財報盤點完備（2024、2025 年報，2026 Q1、2026 H1 中期業績公告均已齊全，完整 2026 中期報告冊預計 9 月中下旬於港交所刊發） |
+| `01816 中廣核電力` | 雪球 (Xueqiu)、東方財富股吧 (Eastmoney Guba)、富途牛牛、智通財經、美銀研報、Reddit | `202609_輿情新聞.md`（已自動併入 `2026_PublicOpinion.md`） | 輿情收集成功（涵蓋 2026-06 至 2026-09 過去 3 個月最新討論：Q2 淨利逆勢反彈 +15%、惠州 1/2 號與蒼南 1 號商運投產、惠州 5/6 號獲國務院核准、廣西核電電價機制修復、低成本中票融資及美銀上調目標價至 4.0 港元） |
+
+---
+
+## 2. 失敗或被擋網站
+- **來源**: `reddit.com` (Apify Reddit Actor `trudax/reddit-scraper-lite`)
+- **原因**: Apify 提示月度用量硬上限限制（`Monthly usage hard limit exceeded`）。
+- **已依 §2 換過的 MCP**: 依 §2.1 替代路徑切換至內建搜尋檢索，確認海外社群主要將其納入 Utility/Nuclear Energy Thesis 討論，無獨立專屬個股新帖。
+- **雪球 / 東方財富股吧**: 因前端 JS 動態渲染，依 §2.7 直接使用 Bright Data `scrape_as_markdown` 順利取得真實頁面內容。
+
+---
+
+## 3. 資料缺失說明
+- **2026 中期報告完整 PDF 冊子**：中廣核電力董事會已於 2026-08-25 發布中期業績公告（已完整收錄於 `01816_Quarter_2026H1.md`），港交所完整版中期報告冊預計 9 月刊發，目前數據無缺失。
+
+---
+
+## 4. 異常檔案刪除紀錄
+- 無（無異常損毀或 <10KB 檔案）。
+
+---
+
+## 5. 本次執行使用的 MCP（強制填寫，無則註明「未使用」）
+| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
+| :--- | :--- | :--- |
+| **Bright Data** | `scrape_as_markdown` | 抓取雪球（01816 / 003816）個股討論、深度專欄長文與東方財富股吧帖子內容 |
+| **Apify** | `call-actor` | 嘗試執行 Reddit 專用爬取 Actor（記錄用量狀態） |
+| **Local File System / Python** | `list_dir`, `view_file`, `replace_file_content`, `run_command` | 檔案系統盤點、輿情彙整腳本執行 (`arrange_public_opinion.py`)、日誌更新與 Git 推送 |
+
