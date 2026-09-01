@@ -1,4 +1,4 @@
-/goal
+/boost /goal
 # 香港 REIT 殖利率前 10 名篩選與分析（HK REIT Screener · Gemini 版）
 > **規格檔**：`Routines_HkReit_gemini.md`（每次執行前必讀）
 > **主結果檔**：`hkReitScreenerResult/0.HkReitResult_gemini.md`

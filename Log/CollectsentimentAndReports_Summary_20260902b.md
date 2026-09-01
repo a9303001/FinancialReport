@@ -56,3 +56,4 @@
 - **狀態**：🔄 執行中
 - **參數**：`COMPANY_FOLDER`=`9435光通訊`, `OUTPUT_FILENAME`=`hourAnalysisResult.md`
 - **EXTRA_ANALYSIS**：財報美元→日元換算、新增/減少投資標的、SBI・光基金進度、業務改善勧告對 EPS 影響
+
