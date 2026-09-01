@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "enableAllProjectMcpServers": true,
   "permissions": {
-    "defaultMode": "auto",
+    "defaultMode": "bypassPermissions",
     "allow": [
       "mcp__brightdata",
       "mcp__brightdata__*",
@@ -23,7 +23,15 @@
       "mcp__Exa",
       "mcp__Exa__*",
       "WebSearch",
-      "WebFetch"
+      "WebFetch",
+      "*",
+      "mcp__*",
+      "read_file(*)",
+      "write_file(*)",
+      "read_url(*)",
+      "command(*)",
+      "PowerShell(*)",
+      "Bash(*)"
     ]
   }
 }

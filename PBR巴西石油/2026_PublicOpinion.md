@@ -2,7 +2,7 @@
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
 > 不含年報、季報、公司公告 report。
-> 最後彙整時間：2026-09-01 00:46｜本次併入：0 檔｜累計併入：9 檔
+> 最後彙整時間：2026-09-01 23:32｜本次併入：1 檔｜累計併入：10 檔
 
 ## 目錄
 
@@ -15,8 +15,11 @@
 - [2026-07 · Xueqiu](#2026-07--xueqiu)
 - [2026-07 · 輿情_20260725](#2026-07--輿情_20260725)
 - [2026-08 · 輿情新聞](#2026-08--輿情新聞)
+- [2026-09 · 輿情新聞](#2026-09--輿情新聞)
 
 <!-- body:start -->
+
+
 
 
 
@@ -625,5 +628,103 @@
 - **利多主軸**：Q2 2026 創紀錄獲利（淨利 US$10.4B、+97%）、產量與煉廠使用率破紀錄、赤道邊緣 FZA-M-59 重大石油發現、去槓桿（1.14x）、高股息（TTM 殖利率約 7.6%）。
 - **利空/隱憂主軸**：巴西政府干預與 2026 年 10 月大選帶來的燃油政策性定價風險、政府抽成為股東股利的 5 倍、去槓桿多來自 EBITDA 分母（油價回落即反轉）、外資股利 10% 預扣稅、股利屬「公式化」非慷慨、一次性項目使 headline 淨利波動、亞馬遜河口鑽探成本高（環境敏感）。
 - **多空分歧**：華語圈（雪球）偏多、強調估值最被低估；美股散戶（Reddit）偏空、聚焦治理與政治風險；專業機構（Seeking Alpha / TipRanks）維持 Buy 但點名國營折價與技術面偏弱。
+
+---
+
+## 2026-09 · 輿情新聞
+
+<!-- source-file: 202609_輿情新聞.md | bytes: 6128 | sha1: 689d7a6f1b33 | merged-at: 2026-09-01 -->
+
+### [PBR 巴西石油] 輿情與新聞整理 (2026/09)
+
+- **分析月份**：2026/09
+- **資料範圍**：過去三個月 (2026/06 ~ 2026/09)
+- **最後更新**：2026-09-01 23:35
+
+---
+
+#### [雪球 Xueqiu]
+
+- **抓取時間**：2026-09-01
+- **抓取方式**：brightdata scrape_as_markdown
+- **抓取結果**：✅ 成功
+
+##### 🎯 [主題] 巴西國家石油公司 Petrobras 2026 H1 / Q2 業績總結與產銷分析
+- **來源連結**: [https://xueqiu.com/1716115426/404224130](https://xueqiu.com/1716115426/404224130)
+- **發布時間**: 2026-08-08 06:59
+- **作者**: 给豆豆赚钱
+- **核心觀點與論述**:
+  > "1. 產量：繼續增長，創紀錄。Q2 2026 油氣總產量：334萬桶油當量/天（MMboed），同比：+14.1%，環比Q1：+3.4%。主要增長來自：Búzios油田（P-79平台啟動）、Mero油田（Alexandre de Gusmão）、P-78平台、Maria Quitéria FPSO。
+  > 2. 原油出口：增長明顯。Q2原油及油品出口：120萬桶/天，同比：+41%，相比去年同期約增加：35萬桶/天左右。出口目的地結構：中國仍是重要買家；中國佔比下降；印度、歐洲和其他亞洲市場份額增加。
+  > 3. 國內煉廠運行：Q2 Petrobras提高煉廠利用率至 102.5%，同時成品油進口下降，柴油進口下降約85%，LNG進口下降約42%。
+  > 4. 財務表現：Q2 淨利潤 524億雷亞爾（同比+96%），調整後 EBITDA 938億雷亞爾（同比+79.6%），營收 1695億雷亞爾（同比+42.3%）。
+  > 5. 現金流和股東回報：上半年淨利潤約167億美元，自由現金流約116億美元，宣布分紅174億雷亞爾。"
+- **關鍵要點與社群討論**:
+  - 用戶「百年老韭」討論：「按 Q2 的業績，PE ttm 很低，比較有吸引力。」
+  - 用戶「修行1573」指出：「利潤增長有點低說實話，油價漲了這麼多，長的部分理論上都是超額利潤。」
+  - 作者觀點：重點在於鹽下油田新產能持續投產，出口目的地向印度、歐洲分散，Q3 預期產量進一步提升。
+
+---
+
+#### [Seeking Alpha]
+
+- **抓取時間**：2026-09-01
+- **抓取方式**：firecrawl_search
+- **抓取結果**：✅ 成功
+
+##### 🎯 [主題] Petrobras: Profits And Dividends Soar 100%+ (NYSE:PBR)
+- **來源連結**: [https://seekingalpha.com/article/4934160-petrobras-profits-and-dividends-soar-100-percent-plus](https://seekingalpha.com/article/4934160-petrobras-profits-and-dividends-soar-100-percent-plus)
+- **發布時間**: 2026-08-11
+- **核心觀點與論述**:
+  > "Petróleo Brasileiro S.A. - Petrobras delivered robust Q2 results, with revenues up 60% and net earnings soaring 120% year-over-year, supported by higher oil prices and record production. PBR's production hit a record 3.34 million boe/day, driven by low-cost pre-salt offshore assets, and production growth is expected to continue into H2. PBR trades at a compelling valuation with an earnings yield near 40%; Brazilian elections in October present a potential catalyst for multiple expansion."
+- **關鍵要點**:
+  - Q2 業績受高油價與創紀錄產量雙重推動，營收與淨利潤顯著爆發。
+  - 鹽下深海油田開採成本極具競爭力，預估損益平衡點（breakeven）維持在 50 美元/桶附近。
+  - 當前本益比與估值處於深度折價狀態（盈餘殖利率接近 40%），但需關注 10 月巴西大選帶來的政治不確定性與估值催化。
+
+---
+
+#### [Reddit]
+
+- **抓取時間**：2026-09-01
+- **抓取方式**：brightdata scrape_as_markdown（Apify 額度耗盡後依 §2.1 鏈條切換至 BrightData）
+- **抓取結果**：✅ 成功
+
+##### 🎯 [主題] 'PBR' Petrobras --- after researching its location and particulars, I sold all my shares!
+- **來源連結**: [https://www.reddit.com/r/dividends/comments/1tc26bk/pbr_petrobras_after_researching_its_location_and/](https://www.reddit.com/r/dividends/comments/1tc26bk/pbr_petrobras_after_researching_its_location_and/)
+- **發布時間**: 2026-05 ~ 2026-06
+- **討論看板**: r/dividends
+- **核心觀點與論述**:
+  > "PBR is an Oil and Petroleum company located in Brazil. They are poised for big growth in 2026 and have a history of paying a decent dividend. However there are some BIG PROBLEMs IN Owning this Stock. If you don't live in Brazil, their government will tax foreign investors at 10% (on all dividends paid)... Brazil is corrupt as hell and 'no doubt' gov. admin has got their hands all over this company -- who knows what's going on behind the scenes --- look Elsewhere to invest!"
+- **關鍵要點**:
+  - 散戶投資人對巴西政府向外國投資者課徵 10% 股息預扣稅以及國有控股企業政治干預（國企治理風險）表示高度擔憂。
+  - 儘管營收與產量處於高成長，市場部分資金因擔憂超額分紅政策放緩與政府干預而選擇獲利了結或避開。
+
+---
+
+#### [Moomoo / 富途牛牛]
+
+- **抓取時間**：2026-09-01
+- **抓取方式**：內建搜尋與網頁摘要
+- **抓取結果**：✅ 成功
+
+##### 🎯 [主題] PBR 地緣油價波動與資本開支轉向討論
+- **來源連結**: [https://www.moomoo.com/community/feed](https://www.moomoo.com/community/feed)
+- **發布時間**: 2026-06 ~ 2026-08
+- **核心觀點與論述**:
+  - 股價波動高度受國際原油現貨價格與中東地緣政治溢價連動。6 月因美伊談判傳聞緩解供應擔憂時，PBR 出現短期回調；7-8 月因 Q2 創紀錄產量與高煉廠開工率而強勁反彈。
+  - 市場討論聚焦於 Petrobras 在承包商合約架構（BOT 模式轉換）與 LNG 深海天然氣液化出口亞洲的長線資本配置。
+
+---
+
+#### [PTT 股市板]
+
+- **抓取時間**：2026-09-01
+- **抓取方式**：內建工具 search_web + read_url_content
+- **抓取結果**：⚠️ 無近三個月實質討論
+
+##### 搜尋嘗試紀錄
+- 已搜尋：`site:ptt.cc/bbs/Stock ("巴西石油" OR "PBR") 2026`
+- **結論**：PTT 股市板近三個月內無針對「巴西石油（Petrobras / PBR）」個股的專文討論。搜尋命中之「PBR」關鍵字均為技術指標「股價淨值比（Price-to-Book Ratio）」。如實記錄，無捏造內容。
 
 ---

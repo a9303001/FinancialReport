@@ -1,6 +1,8 @@
-# ArrangePublicOpinionMd 執行報告 2026-09-01 00:46
+# ArrangePublicOpinionMd 執行報告 2026-09-01 23:32
 
 > git 可用，刪除以 `git rm` 執行，可復原。
+>
+> 執行前工作區有 7 個未提交的 `.md` 變更。
 
 ## Section 1 — 統計概覽
 
@@ -11,7 +13,7 @@
 | 判定為輿情檔 | 29 |
 | 排除：年報／季報／公告 | 191 |
 | 排除：分析報告／系統檔 | 52 |
-| 產生／更新的彙整檔數 | 29 |
+| 產生／更新的彙整檔數 | 28 |
 | 已刪除的原始檔數 | 1 |
 | 待人工確認（灰色地帶） | 2 |
 
@@ -45,9 +47,8 @@
 | 8433弘帆 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 87001匯賢Reit | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 | 9435光通訊 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
-| 9503關西電力 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
 | AES-KY | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
-| PBR巴西石油 | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
+| PBR巴西石油 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
 | UHS | 2026 | 2026_PublicOpinion.md | 0 | 0 | — |
 
 
