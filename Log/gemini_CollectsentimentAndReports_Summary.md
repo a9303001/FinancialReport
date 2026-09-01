@@ -1,8 +1,8 @@
-﻿# Rotation Progress — CollectsentimentAndReports
+# Rotation Progress — CollectsentimentAndReports
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 2 |
-| **last_executed_companies** | 00941 中國移動 |
-| **last_executed_time** | 2026-09-02 01:05 |
-| **next_date** | 3 |
+| **last_executed_date** | 3 |
+| **last_executed_companies** | 01426 春泉Reit |
+| **last_executed_time** | 2026-09-02 01:21 |
+| **next_date** | 4 |
