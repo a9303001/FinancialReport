@@ -2,7 +2,7 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 25 |
-| **last_executed_companies** | `PBR.A 巴西石油` |
-| **last_executed_time** | 2026-09-01 23:33 |
-| **next_date** | 26 |
+| **last_executed_date** | 26 |
+| **last_executed_companies** | `1264 德麥` |
+| **last_executed_time** | 2026-09-01 23:35 |
+| **next_date** | 27 |
