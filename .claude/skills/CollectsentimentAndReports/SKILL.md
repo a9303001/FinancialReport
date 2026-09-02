@@ -123,6 +123,7 @@ graph TD
 | Reddit | `reddit.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；**Firecrawl 也會回「we do not support this site」** | **不要照 §2.1 順序逐一試 firecrawl/brightdata/playwright，直接跳到 Apify Reddit Actor**（已驗證最快最準，SOP 見 §2.9） |
 | Reuters | `reuters.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；文章頁常有 DataDome/PerimeterX 真人驗證牆 | 換 `firecrawl_scrape` 抓公司頁通常可讀（能拿到新聞列表與財報摘要）；「Load more」翻頁可能被驗證牆擋，取得已載入部分即可 |
 | Bloomberg | `bloomberg.com` | 搜尋多半只回股價報價頁，深度文章有付費牆 | 屬付費牆限制、非封鎖；MCP 也難突破付費牆，取得摘要即可並在報告註明「付費牆限制」 |
+| X (Twitter) | `x.com` / `twitter.com` | 未登入即封鎖：Firecrawl `firecrawl_scrape`（含 `proxy: stealth`）回 `All scraping engines failed`；Bright Data 需 token 有效；Playwright 需環境有 Chromium | **不要浪費時間逐一試整條 MCP 鏈抓原始頁面**（2026-09-02 實測六種工具全數失敗）。改用 **Firecrawl `firecrawl_search` 搭配 `site:x.com` 運算子**取得索引摘要（注意：`includeDomains: ["x.com"]` 參數實測回傳 0 筆，**必須改用 `site:` 運算子寫在 query 裡**）。索引摘要**不含時間戳**，依 §5.0 不可臆測日期，須標註「⚠️ 為索引摘要、非原始頁面逐字引述」 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
