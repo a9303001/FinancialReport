@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 13 |
-| **last_executed_companies** | 2245 詠勝昌 |
-| **last_executed_time** | 2026-09-02 11:05 |
-| **next_date** | 14 |
+| **last_executed_date** | 14 |
+| **last_executed_companies** | 6121 新普, 6781 AES-KY |
+| **last_executed_time** | 2026-09-02 11:25 |
+| **next_date** | 15 |
 | **stock_analysis_status** | ✅ 成功 |
