@@ -2,10 +2,10 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 29 |
-| **last_executed_companies** | 00883 中國海洋石油 / 00857 中石油 / 00386 中石化 |
-| **last_executed_time** | 2026-09-02 15:05 |
-| **next_date** | 30 |
+| **last_executed_date** | 30 |
+| **last_executed_companies** | 8002 丸紅 |
+| **last_executed_time** | 2026-09-02 15:20 |
+| **next_date** | 1 |
 | **stock_analysis_status** | ✅ 成功 |
 
 ## 執行歷程記錄
@@ -22,3 +22,4 @@
 | 27 | 6902 Denso | ✅ 既有完整 (2026年報+2027Q1) | ✅ 成功 (HUD事業轉讓+Yahoo JP) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:38 | HUD轉讓日本精機聚焦SiC、流通股減6.87%、股息74円殖利率3.85% |
 | 28 | 6605 帝寶 | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (MOPS+CMoney+產業報告) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:50 | 賓士更審判賠縮減、GM 337調查案拆解、PE 8.64倍防禦力 |
 | 29 | 00883 中國海洋石油 / 00857 中石油 / 00386 中石化 | ✅ 既有完整 (2024/2025年報+2026Q1/Q2) | ✅ 成功 (雪球+股吧+Reddit+大行研報) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 15:05 | 2026H1獲利分紅新高、三桶油同口徑比較、油價敏感度與50美元專題拆解 |
+| 30 | 8002 丸紅 | ✅ 既有完整 (2025/2026年報+2027Q1) | ✅ 成功 (8月庫藏股140億円+Kabutan+Yahoo JP+Reddit) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 15:20 | 8月買回285萬股、銅價槓桿EPS+19.5円、五大專題全拆解 |
