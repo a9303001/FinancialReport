@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 16 |
-| **last_executed_companies** | 00546 阜豐 |
-| **last_executed_time** | 2026-09-02 11:48 |
-| **next_date** | 17 |
+| **last_executed_date** | 17 |
+| **last_executed_companies** | 1301 極洋 |
+| **last_executed_time** | 2026-09-02 12:05 |
+| **next_date** | 18 |
 | **stock_analysis_status** | ✅ 成功 |
