@@ -2,16 +2,17 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 2 |
-| **last_executed_companies** | 00941 中國移動 |
-| **last_executed_time** | 2026-09-02 15:48 |
-| **next_date** | 3 |
+| **last_executed_date** | 3 |
+| **last_executed_companies** | 01426 春泉Reit |
+| **last_executed_time** | 2026-09-02 16:05 |
+| **next_date** | 4 |
 | **stock_analysis_status** | ✅ 成功 |
 
 ## 執行歷程記錄
 
 | 執行日期編號 | 公司代號與名稱 | 財報收集狀態 | 輿情收集狀態 | StockAnalysis 產出 | 執行時間 | 備註 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 3 | 01426 春泉Reit | ✅ 既有完整 (2024/2025年報+2026中報+Q2營運) | ✅ 成功 (雪球+股吧+富途+Reddit+大行) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 16:05 | 2026中報實績、RMB/HKD雙幣每股化、NAV折價71%、FFO/AFFO拆解、土地續期成本每股1.15-1.38港元、EPS轉正時間表2027H2-2028 |
 | 2 | 00941 中國移動 | ✅ 既有完整 (2024/2025年報+2026中報) | ✅ 成功 (雪球+股吧+大行研報+PTT+CMoney) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 15:48 | 2026中期業績實績、RMB/HKD雙幣每股化、增值稅稅改衝擊量化、A/H溢價45.4%、算力AIDC暴增486% |
 | 1 | 02318 中國平安 | ✅ 既有完整 (2024/2025年報+2026中報) | ✅ 成功 (雪球+股吧+Seeking Alpha+大行) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 15:35 | 2026中報實績納入、獲利價差財拆解、地產曝險每股化、可轉債稀釋-13.2% |
 | 20 | 4979 OAT | ✅ 既有完整 | ✅ 成功 | ✅ hourAnalysisResult_gemini.md | 2026-09-02 12:55 | 輪轉執行完成 |
