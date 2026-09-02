@@ -1,17 +1,18 @@
-# Rotation Progress — CollectsentimentAndReports
+﻿# Rotation Progress — CollectsentimentAndReports
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 30 |
-| **last_executed_companies** | 8002 丸紅 |
-| **last_executed_time** | 2026-09-02 15:20 |
-| **next_date** | 1 |
+| **last_executed_date** | 1 |
+| **last_executed_companies** | 02318 中國平安 |
+| **last_executed_time** | 2026-09-02 15:35 |
+| **next_date** | 2 |
 | **stock_analysis_status** | ✅ 成功 |
 
 ## 執行歷程記錄
 
 | 執行日期編號 | 公司代號與名稱 | 財報收集狀態 | 輿情收集狀態 | StockAnalysis 產出 | 執行時間 | 備註 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | 02318 中國平安 | ✅ 既有完整 (2024/2025年報+2026中報) | ✅ 成功 (雪球+股吧+Seeking Alpha+大行) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 15:35 | 2026中報實績納入、獲利價差財拆解、地產曝險每股化、可轉債稀釋-13.2% |
 | 20 | 4979 OAT | ✅ 既有完整 | ✅ 成功 | ✅ hourAnalysisResult_gemini.md | 2026-09-02 12:55 | 輪轉執行完成 |
 | 21 | 5306 桂盟 | ✅ 既有完整 (2025年報+2026Q2) | ✅ 成功 (CMoney API+新聞) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 13:05 | 庫存去化落底、本業獲利大增 |
 | 22 | 03606 福耀玻璃 | ✅ 既有完整 (2025年報+2026H1) | ✅ 成功 (雪球+股吧+Reddit) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 13:18 | A/H折價21.15%、高附加值佔比升至59.7% |
