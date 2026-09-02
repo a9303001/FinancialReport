@@ -2,10 +2,10 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 27 |
-| **last_executed_companies** | 6902 Denso |
-| **last_executed_time** | 2026-09-02 14:38 |
-| **next_date** | 28 |
+| **last_executed_date** | 28 |
+| **last_executed_companies** | 6605 帝寶 |
+| **last_executed_time** | 2026-09-02 14:50 |
+| **next_date** | 29 |
 | **stock_analysis_status** | ✅ 成功 |
 
 ## 執行歷程記錄
@@ -20,3 +20,4 @@
 | 25 | PBR.A 巴西石油 | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (雪球+Reddit+小摩研報) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:05 | PBR.A折價9.50%、巴西新稅10%實領9.66%、Q2獲利暴增97% |
 | 26 | 1264 德麥 | ✅ 既有完整 (2025年報+2026Q2) | ✅ 成功 (CMoney API+法說報導) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:18 | 法說三大策略、東南亞獲利增20%、PE 11.9倍折價29% |
 | 27 | 6902 Denso | ✅ 既有完整 (2026年報+2027Q1) | ✅ 成功 (HUD事業轉讓+Yahoo JP) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:38 | HUD轉讓日本精機聚焦SiC、流通股減6.87%、股息74円殖利率3.85% |
+| 28 | 6605 帝寶 | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (MOPS+CMoney+產業報告) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:50 | 賓士更審判賠縮減、GM 337調查案拆解、PE 8.64倍防禦力 |
