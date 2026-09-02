@@ -2,10 +2,10 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 26 |
-| **last_executed_companies** | 1264 德麥 |
-| **last_executed_time** | 2026-09-02 14:18 |
-| **next_date** | 27 |
+| **last_executed_date** | 27 |
+| **last_executed_companies** | 6902 Denso |
+| **last_executed_time** | 2026-09-02 14:38 |
+| **next_date** | 28 |
 | **stock_analysis_status** | ✅ 成功 |
 
 ## 執行歷程記錄
@@ -19,3 +19,4 @@
 | 24 | 9503 關西電力 | ✅ 既有完整 (2025/2026年報+2027Q1) | ✅ 成功 (Yahoo JP+Kabutan+官網) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 13:49 | 乾式貯藏獲核准、美濱3號9/15重啟、十年核電與EPS預估拆解 |
 | 25 | PBR.A 巴西石油 | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (雪球+Reddit+小摩研報) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:05 | PBR.A折價9.50%、巴西新稅10%實領9.66%、Q2獲利暴增97% |
 | 26 | 1264 德麥 | ✅ 既有完整 (2025年報+2026Q2) | ✅ 成功 (CMoney API+法說報導) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:18 | 法說三大策略、東南亞獲利增20%、PE 11.9倍折價29% |
+| 27 | 6902 Denso | ✅ 既有完整 (2026年報+2027Q1) | ✅ 成功 (HUD事業轉讓+Yahoo JP) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:38 | HUD轉讓日本精機聚焦SiC、流通股減6.87%、股息74円殖利率3.85% |
