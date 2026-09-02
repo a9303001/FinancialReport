@@ -1,18 +1,19 @@
-# Rotation Progress — CollectsentimentAndReports
+﻿# Rotation Progress — CollectsentimentAndReports
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 7 |
-| **last_executed_companies** | UHS Universal Health Services |
-| **last_executed_time** | 2026-09-02 17:05 |
-| **next_date** | 8 |
+| **last_executed_date** | 8 |
+| **last_executed_companies** | 2832 台產 |
+| **last_executed_time** | 2026-09-02 17:18 |
+| **next_date** | 9 |
 | **stock_analysis_status** | ✅ 成功 |
 
 ## 執行歷程記錄
 
 | 執行日期編號 | 公司代號與名稱 | 財報收集狀態 | 輿情收集狀態 | StockAnalysis 產出 | 執行時間 | 備註 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 7 | UHS Universal Health Services | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (PR Newswire+S&P+Reddit+券商+雪球) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 17:05 | Talkspace 8.35億美元完成併購、S&P展望升正面、全表每股化(58.94M股)、大而美法案OBBBA分階段量化(2032稅後-$5.57~-$6.19/股)、三年EPS預估 |
+| 8 | 2832 台產 | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (臺灣指數公司+CMoney+PTT+新聞) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 17:18 | 納入臺灣璞玉永續指數、前7月EPS 4.05元突破、減資30%每股化(2.5354億股)、四大EXTRA專題(日勝生館前都更聯貸33.94億/承德新總部20億每股7.89元/IFRS17 PAA核保佔七成/三年EPS 5.70-6.55元) |
+| 7 | UHS Universal Health Services | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (PR Newswire+S&P+Reddit+券商+雪球) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 17:05 | Talkspace 8.35億美元完成併購、S&P展望升正面、全表每股化(58.94M股)、大而美法案OBBBA分階段量化(2032稅後-.57~-.19/股)、三年EPS預估 |
 | 6 | 7203 Toyota | ✅ 既有完整 (2025/2026年報+2027Q1) | ✅ 成功 (Minkabu+Reuters+Reddit+雪球+PTT) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 16:52 | 2027Q1淨利增75.6%但本業減8.8%、每股化全表、1兆円自社株買(每股84.5円)、美加50%關稅/RAV4曝險每股稅前122.5円、小馬智行bZ4X Gen7/Arene OS |
 | 5 | 3445 RS / 688432 有研硅 | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (Yahoo JP+Kabutan+上證路演+巨潮+雪球) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 16:33 | 2026Q2中間決算、重大資產重組全資控股山東有研艾斯12吋、母子公司持股估值倒掛3.45倍、三年產能增72.5% |
 | 4 | 9435 光通訊 | ✅ 既有完整 (2025/2026年報+2027Q1) | ✅ 成功 (Minkabu+Kabutan+Note+SBI+X) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 16:20 | 2027Q1實績純利增30%、全表每股化、SBI公募基金AUM18.25億輕資產模式、Haruene處分影響量化、FT Group完全子公司化 |
