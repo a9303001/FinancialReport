@@ -2,10 +2,10 @@
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 24 |
-| **last_executed_companies** | 9503 關西電力 |
-| **last_executed_time** | 2026-09-02 13:49 |
-| **next_date** | 25 |
+| **last_executed_date** | 25 |
+| **last_executed_companies** | PBR.A 巴西石油 |
+| **last_executed_time** | 2026-09-02 14:05 |
+| **next_date** | 26 |
 | **stock_analysis_status** | ✅ 成功 |
 
 ## 執行歷程記錄
@@ -17,3 +17,4 @@
 | 22 | 03606 福耀玻璃 | ✅ 既有完整 (2025年報+2026H1) | ✅ 成功 (雪球+股吧+Reddit) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 13:18 | A/H折價21.15%、高附加值佔比升至59.7% |
 | 23 | 01816 中廣核電力 | ✅ 既有完整 (2025年報+2026H1) | ✅ 成功 (雪球+東財+美銀/瑞銀) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 13:34 | Q2獲利大增15%、十年機組排期清晰、每度完全成本加價43% |
 | 24 | 9503 關西電力 | ✅ 既有完整 (2025/2026年報+2027Q1) | ✅ 成功 (Yahoo JP+Kabutan+官網) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 13:49 | 乾式貯藏獲核准、美濱3號9/15重啟、十年核電與EPS預估拆解 |
+| 25 | PBR.A 巴西石油 | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (雪球+Reddit+小摩研報) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 14:05 | PBR.A折價9.50%、巴西新稅10%實領9.66%、Q2獲利暴增97% |
