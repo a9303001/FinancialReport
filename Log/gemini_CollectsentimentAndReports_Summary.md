@@ -1,17 +1,18 @@
-﻿# Rotation Progress — CollectsentimentAndReports
+# Rotation Progress — CollectsentimentAndReports
 
 | 欄位 | 值 |
 | :--- | :--- |
-| **last_executed_date** | 8 |
-| **last_executed_companies** | 2832 台產 |
-| **last_executed_time** | 2026-09-02 17:18 |
-| **next_date** | 9 |
+| **last_executed_date** | 9 |
+| **last_executed_companies** | 8433 弘帆 |
+| **last_executed_time** | 2026-09-02 17:35 |
+| **next_date** | 10 |
 | **stock_analysis_status** | ✅ 成功 |
 
 ## 執行歷程記錄
 
 | 執行日期編號 | 公司代號與名稱 | 財報收集狀態 | 輿情收集狀態 | StockAnalysis 產出 | 執行時間 | 備註 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 9 | 8433 弘帆 | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (MOPS+CMoney+PTT+新聞) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 17:35 | 2026H1獲利大逆轉EPS 2.79元(Q2 1.43元)、CB賣回結清無股權稀釋(負債比降至48.72%)、全表每股化(54.506M股)、11項EXTRA專題(美越301關稅淨增2.5%每股影響-0.165元/越南廠折舊每股0.50元與損益轉正/三年EPS 5.60-7.00元) |
 | 8 | 2832 台產 | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (臺灣指數公司+CMoney+PTT+新聞) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 17:18 | 納入臺灣璞玉永續指數、前7月EPS 4.05元突破、減資30%每股化(2.5354億股)、四大EXTRA專題(日勝生館前都更聯貸33.94億/承德新總部20億每股7.89元/IFRS17 PAA核保佔七成/三年EPS 5.70-6.55元) |
 | 7 | UHS Universal Health Services | ✅ 既有完整 (2024/2025年報+2026Q2) | ✅ 成功 (PR Newswire+S&P+Reddit+券商+雪球) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 17:05 | Talkspace 8.35億美元完成併購、S&P展望升正面、全表每股化(58.94M股)、大而美法案OBBBA分階段量化(2032稅後-.57~-.19/股)、三年EPS預估 |
 | 6 | 7203 Toyota | ✅ 既有完整 (2025/2026年報+2027Q1) | ✅ 成功 (Minkabu+Reuters+Reddit+雪球+PTT) | ✅ hourAnalysisResult_gemini.md | 2026-09-02 16:52 | 2027Q1淨利增75.6%但本業減8.8%、每股化全表、1兆円自社株買(每股84.5円)、美加50%關稅/RAV4曝險每股稅前122.5円、小馬智行bZ4X Gen7/Arene OS |
