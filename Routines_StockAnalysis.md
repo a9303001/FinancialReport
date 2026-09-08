@@ -289,9 +289,7 @@ OUTPUT_FILENAME: hourAnalysisResult.md
 - `EXTRA_ANALYSIS`：
   1. 未來5年產能規畫，對eps影響
   2. AI 自駕車對玻璃需求影響?對eps影響?
-  3. 電動車對玻璃需求影響?對eps影響?
-  4. 所有數據要每股化
-
+  3. 每股化,港幣
 
 ---
 
