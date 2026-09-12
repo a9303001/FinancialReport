@@ -1,48 +1,6 @@
 
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-00.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-01.png)
-
 
 (Incorporated in the Cayman Islands with limited liability) (於開曼群島註冊成立的有限公司) Stock code 股份代號: 1044 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-03.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-04.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-06.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-07.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-08.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-09.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-10.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0001-11.png)
-
 
 **Annual Report** 年報 
 
@@ -55,10 +13,6 @@
 has always been the mission of Hengan International. We will continue to adhere to our corporate spirit of “Integrity, Diligence, Innovation and Dedication”. Our goal is “to build an effective corporate management and to develop a high quality, ethical and enthusiastic staff team”. By building an excellent corporate culture, reinforcing our brand image, and focusing on consumer and market need, Hengan International will become international top-tier supplier of consumer goods. 
 
 是恒安國際的使命，我們將繼續發揚「誠信、拼 博、創新、奉獻」的企業精神，以「建立一個高效的 企業管理團隊，培養一支高素質、有職業道德、有 敬業精神的員工隊伍」為目標，締造良好的企業文 化，重塑品牌形象，以消費者和市場為導向，把恒 安國際建設成為國際頂級的家庭生活用品企業。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0002-05.png)
-
 
 **This Annual Report is printed on environmentally friendly paper** 
 
@@ -85,8 +39,6 @@ has always been the mission of Hengan International. We will continue to adhere 
 |**103**|Consolidated Statement of Changes in Equity<br>合併權益變動表|
 |**105**|Consolidated Statement of Cash Flows<br>合併現金流量表|
 |**107**|Notes to the Consolidated Financial Statements<br>合併財務報表附註|
-
-
 
 恒安國際集團有限公司 二零二五年年報 
 
@@ -246,49 +198,11 @@ iPR Ltd. 香港上環 荷李活道151號 英皇荷里活中心5字樓 電話：(
 |Gross gearing ratio (%)|負債比率(%)|**72.3**|62.6|69.8|87.2|95.7|
 |Net gearing ratio (%)|淨負債比率(%)|**(31.7)**|(27.7)|(26.4)|(23.2)|(21.3)|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0007-00.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0007-01.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0007-02.png)
-
-
 #### **Financial Highlights** 財務摘要 
 
 ###### **EARNINGS PER SHARE 每股收益** 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0007-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0007-06.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0007-07.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0007-08.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0007-09.png)
-
-
 ##### **ANALYSIS OF REVENUE BY PRODUCT 按產品類別劃分之收入** 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0007-11.png)
-
 
 <!-- Start of picture text -->
 10.1%<br>61.4%<br>2 0 2 5<br>Personal hygiene products<br>28.5% (including sanitary napkins and<br>disposable diapers)<br>個人衛生用品業務（包括<br>衛生巾及紙尿褲業務）<br>Tissue paper products<br>10.2% 紙巾產品<br>59.2%<br>Others<br>其他<br>2 0 2 4<br>30.6%<br><!-- End of picture text -->
@@ -312,53 +226,11 @@ iPR Ltd. 香港上環 荷李活道151號 英皇荷里活中心5字樓 電話：(
 |shareholders of the<br>Company|應佔利潤|**2,535,047**|2,298,535|2,800,533|1,925,249|3,273,601|
 |Earnings per share<sup>–</sup>basic<br>(RMB)|每股收益 <sup>–</sup> 基本<br>（人民幣元）|**2.227**|2.015|2.415|1.657|2.786|
 
-
-
 ###### **REVENUE 收入** 
 
 RMB million 人民幣百萬元 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-06.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-07.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-08.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-09.png)
-
-
 **PROFIT ATTRIBUTABLE TO SHAREHOLDERS OF THE COMPANY 公司權益持有人應佔利潤** RMB million 人民幣百萬元 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-11.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-12.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-13.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-14.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0008-15.png)
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -398,8 +270,6 @@ RMB million 人民幣百萬元
 |**Net assets attributable to**|**淨資產 **<sup>**–**</sup> **公司權益**||||||
 |**shareholders of the**|**持有人應佔總額**||||||
 |**Company**||**21,751,533**|20,920,950|20,395,840|19,523,607|19,037,040|
-
-
 
 恒安國際集團有限公司 二零二五年年報 
 
@@ -445,10 +315,6 @@ RMB million 人民幣百萬元
 
 ### **Chairman’s Statement 主席報告書** 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0012-01.png)
-
-
 <!-- Start of picture text -->
 Sze Man Bok<br>施文博<br><!-- End of picture text -->
 
@@ -467,10 +333,6 @@ On behalf of Hengan International Group Company Limited (“Hengan International
 For the year ended 31 December 2025, the Group’s revenue recorded slight year-on-year growth to approximately RMB23,068,869,000 (2024: RMB22,669,215,000), outperforming the overall market. Profit attributable to the shareholders of the Company increased by approximately 10.7% to RMB2,546,177,000 (2024: RMB2,298,535,000) during the year. Basic earnings per share amounted to approximately RMB2.227 (2024: RMB2.015). The Group continued to maintain a stable dividend policy and remained committed to creating sustainable returns for its shareholders. The Board of Directors recommended the payment of a final dividend of RMB0.70 per share (2024: RMB0.70 per share), which together with the interim dividend of RMB0.70 per share (2024: RMB0.70 per share), brings the total dividend for the year to RMB1.40 per share (2024: RMB1.40 per share). 
 
 截至二零二五年十二月三十一日止年度，集團的收 入約人民幣23,068,869,000元（二零二四年：人民幣 22,669,215,000元），同比錄得輕微增長，表現較市 場為佳。受益於毛利改善，公司權益持有人應佔利 潤上升約10.3%至約人民幣2,535,047,000元（二零 二四年：人民幣2,298,535,000元）。每股基本收益約 人民幣2.227元（二零二四年：人民幣2.015元）。集團 繼續維持穩定的派息政策，致力於為股東創造可持 續的回報。董事會建議派發末期股息每股人民幣 0.70元，計及中期股息每股人民幣0.70元（二零二四 年：每股人民幣0.70元）後，全年股息為每股人民幣 1.40元（二零二四年：每股人民幣1.40元）。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0013-03.png)
-
 
 Hengan actively capitalises on the growth opportunities presented by emerging domestic consumption patterns, continuing to cultivate e-commerce platforms and actively expand into new retail markets, leveraging artificial intelligence and innovative technologies to accelerate business development. Through data analysis, the Group precisely targets end customers, further enhancing market share and profitability. Simultaneously, Hengan is continuously strengthening its marketing efforts in traditional channels, expanding its channel coverage and continuously optimising its omni-channel sales strategy to unlock the growth potential of e-commerce and new retail channels. During the year, benefiting from enhanced omni-channel sales effectiveness and a strong brand reputation, e-commerce and new retail channels maintained strong growth, with their sales contribution further increasing to 28.5% of overall sales. 
 
@@ -506,18 +368,6 @@ As a leader in the domestic daily products industry, Hengan remains committed to
 
 Hengan International firmly believes that its employees are its most valuable asset, and is dedicated to fostering an open, inclusive, and diverse work environment. The Group consistently refines its talent cultivation system, creating a comprehensive development roadmap and diversified career advancement pathways to attract and nurture top-tier industry talent. By fully unleashing employee potential, the Group strives to drive the synergistic growth of both the enterprise and its people. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0015-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0015-06.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0015-07.png)
-
-
 Lastly, I would like to take this opportunity to express my sincere gratitude to all shareholders, customers, and partners for their longterm trust and support in Hengan International. I would also like to thank the entire staff for their hard work and dedication over the past year. The future holds both challenges and opportunities. The Group will remain committed to pursuing steady progress, striving to create long-term value and sustainable returns for its shareholders. 
 
 最後，本人謹藉此機會，衷心感謝所有股東、客戶 和合作夥伴對恒安國際的長期信任與支持，也感謝 全體員工在過往一年的辛勤付出。未來挑戰與機遇 並存，集團將堅守穩中求進的方針，為股東持續創 造長遠價值與可持續回報。 
@@ -535,10 +385,6 @@ Chairman
 **13** 
 
 ### **Chief Executive Officer’s Report 行政總裁報告書** 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0016-01.png)
-
 
 <!-- Start of picture text -->
 HUI CHING LAU<br>許清流<br>INDUSTRY DEVELOPMENT AND BUSINESS  行業發展及業務概覽<br>REVIEW<br>In 2025, amid rising uncertainties in the global economic environment  二零二五年，面對全球經濟環境不確定性上升及國<br>and intensifying international trade frictions, China implemented more  際貿易摩擦加劇，國家實施更積極有為的宏觀政<br><!-- End of picture text -->
@@ -607,39 +453,15 @@ To meet consumers’ demand for high-quality hygiene products, Hengan has contin
 
 為迎合消費者對高質量衛生用品的需求，恒安持續 推進產品升級和高端化佈局，集團「七度空間」品牌 高端衛生巾系列年內銷售表現亮眼，採用天山雪域 的稀缺純淨長絨棉的高端衛生巾系列「天山絨棉」， 年內銷售額同比增加約28.7%至人民幣5.7億元，「褲 型」系列衛生巾產品年內銷售額達約人民幣6.9億 元，同比增長約17.9% 。七度空間又推出「蔓越莓 A+ 」有機純棉衛生巾，融合蔓越莓精華，具備12小 時抑菌功能，並採用微膠囊淨味技術，提升使用體 驗。產品設計注重久坐防漏，提升舒適度和安心 感，符合現代女性對高品質健康安全衛生用品的需 求。集團相信，升級及高端版的「七度空間」系列衛 生巾產品將持續貢獻可觀收入，有助於集團擴大市 場份額並提升高端產品佔比，進一步增強衛生用品 業務盈利能力。為滿足高端產品需求增長帶來的產 能需求，集團內坑二期衛生用品綜合生產基地已於 年內量產，為未來業務拓展提供有力支持。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0019-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0019-06.png)
-
-
 恒安國際集團有限公司 **17** 二零二五年年報 
 
 #### **Chief Executive Officer’s Report** 行政總裁報告書 
 
 Additionally, “Q • MO” launched its upgraded “Royal Supreme Softness” diaper series during the year, featuring comprehensive improvements in size and absorption capacity, along with enhanced breathability, helping the Group capture growth opportunities. During the year, “Q • MO” recorded sales of approximately RMB600 million, representing a year-on-year growth of about 9.6%. Furthermore, the Group’s adult diaper business benefited from the expanding domestic adult incontinence products market and rising penetration rates. The adult diaper brand “Elderjoy” (安而康), with its core brand proposition “Brave Aging” (勇闖變老), breaks away from traditional functionoriented positioning, elevating the brand to one of emotional resonance. This innovative approach has received wide recognition across various sectors. During the year, sales of the Group’s adult diapers reached approximately RMB320 million, representing a yearon-year increase of about 5.2%. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0020-02.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0020-03.png)
-
-
 As essential daily necessities, hygiene products continue to drive market expansion in China. The industry is currently at a critical stage of transformation, upgrading, and standardisation. The Group will continue to develop high-quality products, optimise new retail channels, strengthen growth in traditional channels, and promote longterm development while consolidating its leading position. In addition, the Group will pursue a dual high-end strategy across both the infant and adult health care markets, while deepening cooperation with maternity stores, elderly care centres, and hospitals to support the sustainable growth of its adult health care products business. 
 
 此外，「 Q • MO 」年內升級推出「皇家至柔」紙尿褲系 列，在尺寸及吸收量上全面提升，並增強產品透氣 度，助力集團把握增長機遇。年內，「 Q • MO 」銷售 額達約人民幣6.0億元，按年增長約9.6% 。此外，集 團成人紙尿褲業務亦受惠於國內成人失禁用品市場 規模日益壯大，滲透率持續上升，成人紙尿褲「安而 康」品牌「勇闖變老」為核心品牌主張，突破傳統功 能導向，升維至「精神共鳴」，獲得各界高度肯定。 年內，成人紙尿褲銷售額達約人民幣3.2億元，按年 增長約5.2% 。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0020-06.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0020-07.png)
-
 
 作為生活必需品，中國衛生用品市場持續擴容，行 業處於轉型升級與規範化發展的關鍵階段，集團將 繼續開發高品質產品，優化新零售渠道，鞏固傳統 渠道增長，推動長期發展並鞏固領先地位。此外， 集團將繼續以高端化戰略雙線發展嬰幼兒市場及成 人健康護理市場，並加強與母嬰店、養老院及醫院 合作，支持成人健康護理產品業務的長遠發展。 
 
@@ -680,14 +502,6 @@ Driven by the rising trend of “value consumption,” domestic consumers are in
 「絨立方系列」為國內首款採用世界公認的高品質 TAD空氣流乾燥技術的紙巾，舒適性和實用性皆具 顛覆式提升。另外，集團心相印品牌年內推出的「向 野而生」系列，採用100%原生木漿和四層柔厚壓花 技術，結合全球頂奢香氛大師團隊打造親近自然的 鬆弛感，兼具濕水不易破、精緻不分層等功能升 級，提升其便捷性和舒適度。 
 
 The Fluffy Cube series is the first tissue product in China to adopt the internationally recognised high-quality TAD (Through-Air Drying) technology, delivering a breakthrough improvement in both comfort and practicality. In addition, during the year, the Group’s Hearttex (心 相印) brand launched the Embracing Nature (向野而生) series, made with 100% virgin wood pulp and four-ply soft embossed technology. Developed in collaboration with a team of world-class fragrance masters, the series provides a nature-inspired sense of relaxation, while upgraded features such as water resistance and seamless layering enhance convenience and comfort. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0022-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0022-06.png)
-
 
 Hearttex also partnered with Sanrio to introduce co-branded soft pack and bottom-dispensing tissue products, catering to the preferences of younger consumers. Furthermore, the Group’s premium tissue portfolio expanded into new categories such as cotton soft towels, offering comprehensive solutions to meet consumers’ multi-scenario tissue needs. 
 
@@ -872,8 +686,6 @@ In 2025, awards and honours won by the Group were as follows:
 |2024<sup>–</sup>2025 Forbes China Sustainable Development Industrial Enterprises<br>2024<sup>–</sup>2025福布斯中國可持續發展工業企業|Forbes China<br>福布斯中國集團|
 |Top Ten brands Most Chosen by Chinese Consumers<br>Top Ten Fastest-Growing Brands in the Market|Worldpanel Brand Footprint 2025 for the Chinese Market|
 |消費者首選前十品牌、快速增長前十品牌|Worldpanel《2025品牌足跡報告》中國市場榜單|
-
-
 
 - “2025 Tmall Beauty Awards” Annual Top Brand Award, Annual Paper Products Award, Annual Excellence Contribution Award (Hearttex), and Personal Care Annual Marketing Partnership Award (Space7) 
 
@@ -1101,10 +913,6 @@ Hong Kong, 17 March 2026
 
 ##### **董事 執行董事** 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0038-04.png)
-
-
 **Mr. Sze Man Bok** , aged 76, has been the Chairman of the Group and Executive Director of the Company since 1998. He is also a director of most of the subsidiaries of the Group. He is responsible for the Group’s overall corporate direction and business strategy. Mr. Sze is one of the founding shareholders and a member of the Nomination Committee of the Company. Mr. Sze has over 42 years of experience in manufacturing and distribution of consumer products. 
 
 **施文博先生** ，七十六歲，自一九九八年起為本集團 主席兼本公司執行董事，彼亦為本集團大多數附屬 公司的董事，負責制定本集團整體業務的發展方針 及策略。施先生為本公司創辦股東之一和本公司提 名委員會成員。施先生於消費品製造及分銷行業有 超過42年的經驗。 
@@ -1112,10 +920,6 @@ Hong Kong, 17 March 2026
 He is the father of Mr. Sze Wong Kim, an Executive Director of the Company. Mr. Sze has been appointed as an non-executive director of Qinqin Foodstuffs Group (Cayman) Company Limited (stock code 1583) (“Qinqin Foodstuffs”) since 22 March 2016, a company listed on the Main Board of The Stock Exchange of Hong Kong Limited (the “Stock Exchange”). Mr. Sze was appointed as executive director of Wang-Zeng Berhad (“WZB”) on 15 June 2017, a non-wholly owned subsidiary of the Company listed on the Main Market of Bursa Malaysia Securities Berhad with a stock code of 7203. He was re-designated as and has been a non-independent non-executive director of WZB on 25 September 2017. 
 
 彼為本公司執行董事施煌劍先生的父親。施先生自 二零一六年三月二十二日起獲委任為香港聯合交易 所有限公司（「聯交所」）主板上市公司於親親食品集 團（開曼）股份有限公司（股份代號1583）（「親親食 品」）的非執行董事。施先生於二零一七年六月十五 日起獲皇城集團委任為執行董事，皇城集團為本公 司於馬來西亞證券交易所主板上市之非全資附屬公 司（股份代號為7203），彼自二零一七年九月二十五 日起調任並一直擔任皇城集團的非獨立非執行董 事。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0038-09.png)
-
 
 **Mr. Hui Ching Lau** , aged 46, appointed as Executive Director of the Company on 10 December 2020. He was further appointed as Chief Executive Officer of the Company on 18 August 2021. He is also an Authorised Representative, the Chairman of Environmental, Social and Governance Committee, a member of the Remuneration Committee and Nomination Committee. He is a director of most of the subsidiaries of the Group. He has about 24 years of experience in corporate management and is responsible for providing planning, guidance and strategic advice on strategic development and overall management of the Group. He is currently an executive director and chairman of the board of directors of Qinqin Foodstuffs. He is the managing director of Lianjie Investments Group Limited, an investment management company. 
 
@@ -1149,23 +953,11 @@ Mr. Hui is the elder brother of Mr. Hui Ching Chi, an executive director of the 
 
 #### **Directors and Senior Management Profiles** 董事及高級管理層簡介 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0040-01.png)
-
-
 **Mr. Xu Da Zuo** , aged 58, has been an Executive Director of the Company since 26 August 1998. He currently is the Vice President of the Group and responsible for administrative management, capital operation and investment management of the Group. He was the Chief Financial Officer of the Group. Joining the Group in 1985, Mr. Xu has over 41 years of experience in accounting and internal audit. He has the title of senior accountant in the PRC. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0040-03.png)
-
 
 **Mr. Sze Wong Kim** , aged 50, is responsible for overall business strategy of the Group. Before joining the Company as an Executive Director on 1 June 2010, Mr. Sze worked in two accountancy firms in Australia and gained extensive experience in assurance and business advisory work. He started his own business in 2005 on wholesale and 
 
 distribution of branded electronic components and computer accessories products in Hong Kong and overseas markets. Mr. Sze graduated from the University of Technology, Sydney with a Bachelor Degree of Business majoring in accounting and obtained a Master Degree of Commerce in finance from the University of New South Wales, Australia. He was appointed as the Company Secretary and authorised representative of the Company on 30 November 2016 and resigned on 3 January 2017. He is a member of CPA Australia and a fellow member of the Hong Kong Institute of Certified Public Accountants. He is the son of Mr. Sze Man Bok, the Chairman and an executive director of the Company. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0040-06.png)
-
 
 **Mr. Hui Ching Chi** , aged 41, has been an Executive Director of the Company since 1 June 2010. He currently is the Group Vice President and responsible for the Group’s international business development. He was the Director of Supply Chain Management of the Group from 2015 to 2016. Mr. Hui worked in a major international bank in 
 
@@ -1183,17 +975,9 @@ London prior to joining the Group in February 2008. Mr. Hui holds a Law Degree f
 
 #### **Directors and Senior Management Profiles** 董事及高級管理層簡介 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0041-01.png)
-
-
 **Mr. Li Wai Leung** , aged 47, was appointed as Executive Director of the Company and the Chief Financial Officer of the Group on 17 March 2017 and 26 March 2020 respectively. Mr. Li is also the Company Secretary and Authorized Representative of the Company. He is a director of certain subsidiaries of the Group. He has over 25 years of experience in accounting, finance and business advisory work. Before joining the Group on 3 January 2017, Mr. Li worked as the chief financial officer of various sizable PRC based manufacturing companies and as a senior manager in PricewaterhouseCoopers. Mr. Li obtained his bachelor’s degree in Business Administration in Accounting and Finance from the University of Hong Kong. He is currently a fellow member of the Hong Kong Institute of Certified Public Accountants and CPA Australia, a member of the Association of Chartered Certified Accountants from 16 January 2025. Mr. Li was appointed as executive director of WZB on 15 June 2017, an executive committee member of The Canadian Chamber of Commerce in Hong Kong on 30 October 2024, and an independent non-executive director of K W Nelson Interior Design and Contracting Group Limited on 1 January 2025, a company listed on the Stock Exchange of Hong Kong with a stock code of 8411. 
 
 **李偉樑先生** ，四十七歲，彼分別於二零一七年三月 十七日和二零二零年三月二十六日獲委任為本公司 執行董事和本集團財務總監，彼同時為本公司的公 司秘書及授權代表。彼為本集團若干附屬公司的董 事。李先生於會計、財務及商業諮詢有逾二十五年 經驗。於二零一七年一月三日加入本集團前，李先 生曾出任多家中國大型製造業公司的首席財務官及 曾於羅兵咸永道會計師事務所擔任高級經理。李先 生在香港大學取得工商管理（會計及財務）學士學 位。彼現為香港會計師公會和澳洲會計師公會資深 會員，及於二零二五年一月十六日起獲委任為特許 公認會計師公會會員。李先生於二零一七年六月 十五日獲皇城集團委任為執行董事，於二零二四年 十月三十日獲委任為香港加拿大商會執行委員會成 員，於二零二五年一月一日獲委任為K W Nelson Interior Design and Contracting Group Limited的獨 立非執行董事，該公司於香港聯合交易所上市，股 份代號為8411。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0041-04.png)
-
 
 **Mr. Xu Wenmo** , aged 59, has been appointed as an Executive Director of the Company since 24 August 2023. He is currently the Vice President of the Group and is responsible for the Group’s legal management, risk management, and internal and external control of the Group. Mr. Xu joined the Group in 1985 and has 
 
@@ -1207,17 +991,9 @@ accumulated over 37 years of experience in management, marketing and sales of co
 
 ###### **Independent Non-Executive Directors** 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0042-02.png)
-
-
 **Ms. Ada Ying Kay Wong, JP** , aged 66, is an Independent Non-executive Director of the Company appointed in 1998. She is also the Chairlady of the Audit Committee, a member of the Nomination Committee, the S h a r e I n c e n t i v e C o m m i t t e e a n d Remuneration Committee. 
 
 Ms. Wong, a practicing solicitor, is a partner of Philip K. H. Wong, Kennedy Y. H. Wong & Co., Solicitors & Notaries. She is also a culture and creative education advocate. She is the supervisor of HKICC Lee Shau Kee School of Creativity and the council member of Hong Kong Shue Yan University. She was Chair of the Wanchai District Council (2004–2007) and during the period of 20 October 2016 and 19 October 2022, Ms. Wong was a member of Museum Advisory Committee and Art Sub-committee, Museum Advisory Committee. During the period 7 September 2004 and 30 September 2022, she was an independent non-executive director of Pak Fah Yeow International Limited, a company listed on the main board of the Stock Exchange with stock code 0239. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0042-05.png)
-
 
 **Mr. Theil Paul Marin** , aged 71, was appointed as an independent non-executive director on 17 May 2019. He is also a member of the Audit Committee, Nomination Committee and Environmental, Social and Governance Committee, the Chairman of the Remuneration Committee and Share Incentive Committee. He has had 
 
@@ -1241,10 +1017,6 @@ Mr. Theil graduated from Yale University with a Degree of Bachelor of Arts in Ju
 
 #### **Directors and Senior Management Profiles** 董事及高級管理層簡介 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0043-01.png)
-
-
 **Mr. Ho Kwai Ching Mark** , aged 64, is an Independent Non-executive Director of the Company appointed on 1 January 2013. He is also a member of the Audit Committee, the Share Incentive Committee and Remuneration Committee, the Chairman of the Nomination Committee. He is currently the co-founder and CEO of ProMEX Limited, an independent non-executive director of Lee Kee Holdings Limited (stock code 0637), Green Future Food Hydrocolloid Marine Science Company Limited (stock code 1084) and Everbright Grand China Assets Limited (stock code 3699). He was the Chief Operating Officer of Oriental Patron Securities Limited, the Chief Compliance Officer of Hong Kong Mercantile Exchange Limited, the Director of Business Development of Sun Hung Kai Securities Limited and a Director of Phillip Securities (HK) Limited. He was also previously Vice President of Corporate Strategy of Hong Kong Exchanges and Clearing Limited and Head of Compliance of Hong Kong Futures Exchange Limited. He has more than 30 years of experience in the securities and futures industry. 
 
 **何貴清先生** ，六十四歲，彼於二零一三年一月一日 獲委任為本公司獨立非執行董事，並為審核委員 會、股份激勵委員會及薪酬委員會成員和提名委員 會主席。彼現為普域商品市場有限公司的聯合創辦 人和行政總裁，於利記控股有限公司（股份代號為 0637），綠新親水膠體海洋科技有限公司（股份代號 為1084）及光大永年有限公司(股份代號為3699)的獨 立非執行董事。彼曾任職東英亞洲證券有限公司首 席營運總監和香港商品交易所的監察總監，新鴻基 證券有限公司的業務發展總監以及輝立證券（香港） 有限公司的董事。此前，彼曾任香港交易及結算所 有限公司的企業策略部副總裁和香港期貨交易所有 限公司監察部主管，於證券及期貨行業擁有超過 三十年的經驗。 
@@ -1252,10 +1024,6 @@ Mr. Theil graduated from Yale University with a Degree of Bachelor of Arts in Ju
 Mr. Ho received a Bachelor Degree in Social Sciences from the University of Hong Kong in 1984 and is a fellow member of the Association of Chartered Certified Accountants and the Hong Kong Institute of Certified Public Accountants. 
 
 何先生於一九八四年獲香港大學頒授社會科學學士 學位，現為特許公認會計師公會及香港會計師公會 會員。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0043-06.png)
-
 
 **Mr. Chen Chuang** , aged 48, is an Independent Non-executive Director of the Company appointed on 20 May 2022. He is also a member of each of the Remuneration Committee, Audit Committee, Share Incentive Committee, Nomination Committee and Environmental, Social and Governance 
 
@@ -1535,8 +1303,6 @@ For the year ended 31 December 2025, the remuneration of the members of the seni
 |HK$2,000,001 to HK$2,500,000 (equivalent to RMB1,830,540<br>to RMB2,288,175)|港幣2,000,001<sup>–</sup> 港幣2,500,000（相當於<br>人民幣1,830,540元至人民幣2,288,175<br>元）|0|
 |HK$2,500,001 to HK$3,000,000 (equivalent to RMB2,288,176<br>to RMB2,745,810)|港幣2,500,001<sup>–</sup> 港幣3,000,000（相當於<br>人民幣2,288,176元至人民幣2,745,810<br>元）|1|
 
-
-
 恒安國際集團有限公司 **49** 二零二五年年報 
 
 **Corporate Governance Report** 企業管治報告 
@@ -1756,8 +1522,6 @@ The individual attendance records of each Director attendance in person or throu
 |Mr. Theil Paul Marin|保羅希爾先生|4/4|3/3|1/1|1/1|2/2|1/1|1/1|
 |Mr. Chen Chuang|陳闖先生|4/4|3/3|1/1|1/1|2/2|1/1|1/1|
 |Ms. Ada Ying Kay Wong|黃英琦女士|3/4|3/3|1/1|1/1|N/A不適用|1/1|1/1|
-
-
 
 The Company’s external auditor also attended the annual general meeting. 
 
@@ -2107,8 +1871,6 @@ Further discussion and analysis of these activities and an indication of likely 
 |Others|其他|**2,328,978**|**322,960**|2,308,174|247,704|
 |||**23,068,869**|**2,433,456**|22,669,215|2,181,932|
 
-
-
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 **66** 
@@ -2133,8 +1895,6 @@ Further discussion and analysis of these activities and an indication of likely 
 |Hong Kong and Macau|香港及澳門|**1,416,604**|**6.1**|1,394,352|6.2|
 |Overseas|海外|**580,750**|**2.5**|598,068|2.6|
 |||**23,068,869**|**100**|22,669,215|100|
-
-
 
 ##### **RESULTS AND DIVIDEND** 
 
@@ -2210,8 +1970,6 @@ The Group’s financial condition, results of operation, business and prospects 
 ||(iii)|Ineffective brand promotion activities or<br>failure to maintain and promote the<br>brand||(iii)|品牌推廣活動低效或未能維<br>持及提升品牌|
 |Hazard Risks|(i)|Business susceptible to extreme or<br>unseasonable weather conditions|災害風險|(i)|業務易受極端或不合時宜的<br>天氣狀況影響|
 
-
-
 恒安國際集團有限公司 **69** 二零二五年年報 
 
 **Report of the Directors** 董事會報告書 
@@ -2285,8 +2043,6 @@ During the year ended 31 December 2025, the Company repurchased a total of 1,300
 |2 June 2025|2025年6月2日|700,000|21.55|20.90|
 |3 June 2025|2025年6月3日|600,000|22.15|21.55|
 |||1,300,000|||
-
-
 
 As of 31 December 2025, 1,300,000 of the shares repurchased are held as treasury shares by the Company. Subject to compliance with the Listing Rules on the Stock Exchange, the Company may consider using the treasury shares for funding its share incentive schemes, future resales, transfers or cancellation. 
 
@@ -2389,8 +2145,6 @@ Directors’ emoluments are set out on Note 40. The emoluments payable to six se
 |RMB2,288,176 to RMB2,745,810)|（相當於人民幣2,288,176元至人|||
 ||民幣2,745,810元）|**1**|1|
 
-
-
 ##### **EMPLOYMENT AND REMUNERATION POLICY** 
 
 As at 31 December 2025, the Group had approximately 23,000 employees (2024: 24,000 employees). The Group implements remuneration policy, bonus, share options scheme and share award scheme to ensure that pay scales of its employees are rewarded on a performance-related basis within the general framework of the Group’s remuneration. 
@@ -2433,8 +2187,6 @@ As at 31 December 2025, the interests of each director in the shares, short posi
 |Mr. Xu Wenmo<sup>(Note (5))</sup><br>許文默先生<sup>（附註(5)）</sup>|7,917,000|–|80,000|7,997,000|0.69%|
 |Mr. Li Wai Leung<br>李偉樑先生|–|–|120,000|120,000|0.01%|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **75** 
@@ -2476,8 +2228,6 @@ Notes:
 |(7)|The percentage expressed are based on the total number of issued Shares|(7)<br>相關百份比是根據於二零二五年十二月三十一日的|
 ||1,162,120,917 as at 31 December 2025.|已發行股份總數1,162,120,917股計算得出。|
 
-
-
 ###### **Long positions in shares and underlying shares of associated corporation** 
 
 **於相聯法團之股份及相關股份之好倉** 
@@ -2488,8 +2238,6 @@ Notes:
 |---|---|---|---|---|---|
 |Mr. Hui Ching Chi<br>許清池先生|Wang-Zheng Berhad|24,851,707|–|24,851,707|15.52%|
 |Mr. Li Wai Leung<br>李偉樑先生|Wang-Zheng Berhad|18,000|–|18,000|0.01%|
-
-
 
 Note: 
 
@@ -2643,8 +2391,6 @@ The Scheme will remain in force before 17 May 2031.
 ||341,400|–|–|–|(341,400)|–|40.30|21/12/2022|21/12/2024<sup>–</sup>20/12/2025|
 ||455,200|–|–|–|(73,600)|381,600|40.30|21/12/2022|21/12/2025<sup>–</sup>20/12/2026|
 ||32,516,100|–|–|–|(18,309,300)|14,206,800||||
-
-
 
 恒安國際集團有限公司 **81** 二零二五年年報 
 
@@ -2809,8 +2555,6 @@ The register of substantial shareholders maintained under section 336 of part XV
 |TMF (Cayman) Ltd|(4)|Trustee<br>271,892,733 (L)<br>受託人|23.40%|
 |(L)<br>denotes long position||(L)<br>指好倉||
 
-
-
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 **86** 
@@ -2961,8 +2705,6 @@ The percentages of purchases of goods and services for the year attributable to 
 |---|---|
 |– five largest suppliers combined|38.33%|
 
-
-
 None of the directors of the Company or any of their close associates or any shareholders of the Company (which, to the best knowledge of the directors, own more than 5% of the Company’s issued share capital) had any beneficial interest in the Group’s five largest customers and suppliers. 
 
 None of the Directors, their associates or any shareholder (which to the knowledge of the Directors owns more than 5% of the Company’s share capital) had an interest in the major customers or suppliers noted above. 
@@ -2988,8 +2730,6 @@ The Company is not aware of any relief from taxation to which the Shareholders a
 |–最大的供應商|14.7%|
 |---|---|
 |–首五大供應商|38.33%|
-
-
 
 本公司董事或其任何緊密聯繫人或就董事所知擁有 本公司已發行股本5%以上之任何本公司股東均無 擁有本集團五大客戶及供應商之任何實益權益。 
 
@@ -3145,8 +2885,6 @@ Key audit matters are those matters that, in our professional judgment, were of 
 |---|---|
 |關鍵審計事項|本行如何處理關鍵審計事項|
 |**Recognition of revenue from sales of goods**<br>商品銷售收入的確認||
-
-
 
 We identified recognition of revenue from sales of goods as a key audit matter due to the significance of the amount in the Group’s consolidated financial statements as a whole and the large volume of revenue transactions generated from various products. 
 
@@ -3317,8 +3055,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |— Basic|—每股基本收益|10|**RMB2.227**|RMB2.015|
 |— Diluted|—每股攤薄收益|10|**RMB2.227**|RMB2.015|
 
-
-
 恒安國際集團有限公司 **99** 二零二五年年報 
 
 ### **Consolidated Statement of Comprehensive Income 合併綜合收益表** 
@@ -3342,8 +3078,6 @@ For the year ended 31 December 2025
 |Shareholders of the Company|公司權益持有人|**2,448,812**|2,381,489|
 |Non-controlling interests|非控制性權益|**7,565**|3,195|
 |**Total comprehensive income for the year**|本年度總綜合收益|**2,456,377**|2,384,684|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -3387,8 +3121,6 @@ At 31 December 2025 二零二五年十二月三十一日
 |**Non-controlling interests**|非控制性權益||**221,290**|224,631|
 |**Total equity**|總權益||**21,972,823**|21,145,581|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **101** 
@@ -3417,8 +3149,6 @@ At 31 December 2025
 ||||**20,913,940**|16,076,542|
 |**Total liabilities**|總負債||**21,208,776**|18,658,830|
 |**Total equity and liabilities**|權益及負債合計||**43,181,599**|39,804,411|
-
-
 
 The consolidated financial statements on pages 99 to 220 were approved and authorised for issue by the Board of Directors on 17 March 2026 and are signed on its behalf by: 
 
@@ -3461,8 +3191,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |**Balance at 31 December 2025**|於二零二五年||||||||
 ||十二月三十一日||**123,345**|**2,967,648**|**18,660,540**|**21,751,533**|**221,290**|**21,972,823**|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **103** 
@@ -3494,8 +3222,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |**Appropriation to statutory reserves**|撥往法定儲備|26, 27|—|203,545|(203,545)|—|—|—|
 |**Balance at 31 December 2024**|於二零二四年||||||||
 ||十二月三十一日||123,345|2,902,639|17,894,966|20,920,950|224,631|21,145,581|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -3550,8 +3276,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Income tax paid|已付所得稅|**(537,600)**|(730,876)|
 |Net cash generated from operating activities|營運活動產生的淨現金|**3,241,140**|3,072,380|
 
-
-
 恒安國際集團有限公司 **105** 二零二五年年報 
 
 #### **Consolidated Statement of Cash Flows** 合併現金流量表 
@@ -3598,8 +3322,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Effect of foreign exchange rate changes|外幣匯率變動之影響|**(36,638)**|54,051|
 |Cash and cash equivalents at 31 December|十二月三十一日之現金及現金等|||
 ||價物|**5,739,442**|7,445,915|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -3796,16 +3518,12 @@ Depreciation on property, plant and equipment is calculated using the straight-l
 |and fixtures|||
 |Motor vehicles|5|years|
 
-
-
 |樓宇|20年|
 |---|---|
 |機器設備|10–20年|
 |辦公室設備及|5年|
 |傢俬裝置||
 |車輛|5年|
-
-
 
 The assets’ residual values and useful lives are reviewed, and adjusted if appropriate, at the end of each reporting period. 
 
@@ -5084,8 +4802,6 @@ Sales between segments are carried out at terms mutually agreed amongst these bu
 |Others|其他|**2,328,978**|2,308,174|
 |||**23,068,869**|22,669,215|
 
-
-
 Most of the Group companies are domiciled in PRC. The revenue from external customers in PRC accounted for more than 90% of the Group’s total revenue. 
 
 集團主要的業務在中國，超過90%的收益來自 中國的外部客戶。 
@@ -5149,8 +4865,6 @@ The segment information provided to the Executive Directors for the reportable s
 |Profit attributable to shareholders of<br>本公司權益持有人應佔|||||
 |the Company<br>利潤||||**2,535,047**|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **139** 
@@ -5192,8 +4906,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Borrowings|借款||||**15,734,060**|
 |Unallocated liabilities|未分配負債||||**58,448**|
 |Total liabilities|總負債||||**21,208,776**|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -5244,8 +4956,6 @@ The segment information provided to the Executive Directors for the reportable s
 |Amortisation charge of intangible assets|無形資產之攤銷開支|||||
 |(restated)|（重述）|24,431|5|6,652|31,088|
 
-
-
 恒安國際集團有限公司 **141** 二零二五年年報 
 
 #### **Notes to the Consolidated Financial Statements** 合併財務報表附註 
@@ -5279,8 +4989,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Unallocated liabilities (restated)|未分配負債（重述）||||42,186|
 |Total liabilities|總負債||||18,658,830|
 
-
-
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 **142** 
@@ -5312,8 +5020,6 @@ The Group has recognised the following liabilities related to contracts with cus
 |Others|其他|**10,287**|34,026|
 |Total contract liabilities|總合約負債|**86,948**|543,233|
 
-
-
 The following table shows how much of the revenue recognised in the current reporting period related to carried-forward contract liabilities from prior year. 
 
 下表列示於截至本報告年度所確認與已於 上一年度償付的結轉合約負債有關的收益 金額。 
@@ -5324,8 +5030,6 @@ The following table shows how much of the revenue recognised in the current repo
 |Tissue paper products|紙巾產品|**239,212**|324,484|
 |Others|其他|**34,026**|45,527|
 |||**543,233**|540,276|
-
-
 
 恒安國際集團有限公司 二零二五年年報 
 
@@ -5354,8 +5058,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Exchange gains(losses) from operating<br>activities — net|營運匯兌收益╱（損失）–淨額|**4,590**|(98,149)|
 |Others|其他|**605**|38,403|
 |||**1,093,711**|1,207,886|
-
-
 
 Note: 
 
@@ -5409,8 +5111,6 @@ Expenses included in cost of goods sold, selling and distribution costs, adminis
 |distribution costs, administrative expenses<br>and impairment losses (including reversals|行政費用及金融資產減值準<br>備（含減值損失轉回）合計|||
 |of impairment losses) on financial assets||**20,678,484**|20,522,510|
 
-
-
 ###### Note: 
 
 ###### 附註： 
@@ -5447,8 +5147,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |cash equivalents||**(71,516)**|(180,399)|
 |Finance costs, net|財務費用—淨額|**279,224**|383,176|
 
-
-
 For the year ended 31 December 2025, no capitalisation rate was applied to funds borrowed generally and used for the development of construction-in-progress (2024: 2.82% per annum). 
 
 截至二零二五年十二月三十一日止年度，從一 般借款得來並用作開發在建工程之資金所用之 資本化比率為0%（二零二四年：年利率 2.82% ）。 
@@ -5478,8 +5176,6 @@ The amount of income tax expense charged to the consolidated statement of profit
 |—  Tax charge (credit) to profit or loss|—計入損益的稅務|||
 |(Note 29)|費用╱（收益）<br>（附註29）|**122,103**|(22,471)|
 |Income tax expense|所得稅費用|**671,820**|675,187|
-
-
 
 - (a) Taxation on Mainland China income has been calculated on the estimated assessable profit for the year at the rates of taxation prevailing in Mainland China in which the Group’s subsidiaries operate. The Company’s subsidiaries incorporated in Mainland China are subject to Corporate Income Tax at the rate of 25%. 
 
@@ -5522,8 +5218,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Others|其他|**17,778**|19,740|
 |Income tax expense|所得稅費用|**671,820**|675,187|
 
-
-
 - Note:  The average income tax rates for the years ended 31 December 2025 and 2024 represent the weighted average tax rate of the operations in different jurisdictions on the basis of the relative amounts of profit before taxation and the relevant statutory rates. 
 
    - 附註： 截至二零二五年及二零二四年十二月 三十一日止年度的平均所得稅稅率是根 據不同管轄區稅前利潤及有關稅率計 算。 
@@ -5563,8 +5257,6 @@ Basic earnings per share is calculated by dividing the Group’s profit attribut
 |Weighted average number of ordinary|已發行普通股加權平均股數|||
 |shares outstanding (thousands) (note)|（千股）<br>（附註）|**1,138,167**|1,140,558|
 |Basic earnings per share (RMB)|每股基本收益（人民幣元）|**2.227**|2.015|
-
-
 
 Note: 
 
@@ -5607,8 +5299,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |(2024: final dividend of RMB0.70 in|（二零二四年：截至二零二三年|||
 |respect of the year ended 31 December<br>2023) per ordinary share (Note)|十二月三十一日止年度之末期<br>股息每股人民幣0.70元）<br>（附註）|**813,485**|813,485|
 |||**1,626,970**|1,626,970|
-
-
 
 ###### Notes: 
 
@@ -5657,8 +5347,6 @@ Dividends payable to shareholders will be paid in HK$. The exchange rate adopted
 |Equity-settled share-based payment (Note 25)|以股份為基礎之酬金支出<br>（附註25）|**2,513**|8,873|
 |Total employee benefit expense|員工福利費用總計|**2,461,307**|2,418,881|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **151** 
@@ -5688,8 +5376,6 @@ The five individuals whose emoluments were the highest in the Group for the year
 |Discretionary and performance bonuses|酌情花紅及表現花紅|**—**|—|
 |||**2,634**|2,723|
 
-
-
 The emoluments fell within the following bands: 
 
 此等薪酬在下列組合範圍內： 
@@ -5702,8 +5388,6 @@ The emoluments fell within the following bands:
 |to RMB2,736,630; 2025: equivalent|人民幣2,736,630元；2025：相當於|||
 |to RMB2,288,176 to|人民幣2,288,176元至|||
 |RMB2,745,810)|人民幣2,745,810元）|**1**|1|
-
-
 
 For the years ended 31 December 2025 and 2024, no emoluments were paid by the Group to the five highest paid individuals or receivable by them as an inducement to join or upon joining the Group or as compensation for loss of office. 
 
@@ -5739,8 +5423,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |impairment charges||**(2,932,857)**|**(6,329,274)**|**(374,201)**|**(14,026)**|**(9,650,358)**|
 |Net book amount|賬面淨值|**3,798,371**|**5,103,453**|**189,272**|**6,980**|**9,098,076**|
 
-
-
 恒安國際集團有限公司 **153** 二零二五年年報 
 
 #### **Notes to the Consolidated Financial Statements** 合併財務報表附註 
@@ -5769,8 +5451,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Accumulated depreciation and<br>impairment charges|累計折舊及減值|(2,661,847)|(5,986,116)|(337,240)|(13,069)|(8,998,272)|
 |Net book amount|賬面淨值|3,381,164|4,757,896|174,504|6,122|8,319,686|
 
-
-
 Depreciation expenses have been charged to the consolidated statement of profit or loss as follows: 
 
 本集團折舊已於利潤表列賬，其分析如下： 
@@ -5782,8 +5462,6 @@ Depreciation expenses have been charged to the consolidated statement of profit 
 |Selling and distribution costs|推廣及分銷成本|**8,631**|8,383|
 |Administrative expenses|行政費用|**248,324**|236,574|
 |||**951,693**|896,381|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -5822,8 +5500,6 @@ As at 31 December 2025, no property, plant and equipment is pledged as collatera
 |— Non-current|—非流動|**(9,092)**|(9,000)|
 |Total lease liabilities|總租賃負債|**(26,907)**|(23,078)|
 
-
-
 Additions to the right-of-use assets for the year ended 31 December 2025 financial year were RMB135,637,000 (2024: RMB51,425,000). 
 
 於二零二四年度內使用權資產增加人民幣 135,637,000元（二零二四年：人民幣51,425,000元）。 
@@ -5860,8 +5536,6 @@ The consolidated statement of profit or loss shows the following amounts relatin
 |Interest expense (Note 8)|利息開支（附註8）|**1,089**|1,169|
 |Expenses of short-term leases and low-value<br>assets (Note 7)|短期及低價值租賃開支<br>（附註7）|**36,725**|42,594|
 
-
-
 The total cash payment for leases in the year ended 31 December 2025 was RMB58,582,000 (2024: RMB61,169,000), excluding the cash payment for land-use rights. 
 
 於二零二五年十二月三十一日止除為土地使用 權而支付的現金外，年度有關租賃的現金付款 總額為人民幣58,582,000元（二零二四年：人民 幣61,169,000元）。 
@@ -5894,8 +5568,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |impairment charges||**(174,014)**|(158,286)|
 |Net book amount|賬面淨值|**176,580**|181,100|
 
-
-
 The above investment properties are located in Fujian, Guangxi, Sichuan, Chongqing, Guizhou, Shanghai and Tianjin in the PRC, Selangor and Johor, Malaysia, and depreciated on a straight-line basis over 20 to 40 years. 
 
 上述投資性房地產位於中國福建省、廣西省、 四川省、重慶市、貴州省、上海市及天津市和 馬來西亞雪蘭莪州、柔佛州，以直線法按20<sup>–</sup> 40 年折舊。 
@@ -5924,8 +5596,6 @@ Amounts recognised in profit and loss for investment properties are as follows:
 |Direct operating expenses|直接經營成本|**(9,935)**|(8,480)|
 |Net book amount|賬面淨值|**26,724**|31,375|
 
-
-
 Depreciation expenses have been charged to the consolidated statement of profit or loss as follows: 
 
 本集團折舊已於合併利潤表的如下費用列賬： 
@@ -5935,8 +5605,6 @@ Depreciation expenses have been charged to the consolidated statement of profit 
 ||**RMB’000**|RMB’000|
 ||人民幣千元|人民幣千元|
 |Other income and other gains — net<br>其他收入和利得–淨額|**10,188**|8,610|
-
-
 
 ##### **16. CONSTRUCTION-IN-PROGRESS** 
 
@@ -5950,8 +5618,6 @@ Depreciation expenses have been charged to the consolidated statement of profit 
 |Transfer to property, plant and|轉入物業、機器及設備|||
 |equipment (Note 13)|（附註13）|**(1,524,025)**|(1,695,661)|
 |At 31 December|於十二月三十一日|**445,626**|1,287,158|
-
-
 
 During the year ended 31 December 2025, no finance costs were capitalised in construction-in-progress (2024: RMB4,284,000) (Note 8). 
 
@@ -5987,8 +5653,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Accumulated amortisation|累計攤銷|**—**|**(9,723)**|**(46,344)**|**(169,172)**|**(225,239)**|
 |Net book amount|賬面淨值|**488,290**|**1,489**|**12,601**|**78,956**|**581,336**|
 
-
-
 恒安國際集團有限公司 **159** 二零二五年年報 
 
 #### **Notes to the Consolidated Financial Statements** 合併財務報表附註 
@@ -6018,8 +5682,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Cost|成本|488,290|11,212|58,945|248,087|806,534|
 |Accumulated amortisation|累計攤銷|—|(9,068)|(40,450)|(144,427)|(193,945)|
 |Net book amount|賬面淨值|488,290|2,144|18,495|103,660|612,589|
-
-
 
 Amortisation has been charged to administrative expenses in the consolidated statement of profit or loss. 
 
@@ -6059,8 +5721,6 @@ A summary of goodwill by reporting segment is presented below:
 |Others|其他|**8,577**|8,577|
 |||**488,290**|488,290|
 
-
-
 The recoverable amount of the CGUs is determined based on value-in-use calculations. The calculation of goodwill on the tissue paper product segment uses cash flow projections based on financial estimates made by the Directors, with reference to the prevailing market conditions, covering a period of five years and assuming revenue growth rate is 5.0% (2024: 4.0%) and gross profit margins ranging from 23.0% to 25.0% (2024: 20.0% to 25.0%). The long-term growth rate is 2.0% (2024: 2.0%). The cash flows are extrapolated with reference to the production capacity of the cash generating units acquired. The cash flow projections are discounted at a pre-tax discount rate of 13.0% (2024: 13.0%) per annum. Based on management’s assessment results, there was no impairment of goodwill as at 31 December 2025 and 2024 and any reasonable change to the key assumptions would not lead to an impairment. 
 
 現金產出單元的可收回金額根據使用價值計 算。紙巾業務的計算方式利用現金流量預測， 並參考普遍的市場情況，依據董事批核的五年 期財政預算及假設銷售增長率為5.0%（二零 二四年：4.0% ）和毛利率區間在23.0%及25.0% （二零二四年：20.0%至25.0% ）。長期增長率為 2.0%（二零二四年：2.0% ）現金流量採用現金產 出單元的生產力作出換算。現金流量預測乃根 據13.0%（二零二四年：13.0% ）稅前年利率貼 現。基於管理層的評估，截至二零二五年及二 零二四年十二月三十一日止年度，本集團無商 譽減值，且任何合理的關鍵假設變化都不會導 致顯著減值。 
@@ -6089,8 +5749,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Raw materials|原材料|**2,692,433**|2,607,755|
 |Spare parts and consumables|配件及消耗品|**232,486**|257,084|
 |Total|合計|**4,463,723**|4,797,574|
-
-
 
 The cost of inventories recognised as expenses and included in cost of goods sold amounted to RMB12,308,427,000 (2024: RMB12,538,288,000). 
 
@@ -6133,8 +5791,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Trade and bills receivables and other|應收賬款、應收票據及其他|||
 |receivables, prepayments and deposits|應收款，預付賬款及按金|**3,954,063**|3,810,926|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **163** 
@@ -6158,8 +5814,6 @@ Part of the Group’s sales are on open account with credit terms ranging from 3
 |181–365 days|181–365天|**22,630**|47,041|
 |Over 365 days|365天以上|**191,585**|191,641|
 |||**2,505,860**|2,439,672|
-
-
 
 As credit terms are short and most of the trade and bills receivables are due for settlement within one year, the carrying amounts of these balances approximated their fair values as at the end of reporting period. 
 
@@ -6193,8 +5847,6 @@ These amounts represented the fair value of foreign currency forwards and foreig
 |Foreign swap contracts|外匯掉期合約|**(14,360)**|—|
 |**Total**|合計|**21,473**|372|
 
-
-
 Non-hedging derivatives are classified as current assets or liabilities. 
 
 無對沖衍生金融產品分類為流動資產或負債。 
@@ -6215,8 +5867,6 @@ For information about the methods and assumptions used in determining the fair v
 |— Cash and cash equivalents|—現金及現金等價物|**5,739,442**|7,445,915|
 |||**15,615,635**|14,261,723|
 |**Total**|合計|**22,625,389**|18,892,408|
-
-
 
 恒安國際集團有限公司 **165** 二零二五年年報 
 
@@ -6254,8 +5904,6 @@ The carrying amounts of the long-term time deposits and cash and bank balances w
 |Others|其他|**1,882,742**|196,953|
 |**Total**|合計|**15,615,635**|14,261,723|
 
-
-
 The Group’s bank deposits and cash denominated in RMB, US$ and HK$ are mainly deposited with banks in the PRC. The conversion of these RMB-denominated balances into foreign currencies and the remittance of funds out of the PRC are subject to the rules and regulations of foreign exchange control promulgated by the PRC government. 
 
 本集團的人民幣、美元及港幣銀行存款及現金 乃存於國內之銀行。轉換這些人民幣至其他外 幣及把這些資金匯出中國是受到中國政府的外 匯管理法規所監控。 
@@ -6282,8 +5930,6 @@ Financial assets mandatorily measured at fair value through profit or loss inclu
 |**Current assets**|流動資產|||
 |— Listed equity securities|—上市股本證券|**—**|61,149|
 
-
-
 ##### **24. SHARE CAPITAL** 
 
 Ordinary shares, issued and fully paid: 
@@ -6297,8 +5943,6 @@ Ordinary shares, issued and fully paid:
 |At 1 January 2024, 31 December 2024|於二零二四年一月一日、|||
 |and 31 December 2025|二零二四年十二月三十一日及|||
 ||二零二五年十二月三十一日|**1,162,120,917**|**123,345**|
-
-
 
 The Company repurchased its own ordinary shares through the Stock Exchange as follows: 
 
@@ -6314,8 +5958,6 @@ The Company repurchased its own ordinary shares through the Stock Exchange as fo
 |||**HK$**|**HK$**|**RMB$’000**|
 |||港幣|港幣|人民幣千元|
 |June 2025<br>二零二五年六月|**1,300,000**|**21.55**|**20.90**|**25,727**|
-
-
 
 The repurchased ordinary shares are not cancelled and are deemed as treasury shares of the Company. 
 
@@ -6362,8 +6004,6 @@ The Trustee repurchased its own ordinary shares for the Scheme through the Stock
 |2024|
 |---|
 
-
-
 2024 
 
 |Month of repurchases||No. of<br>ordinary|Price paid per s<br>每股價格|hare|Aggregate<br>consideration|
@@ -6377,8 +6017,6 @@ The Trustee repurchased its own ordinary shares for the Scheme through the Stock
 |April 2024|二零二四年四月|3,600,000|26.02|24.19|89,619|
 |May 2024|二零二四年五月|1,000,000|27.07|26.54|26,800|
 |||8,200,000|||214,691|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -6416,8 +6054,6 @@ Movements in the number of share options outstanding and their related weighted 
 |Lapsed or forfeited|已失效|**40.30**|**(415)**|40.30|(729)|
 |Lapsed or forfeited|已失效|**79.20**|**(5,333)**|—|—|
 |At 31 December|於十二月三十一日|**41.43**|**14,207**|47.63|32,516|
-
-
 
 Out of the 14,207,000 outstanding options (31 December 2024: 32,516,000), 14,207,000 options (2024: 16,983,000) were exercisable as at 31 December 2025. 
 
@@ -6458,8 +6094,6 @@ Based on fair value of the underlying ordinary shares, the Group uses binomial m
 |Note:<br>The expected volatility, m<br>of expected share price|easured as the standard deviation<br>returns, is determined based on|附註：<br> 預期波動率<br>差衡量，根|，以預期股價回報的標準<br>據公司股票每週平均交易|
 |the average weekly tradin|g price volatility of the shares of|價格波動率|確定。|
 
-
-
 Note: The expected volatility, measured as the standard deviation of expected share price returns, is determined based on the average weekly trading price volatility of the shares of the Company. 
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
@@ -6492,8 +6126,6 @@ Share options outstanding at the end of the year have the following expiry dates
 |Expiry date<sup>—</sup>17 January 2026|到期日 <sup>—</sup> 二零二六年一月十七日|41.48|**13,825**|15,078|
 |Expiry date<sup>—</sup>20 December 2026|到期日 <sup>—</sup> 二零二六年十二月二十日|40.30|**382**|455|
 ||||**14,207**|32,516|
-
-
 
 The total amount of the fair value of share options granted to Directors and selected employees is expensed over the vesting period. The Company’s share-based compensation expense for the year ended 31 December 2025 amounted to RMB1,799,000 (2024: RMB8,075,000) (Note 12), and no remaining unamortised fair value of approximately RMB: Nil (2024: RMB1,793,000) will be charged to the consolidated statement of profit or loss in the future years. 
 
@@ -6569,8 +6201,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |At 31 December 2025|於二零二五年||||||||
 ||十二月三十一日|**(25,727)**|**(565,208)**|**1,922**|**2,863,140**|**453,960**|**239,561**|**2,967,648**|
 
-
-
 恒安國際集團有限公司 **173** 二零二五年年報 
 
 #### **Notes to the Consolidated Financial Statements** 合併財務報表附註 
@@ -6599,8 +6229,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Liquidation of a subsidiary|清算附屬公司|—|—|(40)|—|(77,394)|(77,434)|
 |At 31 December 2024|於二零二四年十二月|||||||
 ||三十一日|(564,446)|1,922|2,687,247|452,120|325,796|2,902,639|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -6645,8 +6273,6 @@ Notes:
 |Liquidation of a subsidiary|清算附屬公司|**7,281**|40|
 |At 31 December|於十二月三十一日|**18,660,540**|17,894,966|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **175** 
@@ -6673,8 +6299,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |||**15,617,715**|10,669,787|
 |Total borrowings|總計|**15,734,060**|13,089,848|
 
-
-
 ###### **(a) Bank loans** 
 
 The carrying amounts of the bank borrowings are denominated in the following currencies: 
@@ -6689,8 +6313,6 @@ The carrying amounts of the bank borrowings are denominated in the following cur
 |HK$|港幣|**2,023,213**|3,828,249|
 |Other currencies|其他貨幣|**75,465**|107,336|
 |||**12,034,060**|13,089,848|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -6717,8 +6339,6 @@ At 31 December, the Group’s long-term bank borrowings are repayable as follows
 |Between 1 and 2 years|一年到兩年|**78,276**|2,350,164|
 |Between 2 and 3 years|兩年到三年|**38,069**|69,897|
 |||**116,345**|2,420,061|
-
-
 
 As at 31 December 2025, the effective interest rate of the Group’s bank loans and other borrowings is approximately 2.01% (2024: 2.82%) per annum. 
 
@@ -6769,8 +6389,6 @@ papers at the end of the reporting period:
 |25恒安國際SCP005（科創債）|**1.68%**|**179 days**<br>**179**天|**24 April 2026**<br>二零二六年四月二十四日|**500,000**|
 |||||**2,700,000**|
 
-
-
 As at 31 December 2025, the carrying amounts of super short-term commercial papers recognised in the consolidated financial statements approximate their fair values. 
 
 截至二零二五年十二月三十一日，綜合財 務報表中確認的超短期融資券賬面值與公 允價值相若。 
@@ -6807,12 +6425,8 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |||180天|二零二四年九月四日||
 |24恒安國際SCP002|2.10%|182 days<br>182天|11 September 2024<br>二零二四年九月十一日|2,500,000|
 
-
-
 |5,000,000|
 |---|
-
-
 
 ###### **(c) Corporate bond** 
 
@@ -6860,8 +6474,6 @@ The analysis of deferred tax assets and deferred tax liabilities are as follows:
 |Exchange realignment|外幣折算差額|**14**|5|
 |At 31 December|於十二月三十一日|**216,461**|338,550|
 
-
-
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 **180** 
@@ -6890,8 +6502,6 @@ The movements in the deferred tax assets and liabilities during the year, withou
 |(Charge) credit to profit or loss|在合併利潤表中（扣除）╱<br>貸記|**(39,811)**|5,669|**10,831**|3,686|**(77,085)**|(16,183)|**(106,065)**|(6,828)|
 |At 31 December|於十二月三十一日|**96,254**|136,065|**69,980**|59,000|**219,626**|296,712|**385,860**|491,777|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **181** 
@@ -6918,8 +6528,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Currency translation differences|外幣折算差額|**—**|—|**—**|—|**134**|92|**—**|48|**134**|140|
 |Charge (credit) to profit or loss|在合併利潤表中扣除╱<br>（貸記）|**19,390**|(18,783)|**(2,040)**|(2,040)|**(1,312)**|(1,199)|**—**|(7,277)|**16,038**|(29,299)|
 |At 31 December|於十二月三十一日|**141,746**|122,356|**27,301**|29,341|**352**|1,530|**—**|—|**169,399**|153,227|
-
-
 
 Deferred income tax assets are recognised for tax losses carried forward to the extent that realisation of the related tax benefit through the future taxable profits is probable. The Group did not recognise deferred income tax assets of RMB2,400,000 (2024: RMB12,996,000) in respect of losses amounting to RMB14,548,000 (2024: RMB78,767,000), which are not subject to expiration and can be carried forward against future taxable income. 
 
@@ -6954,8 +6562,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Trade payables and other payables and|應付賬款和其他應付款及|||
 |accrued charges|預提費用|**5,005,999**|4,686,666|
 
-
-
 The following is an aged analysis of trade payables are presented based on invoice date. 
 
 應付賬款之賬齡根據發票日期計算之賬齡分析 如下： 
@@ -6967,8 +6573,6 @@ The following is an aged analysis of trade payables are presented based on invoi
 |181<sup>–</sup>365 days|181<sup>–</sup>365天|**20,527**|24,014|
 |Over 365 days|365天以上|**2,442**|5,327|
 |||**3,102,737**|3,044,835|
-
-
 
 恒安國際集團有限公司 二零二五年年報 
 
@@ -6996,8 +6600,6 @@ The carrying amounts of trade payables were denominated in the following currenc
 |RMB|人民幣|**1,364,852**|1,231,118|
 |Other currencies|其他|**28,334**|15,471|
 |||**3,102,737**|3,044,835|
-
-
 
 ##### **31. CAPITAL RISK MANAGEMENT** 
 
@@ -7044,8 +6646,6 @@ During the year ended 31 December 2025, the Group’s strategy was to maintain a
 |Total equity excluding non-controlling interests|總權益撇除非控制權益|**21,751,533**|20,920,950|
 |Net gearing ratio|淨負債比率|**N/A**|N/A|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **185** 
@@ -7088,8 +6688,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |— Borrowings (Note 28)|—借款（附註28）|**15,734,060**|13,089,848|
 |Derivative financial instruments (Note 21)|衍生金融工具（附註21）|**14,360**|—|
 |||**19,399,841**|16,672,627|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -7255,8 +6853,6 @@ At 31 December 2025, all restricted bank deposits and bank balances were placed 
 |foreign-owned banks|外資銀行|**3,648,716**|1,240,751|
 |||**22,625,482**|18,892,522|
 
-
-
 Note: Big 4 domestic banks comprise Industrial and Commercial Bank of China Limited, Agricultural Bank of China Limited, Bank of China Limited and China Construction Bank Corporation. 
 
 附註： 四大國有銀行包括：中國工商銀行、 中國農業銀行、中國銀行及中國建設 銀行。 
@@ -7311,8 +6907,6 @@ On that basis, the loss allowance as at 31 December 2025 was determined as follo
 |Expected loss rate|預期虧損率|0.29%|27.00%|86.86%||
 |Loss allowance|虧損撥備|6,356|12,701|166,457|185,514|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **191** 
@@ -7347,8 +6941,6 @@ The closing loss allowances for trade and bills receivables as at 31 December re
 |Exchange adjustments|外幣折算差額|**48**|83|
 |Closing loss allowance at 31 December|於十二月三十一日的期末虧損|||
 ||撥備|**185,828**|185,514|
-
-
 
 Trade and bills receivables are written off when there is no reasonable expectation of recovery. Indicators that there is no reasonable expectation of recovery include, amongst others, the failure of a debtor to engage in a repayment plan with the Group, and a failure to make contractual payments for a period greater than 60–90 days past due. 
 
@@ -7396,8 +6988,6 @@ The closing loss allowances for other receivables (excluding prepayments) as at 
 |Exchange adjustments|匯兌調整|**5,549**|(2,545)|
 |Closing loss allowance|於十二月三十一日的|||
 |at 31 December|期末虧損撥備|**87,090**|42,053|
-
-
 
 ###### **Liquidity risk** 
 
@@ -7453,8 +7043,6 @@ The table below analyses the Group’s non-derivative financial liabilities into
 |Trade and other payables|應付賬款及其他應付款|3,582,779|—|—|—|3,582,779|3,582,779|
 |Lease liabilities|租賃負債|14,777|7,271|1,479|513|24,040|23,078|
 |Total|合計|14,507,116|2,378,233|71,399|513|16,957,261|16,695,705|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -7521,8 +7109,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Derivative financial|衍生金融工具||||||
 |instruments||21|—|372|—|372|
 
-
-
 The fair value of financial instruments traded in active markets is based on quoted market prices at the end of the report period. A market is regarded as active if quoted prices are readily and regularly available from an exchange, dealer, broker, industry group, pricing service, or regulatory agency, and those prices represent actual and regularly occurring market transactions on an arm’s length basis. The quoted market price is the current bid price. These instruments are included in level 1 which comprise primarily equity investments classified as trading securities. The Group’s listed equity securities are level 1 instruments and their fair value is determined with referencing to quoted bid price in an active market. 
 
 在活躍市場買賣的金融工具的公允價值根 據資產報表期末的市場報價列賬。當報價 可即時和定期從證券交易所、交易商、經 紀、業內人士、定價服務者或監管代理獲 得，而該等報價代表按公平交易基準進行 的實際和常規市場交易時，該市場被視為 活躍。市場報價為當時買方報價。此等工 具包括在第1層，其工具主要包括權益投資 （分類為交易性證券）。本集團上市股本證 券是第一層的金融工具，其公允價值取決 活躍市場的參考報價。 
@@ -7583,8 +7169,6 @@ The table below details changes in the Group’s liabilities arising from financ
 |At 31 December 2025|於二零二五年||||||
 ||十二月三十一日|**12,036,902**|**2,712,003**|**1,001,349**|**26,907**|**15,777,161**|
 
-
-
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 **198** 
@@ -7617,8 +7201,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Exchange realignment|外幣折算差額|95,669|—|286|95,955|
 |At 31 December 2024|於二零二四年|||||
 ||十二月三十一日|13,099,531|—|23,078|13,122,609|
-
-
 
 ##### **34. CONTINGENT LIABILITIES** 
 
@@ -7653,8 +7235,6 @@ At 31 December 2025 and 2024, the Group had the following commitments:
 |Leasehold land and buildings<br>租賃土地及樓宇|**333,954**|373,351|
 ||**834,600**|861,798|
 
-
-
 ###### **Commitments under operating leases** 
 
 The Group as lessor: 
@@ -7674,8 +7254,6 @@ The Group leases out certain office premises under operating lease agreements. T
 |but not more than five years||**55,094**|60,411|
 |After five years|超過五年|**17,108**|14,823|
 |||**104,912**|105,318|
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -7699,8 +7277,6 @@ The amounts recognised in the consolidated statement of financial position are a
 |Investments in a joint venture (b)|合營企業(b)|**18,501**|18,503|
 |||**34,025**|34,678|
 
-
-
 The amounts recognised in the consolidated statement of profit or loss are as follows: 
 
 於合併利潤表內確認的金額如下： 
@@ -7710,8 +7286,6 @@ The amounts recognised in the consolidated statement of profit or loss are as fo
 |Share of results of associates|應佔聯營企業之收益|**117**|375|
 |Share of results of a joint venture|應佔合營企業之收益|**(2)**|1|
 |||**115**|376|
-
-
 
 恒安國際集團有限公司 二零二五年年報 
 
@@ -7744,8 +7318,6 @@ The details of investments in associates and a joint venture are as follows:
 |Exchange realignment|外幣折算差額|**(83)**|(471)|
 |At 31 December|於十二月三十一日|**15,524**|16,175|
 
-
-
 ###### **(b) Joint venture** 
 
 ###### **(b) 合營企業** 
@@ -7756,8 +7328,6 @@ The details of investments in associates and a joint venture are as follows:
 |Addition|添置|**—**|3,000|
 |Share of result of a joint venture|應佔淨收益|**(2)**|1|
 |At 31 December|於十二月三十一日|**18,501**|18,503|
-
-
 
 There are no contingent liabilities relating to the Group’s interests in the associates and a joint venture. 
 
@@ -7791,8 +7361,6 @@ The particulars of the associates and a joint venture of the Group, all of which
 |Xiamen Anjian Real Estate<br>Operation Co., Ltd.*<br>廈門安健不動產運營有限公司|Xiamen, PRC<br>廈門，中國|**50.00**|50.00|Joint<br>Venture<br>合營企業|**RMB**<br>**37,000,000**<br>人民幣<br>**37,000,000**|RMB<br>37,000,000<br>人民幣<br>37,000,000|Real estate development and<br>operation<br>房地產開發與運營|
 |Karrion Development Limited<br>(note (i))|Hong Kong, PRC|**50.00**|50.00|Associate|**HKD**<br>**1,000,000**|HKD<br>1,000,000|Development, distribution,<br>wholesaling and retailing of<br>medical, healthcare and<br>hygiene products|
 |嘉利安發展有限公司|香港，中國|||聯營企業<br>|港幣**1,000,000**|港幣1,000,000|開發、批發分銷、醫藥、個人<br>護理及衛生產品<br>零售|
-
-
 
 - For identification purpose only 
 
@@ -7838,8 +7406,6 @@ Save as disclosed elsewhere in the consolidated financial statements, the Group 
 |Contributions to pension schemes|退休金計劃供款|**116**|113|
 |||**31,206**|31,541|
 
-
-
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 **204** 
@@ -7875,8 +7441,6 @@ The following is a list of the principal subsidiaries of the Company at 31 Decem
 |恒安（威信）藥業有限公司|香港，有限責任公司|於香港從事貿易、採購及出售個人衛|普通股10,000股，合計港幣||
 |||生用品|2,030,786元||
 
-
-
 恒安國際集團有限公司 **205** 二零二五年年報 
 
 #### **Notes to the Consolidated Financial Statements** 合併財務報表附註 
@@ -7905,8 +7469,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Hengan (Jinjiang) Household Products<br>Co., Ltd.|PRC, wholly foreign-owned<br>enterprise|Manufacturing, distribution and sale<br>of personal hygiene products,<br>personal hygiene material<br>products and household products<br>in the PRC|US$15,800,000|100|
 |恒安（晉江）生活用品有限公司|中國，全外資企業|於中國製造、分銷及出售個人衛生用<br>品、衛生材料及家居用品|15,800,000美元||
 
-
-
 **206 HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 #### **Notes to the Consolidated Financial Statements** 合併財務報表附註 
@@ -7934,8 +7496,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |恒安（四川）生活用品有限公司|中國，中外合資企業|於中國製造、分銷及出售個人衛生用<br>品|16,380,000美元||
 |Hengan (Fushun) Household Products<br>Co., Ltd.*|PRC, sino-foreign equity joint<br>venture|Manufacturing, distribution and sale<br>of personal hygiene products in<br>the PRC|RMB73,660,000|100|
 |恒安（撫順）生活用品有限公司|中國，中外合資企業|於中國製造、分銷及出售個人衛生用<br>品|人民幣73,660,000元||
-
-
 
 恒安國際集團有限公司 **207** 二零二五年年報 
 
@@ -7966,8 +7526,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |恒安（孝感）醫療器械科技有限公司|中國，全外資企業|於中國製造、分銷及出售醫療器械|10,000,000美元||
 |Hengan (China) Paper Industry Co., Ltd.|PRC, wholly foreign-owned<br>enterprise|Manufacturing, distribution and sale<br>of packaged tissue paper<br>products in the PRC|US$165,570,000|100|
 |恒安（中國）紙業有限公司|中國，全外資企業|於中國製造、分銷及出售生活<br>用紙|165,570,000美元||
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -8005,8 +7563,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |||products in the PRC|||
 |晉江恒安家庭生活用紙有限公司|中國，中外合資企業|於中國製造、分銷及出售生活用紙|12,000,000美元||
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **209** 
@@ -8043,8 +7599,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Co., Ltd.|venture|of personal hygiene products in<br>the PRC|||
 |恒安（河南）衛生用品有限公司|中國，中外合資企業|於中國製造、分銷及出售個人<br>衛生用品|人民幣82,000,000元||
 
-
-
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 **210** 
@@ -8073,8 +7627,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |廈門恒安電子商務有限公司|中國，全外資企業|於中國互聯網銷售化妝品及個人衛<br>生用品|人民幣2,000,000元||
 |Xiamen Space Seven E-commerce<br>Co., Ltd.*|PRC, wholly foreign-owned<br>enterprise|Sales of cosmetic products and<br>personal hygiene products via<br>online in the PRC|RMB2,000,000|100|
 |廈門七度空間電子商務有限公司|中國，全外資企業|於中國互聯網銷售化妝品及個人衛<br>生用品|人民幣2,000,000元||
-
-
 
 恒安國際集團有限公司 **211** 二零二五年年報 
 
@@ -8107,8 +7659,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |皇城貿易有限公司*|馬來西亞，有限責任公司|於馬來西亞從事纖維製品的分銷|3,425,000馬幣||
 |Quality Hero Corporation Sdn. Bhd.|Malaysia, Limited liability<br>company|Manufacturing and sale of adult<br>diaper, baby diaper and sanitary<br>napkins products in Malaysia|MYR350,000|56.73|
 |高品喜樂有限公司*|馬來西亞，有限責任公司|於馬來西亞製造、分銷及出售成人及<br>嬰兒紙尿褲及衛生巾|350,000馬幣||
-
-
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
@@ -8143,8 +7693,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |福建省恒光文化發展有限公司|中國，全外資企業|於中國互聯網銷售化妝品及個人<br>衛生用品|人民幣10,000,000元||
 |Hengan (Orient) Hygiene Product<br>Co., Ltd.*|Russia, limited liability company|Manufacturing, distribution and sale<br>of personal hygiene products in<br>the Russia|Russian Ruble 600,000,000|51|
 |恒安（東方）衛生用品有限公司|俄羅斯，有限責任公司|於俄羅斯製造、分銷及出售個人衛生<br>用品|600,000,000盧布||
-
-
 
 恒安國際集團有限公司 二零二五年年報 
 
@@ -8182,8 +7730,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |恒安電子商貿（香港）有限公司|香港，有限責任公司|於中國香港互聯網出售個人衛生用<br>品及生活用紙|普通股1股，合計港幣1元||
 |Wang-Zheng Singapore PTE. Ltd|Singapore, limited liability<br>company|Wholesale of personal effects|50,000 ordinary share of<br>SGD50,000|56.73|
 |皇城新加坡私人有限公司*|新加坡，有限責任公司|個人用品|普通股50,000股，合計新加坡<br>幣50,000元||
-
-
 
 * For identification purpose only 
 
@@ -8250,8 +7796,6 @@ A summarised statement of financial position of the Company as at 31 December 20
 |**Total liabilities**|總負債|**5,978,851**|1,237,895|
 |**Total equity and liabilities**|權益及負債合計|**16,554,069**|9,233,271|
 
-
-
 The statement of financial position of the Company was approved by the Board of Directors on 17 March 2026 and was signed on its behalf. 
 
 公司財務報表已由董事會於二零二六年三月 十七日批核，並代表董事會簽署。 
@@ -8302,8 +7846,6 @@ Note:
 |— shares withheld for share award schemes|—股份獎勵計劃代扣股份|—|(194,886)|
 |At 31 December 2024|於二零二四年十二月三十一日|8,120,327|(248,296)|
 
-
-
 恒安國際集團有限公司 二零二五年年報 
 
 **217** 
@@ -8347,8 +7889,6 @@ The remuneration of every Director and the Chief Executive Officer for the year 
 |Mr. Chen Chuang|陳闖先生|**110**|**—**|**—**|**—**|**—**|**110**|
 |||**440**|**—**|**—**|**—**|**—**|**440**|
 
-
-
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 **218** 
@@ -8390,8 +7930,6 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 |Mr. Ho Kwai Ching, Mark|何貴清先生|109|—|—|—|—|109|
 |Mr. Chen Chuang|陳闖先生|109|—|—|—|—|109|
 |||436|—|—|—|—|436|
-
-
 
 (i) Mr. Hui Lin Chit has deceased and ceased to serve as a Director effective 17 April 2025. 
 
@@ -8470,8 +8008,4 @@ The total estimated cost of the share awards granted amounts to HK$509,722,200. 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2025 
 
 **220** 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2025.pdf-0223-00.png)
-
 

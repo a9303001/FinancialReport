@@ -1,30 +1,8 @@
 
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0001-02.png)
-
-
 (Incorporated in the Cayman Islands with limited liability) (於開曼群島註冊成立的有限公司) Stock code 股份代號: 1044 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0001-04.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0001-05.png)
-
-
 **ANNUAL REPORT 2024** 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0001-07.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0001-08.png)
-
 
 ## **Corporate Mission 企業使命** 
 
@@ -33,10 +11,6 @@
 has always been the mission of Hengan International. We will continue to adhere to our corporate spirit of “Integrity, Diligence, Innovation and Dedication”. Our goal is “to build an effective corporate management and to develop a high quality, ethical and enthusiastic staff team”. By building an excellent corporate culture, reinforcing our brand image, and focusing on consumer and market need, Hengan International will become China’s leading corporation in manufacturing and distribution of fast moving family consumer products. 
 
 是恒安國際的使命，我們將繼續發揚「誠信、拼 博、創新、奉獻」的企業精神，以「建立一個高效的 企業管理團隊，培養一支高素質、有職業道德、有 敬業精神的員工隊伍」為目標，締造良好的企業文 化，重塑品牌形象，以消費者和市場為導向，把恒 安國際建設成為國際頂級的快速家庭消費品生產 分銷企業。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0003-00.png)
-
 
 # **Content** 
 
@@ -49,10 +23,6 @@ has always been the mission of Hengan International. We will continue to adhere 
    - Company Product Series 公司產品系列 
 
 ### **8** 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0003-05.png)
-
 
 - **10** Chairman’s Statement 主席報告書 
 
@@ -81,10 +51,6 @@ has always been the mission of Hengan International. We will continue to adhere 
 **111** 
 
 - Notes to the Consolidated Financial Statements 合併財務報表附註 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0004-00.png)
-
 
 <!-- Start of picture text -->
 公司資料<br>EXECUTIVE DIRECTORS<br>Mr. Sze Man Bok (Chairman)<br><!-- End of picture text -->
@@ -150,10 +116,6 @@ P.O. Box 309 Ugland House Grand Cayman KY1-1104 Cayman Islands
 #### **註冊辦事處** 
 
 P.O. Box 309 Ugland House Grand Cayman KY1-1104 Cayman Islands 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0004-32.png)
-
 
 <!-- Start of picture text -->
 2<br><!-- End of picture text -->
@@ -226,18 +188,10 @@ Suntera (Cayman) Limited Suite 3204, Unit 2A, Block 3 Building D, P.O. Box 1586 
 
 iPR Ogilvy Ltd. 香港灣仔 駱克道333號 亞洲聯合財務中心40樓 電話：(852) 2136 6185 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0005-33.png)
-
-
 <!-- Start of picture text -->
 3<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0006-00.png)
-
 
 <!-- Start of picture text -->
 財務摘要<br>合併業績 –  –<br><!-- End of picture text -->
@@ -263,12 +217,6 @@ iPR Ogilvy Ltd. 香港灣仔 駱克道333號 亞洲聯合財務中心40樓 電�
 |Gross gearing ratio (%)|負債比率(%)|**62.6**|69.8|87.2|95.7|107.3|
 |Net gearing ratio (%)|淨負債比率(%)|**(27.7)**|(26.4)|(23.2)|(21.3)|(16.1)|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0006-04.png)
-
-
 <!-- Start of picture text -->
 4<br><!-- End of picture text -->
 
@@ -280,85 +228,29 @@ iPR Ogilvy Ltd. 香港灣仔 駱克道333號 亞洲聯合財務中心40樓 電�
 
 RMB Cents 人民幣（仙） 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-03.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-04.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-06.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-07.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-08.png)
-
-
 #### **ANALYSIS OF REVENUE BY PRODUCT 按產品類別劃分之收入** 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-10.png)
-
 
 <!-- Start of picture text -->
 衛生巾產品<br><!-- End of picture text -->
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-11.png)
-
-
 <!-- Start of picture text -->
 紙巾產品<br>10.2%<br><!-- End of picture text -->
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-12.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-13.png)
-
 
 <!-- Start of picture text -->
 Others<br>其他<br><!-- End of picture text -->
 
 Sanitary napkins products Tissue paper products Disposable diapers products Others 衛生巾產品 紙巾產品 一次性紙尿褲產品 其他 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-15.png)
-
-
 <!-- Start of picture text -->
 %<br>10.9%<br>26.0%<br>5.3%<br>57.8% 2023<br><!-- End of picture text -->
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-16.png)
-
-
 <!-- Start of picture text -->
 5.6%<br>59.2% 2 0 2 4<br><!-- End of picture text -->
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0007-17.png)
-
 
 <!-- Start of picture text -->
 5<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-00.png)
-
 
 <!-- Start of picture text -->
 合併業績 –  –<br><!-- End of picture text -->
@@ -378,65 +270,11 @@ Sanitary napkins products Tissue paper products Disposable diapers products Othe
 |shareholders of the<br>Company|應佔利潤|**2,298,535**|2,800,533|1,925,249|3,273,601|4,594,815|
 |Earnings per share<sup>–</sup>basic<br>(RMB)|每股收益 <sup>–</sup> 基本<br>（人民幣元）|**2.015**|2.415|1.657|2.786|3.864|
 
-
-
 ###### **REVENUE 收入** 
 
 RMB million 人民幣百萬元 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-06.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-07.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-08.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-09.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-10.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-11.png)
-
-
 **PROFIT ATTRIBUTABLE TO SHAREHOLDERS OF THE COMPANY 公司權益持有人應佔利潤** RMB million 人民幣百萬元 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-13.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-14.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-15.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-16.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-17.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-18.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0008-19.png)
-
 
 <!-- Start of picture text -->
 6<br><!-- End of picture text -->
@@ -444,10 +282,6 @@ RMB million 人民幣百萬元
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
 
 **Five-year Financial Summary** 五年財務資料 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0009-01.png)
-
 
 <!-- Start of picture text -->
 Five-year Financial Summary<br>五年財務資料<br>2022 2021 2020<br><!-- End of picture text -->
@@ -484,20 +318,10 @@ Five-year Financial Summary<br>五年財務資料<br>2022 2021 2020<br><!-- End 
 |**Net assets attributable to**<br>**shareholders of the**|**淨資產 **<sup>**–**</sup> **公司權益**<br>**持有人應佔總額**||||||
 |**Company**||**20,920,950**|20,395,840|19,523,607|19,037,040|19,411,390|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0009-04.png)
-
-
 <!-- Start of picture text -->
 7<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0010-00.png)
-
 
 ## **Company Product Series 公司產品系列** 
 
@@ -507,27 +331,15 @@ Five-year Financial Summary<br>五年財務資料<br>2022 2021 2020<br><!-- End 
 
 **“ELDERJOY” ADULT CARE PRODUCTS** 「安而康」成人護理產品 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0010-05.png)
-
-
 <!-- Start of picture text -->
 “H’YEAS” AND “HOMELINE” HOUSEHOLD PRODUCTS<br><!-- End of picture text -->
 
 「悅適」及「家來納」家居用品 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0010-07.png)
-
-
 <!-- Start of picture text -->
 8<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0011-00.png)
-
 
 **“ANERLE” AND “Q • MO” BABY DIAPERS** 「安兒樂」和「奇莫」嬰兒紙尿褲 
 
@@ -539,18 +351,10 @@ Five-year Financial Summary<br>五年財務資料<br>2022 2021 2020<br><!-- End 
 
 **“HEARTTEX” AND “PINO” POCKET HANDKERCHIEFS, BOX AND SOFT TISSUE PAPER; AND KITCHEN TOWELS/PAPER** 「心相印」及「品諾」手帕紙、盒裝及軟抽紙廚房紙巾 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0011-06.png)
-
-
 <!-- Start of picture text -->
 9<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0012-00.png)
-
 
 <!-- Start of picture text -->
 Chairman’s Statement<br>主席報告書<br><!-- End of picture text -->
@@ -559,20 +363,12 @@ Chairman’s Statement<br>主席報告書<br><!-- End of picture text -->
 
 On behalf of Hengan International Group Company Limited (“Hengan International” or the “Group”), I present its annual results for the year ended 31 December 2024. During the year under review, the international landscape remained complex and volatile, with escalating geopolitical conflicts and a sluggish global economic recovery. Supported by the nation’s comprehensive macroeconomic policies, the Chinese economy achieved steady progress. Competition within the domestic daily necessities market intensified, with numerous domestic and international brands engaging in aggressive promotional strategies, often at the expense of profitability, to vie for market share. Faced with this challenging and complex operating environment, Hengan International prioritised profitability and adhered to a rational promotional policy. Despite the inevitable impact of heightened market competition on operating performance, the Group exhibited robust resilience, maintaining relatively stable gross profit margins. Capitalizing on the growing consumer demand for high-quality goods, the Group continued to advance product upgrades and premiumisation, resulting in strong sales performance for premium products. Furthermore, Hengan International actively expanded and optimised its e-commerce platforms and new retail channels, enhancing its market share and further solidifying its leading market position, thereby laying a solid foundation for sustained high-quality development. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0012-03.png)
-
-
 <!-- Start of picture text -->
 Sze Man Bok<br>施文博<br><!-- End of picture text -->
 
 #### **致各位股東：** 
 
 本人欣然提呈恒安國際集團有限公司（「恒安國際」 或「集團」）截至二零二四年十二月三十一日止年度 的全年業績報告。回顧年度，國際局勢複雜多變， 地緣衝突持續升級，全球經濟復甦仍然乏力。在國 家的宏觀政策組合支持下，中國經濟穩中有進。國 內生活用品市場競爭日趨激烈，眾多國內外品牌為 爭奪市場份額，不惜犧牲利潤，採取激進的促銷策 略。面對嚴峻複雜的經營環境，恒安國際聚焦利 潤，堅持理性的促銷政策。儘管營運表現難免受到 市場競爭加劇所影響，集團依然展現出良好韌性， 毛利水平保持相對穩定。集團緊抓消費者對高品質 商品日益增長的需求，持續推進產品升級和高端 化，高端產品銷售表現亮眼。此外，恒安積極拓展 和優化電商平台及新零售渠道，提升市場份額，進 一步鞏固其領先市場地位，為持續高質量發展奠定 堅實基礎。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0012-06.png)
-
 
 <!-- Start of picture text -->
 10<br><!-- End of picture text -->
@@ -589,24 +385,12 @@ Hengan actively capitalises on the growth opportunities presented by emerging do
 
 恒安積極把握國內新興消費模式帶來的發展機遇， 持續深耕電商平台，積極佈局新零售市場，並專注 於B2C（企業對消費者）業務的拓展。通過數據分析 精準觸達終端客戶，提升市場份額及盈利能力。同 時，恒安不斷強化傳統渠道的營銷力度，擴大渠道 覆蓋範圍，持續優化全渠道銷售策略，進一步挖掘 電商及新零售渠道的增長潛力。年內，受惠於全渠 道銷售發展效益的提升及良好的品牌聲譽，電商及 新零售渠道延續強勁表現，其銷售佔比進一步提升 至佔整體銷售的34.1% 。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0013-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0013-06.png)
-
-
 <!-- Start of picture text -->
 11<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Chairman’s Statement** 主席報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0014-01.png)
-
 
 <!-- Start of picture text -->
 Chairman’s Statement<br>主席報告書<br><!-- End of picture text -->
@@ -622,10 +406,6 @@ Looking ahead to 2025, while the external environment will remain challenging, C
 憑藉強大的研發實力和敏銳的市場洞察，恒安國際 精準把握市場趨勢，高端化戰略成果顯著。紙巾業 務方面，新品「絨立方」系列上市，與熱銷高端系列 「雲感柔膚」共同驅動紙巾品類增長；濕紙巾產品需 求持續提升，市場份額穩步擴大。衛生巾業務方 面，「天山絨棉」系列持續受到消費者青睞，保持了 穩定的毛利率。紙尿褲業務方面，「 Q • MO奇莫」高 端系列延續強勁增長勢頭，銷售佔比提升至 43.5% ，顯著改善了毛利率。儘管市場存在壓力， 集團通過穩定價格策略和持續的產品升級，保持了 穩健的盈利水平，為長期可持續發展奠定良好基礎。 
 
 展望二零二五年，外部環境仍然充滿挑戰，但國家 經濟基礎穩固，長期向好的基本面沒有改變。面對 國際政經局勢不確定性，預期國家將繼續加大力度 提振消費及擴大內需，以暢通國內經濟循環。國民 對生活品質的需求將持續驅動衛生及生活用品市場 的長期健康發展。集團將密切關注國內外政經發展 及市場趨勢變化，靈活應對及審慎決策。隨著原材 料需求及供應大致維持穩定，木漿、石化原料等原 材料價格預計將保持相對平穩，有利於企業經營及 創造利潤。集團將繼續深化高端化策略，在激烈的 市場競爭中保持優勢，致力實現利潤和市場份額的 雙重提升。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0014-08.png)
-
 
 <!-- Start of picture text -->
 12<br><!-- End of picture text -->
@@ -646,33 +426,17 @@ Lastly, I would like to take this opportunity to express my sincere gratitude to
 
 最後，本人謹藉此機會，衷心感謝所有股東、客戶 和合作夥伴對恒安國際的堅定信心和支持，也感謝 全體員工在過往一年的投入、付出及努力。未來充 滿挑戰，同時亦充滿機遇。集團將堅守穩中求進的 策略，為股東締造具長遠價值和可持續的回報。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0015-07.png)
-
-
 **Sze Man Bok 施文博** Chairman 主席 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0015-09.png)
-
 
 <!-- Start of picture text -->
 13<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0016-00.png)
-
-
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
 
 ## **Chief Executive Officer’s Report 行政總裁報告書** 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0016-02.png)
-
 
 <!-- Start of picture text -->
 HUI CHING LAU<br>許清流<br><!-- End of picture text -->
@@ -685,10 +449,6 @@ In 2024, as incremental and existing policies took effect, the national economy 
 
 二零二四年，隨著增量政策與存量政策共同發力， 國家經濟穩中有進，二零二四年國內生產總值同比 增長5.0% 。在擴內需促消費政策帶動下，消費市場 實現平穩增長，二零二四年社會消費品零售總額同 比增長3.5% ，其中日用品類零售總額增長3.0% 。然 而國際地緣政治動盪加劇及貿易保護主義升溫，窒 礙全球經濟復甦動能。面對複雜多變的經營環境， 集團積極提升其綜合競爭優勢，持續聚焦盈利，推 進產品高端化，深化電商及新零售佈局，持續拓展 市場版圖，實現穩健發展。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0016-07.png)
-
-
 <!-- Start of picture text -->
 14<br><!-- End of picture text -->
 
@@ -700,10 +460,6 @@ Despite the overall stable growth of the domestic consumer market in 2024, there
 
 Leveraging opportunities presented by the integration of online and offline consumption models, the Group continued to step up its efforts in developing its e-commerce business and new retail market. In addition to promoting brands on traditional large-scale e-commerce platforms, it also strengthened penetration into other emerging e-commerce channels. During the year, the proportion of the Group’s e-commerce and new retail sales (including Retail Integrated (“零售通”) and New Channel (“新通路”)) further increased to approximately 34.1% (2023: 30.1%), with revenue increasing by approximately 8.0% year-on-year. In addition, the Group continued to promote sales and create new growing points in traditional channels during the year, steadily advancing its omni-channel sales strategy. Meanwhile, by actively identifying of consumer demand for high-quality hygiene products and personalised experiences, the Group developed new technologies for product upgrades, accelerating the development of premium products and optimisation of product mix. This strategy enhanced the brand image and injected new impetus into its long-term development. These products, which include the premium disposable diapers series “Q • MO”, and the sanitary napkins series “Sweet Dream Pants” (萌睡褲) and premium brand “Tianshan Cotton” (天山絨棉), continued to be well-received by consumers and maintained strong sales momentum throughout the year. The sales of various key products also achieved a year-on-year growth of more than 10.0% and continued to increase its proportion over the sales, while also improving their brand image and reputation. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0017-03.png)
-
-
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of picture text -->
 
@@ -711,18 +467,10 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of pictu
 
 集團緊握線上線下融合消費模式所帶來的機遇，持 續加大力度發展電商業務及新零售市場，除了於傳 統大型電商平台推廣品牌，亦加強滲透其他新興渠 道。年內，集團的電商及新零售銷售（包括零售通及 新通路）佔比進一步上升至接近約34.1%（二零二三 年：30.1% ），銷售收入同比增長約8.0% 。另外，集 團於年內亦持續促進傳統渠道的銷售及發展其新的 增長點，全渠道銷售策略穩步推進。同時，集團積 極洞察消費者對高品質衛生用品及個性化體驗的需 求，研發新技術升級產品，提速發展高端產品並優 化產品組合，提升品牌形象，為長遠發展注入新動 力。這包括高端紙尿褲「 Q • MO奇莫」系列、衛生巾 系列「萌睡褲」及高端品牌「天山絨棉」等，於年內持 續深受消費者青睞，保持強勁的銷售勢頭，各重點 產品銷售也實現同比超過10.0%的增長，並持續提 高其在銷售額中的佔比，同時提升品牌形象及產品 口碑。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0017-06.png)
-
-
 <!-- Start of picture text -->
 15<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0018-00.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -741,10 +489,6 @@ The Board of Directors declared a final dividend of RMB0.70 per share (2023: RMB
 
 董事會宣佈派發截至二零二四年十二月三十一日止 年度之末期股息每股人民幣0.70元（二零二三年：每 股人民幣0.70元），連同已派發中期股息每股人民幣 0.70元（二零二三年：每股人民幣0.70元）後，全年 股息為每股人民幣1.40元（二零二三年：每股人民幣 1.40元），總派發金額為人民幣1,626,970,000元（二 零二三年：人民幣1,626,970,000元），保持穩定的派 息金額。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0018-08.png)
-
-
 <!-- Start of picture text -->
 16<br><!-- End of picture text -->
 
@@ -755,10 +499,6 @@ The Board of Directors declared a final dividend of RMB0.70 per share (2023: RMB
 China has the world’s leading feminine care products market. With the growing awareness of feminine care and increasing of purchasing power, there is a growing emphasis on product quality, safety and added value, driving premiumisation, upgrades and continuous expansion of the market. However, as the market competition has intensified, many domestic and foreign brands adopted aggressive sales strategies to tap into the mid-to-high-end market and young consumers. Hengan has full confidence in its product quality and longstanding reputation among customers and adheres to a rational and stable pricing strategy. In order to enhance the brand image and consolidate its leading position in the mid-to-high-end market and traditional sales channels, Hengan continued to promote product upgrades and premiumisation to meet consumers’ demand for high-quality feminine care products, so as to reinforce its leading position amid fierce market competition. The Group’s premium “Tianshan Cotton” series launched in the second half of 2023 remained a hot seller throughout the year due to its excellent quality and brand image. 
 
 The continuous rapid increase in the penetration of new consumption patterns has exacerbated the fragmentation of channels. E-commerce platforms and other emerging retail channels (including community group-buying) are thriving. The Group actively seized the opportunities of emerging consumption trends, vigorously expanded emerging sales channels, and reinforced its advantages in traditional channels. However, the competition in the domestic sanitary napkin market became increasingly fierce during the year, both domestic and foreign brands adopted aggressive price reduction and promotion strategies to expand their market share, resulting in an impact on sales. In 2024, the revenue of the Group’s sanitary napkin business decreased by approximately 8.1% to approximately RMB5,677,965,000 (2023: RMB6,178,438,000), accounting for approximately 25.0% (2023: 26.0%) of the Group’s overall revenue. The sanitary napkin market is expected to remain challenging in 2025. However, driven by the growing proportion of upgraded and premium products, along with the stable development and expansion of traditional and new retail sales channels, the Group’s sanitary napkin business is anticipated to recover and achieve stable revenue growth. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0019-03.png)
-
 
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of picture text -->
@@ -771,18 +511,10 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of pictu
 
 新消費模式滲透率持續快速提升，加劇渠道碎片 化。電商平台和其他新興零售渠道（包括社區團購） 蓬勃發展。集團積極把握新興消費趨勢的機遇，大 力拓展新的銷售渠道，同時確保在傳統渠道中的優 勢。然而，年內國內衛生巾市場競爭日趨激烈，國 內外品牌均降價促銷以拓展市場，導致銷售受到一 定影響，集團二零二四年衛生巾業務銷售收入錄得 跌幅約8.1%至約人民幣5,677,965,000元（二零二三 年：人民幣6,178,438,000元），佔其整體收入約 25.0%（二零二三年：26.0% ）。預期二零二五年市場 環境仍然充滿挑戰，但在升級及高端產品佔比提升 及傳統及新零售銷售渠道業務持續穩定發展及開拓 的帶動下，將有望帶動集團衛生巾業務的銷售收入 回復穩定增長。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0019-08.png)
-
-
 <!-- Start of picture text -->
 17<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0020-00.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -797,12 +529,6 @@ The Group’s sanitary napkin brand 七度空間 continues to launch upgraded an
 
 集團旗下衛生巾品牌「七度空間」不斷推出升級及高 端產品，並致力提升品牌形象。近年，集團推出「極 薄」和「褲型」等升級產品，受到市場的熱烈歡迎。集 團於年內主推採用天山雪域的稀缺純淨長絨棉之新 品「天山絨棉系列」，旨在滿足現今消費者追求高質 量產品的需求。儘管此產品於二零二三年下半年才 推出，其銷售額於年內已經超過人民幣4.0億，預計 其銷售額將逐步提升。集團簽約形象快樂清新的女 藝人趙今麥作為「七度空間」的品牌代言人，為品牌 注入了青春活力，以「自在不設限」為主題，針對年 輕少女消費群及白領女性的喜好推出代言人直播、 見面會及限定禮盒等多元化推廣活動，進一步提升 品牌形象和吸引年輕及白領消費客群。 
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0020-07.png)
-
-
 <!-- Start of picture text -->
 18<br><!-- End of picture text -->
 
@@ -812,10 +538,6 @@ The Group’s sanitary napkin brand 七度空間 continues to launch upgraded an
 
 In addition, the “Pants-style” series still has great growth potential with sales reaching RMB587.0 million during the year, a year-on-year increase of approximately 21.5%. The Group will continue to vigorously promote the “Pants-style” series of products to consumers and launch an upgraded version of “Sweet Dream Pants” to attract more consumers and further increase market penetration. The Group believes that the upgraded and premium products of the 七度空間 series will continue to be the main growth driver for the sanitary napkin business in the future, which will help the Group expand its market share and increase the revenue contribution of premium products. Moreover, the Group’s sanitary napkin brand “Anerle” (安爾 樂) launched instant-absorbing liquid sanitary napkins during the year. This product utilises patented core and 3D liquid compartment technology, allowing for quick absorption and leakage prevention. It has been popular among domestic consumers. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0021-02.png)
-
-
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br>5.87億，按年同比增長億，按年同比增長<br>。集團將繼續加大對「褲型」系列產品的推<br><!-- End of picture text -->
 
@@ -824,14 +546,6 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br>5.87億，按年�
 Meanwhile, the Group will continue to increase the sales proportion of new retail channels, develop high quality products, maintain stable pricing, and consolidate growth in traditional channels, thereby promoting the Group’s long-term development and reinforcing its leading position. The Group will also develop and launch other feminine care products beyond sanitary napkins, steadily develop the feminine care industry, and seize market opportunities. 
 
 同時，集團將繼續擴大新零售渠道佔比，開發高品 質產品，保持價格穩定，鞏固傳統渠道增長，從而 促進長期發展並鞏固領先地位。此外，集團還將研 發和推出衛生巾以外的女性健康護理用品，穩步發 展女性健康護理產業，抓住市場機遇。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0021-06.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0021-07.png)
-
 
 <!-- Start of picture text -->
 19<br><!-- End of picture text -->
@@ -848,18 +562,6 @@ Meanwhile, the Group will continue to increase the sales proportion of new retai
 
 Tissue paper has become a staple for both home use and travel. Consumers are increasingly prioritising quality, functionality, and environmental sustainability, driving the premiumisation and eco-friendly upgrades in the tissue market. During the year, intense price wars among domestic brands led to a decline in industry sales. In response to the accelerated consolidation in the industry, the Group focused on enhancing profitability and product premiumisation. Through stable pricing, omni-channel sales, brand optimisation, product diversification, and cost control, the Group successfully bucked the trend, achieved growth in tissue paper sales volume and further expanded its market share. During the year, benefitting from the Group’s effective “value competition” strategy, the sales proportion of premium tissue paper continued to rise, resulting in a low single-digit growth in overall tissue paper sales volume. However, due to promotional expenses increasing by over 10.0% and a significant decline of more than 26.0% in raw paper sales, the Group’s tissue paper business saw a year-on-year revenue decrease of approximately 2.4%, amounting to approximately RMB13,422,445,000 (2023: RMB13,748,172,000). This decline was narrower than the 3.1% drop recorded in the first half of 2024, mainly due to a recovery in tissue paper sales in the fourth quarter of 2024. Its revenue accounted for approximately 59.2% of the Group’s total revenue (2023: 57.8%). Looking ahead to 2025, despite ongoing price reductions and promotions in the industry, the demand for premium, high-quality tissue paper is expected to grow continuously. The Group will continue to upgrade its products and increase the penetration rate of premium products to mitigate the impact of industry price competition on tissue paper sales, ensuring stable performance in the tissue paper business. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0022-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0022-06.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0022-07.png)
-
-
 <!-- Start of picture text -->
 20<br><!-- End of picture text -->
 
@@ -867,21 +569,9 @@ Tissue paper has become a staple for both home use and travel. Consumers are inc
 
 **Chief Executive Officer’s Report** 行政總裁報告書 
 
-
-
 In 2024, although the Group made significant strides in product premiumisation, the gross profit margin of the tissue paper business was under pressure due to fluctuations in raw material prices and increased promotional expenses. Wood pulp prices rose in the second quarter and then dropped in the third quarter. However, the three-month lag in wood pulp prices, coupled with rising promotional costs, led to an increase in the Group’s wood pulp inventory costs in the third quarter, with a slight improvement seen in the fourth quarter. The gross profit margin for the Group’s tissue paper business declined in the second half of the year compared to the first half, resulting in a decrease to approximately 18.9% for 2024 (2023: 21.7%). Looking ahead to 2025, the Group plans to control promotional expenses and continue increasing the sales proportion of premium products. In addition, with wood pulp prices expected to remain stable, this should help sustain stable gross profit margin for the tissue paper business. 
 
 Driven by the improvement of national health awareness and the growing demand for consumption upgrades, the Group’s upgraded and premium tissue paper products achieved remarkable sales. In March 2024, the Group’s brand “Hearttex” (心相印) joined hands with the industry to release the “100% Virgin Wood Pulp” logo, aiming to establish quality standards for tissue paper and drive the quality upgrade of the household paper industry. At the same time, the Group introduced the “Fluffy Cube” series of tissue paper products (including facial tissue and kitchen roll). “Fluffy Cube” is a new tissue paper series of the Group, produced by the first TAD tissue machine in China. It is also the first tissue paper series in China to adopt the TAD technology. TAD is an internationally recognised high-quality household paper production technology, providing a disruptive upgrade in comfort and practicality. The “Fluffy Cube” series facial tissue is soft and gentle on the skin, while the kitchen roll can absorb oil and trap water effectively. 
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0023-05.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0023-06.png)
-
 
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br>3個月滯後及促銷費用增加導致個月滯後及促銷費用增加導致<br><!-- End of picture text -->
@@ -890,18 +580,10 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br>3個月滯後及�
 
 在國民衛生意識提升和消費升級趨勢的驅動下，集 團的升級及高端紙巾產品銷售表現斐然。二零二四 年三月，集團心相印品牌攜手業界發佈「100%原生 木漿」標識，旨在規範好紙巾辨別標準，推動生活用 紙行業品質化升級，同時推出「絨立方系列」的各類 型紙巾（包括抽紙及廚房紙）。「絨立方」是集團引入 國內首台TAD紙機設備所生產的全新系列，亦是國 內首款採用TAD空氣流乾燥技術的紙巾，TAD為目 前世界公認的高品質生活用紙生產技術，舒適性和 實用性皆具顛覆式提升。絨立方系列面巾紙柔軟親 膚，廚房紙能高效吸油鎖水。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0023-09.png)
-
-
 <!-- Start of picture text -->
 21<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0024-00.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -916,10 +598,6 @@ In addition, the Group is also committed to enhancing the brand image of “Hear
 
 此外，集團亦致力提升心相印的品牌印象，展現對 社會的關愛。集團於年內發佈心相印與馬吉德爺爺 「玫瑰人生」的聯名抽紙。馬吉德是一位前阿拉伯語 高級教師，不幸因為戰爭和疾病流落敘利亞街頭， 只能靠賣紙巾維持生計。心相印為爺爺和其妻子送 上玫瑰和手寫信表達品牌的敬意，同時在品牌紙巾 包裝上加上「馬吉德爺爺」的人物插畫及其引句「我 們必須得好好利用這一生」，又邀請馬吉德爺爺連 線進行專場直播，大獲各界好評。心相印以其品牌 影響力喚起社會對馬吉德以至社會弱勢、流亡人士 的關注，透徹落實「愛在心相印」的品牌口號，深化 心相印充滿溫度及富愛心的品牌形象。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0024-06.png)
-
-
 <!-- Start of picture text -->
 22<br><!-- End of picture text -->
 
@@ -928,10 +606,6 @@ In addition, the Group is also committed to enhancing the brand image of “Hear
 **Chief Executive Officer’s Report** 行政總裁報告書 
 
 The Group actively responded to the fragmentation of channels and the efforts and resources invested in strategic deployment in the early years have entered the harvest period. The tissue paper business performed remarkably in e-commerce and new retail channels (including Retail Integrated, community group-buying, etc.), with a sales growth of approximately 13.0%, accounting for nearly 40.0% of the overall sales of tissue paper. In the future, the Group will continue its endeavours in expanding different sales channels, striving for the largest market share. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0025-02.png)
-
 
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br>13.0% ，佔<br>40.0% ，表現亮眼。集團於未<br><!-- End of picture text -->
@@ -950,22 +624,10 @@ With the continuous ageing population and rising consumption level of residents,
 
 隨著人口高齡化持續和國民消費水平不斷提升，中 國紙尿褲市場規模持續壯大。消費升級和育兒觀念 進步帶動嬰兒紙尿褲滲透率持續提升。國內消費者 對國產品牌的認可度和信任度不斷提高，中國紙尿 褲市場機遇處處。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0025-10.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0025-11.png)
-
-
 <!-- Start of picture text -->
 23<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0026-00.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -980,20 +642,12 @@ During the year, the Group continued to seize market opportunities, further deve
 
 年內，集團繼續把握市場機遇，深入發展高檔產品 市場及提高產品質量。嬰兒紙尿褲業務方面，集團 近年持續轉型「安兒樂」品牌，建立新的品牌定位， 開拓運動褲型紙尿褲以滿足現今消費者的需求，有 效提升銷售。另一方面，「 Q • MO奇莫」魔法呼吸紙 尿褲擁有傳統紙尿褲3.6倍的透氣孔，深受市場歡 迎。集團將繼續優化紙尿褲產品，抓緊國內產品增 長機會，搶佔更大市場份額。透過雙品牌策略，集 團預期二零二五年嬰兒紙尿褲業務的銷售將保持穩 定增長。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0026-06.png)
-
-
 <!-- Start of picture text -->
 24<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
 
 In the future, the Group will continue to develop the baby care market and the adult care market in parallel with a premium products strategy. In addition to e-commerce sales channels, the Group will vigorously develop new retail channels and also increase cooperation with maternity stores, nursing homes and hospitals. On the one hand, it will seize new business opportunities brought by new retail. On the other hand, through cooperation with maternity stores, nursing homes and hospitals, it will expand the Group’s potential customer base, and provide a one-stop product sales chain, bringing sustainable growth momentum to the disposable diaper business, supporting the long-term development of the adult care business and continuing to tap the growth potential of the adult care market. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0027-01.png)
-
 
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of picture text -->
@@ -1010,24 +664,12 @@ Regarding other income and household products, the Group’s revenue for the yea
 
 其他收入及家居用品業務方面，主要包括原材料貿 易業務收入、家居用品業務收入及馬來西亞皇城集 團收入。年內，其他收入同比下跌約10.8%至約人民 幣2,308,174,000元（二 零 二 三 年：人 民 幣 2,587,256,000元），主要由於集團傾向預留原材料作 生產產品的用途及確保原材料貿易業務能有合理的 利潤，故原材料貿易業務收入顯著下跌約17.1%至 約人民幣11.6億元（二零二三年：人民幣14.0億元）。 受益於聚焦利潤策略的有效實施，集團的其他收入 業務在年內的毛利率上升至26.1%（二零二三年： 23.4% ）。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0027-08.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0027-09.png)
-
-
 <!-- Start of picture text -->
 25<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Chief Executive Officer’s Report** 行政總裁報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0028-01.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -1056,10 +698,6 @@ In the future, the Group will continue to upgrade its existing Wang-Zheng produc
 
 集團未來將會繼續升級現有皇城產品，研發並推出 更多皇城品牌的高質量產品，進一步提升在馬來西 亞以至東南亞市場的佔有率。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0028-14.png)
-
-
 <!-- Start of picture text -->
 26<br><!-- End of picture text -->
 
@@ -1077,10 +715,6 @@ In the future, the Group will embrace emerging consumer trends and models in e-c
 
 To cater for the new consumer trends, the Group has interacted with consumers through livestream sales and other community activities to strengthen the connection with young consumers. The Group also appointed Xiao Zhan, a popular artist, as the global brand ambassador of “Hearttex” to further enhance the brand influence. The Group will continue to increase its market share in e-commerce and new retail channels to inject strong impetus for rapid growth in the future. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0029-06.png)
-
-
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of picture text -->
 
@@ -1094,18 +728,10 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of pictu
 
 為迎合消費新趨勢，集團透過直播銷售及其他社群 活動與消費者互動，加強與年輕消費群體的聯繫。 此外，集團還委任廣受歡迎的人氣藝人肖戰作為「心 相印」的全球品牌大使，以提升品牌影響力。集團將 持續提高在電商及新零售渠道中的市場佔有率，為 未來快速增長注入動力。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0029-12.png)
-
-
 <!-- Start of picture text -->
 27<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0030-00.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -1148,10 +774,6 @@ The bank borrowings and other borrowings were subject to floating annual interes
 
 銀行貸款及其他貸款的年利息率浮動在約0.001%至 5.39%之間（二零二三年：0.05%至6.45%之間）。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0030-20.png)
-
-
 <!-- Start of picture text -->
 28<br><!-- End of picture text -->
 
@@ -1167,10 +789,6 @@ During the year, the Group’s capital expenditure was approximately RMB1,688,98
 
 During the year, the Group actively improved the efficiency of human resources, raised the salaries of employees to the industry level, and implemented a more scientific and reasonable “target remuneration” system by linking the salary system with the staff duties and responsibilities and task goals, thus stimulating the staff enthusiasm for work, and improving work efficiency. As at 31 December 2024, the Group employed approximately 24,000 staff members. The Group’s remuneration package is determined with reference to the experience and qualifications of the individual employees and general market conditions. Bonus is linked to the Group’s financial results as well as individual performance. The Group also ensures that all employees are provided with adequate training and career opportunities according to their needs. The Group will also continue to improve efficiency and adjust production capacity and supply levels. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0031-05.png)
-
-
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br>62.6%（二零二三年：（二零二三年：<br>）。淨負債比率（按總貸款減去現金及銀行存<br><!-- End of picture text -->
 
@@ -1181,10 +799,6 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br>62.6%（二零二
 ###### **人力資源及管理** 
 
 於年內，集團積極改進人力資源效益，調高員工薪 酬至行內水平，並實行更為科學合理的「目標工資 薪酬」制度，將薪酬體系與員工崗位職責、任務目標 掛鈎，激發員工工作積極性，提升工作效率。集團 於二零二四年十二月三十一日一共聘用約24,000名 員工。集團員工的待遇及薪酬的制定乃考慮個別員 工的經驗及學歷，並對比一般市場情況而釐定。花 紅取決於集團的業績及個別員工的表現。集團同時 因應員工的需要提供充足的培訓及持續專業發展機 會給全體員工。集團亦會繼續提升效能，調整產能 及供應水平。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0031-10.png)
-
 
 <!-- Start of picture text -->
 29<br><!-- End of picture text -->
@@ -1213,22 +827,12 @@ In 2024, awards and honours won by the Group were as follows:
 |All-Asia Executive Team 2024: Most Honoured Company and Best ESG<br>(Consumer Staples Sector)<br>2024年亞洲區公司管理團隊評選最受尊重企業及最佳環境、社會及管<br>治（必需性消費品類別）|Institutional Investor<br>《機構投資者》(Institutional Investor)|
 |Top 100 Manufacturing and Innovative Private Enterprises in Fujian<br>福建省製造業及創新型民營企業100強|Fujian Federation of Industry and Commerce<br>福建省工商業聯合會|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0032-06.png)
-
-
 <!-- Start of picture text -->
 30<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
 
 **Chief Executive Officer’s Report** 行政總裁報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0033-01.png)
-
 
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of picture text -->
@@ -1269,20 +873,12 @@ Deloitte China, Bank of Singapore, HKUST Business School, and Harvard Business R
 
 德勤中國、新加坡銀行、香港科技大學商學 院、《哈佛商業評論》中文版 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0033-20.png)
-
-
 <!-- Start of picture text -->
 31<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Chief Executive Officer’s Report** 行政總裁報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0034-01.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -1315,10 +911,6 @@ We actively respond to concerns from all parties, formulate policies on sustaina
 
 我們積極響應各方關切，制定可持續發展相關政 策，並在官網公開披露，接受公眾的監督。恒安廣 泛聽取各利益相關方聲音，響應各方對於恒安可持 續發展的期望，並就各利益相關方關心的ESG相關 議題進行商討和響應，及時調整本集團ESG策略。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0034-16.png)
-
-
 <!-- Start of picture text -->
 32<br><!-- End of picture text -->
 
@@ -1338,10 +930,6 @@ During the reporting period, Hengan (Xiaoguan) Household Products Co., Ltd., a s
 
 Hengan always adheres to the market philosophy of “consumer-oriented”, actively exploring and innovating in the ever-changing market. We started to upgrade the research and development management system to strengthen the close connection between product innovation and market demand. With strict technical standards, we have continued to promote technological iteration, strengthened the construction of innovative talent teams, and strived to continuously improve the success rate of research and development, aiming to launch more consumer-oriented, high-quality personal and household sanitary products in the most efficient way. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0035-07.png)
-
-
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of picture text -->
 
@@ -1357,20 +945,12 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of pictu
 
 恒安始終堅持「以消費者為導向」的市場理念，在瞬 息萬變的市場中積極探索，大膽創新。我們著手升 級研發管理體系，以強化產品創新與市場需求之間 的緊密聯繫。憑藉嚴格的技術標準，我們持續推進 技術迭代，加強創新人才隊伍建設，並致力於持續 提升研發的一次成功率，力求以最高效的方式推出 更多貼近消費者需求、品質卓越的個人及家庭衛生 用品。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0035-14.png)
-
-
 <!-- Start of picture text -->
 33<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Chief Executive Officer’s Report** 行政總裁報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0036-01.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -1391,10 +971,6 @@ We also attach great importance to chemical safety, strictly comply with relevan
 
 我們亦高度重視化學品安全，嚴格遵守相關法律法 規與內部規範性文件，對包括產品開發、化學品採 購、儲存、使用以及披露在內的化學品相關全流程 實施精細化管理。我們嚴格依據國際、國家、行業 相關標準以及內部標準，以高標準建設上游原材料 管控，引進優質原材料，針對所有產品定期對所有 用到的化學品開展識別與評估，並及時淘汰所有存 在潛在風險的化學品，以提供令消費者放心的產品。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0036-10.png)
-
-
 <!-- Start of picture text -->
 34<br><!-- End of picture text -->
 
@@ -1412,10 +988,6 @@ The Group continuously taps into the potential of our employees, providing compr
 
 As of the end of 2024, Hengan has approximately 24,000 employees, with 54% female employees, the total training hours of employees exceeding 480,000, 125 people promoted to management positions, and the ratio of employees joining labor unions reaching 100%. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0037-06.png)
-
-
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of picture text -->
 
@@ -1429,18 +1001,10 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of pictu
 
 截至二零二四年底，恒安共有僱員約24,000人，女 性員工佔比為54% ，僱員培訓總時數超過48萬小 時，管理崗位晉升人數125人，員工加入工會的比例 為100% 。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0037-12.png)
-
-
 <!-- Start of picture text -->
 35<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0038-00.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -1467,10 +1031,6 @@ Hengan always adheres to an open and inclusive attitude, committed to establishi
 
 恒安始終秉持開放包容的態度，致力於建立穩固的 合作夥伴關係。我們通過不斷健全供應商管理體 系，實現對供應商開發准入、績效評估、日常管理 及淘汰退出的全流程精細化管理，並通過實施供應 商分級分類和定期績效評估，不僅為配額分配提供 重要參考，更成為驅動供應商績效持續改善的動力 源泉。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0038-12.png)
-
-
 <!-- Start of picture text -->
 36<br><!-- End of picture text -->
 
@@ -1488,10 +1048,6 @@ As a leading enterprise in the industry, Hengan actively constructs the foundati
 
 Since its establishment in 1985, Hengan has been committed to promoting and improving women’s health conditions. Through the “Pink Wings” girls’ adolescence health education series of activities, it continuously focuses on the healthy growth of adolescent girls and carries out public welfare activities to care for women’s health in more than ten towns in the northwestern Sichuan. The Group deeply cares about the special children group, donating 20 million yuan to the Quanzhou Autism Care Foundation through the World Autism Day theme activity. At the same time, in the lead-up to the Double Ninth Festival, the Group donated 452 boxes of loving materials to 27 elderly welfare institutions in Jinjiang City, passing on the virtue of respecting and loving the elderly through practical actions. In addition, the Group expresses its profound respect and practical support to the women soldiers in the western border areas and the “White Angel” of the First Affiliated Hospital of Xiamen University through special funds and material donations. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0039-06.png)
-
-
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br>ESG報告、碳足跡證書報告、碳足跡證書<br><!-- End of picture text -->
 
@@ -1505,20 +1061,12 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br>ESG報告、碳�
 
 恒安自一九八五年成立以來一直致力於推動和改善 女性健康條件，通過啟動「粉紅羽翼」女童青春期健 康教育系列活動，持續關注青春期女童的健康成 長，並走進川西北十幾個鄉鎮開展關愛西部女性健 康公益活動。本集團深切關注特殊兒童群體，通過 世界孤獨症日主題活動向泉州市孤獨症關愛基金捐 贈2,000萬元。同時，本集團在重陽節來臨之際，向 晉江市全市27家老年福利機構捐贈452箱愛心物資， 以實際行動傳遞尊老敬老美德。此外本集團還通過 專項基金、物資捐贈等形式，向西部邊疆女軍人和 廈門大學附屬第一醫院「白衣天使」表達崇高的敬意 與實際的支持。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0039-12.png)
-
-
 <!-- Start of picture text -->
 37<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Chief Executive Officer’s Report** 行政總裁報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0040-01.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -1543,10 +1091,6 @@ In 2025, the domestic hygiene products market is expected to remain highly compe
 
 二零二五年，預期國內衛生用品市場競爭持續嚴 峻，行業降價促銷趨勢將持續。集團將堅守「穩定價 格」核心戰略，保持穩健的流動資金，伺機把握行業 整合汰弱留強所帶來的機遇。憑藉領先的研發生產 實力及優越的品牌形象，加上全國性的廣泛佈局及 多元化產品組合，讓恒安在充滿挑戰的經營環境下 仍能展現強大抗逆力，進一步擴大市場份額。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0040-12.png)
-
-
 <!-- Start of picture text -->
 38<br><!-- End of picture text -->
 
@@ -1562,10 +1106,6 @@ The Group will also continue to optimise the organisational structure, strengthe
 
 In order to continue to consolidate the Group’s market leadership in tissue paper and hygiene products and meet domestic consumers’ demand for high-quality products, the Group plans to carry out production capacity expansion and technological upgrades in the future, including the establishment of a new production complex for upgraded hygiene products in Neikeng, Fujian, and the expansion of tissue paper production capacity in Hunan and Yunfu, Guangdong. It is expected that the new production capacity will be put into operation successively in 2025. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0041-05.png)
-
-
 <!-- Start of picture text -->
 Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of picture text -->
 
@@ -1577,18 +1117,10 @@ Chief Executive Officer’s Report<br>行政總裁報告書<br><!-- End of pictu
 
 為持續鞏固集團在紙巾及衛生用品的市場龍頭地位 及滿足國內消費者對優質產品的需求，集團計劃於 未來進行不同的產能擴充及技術升級計劃，包括於 福建內坑建立新的升級衛品綜合的基地及於湖南及 廣東雲浮等地區擴充紙巾產能，預期部分新產能將 於二零二五年陸續投產。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0041-10.png)
-
-
 <!-- Start of picture text -->
 39<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0042-00.png)
-
 
 <!-- Start of picture text -->
 行政總裁報告書<br><!-- End of picture text -->
@@ -1599,28 +1131,16 @@ As a leading enterprise in the personal and household hygiene products industry 
 
 恒安作為中國領先的個人及家庭衛生用品企業，將 繼續秉承「追求健康，你我一起成長」的使命，致力 建立一家優質可靠及可持續發展的個人及家庭衛生 用品企業，積極推動環境、社會及企業管治發展， 為創造一個綠色可持續發展的地球出一分力。集團 將聚焦三大主營業務（紙巾、衛生巾、紙尿褲），持 續提升品牌形象、緊握「新零售」時代的機遇及以長 期主義作未來發展大方向，積極開發及升級高質量 的產品及拓展新市場，進一步壯大恒安業務規模。 同時，集團將繼續以產業延伸為長遠發展目標，積 極拓展及延伸女性健康、嬰童健康及老年健康等產 業，持續提升整體競爭力，並帶領恒安品牌逐步走 向國際舞台，致力成為「全球頂級的家庭生活用品 企業」。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0042-04.png)
-
-
 ###### **Hui Ching Lau 許清流** 
 
 Chief Executive Officer 行政總裁 
 
 Hong Kong, 25 March 2025 香港，二零二五年三月二十五日 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0042-08.png)
-
-
 <!-- Start of picture text -->
 40<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0043-00.png)
-
 
 ## **Directors and Senior Management Profiles 董事及高級管理層簡介** 
 
@@ -1630,10 +1150,6 @@ Hong Kong, 25 March 2025 香港，二零二五年三月二十五日
 
 ###### **Executive Directors** 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0043-05.png)
-
-
 施文博先生，七十五歲，自一九九八年起為本集團 主席兼本公司執行董事，彼亦為本集團大多數附屬 公司的董事，負責制定本集團整體業務的發展方針 及策略。施先生為本公司創辦股東之一和本公司提 名委員會成員。施先生於消費品製造及分銷行業有 超過41年的經驗。 
 
 **Mr. Sze Man Bok** , aged 75, has been the Chairman of the Group and Executive Director of the Company since 1998. He is also a director of most of the subsidiaries of the Group. He is responsible for the Group’s overall corporate direction and business strategy. Mr. Sze is one of the founding shareholders and a member of the Nomination Committee of the Company. Mr. Sze has over 41 years of experience in manufacturing and distribution of consumer products. 
@@ -1642,36 +1158,20 @@ He is the father of Mr. Sze Wong Kim, an Executive Director of the Company. Mr. 
 
 彼為本公司執行董事施煌劍先生的父親。施先生自 二零一六年三月二十二日起獲委任為香港聯合交易 所有限公司（「聯交所」）主板上市公司於親親食品集 團（開曼）股份有限公司（股份代號1583）（「親親食 品」）的非執行董事。施先生於二零一七年六月十五 日獲皇城集團委任為執行董事，皇城集團為本公司 於馬來西亞證券交易所主板上市之非全資附屬公司 （股份代號為7203），彼於二零一七年九月二十五日 調任為皇城集團的非獨立非執行董事。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0043-10.png)
-
-
 **Mr. Hui Lin Chit** (former known as Hui Chi Lin), aged 71, has been the Deputy Chairman and Executive Director of the Company since 1998. He provides support for the Group’s long-term development. Mr. Hui is one of the founding shareholders of the Company and has over 41 years of experience in manufacturing and distribution of consumer products. He is also a director of certain subsidiaries of the Group. He resigned as Chief Executive Officer, the authorized representative (for the purposes of Rule 3.05 of the Listing Rules) (the “Authorized Representative”), a member of nomination committee and remuneration committee of the Company on 18 August 2021. During the period of 1998 and 18 August 2021, Mr. Hui was appointed as Chief Executive Officer of the Company and responsible for strategic planning, human resources and the overall management of Hengan Group. Mr. Hui has the title of senior economist in People’s Republic of China (“PRC”). He is the Chairman of the Jinjiang City Charity Federation. 
 
 許連捷先生（前稱許自連），七十一歲，自一九九八 年起為本公司副主席兼執行董事，為本集團長遠發 展繼續提供支持。許先生為本公司創辦股東之一， 於消費品製造及分銷行業有超過41年的經驗。彼亦 為本集團若干附屬公司的董事。彼於二零二一年八 月十八日辭去本公司行政總裁、授權代表（「授權代 表」）（按上市規則第3.05條所規定者）、提名委員會 和薪酬委員會成員。彼於一九九八年至二零二一年 八月十八日期間，曾出任本公司行政總裁，負責本 集團的策略規劃，人力資源及整體管理。許先生具 有中國高級經濟師職銜，許先生現任晉江市慈善總 會會長。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0043-13.png)
-
 
 <!-- Start of picture text -->
 41<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0044-00.png)
-
-
 ### **Directors and Senior Management Profiles** 董事及高級管理層簡介 
 
 Mr. Hui was a member of the 9th, 10th and 11th National Committee of Chinese People’s Political Consultative Conference (CPPCC) from 1998 to 2012. During the period from 1997 to 2011, he was also a member of the Executive Committee (at the 8th) and Standing Committee (at the 9th), and deputy chairman (at the 10th) of All-China Federation of Industry and Commence. He was also a deputy chairman of the 9th, 10th and 11th Quanzhou Municipal CPPCC Committee and the chairman of the 10th, 11th, 12th and 13th Quanzhou Federation of Industry and Commerce. 
 
 He is the father of Mr. Hui Ching Lau, Chief Executive Officer and an Executive Director of the Company and Mr. Hui Ching Chi, an Executive Director of the Company. During the period of 22 March 2016 to 18 May 2023 and 22 March 2016 to 12 April 2017, Mr. Hui was a non-executive director and the Chairman of Qinqin Foodstuffs respectively, a company listed on the Main Board of the Stock Exchange. Mr. Hui was appointed as executive director of WZB on 15 June 2017 and designated as non-independent non-executive chairman of WZB on 25 September 2017. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0044-04.png)
-
 
 **Mr. Hui Ching Lau** , aged 45, appointed as Executive Director of the Company on 10 December 2020. He was further appointed as Chief Executive Officer of the Company on 18 August 2021. He is also an Authorised Representative, the Chairman of Environmental, Social and Governance Committee, a member of the Remuneration 
 
@@ -1683,18 +1183,10 @@ Committee and Nomination Committee. He is a director of most of the subsidiaries
 
 許清流先生，四十五歲，於二零二零年十二月十日 獲委任為本公司執行董事。並於二零二一年八月 十八日獲委任為本公司之行政總裁。彼亦為授權代 表、環境、社會及管治委員會主席、提名委員會及 薪酬委員會成員。彼亦為本集團大多數附屬公司的 董事，彼擁有約二十三年企業管理經驗，現負責就 本集團的戰略發展事宜提供規劃、指導及策略意見 和本集團整体營運。彼現時為親親食品的執行董事 及董事會主席。彼為連捷投資集團有限公司（一間 投資管理公司）的董事總經理。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0044-10.png)
-
-
 <!-- Start of picture text -->
 42<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0045-00.png)
-
 
 <!-- Start of picture text -->
 董事及高級管理層簡介<br>AGORA Hospitality Group Co.,<br>（一間股份於東京證券交易所上市的公司，股份<br>）的一名董事。許先生自二零一八年一<br><!-- End of picture text -->
@@ -1709,18 +1201,10 @@ Mr. Hui is a member of the 11th and 12th Fujian Provincial Committee of Chinese 
 
 許先生自二零一三年至二零二二年為福建省政協第 十一和第十二屆委員及自二零二三年起成為第十四 屆全國政協委員。於二零一四年十二月至今，彼為 中國僑聯第四屆青年委員會常務副會長。許先生亦 為福建省工商業聯合會（十一屆）副主席，全國工商 業聯合會（十二屆）執委、中國僑聯第十屆委員會常 務委員、世界晉江青年聯誼會永遠榮譽會長、香港 晉江社團總會永遠榮譽顧問、香港福建社團聯會永 遠名譽主席及中國紙業商會聯席會長。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0045-06.png)
-
-
 <!-- Start of picture text -->
 43<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0046-00.png)
-
 
 ### **Directors and Senior Management Profiles** 董事及高級管理層簡介 
 
@@ -1728,15 +1212,7 @@ Mr. Hui graduated with a Degree of Bachelor of Arts in Accounting & Finance and 
 
 Mr. Hui is the son of Mr. Hui Lin Chit, an executive director and the Vice-Chairman of the Board of the Company. Mr. Hui is also the brother of Mr. Hui Ching Chi, an executive director of the Company. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0046-04.png)
-
-
 **Mr. Xu Da Zuo** , aged 57, has been an Executive Director of the Company since 26 August 1998. He currently is the Vice President of the Group and responsible for administrative management, capital operation and investment management of the Group. He was the Chief Financial Officer of the Group. Joining the Group in 1985, Mr. Xu has over 40 years of experience in accounting and internal audit. He has the title of senior accountant in the PRC. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0046-06.png)
-
 
 **Mr. Sze Wong Kim** , aged 49, is responsible for overall business strategy of the Group. Before joining the Company as an Executive Director on 1 June 2010, Mr. Sze worked in two accountancy firms in Australia and gained extensive experience in assurance and business advisory work. He started his own business in 2005 on wholesale and distribution of branded electronic components and computer accessories products in Hong Kong and overseas markets. Mr. Sze graduated from the University of Technology, Sydney with a Bachelor Degree of Business majoring in accounting and obtained a Master Degree of Commerce in finance from the University of New South Wales, Australia. He was appointed as the Company Secretary and authorised representative of the Company on 30 November 2016 and resigned on 3 January 2017. He is a member of CPA Australia and a fellow member of the Hong Kong Institute of Certified Public Accountants. He is the son of Mr. Sze Man Bok, the Chairman and an executive director of the Company. 
 
@@ -1748,45 +1224,25 @@ Mr. Hui is the son of Mr. Hui Lin Chit, an executive director and the Vice-Chair
 
 施煌劍先生，四十九歲，負責本集團整體業務發展 策略。彼於二零一零年六月一日加入本公司為執行 董事前，曾於兩家澳洲會計師事務所任職，對審計 及商業諮詢有豐富的經驗。施先生於二零零五年開 始其於香港和海外的電子零件和電腦配件批發和分 銷業務。彼畢業於悉尼科技大學，持有商業學士學 位並主修會計，彼亦獲取澳洲新南威爾斯大學金融 碩士學位。彼於二零一六年十一月三十日獲委任為 本公司公司秘書和授權代表，並於二零一七年一月 三日辭去該等職務。施先生為澳洲會計師公會的會 員和香港會計師公會的資深會員。彼為本公司主席 兼執行董事施文博先生的兒子。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0046-12.png)
-
-
 <!-- Start of picture text -->
 44<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0047-00.png)
-
 
 <!-- Start of picture text -->
 董事及高級管理層簡介<br>，四十歲，於二零一零年六月一日起為<br><!-- End of picture text -->
 
 ### **Directors and Senior Management Profiles** 董事及高級管理層簡介 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0047-02.png)
-
-
 許清池先生，四十歲，於二零一零年六月一日起為 本公司執行董事。彼現為集團副總裁，負責集團國 際業務發展。許先生於二零一五年至二零一六年 間，曾為本集團供應鏈總裁。彼於二零零八年二月 加入本集團前，曾於倫敦一家大型國際銀行工作。 彼持有倫敦大學法律學位。彼為本公司董事會副主 席兼執行董事許連捷先生的兒子及行政總裁兼執行 董事許清流先生之胞弟。彼為本集團若干附屬公司 的董事。許先生分別於二零一七年九月二十五和二 零二二年七月一日獲委任為皇城集團的執行董事和 行政總裁。 
 
 **Mr. Hui Ching Chi** , aged 40, has been an Executive Director of the Company since 1 June 2010. He currently is the Group Vice President and responsible for the Group’s international business development. He was the Director of Supply Chain Management of the Group from 2015 to 2016. Mr. Hui worked in a major international bank in London prior to joining the Group in February 2008. Mr. Hui holds a Law Degree from the London University. He is a son of Mr. Hui Lin Chit, the Vice-Chairman and an executive director of the Company and a younger brother of Mr. Hui Ching Lau, the Chief Executive Officer and an executive director of the Company. He is a director of certain subsidiaries of the Group. Mr. Hui was appointed as executive director and Group Chief Executive Officer of WZB on 25 September 2017 and 1 July 2022 respectively. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0047-05.png)
-
 
 **Mr. Li Wai Leung** , aged 46, was appointed as Executive Director of the Company and the Chief Financial Officer of the Group on 17 March 2017 and 26 March 2020 respectively. Mr. Li is also the Company Secretary and Authorized Representative of the Company. He is a director of certain subsidiaries of the Group. He has over 24 
 
 years of experience in accounting, finance and business advisory work. Before joining the Group on 3 January 2017, Mr. Li worked as the chief financial officer of various sizable PRC based manufacturing companies and as a senior manager in PricewaterhouseCoopers. Mr. Li obtained his bachelor’s degree in Business Administration in Accounting and Finance from the University of Hong Kong. He is currently a fellow member of the Hong Kong Institute of Certified Public Accountants and CPA Australia, a member of the Association of Chartered Certified Accountants from 16 January 2025. Mr. Li was appointed as executive director of WZB on 15 June 2017, an executive committee member of The Canadian Chamber of Commerce in Hong Kong on 30 October 2024, and an independent non-executive director of K W Nelson Interior Design and Contracting Group Limited on 1 January 2025, a company listed on the Stock Exchange of Hong Kong with a stock code of 8411. 
 
 李偉樑先生，四十六歲，彼分別於二零一七年三月 十七日和二零二零年三月二十六日獲委任為本公司 執行董事和本集團財務總監，彼同時為本公司的公 司秘書及授權代表。彼為本集團若干附屬公司的董 事。李先生於會計、財務及商業諮詢有逾二十四年 經驗。於二零一七年一月三日加入本集團前，李先 生曾出任多家中國大型製造業公司的首席財務官及 曾於羅兵咸永道會計師事務所擔任高級經理。李先 生在香港大學取得工商管理（會計及財務）學士學 位。彼現為香港會計師公會和澳洲會計師公會資深 會員，及於二零二五年一月十六日起獲委任為特許 公認會計師公會會員。李先生於二零一七年六月 十五日獲皇城集團委任為執行董事，於二零二四年 十月三十日獲委任為香港加拿大商會執行委員會成 員，於二零二五年一月一日獲委任為K W Nelson Interior Design and Contracting Group Limited的獨 立非執行董事，該公司於香港聯合交易所上市，股 份代號為8411。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0047-09.png)
-
 
 <!-- Start of picture text -->
 45<br><!-- End of picture text -->
@@ -1795,21 +1251,9 @@ years of experience in accounting, finance and business advisory work. Before jo
 
 **Directors and Senior Management Profiles** 董事及高級管理層簡介 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0048-01.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0048-02.png)
-
-
 **Mr. Xu Wenmo** , aged 58, has been appointed as an Executive Director of the Company since 24 August 2023. He is currently the Vice President of the Group and is responsible for the Group’s legal management, risk management, and internal and external control of the Group. Mr. Xu joined the Group in 1985 and has accumulated over 36 years of experience in management, marketing and sales of consumer products. He has the title of senior economist in the PRC. 
 
 ###### **Independent Non-Executive Directors** 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0048-05.png)
-
 
 **Ms. Ada Ying Kay Wong, JP** , aged 65, is an Independent Non-executive Director of the Company appointed in 1998. She is also the Chairlady of the Audit Committee, a member of the Nomination Committee, the Share Incentive Committee and Remuneration Committee. 
 
@@ -1823,18 +1267,10 @@ Ms. Wong, a practicing solicitor, is a partner of Philip K. H. Wong, Kennedy Y. 
 
 黃英琦女士為執業律師並為黃乾亨黃英豪律師事務 所的合夥人。此外，黃女士亦積極參與公共及教育 服務。彼是香港兆基創意書院校監及香港樹仁大學 的校董會成員。於二零零四至二零零七年，黃女士 曾任灣仔區議會主席，由二零一六年十月二十日至 二零二二年十月十九日期間，黃女士曾為博物館諮 詢委員會委員及博物館諮詢委員會藝術專責委員會 委員。由二零零四年九月七日至二零二二年九月 三十日期間，彼為於聯交所主板上市的白花油國際 有限公司（股份代號：0239）之獨立非執行董事。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0048-12.png)
-
-
 <!-- Start of picture text -->
 46<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0049-00.png)
-
 
 <!-- Start of picture text -->
 董事及高級管理層簡介<br>，七十一歲，於二零一九年五月十七<br><!-- End of picture text -->
@@ -1843,44 +1279,24 @@ Ms. Wong, a practicing solicitor, is a partner of Philip K. H. Wong, Kennedy Y. 
 
 保羅希爾先生，七十一歲，於二零一九年五月十七 日獲本公司委任為本公司獨立非執行董事，並為審 核委員會、提名委員會和環境、社會及管治委員會 成員，薪酬委員會及股份激勵委員會主席。希爾先 生在金融和投資領域具有非常豐富的經驗。彼為深 圳市中安信業創業投資有限公司創始人和自二零零 八年一月起擔任董事長。彼自二零一六年六月起獲 委任為親親食品獨立非執行董事。彼於二零一三年 十月至二零二一年六月曾擔任興業銀行（股份代號： 601166）獨立董事，並於二零二一年六月調任為該 監事及於二零二四年六月離任，該公司於二零一三 年十月於上海證券交易所上市。彼在二零零零年七 月至二零零一年九月，曾出任本公司非執行董事。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0049-03.png)
-
-
 **Mr. Theil Paul Marin** , aged 71, was appointed as an independent non-executive director on 17 May 2019. He is also a member of the Audit Committee, Nomination Committee and Environmental, Social and Governance Committee, the Chairman of the Remuneration Committee and Share Incentive Committee. He has had extensive experience in the finance and investment industry. He is the founder and has been the Chairman of Shenzhen Zhong An Credit Investment Co., Ltd since January 2008. He had been appointed as an independent non-executive director of Qin Qin Foodstuffs since June 2016. From October 2013 to June 2021, Mr. Theil was an independent director of China Industrial Bank Co. Ltd., a company listed on the Shanghai Stock Exchange (Stock code: 601166) since October 2013, and he was redesignated as supervisor in June 2021 and resigned in June 2024. He was also previously a Non-executive Director of the Company from July 2000 to September 2001. 
 
 Mr. Theil graduated from Yale University with a Degree of Bachelor of Arts in June 1975 and a Degree of Master of Arts in East Asian Studies in June 1975. He also graduated with a Degree of Juris Doctor and a Degree of Master of Business Administration from Harvard Law School and Harvard Business School in June 1980 and November 1981 respectively. 
 
 希爾先生於一九七五年六月畢業於耶魯大學，獲得 文學學士學位，並於一九七五年六月獲得東亞研究 文學碩士學位。彼並於一九八零年六月及一九八一 年十一月分別取得哈佛大學商學院的工商管理碩士 學位及哈佛大學法學院法學博士學位。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0049-07.png)
-
-
 **Mr. Ho Kwai Ching Mark** , aged 63, is an Independent Non-executive Director of the Company appointed on 1 January 2013. He is also a member of the Audit Committee, the Share Incentive Committee and Remuneration Committee, the Chairman of the Nomination Committee. He is currently the co-founder and CEO of ProMEX Limited, an independent non-executive director of Lee Kee Holdings Limited (stock code 0637) and Green Future Food Hydrocolloid Marine Science Company Limited (stock code 1084). He was the Chief Operating Officer of Oriental Patron Securities Limited, the Chief Compliance Officer of Hong Kong Mercantile Exchange Limited, the Director of Business Development of Sun Hung Kai Securities Limited and a Director of Phillip Securities (HK) Limited. He was also previously Vice President of Corporate Strategy of Hong Kong Exchanges and Clearing Limited and Head of Compliance of Hong Kong Futures Exchange Limited. He has more than 29 years of experience in the securities and futures industry. 
 
 何貴清先生，六十三歲，彼於二零一三年一月一日 獲委任為本公司獨立非執行董事，並為審核委員 會、股份激勵委員會及薪酬委員會成員和提名委員 會主席。彼現為普域商品市場有限公司的聯合創辦 人和行政總裁，於利記控股有限公司（股份代號為 0637）及綠新親水膠體海洋科技有限公司（股份代號 為1084）的獨立非執行董事。彼曾任職東英亞洲證 券有限公司首席營運總監和香港商品交易所的監察 總監，新鴻基證券有限公司的業務發展總監以及輝 立證券（香港）有限公司的董事。此前，彼曾任香港 交易及結算所有限公司的企業策略部副總裁和香港 期貨交易所有限公司監察部主管，於證券及期貨行 業擁有超過二十九年的經驗。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0049-10.png)
-
 
 <!-- Start of picture text -->
 47<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0050-00.png)
-
-
 ### **Directors and Senior Management Profiles** 董事及高級管理層簡介 
 
 Mr. Ho received a Bachelor Degree in Social Sciences from the University of Hong Kong in 1984 and is a fellow member of the Association of Chartered Certified Accountants and the Hong Kong Institute of Certified Public Accountants. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0050-03.png)
-
 
 **Mr. Chen Chuang** , aged 47, is an Independent Non-executive Director of the Company appointed on 20 May 2022. He is also a member of each of the Remuneration Committee, Audit Committee, Share Incentive Committee, Nomination Committee and Environmental, Social and Governance Committee of the Company, has over 18 years of experience in corporate strategy, large enterprises innovation, and internal innovation. Mr. Chen is an independent non-executive director of 361 Degrees International Limited (stock code: 1361) since August 2019, a company listed on the main board of the Stock Exchange. He was awarded a bachelor degree and a master degree in Management from the Faculty of Management and Economics of Dalian University of Technology. He also received his doctorate degree in Business Administration from the School of Economics and Management of Tsinghua University. He is currently a professor of business management at the Master of Business Administration Education Center of the School of Management of Xiamen University. Mr. Chen is a committee member of the Case Research Division of Chinese Society for Management Modernisation. 
 
@@ -1900,18 +1316,10 @@ Mr. Ho received a Bachelor Degree in Social Sciences from the University of Hong
 
 朱建水先生，五十歲，擔任本集團國內財務總監。 於一九九八年加入本集團，在財務和審計方面積逾 二十九年的經驗。畢業於中國天津商學院國際會計 專業及西南大學法學本科專業，並具有註冊稅務 師、審計師、高級經濟師等職銜。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0050-13.png)
-
-
 <!-- Start of picture text -->
 48<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0051-00.png)
-
 
 <!-- Start of picture text -->
 董事及高級管理層簡介<br>，四十七歲，擔任商貿發展部總監，負<br><!-- End of picture text -->
@@ -1934,18 +1342,10 @@ Mr. Ho received a Bachelor Degree in Social Sciences from the University of Hong
 
 李麗女士，四十歲，擔任市場部總監，負責集團旗 下品牌、傳媒、會員、用戶體驗的全面管理工作。 於二零一九年加入本集團，在品牌發展方面積逾十 餘年的經驗。畢業於成都理工大學和廈門大學，分 別獲得工學碩士學位和工商管理學碩士學位。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0051-10.png)
-
-
 <!-- Start of picture text -->
 49<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0052-00.png)
-
 
 ## **Corporate Governance Report 企業管治報告** 
 
@@ -1973,10 +1373,6 @@ The Group will continuously review and adjust, if necessary, its business strate
 
 本集團將持續檢討業務策略並在有必要時加以調 整，並緊貼瞬息萬變的市場狀況，以確保迅速及主 動採助措施應對變化及滿足市場需求，從而推動本 集團之可持續發展。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0052-14.png)
-
-
 <!-- Start of picture text -->
 50<br><!-- End of picture text -->
 
@@ -1992,10 +1388,6 @@ The Board has maintained the necessary balance of skills and experience appropri
 
 The Board meets regularly to discuss the overall strategy as well as the operation and financial performance of the Company, and to review and approve the Company’s interim and annual results. During the year, four regular Board meetings were held and the attendance of each Director at the Board meetings is set out in the section headed “Board and Committees Meetings” of this report. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0053-05.png)
-
-
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br><!-- End of picture text -->
 
@@ -2007,20 +1399,12 @@ Corporate Governance Report<br>企業管治報告<br><!-- End of picture text --
 
 董事會定期舉行會議，以討論整體策略及本公司之 營運及財務表現，並審閱及批准本公司中期業績及 年度業績。年內，董事會舉行四次定期會議，每名 董事出席董事會會議之情況，載於本報告「董事會 及委員會會議」一節。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0053-10.png)
-
-
 <!-- Start of picture text -->
 51<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Corporate Governance Report** 企業管治報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0054-01.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br><!-- End of picture text -->
@@ -2057,10 +1441,6 @@ The Company had entered into the letters of appointment of independent non-execu
 
 本公司與獨立非執行董事何貴清先生、黃英琦女 士、陳闖先生及保羅希爾先生簽訂委任函，惟沒有 特定任期期限，任何一方可提前不少於三個月的書 面通知終止。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0054-18.png)
-
-
 <!-- Start of picture text -->
 52<br><!-- End of picture text -->
 
@@ -2084,10 +1464,6 @@ According to the mechanism, subject to the prior approval by the executive Direc
 
 The Board will review this mechanism on an annual basis to ensure the implementation and effectiveness of this mechanism. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0055-09.png)
-
-
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br><!-- End of picture text -->
 
@@ -2107,20 +1483,12 @@ Corporate Governance Report<br>企業管治報告<br><!-- End of picture text --
 
 董事會將每年對該機制進行檢討，以確保該機制的 實施和有效性。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0055-18.png)
-
-
 <!-- Start of picture text -->
 53<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Corporate Governance Report** 企業管治報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0056-01.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br><!-- End of picture text -->
@@ -2167,10 +1535,6 @@ Directors disclose to the Company annually the number, identity and nature of of
 
 - 董事每年向本公司披露在香港或海外上市公 眾公司及機構擔任職務的數目、身份及性質 以及其他重大承擔。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0056-23.png)
-
-
 <!-- Start of picture text -->
 54<br><!-- End of picture text -->
 
@@ -2189,10 +1553,6 @@ A Remuneration Committee has been established by the Board with specific written
 - Mr. Hui Ching Lau (Chief Executive Officer) 
 
 - Mr. Theil Paul Marin (Independent Non-executive Director) 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0057-07.png)
-
 
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br><!-- End of picture text -->
@@ -2219,18 +1579,10 @@ The Remuneration Committee has been charged with the responsibility of determini
 
 薪酬委員會負責釐定全部執行董事及高級管理層之 具體薪酬待遇，包括實物利益、退休金權利及賠償 金額（包括喪失或終止其職務或委任的賠償），並就 非執行董事之薪酬向董事會提出意見。本公司對薪 酬政策的目標是根據業務所需及行業慣例，確保薪 酬待遇公平及具競爭力。本公司因應市場水平、各 董事及主要行政人員的工作量、表現、職責、工作 難度、可持續性及集團表現等因素，釐定向董事會 成員及主要行政人員支付的薪酬及袍金水平。薪酬 委員會亦審閱及╱或批准上市規則第十七章中購股 權計劃的事宜。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0057-19.png)
-
-
 <!-- Start of picture text -->
 55<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0058-00.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br><!-- End of picture text -->
@@ -2264,12 +1616,6 @@ For the year ended 31 December 2024, the remuneration of the members of the seni
 |HK$2,000,001 to HK$2,500,000 (equivalent to RMB1,824,421|港幣2,000,001<sup>–</sup> 港幣2,500,000（相當於|1|
 |to RMB2,280,525)|人民幣1,824,421元至人民幣2,280,525元）||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0058-11.png)
-
-
 <!-- Start of picture text -->
 56<br><!-- End of picture text -->
 
@@ -2289,10 +1635,6 @@ The Audit Committee has also discussed and reviewed the key audit matters determ
 
 All issues raised by the external auditor and the Audit Committee have been addressed by the senior management. The work and findings of the Audit Committee have been reported to the Board. During the Year, no issues brought to the attention of the senior management and the Board were of sufficient significance for disclosure in the annual report. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0059-07.png)
-
-
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br><!-- End of picture text -->
 
@@ -2308,18 +1650,10 @@ Corporate Governance Report<br>企業管治報告<br><!-- End of picture text --
 
 高級管理層已就外聘核數師和審核委員會提出的所 有問題作出回應。審核委員會的工作和結果已經向 董事會匯報。本年度內，需要高級管理層和董事會 注意的問題之重要性不足以在年報內作出有關披 露。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0059-14.png)
-
-
 <!-- Start of picture text -->
 57<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0060-00.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br><!-- End of picture text -->
@@ -2366,10 +1700,6 @@ A Nomination Committee has been established by the Board with specific terms of 
 
 董事會已成立提名委員會，並書面訂明其職權範 圍。政策內容其中包括甄選準則及提名程序。就物 色及甄選合適候選人擔任董事職務而言，提名委員 會將考慮候選人的品格、資格、經驗、獨立性、時 間付出及其他為配合公司策略及達致董事會多元化 的必要相關準則（如適用），繼而向董事會作出建 議。根據該提名政策，為填補董事會臨時空缺或增 聘董事，提名委員會應提出建議供董事會審議批 准。提名委員會在股東大會上提出參選或連任候選 人時，應當向董事會提出提名，供董事會審議並在 任何股東大會上建議參選或連任候選人。提名委員 會之職權及職責詳情已於該職權範圍中列出，並於 本公司及聯交所網站可供查閱。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0060-22.png)
-
-
 <!-- Start of picture text -->
 58<br><!-- End of picture text -->
 
@@ -2388,10 +1718,6 @@ The Board has adopted a board diversity policy which sets out the approach to ac
 The Company recognises and embraces the benefits of having a diverse Board and sees increasing diversity at Board level as an essential element in supporting the attainment of the Company’s strategic objectives and sustainable development. 
 
 The Company seeks to achieve Board diversity through the consideration of a number of factors, including but not limited to talents, skills, experience, independence, gender and knowledge. The Company will also take into consideration its own business model and specific needs from time to time. All Board appointments will be based on meritocracy and candidates will be considered against objective criteria, having due regard to the benefits of diversity on the Board. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0061-07.png)
-
 
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br><!-- End of picture text -->
@@ -2412,20 +1738,12 @@ Corporate Governance Report<br>企業管治報告<br><!-- End of picture text --
 
 本公司為尋求達致董事會成員多元化會考慮眾多因 素，包括但不限於才能、技能、經驗、獨立性、性別 及知識。本公司亦將不時考慮其本身的業務模式及 具體需要。董事會所有委任均以用人唯才為原則， 並在考慮人選時以客觀條件充分顧及董事會成員多 元化的裨益。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0061-16.png)
-
-
 <!-- Start of picture text -->
 59<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Corporate Governance Report** 企業管治報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0062-01.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br><!-- End of picture text -->
@@ -2464,10 +1782,6 @@ The primary duties of the Share Incentive Committee includes instruction the Tru
 
 股份激勵委員會的主要職責是在其認為適當的任何 時間向受託人發出指示購買本公司股份；釐定參與 計劃人士之資格；檢討及批准合資格人士可獲之獎 勵股份數量；審閱及╱或批准有關股份獎勵計劃之 事宜。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0062-19.png)
-
-
 <!-- Start of picture text -->
 60<br><!-- End of picture text -->
 
@@ -2489,10 +1803,6 @@ The ESG Committee is charged with the responsibility of reviewing and monitoring
 
 The Committee will meet at least once a year to discharge its responsibilities. During the year ended 31 December 2024, two ESG Committee meeting was held. The attendance of each member of the ESG Committee is set out in the section headed “Board and Committees Meetings” of this report. During the Year, the ESG Committee had reviewed on environmental, social and governance work in 2024 and work scope in 2025. The ESG Committee also reviewed the ESG report 2024. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0063-08.png)
-
-
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br><!-- End of picture text -->
 
@@ -2512,20 +1822,12 @@ ESG委員會負責審查和監控本集團的ESG政策和實 踐，以確保遵�
 
 委員會每年召開最少一次會議履行責任。截至二零 二四年十二月三十一日止年度，ESG委員會共舉行 兩次會議。ESG委員會各委員之出席率載列於本年 報「董事會及委員會會議」一節。本年度內，ESG委 員會審閱二零二四年環境、社會及管治工作及二零 二五年工作範圍，ESG委員會同時亦審閱二零二四 年ESG報告。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0063-17.png)
-
-
 <!-- Start of picture text -->
 61<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Corporate Governance Report** 企業管治報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0064-01.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br><!-- End of picture text -->
@@ -2558,8 +1860,6 @@ The individual attendance records of each Director attendance in person or throu
 |Mr. Chen Chuang|陳闖先生|4/4|4/4|1/1|2/2|2/2|1/1|1/1|
 |Ms. Ada Ying Kay Wong|黃英琦女士|4/4|4/4|1/1|2/2|N/A不適用|1/1|0/1|
 
-
-
 The Company’s external auditor also attended the annual general meeting. 
 
 本公司外聘核數師亦有出席股東週年大會。 
@@ -2575,10 +1875,6 @@ Note:
 * Being the secretary of the meetings. 
 
 * 作為會議的秘書。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0064-16.png)
-
 
 <!-- Start of picture text -->
 62<br><!-- End of picture text -->
@@ -2601,10 +1897,6 @@ All Directors have access to the advice and services of the Company Secretary wi
 
 The Group was charged approximately RMB4,400,000 and RMB570,000 by the Company’s external auditor, Deloitte Touche Tohmatsu, for auditing and non-auditing services respectively for the year ended 31 December 2024. Non-auditing services mainly included services provided for tax advisory services, preliminary announcements of results, assistance on transfer pricing notification and documentation, strategic breakdown and comprehensive budget management training etc. The Audit Committee is of the view that the auditors’ independence is not affected by the services rendered. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0065-08.png)
-
-
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br><!-- End of picture text -->
 
@@ -2622,20 +1914,12 @@ Corporate Governance Report<br>企業管治報告<br><!-- End of picture text --
 
 截至二零二四年十二月三十一日止年度，外聘核數 師德勤 • 關黃陳方會計師行向本集團分別收取約人 民幣4,400,000元和人民幣570,000元作為核數費用 和非核數服務的費用。非核數服務主要包括稅務咨 詢服務，業績公告初稿所提供的專業服務，轉讓定 價個別報告及同期資料報告準備，戰略分解及全面 預算管理培訓等。審核委員會認為核數師的獨立性 不會受到其所提供的服務所影響。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0065-16.png)
-
-
 <!-- Start of picture text -->
 63<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Corporate Governance Report** 企業管治報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0066-01.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br><!-- End of picture text -->
@@ -2668,10 +1952,6 @@ The Audit Committee reviews the risk management and internal control systems tha
 
 審核委員會按持續經營基準審閱對本集團而言屬重 大之風險管理及內部監控系統。審核委員會亦考慮 本集團在會計、內部審核及財務匯報職能方面之資 源、員工資歷及經驗是否足夠，以及員工所接受之 培訓課程及有關預算是否充足。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0066-16.png)
-
-
 <!-- Start of picture text -->
 64<br><!-- End of picture text -->
 
@@ -2688,10 +1968,6 @@ The Board is satisfied that the risk management and internal control systems in 
 1. Each business unit is responsible for identifying, assessing and managing risks within its business, ensuring that appropriate internal controls for effective risk management are implemented – principal risks are identified and assessed in the yearly business planning process with action plans to manage those risks; 
 
 2. The management is responsible for overseeing the risk management and internal control activities of the Group – regular meetings with each business unit to ensure principals risk are properly managed, and new or changing risks are identified; and 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0067-06.png)
-
 
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br><!-- End of picture text -->
@@ -2710,20 +1986,12 @@ Corporate Governance Report<br>企業管治報告<br><!-- End of picture text --
 
 2. 管理層負責監察本集團之風險管理及內部監 控活動 – 與各業務單位進行定期會議，確保 已妥善管理主要風險及已識別新發現或正在 變化之風險；及 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0067-14.png)
-
-
 <!-- Start of picture text -->
 65<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Corporate Governance Report** 企業管治報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0068-01.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br>3.<br><!-- End of picture text -->
@@ -2756,10 +2024,6 @@ The Company is committed to a consistent practice of timely, accurate and suffic
 
 本公司致力貫徹執行及時，準確及充足地詳細披露 本集團之重大消息。本公司已採納內幕消息披露政 策，當中載有處理及發佈內幕消息之責任，指引及 程序。在該等指引及程序之基礎下，本集團已設有 管理監控，確保可即時識別、評估及提交潛在內幕 消息以供董事會決定是否需要作出披露。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0068-16.png)
-
-
 <!-- Start of picture text -->
 66<br><!-- End of picture text -->
 
@@ -2783,10 +2047,6 @@ Pursuant to the Company’s articles of association and the Companies Act (as co
 
 The Share Registrars will verify the EGM Requisitionists’ particulars in the EGM Requisitionists’ request. Promptly after confirmation from the Share Registrars that the EGM Requisitionists’ request is in order, the Company Secretary will arrange with the Board to convene an EGM by serving sufficient notice to all the registered Shareholders in accordance with all the relevant statutory and regulatory requirements. On the contrary, if the EGM Requisitionists’ request is verified not in order, the EGM Requisitionists will be advised of the outcome and a EGM will not be convened as requested. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0069-09.png)
-
-
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br><!-- End of picture text -->
 
@@ -2806,20 +2066,12 @@ Corporate Governance Report<br>企業管治報告<br><!-- End of picture text --
 
 股份登記處將核實股東特別大會請求人於其請求書 中列明的詳情。經股份登記處確認股東特別大會請 求人之請求書為合乎程序後，公司秘書將立即安排 董事會召開股東特別大會，並根據所有相關法定及 規管要求，向所有已登記股東發出足夠時間之通 知。反之，倘股東特別大會請求書獲核實為不合乎 程序，股東特別大會請求人將獲告知此結果，並因 此不會應要求召開股東特別大會。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0069-18.png)
-
-
 <!-- Start of picture text -->
 67<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Corporate Governance Report** 企業管治報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0070-01.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br><!-- End of picture text -->
@@ -2860,18 +2112,10 @@ The Company has established several channels to communicate with the shareholder
 
 - (i) 企業通訊如年報、中期報告及通函均以印刷形 式刊發，同時於聯交所網站www.hkexnews.hk 及本公司網站www.hengan.com可供瀏覽； 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0070-20.png)
-
-
 <!-- Start of picture text -->
 68<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0071-00.png)
-
 
 <!-- Start of picture text -->
 Corporate Governance Report<br>企業管治報告<br>定期作出公佈，並將公佈分別刊載於聯交所<br>於本公司網站提供公司資料；<br><!-- End of picture text -->
@@ -2912,20 +2156,12 @@ The Company has adopted the Amended and Restated Memorandum and the Amended and 
 
 本公司已於2024年5月17日舉行的2024股東週年大 會通過經修訂和重列的組織章程大綱以及經修訂和 重列的組織章程細則。最新綜合版的公司組織章程 大綱及細則已發佈在本公司和聯交所網站。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0071-19.png)
-
-
 <!-- Start of picture text -->
 69<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Corporate Governance Report** 企業管治報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0072-01.png)
-
 
 <!-- Start of picture text -->
 企業管治報告<br><!-- End of picture text -->
@@ -2958,18 +2194,10 @@ The Board and the Audit Committee will review the Anti-Fraud and Anti-Corruption
 
 董事會及審核委員會將定期審閱反欺詐及反貪污政 策及機制，以確保其成效，並履行本集團對防止、 遏止、偵測及調查所有形式的欺詐及貪污的承諾。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0072-16.png)
-
-
 <!-- Start of picture text -->
 70<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0073-00.png)
-
 
 <!-- Start of picture text -->
 董事會報告書<br><!-- End of picture text -->
@@ -3009,20 +2237,10 @@ Further discussion and analysis of these activities and an indication of likely 
 |Others|其他|**2,308,174**|**132,480**|2,587,256|129,601|
 |||**22,669,215**|**2,171,875**|23,767,936|2,884,664|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0073-13.png)
-
-
 <!-- Start of picture text -->
 71<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0074-00.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br>(2)<br>follows:<br><!-- End of picture text -->
@@ -3047,8 +2265,6 @@ Report of the Directors<br>董事會報告書<br>(2)<br>follows:<br><!-- End of 
 |Overseas|海外|**598,068**|**2.6**|519,078|2.2|
 |||**22,669,215**|**100**|23,767,936|100|
 
-
-
 #### **RESULTS AND DIVIDEND** 
 
 The results of the Group for the year are set out in the consolidated statement of profit or loss on page 103. 
@@ -3064,10 +2280,6 @@ The Board has adopted a dividend policy. Subject to the Articles of Associations
 The Directors declared an interim dividend of RMB0.70 (2023: RMB0.70) per ordinary share, totalling RMB813,485,000 (2023: RMB813,485,000), which was paid on 10 October 2024. 
 
 董事局已於二零二四年十月十日派發中期股息 每股人民幣0.70元（二零二三年：人民幣0.70元）， 合共人民幣813,485,000元（二零二三年：人民幣 813,485,000元）。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0074-12.png)
-
 
 <!-- Start of picture text -->
 72<br><!-- End of picture text -->
@@ -3104,20 +2316,12 @@ Dividends payable to Shareholders will be paid in HK$. The exchange rate adopted
 
 擬派末期股息須待股東於股東週年大會批准 後，方可作實。為釐定收取截至二零二四年 十二月三十一日止年度擬派末期股息的資格， 本公司將由二零二五年五月二十六日（星期一） 至二零二五年五月二十七日（星期二）（包括首 尾兩天）暫停辦理股份過戶登記手續，期內不 會進行任何本公司股份過戶登記。為符合資 格收取擬派末期股息，未登記為本公司股份 持有人之人士應確保所有股份過戶文件連同 有關股票，必須於二零二五年五月二十三日 （星期五）下午四時三十分前交回本公司之香 港股份過戶登記分處卓佳證券登記有限公司， 地址為香港夏愨道16號遠東金融中心17樓， 以辦理登記手續。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0075-14.png)
-
-
 <!-- Start of picture text -->
 73<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Report of the Directors** 董事會報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0076-01.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br><!-- End of picture text -->
@@ -3138,12 +2342,6 @@ The Group’s financial condition, results of operation, business and prospects 
 ||(iii)|Ineffective brand promotion activities or||(iii)|品牌推廣活動低效或未能維|
 |||failure to maintain and promote the<br>brand|||持及提升品牌|
 |Hazard Risks|(i)|Business susceptible to extreme or<br>unseasonable weather conditions|災害風險|(i)|業務易受極端或不合時宜的<br>天氣狀況影響|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0076-07.png)
-
 
 <!-- Start of picture text -->
 74<br><!-- End of picture text -->
@@ -3208,10 +2406,6 @@ During the year, neither the Company nor any of its subsidiaries purchased, sold
 
 年內，本公司及其任何附屬公司概無購買、出售或 贖回本公司於聯交所的任何上市證券。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0077-29.png)
-
-
 <!-- Start of picture text -->
 75<br><!-- End of picture text -->
 
@@ -3257,10 +2451,6 @@ Brief biographical details of the Directors and senior management are set out on
 
 董事會及高級管理人員之履歷詳情載於第41至第49 頁。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0078-20.png)
-
-
 <!-- Start of picture text -->
 76<br><!-- End of picture text -->
 
@@ -3296,8 +2486,6 @@ Directors’ emoluments are set out on Note 40. The emoluments payable to six se
 |RMB1,824,421 to RMB2,280,525)|（相當於人民幣1,824,421元至|||
 ||人民幣2,280,525元）|**1**|0|
 
-
-
 #### **EMPLOYMENT AND REMUNERATION POLICY** 
 
 As at 31 December 2024, the Group had approximately 24,000 employees (2023: 23,000 employees). The Group implements remuneration policy, bonus, share options scheme and share award scheme to ensure that pay scales of its employees are rewarded on a performance-related basis within the general framework of the Group’s remuneration. 
@@ -3314,20 +2502,12 @@ Remuneration of Directors and senior management of the Group is reviewed by the 
 
 本集團董事及高級管理層的薪酬由本公司薪酬委員 會根據本公司的目標及宗旨審核。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0079-17.png)
-
-
 <!-- Start of picture text -->
 77<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Report of the Directors** 董事會報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0080-01.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br><!-- End of picture text -->
@@ -3363,12 +2543,6 @@ As at 31 December 2024, the interests of each director in the shares, short posi
 |Mr. Li Wai Leung||||||
 |李偉樑先生|–|–|210,000|210,000|0.02%|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0080-07.png)
-
-
 <!-- Start of picture text -->
 78<br><!-- End of picture text -->
 
@@ -3400,18 +2574,10 @@ As at 31 December 2024, the interests of each director in the shares, short posi
 
 - (5) 於7,917,000股份當中，Fountain Luck Holdings Limited（「 Fountain Luck 」）持有本公司7,280,000股 股份，而許先生則擁有本公司637,000股股份的個人 權益。Fountain Luck是一家於巴哈馬註冊成立的公 司，是Metro Global Investments Limited（「 Metro Global 」）的全資子公司。 Metro Global是一家於英 屬維京群島註冊成立的公司，由Fountain Luck 信託 受託人 Credit Suisse Trust Limited 以信託代理人身 份的受託人擁有。許文默先生為 Fountain Luck信託 之財產授予人和受益人，因此，根據證券及期貨條 例第XV部，彼被視為擁有Fountain Luck信託於本公 司的權益。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0081-13.png)
-
-
 <!-- Start of picture text -->
 79<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0082-00.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br>(6)<br>(7)<br><!-- End of picture text -->
@@ -3432,8 +2598,6 @@ Report of the Directors<br>董事會報告書<br>(6)<br>(7)<br><!-- End of pictu
 |許清池先生||||||
 |Mr. Li Wai Leung<br>李偉樑先生|Wang-Zheng Berhad|18,000|–|18,000|0.01%|
 
-
-
 Saved as disclosed above, as at 31 December 2024, none of the Directors and chief executives of the Company had any interests or short positions in any shares, underlying shares and debentures of the Company or any of its associated corporations (within the meaning of Part XV of the SFO) that was required to be recorded in the register maintained by the Company pursuant to Section 352 of the SFO or as otherwise notified to the Company and the Stock Exchange pursuant to the Model Code. 
 
 除上文所披露者外，於二零二四年十二月三十一 日，概無董事及本公司主要行政人員及其聯繫人於 本公司或其任何相聯法團（定義見證券及期貨條例 第XV部）之股份、相關股份及債券中，擁有任何根 據證券及期貨條例第352條規定須列入本公司存置 之登記冊，或根據標準守則已知會本公司及聯交所 的權益或淡倉。 
@@ -3449,10 +2613,6 @@ Notes:
 (2) The percentage expressed are based on the total number of issued Shares 159,356,400 as at 31 December 2024. 
 
 - (2) 相關百份比是根據於二零二四年十二月三十一日的 已發行股份總數159,356,400股計算得出。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0082-15.png)
-
 
 <!-- Start of picture text -->
 80<br><!-- End of picture text -->
@@ -3481,20 +2641,12 @@ Notes:
 
    - **(iii) 可供發行之股份數目上限** 扣除已授出之購股權，根據該計劃可發 行之股份數目上限為90,570,642股（於 本年報刊發日代表7.79%本公司總發行 股份），此數字並未大於該計劃被批准 當日本公司所發行股本的10%（即 117,753,742股股份）。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0083-11.png)
-
-
 <!-- Start of picture text -->
 81<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Report of the Directors** 董事會報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0084-01.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br>(iv)<br><!-- End of picture text -->
@@ -3520,10 +2672,6 @@ such further grant of Options shall be subject to prior approval by resolution o
 - (b) 按授出日期由聯交所發出的日報 表所載的該等股份收市價計算的 總值超逾500萬港元， 
 
 則該等再次授予期權須經股東決議的事 先批准（須以投票表決方式進行）。獲授 人、其聯繫人及本公司所有核心關連人 士必須放棄投票贊成，但彼等可於本公 司股東大會上投反對票，惟彼等須於寄 予股東之相關函件中表明其意向。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0084-13.png)
-
 
 <!-- Start of picture text -->
 82<br><!-- End of picture text -->
@@ -3572,18 +2720,10 @@ The Scheme will remain in force before 17 May 2031.
 
 - 該計劃則於二零三一年五月十七日屆滿 前有效。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0085-21.png)
-
-
 <!-- Start of picture text -->
 83<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0086-00.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br>(2)<br>follows:<br><!-- End of picture text -->
@@ -3640,12 +2780,6 @@ Report of the Directors<br>董事會報告書<br>(2)<br>follows:<br><!-- End of 
 ||610,400|–|–|–|(155,200)|455,200|40.30|21/12/2022|21/12/2025<sup>–</sup>20/12/2026|
 ||51,606,000|–|–|–|(19,089,900)|32,516,100||||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0086-05.png)
-
-
 <!-- Start of picture text -->
 84<br><!-- End of picture text -->
 
@@ -3681,20 +2815,12 @@ Notes:
 
 2.85% 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0087-15.png)
-
-
 <!-- Start of picture text -->
 85<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Report of the Directors** 董事會報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0088-01.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br><!-- End of picture text -->
@@ -3718,8 +2844,6 @@ The Company has used the Binomial Model for assessing the fair value of the shar
 |Expected turnover rate|預期離職比率|16.70%|1.98%|24.69%|23.90%|
 |Expected life (year)|預計行權期限（年）|10|2–4|2–4|2–4|
 
-
-
 Notes: 
 
 附註： 
@@ -3735,10 +2859,6 @@ Notes:
 (c) Dividend yield is estimated by reference to the historical share price and dividend paid of the Company. 
 
 - (c) 股息收益率參照本公司的歷史股價和支付的 股利進行估計。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0088-13.png)
-
 
 <!-- Start of picture text -->
 86<br><!-- End of picture text -->
@@ -3769,20 +2889,12 @@ The purpose of the Share Award Scheme is to (i) encourage employees of the Group
 
 - **(i) 股份獎勵計劃的用途** 股份獎勵計劃旨在(i)鼓勵僱員透過擁有 本公司股權及分享本集團策略發展成果 的機會，為本集團作出貢獻，提升本公 司及其股份的價值，從而使本公司及其 股東整體受惠；及(ii)以挽留有關人員以 及吸引合適人才繼續為本集團發展服 務。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0089-12.png)
-
-
 <!-- Start of picture text -->
 87<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Report of the Directors** 董事會報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0090-01.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br>(ii)<br><!-- End of picture text -->
@@ -3806,10 +2918,6 @@ The maximum aggregate number of Shares held by the Trustee under the Trust at an
 根據該計劃，受託人在任何時間根據信 託持有的股份最高總數不得超過本公司 不時已發行股本的2% 。 
 
 - **(iv) 每位參與人可獲獎勵股份上限** 根據該計劃可能授予個別選定僱員的最 高股份數目不得超過本公司於採納日期 已發行股份總數的1% 。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0090-12.png)
-
 
 <!-- Start of picture text -->
 88<br><!-- End of picture text -->
@@ -3862,20 +2970,12 @@ There were 15,000,000 shares of the Company held by the Trust as at 1 January 20
 
 於二零二四年一月一日，受託人持有 15,000,000股本公司股份，年內，受託人按現 行市場價格在市場上購買本公司股份 8,200,000股。於本報告日，根據股份獎勵計 劃可供授出之獎勵總數為58,106,045股，受託 人持有合共23,200,000股本公司股份。自採納 股份獎勵計劃以來，概無根據該計劃授予或 歸屬任何股份。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0091-23.png)
-
-
 <!-- Start of picture text -->
 89<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Report of the Directors** 董事會報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0092-01.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br><!-- End of picture text -->
@@ -3898,15 +2998,9 @@ The register of substantial shareholders maintained under section 336 of part XV
 |Hang Seng Bank (Trustee) Limited|(4)|Trustee|238,724,399 (L)|20.54%|
 |恒生銀行信託有限公司||受託人|||
 
-
-
 (L) denotes long position 
 
 (L) 指好倉 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0092-09.png)
-
 
 <!-- Start of picture text -->
 90<br><!-- End of picture text -->
@@ -3951,20 +3045,12 @@ Other than the interests disclosed above in respect of the substantial sharehold
 
 除上文披露的大股東權益外，截至2024年12月31 日，沒有其他人士或合計有權在公司股東大會上行 使或控制行使5%或以上的表決權，以及能夠以切實 可行的方式指導或影響公司的管理。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0093-19.png)
-
-
 <!-- Start of picture text -->
 91<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Report of the Directors** 董事會報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0094-01.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br><!-- End of picture text -->
@@ -4004,10 +3090,6 @@ No contracts of significance, to which the Company or any its subsidiaries was a
 #### **控股股東於重大合約的權益** 
 
 本公司或其任何附屬公司概無訂立於本年度結束時 或年內任何時間仍然有效而股東直接或間接擁有重 大權益的重大合約。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0094-20.png)
-
 
 <!-- Start of picture text -->
 92<br><!-- End of picture text -->
@@ -4056,20 +3138,12 @@ Save as disclosed herein, at no time during the financial year and up to the dat
 
 除非另有披露外，於財政年度內任何時間及截至本 董事會報告日期，並無任何已獲批准之彌償保證條 文為本公司（倘由本公司或其他方作出）或聯營公司 （倘由本公司作出）任何董事之利益生效。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0095-21.png)
-
-
 <!-- Start of picture text -->
 93<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Report of the Directors** 董事會報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0096-01.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br><!-- End of picture text -->
@@ -4098,8 +3172,6 @@ The percentages of purchases of goods and services for the year attributable to 
 |---|---|---|---|
 |– five largest suppliers combined|34.05%|–首五大供應商|34.05%|
 
-
-
 None of the directors of the Company or any of their close associates or any shareholders of the Company (which, to the best knowledge of the directors, own more than 5% of the Company’s issued share capital) had any beneficial interest in the Group’s five largest customers and suppliers. 
 
 本公司董事或其任何緊密聯繫人或就董事所知擁有 本公司已發行股本5%以上之任何本公司股東均無 擁有本集團五大客戶及供應商之任何實益權益。 
@@ -4123,10 +3195,6 @@ The Company is not aware of any relief from taxation to which the Shareholders a
 #### **稅收減免** 
 
 本公司並不知悉股東因持有股份而有權享有任何稅 項寬免。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0096-25.png)
-
 
 <!-- Start of picture text -->
 94<br><!-- End of picture text -->
@@ -4183,20 +3251,12 @@ No contracts concerning the management and administration of the whole or any su
 
 年內並無訂立或存在有關本公司或其附屬公司全部 或任何主要部分業務的管理及行政合約。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0097-25.png)
-
-
 <!-- Start of picture text -->
 95<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Report of the Directors** 董事會報告書 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0098-01.png)
-
 
 <!-- Start of picture text -->
 Report of the Directors<br>董事會報告書<br><!-- End of picture text -->
@@ -4233,18 +3293,10 @@ Hong Kong, 25 March 2025
 
 香港，二零二五年三月二十五日 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0098-18.png)
-
-
 <!-- Start of picture text -->
 96<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0099-00.png)
-
 
 <!-- Start of picture text -->
 獨立核數師報告<br><!-- End of picture text -->
@@ -4285,20 +3337,12 @@ Key audit matters are those matters that, in our professional judgment, were of 
 
 關鍵審計事項是根據本行的專業判斷，認為對本期 合併財務報表的審計最為重要的事項。該事項是在 本行審計整體合併財務報表及出具意見時處理，本 行不會對該事項提供單獨的意見。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0099-19.png)
-
-
 <!-- Start of picture text -->
 97<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Independent Auditor’s Report** 獨立核數師報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0100-01.png)
-
 
 <!-- Start of picture text -->
 獨立核數師報告<br>Key Audit Matter<br>關鍵審計事項<br><!-- End of picture text -->
@@ -4307,8 +3351,6 @@ Key audit matters are those matters that, in our professional judgment, were of 
 |---|---|
 |關鍵審計事項|本行如何處理關鍵審計事項|
 |**Recognition of revenue from sales of goods**<br>商品銷售收入的確認||
-
-
 
 We identified recognition of revenue from sales of goods as a key audit matter due to the significance of the amount in the Group’s consolidated financial statements as a whole and the large volume of revenue transactions generated from various products. 
 
@@ -4331,10 +3373,6 @@ Our procedures in relation to the recognition of revenue from sales of goods inc
 - Comparing the sales information of a selection of revenue transactions recorded in the accounting records of the Group with the corresponding sales contracts and goods delivery notes. 
 
    - 選取 貴集團記錄中的商品銷售收入之交易資料，與 相關銷售合同及貨物交付單據進行比對。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0100-14.png)
-
 
 <!-- Start of picture text -->
 98<br><!-- End of picture text -->
@@ -4363,10 +3401,6 @@ In preparing the consolidated financial statements, the directors are responsibl
 
 Those charged with governance are responsible for overseeing the Group’s financial reporting process. 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0101-11.png)
-
-
 <!-- Start of picture text -->
 Independent Auditor’s Report<br>獨立核數師報告<br>2023年12月31日止年度的合併財務報表年12月31日止年度的合併財務報表12月31日止年度的合併財務報表月31日止年度的合併財務報表31日止年度的合併財務報表日止年度的合併財務報表<br>2024年3月21日對該年3月21日對該3月21日對該月21日對該21日對該日對該<br><!-- End of picture text -->
 
@@ -4390,20 +3424,12 @@ Independent Auditor’s Report<br>獨立核數師報告<br>2023年12月31日止�
 
 負責管治人員須履行監督 貴集團的財務報告過程 的責任。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0101-22.png)
-
-
 <!-- Start of picture text -->
 99<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Independent Auditor’s Report** 獨立核數師報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0102-01.png)
-
 
 <!-- Start of picture text -->
 獨立核數師報告<br><!-- End of picture text -->
@@ -4432,10 +3458,6 @@ As part of an audit in accordance with HKSAs, we exercise professional judgment 
 
 - 評價董事所採用會計政策的恰當性及作出會 計估計和相關披露的合理性。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0102-14.png)
-
-
 <!-- Start of picture text -->
 100<br><!-- End of picture text -->
 
@@ -4450,10 +3472,6 @@ As part of an audit in accordance with HKSAs, we exercise professional judgment 
 We communicate with those charged with governance regarding, among other matters, the planned scope and timing of the audit and significant audit findings, including any significant deficiencies in internal control that we identify during our audit. 
 
 We also provide those charged with governance with a statement that we have complied with relevant ethical requirements regarding independence, and to communicate with them all relationships and other matters that may reasonably be thought to bear on our independence, and where applicable, actions taken to eliminate threats or safeguards applied. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0103-05.png)
-
 
 <!-- Start of picture text -->
 Independent Auditor’s Report<br>獨立核數師報告<br>對董事採用持續經營會計基礎的恰當性作出<br>結論。根據所獲取的審計憑證，確定是否存在<br>與事項或情況有關的重大不確定性，從而可<br>貴集團的持續經營能力產生重大<br><!-- End of picture text -->
@@ -4470,20 +3488,12 @@ Independent Auditor’s Report<br>獨立核數師報告<br>對董事採用持續
 
 本行還向 貴公司負責管治人員提交聲明，說明本 行已符合有關獨立性的相關專業道德要求，並與他 們溝通有可能合理地被認為會影響本行獨立性的所 有關係和其他事項，以及在適用的情況下，為消除 威脅採取的行動及防範措施。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0103-12.png)
-
-
 <!-- Start of picture text -->
 101<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
 
 **Independent Auditor’s Report** 獨立核數師報告 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0104-01.png)
-
 
 <!-- Start of picture text -->
 獨立核數師報告<br><!-- End of picture text -->
@@ -4501,10 +3511,6 @@ Certified Public Accountants Hong Kong 25 March 2025
 出具這本獨立核數師報告的審計項目合夥人是潘錦 泉先生。 
 
 德勤 **•** 關黃陳方會計師行 執業會計師 香港 2025年3月25日 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0104-09.png)
-
 
 <!-- Start of picture text -->
 102<br><!-- End of picture text -->
@@ -4545,20 +3551,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |– Diluted|–每股攤薄收益||**RMB2.015**|RMB2.415|
 |||10|人民幣**2.015**元|人民幣2.415元|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0105-03.png)
-
-
 <!-- Start of picture text -->
 103<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0106-00.png)
-
 
 <!-- Start of picture text -->
 For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -4583,12 +3579,6 @@ For the year ended 31 December 2024
 |Shareholders of the Company|公司權益持有人|**2,381,489**|2,823,176|
 |Non-controlling interests|非控制性權益|**3,195**|1,610|
 |**Total comprehensive income for the year**|本年度總綜合收益|**2,384,684**|2,824,786|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0106-05.png)
-
 
 <!-- Start of picture text -->
 104<br><!-- End of picture text -->
@@ -4634,12 +3624,6 @@ At 31 December 2024 二零二四年十二月三十一日
 |**Non-controlling interests**|非控制性權益||**224,631**|234,011|
 |**Total equity**|總權益||**21,145,581**|20,629,851|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0107-03.png)
-
-
 <!-- Start of picture text -->
 105<br><!-- End of picture text -->
 
@@ -4670,8 +3654,6 @@ At 31 December 2024
 |**Total liabilities**|總負債||**18,658,830**|19,586,050|
 |**Total equity and liabilities**|權益及負債合計||**39,804,411**|40,215,901|
 
-
-
 The consolidated financial statements on pages 103 to 224 were approved and authorised for issue by the Board of Directors on 25 March 2025 and are signed on its behalf by: 
 
 第103頁至第224頁的合併財務報表已由董事會於二 零二五年三月二十五日批核，並代表董事會簽署。 
@@ -4679,10 +3661,6 @@ The consolidated financial statements on pages 103 to 224 were approved and auth
 Director 董事 **Sze Man Bok** 施文博 
 
 Director 董事 **Hui Ching Lau** 許清流 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0108-08.png)
-
 
 <!-- Start of picture text -->
 106<br><!-- End of picture text -->
@@ -4720,20 +3698,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |**Balance at 31 December 2024**|於二零二四年||||||||
 ||十二月三十一日||**123,345**|**2,902,639**|**17,894,966**|**20,920,950**|**224,631**|**21,145,581**|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0109-03.png)
-
-
 <!-- Start of picture text -->
 107<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0110-00.png)
-
 
 <!-- Start of picture text -->
 合併權益變動表<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -4761,12 +3729,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |**Appropriation to statutory**<br>**reserves**|撥往法定儲備|26, 27|–|39,292|(39,292)|–|–|–|
 |**Balance at 31 December 2023**|於二零二三年||||||||
 ||十二月三十一日||123,345|2,880,980|17,391,515|20,395,840|234,011|20,629,851|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0110-04.png)
-
 
 <!-- Start of picture text -->
 108<br><!-- End of picture text -->
@@ -4812,20 +3774,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Income tax paid|已付所得稅|**(730,876)**|(769,208)|
 |Net cash generated from operating activities|營運活動產生的淨現金|**3,072,380**|3,875,375|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0111-03.png)
-
-
 <!-- Start of picture text -->
 109<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0112-00.png)
-
 
 <!-- Start of picture text -->
 合併現金流量表<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -4873,12 +3825,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Effect of foreign exchange rate changes|外幣匯率變動之影響|**54,051**|23,124|
 |Cash and cash equivalents at 31 December|十二月三十一日之現金及|||
 ||現金等價物|**7,445,915**|8,021,756|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0112-04.png)
-
 
 <!-- Start of picture text -->
 110<br><!-- End of picture text -->
@@ -4929,18 +3875,10 @@ Amendments to HKFRS 16 Lease Liability in a Sale and Leaseback Amendments to HKA
 
 香港財務報告準則 銷售及售後租回之 第16號（修訂） 租賃負債 香港會計準則第1號 將負債分類為流動或 （修訂） 非流動及香港詮釋 第五號相關修訂 （2020年） 香港會計準則第1號 附有契諾的非流動 （修訂） 負債 香港會計準則第7號及 供應商融資安排 香港財務報告準則 第7號（修訂） 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0113-22.png)
-
-
 <!-- Start of picture text -->
 111<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0114-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -4977,10 +3915,6 @@ The Group has applied the amendments for the first time in the current year. The
 
 - 闡述負債的償還可以是轉移現金、商品或 服務，或企業本身的權益工具。若某項負 債附帶條款，可規定對方可選擇以轉讓企 業本身的權益工具的方式償還該負債，則 僅當企業根據香港會計準則第32號：《金融 工具：呈列》將該選擇權單獨確認為權益工 具時，這些條款才不影響該負債分類為流 動或非流動。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0114-17.png)
-
-
 <!-- Start of picture text -->
 112<br><!-- End of picture text -->
 
@@ -5012,18 +3946,10 @@ In accordance with the transition provision, the Group has applied the new accou
 
 根據過渡條款，本集團已採用新會計政策追溯 將負債分類為流動負債或非流動負債。本年度 應用該等修訂對合併財務報表並無重大影響。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0115-13.png)
-
-
 <!-- Start of picture text -->
 113<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0116-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -5047,8 +3973,6 @@ The Group has not early applied the following new and amendments to HKFRSs that 
 |Accounting Standards|Accounting Standards –<br>Volume 11<sup>3</sup>|
 |Amendments to HKAS 21|Lack of Exchangeability<sup>2</sup>|
 |HKFRS 18|Presentation and Disclosure in<br>Financial Statements<sup>4</sup>|
-
-
 
 > 1 Effective for annual periods beginning on or after a date to be determined. 
 
@@ -5088,10 +4012,6 @@ Except for the new HKFRS mentioned below, the directors of the Company anticipat
 
 除下文所述的新訂香港財務報告準則外，本公 司董事預期應用所有其他經修訂香港財務報告 準則將不會對可預見的未來合併財務報表造成 重大影響。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0116-21.png)
-
-
 <!-- Start of picture text -->
 114<br><!-- End of picture text -->
 
@@ -5121,18 +4041,10 @@ HKFRS 18, and amendments to other standards, will be effective for annual period
 
 香港財務報告準則第18號及其他準則的修訂本 將於二零二七年一月一日或之後年度期間生 效，並允許提前應用。預計新準則的應用將影 響合併利潤表的列報和未來財務報表的披露。 本集團正在評估香港財務報告準則第18號對本 集團合併財務報表的詳細影響。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0117-12.png)
-
-
 <!-- Start of picture text -->
 115<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0118-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -5175,10 +4087,6 @@ Construction-in-progress (“CIP”) represents buildings and machineries under 
 
 在建工程包括興建中或待裝登的樓宇及機 器，並按成本值減累計減值虧損列賬（如 有）。成本包括建造、收購的成本及資本化 的借款成本。在建工程並無提取折舊直至 相關資產已完成及可以被使用。當有關資 產可被使用，其成本轉至物業、機器及設 備，並開始按下列政策提取折舊。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0118-20.png)
-
-
 <!-- Start of picture text -->
 116<br><!-- End of picture text -->
 
@@ -5219,16 +4127,12 @@ Depreciation on property, plant and equipment is calculated using the straight-l
 |and fixtures|||
 |Motor vehicles|5|years|
 
-
-
 |樓宇|20年|
 |---|---|
 |機器設備|10–20年|
 |辦公室設備及|5年|
 |傢俬裝置||
 |車輛|5年|
-
-
 
 The assets’ residual values and useful lives are reviewed, and adjusted if appropriate, at the end of each reporting period. 
 
@@ -5242,18 +4146,10 @@ Gains and losses on disposals are determined by comparing proceeds with carrying
 
 處置的利得和損失按所得款與賬面值的差 額釐定，並在合併利潤表內「其他收入和利 得<sup>–</sup> 淨額」中確鍶。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0119-22.png)
-
-
 <!-- Start of picture text -->
 117<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0120-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -5314,10 +4210,6 @@ The classification depends on the entity’s business model for managing the fin
 
 該分類取決於集團管理金融資產的業務模 式以及該資產的合約現金流量特徵。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0120-29.png)
-
-
 <!-- Start of picture text -->
 118<br><!-- End of picture text -->
 
@@ -5369,18 +4261,10 @@ Financial assets with embedded derivatives are considered in their entirety when
 
 對於包含嵌入式衍生工具的金融資產，本 集團對整個合約考慮其現金流量是否僅代 表對本金和利息的支付。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0121-23.png)
-
-
 <!-- Start of picture text -->
 119<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0122-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -5428,10 +4312,6 @@ Assets that do not meet the criteria for amortised cost or FVTOCI are measured a
 ##### 以公允價值計量且其變動計入當期損 益的金融資產 
 
 不屬於按攤餘成本計量或以公允價值計量 且其變動計入其他綜合收益的資產，則按 公允價值計量且其變動計入當期損益。按 公允價值計量且其變動計入當期損益的債 務工具，其公允價值變動在歸屬期間確認 為收益或損失，並按淨值於其他收益╱（損 失）內呈列。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0122-23.png)
-
 
 <!-- Start of picture text -->
 120<br><!-- End of picture text -->
@@ -5484,18 +4364,10 @@ Trade and bills receivables are recognised initially at the amount of considerat
 
 應收賬款初步按無條件代價金額確認，除 非彼等按公允價值確認時包括重大融資成 分。本集團持有應收賬款以收取合約現金 流量，因此其後採用實際利息法按攤餘成 本計量。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0123-23.png)
-
-
 <!-- Start of picture text -->
 121<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0124-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -5527,10 +4399,6 @@ A receivable is recognised when the goods are delivered and the customers has in
 個人衛生產品通常以一段時期內的銷售總 量為基準，進行而追溯銷售回扣。該等銷 售的收益乃基於合約規定的價格，經扣除 估計折扣後確認。本公司使用累積的經驗 估計及提供折扣，且收益僅於重大撥回極 大可能不會產生時確認。當預期向客戶應 付有關銷售的批量折扣時確認退款責任（包 括在其他應付賬款及預提費用內）。由於銷 售之信貸期為30至90日，符合市場慣例， 故並不存在融資因素。 
 
 本集團在貨品交付且客戶已驗收時確認應 收款，因為此時收回對價的權利是無條件 的，本集團僅需等待客戶付款。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0124-15.png)
-
 
 <!-- Start of picture text -->
 122<br><!-- End of picture text -->
@@ -5581,18 +4449,10 @@ Intra-group transactions, balances and unrealised gains on transactions between 
 
 集團內公司之間的交易、結餘及交易的未 變現利得予以對銷。未變現損失亦予以對 銷，除非交易提供所轉撥資產的減值證 據。附屬公司報告的數額已按需要作出改 變，以確保與本集團採納的政策符合一致。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0125-22.png)
-
-
 <!-- Start of picture text -->
 123<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0126-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -5643,10 +4503,6 @@ Where the Group’s share of losses in an equity-accounted investment equals or 
 
 如本集團分佔按權益法入賬之投資虧損相 等於或超逾其於該按權益法入賬之投資之 權益（包括任何其他無抵押應收款項），則 本集團不會確認進一步之虧損，除非本集 團已代該按權益法入賬之投資承擔負債或 支付款項。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0126-24.png)
-
-
 <!-- Start of picture text -->
 124<br><!-- End of picture text -->
 
@@ -5688,18 +4544,10 @@ The Group applies the acquisition method to account for business combinations. T
 
 本集團利用購買法將業務合併入賬。購買 一附屬公司所轉讓的對價，包括所轉讓資 產、對被收購方的前所有人產生的負債， 及本集團發行的股本權益的公允價值。或 有對價安排所產生的任何資產或負債的公 允價值以及於附屬公司任何先前存在的股 權的公允價值。在業務合併中所購買可辨 認的資產以及所承擔的負債及或有負債， 首先以彼等於購買日期的公允價值初始計 量。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0127-18.png)
-
-
 <!-- Start of picture text -->
 125<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0128-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -5745,10 +4593,6 @@ The excess of the consideration transferred, the amount of any non-controlling i
 或有對價分類為權益及金融負債。分類為 金融負債的舊價在後續計量中按公允價值 重新計量，公允價值變動在損益中確認。 分類為權益的或然代價不會重新計量，其 後之結算亦在權益中入賬。 
 
 所轉讓的超額對價、被收購方的任何非控 制性權益數額，及在被收購方之前任何權 益在收購日期的公允價值，超過購入可辨 識淨資產公允價值的數額記錄為商譽。如 所轉讓對價、確認的任何非控制性權益及 之前持有的權益的公允價值，低於購入附 屬公司淨資產的公允價值，則將該數額直 接在合併利潤表中確認。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0128-22.png)
-
 
 <!-- Start of picture text -->
 126<br><!-- End of picture text -->
@@ -5799,18 +4643,10 @@ Impairment testing of the investments in subsidiaries is required upon receiving
 
 倘從於附屬公司的投資收取的股息超出該 附屬公司於股息獲宣派期間的全面收益總 額，或倘該項投資於獨立財務報表的賬面 值超出被投資方淨資產（包括商譽）綜合財 務報表的賬面值，則須於從該等投資收取 股息後就該等投資進行減值測試。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0129-22.png)
-
-
 <!-- Start of picture text -->
 127<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0130-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -5860,10 +4696,6 @@ Foreign exchange gains and losses that relate to borrowings and cash and cash eq
 外幣交易採用交易或項目重新計量的估值 日期的匯率換算為功能貨幣。交易產生的 匯兌利得和損失以及將外幣計值的貨幣資 產和負債以年終匯率折算產生的匯兌利得 和損失在合併利潤表確認。 
 
 與借款和現金及現金等價物有關的匯兌利 得和損失在合併利潤表內的「財務收益」或 「財務費用」（若適用）中列報。所有其他匯 兌利得和損失在合併利潤表內的「其他收 入和利得<sup>–</sup> 淨額」中列報。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0130-24.png)
-
 
 <!-- Start of picture text -->
 128<br><!-- End of picture text -->
@@ -5916,18 +4748,10 @@ Investment properties, principally comprising leasehold land and buildings, are 
 
 投資性房地產，主要由租賃土地和樓宇組 成，持有為獲得長期租金收益或作為資本 增值或兩者兼備同時並非由本集團佔用。 此項目亦包括現正興建或建設供未來作為 投資性房地產使用的不動產。投資性房地 產初始按成本列賬，包括相關的交易成本 及借款成本（如適用）。在初始確認後，投 資性房地產乃按成本減其後累計折舊及任 何累計減值虧損列賬。折舊乃按投資性房 地產之估計可使用年限並計及其估計剩餘 價值後以直線法撇銷確認其成本。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0131-23.png)
-
-
 <!-- Start of picture text -->
 129<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0132-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -5973,10 +4797,6 @@ Derivatives of the Group are categorised as financial assets/ liabilities at fai
 衍生工具初始按於衍生工具合約訂立日的 公允價值確認，其後按其公允價值重新計 量。確認所產生的利得或損失的方法取決 於該衍生工具是否指定作套期工具。本集 團並無計劃套期的衍生工具。 
 
 本集團的衍生金融工具被分類為以公允價 值計量且其變動計入損益的金融資產╱負 債，其公允價值的變動於當年的合併利潤 表中的「其他收入和利得 – 淨額」內確認。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0132-22.png)
-
 
 <!-- Start of picture text -->
 130<br><!-- End of picture text -->
@@ -6033,18 +4853,10 @@ Trade and bills payables are recognised initially at fair value and subsequently
 
 應付賬款及應付票據以公允價值為初始確 認，其後利用實際利率法按攤餘成本計量。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0133-25.png)
-
-
 <!-- Start of picture text -->
 131<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0134-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -6095,10 +4907,6 @@ All other borrowing costs are recognised in the consolidated statement of profit
 
 所有其他借款成本在產生期內的損益中確 認。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0134-24.png)
-
-
 <!-- Start of picture text -->
 132<br><!-- End of picture text -->
 
@@ -6136,18 +4944,10 @@ The income tax expense or credit for the period is the tax payable on the curren
 
 本期間的稅項支出包括當期和遞延稅項。 稅項在合併利潤表中確認，但與在其他綜 合收益中或直接在權益中確認的項目有關 者則除外。在該情況下，稅項亦分別在其 他綜合收益或直接在權益中確認。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0135-16.png)
-
-
 <!-- Start of picture text -->
 133<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0136-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -6193,10 +4993,6 @@ Deferred tax assets are recognised only if it is probable that future taxable am
 遞延所得稅利用負債法確認資產和負債的 稅基與資產和負債在合併財務報表的賬面 值的差額而產生的暫時性差異。然而，若 遞延所得稅負債來自對商譽的初始確認， 以及若遞延所得稅來自在交易（不包括業 務合併）中對資產或負債的初始確認，而在 交易時不影響會計損益或應課稅利潤或損 失，則不作記賬。遞延所得稅採用在資產 負債表日前已頒佈或實質上已頒佈，並在 有關的遞延所得稅資產實現或遞延所得稅 負債結算時預期將會適用的稅率（及法例） 而釐定。 
 
 遞延所得稅資產是就很可能有未來應課稅 利潤而就此可使用暫時性差異而確認。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0136-22.png)
-
 
 <!-- Start of picture text -->
 134<br><!-- End of picture text -->
@@ -6253,18 +5049,10 @@ The Group’s companies in Mainland China participate in defined contribution re
 
 本集團的位於中國大陸的附屬公司參與由 國內不同地方政府規定及管理的界定供款 養老保險計劃（「養老計劃」）。本集團及有 關中國大陸僱員需按有關僱員基本工資的 某個百分比計算，向養老計劃作供款。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0137-25.png)
-
-
 <!-- Start of picture text -->
 135<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0138-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -6308,10 +5096,6 @@ Non-market performance and service vesting conditions are included in assumption
 本集團設有以權益結算、以股份為基準的 報酬計劃。職工為換取獲授予期權而提供 服務的公允價值確認為費用。將作為費用 的總金額參考授予期權的公允價值釐定， 不包括非市場業績可行權條件（例如盈利 能力和銷售增長目標）的影響。 
 
 非市場可行權條件包括在有關預期可行權 的認股權數目的假設中。費用的總金額在 等待期間內確認，等待期間指將符合所有 特定可行權條件的期間。在每個報告期 末，集團依據非市場及合約條款可行權條 件修訂其對預期可行權的期權數目的估 計。主體在合併利潤表確認對原估算修訂 （如有）的影響，並對權益作出相應調整。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0138-21.png)
-
 
 <!-- Start of picture text -->
 136<br><!-- End of picture text -->
@@ -6370,18 +5154,10 @@ Basic earnings per share is calculated by dividing the profit attributable to ow
 
 每股基本收益是以本公司權益持有人應佔 本集團利潤（扣除普通股以外的任何權益 費用）除以該財政年度發行普通股之加權 平均數計算，扣除本公司已購回且列示於 庫存股之股數。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0139-26.png)
-
-
 <!-- Start of picture text -->
 137<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0140-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -6439,10 +5215,6 @@ Government grants relating to the purchase of property, plant and equipment are 
 與成本有關之政府補助遞延入賬，並按擬 補償之成本配合其所需期間在合併利潤表 中確認。 
 
 與購買物業、機器及設備備有關之政府補 助列入非流動負債作為遞延政府補助，並 按有關資產之預計年期以直線法在合併利 潤表確認。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0140-28.png)
-
 
 <!-- Start of picture text -->
 138<br><!-- End of picture text -->
@@ -6503,18 +5275,10 @@ The Group leases various offices, warehouses and vehicles. Rental contracts are 
 
 本集團租賃各類辦公室、倉庫及車輛。租 賃合約通常在固定期限內訂立，惟可能涵 蓋下文所述延期選擇權。租賃條款乃在個 別基準上協商，並包含各種不同的條款及 條件。租賃協議並無施加任何限制，且租 賃資產不得用作借貸的擔保品。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0141-27.png)
-
-
 <!-- Start of picture text -->
 139<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0142-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -6573,10 +5337,6 @@ Lease payments to be made under reasonably certain extension options are also in
 
 根據合理確定延期選擇權作出的租賃付款 亦計入負債的計量。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0142-28.png)
-
-
 <!-- Start of picture text -->
 140<br><!-- End of picture text -->
 
@@ -6632,18 +5392,10 @@ Extension and termination options are included in a number of property leases ac
 
 本集團的部份物業租賃包含續租及終止租 賃選擇權。條款之使用目的在於將合同管 理的操作靈活性最大化。大部份續租選擇 權和終止租賃選擇權僅由本集團而非相應 出租人行使。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0143-25.png)
-
-
 <!-- Start of picture text -->
 141<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0144-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -6702,10 +5454,6 @@ Research expenditure is recognised as an expense as incurred. Costs incurred on 
 
 - (vi) 該無形資產在開發期內應佔的支出能 可靠地計量。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0144-28.png)
-
-
 <!-- Start of picture text -->
 142<br><!-- End of picture text -->
 
@@ -6751,18 +5499,10 @@ The Group makes estimates and assumptions concerning the future. The resulting a
 
 本集團對未來作出估計和假設。所得的會計估 計如其定義，很少會與其實際結果相同。很大 機會導致下個財政年度的資產和負債的賬面值 作出重大調整的估計和假設討論如下。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0145-20.png)
-
-
 <!-- Start of picture text -->
 143<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0146-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br>JUDGMENTS<br><!-- End of picture text -->
@@ -6803,10 +5543,6 @@ The Group’s management determines the provision for impairment of trade, bills
 
 本集國的管理層按預期信貸虧損（為所有貿易 應收賬款撥備整個存續期內的預期虧損）釐定 貿易應收賬款、應收票據及其他應收款的減值 撥備。金融資產的虧損撥備乃根據有關違約風 險及預期虧損比率的假設作出。本集團於各報 告期期末根據本集團的過往歷史、市場現況及 前瞻性估計，利用判斷作出假設及選定減值計 算的輸入數據。管理層於各結算日重新評估撥 備。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0146-19.png)
-
-
 <!-- Start of picture text -->
 144<br><!-- End of picture text -->
 
@@ -6845,15 +5581,9 @@ Sales between segments are carried out at terms mutually agreed amongst these bu
 |Others|其他|**2,308,174**|2,587,256|
 |||**22,669,215**|23,767,936|
 
-
-
 Most of the Group companies are domiciled in PRC. The revenue from external customers in PRC accounted for more than 90% of the Group’s total revenue. 
 
 集團主要的業務在中國，超過90%的收益來自 中國的外部客戶。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0147-15.png)
-
 
 <!-- Start of picture text -->
 145<br><!-- End of picture text -->
@@ -6889,10 +5619,6 @@ Unallocated costs represent corporate expenses. Unallocated assets comprise corp
 資本開支包括物業、機器及設備（附註13）、使 用權資產（附註14）、投資性房地產（附註15）、 在建工程（附註16）及無形資產（附註17）的添 置。 
 
 未分配成本指集團整體性開支。未分配資產主 要包括總部資產。未分配負債包括總部負債。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0148-15.png)
-
 
 <!-- Start of picture text -->
 146<br><!-- End of picture text -->
@@ -6944,12 +5670,6 @@ The segment information provided to the Executive Directors for the reportable s
 |Amortisation charge of intangible|無形資產之攤銷||||||
 |assets||**24,431**|**–**|**5**|**6,652**|**31,088**|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0149-08.png)
-
-
 <!-- Start of picture text -->
 147<br><!-- End of picture text -->
 
@@ -6986,12 +5706,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Borrowings|借款|||||**13,089,848**|
 |Unallocated liabilities|未分配負債|||||**53,886**|
 |Total liabilities|總負債|||||**18,658,830**|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0150-06.png)
-
 
 <!-- Start of picture text -->
 148<br><!-- End of picture text -->
@@ -7045,12 +5759,6 @@ The segment information provided to the Executive Directors for the reportable s
 |Amortisation charge of intangible|無形資產之攤銷||||||
 |assets||24,143|2|26|6,651|30,822|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0151-08.png)
-
-
 <!-- Start of picture text -->
 149<br><!-- End of picture text -->
 
@@ -7087,12 +5795,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Unallocated liabilities|未分配負債|||||107,088|
 |Total liabilities|總負債|||||19,586,050|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0152-06.png)
-
-
 <!-- Start of picture text -->
 150<br><!-- End of picture text -->
 
@@ -7127,8 +5829,6 @@ The Group has recognised the following liabilities related to contracts with cus
 |Others|其他|**37,661**|45,527|
 |Total contract liabilities|總合約負債|**543,233**|540,276|
 
-
-
 The following table shows how much of the revenue recognised in the current reporting period related to carried-forward contract liabilities from prior year. 
 
 下表列示於截至本報告年度所確認與已於 上一年度償付的結轉合約負債有關的收益 金額。 
@@ -7141,20 +5841,10 @@ The following table shows how much of the revenue recognised in the current repo
 |Others|其他|**45,527**|46,161|
 |||**540,276**|453,741|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0153-14.png)
-
-
 <!-- Start of picture text -->
 151<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0154-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -7182,8 +5872,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Others|其他|**38,403**|2,491|
 |||**1,207,886**|1,159,447|
 
-
-
 Note: 
 
 附註： 
@@ -7191,10 +5879,6 @@ Note:
 These represented government grants received from certain municipal governments of Mainland China as an encouragement of the Group’s contributions to the development of the local economy. 
 
 此項目為本集團從中國大陸部份市政府所獲得的獎 勵，以鼓勵集團對當地經濟發展作出貢獻。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0154-10.png)
-
 
 <!-- Start of picture text -->
 152<br><!-- End of picture text -->
@@ -7240,8 +5924,6 @@ Expenses included in cost of goods sold, selling and distribution costs, adminis
 |costs, administrative expenses and net|行政費用及金融資產減值|||
 |impairment losses on financial assets|準備計提合計|**20,522,510**|20,949,452|
 
-
-
 ###### Note: 
 
 ###### 附註： 
@@ -7250,18 +5932,10 @@ An amount of RMB1,088,036,000 (2023: RMB984,602,000) has been capitalised in inv
 
 人民幣1,088,036,000元（二零二三年：人民幣 984,602,000元）已資本化為存貨。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0155-11.png)
-
-
 <!-- Start of picture text -->
 153<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0156-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -7294,15 +5968,9 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |||**(180,399)**|(273,351)|
 |Finance costs, net|財務費用–淨額|**383,176**|373,226|
 
-
-
 For the year ended 31 December 2024, the capitalisation rate applied to funds borrowed generally and used for the development of construction-in-progress was 2.82% (2023: 2.83%) per annum. 
 
 截至二零二四年十二月三十一日止年度，從一 般借款得來並用作開發在建工程之資金所用之 資本化比率為2.82%（二零二三年：2.83% ）。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0156-08.png)
-
 
 <!-- Start of picture text -->
 154<br><!-- End of picture text -->
@@ -7330,8 +5998,6 @@ The amount of income tax expense charged to the consolidated statement of profit
 |profit or loss (Note 29)|利潤表（附註29）|**(22,471)**|66,665|
 |Income tax expense|所得稅費用|**675,187**|798,000|
 
-
-
 - (a) Taxation on Mainland China income has been calculated on the estimated assessable profit for the year at the rates of taxation prevailing in Mainland China in which the Group’s subsidiaries operate. The Company’s subsidiaries incorporated in Mainland China are subject to Corporate Income Tax at the rate of 25%. 
 
 - (a) 中國大陸所得稅已按照本集團中國大陸附 屬公司之估計應課稅利潤以按當地實行稅 率計算。本公司在中國大陸境內設立之附 屬公司須按照25%支付企業所得稅。 
@@ -7348,18 +6014,10 @@ Certain subsidiaries were approved to be new and high-technology enterprises and
 
 - (c) 本集團的中國大陸附屬公司自二零零八年 一月一日產生的利潤，若向於香港註冊成 立的投資者分派該等利潤，將須按5%稅率 繳納扣繳稅；若向其他外國投資者分派該 等利潤，則須按10%稅率繳納扣繳稅。於 可預見之將來派發本集團的大陸附屬公司 二零零八年一月一日後之利潤為預期股息 基準而作出遞延稅項負債的撥備。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0157-15.png)
-
-
 <!-- Start of picture text -->
 155<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0158-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -7386,8 +6044,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Others|其他|**19,740**|10,296|
 |Income tax expense|所得稅費用|**675,187**|798,000|
 
-
-
 - Note:  The average income tax rates for the years ended 31 December 2024 and 2023 represent the weighted average tax rate of the operations in different jurisdictions on the basis of the relative amounts of profit before taxation and the relevant statutory rates. 
 
    - 附註： 截至二零二四年及二零二三年十二月 三十一日止年度的平均所得稅稅率是根 據不同管轄區稅前利潤及有關稅率計 算。 
@@ -7399,10 +6055,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 - (f) The Group is operating in certain jurisdictions where the Pillar Two Rules are enacted but not effective. However, as the Group’s estimated effective tax rates of all the jurisdictions in which the Group operates are higher than 15%, after taking into account the adjustments under the Pillar Two Rules based on management’s best estimate, the management of the Group has not made relevant disclosures of qualitative and quantitative information about the Group’s exposure to the Pillar Two income taxes. 
 
 - (f) 本集團雖在部份已頒佈第二支柱法規但尚 未生效的司法權區內展開業務。然而，由 於本集團對所有經營所在地估計的有效稅 率均高於15% ，基於第二支柱法規調整後 的評估，本集團管理層未就第二支柱所得 稅風險作出相關的信息披露。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0158-14.png)
-
 
 <!-- Start of picture text -->
 156<br><!-- End of picture text -->
@@ -7433,8 +6085,6 @@ Basic earnings per share is calculated by dividing the Group’s profit attribut
 |shares outstanding (thousands)|（千股）|**1,140,558**|1,159,752|
 |Basic earnings per share (RMB)|每股基本收益（人民幣元）|**2.015**|2.415|
 
-
-
 ###### **(b) Diluted** 
 
 Diluted earnings per share is calculated by adjusting the weighted average number of ordinary shares outstanding to assume conversion of all dilutive potential ordinary shares. 
@@ -7446,10 +6096,6 @@ Diluted earnings per share is calculated by adjusting the weighted average numbe
 For the year ended 31 December 2024 and 2023, share option schemes is the only category of dilutive potential ordinary shares of the Company. The diluted earnings per share is the same as the basic earnings per share as the potential ordinary shares in respect of outstanding share options is anti-dilutive. 
 
 截至二零二四年及二零二三年十二月 三十一日止年度，本公司僅有購股權一類 潛在可攤薄的普通股。每股攤薄收益與每 股基本收益相同，因為有關購股權並無攤 薄影響。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0159-15.png)
-
 
 <!-- Start of picture text -->
 157<br><!-- End of picture text -->
@@ -7477,8 +6123,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |2022) per ordinary share (Note)|止年度之末期股息每股<br>人民幣0.70元）<br>（附註）|**813,485**|813,485|
 |||**1,626,970**|1,626,970|
 
-
-
 ###### Notes: 
 
 ###### 附註： 
@@ -7494,10 +6138,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 - (b) A final dividend in respect of the year ended 31 December 2024 of RMB0.70 per share, amounting to a total dividend of RMB813,485,000, was proposed by the Board of Directors at a meeting held on 25 March 2025, subject to the final approval by the shareholders of the Company at the Annual General Meeting to be held on 20 May 2025. These financial statements do not reflect this dividend payable. 
 
 - (b) 於二零二五年三月二十五日舉行的董事會議上， 建議派發二零二四年末期股息每股人民幣0.70 元，此項股息合計人民幣813,485,000元，具體 金額以二零二五年五月二十日舉行的年度股東 大會上的公司股東最終批覆為準。本合併財務 報表中未確認應付股息。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0160-13.png)
-
 
 <!-- Start of picture text -->
 158<br><!-- End of picture text -->
@@ -7527,8 +6167,6 @@ Dividends payable to shareholders will be paid in HK$. The exchange rate adopted
 |Equity-settled share-based payment (Note 25)|以股份為基礎之酬金支出<br>（附註25）|**8,873**|44,996|
 |Total employee benefit expense|員工福利費用總計|**2,418,881**|2,253,995|
 
-
-
 ###### **Five highest paid individuals** 
 
 The five individuals whose emoluments were the highest in the Group for the year include four (2023: four) Directors whose emoluments are reflected in the analysis shown in Note 40. The emoluments payable to the remaining one (2023: one) individual during the year is as follows: 
@@ -7543,20 +6181,10 @@ The five individuals whose emoluments were the highest in the Group for the year
 |Basic salaries, other allowances share options<br>基本薪酬、其他津貼和實物|||
 |and benefits-in-kind<br>利益|**2,561**|1,457|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0161-14.png)
-
-
 <!-- Start of picture text -->
 159<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0162-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -7583,8 +6211,6 @@ The emoluments fell within the following bands:
 ||1,368,316元至人民幣|||
 ||2,736,630元）|**1**|1|
 
-
-
 #### **13. PROPERTY, PLANT AND EQUIPMENT** 
 
 #### **13. 物業、機器及設備** 
@@ -7604,12 +6230,6 @@ The emoluments fell within the following bands:
 |Cost|成本|**6,043,011**|**10,744,012**|**511,744**|**19,191**|**17,317,958**|
 |Accumulated depreciation and<br>impairment charges|累計折舊及減值|**(2,661,847)**|**(5,986,116)**|**(337,240)**|**(13,069)**|**(8,998,272)**|
 |Net book amount|帳面淨值|**3,381,164**|**4,757,896**|**174,504**|**6,122**|**8,319,686**|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0162-11.png)
-
 
 <!-- Start of picture text -->
 160<br><!-- End of picture text -->
@@ -7646,12 +6266,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Accumulated depreciation and<br>impairment charges|累計折舊及減值|(2,497,012)|(5,566,626)|(307,350)|(13,045)|(8,384,033)|
 |Net book amount|帳面淨值|2,910,894|4,189,015|151,300|4,615|7,255,824|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0163-06.png)
-
-
 <!-- Start of picture text -->
 161<br><!-- End of picture text -->
 
@@ -7679,15 +6293,9 @@ Depreciation expenses have been charged to the consolidated statement of profit 
 |Administrative expenses|行政費用|**236,574**|221,218|
 |||**896,381**|808,830|
 
-
-
 As at 31 December 2024, property, plant and equipment with a carrying amount of RMB7,769,000 (cost of RMB13,550,000) are pledged as collateral for the Group’s bank borrowings of RMB189,000 (2023: property, plant and equipment with a carrying amount of RMB8,424,000 (cost of RMB12,895,000) are pledged as collateral for the Group’s bank borrowings of RMB2,281,000) (Note 28). 
 
 於二零二四年十二月三十一日，本集團以淨值 人民幣7,769,000元（原值人民幣13,550,000元） 的物業、機器及設備為本集團銀行借款人民幣 189,000元（二零二三年：淨值人民幣8,424,000 元（原值人民幣12,895,000元）的物業、機器及 設備為本集團銀行借款人民幣2,281,000元）作 抵押（附註28）。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0164-10.png)
-
 
 <!-- Start of picture text -->
 162<br><!-- End of picture text -->
@@ -7721,24 +6329,14 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |– Non-current|–非流動|**(9,000)**|(12,948)|
 |Total lease liabilities|總租賃負債|**(23,078)**|(30,623)|
 
-
-
 Additions to the right-of-use assets for the year ended 31 December 2024 financial year were RMB51,425,000 (2023: RMB73,409,000). 
 
 於二零二四年度內使用權資產增加人民幣 51,425,000元（二零二三年：人民幣73,409,000 元）。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0165-09.png)
-
 
 <!-- Start of picture text -->
 163<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0166-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br>14. LEASES<br><!-- End of picture text -->
@@ -7771,15 +6369,9 @@ The consolidated statement of profit or loss shows the following amounts relatin
 |Expenses of short-term leases and|短期及低價值租賃開支|||
 |low-value assets (Note 7)|（附註7）|**42,594**|49,412|
 
-
-
 The total cash payment for leases in the year ended 31 December 2024 was RMB61,169,000 (2023: RMB71,297,000), excluding the cash payment for land-use rights. 
 
 於二零二四年十二月三十一日止除為土地使用 權而支付的現金外，年度有關租賃的現金付款 總額為人民幣61,169,000元（二零二三年：人民 幣71,297,000元）。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0166-12.png)
-
 
 <!-- Start of picture text -->
 164<br><!-- End of picture text -->
@@ -7809,8 +6401,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |impairment charges||**(158,286)**|(93,929)|
 |Net book amount|帳面淨值|**181,100**|163,360|
 
-
-
 The above investment properties are located in Fujian, Guangxi, Sichuan, Chongqing, Guizhou, Shanghai and Tianjin in the PRC, Selangor and Johor, Malaysia, and depreciated on a straight-line basis over 20 to 40 years. 
 
 上述投資性房地產位於中國福建省、廣西省、 四川省、重慶市、貴州省、上海市及天津市和 馬來西亞雪蘭莪州、柔佛州，以直線法按20–40 年折舊。 
@@ -7819,18 +6409,10 @@ The Group’s investment properties are stated at historical cost less accumulat
 
 本集團的投資性房地產於各報告期末按歷史成 本扣減累計折舊及減值入賬。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0167-09.png)
-
-
 <!-- Start of picture text -->
 165<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0168-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -7853,8 +6435,6 @@ Amounts recognised in profit and loss for investment properties are as follows:
 |Direct operating expenses|直接經營成本|**(8,480)**|(5,806)|
 |Net book amount|帳面淨值|**31,375**|30,113|
 
-
-
 Depreciation expenses have been charged to the consolidated statement of profit or loss as follows: 
 
 本集團折舊已於合併利潤表的如下費用列賬： 
@@ -7864,8 +6444,6 @@ Depreciation expenses have been charged to the consolidated statement of profit 
 |||**RMB’000**|RMB’000|
 |||人民幣千元|人民幣千元|
 |Other income and other gains – net|其他收入和利得–淨額|**8,610**|5,967|
-
-
 
 #### **16. CONSTRUCTION-IN-PROGRESS** 
 
@@ -7880,15 +6458,9 @@ Depreciation expenses have been charged to the consolidated statement of profit 
 |equipment (Note 13)|（附註13）|**(1,695,661)**|(698,392)|
 |At 31 December|於十二月三十一日|**1,287,158**|1,710,626|
 
-
-
 During the year ended 31 December 2024, finance costs capitalised in construction-in-progress amounted to RMB4,284,000 (2023: RMB14,985,000) (Note 8). 
 
 截至二零二四年十二月三十一日止年度，在建 工程包含已含資本化之融資成本總額為人民幣 4,284,000元（二零二三年：人民幣14,985,000 元）（附註8）。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0168-16.png)
-
 
 <!-- Start of picture text -->
 166<br><!-- End of picture text -->
@@ -7921,20 +6493,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Accumulated amortisation|累計攤銷|**–**|**(9,068)**|**(40,450)**|**(144,427)**|**(193,945)**|
 |Net book amount|帳面淨值|**488,290**|**2,144**|**18,495**|**103,660**|**612,589**|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0169-05.png)
-
-
 <!-- Start of picture text -->
 167<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0170-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br>17. INTANGIBLE ASSETS<br><!-- End of picture text -->
@@ -7967,8 +6529,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Accumulated amortisation|累計攤銷|–|(8,412)|(34,555)|(119,890)|(162,857)|
 |Net book amount|帳面淨值|488,290|2,800|24,390|125,018|640,498|
 
-
-
 Amortisation has been charged to administrative expenses in the consolidated statement of profit or loss. 
 
 攤銷已於合併利潤表的行政費用列賬。 
@@ -7980,10 +6540,6 @@ The Directors have performed an impairment review of the carrying amount of good
 ###### **商譽減值** 
 
 董事會已對於二零二四年十二月三十一日之商 譽帳面值檢討減值，結論為毋須減值。就減值 測試而言，商譽已分配至本集團按業務分部劃 分之最小現金產生單元。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0170-12.png)
-
 
 <!-- Start of picture text -->
 168<br><!-- End of picture text -->
@@ -8008,8 +6564,6 @@ A summary of goodwill by reporting segment is presented below:
 |Others|其他|**8,577**|8,577|
 |||**488,290**|488,290|
 
-
-
 The recoverable amount of the CGUs is determined based on value-in-use calculations. The calculation of goodwill on the tissue paper product segment uses cash flow projections based on financial estimates made by the Directors, with reference to the prevailing market conditions, covering a period of five years and assuming revenue growth rate is 4.0% (2023: 4.6%) and gross profit margins ranging from 20.0% to 25.0% (2023: 23.0% to 25.0%). The long-term growth rate is 2.0% (2023: 2.0%). The cash flows are extrapolated with reference to the production capacity of the cash generating units acquired. The cash flow projections are discounted at a pre-tax discount rate of 13.0% (2023: 12.3%) per annum. Based on management’s assessment results, there was no impairment of goodwill as at 31 December 2024 and 2023 and any reasonable change to the key assumptions would not lead to an impairment. 
 
 現金產出單元的可收回金額根據使用價值計 算。紙巾業務的計算方式利用現金流量預測， 並參考普遍的市場情況，依據董事批核的五年 期財政預算及假設銷售增長率為4.0%（二零 二三年：4.6% ）和毛利率區間在20.0%及25.0% （二零二三年：23.0%至25.0% ）。長期增長率為 2.0%（二零二三年：2.0% ）現金流量採用現金產 出單元的生產力作出換算。現金流量預測乃根 據13.0%（二零二三年：12.3% ）稅前年利率貼 現。基於管理層的評估，截至二零二四年及二 零二三年十二月三十一日止年度，本集團無商 譽減值，且任何合理的關鍵假設變化都不會導 致顯著減值。 
@@ -8021,10 +6575,6 @@ The balance represented prepayments for purchase of property, plant and equipmen
 #### **18. 非流動資產預付款** 
 
 在資產負債表中的預付款是指購買物業、機器 及設備及土地使用權的預付款。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0171-13.png)
-
 
 <!-- Start of picture text -->
 169<br><!-- End of picture text -->
@@ -8046,8 +6596,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Spare parts and consumables|配件及消耗品|**257,084**|252,396|
 |Total|合計|**4,797,574**|4,352,041|
 
-
-
 The cost of inventories recognised as expenses and included in cost of goods sold amounted to RMB12,538,288,000 (2023: RMB13,196,144,000). 
 
 存貨成本中確認為費用並列入銷售成本中的金 額為人民幣12,538,288,000元（二零二三年：人 民幣13,196,144,000元）。 
@@ -8055,10 +6603,6 @@ The cost of inventories recognised as expenses and included in cost of goods sol
 The Group has reversal of allowance of inventories of RMB20,251,000 (2023: reversal of allowance of inventories of RMB23,387,000). These amounts have been included in cost of sales in the consolidated statement of profit or loss (Note 7). 
 
 本集團沖回存貨減值準備人民幣20,251,000元 （二零二三年：計提人民幣23,387,000元）。該金 額已包括在合併利潤表的銷售成本中（附註7）。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0172-09.png)
-
 
 <!-- Start of picture text -->
 170<br><!-- End of picture text -->
@@ -8094,20 +6638,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Trade and bills receivables and other|應收賬款、應收票據及其他|||
 |receivables, prepayments and deposits|應收款，預付賬款及按金|**3,810,926**|4,256,763|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0173-05.png)
-
-
 <!-- Start of picture text -->
 171<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0174-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -8132,8 +6666,6 @@ Part of the Group’s sales are on open account with credit terms ranging from 3
 |Over 365 days|365天以上|**191,641**|175,111|
 |||**2,439,672**|2,718,998|
 
-
-
 As credit terms are short and most of the trade and bills receivables are due for settlement within one year, the carrying amounts of these balances approximated their fair values as at the balance sheet date. 
 
 由於應收賬款到期信貸期較短及大部分的應收 賬款和應收票據也於一年內到期清還，於資產 負債表日應收賬款的公允價值與帳面價值相約。 
@@ -8141,10 +6673,6 @@ As credit terms are short and most of the trade and bills receivables are due fo
 Information about the impairment of trade, bills and other receivables and the Group’s exposure to credit risk, foreign currency risk and interest rate risk can be found in Note 32. 
 
 有關應收賬款、應收票據及其他應收款減值及 本集團信貸風險，外匯風險及利率風險的資料 載於附註32。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0174-12.png)
-
 
 <!-- Start of picture text -->
 172<br><!-- End of picture text -->
@@ -8173,8 +6701,6 @@ These amounts represented the fair value of foreign currency options and foreign
 |||**–**|(15,548)|
 |**Total**|合計|**372**|(15,548)|
 
-
-
 Non-hedging derivatives are classified as current assets or liabilities. 
 
 無對沖衍生金融產品分類為流動資產或負債。 
@@ -8196,20 +6722,10 @@ For information about the methods and assumptions used in determining the fair v
 |||**14,261,723**|18,189,943|
 |**Total**|合計|**18,892,408**|19,628,106|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0175-14.png)
-
-
 <!-- Start of picture text -->
 173<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0176-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br>BANK BALANCES<br><!-- End of picture text -->
@@ -8247,15 +6763,9 @@ The carrying amounts of the long-term bank time deposits and cash and bank balan
 |Others|其他|**196,953**|202,325|
 |**Total**|合計|**14,261,723**|18,189,943|
 
-
-
 The Group’s bank deposits and cash denominated in RMB, US$ and HK$ are mainly deposited with banks in the PRC. The conversion of these RMB denominated balances into foreign currencies and the remittance of funds out of the PRC are subject to the rules and regulations of foreign exchange control promulgated by the PRC government. 
 
 本集團的人民幣、美元及港幣銀行存款及現金 乃存於國內之銀行。轉換這些人民幣至其他外 幣及把這些資金匯出中國是受到中國政府的外 匯管理法規所監控。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0176-14.png)
-
 
 <!-- Start of picture text -->
 174<br><!-- End of picture text -->
@@ -8281,8 +6791,6 @@ Financial assets mandatorily measured at fair value through profit or loss inclu
 |**Current assets**|流動資產|||
 |– Listed equity securities|–上市股本證券|**61,149**|–|
 
-
-
 #### **24. SHARE CAPITAL** 
 
 Ordinary shares, issued and fully paid: 
@@ -8297,8 +6805,6 @@ Ordinary shares, issued and fully paid:
 |and 31 December 2024|二零二三年十二月三十一日及|||
 ||二零二四年十二月三十一日|**1,162,120,917**|**123,345**|
 
-
-
 #### **25. SHARE-BASED COMPENSATION** 
 
 The Company adopted a share option scheme on 17 May 2021 (“2021 Scheme”). Pursuant to the 2021 Scheme, share options had been granted to the Directors and selected employees. The options granted will be forfeited if the Directors and employees leave the Group before the options are exercisable. The Group has no legal or constructive obligation to repurchase or settle the options in cash. 
@@ -8307,18 +6813,10 @@ The Company adopted a share option scheme on 17 May 2021 (“2021 Scheme”). Pu
 
 本公司於二零二一年五月十七日（二零二一年 計劃）正式通過購股權計劃。根據這份計劃，董 事及經挑選的僱員獲授購股權。授出購股權的 行使價相等於授出日期股份市價。若董事和僱 員於行使日前辭職，購股權將失效。本集團並 無法定或推定責任，以現金購回或償付購股權。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0177-16.png)
-
-
 <!-- Start of picture text -->
 175<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0178-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -8341,8 +6839,6 @@ Movements in the number of share options outstanding and their related weighted 
 |Lapsed or forfeited|已失效|**41.48**|**(18,361)**|–|–|
 |Lapsed or forfeited|已失效|**40.30**|**(729)**|–|–|
 |At 31 December|於十二月三十一日|**47.63**|**32,516**|45.34|51,606|
-
-
 
 Out of the 32,516,000 outstanding options (31 December 2023: 51,606,000), 16,983,000 options (2023: 19,215,000) were exercisable as at 31 December 2024. 
 
@@ -8367,13 +6863,7 @@ Based on fair value of the underlying ordinary shares, the Group uses binomial m
 |expected share price returns, is determined based on the|量，根據公司股|票每週平均交易價格波動|
 |average weekly trading price volatility of the shares of the|率確定。||
 
-
-
 Note: The expected volatility, measured as the standard deviation of expected share price returns, is determined based on the average weekly trading price volatility of the shares of the Company. 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0178-14.png)
-
 
 <!-- Start of picture text -->
 176<br><!-- End of picture text -->
@@ -8404,8 +6894,6 @@ Share options outstanding at the end of the year have the following expiry dates
 |Expiry date<sup>–</sup>20 December 2026|到期日 <sup>–</sup> 二零二六年十二月二十日|40.30|**455**|610|
 ||||**32,516**|51,606|
 
-
-
 The total amount of the fair value of share options granted to Directors and selected employees is expensed over the vesting period. The share-based compensation expense for the year ended 31 December 2024 amounted to RMB8,873,000 (2023: RMB44,996,000) (Note 12), and the remaining unamortised fair value of approximately RMB1,793,000 (2023: RMB25,153,000) will be charged to the consolidated income statement in the future years. 
 
 董事及經挑選的僱員獲授的購股權的公允價值 總金額在等待期間內確認為費用。截至二零 二四年十二月三十一日止年度，攤銷的公允值 為人民幣8,873,000元（二零二三年：人民幣 44,996,000元）（附註12），剩餘未經攤銷的公允 值約為人民幣1,793,000元（二零二三年：人民 幣25,153,000元）將來會確認在合併利潤表。 
@@ -8414,18 +6902,10 @@ The maximum number of shares available for issue after considering the share opt
 
 扣除已授出之購股權，根據二零二一年計劃可 發行之股份數目上限為71,480,742股，此數位 並未大於該計劃被批准當日本公司所發行股本 的10% 。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0179-11.png)
-
-
 <!-- Start of picture text -->
 177<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0180-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -8445,10 +6925,6 @@ As at 31 December 2024, the Trustee held a total of 23,200,000 shares of the Com
 董事會於二零二三年九月十一日採納一項股份 獎勵計畫。根據該計畫，該計劃的受託人（受託 人）以本公司出資之現金自二級市場購買現有 股份。從2023年9月11日至2023年12月31日止 （含首尾兩天），受託人已從公開市場合計購買 15,000,000股價值港幣403,182,000（約人民幣 368,969,000）。從2024年1月1日至2024年12月31 日止（含首尾兩天），受託人已從公開市場合計 購買8,200,000股價值港幣214,691,000（約人民 幣194,886,000）。 
 
 於二零二四年十二月三十一日，受託人持有 23,200,000公司股份。自計劃實施以來，尚未 授予任何股份。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0180-09.png)
-
 
 <!-- Start of picture text -->
 178<br><!-- End of picture text -->
@@ -8494,20 +6970,10 @@ The Company repurchased its own shares for the Scheme through the Stock Exchange
 |December 2023|二零二三年十二月|3,800,000|29.11|27.30|107,467|
 |||15,000,000|||403,182|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0181-08.png)
-
-
 <!-- Start of picture text -->
 179<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0182-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br>26. OTHER RESERVES<br><!-- End of picture text -->
@@ -8551,12 +7017,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Appropriation to statutory<br>reserves (Note 27)|撥往法訂儲備（附註27）|–|–|39,292|–|–|39,292|
 |At 31 December 2023|於二零二三年|||||||
 ||十二月三十一日|(368,969)|1,922|2,483,742|444,045|320,240|2,880,980|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0182-06.png)
-
 
 <!-- Start of picture text -->
 180<br><!-- End of picture text -->
@@ -8602,12 +7062,6 @@ Notes:
 |Liquidation of a subsidiary|清算附屬公司|**40**|–|
 |At 31 December|於十二月三十一日|**17,894,966**|17,391,515|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0183-15.png)
-
-
 <!-- Start of picture text -->
 181<br><!-- End of picture text -->
 
@@ -8635,8 +7089,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |||**10,669,787**|13,907,195|
 |Total borrowings|合計|**13,089,848**|14,237,625|
 
-
-
 ###### **(a) Bank loans and other borrowings** 
 
 The carrying amounts of the bank borrowings are denominated in the following currencies: 
@@ -8651,12 +7103,6 @@ The carrying amounts of the bank borrowings are denominated in the following cur
 |HK$|港幣|**3,828,249**|4,962,351|
 |Other currencies|其他貨幣|**107,336**|131,410|
 |||**13,089,848**|14,237,625|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0184-10.png)
-
 
 <!-- Start of picture text -->
 182<br><!-- End of picture text -->
@@ -8684,8 +7130,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Between 3 and 5 years|三年到五年|**–**|31,250|
 |||**2,420,061**|330,430|
 
-
-
 As at 31 December 2024, the effective interest rate of the Group’s bank loans and other borrowings is approximately 2.82% (2023: 2.83%) per annum. 
 
 於二零二四年十二月三十一日，本集團銀 行貸款及其他貸款的有效年利息率約 2.82%（二零二三年：2.83% ）。 
@@ -8706,18 +7150,10 @@ The Group has complied with all loan covenants throughout the reporting period.
 
 本集團於報告期內遵守所有貸款契約。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0185-18.png)
-
-
 <!-- Start of picture text -->
 183<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0186-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br>28. BORROWINGS<br><!-- End of picture text -->
@@ -8751,12 +7187,6 @@ The following super short-term commercial papers were issued and matured during 
 |23恒安國際SCP002|2.40%|178 days<br>178天|28 September 2023<br>二零二三年九月二十八日|2,000,000|
 |23恒安國際SCP003|2.39%|180 days<br>180天|8 November 2023<br>二零二三年十一月八日|1,000,000|
 |23恒安國際SCP004|2.39%|179 days<br>179天|17 November 2023<br>二零二三年十一月十七日|500,000|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0186-10.png)
-
 
 <!-- Start of picture text -->
 184<br><!-- End of picture text -->
@@ -8796,13 +7226,7 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Exchange realignment<br>外幣折算差額|**5**|(32)|
 |At 31 December<br>於十二月三十一日|**338,550**|316,074|
 
-
-
 The analysis of deferred tax assets and deferred tax liabilities are as follows: 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0187-06.png)
-
 
 <!-- Start of picture text -->
 185<br><!-- End of picture text -->
@@ -8837,12 +7261,6 @@ The movements in the deferred tax assets and liabilities during the year, withou
 |Credit (charge) to profit or loss|在合併利潤表中貸記╱<br>（扣除）|**5,669**|16,473|**3,686**|23,557|**(16,183)**|(73,722)|**(6,828)**|(33,692)|
 |At 31 December|於十二月三十一日|**136,065**|130,396|**59,000**|55,169|**296,712**|312,895|**491,777**|498,460|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0188-10.png)
-
-
 <!-- Start of picture text -->
 186<br><!-- End of picture text -->
 
@@ -8871,8 +7289,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |(Credit) charge to profit or loss|在合併利潤表中（貸記）╱<br>扣除|**(18,783)**|27,820|**(2,040)**|(2,077)|**(1,199)**|42|**(7,277)**|7,188|**(29,299)**|32,973|
 |At 31 December|於十二月三十一日|**122,356**|141,139|**29,341**|31,381|**1,530**|2,637|**–**|7,229|**153,227**|182,386|
 
-
-
 Deferred income tax assets are recognised for tax losses carried forward to the extent that realisation of the related tax benefit through the future taxable profits is probable. The Group did not recognise deferred income tax assets of RMB12,996,000 (2023: RMB12,906,000) in respect of losses amounting to RMB78,767,000 (2023: RMB78,219,000), which are not subject to expiration and can be carried forward against future taxable income. 
 
 對可抵扣虧損確認為遞延所得稅資產的數額， 是按透過很可能產生的未來應課稅利潤實現的 相關稅務利益而確認。本集團並未就無屆滿期 限且可予結轉以抵銷未來應課稅收入的損失人 民幣78,767,000元（二零二三年：人民幣 78,219,000元）確認遞延所得稅資產人民幣 12,996,000元（二零二三年：人民幣12,906,000 元）。 
@@ -8881,18 +7297,10 @@ The Group has been providing deferred income tax liabilities on the withholding 
 
 本集團根據公司的股利分配計劃，就若干國內 附屬公司的未匯返利潤代扣代繳所得稅計提遞 延所得稅負債。截至二零二四年十二月三十一 日，本集團並未就若干國內附屬公司的未匯返 利潤須予支付的預提所得稅和其他稅項確認遞 延所得稅負債人民幣168,927,000元（二零二三 年：人民幣204,367,000元）。此等未匯返收益會 再作長期的投資。於二零二四年十二月三十一 日的未匯返收益合共人民幣3,378,538,000元 （二零二三年：人民幣4,087,338,000元）。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0189-11.png)
-
-
 <!-- Start of picture text -->
 187<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0190-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -8920,8 +7328,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |||**1,641,831**|1,630,085|
 |Trade and bills payables and other payables<br>and accrued charges|應付帳款、應付票據及其他<br>應付款及預提費用|**4,686,666**|4,380,154|
 
-
-
 The following is an aged analysis of trade and bills payables at 31 December are presented based on invoice date. 
 
 於十二月三十一日，應付帳款及應付票據之賬 齡根據發票日期計算之賬齡分析如下： 
@@ -8933,12 +7339,6 @@ The following is an aged analysis of trade and bills payables at 31 December are
 |181–365 days|181–365天|**24,014**|7,775|
 |Over 365 days|365天以上|**5,327**|4,272|
 |||**3,044,835**|2,750,069|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0190-09.png)
-
 
 <!-- Start of picture text -->
 188<br><!-- End of picture text -->
@@ -8970,8 +7370,6 @@ The carrying amounts of trade and bills payables were denominated in the followi
 |Other currencies|其他|**15,471**|6,021|
 |||**3,044,835**|2,750,069|
 
-
-
 #### **31. CAPITAL RISK MANAGEMENT** 
 
 The Group’s objectives when managing capital are to safeguard the Group’s ability to continue as a going concern in order to provide returns for shareholders and benefits for other stakeholders and to maintain an optimal capital structure to reduce the cost of capital. 
@@ -8988,18 +7386,10 @@ Consistent with others in the industry, the Group monitors capital on the basis 
 
 與業內其他公司一樣，本集團利用資本負債比 率監察其資本。總負債比率按照總貸款對比總 股東權益，但不包括非控制性權益的百分比作 計算基準計算。淨負債比率按照債務淨額除以 總權益撇除非控制權益計算。債務淨額為總借 款減去長期銀行定期存款、現金及銀行存款。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0191-18.png)
-
-
 <!-- Start of picture text -->
 189<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0192-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -9028,12 +7418,6 @@ During the year ended 31 December 2024, the Group’s strategy was to maintain a
 |Net debt|負債淨額|**(5,802,560)**|(5,390,481)|
 |Total equity excluding non-controlling interests|總權益撇除非控制權益|**20,920,950**|20,395,840|
 |Net gearing ratio|淨負債比率|**N/A**|N/A|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0192-08.png)
-
 
 <!-- Start of picture text -->
 190<br><!-- End of picture text -->
@@ -9080,20 +7464,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Derivative financial instruments (Note 21)|衍生金融工具（附註21）|**–**|15,548|
 |||**17,520,295**|18,411,427|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0193-07.png)
-
-
 <!-- Start of picture text -->
 191<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0194-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -9129,10 +7503,6 @@ At 31 December 2024, if HK$ and US$ had weakened/ strengthened by 5% against the
 集團認為港幣與美元間匯率變動的風險不 會太大，因為港幣和美元掛鈎。此外，截 至二零二四年十二月三十一日止年度，人 民幣（集團的大部份附屬公司之功能貨幣） 與美元（集團大部份原材料及物業、機器及 設備進口以及借款的貨幣單位）以及港幣 （借款的貨幣單位）使集團匯兌損失人民幣 169,771,000元（二零二三年：匯兌損失人 民幣183,443,000元）。本集團有能力取得 足夠之外幣以支付採購，供國內附屬公司 派發股利予境外持股公司以及償還銀行借 款之用。 
 
 於二零二四年十二月三十一日，假若港幣 及美元兌人民幣貶值╱升值5% ，而所有其 他因素維持不變，則該年度的經營盈利應 高出╱低出人民幣41,556,000元（二零二三 年：人民幣5,274,000元）。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0194-17.png)
-
 
 <!-- Start of picture text -->
 192<br><!-- End of picture text -->
@@ -9181,18 +7551,10 @@ The Group’s interest-rate risk mainly arises from borrowings. Borrowings obtai
 
 本集團的利率風險主要來自借款。按變動 利率取得的借款令本集團承受現金流量利 率風險。按固定利率取得的借款令本集團 承受公允價值利率風險。本集團通過購買 利率掉期合約來對沖集團的一定現金流量 利率風險。所購買的利率掉期合約有將借 款從浮動利率轉化為固定利率的經濟功 能。有關利率及償還借款條款例於附註28 內。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0195-21.png)
-
-
 <!-- Start of picture text -->
 193<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0196-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -9231,10 +7593,6 @@ The Group has no significant concentrations of credit risk. The carrying amounts
 
 集團並無高度集中的信貸風險。包括在合 併財務報表內的有限制銀行存款、長期銀 行定期存款、現金及銀行存款、衍生金融 工具、以公允價值計量且其變動計入當期 損益的金融資產、應收賬款、應收票據及 其他應收款項之賬面值相當於集團有關財 務資產的信貸風險最高承擔額。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0196-18.png)
-
-
 <!-- Start of picture text -->
 194<br><!-- End of picture text -->
 
@@ -9272,8 +7630,6 @@ At 31 December 2024, all restricted bank deposits and bank balances were placed 
 |foreign-owned banks|外資銀行|**1,240,751**|3,445,931|
 |||**18,892,522**|19,628,206|
 
-
-
 Note: Big 4 domestic banks comprise Industrial and Commercial Bank of China Limited, Agricultural Bank of China Limited, Bank of China Limited and China Construction Bank Corporation. 
 
 - 附註： 四大國有銀行包括：中國工商銀行、 中國農業銀行、中國銀行及中國建設 銀行。 
@@ -9282,18 +7638,10 @@ The Group applies HKFRS 9 simplified approach to measuring expected credit losse
 
 本集團採納香港財務報告準則第9號簡 化方法計量預期信貸虧損，於初步確 認時，為所有應收款項撥備整個存續 期內的預期虧損。為計量預期信貸虧 損，貿易應收賬款已根據應佔信貸風 險特點及過期天數分類。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0197-16.png)
-
-
 <!-- Start of picture text -->
 195<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0198-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -9341,12 +7689,6 @@ On that basis, the loss allowance as at 31 December 2024 was determined as follo
 |Expected loss rate|預期虧損率|0.92%|2.40%|80.45%||
 |Loss allowance|虧損撥備|22,630|2,136|140,875|165,641|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0198-15.png)
-
-
 <!-- Start of picture text -->
 196<br><!-- End of picture text -->
 
@@ -9383,8 +7725,6 @@ The closing loss allowances for trade and bills receivables as at 31 December re
 |Closing loss allowance at 31 December|於十二月三十一日的期末|||
 ||虧損撥備|**185,514**|165,641|
 
-
-
 Trade and bills receivables are written off when there is no reasonable expectation of recovery. Indicators that there is no reasonable expectation of recovery include, amongst others, the failure of a debtor to engage in a repayment plan with the Group, and a failure to make contractual payments for a period greater than 60–90 days past due. 
 
 應收賬款及應收票據在沒有合理收回預期 時撇銷。沒有合理收回預期的指標包括債 務人未能與本集團訂立還款計劃，以及未 能支付合約款項而逾期超過60至90天。 
@@ -9397,18 +7737,10 @@ Other financial assets at amortised cost include other receivables. Impairment o
 
 其他以攤餘成本計量的金融資產主要包括 其他應收款。根據自首次確認後信用風險 是否發生重大變化，本集團選擇按照未來 12個月內預期信用損失或存續期內預期信 用損失的金額來計量損失準備。如單筆其 他應收款的信用風險自首次確認後出現明 顯上升，則相應其他應收款的減值損失按 照其存續期內預期信用損失的金額來計量。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0199-18.png)
-
-
 <!-- Start of picture text -->
 197<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0200-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -9443,8 +7775,6 @@ The closing loss allowances for other receivables (excluding prepayments) as at 
 |Closing loss allowance at 31 December|於十二月三十一日的|||
 ||期末虧損撥備|**42,053**|13,484|
 
-
-
 ##### **Liquidity risk** 
 
 Cash flow is managed at Group level by head office finance department (“Group Finance”). Group Finance monitors the Group’s liquidity requirements to ensure that it has sufficient cash to meet operational needs at all times and does not breach borrowing limits or covenants on any of its borrowing facilities. Group Finance usually takes into consideration the Group’s debt financing plans, covenant compliance and compliance with internal balance sheet ratio targets. 
@@ -9456,10 +7786,6 @@ Cash flow is managed at Group level by head office finance department (“Group 
 Group Finance mainly invests surplus cash in time deposits, with appropriate maturities. 
 
 本集團財務主要投資剩餘現金於銀行存 款，並有適當到期日。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0200-19.png)
-
 
 <!-- Start of picture text -->
 198<br><!-- End of picture text -->
@@ -9503,20 +7829,10 @@ The table below analyses the Group’s non-derivative financial liabilities into
 |Lease liabilities|租賃負債|18,604|9,776|2,681|913|31,974|30,623|
 |Total|合計|18,243,441|30,594|287,983|32,175|18,594,193|18,395,879|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0201-12.png)
-
-
 <!-- Start of picture text -->
 199<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0202-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -9563,12 +7879,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Derivative financial|衍生金融工具||||||
 |instruments||21|–|(15,548)|–|(15,548)|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0202-15.png)
-
-
 <!-- Start of picture text -->
 200<br><!-- End of picture text -->
 
@@ -9598,18 +7908,10 @@ If one or more of the significant inputs is not based on observable market data,
 
 如一項或多項重大輸入並非根據可觀察市 場資料，則該工具列入第3層，包括未上市 優先股和ESG風險導致重大不可觀察的調 整。於二零二三年十二月三十一日本集團 的未上市優先股為列入第3層的金融工具， 其公允價值是根據並非按照可觀察市場資 料確定的資產或負債輸入確定。第3層金融 工具的估值方法及技術包括市場法及二項 式模型。截至二零二四年十二月三十一日 止年度，本集團沒有持有該類金融工具。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0203-12.png)
-
-
 <!-- Start of picture text -->
 201<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0204-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -9652,12 +7954,6 @@ The following table presents the changes in level 3 items for the year ended 31 
 |Exchange realignment|匯兌調整|**(1,392)**|3,099|
 |**At 31 December**|於十二月三十一日|**–**|212,370|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0204-17.png)
-
-
 <!-- Start of picture text -->
 202<br><!-- End of picture text -->
 
@@ -9683,10 +7979,6 @@ The following table summarises the quantitative information about the significan
 
 下表概述未上市優先股第3層公允價值計 量所使用重大非可觀察輸入的定量資料： 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0205-10.png)
-
-
 <!-- Start of picture text -->
 Relationship of unobservable inputs<br>Description Fair value at Unobservable inputs Inputs to fair values<br>描述 於下列日期的公允價值 非可觀察輸入 輸入 非可觀察輸入與公允價值的關係<br>31 December  31 December<br>2024 2023<br>二零二四年 二零二三年<br>十二月三十一日 十二月三十一日<br>RMB’000 RMB’000<br>人民幣千元 人民幣千元<br>Unlisted preference shares N/A 212,370 Risk-free Rate 4.04% The higher the risk-free rate,<br>the higher the fair value<br>未上市優先股 無風險息率 無風險息率越高，公允價值越高<br>Volatility 55.00% The higher the expected volatility,<br>the lower the fair value<br>波幅 預期波幅越高，公允價值越低<br><!-- End of picture text -->
 
@@ -9698,18 +7990,10 @@ The finance department of the Group includes a team that performs the valuations
 
 本集團財務部設有一個團隊，專責就財務 報告目的對非財產性項目估值，包括第3層 公允價值。該團隊直接向財務總監及審核 委員會匯報。為配合本集團的半年報告 期，財務總監、審核委員會與估值團隊最 少每六個月討論一次估值流程及結果。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0205-15.png)
-
-
 <!-- Start of picture text -->
 203<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0206-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -9745,12 +8029,6 @@ The table below details changes in the Group’s liabilities arising from financ
 |Exchange realignment|外幣折算差額|85,599|–|(47)|85,552|
 |At 31 December 2023|於二零二三年|||||
 ||十二月三十一日|14,287,428|-|30,623|14,318,051|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0206-08.png)
-
 
 <!-- Start of picture text -->
 204<br><!-- End of picture text -->
@@ -9788,8 +8066,6 @@ At 31 December 2024 and 2023, the Group had the following commitments:
 |Leasehold land and buildings<br>租賃土地及樓宇|**373,351**|729,342|
 ||**861,798**|1,269,143|
 
-
-
 ###### **Commitments under operating leases** 
 
 The Group as lessor: 
@@ -9810,20 +8086,10 @@ The Group leases out certain office premises under operating lease agreements. T
 |After five years|超過五年|**14,823**|5,574|
 |||**105,318**|99,944|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0207-20.png)
-
-
 <!-- Start of picture text -->
 205<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0208-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br>EQUITY METHOD<br><!-- End of picture text -->
@@ -9848,8 +8114,6 @@ The amounts recognised in the consolidated statement of financial position are a
 |Investments in a joint venture (b)<br>合營企業(b)|**18,503**|15,502|
 ||**34,678**|56,854|
 
-
-
 The amounts recognised in the consolidated income statement are as follows: 
 
 於合併利潤表內確認的金額如下： 
@@ -9859,8 +8123,6 @@ The amounts recognised in the consolidated income statement are as follows:
 |Share of results of associates|應佔聯營企業之收益|**375**|697|
 |Share of results of a joint venture|應佔合營企業之收益|**1**|2|
 |||**376**|699|
-
-
 
 The details of investments in associates and a joint venture are as follows: 
 
@@ -9877,12 +8139,6 @@ The details of investments in associates and a joint venture are as follows:
 |Share of result of associates|應佔淨收益|**375**|697|
 |Exchange realignment|外幣折算差額|**(471)**|1,456|
 |At 31 December|於十二月三十一日|**16,175**|41,352|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0208-17.png)
-
 
 <!-- Start of picture text -->
 206<br><!-- End of picture text -->
@@ -9908,8 +8164,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Share of result of a joint venture|應佔淨收益|**1**|2|
 |At 31 December|於十二月三十一日|**18,503**|15,502|
 
-
-
 There are no contingent liabilities relating to the Group’s interests in the associates and a joint venture. 
 
 本集團無與聯營企業及合營企業相關的或 有負債。 
@@ -9931,15 +8185,9 @@ The particulars of the associates and a joint venture of the Group, all of which
 |Karrion Development Limited|Hong Kong, PRC|**50.00%**|50.00%|Associate|**HKD**<br>**1,000,000**|HKD<br>1,000,000|Development, distribution,<br>wholesaling and retailing of<br>medical, healthcare and<br>hygiene products|
 |嘉利安發展有限公司|香港，中國|||聯營企業|港幣<br>**1,000,000**|港幣<br>1,000,000|開發、批發分銷、 醫藥、個人<br>護理及衛生產品零售|
 
-
-
 - For identification purpose only 
 
 - 僅供識別 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0209-14.png)
-
 
 <!-- Start of picture text -->
 207<br><!-- End of picture text -->
@@ -9975,12 +8223,6 @@ Save as disclosed elsewhere in the consolidated financial statements, the Group 
 |Share-based payment|以股份為基礎的酬金|**5,725**|11,408|
 |Contributions to pension schemes|退休金計劃供款|**113**|129|
 |||**31,541**|32,765|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0210-12.png)
-
 
 <!-- Start of picture text -->
 208<br><!-- End of picture text -->
@@ -10020,20 +8262,10 @@ The following is a list of the principal subsidiaries of the Company at 31 Decem
 |恒安（威信）藥業有限公司|香港，有限責任公司|於香港從事貿易、採購及出售個人|普通股10,000股，合計||
 |||衛生用品|港幣2,030,786元||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0211-07.png)
-
-
 <!-- Start of picture text -->
 209<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0212-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -10063,12 +8295,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |恒維利有限公司|香港，有限責任公司|於香港製造、分銷及出售防護用品|普通股25,000,000股，合計<br>港幣25,000,000元||
 |Hengan (Jinjiang) Household Products<br>Co., Ltd.|PRC, wholly foreign-owned<br>enterprise|Manufacturing, distribution and sale<br>of personal hygiene products,<br>personal hygiene material<br>products and household products<br>in the PRC|US$15,800,000|100|
 |恒安（晉江）生活用品有限公司|中國，全外資企業|於中國製造、分銷及出售個人衛生用<br>品、衛生材料及家居用品|15,800,000美元||
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0212-06.png)
-
 
 <!-- Start of picture text -->
 210<br><!-- End of picture text -->
@@ -10105,20 +8331,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Co., Ltd.*|venture|of personal hygiene products in<br>the PRC|||
 |恒安（撫順）生活用品有限公司|中國，中外合資企業|於中國製造、分銷及出售個人衛生<br>用品|人民幣73,660,000元||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0213-05.png)
-
-
 <!-- Start of picture text -->
 211<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0214-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -10156,12 +8372,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Co., Ltd.|enterprise|of packaged tissue paper|||
 |||products in the PRC|||
 |恒安（中國）紙業有限公司|中國，全外資企業|於中國製造、分銷及出售生活用紙|165,570,000美元||
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0214-06.png)
-
 
 <!-- Start of picture text -->
 212<br><!-- End of picture text -->
@@ -10203,20 +8413,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |||products in the PRC|||
 |晉江恒安家庭生活用紙有限公司|中國，中外合資企業|於中國製造、分銷及出售生活用紙|12,000,000美元||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0215-05.png)
-
-
 <!-- Start of picture text -->
 213<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0216-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -10253,12 +8453,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Co., Ltd.|venture|of personal hygiene products in<br>the PRC|||
 |恒安（河南）衛生用品有限公司|中國，中外合資企業|於中國製造、分銷及出售個人衛生<br>用品|人民幣82,000,000元||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0216-06.png)
-
-
 <!-- Start of picture text -->
 214<br><!-- End of picture text -->
 
@@ -10293,20 +8487,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Co., Ltd.*|enterprise|personal hygiene products via<br>online in the PRC|||
 |廈門七度空間電子商務有限公司|中國，全外資企業|於中國互聯網銷售化妝品及個人<br>衛生用品|人民幣2,000,000元||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0217-05.png)
-
-
 <!-- Start of picture text -->
 215<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0218-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -10346,12 +8530,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Quality Hero Corporation Sdn. Bhd.|Malaysia, Limited liability<br>company|Manufacturing and sale of adult<br>diaper, baby diaper and sanitary<br>napkins products in Malaysia|MYR350,000|57.02|
 |高品喜樂有限公司*|馬來西亞，有限責任公司|於馬來西亞製造、分銷及出售成人及<br>嬰兒紙尿褲及衛生巾|350,000馬幣||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0218-06.png)
-
-
 <!-- Start of picture text -->
 216<br><!-- End of picture text -->
 
@@ -10385,20 +8563,10 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Co., Ltd*|enterprise|of packaged tissue paper<br>products in the PRC|||
 |恒安（湖北）紙業有限公司|中國，全外資企業|於中國製造、分銷及出售生活用紙|人民幣100,000,000元||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0219-05.png)
-
-
 <!-- Start of picture text -->
 217<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0220-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -10436,12 +8604,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 ||company|Kong|||
 |聲科亞洲有限公司|香港，有限責任公司|於香港從事貿易及諮詢服務|普通股100股，合計港幣100元||
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0220-06.png)
-
-
 <!-- Start of picture text -->
 218<br><!-- End of picture text -->
 
@@ -10475,8 +8637,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Company Limited|company|via online in Hong Kong|||
 |恒安電子商貿（香港）有限公司|香港，有限責任公司|於中國香港互聯網出售個人衛生<br>用品及生活用紙|普通股1股，合計港幣1元||
 
-
-
 ###### * For identification purpose only 
 
 ###### * 僅供識別 
@@ -10489,18 +8649,10 @@ For the non-wholly owned subsidiaries, the non-controlling interests represent t
 
 對於非全資附屬公司，少數股東權益代表除母 公司之外的剩餘權益和相關表決權。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0221-11.png)
-
-
 <!-- Start of picture text -->
 219<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0222-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br>THE COMPANY<br><!-- End of picture text -->
@@ -10543,8 +8695,6 @@ A summarised statement of financial position of the Company as at 31 December 20
 |**Total liabilities**|總負債|**1,237,895**|2,632,096|
 |**Total equity and liabilities**|權益及負債合計|**9,233,271**|12,083,748|
 
-
-
 The statement of financial position of the Company was approved by the Board of Directors on 25 March 2025 and was signed on its behalf. 
 
 本公司財務報表已由董事會於二零二五年三月 二十五日批核，並代表董事會簽署 
@@ -10556,10 +8706,6 @@ Director
 **Sze Man Bok** 施文博 
 
 Director 董事 **Hui Ching Lau** 許清流 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0222-15.png)
-
 
 <!-- Start of picture text -->
 220<br><!-- End of picture text -->
@@ -10605,20 +8751,10 @@ Note:
 |– shares withheld for share award schemes|–股份獎勵計劃代扣股份|–|(368,969)|
 |At 31 December 2023|於二零二三年十二月三十一日|9,496,940|(168,633)|
 
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0223-09.png)
-
-
 <!-- Start of picture text -->
 221<br><!-- End of picture text -->
 
 恒安國際集團有限公司 二零二四年年報 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0224-00.png)
-
 
 <!-- Start of picture text -->
 合併財務報表附註<br>For the year ended 31 December 2024<br><!-- End of picture text -->
@@ -10662,12 +8798,6 @@ The remuneration of every Director and the Chief Executive for the year ended 31
 |Mr. Ho Kwai Ching, Mark|何貴清先生|**109**|**–**|**–**|**–**|**–**|**109**|
 |Mr. Chen Chuang|陳闖先生|**109**|**–**|**–**|**–**|**–**|**109**|
 |||**436**|**–**|**–**|**–**|**–**|**436**|
-
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0224-10.png)
-
 
 <!-- Start of picture text -->
 222<br><!-- End of picture text -->
@@ -10714,8 +8844,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 |Mr. Chan Henry (ii)|陳銘潤先生(ii)|43|–|–|–|–|43|
 |||475|–|–|–|–|475|
 
-
-
 - (i) Mr. Xu Wenmo was appointed as a Director on 24 August 2023. 
 
    - (i) 許文默先生於二零二三年八月二十四日被 任命為董事。 
@@ -10723,10 +8851,6 @@ For the year ended 31 December 2024 截至二零二四年十二月三十一日�
 - (ii) Mr. Hung Ching Shan, Mr. Xu Shui Shen and Mr. Xu Chun Man retired from Director on 22 May 2023. Mr. Chan Henry retired from Independent Non-Executive Director on 22 May 2023. 
 
 - (ii) 洪青山先生、許水深先生和許春滿先生於 二零二三年五月二十二日從董事職位退 任。陳銘潤先生於二零二三年五月二十二 日從獨立非執行董事職位退任。 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0225-12.png)
-
 
 <!-- Start of picture text -->
 223<br><!-- End of picture text -->
@@ -10787,20 +8911,8 @@ No significant transactions, arrangements and contracts in relation to the Group
 
 本公司概無訂立任何有關本集團業務並於年末 或年內任何時間存續之重大交易、安排及合 約，而本公司董事直接或間接擁有相關重大權 益。 
 
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0226-27.png)
-
-
 <!-- Start of picture text -->
 224<br><!-- End of picture text -->
 
 **HENGAN INTERNATIONAL GROUP COMPANY LIMITED** Annual Report 2024 
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0227-00.png)
-
-
-
-![](D:/FinancialReport/scratch_convert/pdf_images/01044_AnnualReport_2024.pdf-0227-01.png)
-
 
