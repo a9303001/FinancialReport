@@ -530,7 +530,7 @@ N/A
 ---
 
 - 執行日期: 28
-- `COMPANY_NAME`：01044 恒安國際
+- `COMPANY_NAME`：01044 恒安國際 /美國adr HEGIY
 - `MARKET`港股
 - `COMPANY_FOLDER`：01044恒安國際
 - `EXTRA_ANALYSIS`：N/A
