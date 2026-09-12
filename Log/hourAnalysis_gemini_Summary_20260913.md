@@ -41,3 +41,4 @@
 |:---------|:----------|:-----|
 | firecrawl-mcp | `firecrawl_search` | 檢索 6951 青新最新 2026Q2 財報、營收、法說會紀錄與轉板消息 |
 | firecrawl-mcp | `firecrawl_scrape` | 抓取 Goodinfo 6951 歷年經營績效合併報表與 5 年獲利率/ROE/殖利率數據庫 |
+| exa | `web_search_exa` | 檢索 6951 青新 2026 最新董事會決議公告、EPS、月營收及評價估值 |
