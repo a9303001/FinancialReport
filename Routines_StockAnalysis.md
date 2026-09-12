@@ -421,12 +421,11 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 17
-- `COMPANY_NAME`：1301 極洋
+- `COMPANY_NAME`：8117 中央自動車工業
 - `MARKET`：日股
-- `COMPANY_FOLDER`：1301極洋
+- `COMPANY_FOLDER`：8117中央自動車工業
 - `EXTRA_ANALYSIS`：
-  1. 日圓匯率變動對水產進口採購成本與毛利率的敏感度分析
-  2. 負債比率、利息支出及對淨利潤的潛在影響
+N/A
 
 ---
 
@@ -500,22 +499,18 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 24
-- `COMPANY_NAME`：9503 關西電力
-- `MARKET`：日股
-- `COMPANY_FOLDER`：9503關西電力
-- `EXTRA_ANALYSIS`：
-  1. 未來 10 年每年新增核電機組，每機組貢獻多少 EPS
-  2. 未來 10 年 EPS 預估
+- `COMPANY_NAME`：02232晶苑國際
+- `MARKET`：港股
+- `COMPANY_FOLDER`：02232晶苑國際
+- `EXTRA_ANALYSIS`：n/a
 
 ---
 
 - 執行日期: 25
-- `COMPANY_NAME`：PBR.A 巴西石油（aka PBR；巴西 PETR3/PETR4）
-- `MARKET`：美股
-- `COMPANY_FOLDER`：PBR巴西石油
+- `COMPANY_NAME`：01866中國心連心化肥
+- `MARKET`：港股
+- `COMPANY_FOLDER`：01866中國心連心化肥
 - `EXTRA_ANALYSIS`：
-  1. PBR.A 和 PBR 價差有多少百分比？哪個比較便宜
-  2. 台灣複委託買 PBR.A，配息 US 和巴西各要預扣多少 % 的稅
 
 ---
 
@@ -559,17 +554,11 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 30
-- `COMPANY_NAME`：`8002` `丸紅`
-- `MARKET`：日股
-- `COMPANY_FOLDER`：`8002丸紅`
+- `COMPANY_NAME`：`7736` `虎山`
+- `MARKET`：台股
+- `COMPANY_FOLDER`：`7736虎山`
 - `EXTRA_ANALYSIS`：
-  1. 各農作物佔營收比重
-  2. 各農作物佔 EPS 比重
-  3. 農作物漲跌對 8002 丸紅影響
-  4. 美國關稅和美伊戰爭、烏俄戰爭對其影響？利多？利空？對 EPS 影響
-  5. 未來 3 年 EPS 預估
+N/A
 
 ---
 
-- 執行日期: 31
-- **無對應公司 → Skip（不執行任何動作）**
