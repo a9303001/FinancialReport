@@ -1,40 +1,39 @@
 # 任務執行最終報告 - 2026/09/12
 
 - **執行日期**：2026-09-12
-- **輪替序號**：執行日期 17（8117 中央自動車工業）
-- **上一輪**：執行日期 16（00546 阜豐）
-- **下一輪預定**：執行日期 18（CF）
+- **輪替序號**：執行日期 18（CF Industries）
+- **上一輪**：執行日期 17（8117 中央自動車工業）
+- **下一輪預定**：執行日期 19（EVTC EVERTEC）
 
 ---
 
 ## 1. 成功紀錄
 | 股號/名稱 | 資料來源 | 產生的檔案 | 狀態 |
 |:----------|:---------|:-----------|:-----|
-| 8117 中央自動車工業 | 公司官網 IR / SWCMS | 8117_AnnualReport_2026.pdf<br>8117_AnnualReport_2025.pdf<br>8117_Quarter_2027Q1.pdf | ✅ 下載成功（2 年報 + 1 最新季報，大小皆大於 500KB） |
-| 8117 中央自動車工業 | PyMuPDF4LLM MCP | 8117_AnnualReport_2026.md<br>8117_AnnualReport_2025.md<br>8117_Quarter_2027Q1.md | ✅ 轉換成功，經檢查無 (cid: 缺字亂碼 |
-| 8117 中央自動車工業 | Yahoo Finance JP 掲示板 / みんかぶ (Minkabu) | 202609_輿情新聞.md | ✅ 成功取得 2026 年 8~9 月大股東釋股（PO）、納入新 TOPIX 指數預期、Q1 財報優異及股東優待討論 |
+| CF Industries | SEC EDGAR / 公司官網 IR | CF_AnnualReport_2024.md<br>CF_AnnualReport_2025.md<br>CF_Quarter_2026Q2.md | ✅ 本地檔案齊全（最新 2024/2025 10-K 及 2026Q2 10-Q） |
+| CF Industries | Firecrawl search / Ammonia Energy / SEC EDGAR | 202609_輿情新聞.md | ✅ 成功補充 2026/08~09 最新 Blue Point One 破土、PepsiCo 低碳氨化肥包銷協議、Q2 財報指引等內容 |
 
 ---
 
 ## 2. 失敗、被擋或受限網站
 - **來源**: 內建 search_web
 - **原因**: 檢索時回傳 `no summary returned from GenerateContent`
-- **處置**: 依 §2 通用抓取規則升級至 Exa MCP (`web_search_exa`) 與官網即時讀取 (`read_url_content`)，成功取得官方 PDF 與完整社群留言。
+- **處置**: 依 §2 通用抓取規則升級至 Firecrawl MCP (`firecrawl_search`) 與 SEC EDGAR MCP，成功取得最新公告與產業合作資訊。
 
 ---
 
 ## 3. 資料缺失說明
-- 本次成功取得 2026年3月期(第87期)與 2025年3月期(第86期)之有價證券報告書，以及最新 2027年3月期 第1四半期決算短信，資料完整無缺漏。
+- 經 SEC EDGAR 驗證，CF Industries 最新 10-Q 季度截至 2026-06-30（2026 Q2），2026 Q3 申報期尚未屆滿（截至 9/30），本地已具備最新且完整的 2 年報 + 1 季報。
 
 ---
 
 ## 4. 異常檔案刪除紀錄
-- 無（所有下載檔案皆 >500KB，結構完整，無亂碼）。
+- 無異常檔案。
 
 ---
 
 ## 5. 本次 MCP 使用紀錄（強制填寫）
 | MCP 服務 | 工具/函式 | 用途 |
 |:---------|:----------|:-----|
-| Exa | `web_search_exa` | 搜尋 8117 IR 報告連結、Yahoo Finance JP 掲示板及 Minkabu 討論 |
-| PyMuPDF4LLM | `convert_pdf_to_markdown` | 將 2 份年報與 1 份季報 PDF 轉換為乾淨的 Markdown 格式 |
+| sec-edgar-mcp | `get_cik_by_ticker`, `get_company_info`, `get_key_metrics` | 驗證 CF Industries 最新申報狀況、流通在外股數與資產負債表指標 |
+| firecrawl-mcp | `firecrawl_search` | 檢索 CF Industries 2026 年 8~9 月最新低碳氨、Blue Point 破土與百事包銷協議動態 |
