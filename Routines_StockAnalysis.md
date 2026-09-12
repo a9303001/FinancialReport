@@ -1,9 +1,10 @@
 /goal
-使用 latest claude OPUS model
 
 # Routines — 每日輪替執行排程 (Daily Rotation Schedule)
 
 > 每次觸發時，依下列步驟執行；**只有 Step 3 命中才有後續動作**。
+> **如果你的model是gemini的話，嚴格禁止read/write hourAnalysisResult.md**
+>**如果你的model是claude(include opus, sonnet, etc..)的話，嚴格禁止read/write hourAnalysisResult_gemini.md**
 
 ## 全域參數 (Global Parameters)
 
