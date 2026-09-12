@@ -533,7 +533,11 @@ N/A
 - `COMPANY_NAME`：01044 恒安國際 /美國adr HEGIY
 - `MARKET`港股
 - `COMPANY_FOLDER`：01044恒安國際
-- `EXTRA_ANALYSIS`：N/A
+- `EXTRA_ANALYSIS`：
+1. 七度空间：卫生巾評價，有什麼缺評嗎？
+2. 心相印：生活用纸評價，有什麼缺評嗎？
+3. 安儿乐/Q·MO：婴儿纸尿裤品評價，有什麼缺評嗎？
+4. 
 
 ---
 
