@@ -124,6 +124,10 @@ graph TD
 | Reuters | `reuters.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；文章頁常有 DataDome/PerimeterX 真人驗證牆 | 換 `firecrawl_scrape` 抓公司頁通常可讀（能拿到新聞列表與財報摘要）；「Load more」翻頁可能被驗證牆擋，取得已載入部分即可 |
 | Bloomberg | `bloomberg.com` | 搜尋多半只回股價報價頁，深度文章有付費牆 | 屬付費牆限制、非封鎖；MCP 也難突破付費牆，取得摘要即可並在報告註明「付費牆限制」 |
 | X (Twitter) | `x.com` / `twitter.com` | 未登入即封鎖：Firecrawl `firecrawl_scrape`（含 `proxy: stealth`）回 `All scraping engines failed`；Bright Data 需 token 有效；Playwright 需環境有 Chromium | **不要浪費時間逐一試整條 MCP 鏈抓原始頁面**（2026-09-02 實測六種工具全數失敗）。改用 **Firecrawl `firecrawl_search` 搭配 `site:x.com` 運算子**取得索引摘要（注意：`includeDomains: ["x.com"]` 參數實測回傳 0 筆，**必須改用 `site:` 運算子寫在 query 裡**）。索引摘要**不含時間戳**，依 §5.0 不可臆測日期，須標註「⚠️ 為索引摘要、非原始頁面逐字引述」 |
+| MOPS 公開資訊觀測站 | `mops.twse.com.tw` | `curl` POST `t164sb01` 回 HTTP 000；GET 新舊 API 回「因為安全性考量，您所執行的頁面無法呈現」封鎖頁；`firecrawl_scrape` 只拿到空的查詢表單外殼（需 JS 表單提交）| 2026-09-12 實測：**不要在 MOPS 上耗時**。台股財報版本查核改用**財報狗 e-report**（能列出官方 `doc.twse.com.tw` 原始檔名，可直接比對年度/季別），上櫃掛牌進度改用**櫃買中心 TPEx 官網**，重訊全文常可在 CMoney 貼文中找到轉錄。若真的必須查 MOPS，改用 Playwright 做表單互動 |
+| Goodinfo 台灣股市資訊網 | `goodinfo.tw` | Bright Data `scrape_as_markdown` 60 秒逾時 | 改用 `firecrawl_search`／搜尋摘要，並依 §2.1 於該筆內容標註「非原始頁面逐字引述」 |
+| 雪球（Bright Data 路徑受限時）| `xueqiu.com` | Bright Data 回 `Residential Failed (bad_endpoint)`（帳號未完成 KYC，非網站封鎖）| §2.7 仍以 Bright Data 優先，但**本環境 Bright Data residential 不可用時，直接改 `firecrawl_scrape` 搭 `proxy: stealth`**（2026-09-12 實測可成功取得雪球頁面）|
+| 券商承銷公告頁（嘉實資訊 iframe）| 如玉山證券等券商承銷頁 | Firecrawl 只取得嘉實資訊 iframe 外殼，無實質表格 | 台股新股申購/承銷日程改抓 **HiStock 公開申購頁**（表格為靜態，內建工具或 Firecrawl 皆可讀）|
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
