@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 23 |
-| **last_executed_companies** | 01816 中廣核電力 |
-| **last_executed_time** | 2026-09-12 14:48 |
-| **next_date** | 24 |
+| **last_executed_date** | 24 |
+| **last_executed_companies** | 02232 晶苑國際 |
+| **last_executed_time** | 2026-09-13 00:23 |
+| **next_date** | 25 |
 | **status** | ✅ |
