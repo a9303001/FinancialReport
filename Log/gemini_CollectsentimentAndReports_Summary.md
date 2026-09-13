@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 28 |
-| **last_executed_companies** | 01044 恒安國際 |
-| **last_executed_time** | 2026-09-13 01:14 |
-| **next_date** | 29 |
+| **last_executed_date** | 29 |
+| **last_executed_companies** | 00883 中國海洋石油 |
+| **last_executed_time** | 2026-09-14 00:06 |
+| **next_date** | 30 |
 | **status** | ✅ |
