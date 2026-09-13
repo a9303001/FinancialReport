@@ -1,34 +1,19 @@
 /goal
-使用latest claude OPUS model 
-
 
 # 個股分析1
 <OUTPUT_FILENAME>` : hourAnalysisResult.md
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-- `COMPANY_NAME`：03606 福耀玻璃（中股: 600660 福耀玻璃）
-- `MARKET`：港股/中股
-- `COMPANY_FOLDER`：03606福耀玻璃
-- `EXTRA_ANALYSIS`：
-  1. 未來5年產能規畫，對eps影響
-  2. AI 自駕車對玻璃需求影響?對eps影響?
-  3. 每股化,港幣
+- `COMPANY_NAME`：6951 青新
+- `MARKET`：台股
+- `COMPANY_FOLDER`：6951青新
+- `EXTRA_ANALYSIS`：無
+1.石綿瓦等有害廢棄物清運佔eps多少%?
+2.如果政府石綿瓦清運專案什麼時候結束?EPS會掉到多少?
+3. 青新主力業務是什麼?各提供多少EPS?
+
 
 ---
 # 個股分析2
-<OUTPUT_FILENAME>` : hourAnalysisResult.md
-> **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-COMPANY_NAME`：01816中廣核電力 / 中股雙重上市 (003816)
-- `MARKET`：港股
-- `COMPANY_FOLDER`：01816中廣核電力
-- `EXTRA_ANALYSIS`：
-  1. 未來10年每年新增核電機組，每機組貢獻多少EPS
-  2. 未來10年EPS預估
-  3. 未來10年每股配息預估
-  4. 每股化，港幣
-
-
----
-# 個股分析3
 <OUTPUT_FILENAME>` : hourAnalysisResult.md
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
 - `COMPANY_NAME`：4979 OAT

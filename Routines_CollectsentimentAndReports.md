@@ -1,3 +1,4 @@
+/goal
 # Routines
 — 每日輪替執行排程 (Daily Rotation Schedule)
 > 1. 取得今日的「日」(Day of the Month，1 ~ 31)。
