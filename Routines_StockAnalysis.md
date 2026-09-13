@@ -558,7 +558,7 @@ N/A
 
 - 執行日期: 30
 - `COMPANY_NAME`：`02633` `雅各臣科研製藥`
-- `MARKET`：台股
+- `MARKET`：港股
 - `COMPANY_FOLDER`：`02633雅各臣科研製藥`
 - `EXTRA_ANALYSIS`：
 1. 為什麼pe這麼低

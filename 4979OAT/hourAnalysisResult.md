@@ -1,4 +1,4 @@
-> **更新時間（Last Updated）：2026/09/14 00:04:00 (UTC+8)**
+> **更新時間（Last Updated）：2026/09/14 00:33:02 (UTC+8)**
 
 # OATアグリオ（OAT Agrio，`4979`．東證 Standard）個股深度分析
 
