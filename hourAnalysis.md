@@ -3,13 +3,10 @@
 # 個股分析1
 <OUTPUT_FILENAME>` : hourAnalysisResult.md
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-- `COMPANY_NAME`：6951 青新
+- `COMPANY_NAME`：8435 鉅邁
 - `MARKET`：台股
-- `COMPANY_FOLDER`：6951青新
+- `COMPANY_FOLDER`：8435鉅邁
 - `EXTRA_ANALYSIS`：無
-1.石綿瓦等有害廢棄物清運佔eps多少%?
-2.如果政府石綿瓦清運專案什麼時候結束?EPS會掉到多少?
-3. 青新主力業務是什麼?各提供多少EPS?
 
 
 ---
