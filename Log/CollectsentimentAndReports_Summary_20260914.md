@@ -1,14 +1,15 @@
 # 任務執行最終報告 - 2026/09/14
 
 - **執行日期**：2026-09-14
-- **執行對象**：執行日期 6（7203 Toyota）
-- **歷程記錄**：執行日期 1（02318 中國平安）、執行日期 2（00941 中國移動）、02633 雅各臣科研製藥、01426 春泉Reit、9435 光通訊、執行日期 5（3445 RS科技 / 688432 有研硅）、執行日期 6（7203 Toyota）
+- **執行對象**：執行日期 7（UHS Universal Health Services）
+- **歷程記錄**：執行日期 1（02318 中國平安）、執行日期 2（00941 中國移動）、02633 雅各臣科研製藥、01426 春泉Reit、9435 光通訊、執行日期 5（3445 RS科技 / 688432 有研硅）、執行日期 6（7203 Toyota）、執行日期 7（UHS）
 
 ---
 
 ## 1. 成功紀錄
 | 股號/名稱 | 資料來源 | 產生的檔案 | 狀態 |
 |:----------|:---------|:-----------|:-----|
+| UHS Universal Health Services | 本地既有 2024、2025 10-K + 2026 Q2 10-Q 齊全；Exa、SEC EDGAR、Wells Fargo Healthcare Conference 逐字稿、Simply Wall St、American Banking News | `202609_輿情新聞.md` | ✅ 財報齊全（2年報+1最新季報），輿情增量更新至 2026-09-14（新增 9/8 Wells Fargo 醫療大會 CFO 談話：Talkspace 整合進度、Exchange 退保影響量化、OBBBA 法案評估；9/13 CalSTRS 增持 8.75M 股至 8.82M 股；9/11 最新交易報價 $174.83 與 P/E 估值） |
 | 7203 Toyota | 本地既有 FY2025、FY2026 年報 + FY2027 Q1 季報齊全；Exa、Japan IR、SEC Form 6-K、Yahoo Finance、Citi 大行報告 | `202609_輿情新聞.md` | ✅ 財報齊全（2年報+1季報），輿情增量更新至 2026-09-14（新增 9/3 庫藏股買回 28.2M 股進度申報、德州廠 36 億美元擴建抗關稅、花旗調升目標價至 ¥3,800、美規 Tacoma 召回規模受控） |
 | 00941 中國移動 | 本地既有 2024、2025 年報 + 2026 中期/Q2 報告齊全 | `00941_annual_2024.md`, `00941_annual_2025.md`, `00941_interim_2026.md`, `00941_Quarter_2026Q2.md` | ✅ 齊全 |
 
@@ -50,5 +51,6 @@
 |:---------|:----------|:-----|
 | Playwright | `browser_navigate`, `browser_evaluate` | 存取與解析雪球 (xueqiu.com)、東方財富股吧 (eastmoney.com)、富途牛牛圈 (futunn.com)、LIHKG 輿情與新聞 |
 | pymupdf4llm-mcp | `convert_pdf_to_markdown` | 將 3 份港交所官方財報 PDF 轉換為結構完整之 Markdown 檔案 |
-| Exa | `web_search_exa` | 檢索 HKEXnews 披露易 2026年9月最新回購報表與公告、9435 光通訊新聞 |
+| Exa | `web_search_exa` | 檢索 HKEXnews 披露易 2026年9月最新回購報表與公告、9435 光通訊新聞、UHS 2026年9月最新輿情與大會談話 |
+| sec-edgar-mcp | `get_cik_by_ticker`, `get_company_info` | 驗證 UHS CIK (0000352915) 與最新申報檔案狀態 |
 | Bright Data | `scrape_as_markdown` | 爬取 Yahoo Finance JP 9435.T 即時新聞與投資者討論區 |
