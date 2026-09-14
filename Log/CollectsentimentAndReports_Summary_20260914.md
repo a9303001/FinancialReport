@@ -14,6 +14,7 @@
 | 02633 雅各臣科研製藥 | 港交所披露易 HKEXnews 官方報告、`pymupdf4llm-mcp` | `02633_AnnualReport_2026.md`, `02633_AnnualReport_2025.md`, `02633_Quarter_2026Q2.md` | ✅ 下載並轉換成功（2年報+1中期報，0 CID亂碼） |
 | 02633 雅各臣科研製藥 | 雪球 (Xueqiu)、東方財富股吧、富途牛牛圈、HKEXnews 官方重大通告 | `202609_輿情新聞.md` | ✅ 收集整理完成（保濟元和分拆上市專欄、除權息公告、股東周年大會決議） |
 | 01426 春泉Reit | HKEXnews 披露易官方公告、Exa、雪球、東方財富、富途牛牛 | `202609_輿情新聞.md`, `01426_InterimReport_2026.md` | ✅ 財報齊全（2024/2025年報+2026中期報告），輿情增量更新至2026-09-14（新增9/7, 9/10, 9/11回購公告） |
+| 9435 光通訊 | 本地既有 2024、2025、2026 有價證券報告書 + 2027Q1 季報齊全；Bright Data 爬取 Yahoo Finance JP、EDINET、IFIS、Yahoo 掲示板 | `202609_輿情新聞.md` | ✅ 財報齊全，輿情增量更新至 2026-09-14（增持 2689 OLBA 至 8.76%、分析師下修經常利益預估 1.4%、9/3 發行 300 億日圓無擔保公司債） |
 
 ---
 
@@ -46,4 +47,5 @@
 |:---------|:----------|:-----|
 | Playwright | `browser_navigate`, `browser_evaluate` | 存取與解析雪球 (xueqiu.com)、東方財富股吧 (eastmoney.com)、富途牛牛圈 (futunn.com)、LIHKG 輿情與新聞 |
 | pymupdf4llm-mcp | `convert_pdf_to_markdown` | 將 3 份港交所官方財報 PDF 轉換為結構完整之 Markdown 檔案 |
-| Exa | `web_search_exa` | 檢索 HKEXnews 披露易 2026年9月最新回購報表與公告 |
+| Exa | `web_search_exa` | 檢索 HKEXnews 披露易 2026年9月最新回購報表與公告、9435 光通訊新聞 |
+| Bright Data | `scrape_as_markdown` | 爬取 Yahoo Finance JP 9435.T 即時新聞與投資者討論區 |
