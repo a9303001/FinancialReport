@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 4 |
-| **last_executed_companies** | 9435 光通訊 |
-| **last_executed_time** | 2026-09-14 09:44 |
-| **next_date** | 5 |
+| **last_executed_date** | 5 |
+| **last_executed_companies** | 3445 RS / 688432 有研硅 |
+| **last_executed_time** | 2026-09-14 10:04 |
+| **next_date** | 6 |
 | **status** | ✅ |
