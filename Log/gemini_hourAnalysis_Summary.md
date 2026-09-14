@@ -1,9 +1,9 @@
-# Rotation Progress — StockAnalysis (Gemini)
+# Rotation Progress — hourAnalysis (Gemini)
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 8 |
-| **last_executed_companies** | 2832 台產 |
-| **last_executed_time** | 2026-09-14 10:06 |
-| **next_date** | 9 |
-| **stock_analysis_status** | ✅ |
+| **last_executed_date** | 9 |
+| **last_executed_companies** | 8433 弘帆 |
+| **last_executed_time** | 2026-09-14 10:25 |
+| **next_date** | 10 |
+| **status** | ✅ |
