@@ -1,3 +1,4 @@
+> **更新時間（Last Updated）：2026/08/29 00:00:00 (UTC+8)**
 # 宜瑞安（Ingredion Incorporated，NYSE: INGR）— 個股深度基本面分析報告
 
 ---
@@ -534,47 +535,3 @@
 **下一輪優先分析項目**：① 從 SEC EDGAR 抓回 10-K／10-Q 原文並存入本機資料夾；② Q3 季報驗證下半年獲利與現金流回補；③ 追蹤反壟斷審查是否有第一個司法管轄區放行。
 
 ---
-
-## 12. 名詞對照表（Glossary · 從本檔成品重新掃描生成）
-
-| 術語／代碼 | 全名（原文） | 一句白話解釋 |
-| :--- | :--- | :--- |
-| **INGR** | Ingredion Incorporated（NYSE: INGR） | 本分析標的**宜瑞安**，在美國紐約證券交易所掛牌的全球食品配料公司 |
-| **Tate & Lyle（泰萊）** | Tate & Lyle PLC（LSE: TATE，倫敦證交所） | 英國百年食品配料大廠，宜瑞安正以全現金收購中 |
-| **10-K / 10-Q / 8-K** | SEC Annual / Quarterly / Current Report | 美國上市公司向證券交易委員會申報的**年報／季報／重大事件即時公告** |
-| **EPS / Adjusted EPS** | Earnings Per Share / Adjusted EPS | **每股盈餘**（淨利÷股數）／**調整後每股盈餘**（剔除工廠事故、併購費用等一次性項目後的本業獲利）。⚠️ **兩者不可互相比較** |
-| **TTM** | Trailing Twelve Months | **滾動 12 個月**：把最近四季加起來，比只看半年更貼近現況 |
-| **P/E / Forward P/E** | Price-to-Earnings Ratio | **本益比**（股價÷每股盈餘，幾年回本）／**預估本益比**（股價÷未來預估 EPS） |
-| **P/B / BPS** | Price-to-Book Ratio / Book Value Per Share | **股價淨值比**（股價÷每股淨值）／**每股淨值**（股東權益÷股數，1 股背後的帳面資產） |
-| **DPS / 殖利率** | Dividend Per Share / Dividend Yield | **每股股利**／**現金殖利率**（年股利÷股價，等於「放這筆錢一年領幾%」） |
-| **ROE** | Return on Equity | **股東權益報酬率**：公司拿股東的錢去做生意，一年賺回幾% |
-| **CAGR** | Compound Annual Growth Rate | **年複合成長率**：把多年的累計成長換算成「平均每年成長幾%」 |
-| **OCF / CapEx / FCF** | Operating Cash Flow / Capital Expenditure / Free Cash Flow | **營業現金流**（本業實際收到的現金）／**資本支出**（蓋廠買設備的錢）／**自由現金流**（前兩者相減，真正能配息或還債的錢） |
-| **EBITDA** | Earnings Before Interest, Taxes, Depreciation and Amortization | **稅前息前折舊攤銷前獲利**：公司本業產生現金的原始能力 |
-| **淨負債／EBITDA** | Net Debt to EBITDA | 償債槓桿指標＝（有息負債 − 現金）÷ EBITDA。**白話：要用幾年的本業獲利才能還完債。** 超過 3.0 倍代表壓力偏高 |
-| **自定義 OPM** | 本報告自訂指標 | ＝（營業利益率 ÷ 稅前淨利率）× 100%。**>100% 代表業外在扣分，<100% 代表業外在加分** |
-| **負債比率** | Total Liabilities to Total Assets | ＝（總負債 ÷ 總資產）× 100%，衡量資產中有多少是借來的 |
-| **營運資金** | Working Capital | 卡在存貨與應收帳款裡、暫時拿不回來的錢。**投入愈多，當期現金流愈難看，但之後會回吐** |
-| **T&HS** | Texture & Healthful Solutions | 宜瑞安的**質構與健康解決方案部門**：高毛利修飾澱粉、清潔標籤配料與天然甜味劑 |
-| **F&II** | Food & Industrial Ingredients | 宜瑞安的**食品與工業原料部門**，分為拉丁美洲（LATAM）與北美（U.S./CAN）兩塊 |
-| **HFCS** | High-Fructose Corn Syrup | **高果糖玉米糖漿**：大宗液態甜味劑，廣泛用於飲料與加工食品 |
-| **修飾澱粉** | Modified Starch | 經物理、化學或酵素處理的專用澱粉，讓食品抗凍、耐熱、增稠、口感滑順 |
-| **清潔標籤** | Clean Label | 食品業趨勢：成分表上不要出現化學名稱，改用消費者看得懂的天然原料 |
-| **甜菊糖** | Stevia Extract | 從甜菊葉萃取的零卡天然高倍甜味劑，宜瑞安旗下 PureCircle 為主要供應商 |
-| **益生元** | Prebiotic | 餵養腸道好菌的膳食成分。宜瑞安 2026 年併購的 **Benicaros** 屬有臨床實證的免疫健康益生元 |
-| **Argo 廠** | Argo Facility | 宜瑞安位於芝加哥近郊的百年旗艦玉米濕磨廠，2026-04 因設備過熱停工，6 月底已全面恢復 |
-| **木薯（樹薯）** | Tapioca / Cassava | 製作特種澱粉的重要原料，主產於泰國。2026 年因氣候異常價格年初至今漲逾 40% |
-| **過橋融資** | Bridge Facility | 併購時先借的短期過渡貸款（本案 42.25 億美元），之後用發行長期公司債置換 |
-| **成本綜效** | Cost Synergies | 兩家公司合併後，靠消除重疊部門、採購規模化與物流整合省下的**常態性**成本 |
-| **Scheme of Arrangement** | Scheme of Arrangement | 英國公司法的法定收購程序：須經目標公司股東會表決＋英國高等法院裁定核准才生效 |
-| **ALMEX** | Arancia Landmark Almex | ADM 與 Primient 在墨西哥的合資濕磨企業，宜瑞安在拉美的主要競爭者 |
-| **Primient** | Primient LLC | 泰萊分拆出去的北美初級產品事業，現由 KPS 私募基金控股，是宜瑞安在北美大宗市場的對手 |
-| **GLP-1 效應** | GLP-1 Receptor Agonists | 減重與降糖藥（如 Ozempic）普及，使消費者轉向高蛋白、高纖、低糖飲食，帶動特種配料需求 |
-| **Ask Ingredion** | Ask Ingredion | 宜瑞安 2026 年推出的 AI 配方平台，幫食品客戶自助找配料、加速新品上市 |
-| **Dual Sourcing** | Dual Sourcing | 客戶刻意找兩家供應商，避免被單一廠商綁死。這是宜瑞安轉換成本護城河的主要侵蝕力量 |
-
----
-
-> **免責聲明**：本報告為基於公開資訊之研究整理。所有標示「推估」之數字均為模型試算，非公司財測，可能與實際結果有重大差異。本報告不構成任何投資建議，投資人應自行判斷並承擔風險。
->
-> **報告更新時間**：2026-08-29｜資料截止：2026-08-28 美股收盤

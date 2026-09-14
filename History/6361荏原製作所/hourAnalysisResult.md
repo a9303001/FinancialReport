@@ -1,3 +1,4 @@
+> **更新時間（Last Updated）：2026/08/26 00:00:00 (UTC+8)**
 # 6361 荏原製作所（Ebara Corporation）— 個股深度分析報告
 
 ---
@@ -225,21 +226,3 @@
 2. **能源事業轉虧的持續性**：需追蹤美國 Jeannette 廠與中東零件出貨是否恢復；下半年能否守住全年 ¥180 億營益目標。
 3. **熊本地震供應鏈影響**：公司稱評估中、未反映於財測，待後續揭露。
 4. **下輪優先**：Q3 決算（訂單續航、一次性利益落地、能源復原）與 FY2027 展望。
-
-## 11. 名詞對照表（Glossary）
-
-| 術語 | 全名／原文 | 白話解釋 |
-| :--- | :--- | :--- |
-| **6361.T** | 荏原製作所（Ebara Corp） | 日本百年幫浦與半導體設備大廠，東證 Prime 上市；美股 ADR：EBCOY／EBARF |
-| **CMP** | Chemical Mechanical Planarization | 化學機械研磨機：把半導體晶圓表面磨平到奈米級的關鍵設備 |
-| **精密機械／Precision Machinery** | Precision Machinery Segment | 荏原做半導體 CMP 與乾式真空泵的最賺錢部門，內分 Systems（含 CMP）與 Components |
-| **WFE** | Wafer Fab Equipment | 晶圓廠製程設備；公司預估 FY2026 WFE 市場 +18%↑ |
-| **S&S** | Service & Support | 售後維修服務，毛利 40%+、不受景氣波動 |
-| **EPC** | Engineering, Procurement, Construction | 設計採購施工統包工程，能源／環境事業常見，毛利薄 |
-| **E-Plan 2028** | Medium-Term Management Plan 2028 | 荏原 2026–2028 中期計畫，目標營收 ¥1.2 兆、營益率 14.5%+、ROE 18%+ |
-| **Swing** | Swing Corporation | 荏原原持 33.3% 的水處理 JV，2026/7/1 出售予 INFRONEER，認列一次性利益 |
-| **OPM（自定義）** | Operating Margin ÷ Pre-tax Profit Ratio | 本報告自定義：(營益率÷稅前淨利率)×100%，衡量獲利是否純來自本業 |
-| **BPS** | Book Value Per Share | 每股淨值＝股東權益÷股數 |
-| **FCF** | Free Cash Flow | 自由現金流＝營業現金流−資本支出 |
-| **一次性利益** | One-time / Non-recurring gain | 賣資產、賣子公司等只發生一次的利益，不能當成每年都有的本業獲利 |
-| **信用倍率** | Margin Buy/Sell Ratio | 日股籌碼指標，過高代表散戶融資看多過度擁擠 |
