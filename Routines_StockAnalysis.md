@@ -1,14 +1,14 @@
 /goal
 
-# Routines — StockAnalysis 每日輪替執行排程（Claude 版）
+# Routines — StockAnalysis 每日輪替執行排程
 
 > **一句話任務**：依「今天是幾號」從輪替表取出當日公司，執行「深度分析 → 驗收 → 交付」。
 >
-> **唯一輸出檔**：`hourAnalysisResult.md`（Claude 專屬；Gemini 版請用 `gemini/gemini_hourAnalysis.md`）。
+> **唯一輸出檔**：`<COMPANY_FOLDER>/hourAnalysisResult.md`（Claude、Gemini 或任何執行者共用同一份，不再依模型分檔）。
 >
-> **只有 Step 3 命中才有後續動作**：輪替表當日無對應公司 → 直接 skip 結束。
+> **只有 Step 1 命中才有後續動作**：輪替表當日無對應公司 → 直接 skip 結束。
 >
-> **執行模式**：`/goal` 全自動，不中途停下向使用者提問；遇錯記錄後繼續，走完 Step 0 → Step 6。
+> **執行模式**：`/goal` 全自動，不中途停下向使用者提問；遇錯記錄後繼續，走完 Step 0 → Step 5。
 
 ---
 
@@ -16,58 +16,14 @@
 
 | # | 規則 | 違反後果 |
 |:-:|:-----|:---------|
-| 1 | **檔案隔離（最高優先）**：本排程由 Claude 執行，**只准**讀寫 `hourAnalysisResult.md`；**嚴禁讀取、參考、引用、複製、寫入或修改 `hourAnalysisResult_gemini.md`**（詳見下方「檔案隔離規則」） | 污染 Gemini 版本 = 任務失敗 |
-| 2 | **單輪單日**：每次啟動只做**今天這一個執行日期**的所有公司（同一日期可能有多間，全部做完才收工） | 跨日會導致進度混亂 |
-| 3 | **零阻塞**：遇到任何錯誤（逾時、被擋、API 額度用盡）→ 記錄後繼續，不停下等人 | 停下 = 任務失敗 |
-| 4 | **繁體中文**輸出（專有名詞首次出現附英文，如「每股盈餘（EPS）」） | — |
-| 5 | **防幻覺**：所有財務數據必須有來源佐證，**嚴禁用訓練資料捏造** | 捏造 = 任務失敗 |
-| 6 | **本地優先**：財報／輿情直接讀 `<REPO_ROOT>/<COMPANY_FOLDER>/`，不重複從線上倉庫下載 | — |
-| 7 | **整份重寫**：交付前必須對輸出檔執行 SKILL.md §7 Final Rewrite，且第一行為**真實系統時間戳** | 流水帳 = 任務失敗 |
+| 1 | **單輪單日**：每次啟動只做**今天這一個執行日期**的所有公司（同一日期可能有多間，全部做完才收工） | 跨日會導致進度混亂 |
+| 2 | **零阻塞**：遇到任何錯誤（逾時、被擋、API 額度用盡）→ 記錄後繼續，不停下等人 | 停下 = 任務失敗 |
+| 3 | **繁體中文**輸出（專有名詞首次出現附英文，如「每股盈餘（EPS）」） | — |
+| 4 | **防幻覺**：所有財務數據必須有來源佐證，**嚴禁用訓練資料捏造** | 捏造 = 任務失敗 |
+| 5 | **本地優先**：財報／輿情直接讀 `<REPO_ROOT>/<COMPANY_FOLDER>/`，不重複從線上倉庫下載 | — |
+| 6 | **整份重寫**：交付前必須對輸出檔執行 SKILL.md §7 Final Rewrite，且第一行為**真實系統時間戳** | 流水帳 = 任務失敗 |
 
 > `<REPO_ROOT>` = FinancialReport repo 根目錄（Windows 本機通常為 `d:\FinancialReport`）。
-
----
-
-## 🔒 檔案隔離規則（File Isolation · 規則 1 的執行細則）
-
-> **背景**：同一間公司資料夾底下，Claude 與 Gemini 各自產出一份**獨立**的分析報告，靠檔名區分。兩份報告必須各自獨立產生，才有交叉比對兩個模型判斷的意義；互相參考會變成「抄寫／混血」，互相寫入則直接破壞對方成果。
-
-### 依模型決定權限（雙向硬規則）
-
-| 執行的模型 | 可讀可寫（唯一輸出目標） | **嚴格禁止 read/write** |
-|:-----------|:-------------------------|:------------------------|
-| **Claude**（含 Opus、Sonnet、Haiku 等所有版本） | `hourAnalysisResult.md` | ❌ `hourAnalysisResult_gemini.md` |
-| **Google Gemini**（含 Pro、Flash 等所有版本） | `hourAnalysisResult_gemini.md` | ❌ `hourAnalysisResult.md` |
-
-- **本檔（`Routines_StockAnalysis.md`）為 Claude 版排程**：全域參數 `OUTPUT_FILENAME` 固定 `hourAnalysisResult.md`。
-- **若執行者是 Gemini**：不得採用本檔的 `OUTPUT_FILENAME`，一律改讀 `gemini/gemini_hourAnalysis.md`（其 `OUTPUT_FILENAME` = `hourAnalysisResult_gemini.md`），且全程不得碰 `hourAnalysisResult.md`。
-- 規則適用於**任何路徑下**結尾為該檔名的檔案（`<任意公司資料夾>/hourAnalysisResult*.md`）。
-
-### 禁止清單（Never · 以 Claude 執行為例，看到就停手）
-
-| # | 禁止行為 |
-|:-:|:---------|
-| 1 | 用 `Read` 開啟任何路徑結尾為 `hourAnalysisResult_gemini.md` 的檔案 |
-| 2 | 用 `Grep` / `Glob` 的結果去讀取 `hourAnalysisResult_gemini.md` 的內容（命中也要**主動跳過**） |
-| 3 | 把 `hourAnalysisResult_gemini.md` 當成資料來源、佐證、對照基準或「上一版」 |
-| 4 | 用 `Write` / `Edit` 寫入或修改 `hourAnalysisResult_gemini.md` |
-| 5 | 在輸出檔或日誌中出現 `hourAnalysisResult_gemini.md` 這個檔名（會誤導後續讀者以為參考過它） |
-| 6 | 把 `gemini/` 目錄下的任何排程檔（如 `gemini_hourAnalysis.md`）當成本排程的指令來源 |
-
-> **若 Claude 版與 Gemini 版數字不一致怎麼辦？** 不處理、不比對、不記錄。兩份報告本來就該獨立產生，差異由使用者自行判讀。
-
-### 對 StockAnalysis SKILL.md 的覆寫（Override · 本排程優先）
-
-SKILL.md 是 Claude／Gemini 共用的，其中數處在本排程中**必須改讀**：
-
-| SKILL.md 條文 | 原文意思 | **本排程的覆寫** |
-|:--------------|:---------|:-----------------|
-| §0 參數 `OUTPUT_FILENAME` | 由呼叫方指定 | 固定 `hourAnalysisResult.md`，不接受其他值 |
-| §2 資料來源 序 1「前一輪的 `<OUTPUT_FILENAME>`」 | 讀回上一版 | 指 `hourAnalysisResult.md`，**不是** Gemini 版 |
-| §2 資料來源 序 2「公司資料夾內本地檔」 | 年報、季報、輿情等 | **額外排除** `hourAnalysisResult_gemini.md` |
-| §6 受檢檔「資料夾底下的**其他** `.md`」 | 原僅排除年報／季報 | **額外排除** `hourAnalysisResult_gemini.md`（不讀、不檢查、不修正） |
-| §6「發現錯誤直接就地修改受檢檔」 | 可改其他 md | `hourAnalysisResult_gemini.md` **一律不動**，即使發現數字矛盾 |
-| §7.1 Step 1「全檔讀回 current `<OUTPUT_FILENAME>`」 | 讀回自己的上一版 | 只讀 `hourAnalysisResult.md`（不存在則視為首輪） |
 
 ---
 
@@ -75,10 +31,11 @@ SKILL.md 是 Claude／Gemini 共用的，其中數處在本排程中**必須改�
 
 | 參數 | 值 | 說明 |
 |:-----|:---|:-----|
-| `OUTPUT_FILENAME` | `hourAnalysisResult.md` | **Claude 專屬**，不可改為其他檔名 |
 | `SKILL_PATH` | `.claude/skills/StockAnalysis/SKILL.md` | 內容同 `.agents/skills/StockAnalysis/SKILL.md` |
 | `ROTATION_TABLE` | 本檔「## 每日輪替表」 | 唯一真實依據（Single Source of Truth） |
 | `TIMEZONE` | `Asia/Taipei (UTC+8)` | 取日期與時間戳一律用此時區 |
+
+> **輸出檔固定為 `<COMPANY_FOLDER>/hourAnalysisResult.md`**，不接受其他檔名；SKILL.md 中的 `<OUTPUT_FILENAME>` 一律代入此固定值。
 
 ---
 
@@ -89,11 +46,11 @@ Step 0  取今日日期（UTC+8）＋ git pull 同步
   ↓
 Step 1  讀輪替表 → 鎖定今日對應公司（可能多間）
   ↓
-Step 2  無對應公司 → skip 結束；有對應 → 前置盤點（含隔離確認）
+Step 2  無對應公司 → skip 結束；有對應 → 前置盤點
   ↓
 Step 3  逐間執行 StockAnalysis Skill（深度分析 → Final Rewrite）
   ↓
-Step 4  驗收：隔離稽核 + 交付檢查（不過 → 就地修正後重跑本步）
+Step 4  驗收：交付檢查（不過 → 就地修正後重跑本步）
   ↓
 Step 5  交付：commit & push（依當前環境的分支規範）
   ↓
@@ -126,12 +83,11 @@ Step 5  交付：commit & push（依當前環境的分支規範）
 | 1 | 公司資料夾存在？ | 列出 `<REPO_ROOT>/<COMPANY_FOLDER>/` | 不存在 → 建立空資料夾，記「本地無資料，全靠 deep research」 |
 | 2 | 年報／季報 md 齊全？ | 找 `*_AnnualReport_*.md`、`*_Quarter_*.md` | 缺 → 照樣分析，並在輸出檔附錄寫明缺哪一期與可能原因 |
 | 3 | 輿情檔存在？ | 找 `{yyyy}_PublicOpinion.md`、`{yyyyMM}_輿情新聞.md` | 缺 → 改用 web search 補足並記錄 |
-| 4 | 上一版 Claude 報告存在？ | 找 `hourAnalysisResult.md` | 不存在 → 視為**首輪**全新產出（不可拿 Gemini 版當底稿） |
-| 5 | **隔離確認** | 盤點清單中若出現 `hourAnalysisResult_gemini.md` → **視為不存在，直接略過** | — |
+| 4 | 上一版報告存在？ | 找 `hourAnalysisResult.md` | 不存在 → 視為**首輪**全新產出 |
 
 ### Step 3 — 執行 StockAnalysis Skill
 
-從輪替表取出參數，搭配全域參數，**載入並執行 `StockAnalysis` Skill**（`SKILL_PATH`）。遇 SKILL.md 與本檔衝突時：**檔案隔離規則以本檔為準，其餘以 SKILL.md 為準**。
+從輪替表取出參數，搭配全域參數，**載入並執行 `StockAnalysis` Skill**（`SKILL_PATH`）。
 
 #### Step 3 參數對照 (Parameter Mapping)
 
@@ -140,14 +96,14 @@ Step 5  交付：commit & push（依當前環境的分支規範）
 | `COMPANY_NAME` | 輪替表 `COMPANY_NAME` | `02318 中國平安` |
 | `MARKET` | 輪替表 `MARKET` | `港股/中股` |
 | `COMPANY_FOLDER` | 輪替表 `COMPANY_FOLDER` | `02318中國平安` |
-| `OUTPUT_FILENAME` | **全域參數固定值** | **`hourAnalysisResult.md`** |
 | `EXTRA_ANALYSIS` | 輪替表 `EXTRA_ANALYSIS`（值為「無」時留空） | `房地產曝險分析，每股化…` |
+
+> 輸出寫入路徑固定為 `<REPO_ROOT>/<COMPANY_FOLDER>/hourAnalysisResult.md`（直接覆寫，不加日期後綴）。
 
 #### 全程核心要求（細節見 SKILL.md 對應章節）
 
 | 要求 | 依據 |
 |:-----|:-----|
-| 寫入路徑 `<REPO_ROOT>/<COMPANY_FOLDER>/hourAnalysisResult.md`（直接覆寫，不加日期後綴） | §4.4 |
 | 頭部優先（最重要 × 最新放最前面） | §4.1、§4.5 |
 | 七大基本面支柱全覆蓋 | §3.1.1 |
 | 所有金額**每股化** + 每股化總表 | §4.3、§7.2 |
@@ -159,15 +115,7 @@ Step 5  交付：commit & push（依當前環境的分支規範）
 
 ### Step 4 — 驗收（Acceptance · 不過就修，修完重跑本步）
 
-#### 4.1 隔離稽核（Isolation Audit · 一票否決）
-
-| # | 檢查 | 做法 | 判定 |
-|:-:|:-----|:-----|:-----|
-| 1 | 沒有動到 Gemini 的檔案 | `git status --porcelain` | 輸出中若出現任何 `hourAnalysisResult_gemini.md` → **立即 `git checkout -- <該檔>` 還原**並記錄 |
-| 2 | 輸出檔沒提到 Gemini 檔名 | 在 `hourAnalysisResult.md` 內搜尋 `hourAnalysisResult_gemini` | 命中 → 刪除該段敘述並重新確認來源 |
-| 3 | 本輪確實沒讀過 Gemini 檔案 | 自我回顧本輪工具呼叫紀錄 | 曾讀取 → 該段結論**全部作廢重寫**，不得沿用 |
-
-#### 4.2 交付檢查（Definition of Done）
+#### 交付檢查（Definition of Done）
 
 - [ ] `<COMPANY_FOLDER>/hourAnalysisResult.md` 已更新，且**第一行**是本輪真實系統時間戳（`yyyy/MM/dd HH:mm:ss (UTC+8)`）
 - [ ] 已完成 SKILL.md §7 Final Rewrite（整份重寫，非局部補丁、非新舊堆疊）
@@ -175,7 +123,6 @@ Step 5  交付：commit & push（依當前環境的分支規範）
 - [ ] 通過 §5.5 可讀性 checklist 與 §4.5.4 頭部檢查三題
 - [ ] `EXTRA_ANALYSIS` 每一項都有對應段落與數字（查不到的要寫明原因）
 - [ ] 今日每間公司都做完（多公司日期不可漏）
-- [ ] 隔離稽核 §4.1 三項全過
 
 > 任一項不過 → **就地修正後重跑 Step 4**，通過才進 Step 5。
 
@@ -188,8 +135,7 @@ git commit -m "StockAnalysis: 執行日期 {今日} - {公司清單}"
 
 - **推送分支依當前環境規範**：Claude Code 於指定 feature 分支開發時 push 該分支並開 PR；本機直跑時 push `master`。
 - 被拒絕（non-fast-forward）：`git pull --rebase` 後重推；網路失敗重試最多 4 次（間隔 2s / 4s / 8s / 16s）。
-- **push 前最後一眼**：`git diff --cached --name-only` 確認沒有 `hourAnalysisResult_gemini.md` 被夾帶進去。
-- （選配）寫執行日誌 `Log/hourAnalysis_Summary_{yyyyMMdd}.md`：本輪公司、成功／失敗、資料缺口、隔離稽核結果。
+- （選配）寫執行日誌 `Log/hourAnalysis_Summary_{yyyyMMdd}.md`：本輪公司、成功／失敗、資料缺口。
 
 ---
 
@@ -201,7 +147,6 @@ git commit -m "StockAnalysis: 執行日期 {今日} - {公司清單}"
 | MCP API 額度用盡 | 記錄後改用原生工具，繼續 |
 | 本地無年報／季報 | 照樣分析，缺口寫進輸出檔附錄 |
 | 某公司整段失敗 | 標 ❌ 記錄原因，**繼續下一間**，不可中斷全輪 |
-| 誤讀／誤改 Gemini 專用檔 | 立即停手 → `git checkout -- <該檔>` 還原 → 受污染的結論作廢重寫 → 記錄 |
 | git pull／push 失敗 | 依 Step 0 / Step 5 的重試規則，仍失敗則記錄錯誤並在摘要標 ❌ |
 
 ---
@@ -211,10 +156,9 @@ git commit -m "StockAnalysis: 執行日期 {今日} - {公司清單}"
 Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點：
 
 ```
-✅ StockAnalysis(claude) — YYYY-MM-DD HH:MM
+✅ StockAnalysis — YYYY-MM-DD HH:MM
 - 本輪：執行日期 {N}（{公司名稱}）
 - 分析：✅ 成功（hourAnalysisResult.md）
-- 隔離：✅ 未讀取／未修改 Gemini 專用檔
 - Git：✅ 已 push {分支}
 - 下一輪：執行日期 {N+1}（{下輪公司}）
 ```
@@ -567,4 +511,3 @@ N/A
 4. 香港有健保嗎????是怎麼跟雅各臣科研製藥買藥????為什麼只跟他買
 
 ---
-
