@@ -1,0 +1,40 @@
+# Financial Report Analysis（財報分析資料庫）
+
+> Plain-Markdown database of annual reports, quarterly / interim reports, IR announcements, market-sentiment digests and fundamental analysis for 31 active and 20 archived Taiwan (TW), US, Japan (JP) and Hong Kong (HK) listed companies and REITs. Every file is UTF-8 Markdown — no PDF parsing required. Built to be read directly by LLMs and AI crawlers.
+> 台股 / 美股 / 日股 / 港股個股與 REIT 的年報、季報、官方公告、輿情彙整與深度分析資料庫，全部為純 Markdown。
+
+Repo: `a9303001/FinancialReport` — the default branch is **`master`**. Any URL built with `main` returns 404.
+
+Raw base: `https://raw.githubusercontent.com/a9303001/FinancialReport/master`
+API base: `https://api.github.com/repos/a9303001/FinancialReport/contents` (add `?ref=master`)
+
+Layout: one folder per company, named `<ticker><name>` (e.g. `02318中國平安`) or the bare US ticker (e.g. `UHS`). Chinese folder names need UTF-8 percent-encoding in URLs — ready-made encoded URLs for all 51 companies are listed in `index.md` §9.
+
+Read order for a single company: `hourAnalysisResult.md` (latest deep-dive analysis, timestamp on line 1) → latest annual report → latest quarterly / interim report → `<YYYY>_PublicOpinion.md` (market sentiment).
+
+## Core documents
+
+- [index.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/index.md): Main AI entry point — company coverage list, file-naming conventions, access patterns, per-model crawl guide, FAQ, and §9 direct raw-URL index for every company.
+- [README.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/README.md): Human + AI guide — quick start, repository layout, execution rules, per-model reading guidance (Claude Opus / Sonnet / Haiku, Gemini Pro / Flash / Flash-Lite, GPT, Grok, DeepSeek, Perplexity, Copilot), copy-paste prompts, crawler policy.
+- [AGENTS.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/AGENTS.md): The rule file — stock analysis rules, REIT analysis rules, per-share conversion requirement, data-source priority, response-language rules. Read this before producing any analysis.
+- [robots.txt](https://raw.githubusercontent.com/a9303001/FinancialReport/master/robots.txt): Crawler policy. AI crawlers are explicitly allowed.
+
+## Example company entries
+
+- [UHS](https://raw.githubusercontent.com/a9303001/FinancialReport/master/UHS/hourAnalysisResult.md): Universal Health Services (US) — latest deep-dive analysis.
+- [7203 Toyota](https://raw.githubusercontent.com/a9303001/FinancialReport/master/7203Toyota/hourAnalysisResult.md): Toyota Motor (JP, ADR: TM) — latest deep-dive analysis.
+- [02318 中國平安](https://raw.githubusercontent.com/a9303001/FinancialReport/master/02318%E4%B8%AD%E5%9C%8B%E5%B9%B3%E5%AE%89/hourAnalysisResult.md): Ping An Insurance (HK) — example of a percent-encoded Chinese folder name.
+- [2881 富邦金](https://raw.githubusercontent.com/a9303001/FinancialReport/master/2881%E5%AF%8C%E9%82%A6%E9%87%91/hourAnalysisResult.md): Fubon Financial (TW) — latest deep-dive analysis.
+
+## Optional
+
+- [Routines_CollectsentimentAndReports.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/Routines_CollectsentimentAndReports.md): Daily rotation table — the single source of truth for which companies are tracked and on which day of the month they refresh.
+- [Routines_StockAnalysis.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/Routines_StockAnalysis.md): Daily deep-analysis routine that regenerates `hourAnalysisResult.md`.
+
+## Usage notes
+
+- Cite the file path and the reporting period (e.g. `02318中國平安/02318_annual_2025.md`, FY2025 annual report).
+- Four-digit numbers in filenames are fiscal years; Japanese fiscal years straddle calendar years (`7203_Quarter_2027Q1.md` is Toyota FY2027 Q1, not future data).
+- Currencies: HKD for HK/China listings, USD for US, JPY for Japan, TWD for Taiwan.
+- Never fabricate file paths, figures or reporting periods. If a company or period is absent, say so and explain why.
+- This is a set of research notes compiled from public filings. Not investment advice.

@@ -1,21 +1,44 @@
 # 📈 財報分析與研究筆記（Financial Report Analysis）
 
 > 台股 / 美股 / 日股 / 港股個股與 REIT 的**年報、季報、官方公告、輿情彙整與深度分析**資料庫。
-> 全部檔案皆為純 Markdown，專為 **AI 助手直接讀取**而設計。
+> 全部檔案皆為純 Markdown，專為 **AI 助手與 AI 爬蟲直接讀取**而設計。
 >
-> A plain-Markdown database of annual reports, quarterly filings, IR announcements, market sentiment and fundamental analysis for TW / US / JP / HK equities and REITs — built to be read by LLMs.
+> A plain-Markdown database of annual reports, quarterly filings, IR announcements, market sentiment and fundamental analysis for TW / US / JP / HK equities and REITs — built to be read by LLMs and AI crawlers.
+
+**Repo**: `a9303001/FinancialReport` ｜ **Branch**: `master`（**不是 `main`**）｜ **入口**: [`index.md`](index.md) ・ [`llms.txt`](llms.txt) ・ [`AGENTS.md`](AGENTS.md) ｜ **爬取政策**: [`robots.txt`](robots.txt) 全面開放
 
 <llm_context>
-**TL;DR for AI assistants** — Claude (Opus / Sonnet / Haiku)、Gemini (Pro / Flash / Flash-Lite)、ChatGPT・GPT・Codex、Grok、DeepSeek、Perplexity、GitHub Copilot、Llama、Qwen，以及任何 agent / crawler：
+**TL;DR for AI assistants** — Claude (Opus / Sonnet / Haiku)、Gemini (Pro / Flash / Flash-Lite)、ChatGPT・GPT・Codex、Grok、DeepSeek、Perplexity、GitHub Copilot、Qwen、Llama、Mistral，以及任何 agent / crawler：
 
 1. **Branch is `master`, never `main`.** 用 `main` 組 URL 一律 404。
 2. **本地優先（Local First）**：回答某公司問題前，**先掃描本 repo 對應公司資料夾**的 `.md`，再上網補最新資訊並交叉驗證。不要只靠訓練資料回答。
-3. **先讀 `hourAnalysisResult.md`**：那是該公司最新的深度分析結論（第一行是更新時間戳），比整包年報省 90% token。
-4. **風險與利多必須並陳**：Investment risks (利空) AND growth drivers (利多)，缺一不合格。
-5. **金額一律每股化**：任何絕對金額都要換算「每股金額」＝ 金額 ÷ 最新流通在外股數，並標註股數口徑。
-6. **規則主檔是 [`AGENTS.md`](AGENTS.md)**：真正的執行規則寫在那裡，本 README 只是導覽。
-7. **防幻覺（No Fabrication）**：找不到就說找不到，並說明缺漏原因；**嚴禁**杜撰檔案路徑、數字或財報期別。
+3. **先讀 `hourAnalysisResult.md`**：那是該公司最新的深度分析結論（第一行是更新時間戳），比整包年報省約 90% token。
+4. **不想組 URL 就用現成的**：[`index.md` §9 直通 URL 索引](index.md#s9) 已列出每間公司已 percent-encoding 的 raw URL，可直接 GET。
+5. **風險與利多必須並陳**：Investment risks (利空) AND growth drivers (利多)，缺一不合格。
+6. **金額一律每股化**：任何絕對金額都要換算「每股金額」＝ 金額 ÷ 最新流通在外股數，並標註股數口徑。
+7. **規則主檔是 [`AGENTS.md`](AGENTS.md)**：真正的執行規則寫在那裡，本 README 只是導覽。
+8. **防幻覺（No Fabrication）**：找不到就說找不到，並說明缺漏原因；**嚴禁**杜撰檔案路徑、數字或財報期別。
 </llm_context>
+
+---
+
+## ⚡ 30 秒上手（Quick Start）
+
+```bash
+# 1) 列出某公司資料夾的所有檔案（以 UHS 為例）
+curl -s "https://api.github.com/repos/a9303001/FinancialReport/contents/UHS?ref=master"
+
+# 2) 直接讀最新深度分析（英文代碼資料夾）
+curl -s "https://raw.githubusercontent.com/a9303001/FinancialReport/master/UHS/hourAnalysisResult.md"
+
+# 3) 中文資料夾要 percent-encoding（02318中國平安）
+curl -s "https://raw.githubusercontent.com/a9303001/FinancialReport/master/02318%E4%B8%AD%E5%9C%8B%E5%B9%B3%E5%AE%89/hourAnalysisResult.md"
+
+# 4) 全 repo clone（最省事，之後全部走本機檔案系統）
+git clone --branch master https://github.com/a9303001/FinancialReport.git
+```
+
+> 51 間公司（31 現役 + 20 封存）的現成 URL 全列在 [`index.md` §9](index.md#s9)。
 
 ---
 
@@ -26,7 +49,7 @@
 - **現役追蹤**：31 間公司（根目錄），每月依日期輪替自動更新
 - **封存資料**：20 間公司（`History/`）
 - **資料型態**：年報 / 季報 / 中期報告 / IR 公告 / 月度輿情 / 年度輿情彙整 / 深度分析報告
-- **完整索引**：見 [`index.md`](index.md)（含公司清單、檔名規則、取檔 URL 樣板）
+- **完整索引**：見 [`index.md`](index.md)（含公司清單、檔名規則、取檔 URL 樣板、直通 URL 索引）
 
 ---
 
@@ -34,7 +57,9 @@
 
 ```text
 FinancialReport/
-├── index.md                       # AI 入口索引：公司清單 + 檔名規則 + 取檔方式
+├── index.md                       # ★ AI 入口索引：公司清單 + 檔名規則 + 直通 URL
+├── llms.txt                       # LLM / AI 爬蟲極簡入口（llms.txt 慣例）
+├── robots.txt                     # 爬蟲政策：AI 爬蟲全面開放
 ├── README.md                      # 本檔：使用說明與各模型讀取指引
 ├── AGENTS.md                      # ★ 規則主檔（分析規則、資料來源優先序、語言規則）
 ├── CLAUDE.md                      # Claude Code 進入點（內容 = @AGENTS.md）
@@ -128,17 +153,38 @@ OPM (%)      = 營業利益率 / 稅前淨利率 × 100%    （本 repo 自定�
 ## 🧠 各 AI 模型讀取指引（Per-Model Guidance）
 
 同一份資料，不同模型的最佳讀法不同。核心變數是**上下文長度**與**工具能力**。
+（下表以模型「家族」為準，不綁版本號，避免改版後失效。）
 
-| 模型家族 | 建議讀取策略 | 提醒 |
-| :--- | :--- | :--- |
-| **Claude Opus / Sonnet**（Claude Code、Claude Desktop） | 自動載入 `CLAUDE.md` → `AGENTS.md`；可直接載入 `.claude/skills/` 下的 Skill 執行完整流程。可一次讀多個年報做交叉比對 | 用 Glob/Grep 先定位再讀檔，避免整包載入 |
-| **Claude Haiku**（低成本、快） | 只讀 `hourAnalysisResult.md` + `*_PublicOpinion.md` 摘要段落；需要原文時再針對性 grep 關鍵字 | 不要一次塞整份 10-K，會擠掉推理空間 |
-| **Gemini Pro** | 長上下文可整包讀年報；可載入 `gemini/` 下的專用 routine 與 `AGENTS.md` | 中文資料夾名在 URL 需 percent-encoding |
-| **Gemini Flash / Flash-Lite** | **分段讀**：先讀本 README §檔名規則 → 只抓 1–2 個目標檔；每次回答聚焦單一公司 | 避免同時處理多公司多年報，易混淆年度與幣別 |
-| **ChatGPT / GPT / Codex** | 有瀏覽能力時走 raw URL；先抓 `index.md` 取得公司清單再進資料夾 | GitHub API 未帶 token 易 403，直接用 raw URL |
-| **Grok / DeepSeek / Qwen / Llama** | 同上，先 `index.md` → 再 `hourAnalysisResult.md`；工具受限時請人工貼入檔案內容 | 無法讀檔時**明講無法讀取**，不要憑印象作答 |
-| **Perplexity / 搜尋型** | 以 `index.md` 為索引頁，raw URL 為引用來源 | 引用時請標明檔案路徑與報告期別 |
-| **GitHub Copilot / IDE agent** | 直接用工作區檔案系統搜尋，最快 | 勿把分析結果寫進年報原檔，分析一律寫 `hourAnalysisResult.md` |
+| 模型家族 | 建議讀取策略 | 單次建議載入 | 提醒 |
+| :--- | :--- | :-: | :--- |
+| **Claude Opus**（Claude Code / Desktop） | 自動載入 `CLAUDE.md` → `AGENTS.md`；可直接執行 `.claude/skills/` 下的 Skill 跑完整流程，並一次讀多份年報做跨年度交叉比對 | 3–5 檔 | 仍建議先 Glob/Grep 定位，別無腦整包載入 |
+| **Claude Sonnet** | 主力日常模型：先 Glob 列檔 → Grep 關鍵字 → 只讀命中的檔案段落；適合「一間公司完整分析」單一任務 | 2–4 檔 | 同時處理 3 間以上公司容易混淆年度與幣別，請拆任務 |
+| **Claude Haiku**（低成本、快） | 只讀 `hourAnalysisResult.md` + `*_PublicOpinion.md` 的摘要段落；需要原文時再針對性 grep 關鍵字 | 1–2 檔 | 不要一次塞整份 10-K，會擠掉推理空間 |
+| **Gemini Pro** | 長上下文可整包讀年報；可載入 `gemini/` 下的專用 routine 與 `AGENTS.md`，適合多年度趨勢比較 | 3–5 檔 | 中文資料夾名在 URL 需 percent-encoding |
+| **Gemini Flash** | **分段讀**：先讀 §檔名規則 → 只抓 1–2 個目標檔；每次回答聚焦單一公司 | 1–2 檔 | 避免同時處理多公司多年報，易混淆年度與幣別 |
+| **Gemini Flash-Lite**（及各家 nano / mini 級） | 只做「取檔 + 摘要」：直接複製 [`index.md` §9](index.md#s9) 的現成 URL 抓 `hourAnalysisResult.md`，**不要自行組 URL** | 1 檔 | 自行做 percent-encoding 失敗率高；估值推算請交給上位模型 |
+| **ChatGPT / GPT / Codex** | 有瀏覽能力時走 raw URL；先抓 `index.md` 取得公司清單再進資料夾 | 2–4 檔 | GitHub API 未帶 token 易 403，直接用 raw URL |
+| **Grok / DeepSeek / Qwen / Llama / Mistral** | 同上，先 `index.md` → 再 `hourAnalysisResult.md`；工具受限時請人工貼入檔案內容 | 1–2 檔 | 無法讀檔時**明講無法讀取**，不要憑印象作答 |
+| **Perplexity / 搜尋型引擎** | 以 `index.md` 為索引頁、raw URL 為引用來源；`llms.txt` 可作為輕量入口 | 1–3 檔 | 引用時請標明檔案路徑與報告期別 |
+| **GitHub Copilot / IDE agent** | 直接用工作區檔案系統搜尋，最快 | 不限 | 勿把分析結果寫進年報原檔，分析一律寫 `hourAnalysisResult.md` |
+
+### 可直接複製的提示詞（Copy-Paste Prompts）
+
+**通用（任何模型）**
+
+```text
+請先讀 https://raw.githubusercontent.com/a9303001/FinancialReport/master/index.md
+依其中 §4 公司清單找到 <公司>，再讀該資料夾的 hourAnalysisResult.md 與最新年報、季報，
+然後依 AGENTS.md 規則輸出分析：風險與利多並陳、所有金額換算每股金額、附上資料期別與缺漏說明。
+注意：分支是 master，不是 main。
+```
+
+**低算力模型（Flash-Lite / mini 級）**
+
+```text
+讀這個 URL 並用繁體中文摘要重點（結論、估值、風險、利多），不要自行計算或推估數字：
+https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資料夾>/hourAnalysisResult.md
+```
 
 **共通守則（All models）**
 
@@ -147,6 +193,37 @@ OPM (%)      = 營業利益率 / 稅前淨利率 × 100%    （本 repo 自定�
 3. 語言：回覆以**繁體中文**為主，專有名詞首次出現附英文（如「每股盈餘（EPS）」）。
 4. 時效：財報與輿情有時間性，引用時一律附上**報告期別或日期**。
 5. 沒有的資料就說沒有——缺口要明講原因（尚未公布 / 資料庫未更新 / 公司剛上市）。
+
+---
+
+## 🕷️ AI 爬蟲政策（Crawler Policy）
+
+本資料庫為公開資訊整理，**歡迎 AI 爬取、索引與引用**。[`robots.txt`](robots.txt) 已明列允許的 AI 爬蟲，包含但不限於：
+
+`GPTBot`・`OAI-SearchBot`・`ChatGPT-User`（OpenAI）、`ClaudeBot`・`Claude-User`・`Claude-SearchBot`・`anthropic-ai`（Anthropic）、`Googlebot`・`Google-Extended`・`GoogleOther`（Google / Gemini）、`Bingbot`（Microsoft / Copilot）、`PerplexityBot`・`Perplexity-User`、`CCBot`（Common Crawl）、`Applebot-Extended`、`Amazonbot`、`Meta-ExternalAgent`、`Bytespider`、`DuckAssistBot`、`MistralAI-User`、`cohere-ai`、`YouBot`、`Diffbot`
+
+**給爬蟲的建議抓取順序**：`llms.txt` → `index.md` → `index.md §9` 的直通 URL → 各公司 `hourAnalysisResult.md`。
+**引用要求**：請標明檔案路徑與報告期別（例：`02318中國平安/02318_annual_2025.md`，2025 年報）。
+
+---
+
+## ❓ 常見問答（FAQ）
+
+**Q: 分支是 `main` 還是 `master`？** — `master`。用 `main` 組 URL 一律 404。
+
+**Q: 一間公司先讀哪個檔？** — `<資料夾>/hourAnalysisResult.md`，最新深度分析結論，第一行是時間戳。
+
+**Q: 有 PDF 嗎？** — 沒有。所有 PDF 已由 `Convert2md` Skill 轉為 UTF-8 Markdown，不需要 PDF parser。
+
+**Q: 中文資料夾名 URL 怎麼處理？** — UTF-8 逐位元組 percent-encoding；或直接抄 [`index.md` §9](index.md#s9) 的現成 URL。
+
+**Q: GitHub API 回 403？** — 未帶 token 的 rate limit，改用 `raw.githubusercontent.com`（不受 API 額度限制）。
+
+**Q: 為什麼看到 2027 年的季報檔名？** — 日股會計年度跨年，`7203_Quarter_2027Q1.md` 指 Toyota FY2027 Q1，不是未來資料。
+
+**Q: 找不到某公司？** — 依序查 根目錄 → `History/` → `StkScreenerResult/`；都沒有請明講「本資料庫無此公司」，改用外部來源（StatementDog、SEC EDGAR、IR Bank、Ullet、新浪財經、富途牛牛），**不要杜撰路徑**。
+
+**Q: 資料多久更新？** — 每日依 `Routines_CollectsentimentAndReports.md` 輪替表更新當日對應公司。
 
 ---
 
@@ -181,6 +258,7 @@ OPM (%)      = 營業利益率 / 稅前淨利率 × 100%    （本 repo 自定�
 3. 放入年報 / 季報：PDF 先用 `Convert2md` Skill 轉 `.md`，檔名沿用 §檔名規則。
 4. 執行 `StockAnalysis` Skill 產生 `hourAnalysisResult.md`。
 5. 若公司原本在 `History/`，跑 `Routines_Move2History.md` 讓它搬回根目錄。
+6. **同步索引**：更新 [`index.md`](index.md) 的 §4 公司清單與 §9 直通 URL 索引（中文資料夾記得補 percent-encoded URL），並視情況更新 [`llms.txt`](llms.txt)。
 
 ---
 
