@@ -355,8 +355,14 @@ Actor 執行後會回傳 `status`（`SUCCEEDED`/`RUNNING`）與 `datasetId`。�
 
 **港股 (HK)**（代碼必須補齊 5 碼，如 `02318`）
 1. **HKEXnews 披露易**（`https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en`）
-2. **新浪財經**（`https://stock.finance.sina.com.cn/hkstock/notice/{5碼代碼}.html`）
-3. **富途牛牛**（`https://www.futunn.com/hk/stock/{5碼代碼}-HK/announcement`）
+   - ✅ **最快路徑（2026-09-15 於 87001 驗證有效）：直接打官方 JSON API，免 JS、免 MCP、可指定日期區間。**
+     1. 先用 `https://www1.hkexnews.hk/search/prefix.do?callback=c&lang=EN&type=A&name={股票代號}` 取得 `stockId`（例：87001 → `61711`）。
+     2. 再打 `https://www1.hkexnews.hk/search/titlesearchservlet.do?sortDir=0&sortByOptions=DateTime&category=0&market=SEHK&stockId={stockId}&documentType=-1&fromDate={yyyyMMdd}&toDate={yyyyMMdd}&lang=EN&searchType=1`，回傳 JSON 含標題、刊發時間與 PDF 連結。
+     3. `lang` 可改 `ZH` 取中文版；`count=0` 即代表該區間確實無公告（非抓取失敗）。
+2. **富途牛牛**（`https://www.futunn.com/hk/stock/{5碼代碼}-HK/announcement`）
+3. **公司官網 IR 頁面**
+4. ~~新浪財經~~（`https://stock.finance.sina.com.cn/hkstock/notice/{5碼代碼}.html`）
+   - ⚠️ **2026-09-15 實測：頁面可正常讀取（非封鎖、非 JS 空白），但部分港股清單停留在 2018 年即停止更新**（87001 最新一筆為 2018-07-17）。屬**資料源失修**而非抓取失敗，**不要**觸發 §2.1 MCP 遞補鏈，直接改用上方 HKEXnews JSON API。
 
 ---
 
