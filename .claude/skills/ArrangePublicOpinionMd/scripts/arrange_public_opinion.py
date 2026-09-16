@@ -24,7 +24,7 @@ from pathlib import Path
 # --------------------------------------------------------------------------
 
 SKIP_DIRS = {'.git', '.github', '.claude', '.agents', 'Log', 'Prompt',
-             'AnalysisResult', 'StkScreenerResult', 'discard'}
+             'AnalysisResult', 'StkScreenerResult', 'discard', 'History', 'gemini'}
 
 MERGED_RE = re.compile(r'^(\d{4})_PublicOpinion(_part\d+)?\.md$')
 LEGACY_RE = re.compile(r'^(\d{4})_輿情彙整(_part\d+)?\.md$')
@@ -52,7 +52,7 @@ BLACK_REGEX = [
     r'^\d{8,}\.md$',                        # 純數字公告編號
     r'^\d{8}(?![_\-\d])',                   # 8 碼日期 + 中文標題的港股/台股公告
     r'^\d{2}-[0-9A-Za-z]{2,6}-.*\.md$',     # 選股排名產出
-    r'(F04|FE4|FI4)(_|\.)',                 # 台股財報代碼
+    r'(F04|FE4|FI4|FE6)(_|\.)',             # 台股財報代碼
     r'_AI[0-9A-Z](_|\.)',                   # 台股財報 AI 系列
     r'(?<![A-Za-z])[Qq][1-4](?![A-Za-z])',  # 季度（避免誤中 Xueqiu1 之類）
     r'(?i)analysis|_summary_|conversion_summary|_reconciliation_',
@@ -510,7 +510,7 @@ def main() -> int:
 
     rep = Report()
     for d in sorted(root.iterdir()):
-        if d.is_dir() and d.name not in SKIP_DIRS:
+        if d.is_dir() and d.name not in SKIP_DIRS and not d.name.startswith('.'):
             process_company(d, root, use_git, rep)
 
     out = write_report(root, rep, git_note)
