@@ -1,12 +1,9 @@
-# Rotation Progress — 中國房市 × 香港 REIT（Gemini）
+# Rotation Progress — StockAnalysis (Gemini)
 
 | 欄位 | 值 |
 |:-----|:---|
-| **round_no** | 15 |
-| **last_run_time** | 2026-09-16 23:51 |
-| **focus** | 焦點 D（內地商辦租金 × 利率匯率 × 社群輿情）⭐ |
-| **復甦階段** | ① |
-| **五盞燈** | 1 綠 / 1 黃 / 3 紅 |
-| **EPS 轉正推估** | 冠君/置富已轉正，越秀/領展 2027 H1，春泉/招商 2027 H2，匯賢 2028 H1 |
-| **進場批次** | 第一批（試單 1/3，領展、置富） |
-| **status** | ✅ |
+| **last_executed_date** | 9 |
+| **last_executed_companies** | 8433 弘帆（8433.TWO） |
+| **last_executed_time** | 2026-09-17 00:16 |
+| **next_date** | 10 |
+| **stock_analysis_status** | ✅ |

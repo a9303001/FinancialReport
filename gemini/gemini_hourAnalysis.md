@@ -52,7 +52,7 @@ Step 3  執行 StockAnalysis Skill（深度分析 → Final Rewrite）
   ↓
 Step 4  驗收：交付檢查（不過 → 就地修正後重跑）
   ↓
-Step 5  記錄進度 + 產出日誌 + git add / commit / push master
+Step 5  記錄進度 + git add / commit / push master
   ↓
   ✅ 完成，輸出精簡摘要
 ```
@@ -191,47 +191,7 @@ companies = 輪替表中所有 [執行日期 == target_date] 的公司
 | **stock_analysis_status** | {✅ / ⏭️ / ❌} |
 ```
 
-### 5.2 產出當次日誌
-
-寫入 `d:\FinancialReport\Log\hourAnalysis_gemini_Summary_{yyyyMMdd}.md`：
-
-```markdown
-# StockAnalysis 執行報告 (Gemini) - YYYY/MM/DD
-
-- **執行日期**：YYYY-MM-DD
-- **輪替序號**：執行日期 {N}（{公司名稱}）
-- **上一輪**：執行日期 {N-1}
-- **下一輪預定**：執行日期 {N+1}
-
----
-
-## 1. 分析結果
-| 股號/名稱 | 產生的檔案 | 狀態 |
-|:----------|:-----------|:-----|
-| ... | hourAnalysisResult.md | ✅ / ❌ |
-
----
-
-## 2. 失敗或受限紀錄
-- **公司**: {名稱}
-- **原因**: {具體錯誤}
-- **處置**: {嘗試過的方法}
-
----
-
-## 3. 資料缺失說明
-- {尚未發布的季報/年報，或缺少本地資料}
-
----
-
-## 4. 本次 MCP 使用紀錄（強制填寫）
-| MCP 服務 | 工具/函式 | 用途 |
-|:---------|:----------|:-----|
-| ... | ... | ... |
-| （若無）| — | 本次僅用原生工具 |
-```
-
-### 5.3 Git Push
+### 5.2 Git Push
 
 ```powershell
 git add -A
@@ -250,9 +210,9 @@ git push origin master
 |:-----|:-----|
 | 網路搜尋被擋／逾時 | 換來源或升級工具鏈（內建 → Firecrawl → Bright Data → Apify → Playwright），全失敗就誠實寫「查無」 |
 | MCP API 額度用盡 | 記錄後改用原生工具，繼續 |
-| 本地無年報／季報 | 照樣分析，缺口寫進輸出檔 §11 與日誌第 3 節 |
+| 本地無年報／季報 | 照樣分析，缺口寫進輸出檔 §11 |
 | 某公司整段失敗 | 標 ❌ 記錄原因，**繼續下一間**，不可中斷全輪 |
-| git pull／push 失敗 | 依 Step 0 / 5.3 的重試規則，仍失敗則記錄錯誤並在摘要標 ❌ |
+| git pull／push 失敗 | 依 Step 0 / 5.2 的重試規則，仍失敗則記錄錯誤並在摘要標 ❌ |
 
 ---
 
@@ -264,7 +224,7 @@ Step 0 ~ 5 全部完成後，輸出以下精簡摘要：
 ✅ StockAnalysis(gemini) — YYYY-MM-DD HH:MM
 - 本輪：執行日期 {N}（{公司名稱}）
 - 分析：✅ 成功（hourAnalysisResult.md）
-- 記錄：✅ 已更新 Summary.md + 日誌
+- 記錄：✅ 已更新 Summary.md
 - Git：✅ 已 push master
 - 下一輪：執行日期 {Next}（{下輪公司}）
 ```
