@@ -183,11 +183,12 @@ def demote_headings(text: str, levels: int = 2) -> str:
     return '\n'.join(out)
 
 
-def build_section(src: Path, year: int) -> tuple[str, str]:
+def build_section(src: Path, year: int, is_update: bool = False) -> tuple[str, str]:
     """回傳 (章節文字, 章節標題)。"""
     raw = read_text(src)
     sha = hashlib.sha1(raw.encode('utf-8')).hexdigest()[:12]
-    title = f'{year}-{month_key(src.name)} · {source_title(src.name)}'
+    suffix = ' (更新)' if is_update else ''
+    title = f'{year}-{month_key(src.name)} · {source_title(src.name)}{suffix}'
     meta = (f'<!-- source-file: {src.name} | bytes: {src.stat().st_size} '
             f'| sha1: {sha} | merged-at: {dt.date.today().isoformat()} -->')
     return f'\n## {title}\n\n{meta}\n\n{demote_headings(raw).strip()}\n\n---\n', title
@@ -398,17 +399,29 @@ def merge_year(company_dir: Path, root: Path, year: int,
     sources = sorted(sources, key=lambda p: (month_key(p.name), p.name))
 
     body = split_body(merged)
+    norm_body = _norm(body)
     known = set(SOURCE_RE.findall(body))
     added, added_bytes = [], 0
     for src in sources:
-        if src.name in known:
-            continue
         try:
-            section, _ = build_section(src, year)
+            raw = read_text(src)
+        except OSError as exc:
+            rep.errors.append((company, src.name, f'讀取失敗：{exc}'))
+            continue
+
+        probe = _norm(raw)[:200]
+        # 如果檔名已記錄且內容已完整存在既有內文中，代表先前已併入相同內容，不重複 append
+        if src.name in known and probe and probe in norm_body:
+            continue
+
+        try:
+            is_update = (src.name in known)
+            section, _ = build_section(src, year, is_update=is_update)
         except OSError as exc:
             rep.errors.append((company, src.name, f'讀取失敗：{exc}'))
             continue
         body += section
+        norm_body += _norm(section)
         added.append(src)
         added_bytes += src.stat().st_size
 
