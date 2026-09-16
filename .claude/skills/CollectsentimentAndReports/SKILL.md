@@ -113,6 +113,7 @@ graph TD
 | MOPS 台股進階查詢頁 | `mops.twse.com.tw` | 查詢頁需 JS 互動/POST 才出結果，直接 GET 常抓不到清單 |
 | moomoo 社區/新聞 | `moomoo.com` | 正文常由 JS 載入，直接抓常只拿到標題與版型 |
 | 東方財富股吧 | `guba.eastmoney.com` | 部分列表頁需 JS 分頁載入，抓不到完整貼文 |
+| 富途牛牛 個股頁 | `futunn.com/hk/stock/{代碼}/quote`、`/announcement` | 行情與公告頁由 JS 載入，Bright Data `scrape_as_markdown` 只回空殼（標題僅 `Document`）。**但 `/news` 列表頁是 SSR**：2026-09-16 於 00546 實測，用 `curl` 帶一般瀏覽器 UA 即可直接取得完整新聞標題與日期（HTTP 200、1.2MB），**不需動用任何 MCP**。抓富途新聞一律先試 `curl .../{5碼代碼}-HK/news` |
 
 ### 2.4 已知會「封鎖爬蟲」的網站清單（要換 MCP，不是放棄）
 
@@ -357,8 +358,11 @@ Actor 執行後會回傳 `status`（`SUCCEEDED`/`RUNNING`）與 `datasetId`。�
 1. **HKEXnews 披露易**（`https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en`）
    - ✅ **最快路徑（2026-09-15 於 87001 驗證有效）：直接打官方 JSON API，免 JS、免 MCP、可指定日期區間。**
      1. 先用 `https://www1.hkexnews.hk/search/prefix.do?callback=c&lang=EN&type=A&name={股票代號}` 取得 `stockId`（例：87001 → `61711`）。
-     2. 再打 `https://www1.hkexnews.hk/search/titlesearchservlet.do?sortDir=0&sortByOptions=DateTime&category=0&market=SEHK&stockId={stockId}&documentType=-1&fromDate={yyyyMMdd}&toDate={yyyyMMdd}&lang=EN&searchType=1`，回傳 JSON 含標題、刊發時間與 PDF 連結。
+     2. 再打 `https://www1.hkexnews.hk/search/titleSearchServlet.do?sortDir=0&sortByOptions=DateTime&category=0&market=SEHK&stockId={stockId}&documentType=-1&fromDate={yyyyMMdd}&toDate={yyyyMMdd}&lang=EN&searchType=1`，回傳 JSON 含標題、刊發時間與 PDF 連結。
+        - ⚠️ **servlet 名稱大小寫敏感**：必須是 `titleSearchServlet.do`（駝峰）。2026-09-16 實測全小寫 `titlesearchservlet.do` 回 **HTTP 404**（`Not Found`），駝峰寫法同參數回 HTTP 200 正常 JSON。
+        - ⚠️ **若要額外帶分類參數 `t1code` / `t2Gcode` / `t2code`，值必須是 `-2`（= All），不是 `-1`**。2026-09-16 實測填 `-1` 會讓**任何股票、任何日期區間都回 `recordCnt: 0`**（連「不指定股票查全 SEHK」的對照組也是 0），極易被誤判成「該期間無公告」。不確定時**直接省略這三個參數**最安全。
      3. `lang` 可改 `ZH` 取中文版；`count=0` 即代表該區間確實無公告（非抓取失敗）。
+     4. 每筆結果的 PDF 連結為 `https://www1.hkexnews.hk` + `FILE_LINK` 欄位值。
 2. **富途牛牛**（`https://www.futunn.com/hk/stock/{5碼代碼}-HK/announcement`）
 3. **公司官網 IR 頁面**
 4. ~~新浪財經~~（`https://stock.finance.sina.com.cn/hkstock/notice/{5碼代碼}.html`）
