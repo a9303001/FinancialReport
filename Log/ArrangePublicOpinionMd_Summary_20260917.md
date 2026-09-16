@@ -1,4 +1,4 @@
-# ArrangePublicOpinionMd 執行報告 2026-09-17 00:56
+# ArrangePublicOpinionMd 執行報告 2026-09-17 01:03
 
 > git 可用，刪除以 `git rm` 執行，可復原。
 
@@ -7,42 +7,18 @@
 | 指標 | 數量 |
 | :--- | :--- |
 | 掃描公司資料夾數 | 31 |
-| 掃描 `.md` 總數 | 244 |
-| 判定為輿情檔 | 24 |
+| 掃描 `.md` 總數 | 220 |
+| 判定為輿情檔 | 0 |
 | 排除：年報／季報／公告 | 150 |
 | 排除：分析報告／系統檔 | 39 |
-| 產生／更新的彙整檔數 | 23 |
-| 已刪除的原始檔數 | 24 |
+| 產生／更新的彙整檔數 | 0 |
+| 已刪除的原始檔數 | 0 |
 | 待人工確認（灰色地帶） | 1 |
 
 
 ## Section 2 — 各公司明細
 
-| 公司 | 年份 | 彙整檔 | 本次併入 | 已刪除 | 備註 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| 00546阜豐 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 00883中國海洋石油 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 00941中國移動 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 01426春泉Reit | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 01816中廣核電力 | 2026 | 2026_PublicOpinion.md | 2 | 2 | — |
-| 02318中國平安 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 03606福耀玻璃 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 1264德麥 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 2245詠勝昌 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 2249湧盛 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 2832台產 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 2881富邦金 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 3445RS | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 4417金洲 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 4979OAT | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 5306桂盟 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 6121新普 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 7203Toyota | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 8433弘帆 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 87001匯賢Reit | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| 9435光通訊 | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| AES-KY | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
-| UHS | 2026 | 2026_PublicOpinion.md | 1 | 1 | — |
+（無）
 
 
 ## Section 3 — 排除清單
