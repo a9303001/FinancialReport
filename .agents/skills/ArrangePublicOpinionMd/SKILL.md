@@ -54,7 +54,7 @@ python .claude/skills/ArrangePublicOpinionMd/scripts/arrange_public_opinion.py -
 | `git status` 可執行 | 繼續，但報告註明「無 git 保護，刪除不可復原」 |
 | 工作區乾淨（無未提交 `.md` 變更） | 提醒使用者本 Skill 會刪檔、建議先 commit/stash；使用者堅持則繼續 |
 
-**公司資料夾** = `ROOT` 第一層目錄，排除：`.git` `.github` `.claude` `.agents` `Log` `Prompt` `AnalysisResult` `StkScreenerResult` `discard`。每個資料夾**只掃第一層**，不遞迴。
+**公司資料夾** = `ROOT` 第一層目錄，排除：`.git` `.github` `.claude` `.agents` `Log` `Prompt` `AnalysisResult` `StkScreenerResult` `discard` `History` `gemini` 與任何以 `.` 開頭的目錄。每個資料夾**只掃第一層**，不遞迴。
 
 ## 3. Phase 2 — 分類
 
@@ -69,7 +69,7 @@ python .claude/skills/ArrangePublicOpinionMd/scripts/arrange_public_opinion.py -
 | 美股／日股申報 | `10-K`、`10-Q`、`20-F`、`6-K`、`8-K`、`DEF 14A`、`決算短信`、`決算説明`、`適時開示` |
 | 公告／財報本體 | `公告`、`announcement`、`股東會`、`notice`、`Official_IR`、`業績公告`、`未經審核`、`營運統計`、`財務報告`、`財報`※、`earnings_release` |
 | 制式機器檔名 | EDINET `^S\d{3}[A-Z0-9]{4}\.md$`、SEC XBRL `^[a-z]{2,6}-\d{8}\.md$`、`^ltn\d+\.md$`、純數字編號 `^\d{8,}\.md$`、8 碼日期開頭公告 `^\d{8}(?![_\-\d])`、選股排名 `^\d{2}-[0-9A-Za-z]{2,6}-.*\.md$` |
-| 台股財報代碼 | `F04`、`FE4`、`FI4`、`_AI[0-9A-Z]`（如 `2025_2881_20260612F04.md`、`202601_2881_AI1.md`） |
+| 台股財報代碼 | `F04`、`FE4`、`FI4`、`FE6`、`_AI[0-9A-Z]`（如 `2025_2881_20260612F04.md`、`202601_2881_AI1.md`、`2024_6781_20250528FE6_...md`） |
 | 分析產出／系統檔 | `*Analysis*.md`、`*_Summary_*.md`、`conversion_summary.md`、`README.md`、`index.md`、`prompt.md`、`AGENTS.md`、`CLAUDE.md`、`Routines_*.md`、`*_reconciliation_*.md` |
 | 個人投資筆記／估值速記 | `Orange.md`（不分大小寫）——非輿情彙整、非公司年報季報，僅為個人估值筆記，一律不納入、不刪除 |
 | 輸出檔本身 | `{YYYY}_PublicOpinion.md`（含 `_part{n}`）、舊版 `{YYYY}_輿情彙整.md` → 不併入自己、不刪除，依 §4.1 遷移 |

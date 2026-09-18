@@ -24,7 +24,7 @@ from pathlib import Path
 # --------------------------------------------------------------------------
 
 SKIP_DIRS = {'.git', '.github', '.claude', '.agents', 'Log', 'Prompt',
-             'AnalysisResult', 'StkScreenerResult', 'discard'}
+             'AnalysisResult', 'StkScreenerResult', 'discard', 'History', 'gemini'}
 
 MERGED_RE = re.compile(r'^(\d{4})_PublicOpinion(_part\d+)?\.md$')
 LEGACY_RE = re.compile(r'^(\d{4})_輿情彙整(_part\d+)?\.md$')
@@ -52,7 +52,7 @@ BLACK_REGEX = [
     r'^\d{8,}\.md$',                        # 純數字公告編號
     r'^\d{8}(?![_\-\d])',                   # 8 碼日期 + 中文標題的港股/台股公告
     r'^\d{2}-[0-9A-Za-z]{2,6}-.*\.md$',     # 選股排名產出
-    r'(F04|FE4|FI4)(_|\.)',                 # 台股財報代碼
+    r'(F04|FE4|FI4|FE6)(_|\.)',             # 台股財報代碼
     r'_AI[0-9A-Z](_|\.)',                   # 台股財報 AI 系列
     r'(?<![A-Za-z])[Qq][1-4](?![A-Za-z])',  # 季度（避免誤中 Xueqiu1 之類）
     r'(?i)analysis|_summary_|conversion_summary|_reconciliation_',
@@ -183,11 +183,12 @@ def demote_headings(text: str, levels: int = 2) -> str:
     return '\n'.join(out)
 
 
-def build_section(src: Path, year: int) -> tuple[str, str]:
+def build_section(src: Path, year: int, is_update: bool = False) -> tuple[str, str]:
     """回傳 (章節文字, 章節標題)。"""
     raw = read_text(src)
     sha = hashlib.sha1(raw.encode('utf-8')).hexdigest()[:12]
-    title = f'{year}-{month_key(src.name)} · {source_title(src.name)}'
+    suffix = ' (更新)' if is_update else ''
+    title = f'{year}-{month_key(src.name)} · {source_title(src.name)}{suffix}'
     meta = (f'<!-- source-file: {src.name} | bytes: {src.stat().st_size} '
             f'| sha1: {sha} | merged-at: {dt.date.today().isoformat()} -->')
     return f'\n## {title}\n\n{meta}\n\n{demote_headings(raw).strip()}\n\n---\n', title
@@ -398,17 +399,29 @@ def merge_year(company_dir: Path, root: Path, year: int,
     sources = sorted(sources, key=lambda p: (month_key(p.name), p.name))
 
     body = split_body(merged)
+    norm_body = _norm(body)
     known = set(SOURCE_RE.findall(body))
     added, added_bytes = [], 0
     for src in sources:
-        if src.name in known:
-            continue
         try:
-            section, _ = build_section(src, year)
+            raw = read_text(src)
+        except OSError as exc:
+            rep.errors.append((company, src.name, f'讀取失敗：{exc}'))
+            continue
+
+        probe = _norm(raw)[:200]
+        # 如果檔名已記錄且內容已完整存在既有內文中，代表先前已併入相同內容，不重複 append
+        if src.name in known and probe and probe in norm_body:
+            continue
+
+        try:
+            is_update = (src.name in known)
+            section, _ = build_section(src, year, is_update=is_update)
         except OSError as exc:
             rep.errors.append((company, src.name, f'讀取失敗：{exc}'))
             continue
         body += section
+        norm_body += _norm(section)
         added.append(src)
         added_bytes += src.stat().st_size
 
@@ -510,7 +523,7 @@ def main() -> int:
 
     rep = Report()
     for d in sorted(root.iterdir()):
-        if d.is_dir() and d.name not in SKIP_DIRS:
+        if d.is_dir() and d.name not in SKIP_DIRS and not d.name.startswith('.'):
             process_company(d, root, use_git, rep)
 
     out = write_report(root, rep, git_note)
