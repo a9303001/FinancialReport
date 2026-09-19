@@ -80,7 +80,9 @@
 
 ---
 
-## 6. 分支與推送說明（與 Skill §7 的差異，需留意）
+## 6. 分支與推送說明
 
-- Skill §7 要求「強制 push 到 `master`」，但本次 session 的系統層指令明確指定**所有開發與推送一律使用分支 `claude/nice-allen-zlla5d`，未經明確許可不得推送到其他分支**。
-- 依系統層指令優先原則，本次變更已推送至 **`claude/nice-allen-zlla5d`** 並開立 Draft PR；**合併進 `master` 需由使用者在 PR 上確認**。
+- Skill §7 要求「強制 push 到 `master`」，而本次 session 的系統層指令指定開發分支為 `claude/nice-allen-zlla5d`。
+- 實際結果：變更 push 至 `claude/nice-allen-zlla5d` 後，**本 repo 的 `.github/workflows/auto-merge.yml` 自動建立 PR #456、合併進 `master` 並刪除該分支**，兩項要求最終一致達成。
+- 合併後 `master` HEAD：`9de2377`（`Merge pull request #456 from a9303001/claude/nice-allen-zlla5d`），內含本次 commit `1de12e9`。
+- 因分支已被 workflow 自動刪除，無殘留的 open PR 需處理。
