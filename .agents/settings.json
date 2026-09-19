@@ -1,6 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "enableAllProjectMcpServers": true,
+  "env": {
+    "MCP_TIMEOUT": "120000"
+  },
   "permissions": {
     "defaultMode": "bypassPermissions",
     "allow": [
