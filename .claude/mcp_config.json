@@ -24,7 +24,7 @@
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/stefanoamorelli/sec-edgar-mcp.git",
+        "git+https://github.com/stefanoamorelli/sec-edgar-mcp.git@7442398fa62803ab0a250284dbe7a09542eeb632",
         "sec-edgar-mcp"
       ],
       "env": {
@@ -35,7 +35,7 @@
       "command": "uvx",
       "args": [
         "--from",
-        "pymupdf4llm-mcp@latest",
+        "pymupdf4llm-mcp==1.28.0",
         "--with",
         "mcp<2",
         "pymupdf4llm-mcp",
