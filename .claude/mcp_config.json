@@ -11,7 +11,7 @@
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/Alex2Yang97/yahoo-finance-mcp",
+        "git+https://github.com/Alex2Yang97/yahoo-finance-mcp@81dcf33d69a8808696820e55373028741584b1ae",
         "--with",
         "mcp<2",
         "yahoo-finance-mcp"
