@@ -124,7 +124,7 @@ graph TD
 | Reddit | `reddit.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；**Firecrawl 也會回「we do not support this site」** | **不要照 §2.1 順序逐一試 firecrawl/brightdata/playwright，直接跳到 Apify Reddit Actor**（已驗證最快最準，SOP 見 §2.9） |
 | Reuters | `reuters.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；文章頁常有 DataDome/PerimeterX 真人驗證牆 | 換 `firecrawl_scrape` 抓公司頁通常可讀（能拿到新聞列表與財報摘要）；「Load more」翻頁可能被驗證牆擋，取得已載入部分即可 |
 | Bloomberg | `bloomberg.com` | 搜尋多半只回股價報價頁，深度文章有付費牆 | 屬付費牆限制、非封鎖；MCP 也難突破付費牆，取得摘要即可並在報告註明「付費牆限制」 |
-| X (Twitter) | `x.com` / `twitter.com` | 未登入即封鎖：Firecrawl `firecrawl_scrape`（含 `proxy: stealth`）回 `All scraping engines failed`；Bright Data 需 token 有效；Playwright 需環境有 Chromium | **不要浪費時間逐一試整條 MCP 鏈抓原始頁面**（2026-09-02 實測六種工具全數失敗）。改用 **Firecrawl `firecrawl_search` 搭配 `site:x.com` 運算子**取得索引摘要（注意：`includeDomains: ["x.com"]` 參數實測回傳 0 筆，**必須改用 `site:` 運算子寫在 query 裡**）。索引摘要**不含時間戳**，依 §5.0 不可臆測日期，須標註「⚠️ 為索引摘要、非原始頁面逐字引述」 |
+| X (Twitter) | `x.com` / `twitter.com` | 未登入即封鎖：Firecrawl `firecrawl_scrape`（含 `proxy: stealth`）回 `All scraping engines failed`；Bright Data 需 token 有效；Playwright 可用性見 §2.10（2026-09-20 起雲端／本機皆已可正常啟動） | **不要浪費時間逐一試整條 MCP 鏈抓原始頁面**（2026-09-02 實測六種工具全數失敗）。改用 **Firecrawl `firecrawl_search` 搭配 `site:x.com` 運算子**取得索引摘要（注意：`includeDomains: ["x.com"]` 參數實測回傳 0 筆，**必須改用 `site:` 運算子寫在 query 裡**）。索引摘要**不含時間戳**，依 §5.0 不可臆測日期，須標註「⚠️ 為索引摘要、非原始頁面逐字引述」 |
 | MOPS 公開資訊觀測站 | `mops.twse.com.tw` | `curl` POST `t164sb01` 回 HTTP 000；GET 新舊 API 回「因為安全性考量，您所執行的頁面無法呈現」封鎖頁；`firecrawl_scrape` 只拿到空的查詢表單外殼（需 JS 表單提交）| 2026-09-12 實測：**不要在 MOPS 上耗時**。台股財報版本查核改用**財報狗 e-report**（能列出官方 `doc.twse.com.tw` 原始檔名，可直接比對年度/季別），上櫃掛牌進度改用**櫃買中心 TPEx 官網**，重訊全文常可在 CMoney 貼文中找到轉錄。若真的必須查 MOPS，改用 Playwright 做表單互動 |
 | Goodinfo 台灣股市資訊網 | `goodinfo.tw` | Bright Data `scrape_as_markdown` 60 秒逾時 | 改用 `firecrawl_search`／搜尋摘要，並依 §2.1 於該筆內容標註「非原始頁面逐字引述」 |
 | 雪球（Bright Data 路徑受限時）| `xueqiu.com` | Bright Data 回 `Residential Failed (bad_endpoint)`（帳號未完成 KYC，非網站封鎖）| §2.7 仍以 Bright Data 優先，但**本環境 Bright Data residential 不可用時，直接改 `firecrawl_scrape` 搭 `proxy: stealth`**（2026-09-12 實測可成功取得雪球頁面）|
@@ -289,6 +289,50 @@ Actor 執行後會回傳 `status`（`SUCCEEDED`/`RUNNING`）與 `datasetId`。�
 | 抓到大量無關內容（卡車、家具、遊戲周邊等） | 關鍵字太泛用（如單獨用 `"stock"`）→ 換成股票代號 + `searchCommunityName` |
 | Actor 一直顯示 `status: "RUNNING"` | 屬正常現象，直接拿回傳的 `datasetId` 呼叫 `get-dataset-items` 也能取得目前已抓到的部分結果，不需要空等或反覆輪詢 |
 | 找不到指定 Actor 或 Actor 已下架 | 用 Apify 的 Actor 搜尋工具，關鍵字填 `"Reddit"`，改選 `monthlyUsers` 高、有評分的替代 Actor |
+
+### 2.10 Playwright MCP 環境設定與疑難排解（2026-09-20 修正並實測）
+
+> **結論先講：Playwright 不再是「本環境沒裝瀏覽器所以不能用」的工具。** 之前 §2.1 鏈末端的 playwright 會直接啟動失敗（見 `Log/CollectsentimentAndReports_Summary_20260919.md`），根因是設定問題而非環境缺瀏覽器。已於 2026-09-20 修正，雲端與本機皆實測可用。
+
+**設定方式（`.mcp.json` / `.claude/mcp_config.json` / `.agents/mcp_config.json` 三份一致）**：
+
+```json
+"playwright": { "command": "node", "args": [".claude/scripts/playwright-mcp.mjs"] }
+```
+
+啟動器 `.claude/scripts/playwright-mcp.mjs` 會自動偵測當前機器，決定瀏覽器執行檔、headless、sandbox 與憑證參數，因此 **Claude Code on the cloud（Linux 容器）與 Google Antigravity（本機 Windows/macOS）共用同一份設定**，不需要各自改檔。
+
+**原本 `npx -y @playwright/mcp@latest`（無參數）在雲端必然失敗的三層原因**：
+
+| # | 錯誤訊息 | 真正原因 | 啟動器怎麼解 |
+| :--- | :--- | :--- | :--- |
+| 1 | `Chromium distribution 'chrome' is not found at /opt/google/chrome/chrome` | MCP 預設走 **真實 Google Chrome 通道**，但雲端映像只有 Playwright 自帶的開源 Chromium，沒有 Google Chrome | 自動偵測並指定 `executablePath` |
+| 2 | `Browser "chrome-for-testing" is not installed; expected /opt/pw-browsers/chromium-1246/...` | 加 `--browser chromium` 也沒用：雲端預裝的是 **chromium-1194**，新版 MCP 期待 **1246**，build 版號不匹配 | 直接指向實際存在的執行檔，繞過版號查表 |
+| 3 | `net::ERR_CERT_AUTHORITY_INVALID` | 雲端 HTTPS 走 agent proxy 並重新簽發 TLS，Chromium 不信任該 proxy CA | 讀取 `/root/.ccr/agent-proxy-ca.crt`，計算 SPKI 指紋後以 `--ignore-certificate-errors-spki-list` **只信任這一張已驗證的 CA**（不是關閉 TLS 驗證） |
+
+**環境變數覆寫（平時不用設，排錯時才用）**：
+
+| 變數 | 用途 |
+| :--- | :--- |
+| `PLAYWRIGHT_MCP_EXECUTABLE` | 手動指定瀏覽器執行檔路徑（自動偵測選錯時用） |
+| `PLAYWRIGHT_MCP_HEADLESS` | `1` 強制無頭、`0` 強制有頭。預設：Linux 無 `DISPLAY` 時無頭，其餘有頭 |
+| `PLAYWRIGHT_MCP_VERSION` | 指定 `@playwright/mcp` 版本（預設 `0.0.82`，已實測；勿隨意改回 `latest`，新版可能再次出現 build 版號不匹配） |
+| `PLAYWRIGHT_MCP_CA_CERT` | 手動指定 proxy CA 憑證路徑 |
+| `PLAYWRIGHT_MCP_DEBUG` | 設任意值即在 stderr 印出實際傳給 MCP 的設定 |
+
+**2026-09-20 實測結果**：
+
+- ✅ `example.com`、**雪球 `xueqiu.com/S/SH600519`**（成功取得「贵州茅台(SH600519)…」真實頁面標題，此站在 §2.3 標記為 JS 動態渲染高難度站）
+- ❌ 財報狗 `statementdog.com` 回 **HTTP 403** — 這是站方封鎖 datacenter IP／無頭瀏覽器，**屬網站層級封鎖，不是設定壞掉**，照 §2.1 換其他 MCP 或改用官方來源
+
+**本機 Antigravity 注意事項**：
+
+- 需要 `node` 在 `PATH` 上（原本設定就依賴 `npx`，條件相同）。
+- 啟動器路徑是**相對於工作目錄**（與既有 `yfinance` 的 `PYTHONPATH: ".claude/mcp-patch"` 同一慣例），所以工作目錄要是 repo 根目錄（如 `d:\FinancialReport`）。若該環境工作目錄不同，把 `args` 改成絕對路徑即可。
+- 本機通常已裝 Google Chrome，啟動器會自動選用（Chrome → Playwright 快取 Chromium → Edge 依序偵測），**不需要另外執行 `npx playwright install`**。
+- 本機無 proxy MITM，第 3 層 CA 參數會自動略過（stderr 會顯示 `proxy-ca=none`），屬正常。
+
+**排錯第一步**：看 stderr 的 `[playwright-mcp-launcher]` 那兩行，它會直接寫出這次選到的瀏覽器、是否無頭、是否套用 proxy CA。
 
 ---
 
