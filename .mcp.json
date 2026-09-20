@@ -1,10 +1,9 @@
 {
   "mcpServers": {
     "playwright": {
-      "command": "npx",
+      "command": "node",
       "args": [
-        "-y",
-        "@playwright/mcp@latest"
+        ".claude/scripts/playwright-mcp.mjs"
       ]
     },
     "yfinance": {
