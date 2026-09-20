@@ -124,7 +124,8 @@ graph TD
 | Reddit | `reddit.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；**Firecrawl 也會回「we do not support this site」** | **不要照 §2.1 順序逐一試 firecrawl/brightdata/playwright，直接跳到 Apify Reddit Actor**（已驗證最快最準，SOP 見 §2.9） |
 | Reuters | `reuters.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；文章頁常有 DataDome/PerimeterX 真人驗證牆 | 換 `firecrawl_scrape` 抓公司頁通常可讀（能拿到新聞列表與財報摘要）；「Load more」翻頁可能被驗證牆擋，取得已載入部分即可 |
 | Bloomberg | `bloomberg.com` | 搜尋多半只回股價報價頁，深度文章有付費牆 | 屬付費牆限制、非封鎖；MCP 也難突破付費牆，取得摘要即可並在報告註明「付費牆限制」 |
-| X (Twitter) | `x.com` / `twitter.com` | 未登入即封鎖：Firecrawl `firecrawl_scrape`（含 `proxy: stealth`）回 `All scraping engines failed`；Bright Data 需 token 有效；Playwright 可用性見 §2.10（2026-09-20 起雲端／本機皆已可正常啟動） | **不要浪費時間逐一試整條 MCP 鏈抓原始頁面**（2026-09-02 實測六種工具全數失敗）。改用 **Firecrawl `firecrawl_search` 搭配 `site:x.com` 運算子**取得索引摘要（注意：`includeDomains: ["x.com"]` 參數實測回傳 0 筆，**必須改用 `site:` 運算子寫在 query 裡**）。索引摘要**不含時間戳**，依 §5.0 不可臆測日期，須標註「⚠️ 為索引摘要、非原始頁面逐字引述」 |
+| X (Twitter) | `x.com` / `twitter.com` | 未登入即封鎖：Firecrawl `firecrawl_scrape`（含 `proxy: stealth`）回 `All scraping engines failed`；Bright Data 需 token 有效；**Playwright 開 `x.com/search` 會被導向 `x.com/i/jf/onboarding/web?...&mode=login` 登入牆**（2026-09-20 實測，與 §2.10 的 Playwright 啟動問題無關，屬站方登入牆） | **日股一律先試 Yahoo「株つぶやき」（見下一列），不要動 MCP。** 其他市場才退回 **Firecrawl `firecrawl_search` 搭配 `site:x.com` 運算子**取索引摘要（注意：`includeDomains: ["x.com"]` 參數實測回傳 0 筆，**必須改用 `site:` 運算子寫在 query 裡**）。索引摘要**不含時間戳**，依 §5.0 不可臆測日期，須標註「⚠️ 為索引摘要、非原始頁面逐字引述」 |
+| **Yahoo!ファイナンス「株つぶやき」（日股抓 X 的最佳路徑）** | `finance.yahoo.co.jp/quote/{代碼}.T/post` | **無**——此頁是 SSR，`curl` 帶一般瀏覽器 UA 即可（2026-09-20 於 4979 實測 HTTP 200、178KB） | ✅ **2026-09-20 新增，已驗證有效。** Yahoo 官方聚合該檔股票的真實 X 貼文，**保留真實 `x.com/{帳號}/status/{id}` 網址、真實帳號與真實發布時間（到分鐘）**，品質遠優於 `firecrawl_search` 的索引摘要，且**零 MCP 成本**。抓法：`curl -A "<瀏覽器 UA>" https://finance.yahoo.co.jp/quote/{代碼}.T/post`，再用 regex 取 `https://x\.com/[A-Za-z0-9_]+/status/[0-9]+` 與頁面文字配對。**限制**：僅節錄貼文正文，不含圖片與回覆；單頁約 8~10 則。**日股輿情抓 X 一律先試此頁，成功即止，不需進 §2.1 MCP 鏈** |
 | MOPS 公開資訊觀測站 | `mops.twse.com.tw` | `curl` POST `t164sb01` 回 HTTP 000；GET 新舊 API 回「因為安全性考量，您所執行的頁面無法呈現」封鎖頁；`firecrawl_scrape` 只拿到空的查詢表單外殼（需 JS 表單提交）| 2026-09-12 實測：**不要在 MOPS 上耗時**。台股財報版本查核改用**財報狗 e-report**（能列出官方 `doc.twse.com.tw` 原始檔名，可直接比對年度/季別），上櫃掛牌進度改用**櫃買中心 TPEx 官網**，重訊全文常可在 CMoney 貼文中找到轉錄。若真的必須查 MOPS，改用 Playwright 做表單互動 |
 | Goodinfo 台灣股市資訊網 | `goodinfo.tw` | Bright Data `scrape_as_markdown` 60 秒逾時 | 改用 `firecrawl_search`／搜尋摘要，並依 §2.1 於該筆內容標註「非原始頁面逐字引述」 |
 | 雪球（Bright Data 路徑受限時）| `xueqiu.com` | Bright Data 回 `Residential Failed (bad_endpoint)`（帳號未完成 KYC，非網站封鎖）| §2.7 仍以 Bright Data 優先，但**本環境 Bright Data residential 不可用時，直接改 `firecrawl_scrape` 搭 `proxy: stealth`**（2026-09-12 實測可成功取得雪球頁面）|
@@ -132,6 +133,18 @@ graph TD
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
+
+> [!WARNING]
+> **§2.1 的 MCP 鏈會因「帳號額度」而整條斷掉，不是網站的問題——要分辨清楚再記錄。** 2026-09-20 於 4979 實測，四個 MCP 同時處於不可用狀態：
+>
+> | MCP | 實際回應 | 性質 |
+> | :--- | :--- | :--- |
+> | Firecrawl | 所有工具回 **HTTP 402** | **帳號額度用盡**，非網站封鎖；整個 session 都不會恢復，第一次遇到 402 後就**不要再對任何網站呼叫 Firecrawl** |
+> | Bright Data | 連續回 **HTTP 502 `origin_bad_gateway`**（Cloudflare 提示 `retryable`、`retry_after: 60`） | **MCP 閘道端故障**，非網站封鎖；依 §2.1「每工具最多 2 次」試完即換，不要空等 60 秒重試 |
+> | Apify | `Monthly usage hard limit exceeded` | **帳號月額度用盡**；同樣是整個 session 不會恢復，遇到後不要再呼叫任何 Actor |
+> | Playwright | 可正常啟動（§2.10 修正有效），但**擋在各站登入牆／403** | 工具本身正常，屬**站方層級封鎖** |
+>
+> **處置原則**：遇到 402／`hard limit exceeded` 這類**帳號級**錯誤，該 MCP 視為「本次執行全程不可用」，在 Phase 5 報告的 MCP 紀錄中明確註明，並直接跳到鏈中下一個工具；**不要對每個網站重複踩同一顆地雷**，也不要因此就用 WebSearch 摘要打發——先找**免 MCP 的 SSR 替代頁**（如富途 `/news`、Yahoo `/post`、CMoney 官方 API），這類替代路徑通常比 MCP 更快更準。
 
 ### 2.5 純網路錯誤 → 零重試、直接換來源（不套 MCP 鏈）
 
@@ -459,7 +472,7 @@ Actor 執行後會回傳 `status`（`SUCCEEDED`/`RUNNING`）與 `datasetId`。�
 - **台股**：鉅亨網, MoneyDJ, 經濟日報, PTT 股市板, Dcard 理財, 股市爆料同學會（✅ 有官方 API，直接照 §2.8 SOP 打 API，不要爬網頁）, 財報狗社群, etc...
 - **美股**：Yahoo Finance, Bloomberg（⚠️ 付費牆，見 §2.4）, Reuters（⚠️ 封鎖爬蟲，見 §2.4）, X (Twitter), Reddit（⚠️ 內建工具/Firecrawl 不支援，**直接用 Apify Reddit Actor，SOP 見 §2.9**）, Seeking Alpha, etc...
 - **港股**：香港經濟日報, 雪球（⚠️ `xueqiu.com`，只抓討論、不抓財報，SOP 見 §2.7）, moomoo 社區（⚠️ JS 渲染）, 東方財富股吧（⚠️ JS 渲染）, LIHKG, etc...
-- **日股**：日本經濟新聞, Yahoo Finance JP 掲示板, note（`https://note.com/search?q={股票代號}`）, 5ch, X (Twitter), etc...
+- **日股**：日本經濟新聞, Yahoo Finance JP 掲示板, **Yahoo Finance JP 株つぶやき（`/quote/{代碼}.T/post`，抓 X 貼文的最佳路徑，見 §2.4）**, みんかぶ（`https://minkabu.jp/stock/{代碼}`，⚠️ 無留言板，但有「目標株価／株価診断／個人予想」量化評價，常與掲示板情緒相反，是重要的空方對照）, Shared Research（`https://sharedresearch.jp/ja/companies/{代碼}`，小型股常為唯一的第三方研究覆蓋）, note（`https://note.com/search?q={股票代號}`，⚠️ `api/v3/searchnote` 已回 404，改抓 `note.com/search` 頁）, 5ch（`https://find.5ch.net/search?q={公司名}`）, X (Twitter), etc...
 
 ### 5.2 過濾規則 (嚴格執行)
 1. **略過無意義內容**：只記錄實質基本面/事件分析，忽略純漲跌數字或表情符號。
