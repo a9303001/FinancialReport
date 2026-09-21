@@ -2,14 +2,16 @@
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
 > 不含年報、季報、公司公告 report。
-> 最後彙整時間：2026-09-17 00:45｜本次併入：1 檔｜累計併入：2 檔
+> 最後彙整時間：2026-09-21 02:02｜本次併入：1 檔｜累計併入：2 檔
 
 ## 目錄
 
 - [2026-08 · 輿情新聞](#2026-08--輿情新聞)
 - [2026-09 · 輿情新聞](#2026-09--輿情新聞)
+- [2026-09 · 輿情新聞 (更新)](#2026-09--輿情新聞-更新)
 
 <!-- body:start -->
+
 
 
 ## 2026-08 · 輿情新聞
@@ -273,5 +275,208 @@
 - **關鍵要點**:
   - **食品巨頭包銷**：PepsiCo 與 CF 等夥伴簽署低碳氨肥包銷協議，累計總量達每年 34.5 萬噸，展現下游消費巨頭對低碳溢價化肥的實質承諾。
   - **亞太長期市場擴張**：與韓國鋼鐵巨頭 POSCO 展開 Blue Point CCS 氨產能 FEED 前端工程設計研究，佈局向韓國的長期包銷供應鏈。
+
+---
+
+## 2026-09 · 輿情新聞 (更新)
+
+<!-- source-file: 202609_輿情新聞.md | bytes: 23096 | sha1: 42b865930d0c | merged-at: 2026-09-21 -->
+
+### [CF CF Industries Holdings, Inc.] 輿情與新聞整理 (2026/09)
+
+- **分析月份**：2026/09
+- **資料範圍**：過去三個月（2026 年 6 月 ～ 2026 年 9 月 18 日）
+- **最後更新**：2026-09-18 20:13 UTC
+- **本次執行說明**：本月稍早（2026-09-02、2026-09-12）已收集之內容，已由 `ArrangePublicOpinionMd` 併入 `2026_PublicOpinion.md`。本檔為 **2026-09-18 該輪新增**，僅收錄前次收集後才出現、或前次未涵蓋的新資訊，避免重複。
+- **流通在外股數基準（每股化用）**：151.34 百萬股（來源：stockanalysis.com，2026-09-18）
+
+---
+
+#### [分析師評級與研究報告 (TipRanks / TheFly / MarketBeat)]
+
+- **抓取時間**：2026-09-18
+- **抓取方式**：Bright Data `scrape_as_markdown`（TipRanks 原文頁）＋ 內建 WebFetch（MarketBeat）
+- **抓取結果**：✅ 成功
+
+##### 🎯 [重大評級變動｜利空] KeyBanc 首次覆蓋即給予「減持 (Underweight)」，目標價 $115，直指「氮肥價格與獲利的高峰已過」
+- **來源連結**: [https://www.tipranks.com/news/the-fly/cf-industries-initiated-with-an-underweight-at-keybanc-thefly-news-2](https://www.tipranks.com/news/the-fly/cf-industries-initiated-with-an-underweight-at-keybanc-thefly-news-2)
+- **發布時間**: 2026-09-11（stockanalysis.com 於 2026-09-18 顯示為「7 days ago」）
+- **分析師**: Salvator Tiano（KeyBanc）
+- **核心觀點與論述**:
+  > "KeyBanc initiated coverage of CF Industries (CF) with an Underweight rating and $115 price target The firm rolled out coverage on 19 chemical and agriculture companies, with nine Overweights, nine Sector Weights, one Underweight. The analyst views the pickup in merger activity, the upcoming agriculture upcycle, and industrial acceleration as the key themes for the sector. However, stock-picking is 'tougher with major conflicting trends' in petrochemicals due to war tailwinds against structural oversupply headwinds, the analyst tells investors in a research note. KeyBanc says agriculture is entering market upcycle against already elevated crop input prices while coatings faces pent-up housing demand against increasing rates. The firm sees the best risk/reward in 'idiosyncratic and differentiated stories' Axalta Coating, Olin, Huntsman, and Celanese. KeyBanc says CF Industries is moving past peak nitrogen prices and earnings."
+- **關鍵要點**:
+  - **唯一的減持**：KeyBanc 一次覆蓋 19 檔化工／農業股，給出 9 檔 Overweight、9 檔 Sector Weight，而 **CF 是唯一一檔 Underweight**，等於在整個族群中被單獨點名看空，訊號強度高於一般的降評。
+  - **看空理由是「循環見頂」**：理由不是公司執行面出錯，而是「moving past peak nitrogen prices and earnings」——認為氮肥價格與 CF 獲利的循環高點已經過去。這與前次收集到的賣方共識（Hold／Neutral，目標價 $125~$140）方向一致但更悲觀。
+  - **目標價 $115**：相對 2026-09-18 收盤價 $127.79 隱含約 -10.0% 下檔空間；亦低於現行 21 位分析師平均目標價 $125.25。
+  - **矛盾訊號**：KeyBanc 同時說「農業正進入市場上升循環 (agriculture is entering market upcycle)」，卻獨獨看空氮肥龍頭，顯示其觀點是「農業景氣好 ≠ 氮肥價格好」，關鍵變數在供給端（中國出口回流）而非需求端。
+
+##### 🎯 [獲利預估下修｜利空] KeyCorp 給出 2026 Q3 EPS 僅 $2.62，並掛「Strong Sell」評等
+- **來源連結**: [https://www.marketbeat.com/instant-alerts/estimates-q3-earnings-forecast-for-cf-industries-issued-by-keycorp-2026-09-14/](https://www.marketbeat.com/instant-alerts/estimates-q3-earnings-forecast-for-cf-industries-issued-by-keycorp-2026-09-14/)
+- **發布時間**: 2026-09-14（研究報告日期為 2026-09-10）
+- **核心觀點與論述**:
+  > "KeyCorp analyst S. Tiano expects that the basic materials company will earn $2.62 per share for the quarter."
+  > "KeyCorp has a 'Strong Sell' rating on the stock."
+  > "the company has a consensus rating of 'Hold' and an average target price of $116.47."
+- **關鍵要點**:
+  - **與上半年落差極大**：2026 上半年 EPS 為 $8.71（Q2 單季 $4.73）。KeyCorp 預估 Q3 僅 $2.62、Q4 $3.19，意味著下半年合計約 $5.81，較上半年 $8.71 **衰退約 33%**。
+  - **2027/2028 預估更低**：FY2027 EPS $8.80、FY2028 EPS $8.50，相對 FY2026 市場共識 EPS 約 $15.28（Simply Wall St 揭露）等於 **未來兩年獲利腰斬約 42~44%**。這是「循環股高點估值陷阱」的典型預估形狀。
+  - **共識目標價出現分歧**：MarketBeat 顯示共識目標價 $116.47，stockanalysis.com（21 位分析師）顯示 $125.25。兩者差距近 $9，反映 9 月以來下修動作尚未被所有資料商同步更新，**需留意引用來源差異，不宜只看單一數字**。
+- **⚠️ 資料註記**：MarketBeat 一文將 KeyBanc 表述為 "KeyCorp"（KeyBanc 為 KeyCorp 旗下投行）且標示為 "Strong Sell"，與 TheFly／TipRanks 原文的 "Underweight" 用詞不同。經比對同一分析師（Salvator Tiano / S. Tiano）與同一日期（2026-09-10），**應為同一份報告的不同轉述**，非兩次獨立降評。
+
+##### 🎯 [評級全貌整理] 2026 年 6 月以來目標價調整軌跡（由多轉空的完整路徑）
+- **來源連結**: [https://stockanalysis.com/stocks/cf/](https://stockanalysis.com/stocks/cf/)
+- **發布時間**: 2026-09-18（頁面彙整之新聞列表）
+- **核心觀點與論述（逐條摘自該頁新聞標題與摘要原文）**:
+  > "CF Industries initiated with an Underweight at KeyBanc" — KeyBanc, $115 PT（7 days ago）
+  > "CF Industries downgraded to Hold from Buy at Freedom Broker. Freedom Broker downgraded CF Industries (CF) to Hold from Buy with a price target of $133, down from $147. First half adjusted EBITDA and EPS were 'excellent,' but the driver…"（23 days ago）
+  > "CF Industries price target raised to $130 from $125 at Scotiabank ... keeps an Outperform rating"（5 weeks ago）
+  > "CF Industries price target raised to $123 from $115 at UBS ... keeps a Neutral rating"（6 weeks ago）
+  > "CF Industries price target raised to $129 from $128 at CIBC ... keeps a Neutral rating"（1 month ago）
+  > "CF Industries price target lowered to $115 from $135 at Morgan Stanley ... keeps an Equal Weight rating"（2 months ago）
+  > "CF Industries upgraded to Outperform from Sector Perform at Scotiabank ... price target of $125, up from $120"（2 months ago）
+  > "CF Industries price target raised to $115 from $94 at JPMorgan ... keeps a Neutral rating"（3 months ago）
+  > "CF Industries upgraded to Buy from Hold at Freedom Broker ... price target of $147, up from $97. The firm cites higher nitrogen prices and the company's accelerating buyback…"（4 months ago）
+- **關鍵要點**:
+  - **明顯的「見頂轉折」形狀**：6~7 月是一片調升（JPMorgan $94→$115、Freedom $97→$147、Scotiabank 升評），8 月中後轉為調降（Freedom $147→$133 並降評、Morgan Stanley $135→$115），9 月出現首見的 Underweight。**賣方情緒轉向的時點與股價於 9 月初做出 $141.96 年內高點幾乎同步。**
+  - **Freedom Broker 四個月內來回**：5 月升評至 Buy／PT $147 → 8 月底降回 Hold／PT $133，理由是「上半年 EBITDA 與 EPS 非常好，但驅動力（driver）…」（原文於該摘要處截斷），顯示連看多方也承認利多來源不可持續。
+  - **目標價分布極廣**：$115（KeyBanc、Morgan Stanley）到 $133（Freedom）、$130（Scotiabank Outperform），區間寬度達 16%，代表對「氮肥循環位置」的判斷分歧極大，是目前 CF 最主要的投資爭議點。
+
+---
+
+#### [公司公告 / SEC EDGAR 8-K]
+
+- **抓取時間**：2026-09-18
+- **抓取方式**：SEC EDGAR MCP（`get_recent_filings`、`analyze_8k`）＋ Bright Data `scrape_as_markdown`（TipRanks 公告解讀頁）
+- **抓取結果**：✅ 成功
+
+##### 🎯 [人事異動｜中性偏留意] 財務長體系人事：會計長 (CAO) Richard A. Hoker 宣布將於 2027-03-03 退休
+- **來源連結**: [https://www.tipranks.com/news/company-announcements/cf-industries-announces-planned-retirement-of-chief-accounting-officer](https://www.tipranks.com/news/company-announcements/cf-industries-announces-planned-retirement-of-chief-accounting-officer)
+- **對應 SEC 檔案**: 8-K，accession `0001104659-26-105054`，申報日 2026-09-03，報告事件日 2026-08-31
+- **發布時間**: 2026-08-31（公告事件日）／2026-09-03（8-K 申報日）
+- **核心觀點與論述**:
+  > "On August 31, 2026, CF Industries Holdings, Inc. announced that Vice President, Corporate Controller and Chief Accounting Officer Richard A. Hoker plans to retire from the company effective March 3, 2027. The planned transition in a critical financial leadership role may prompt succession measures in the finance organization but is structured to allow an extended period for an orderly handover and continuity in the company's accounting oversight."
+- **關鍵要點**:
+  - **屬計畫性退休、非突發離職**：公告日至生效日相隔逾 6 個月（2026-08-31 → 2027-03-03），且明確保留交接期，**與「會計長突然請辭」這類財報品質警訊的樣態不同**，不宜過度解讀。
+  - **但仍需追蹤接任人選**：CAO 負責財報編製與內控，且 CF 正同時進行 Blue Point 大型資本支出（37 億美元合資案）之資本化與合資會計處理，接任者的資歷值得在下次 10-K／委任書中確認。
+  - **本期無其他重大 8-K 事件**：SEC EDGAR `analyze_8k` 對該筆回傳 `items: []`、`has_press_release: false`，過去 150 天內除財報相關 8-K（2026-05、2026-08）外無其他重大事件申報。
+
+---
+
+#### [Reddit]
+
+- **抓取時間**：2026-09-18
+- **抓取方式**：⚠️ Apify Reddit Actor（§2.9 標準 SOP）本次**不可用**（回報 `Monthly usage hard limit exceeded`）→ 依 §2.1 遞補至 **Bright Data `search_engine` + `scrape_as_markdown`**，成功取得 Reddit 原始貼文
+- **抓取結果**：✅ 成功（改用 Bright Data 取得原文）
+
+##### 🎯 [散戶量化社群｜中性] r/Shortsqueeze「SqueezeFinder」把 $CF 列入當日觀察名單，Squeezability 僅 29%
+- **來源連結**: [https://www.reddit.com/r/Shortsqueeze/comments/1wcdsxu/squeezefinder_sept_10th_2026/](https://www.reddit.com/r/Shortsqueeze/comments/1wcdsxu/squeezefinder_sept_10th_2026/)
+- **發布時間**: 2026-09-10（貼文標題「SqueezeFinder - Sept 10th 2026」，頁面顯示 8d ago）
+- **社群/看板**: r/Shortsqueeze（發布者: /u/Squeeze-Finder）
+- **核心觀點與論述**:
+  > "5. $CF
+  > Squeezability Score: 29%
+  > Juice Target: 154.3
+  > Confidence: 🍊 🍊 🍊
+  > Price: 138.11 (+2.81%)
+  > Breakdown point: 129.4
+  > Breakout point: 141.3 (continuation)
+  > Mentions (30D): 3
+  > Event/Condition: First-half results delivered strong adjusted EBITDA and high ammonia utilization as higher global nitrogen prices lifted sales despite lower volumes + quarterly dividend raised 20 percent to $0.60 per share alongside continued share repurchases under the authorized program + Blue Point One low-carbon ammonia project received permits and construction commenced, supporting the longer-term growth and low-carbon product strategy + Recent price target 🎯 of $130 from Scotiabank + Recent price target 🎯 of $133 from Freedom Broker + Recent price target 🎯 of $147 from prior BofA range"
+- **關鍵要點**:
+  - **散戶熱度極低**：`Mentions (30D): 3`——過去 30 天全 Reddit 只被提及 3 次，顯示 **CF 並非散戶熱門標的，輿情以機構／專業投資人為主**，這也解釋了為何 Reddit 幾乎搜不到深度的 CF 個股討論串。
+  - **技術面關卡已被跌破**：該貼文列出的「Breakdown point 129.4」在當時（$138.11）尚有 6% 緩衝，但 **2026-09-18 收盤 $127.79 已跌破此關卡**；貼文原文說明「BELOW this price, the move will lose momentum significantly in the short-term, as shorts will gain confidence encouraging them to short more」。以該模型自身邏輯，短線動能已轉弱。
+  - **軋空題材不成立**：Squeezability 僅 29%（同日 $CVI 為 42%），代表空單擁擠度不高，**不存在軋空行情的基礎**，股價走勢仍應回歸基本面與氮肥價格。
+  - **利多敘事與賣方看空並存**：該模型列的利多（高氨開工率、股利升 20%、Blue Point 動工）全部正確，但與 KeyBanc 的「循環見頂」看空論述指向同一批事實的不同解讀——**利多都是「已發生」的，看空講的是「未來價格」**。
+
+##### 🎯 [市場結構觀察｜中性] r/StockTitan 每日熱力圖顯示 $CF 於 2026-09-09 盤前為 S&P 500 漲幅前段班
+- **來源連結**: [https://www.reddit.com/r/StockTitan/comments/1wbkwsm/stock_market_heatmap_sep_9_2026_premarket_sp_500/](https://www.reddit.com/r/StockTitan/comments/1wbkwsm/stock_market_heatmap_sep_9_2026_premarket_sp_500/)
+- **發布時間**: 2026-09-09
+- **核心觀點與論述**:
+  > "$CF CF Industries Holdings, Inc. +4.22%. $DOW Dow Inc. +2.87%. $APA APA Corporation +2.53%. $HUM Humana Inc. +2.44%."
+- **關鍵要點**:
+  - 2026-09-09 盤前 CF 為 S&P 500 領漲股（+4.22%），與隔日（9/10）收在 $138.11 相互印證；**但 9 天後（9/18）已跌至 $127.79，區間回落約 -7.5%**，顯示 9 月上旬的強勢在 KeyBanc 報告後迅速反轉。
+- **⚠️ 來源性質註記**：此為自動化熱力圖統計貼文，非投資人論述，僅作價格軌跡佐證使用。
+
+---
+
+#### [市場行情與產業基本面 (stockanalysis.com / Fertilizer Daily)]
+
+- **抓取時間**：2026-09-18
+- **抓取方式**：Bright Data `scrape_as_markdown`（stockanalysis.com）＋ 內建 WebFetch（Fertilizer Daily）＋ 內建 WebSearch（產業綜述）
+- **抓取結果**：✅ 成功
+
+##### 🎯 [價格異動｜利空] 2026-09-18 單日重挫 -4.51%，收 $127.79，跌破 9 月初以來所有支撐
+- **來源連結**: [https://stockanalysis.com/stocks/cf/](https://stockanalysis.com/stocks/cf/)
+- **發布時間**: 2026-09-18（Sep 18, 2026, 4:00 PM EDT 收盤）
+- **核心觀點與論述（頁面揭示之即時數據原文）**:
+  > "127.79 / -6.03 (-4.51%) / Sep 18, 2026, 4:00 PM EDT - Market closed"
+  > "Market Cap 19.34B +40.5% / Revenue (ttm) 7.74B +20.0% / Net Income 2.10B +61.2% / EPS 13.44 +76.6% / Shares Out 151.34M / PE Ratio 9.96 / Forward PE 10.65 / Dividend $2.40 (1.88%) / Ex-Dividend Date Aug 14, 2026"
+  > "Open 132.50 / Previous Close 133.82 / Day's Range 127.56 - 132.50 / 52-Week Range 75.42 - 141.96 / Beta 0.40 / Volume 4,518,347"
+  > "Earnings Date Nov 4, 2026"
+- **關鍵要點（含每股化換算，基準股數 151.34 百萬股）**:
+  - **單日跌幅 -4.51%，且收在當日近低點**：日內區間 $127.56~$132.50，收 $127.79，屬**弱勢收盤**；成交量 4,518,347 股，相對 TipRanks 揭露之平均量 2,607,280 股**放大約 73%**，是「帶量下跌」而非無量回檔。
+  - **距高點回檔 -10.0%**：52 週高點 $141.96（2026 年 9 月初創下），本日收盤已回落 10.0%；但距 52 週低點 $75.42 仍高出 69.4%，**年內漲幅大部分未回吐**。
+  - **市值 193.4 億美元（換算每股 $127.79）**；TTM 營收 77.4 億美元（**換算每股營收約 $51.15**，年增 20.0%）；TTM 淨利 21.0 億美元（**換算每股淨利約 $13.88**，年增 61.2%，與揭露 EPS $13.44 的差異來自加權平均股數與期間口徑）。
+  - **估值仍低但「前瞻本益比高於現行本益比」**：PE 9.96 vs Forward PE 10.65。**Forward PE > 現行 PE 代表市場預期未來每股盈餘是「下降」的**，這正是 KeyCorp 預估 FY2027 EPS $8.80（較 FY2026 共識 $15.28 下滑 42%）的市場定價版本，也是本次最重要的估值警訊。
+  - **殖利率僅 1.88%**：即使 7 月調升 20% 至年化 $2.40，殖利率仍偏低，**股價下檔缺乏股息保護**；除息日已過（2026-08-14）。
+  - **Beta 僅 0.40**：低系統性風險係數，意味著本次重挫主要來自**個股／產業因素**，而非大盤系統性回檔。
+- **⚠️ 缺口誠實記錄（依 §5.0）**：本次以 Bright Data `search_engine`（多組關鍵字）與內建 `WebSearch` 搜尋 2026-09-17～09-18 之 CF 個股新聞，**未找到任何可佐證的單一催化事件**（無新降評、無公司公告、無產業重大新聞）。Yahoo Finance 新聞頁以 Bright Data 抓取時逾時（§2.5 純網路錯誤，零重試換源）。**因此本檔不臆測跌因**；合理但未經證實的推測是「KeyBanc 減持報告的後續發酵 ＋ 尿素現貨走弱」，待下次收集補充查證。
+
+##### 🎯 [產業基本面｜利空] 全球尿素價格 9 月回落至 $443/噸，中國出口回流是主因
+- **來源連結**: [https://www.fertilizerdaily.com/20260909-urea-price-443-september-2026-hormuz-china/](https://www.fertilizerdaily.com/20260909-urea-price-443-september-2026-hormuz-china/)
+- **發布時間**: 2026-09-09 13:00
+- **核心觀點與論述**:
+  > "Urea declined to $443 per metric ton on September 4, representing a 0.06% daily decrease. The benchmark has risen 13.6% over one month and 13.2% year-over-year."
+  > "Beijing has expanded its 2026 export allowance to roughly 5–5.5 million tonnes, and July shipments jumped to approximately 403,000 tonnes from just 7,000 tonnes in June."
+  > "European production economics remain strained, with Dutch TTF gas above €66.50 per megawatt-hour, placing break-even costs for an efficient European urea plant near $605 per tonne ex-works."
+- **關鍵要點**:
+  - **中國出口是最大變數**：7 月出口量從 6 月的 7,000 噸暴增至約 403,000 噸（**增幅逾 57 倍**），全年配額擴大到約 500~550 萬噸。中國供給回流是壓制全球尿素價格、進而壓制 CF 獲利預期的**結構性利空**，也正是 KeyBanc「peak nitrogen prices」論述的實質依據。
+  - **CF 的成本護城河依然存在且擴大**：歐洲高效尿素廠在 TTF 天然氣 €66.50/MWh 下的損益兩平成本約 **$605/噸 ex-works**，而現貨價僅 $443/噸——意味著**歐洲產能在現價下是虧損的**。CF 使用北美低價天然氣，此價差正是其結構性優勢；但反過來說，**歐洲產能若因虧損而關停，反而會支撐價格；若歐洲氣價回落，則 CF 價差優勢收斂**，兩個方向都需追蹤。
+  - **價格仍高於一年前**：$443/噸較一個月前 +13.6%、較去年同期 +13.2%。**尿素價格本身尚未崩跌，是「漲勢停滯」而非「下跌趨勢」**——這點與股價 -10% 的回檔幅度存在落差，市場交易的是「預期」而非「現價」。
+  - **地緣政治利多消退**：荷姆茲海峽談判進展降低了供給焦慮。中東約佔全球尿素貿易 35%，**荷姆茲重啟等同抽掉 2026 上半年推升氮肥股的地緣溢價**。
+- **⚠️ 資料衝突註記（依核心原則「資料缺失需註記」）**：內建 WebSearch 摘要引述另一來源稱「中國 2026 年尿素出口配額僅 330 萬噸，低於 2025 年約 500 萬噸」，與本則原文的「擴大至約 500~550 萬噸」**方向完全相反**。兩說法無法並存，本檔以有原文可查核的 Fertilizer Daily（2026-09-09）為準，並標記此為**待查核項目**，下次收集應以中國商務部／海關總署原始公告驗證。
+
+---
+
+#### [X (Twitter)]
+
+- **抓取時間**：2026-09-18
+- **抓取結果**：❌ 失敗（本次無新增內容）
+
+##### 搜尋嘗試紀錄
+- 已嘗試：Firecrawl `firecrawl_search`（§2.4 指定之 `site:x.com` 運算子法）→ **服務回傳 HTTP 402（Payment Required），本帳號 Firecrawl 額度已耗盡，工具本次完全不可用**。
+- 已嘗試：Bright Data `search_engine`，query `site:x.com "CF Industries" OR "$CF" nitrogen ammonia 2026` → 回傳 `{"organic":[]}`，**0 筆結果**（非錯誤、非封鎖，是索引無命中）。
+- 未嘗試：Apify → 本次帳號已達月度用量上限（`Monthly usage hard limit exceeded`），整個 Apify MCP 不可用。
+- 未嘗試：Playwright → X 未登入即封鎖，依 §2.4 明列「不要浪費時間逐一試整條 MCP 鏈抓原始頁面」（2026-09-02 實測六種工具全數失敗）。
+- **結論**：本次無法取得 X (Twitter) 的新輿情，非 AI 生成。主因是 Firecrawl 與 Apify 兩個付費 MCP 額度同時耗盡，`site:x.com` 索引搜尋亦無命中。請下次重新嘗試。
+
+---
+
+#### [Seeking Alpha / Yahoo Finance 討論區]
+
+- **抓取時間**：2026-09-18
+- **抓取結果**：⚠️ 部分成功（僅取得新聞列表，未取得社群討論原文）
+
+##### 搜尋嘗試紀錄
+- 已嘗試：Bright Data `scrape_as_markdown` 抓 `https://finance.yahoo.com/quote/CF/news/` → **60 秒逾時**（§2.5 純網路錯誤，零重試、直接換源）。
+- 已嘗試：Firecrawl `firecrawl_search` → HTTP 402，額度耗盡，不可用。
+- 已嘗試：Apify → 月度用量上限，不可用。
+- **替代取得**：改以 Bright Data 抓取 stockanalysis.com 的 CF 新聞彙整頁成功（已寫入上方章節），取得 TheFly／Business Wire／Schwab Network／MarketWatch 等來源的標題與摘要。
+- **已搜尋但過去三個月內無新增符合條件內容之來源**：Yahoo Finance 個股留言板、Seeking Alpha 個股評論區。以 `"CF Industries" news September 2026`、`CF Industries stock drop September 17 18 2026` 等關鍵字搜尋，回傳結果多為 6~8 月的舊文（Blue Point 動土、Q2 財報、股利調升），**該等內容已於 2026-08-31 與 2026-09-02 兩次收集中記錄於 `2026_PublicOpinion.md`，本次不重複收錄**。
+- **一筆未能取得原文的線索（不寫入正式紀錄，供下次追查）**：stockanalysis.com 列出 Schwab Network 影片「The Big 3: CF, LULU, UPS」（8 days ago，即約 2026-09-10），摘要為 "Mounting macro pressures are what Jason Brown (@brownreport) sees hitting the stock market for the foreseeable future. That said, he points to trading opportunities in stocks he expects to weather thr..."。**該摘要於 CF 部分被截斷，無法確認其對 CF 的具體多空論點，依 §5.0 不臆測內容**。
+
+---
+
+#### [台灣／華語圈討論區]
+
+- **抓取時間**：2026-09-18
+- **抓取結果**：❌ 無符合內容（已搜尋，非未查）
+
+##### 搜尋嘗試紀錄
+- CF Industries 為美股 S&P 500 成分股，非台股／港股，不適用 CMoney 股市爆料同學會（§2.8 台股 API）、PTT 股板、雪球（§2.7，以中港股為主）等中文平台的主要討論範圍。
+- 已透過 Bright Data `search_engine` 以中英關鍵字查詢，**過去三個月內未見中文圈對 CF Industries 的實質基本面討論**（僅有泛化肥族群的行情轉載文，依 §5.2 過濾規則第 1、4 點排除）。
+- **結論**：本月中文圈無有效輿情紀錄。此為冷門度問題而非抓取失敗，下次可維持低優先度。
+
+---
 
 ---
