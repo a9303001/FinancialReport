@@ -126,7 +126,7 @@ graph TD
 | Bloomberg | `bloomberg.com` | 搜尋多半只回股價報價頁，深度文章有付費牆 | 屬付費牆限制、非封鎖；MCP 也難突破付費牆，取得摘要即可並在報告註明「付費牆限制」 |
 | X (Twitter) | `x.com` / `twitter.com` | 未登入即封鎖：Firecrawl `firecrawl_scrape`（含 `proxy: stealth`）回 `All scraping engines failed`；Bright Data 需 token 有效；**Playwright 開 `x.com/search` 會被導向 `x.com/i/jf/onboarding/web?...&mode=login` 登入牆**（2026-09-20 實測，與 §2.10 的 Playwright 啟動問題無關，屬站方登入牆） | **日股一律先試 Yahoo「株つぶやき」（見下一列），不要動 MCP。** 其他市場才退回 **Firecrawl `firecrawl_search` 搭配 `site:x.com` 運算子**取索引摘要（注意：`includeDomains: ["x.com"]` 參數實測回傳 0 筆，**必須改用 `site:` 運算子寫在 query 裡**）。索引摘要**不含時間戳**，依 §5.0 不可臆測日期，須標註「⚠️ 為索引摘要、非原始頁面逐字引述」 |
 | **Yahoo!ファイナンス「株つぶやき」（日股抓 X 的最佳路徑）** | `finance.yahoo.co.jp/quote/{代碼}.T/post` | **無**——此頁是 SSR，`curl` 帶一般瀏覽器 UA 即可（2026-09-20 於 4979 實測 HTTP 200、178KB） | ✅ **2026-09-20 新增，已驗證有效。** Yahoo 官方聚合該檔股票的真實 X 貼文，**保留真實 `x.com/{帳號}/status/{id}` 網址、真實帳號與真實發布時間（到分鐘）**，品質遠優於 `firecrawl_search` 的索引摘要，且**零 MCP 成本**。抓法：`curl -A "<瀏覽器 UA>" https://finance.yahoo.co.jp/quote/{代碼}.T/post`，再用 regex 取 `https://x\.com/[A-Za-z0-9_]+/status/[0-9]+` 與頁面文字配對。**限制**：僅節錄貼文正文，不含圖片與回覆；單頁約 8~10 則。**日股輿情抓 X 一律先試此頁，成功即止，不需進 §2.1 MCP 鏈** |
-| MOPS 公開資訊觀測站 | `mops.twse.com.tw` | `curl` POST `t164sb01` 回 HTTP 000；GET 新舊 API 回「因為安全性考量，您所執行的頁面無法呈現」封鎖頁；`firecrawl_scrape` 只拿到空的查詢表單外殼（需 JS 表單提交）| 2026-09-12 實測：**不要在 MOPS 上耗時**。台股財報版本查核改用**財報狗 e-report**（能列出官方 `doc.twse.com.tw` 原始檔名，可直接比對年度/季別），上櫃掛牌進度改用**櫃買中心 TPEx 官網**，重訊全文常可在 CMoney 貼文中找到轉錄。若真的必須查 MOPS，改用 Playwright 做表單互動 |
+| MOPS 公開資訊觀測站 | `mops.twse.com.tw` | `curl` POST `t164sb01` 回 HTTP 000；GET 新舊 API 回「因為安全性考量，您所執行的頁面無法呈現」封鎖頁；`firecrawl_scrape` 只拿到空的查詢表單外殼（需 JS 表單提交）| 2026-09-12 實測：**不要在 MOPS 上耗時**。**重訊全文改用鉅亨網關鍵字 API（§2.11），這是目前取得 MOPS 重大訊息全文最快、最完整的路徑**（鉅亨「台股公告」分類即為 MOPS 重訊轉載，含發言日期/時間、事實發生日、發生緣由、因應措施等完整欄位）。台股財報版本查核改用**財報狗 e-report**（能列出官方 `doc.twse.com.tw` 原始檔名，可直接比對年度/季別），上櫃掛牌進度改用**櫃買中心 TPEx 官網**。若真的必須查 MOPS 原站，才改用 Playwright 做表單互動 |
 | Goodinfo 台灣股市資訊網 | `goodinfo.tw` | Bright Data `scrape_as_markdown` 60 秒逾時 | 改用 `firecrawl_search`／搜尋摘要，並依 §2.1 於該筆內容標註「非原始頁面逐字引述」 |
 | 雪球（Bright Data 路徑受限時）| `xueqiu.com` | Bright Data 回 `Residential Failed (bad_endpoint)`（帳號未完成 KYC，非網站封鎖）| §2.7 仍以 Bright Data 優先，但**本環境 Bright Data residential 不可用時，直接改 `firecrawl_scrape` 搭 `proxy: stealth`**（2026-09-12 實測可成功取得雪球頁面）|
 | 券商承銷公告頁（嘉實資訊 iframe）| 如玉山證券等券商承銷頁 | Firecrawl 只取得嘉實資訊 iframe 外殼，無實質表格 | 台股新股申購/承銷日程改抓 **HiStock 公開申購頁**（表格為靜態，內建工具或 Firecrawl 皆可讀）|
@@ -347,6 +347,53 @@ Actor 執行後會回傳 `status`（`SUCCEEDED`/`RUNNING`）與 `datasetId`。�
 
 **排錯第一步**：看 stderr 的 `[playwright-mcp-launcher]` 那兩行，它會直接寫出這次選到的瀏覽器、是否無頭、是否套用 proxy CA。
 
+### 2.11 實戰範例：鉅亨網（cnyes）關鍵字 API — 台股新聞＋MOPS 重訊全文（2026-09-22 驗證有效）
+
+> **結論先講：台股要抓新聞或 MOPS 重大訊息全文，第一步就打鉅亨網關鍵字 API，不要先去 MOPS（§2.4 已記載 MOPS 不可爬）、也不要先跑 §2.1 MCP 鏈。** 兩支 `curl`（一支拿清單、一支拿全文）即可，**零 MCP 成本、免登入、免 token**。2026-09-22 於 5306 桂盟實測：關鍵字 `桂盟` 回 84 筆、`5306` 同樣可查；重訊全文（含「發言日期/發言人/事實發生日/發生緣由/因應措施/其他應敘明事項」完整欄位）從鉅亨文章頁一次取回。
+
+**適用時機**：Phase 3 抓台股輿情/新聞、以及 Phase 2 想確認「某季財報或重大事件是否已公告」時。**僅適用台股**（鉅亨的「台股公告」分類就是 MOPS 重訊轉載）。
+
+**步驟 1：關鍵字查新聞清單（回 JSON）**
+
+```bash
+curl -s "https://ess.api.cnyes.com/ess/api/v1/news/keyword?q={公司名或股票代號}&limit=30" \
+  -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
+```
+
+- **`q` 可填公司中文名（如 `桂盟`）或股票代號（如 `5306`）**，兩者皆實測可用。中文名須 URL-encode。建議**兩種都查一次再用 `newsId` 去重**，涵蓋率最高（代號常命中盤後速報類，公司名常命中重訊與產業報導）。
+- **`limit` 上限 100**；另支援 `page={N}` 翻頁。回傳的 `data` 除 `items` 外還有 `total`、`perPage`、`currentPage`、`lastPage`、`nextPageUrl`，可直接據此判斷還有幾頁。
+- 每筆 `items` 重點欄位：
+  - `newsId`：文章 ID，用於步驟 2。
+  - `title` / `summary`：標題與摘要。
+  - `publishAt`：**秒級** timestamp（**注意：與 §2.8 CMoney 的毫秒不同，這裡不要除以 1000**）。
+  - `category[].name`：分類，**`台股公告` 即為 MOPS 重訊轉載**，`台股盤後`、`台股新聞` 等為一般新聞。要抓重訊就先用這個欄位過濾。
+- ⚠️ **用公司中文名查詢時，`title` / `summary` 會被包上 `<mark>` 標籤**（如 `<mark>桂盟</mark>:公告…`），寫入 Markdown 前**必須先移除 `<mark>` / `</mark>`**；用股票代號查詢時則不會出現。
+
+**步驟 2：取單篇全文（含 MOPS 重訊完整欄位）**
+
+```bash
+curl -s "https://news.cnyes.com/news/id/{newsId}" \
+  -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
+```
+
+- 這是 **SSR 頁面**（HTTP 200、約 180KB），正文直接在 HTML 裡，**不需要 MCP、不需要瀏覽器**。
+- **最乾淨的取文方式：抓頁面 JSON-LD 裡的 `"articleBody":"…"` 欄位**，那是不含任何 HTML 標籤的純文字全文，直接可用。退而求其次才去剝 `<main>` 區塊的標籤（換行會比較零碎）。
+- 文章原文網址 = `https://news.cnyes.com/news/id/{newsId}`（寫報告引用來源時用這個）。
+
+**常見錯誤對照（照著修，不要換工具重試）**：
+
+| 症狀 | 原因 → 修法 |
+| :--- | :--- |
+| 標題出現 `<mark>` 字樣 | 用中文名查詢的正常現象 → 寫檔前以 regex 移除 `</?mark>` |
+| 日期算出來差了 1970 年或離譜的未來 | 把 `publishAt` 當成毫秒了 → **鉅亨是秒級，直接轉換，不要除以 1000** |
+| `https://api.cnyes.com/media/api/v1/newspage/{newsId}` 回 `404` | 該端點已失效 → **不要用**，全文一律走步驟 2 的 `news.cnyes.com/news/id/{newsId}` SSR 頁 |
+| 查不到任何結果 | 關鍵字太長或含空白/全形括號 → 改用純公司簡稱或股票代號重查 |
+
+**其他注意**：
+- 只收 §5「過去三個月內」的項目：用 `publishAt` 過濾，超出範圍的不必進步驟 2，省請求數。
+- 請求間隔 0.3~0.5 秒即可，未見封鎖；仍遵守 §2.6 頻率原則。
+- 取回的是**真實頁面內容**，依 §5.0 只引述原文、附真實 `newsId` 網址與真實 `publishAt` 時間，不可改寫或用訓練資料補充。
+
 ---
 
 ## 3. Phase 1 — 初始化目錄 (Setup Directory)
@@ -398,6 +445,9 @@ Actor 執行後會回傳 `status`（`SUCCEEDED`/`RUNNING`）與 `datasetId`。�
 1. **MOPS/TWSE 系統**（用 POST 取得檔案。英文版優先：`_AIA.pdf`；季報通常只有中文：`_AI1.pdf`。查詢頁為 JS 動態渲染，見 §2.3）
 2. **財報狗**（`https://statementdog.com/analysis/{代碼}/e-report`）
 3. **官網 IR 頁面**
+
+> [!TIP]
+> 想確認「某季財報／某重大事件是否已公告、公告了什麼」，**不要去爬 MOPS**（§2.4 已記載不可爬）。改打**鉅亨網關鍵字 API（§2.11）**，用 `category[].name == "台股公告"` 過濾即可拿到 MOPS 重訊全文，比 MOPS 官網快且免 MCP。注意該 API 提供的是**重訊全文，不是財報 PDF 本身**，PDF 仍須回到上方 1~3 的來源下載。
 
 **美股 (US)**
 1. **官網 IR 頁面**（SEC Filings）
@@ -469,7 +519,7 @@ Actor 執行後會回傳 `status`（`SUCCEEDED`/`RUNNING`）與 `datasetId`。�
 ### 5.1 搜尋來源 (Sources)
 > 標 ⚠️ 者為 JS 動態渲染或會封鎖爬蟲的網站，抓不到時一律照 **§2 通用抓取規則** 換 MCP，不要當成「這站沒資料」而略過。
 
-- **台股**：鉅亨網, MoneyDJ, 經濟日報, PTT 股市板, Dcard 理財, 股市爆料同學會（✅ 有官方 API，直接照 §2.8 SOP 打 API，不要爬網頁）, 財報狗社群, etc...
+- **台股**：鉅亨網（✅ **有官方關鍵字 API，直接照 §2.11 SOP 打 API，不要爬網頁**；亦為 MOPS 重訊全文的最快來源）, MoneyDJ, 經濟日報, PTT 股市板, Dcard 理財, 股市爆料同學會（✅ 有官方 API，直接照 §2.8 SOP 打 API，不要爬網頁）, 財報狗社群, etc...
 - **美股**：Yahoo Finance, Bloomberg（⚠️ 付費牆，見 §2.4）, Reuters（⚠️ 封鎖爬蟲，見 §2.4）, X (Twitter), Reddit（⚠️ 內建工具/Firecrawl 不支援，**直接用 Apify Reddit Actor，SOP 見 §2.9**）, Seeking Alpha, etc...
 - **港股**：香港經濟日報, 雪球（⚠️ `xueqiu.com`，只抓討論、不抓財報，SOP 見 §2.7）, moomoo 社區（⚠️ JS 渲染）, 東方財富股吧（⚠️ JS 渲染）, LIHKG, etc...
 - **日股**：日本經濟新聞, Yahoo Finance JP 掲示板, **Yahoo Finance JP 株つぶやき（`/quote/{代碼}.T/post`，抓 X 貼文的最佳路徑，見 §2.4）**, みんかぶ（`https://minkabu.jp/stock/{代碼}`，⚠️ 無留言板，但有「目標株価／株価診断／個人予想」量化評價，常與掲示板情緒相反，是重要的空方對照）, Shared Research（`https://sharedresearch.jp/ja/companies/{代碼}`，小型股常為唯一的第三方研究覆蓋）, note（`https://note.com/search?q={股票代號}`，⚠️ `api/v3/searchnote` 已回 404，改抓 `note.com/search` 頁）, 5ch（`https://find.5ch.net/search?q={公司名}`）, X (Twitter), etc...
