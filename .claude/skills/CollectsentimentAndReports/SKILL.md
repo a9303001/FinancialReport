@@ -112,7 +112,7 @@ graph TD
 | 股市爆料同學會 (CMoney) | `cmoney.tw` | 頁面是 SSR 殼，`__NUXT__` 內 `articles` 為空陣列，貼文全由前端打 API 載入 → **不要爬頁面，直接打官方 API，SOP 見 §2.8** |
 | MOPS 台股進階查詢頁 | `mops.twse.com.tw` | 查詢頁需 JS 互動/POST 才出結果，直接 GET 常抓不到清單 |
 | moomoo 社區/新聞 | `moomoo.com` | 正文常由 JS 載入，直接抓常只拿到標題與版型 |
-| 東方財富股吧 | `guba.eastmoney.com` | 部分列表頁需 JS 分頁載入，抓不到完整貼文 |
+| 東方財富股吧 | `guba.eastmoney.com` | 部分列表頁需 JS 分頁載入，抓不到完整貼文。**但第一頁是 SSR**：2026-09-22 於 03606 實測，`curl` 帶一般瀏覽器 UA 抓 `https://guba.eastmoney.com/list,{A股代碼}.html`，頁內 `var article_list = {...}` JSON 即含 40 筆貼文（`post_id`、`post_title`、`post_publish_time`、點閱/留言數）；單篇全文抓 `https://guba.eastmoney.com/news,{A股代碼},{post_id}.html`，以 `json.JSONDecoder().raw_decode` 解析 `var post_article=` 後的 JSON 取 `post_content`。**不需動用任何 MCP**，抓股吧一律先試此法 |
 | 富途牛牛 個股頁 | `futunn.com/hk/stock/{代碼}/quote`、`/announcement` | 行情與公告頁由 JS 載入，Bright Data `scrape_as_markdown` 只回空殼（標題僅 `Document`）。**但 `/news` 列表頁是 SSR**：2026-09-16 於 00546 實測，用 `curl` 帶一般瀏覽器 UA 即可直接取得完整新聞標題與日期（HTTP 200、1.2MB），**不需動用任何 MCP**。抓富途新聞一律先試 `curl .../{5碼代碼}-HK/news` |
 
 ### 2.4 已知會「封鎖爬蟲」的網站清單（要換 MCP，不是放棄）
