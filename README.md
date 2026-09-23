@@ -81,7 +81,7 @@ FinancialReport/
 ├── Routines_StockAnalysis.md      # 每日深度分析排程
 ├── Routines_Move2History.md       # 根目錄 ↔ History 雙向歸檔同步
 ├── Routines_HkReit_gemini.md      # 港股 REIT 殖利率 Top10 篩選
-├── Routines_JPReit_gemini.md      # 日股 REIT 殖利率 Top10 篩選
+├── gemini/gemini_JPReit.md        # 日股 REIT 殖利率 Top20 篩選（Top10 詳細檔）
 ├── hourAnalysis.md                # 臨時指定的個股分析任務
 │
 └── .claude/skills/ , .agents/skills/   # Skill 定義（兩份內容相同，供不同 agent 載入）
@@ -245,7 +245,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | `Routines_CollectsentimentAndReports.md` | 每日 | 依「今天幾號」對照輪替表，收集當日公司的財報與輿情 |
 | `Routines_StockAnalysis.md` | 每日 | 依同一輪替表執行深度分析，輸出 `hourAnalysisResult.md` |
 | `Routines_Move2History.md` | 不定期 | 讓根目錄公司資料夾集合等於輪替表；不在表上的移入 `History/`（雙向搬移、不刪資料） |
-| `Routines_HkReit_gemini.md` / `Routines_JPReit_gemini.md` | 不定期 | 港股 / 日股 REIT 殖利率 Top10 篩選與分析 |
+| `Routines_HkReit_gemini.md` / `gemini/gemini_JPReit.md` | 不定期 | 港股 REIT 殖利率 Top10 / 日股 REIT 殖利率 Top20（Top10 詳細檔）篩選與分析 |
 
 > **輪替表是唯一真實依據**：要新增或停止追蹤公司，改 `Routines_CollectsentimentAndReports.md`，再跑 `Routines_Move2History.md` 同步資料夾。
 
