@@ -130,6 +130,12 @@ graph TD
 | Goodinfo 台灣股市資訊網 | `goodinfo.tw` | Bright Data `scrape_as_markdown` 60 秒逾時 | 改用 `firecrawl_search`／搜尋摘要，並依 §2.1 於該筆內容標註「非原始頁面逐字引述」 |
 | 雪球（Bright Data 路徑受限時）| `xueqiu.com` | Bright Data 回 `Residential Failed (bad_endpoint)`（帳號未完成 KYC，非網站封鎖）| §2.7 仍以 Bright Data 優先，但**本環境 Bright Data residential 不可用時，直接改 `firecrawl_scrape` 搭 `proxy: stealth`**（2026-09-12 實測可成功取得雪球頁面）|
 | 券商承銷公告頁（嘉實資訊 iframe）| 如玉山證券等券商承銷頁 | Firecrawl 只取得嘉實資訊 iframe 外殼，無實質表格 | 台股新股申購/承銷日程改抓 **HiStock 公開申購頁**（表格為靜態，內建工具或 Firecrawl 皆可讀）|
+| 富途新聞內文 | `news.futunn.com/hk/post/*` | `curl` 與 Bright Data 只回 JS challenge 空殼（`<title>Document`）；`/hk/stock/{代碼}-HK/community` 302 導向 `passport.futunn.com` 登入牆 | 2026-09-23 於 01816 實測：**內文改用 Playwright** 可取得全文（MT Newswires 文章仍需登入）；列表仍先用 `curl .../news`（§2.3）|
+| AAStocks 新聞 | `aastocks.com` | 文章頁正文為 JS 載入 | 2026-09-23 實測：列表頁 `stock-aafn/{代碼}/0/hk-stock-news/1` 為 SSR，`curl` 可讀；單篇摘要取頁面 `og:description` meta 即可 |
+| 新浪港股新聞 | `stock.finance.sina.com.cn/hkstock/news/{代碼}.html` | 無（SSR）| 2026-09-23 實測 `curl` 可讀且為最新（不同於 §4.2 已失修的 `/notice/` 公告頁）|
+| 香港經濟日報 | `hket.com` | `curl` 回 HTTP 405「Human Verification」；`/search?keyword=` 路徑本身 404 | 需改找個別文章 URL；搜尋頁不可用 |
+| LIHKG | `lihkg.com` | `api_v2/thread/search` 回 `error_code 5`；Bright Data 需 KYC | 2026-09-23 實測：Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time` 可讀 |
+| Reddit（Apify 額度用盡時）| `reddit.com` | Playwright 開 old.reddit 回 403＋登入導向；`search.json` 回 403 | Apify 不可用時目前無可行替代，只能以 Bright Data `search_engine` 取索引並註明 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
