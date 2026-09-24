@@ -135,6 +135,12 @@ graph TD
 | 新浪港股新聞 | `stock.finance.sina.com.cn/hkstock/news/{代碼}.html` | 無（SSR）| 2026-09-23 實測 `curl` 可讀且為最新（不同於 §4.2 已失修的 `/notice/` 公告頁）|
 | 香港經濟日報 | `hket.com` | `curl` 回 HTTP 405「Human Verification」；`/search?keyword=` 路徑本身 404 | 需改找個別文章 URL；搜尋頁不可用 |
 | LIHKG | `lihkg.com` | `api_v2/thread/search` 回 `error_code 5`；Bright Data 需 KYC | 2026-09-23 實測：Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time` 可讀 |
+| Yahoo!ファイナンス 掲示板 | `finance.yahoo.co.jp/quote/{代碼}.T/bbs` | 無（SSR）| 2026-09-24 於 4507 實測：`/bbs` 會 302 轉到 `/quote/{代碼}.T/forum`，`curl` 帶瀏覽器 UA 即可讀約 60 則；單則為 `/forum/{No}` |
+| みんかぶ 子頁 | `minkabu.jp/stock/{代碼}/analyst_consensus`、`/pick` | `curl` 回 HTTP 403（主頁 `/stock/{代碼}` 則 `curl` 可讀）| 2026-09-24 實測：子頁改用 `firecrawl_scrape` 可讀 |
+| 5ch | `find.5ch.net` | 無 | 2026-09-24 實測：會轉址到 `find.5ch.io`，SSR 可 `curl`；**討論串頁為 Shift_JIS/cp932，需先解碼**否則亂碼 |
+| note | `note.com/search`、`api/v3/searches` | API 回 403；搜尋頁為 JS 空殼 | 2026-09-24 實測：搜尋頁用 `firecrawl_scrape`；**個別文章頁為 SSR**，`curl` 可讀且含 `datePublished` |
+| Shared Research | `sharedresearch.jp/ja/companies/{代碼}` | `curl` 回 JS 空殼 | `firecrawl_scrape` 可渲染；未覆蓋的公司（如 4507）僅有目錄殘頁，無研究內容 |
+| Fierce Pharma | `fiercepharma.com` | `curl` 回 Cloudflare 403 | 2026-09-24 實測 `firecrawl_scrape` 可讀；`/keyword/{公司名}` 為附日期的新聞索引 |
 | Reddit（Apify 額度用盡時）| `reddit.com` | Playwright 開 old.reddit 回 403＋登入導向；`search.json` 回 403 | Apify 不可用時目前無可行替代，只能以 Bright Data `search_engine` 取索引並註明 |
 
 > [!NOTE]
