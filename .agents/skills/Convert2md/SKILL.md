@@ -97,7 +97,7 @@ for i, t in enumerate(pending, 1):
 | 參數 | 值 |
 |------|-----|
 | `file_path` | 清單的 `pdf` 欄位（PDF 絕對路徑） |
-| `save_path` | 清單的 `save_path` 欄位（PDF 所在資料夾絕對路徑） |
+| `save_path` | 清單的 `md` 欄位（**輸出 `.md` 的完整檔案絕對路徑**）。⚠️ 2026-09-22 實測：填資料夾路徑會回 `[Errno 21] Is a directory`，必須填檔案路徑 |
 | `image_path` | `<SCRATCH>/pdf_images`（固定值） |
 
 **`save_path` 必填**，否則工具會把整份 Markdown 吐回 context，塞爆對話。
