@@ -442,10 +442,15 @@ N/A
 ---
 
 - 執行日期: 24
-- `COMPANY_NAME`：02232晶苑國際
-- `MARKET`：港股
-- `COMPANY_FOLDER`：02232晶苑國際
-- `EXTRA_ANALYSIS`：n/a
+- `COMPANY_NAME`：4507鹽野義製藥
+- `MARKET`：日股
+- `COMPANY_FOLDER`：4507鹽野義製藥
+- `EXTRA_ANALYSIS`：
+1.競爭對手
+2.HIV護城河?可以治癒嗎？需要一直服藥嗎？
+3.藥是4507發明的嗎？專利到期怎麼辦?佔EPS多少
+4.除了HIV，還有什麼藥?ˇ各提供多少EPS?
+
 
 ---
 
