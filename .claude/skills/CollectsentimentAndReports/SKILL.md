@@ -141,6 +141,12 @@ graph TD
 | note | `note.com/search`、`api/v3/searches` | API 回 403；搜尋頁為 JS 空殼 | 2026-09-24 實測：搜尋頁用 `firecrawl_scrape`；**個別文章頁為 SSR**，`curl` 可讀且含 `datePublished` |
 | Shared Research | `sharedresearch.jp/ja/companies/{代碼}` | `curl` 回 JS 空殼 | `firecrawl_scrape` 可渲染；未覆蓋的公司（如 4507）僅有目錄殘頁，無研究內容 |
 | Fierce Pharma | `fiercepharma.com` | `curl` 回 Cloudflare 403 | 2026-09-24 實測 `firecrawl_scrape` 可讀；`/keyword/{公司名}` 為附日期的新聞索引 |
+| 東方財富股吧（港股）| `guba.eastmoney.com/list,hk{5碼}.html` | 無（SSR）| 2026-09-25 於 01866 實測：與 A 股同法，頁內 `article_list` JSON 一頁 80 筆；單篇 `news,hk{5碼},{post_id}.html`，偶爾回 2.8KB 空殼頁，換篇即可 |
+| 雪球（Playwright／stealth 失敗時）| `xueqiu.com` | Playwright 回 HTTP 567「访问提示」；`firecrawl_scrape` `proxy: stealth` 回 `ERR_TUNNEL_CONNECTION_FAILED`；`status.json` API 回 `code 400016`（需登入）| 2026-09-25 實測：改 `firecrawl_scrape` `proxy: auto` 可取得第 1 頁約 10 則短評。**Firecrawl 渲染的相對時間為美東時間，換算香港時間 +12 小時** |
+| AAStocks（http）| `aastocks.com` | `http://` 回 302 | `curl -L` 跟隨轉址；摘要在 `newscontent4` 區塊、日期在 `dt:'yyyy/MM/dd HH:mm'`，另有讀者利好／利淡票數 |
+| TipRanks | `tipranks.com` | `curl` 回 403 | 2026-09-25 實測 `firecrawl_scrape` 可讀；注意其港股頁把人民幣金額標成 HK$，引用前需核對幣別 |
+| 富途新聞列表（港股）| `futunn.com/hk/stock/{代碼}-HK/news` | 無 | 列表偶有他公司公告誤掛（如中國澱粉回購被標到 01866），寫入前以 HKEXnews API 交叉驗證 |
+| pymupdf4llm MCP | `convert_pdf_to_markdown` | — | `save_path` 被視為**輸出檔名**而非資料夾；多份 PDF 共用同一路徑會互相覆蓋，每份須給不同 `.md` 路徑 |
 | Reddit（Apify 額度用盡時）| `reddit.com` | Playwright 開 old.reddit 回 403＋登入導向；`search.json` 回 403 | Apify 不可用時目前無可行替代，只能以 Bright Data `search_engine` 取索引並註明 |
 
 > [!NOTE]
