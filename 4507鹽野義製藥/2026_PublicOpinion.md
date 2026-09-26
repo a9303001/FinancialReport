@@ -1,6 +1,6 @@
 # 4507 塩野義製薬（Shionogi & Co., Ltd.）2026 輿情／新聞彙整
 
-> 收集日期：2026-09-25（UTC+8）。只記錄實際從頁面取得的內容；無法取得的平台在文末「缺口」註明。
+> 收集日期：2026-09-25（UTC+8；2026-09-26 追加第六節）。只記錄實際從頁面取得的內容；無法取得的平台在文末「缺口」註明。
 
 ---
 
@@ -84,7 +84,19 @@
 - 競爭：Gilead／Merck 週服一次口服 islatravir/lenacapavir 治療 Phase 3（ISLEND-1/2）2026-06 公布正面結果；週服一次口服 lenacapavir PrEP 獲 FDA 受理，PDUFA 2027-02-02（AllSci 2026-06-16）。
 - 官網與株探 2026-09-17～09-25：無新公司公告。
 
-## 六、缺口
+## 六、2026-09-26 追加
+
+- 股價：2026-09-25 收盤 2,938.0 日圓（+20.5，+0.70%）；夜間 PTS 2,930（Yahoo Finance／Yahoo!ファイナンス，2026-09-25 23:26）。9/26 週六休市。
+- 官方公告（9/24–9/26）：2026-09-25「Notice Regarding Relocation of the Tokyo Nihonbashi Office」、2026-09-25 公司治理報告書更新（Kabutan 適時開示），均無財務影響。https://www.shionogi.com/global/en/news/2026/09/20260925.html
+- Q2 FY2026 決算發表日：2026-10-29 15:30（Shionogi IR 行事曆；先前記為 10-28，已更正）。https://www.shionogi.com/jp/ja/investors/ir-calendar.html
+- minkabu 分析師共識（2026-09-26）：買い，平均目標價 3,350 円；FY2026 EPS 264.68 円、淨利 225,282 百萬円（與 9/19 相同，未再變動）；minkabu 綜合目標株價 2,956 円。
+- 匯率（Yahoo Finance，2026-09-25）：USD/JPY 157.18、GBP/JPY 208.24，較公司 FY2026 假設（153／205）日圓偏弱。
+- ViiV PPA：Q1 法說會逐字稿（2026-08-04）CFO 藤原稱 ViiV 股權追加取得之 PPA「おそらく第3四半期中」完成；Q1 末「持分法で会計処理されている投資」720,545 百萬円（Q1 決算短信）。
+- 競爭：Gilead Bixlenvo（bictegravir＋lenacapavir 單錠）2026-08-27 獲 FDA 核准（病毒已抑制成人換藥）。https://www.gilead.com/news/news-details/2026/u-s--fda-approves-gileads-bixlenvo-a-new-once-daily-single-tablet-option-for-virologically-suppressed-adults-with-hiv-including-those-on-complex-regimens
+- ViiV：2026-08-26 FDA 核准 Tivicay PD（dolutegravir）用於體重 ≥2 kg 兒童含新生兒；2026-09-21 ViiV 宣布 975 萬英鎊兒童／青少年 HIV 投資。https://viivhealthcare.com/hiv-news-and-media/news/press-releases/2026/august/helping-close-a-critical-hiv-treatment-gap/
+- Yahoo!ファイナンス 掲示板（2026-09-25）：「みんなの評価」直近 1 週轉為「様子見 100%」；No.421501「すんごい空売り入ってきたから。ま売らないけどね」、No.421504「薬品の再編くるかな」（同日新聞為小林製薬被 NSSK／CVC 基金提案非公開化，與塩野義無直接關係，Bloomberg 2026-09-24）。
+
+## 七、缺口
 
 - Reddit：本次未執行 Apify Reddit Actor；WebSearch 未命中具體討論。
 - minkabu、5ch、Yahoo 掲示板：已於 2026-09-24 由 202609_輿情新聞.md 補齊。
