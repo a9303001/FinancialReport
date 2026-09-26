@@ -16,14 +16,12 @@
 # 個股分析2
 <OUTPUT_FILENAME>` : hourAnalysisResult.md
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-- `COMPANY_NAME`：4507鹽野義製藥
-- `MARKET`：日股
-- `COMPANY_FOLDER`：4507鹽野義製藥
+- `COMPANY_NAME`：01866中國心連心化肥
+- `MARKET`：港股
+- `COMPANY_FOLDER`：01866中國心連心化肥
 - `EXTRA_ANALYSIS`：
-1.競爭對手
-2.HIV護城河?可以治癒嗎？需要一直服藥嗎？
-3.藥是4507發明的嗎？專利到期怎麼辦?佔EPS多少
-4.除了HIV，還有什麼藥?ˇ各提供多少EPS?
+
+
 
 
 
