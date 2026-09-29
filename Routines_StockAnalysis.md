@@ -180,6 +180,14 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
   4. 如果財務數據單位是人民幣時，要轉成港幣
 
 ---
+- 執行日期: 1
+- `COMPANY_NAME`： 2971ES-CON日本REIT
+- `MARKET`：日股
+- `COMPANY_FOLDER`：2971ES-CON日本REIT
+- `EXTRA_ANALYSIS`：
+1.物件都在哪裡?市中心嗎？
+
+---
 
 - 執行日期: 2
 - `COMPANY_NAME`：00941 中國移動（中股: 600941 中國移動）

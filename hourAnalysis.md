@@ -16,10 +16,11 @@
 # 個股分析2
 <OUTPUT_FILENAME>` : hourAnalysisResult.md
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-- `COMPANY_NAME`：01866中國心連心化肥
-- `MARKET`：港股
-- `COMPANY_FOLDER`：01866中國心連心化肥
+- `COMPANY_NAME`：2971ES-CON日本REIT
+- `MARKET`：日股
+- `COMPANY_FOLDER`：2971ES-CON日本REIT
 - `EXTRA_ANALYSIS`：
+1.物件都在哪裡?市中心嗎？
 
 
 
