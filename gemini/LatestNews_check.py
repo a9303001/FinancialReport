@@ -3,7 +3,8 @@
 
 用法（在 REPO_ROOT 執行）：
     python gemini/LatestNews_check.py --today 2026-09-30 --prev "2026/09/30 23:41:07"
-    --today 省略 = 取台北今天；--prev 省略 = 不檢查「晚於上一版」；--file 可指定其他檔。
+    --today 省略 = 取台北今天；--prev 省略 = 不檢查「晚於上一版」；--file 可指定其他檔；
+    --days 窗口天數（預設 30，CUTOFF = TODAY − days）。
 輸出最後一行「問題 0 個」才算通過；有問題時 exit code = 1。
 """
 import argparse
@@ -17,6 +18,8 @@ NON_COMPANY = {"History", "Log", "Prompt", "gemini", "StkScreenerResult",
 ZONES = "一二三四五六七八"
 NEED = {"HIGH": "①②③④⑤⑥⑦⑧⑨⑩", "MEDIUM": "①②④⑤⑧⑩", "LOW": "①⑤⑩"}
 RANK = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}
+MAX_ITEMS = 60                                              # 第二區上限（HIGH 不計）
+COOL_DAYS = 14                                              # 超過幾天且「急」= 0 → 降溫
 ITEM = re.compile(r"^- (?:🔴|🟢|⚪)")                     # 排行榜條目的標題行
 FIELD = re.compile(r"^\s+- \*\*([①-⑩])")                  # W3 欄位行
 P_ITEM = re.compile(r"^- \*\*(P[012])｜")                  # 下一輪項目
@@ -33,11 +36,12 @@ def main():
     ap.add_argument("--root", default=os.path.dirname(here))
     ap.add_argument("--today")
     ap.add_argument("--prev")
+    ap.add_argument("--days", type=int, default=30)
     a = ap.parse_args()
 
     taipei = dt.timezone(dt.timedelta(hours=8))
     today = dt.date.fromisoformat(a.today) if a.today else dt.datetime.now(taipei).date()
-    cutoff = today - dt.timedelta(days=7)
+    cutoff = today - dt.timedelta(days=a.days)
     lines = open(a.file, encoding="utf-8").read().splitlines()
     err = []
 
@@ -55,6 +59,8 @@ def main():
         err.append(f"時間戳 {ts.group(1)} 沒有晚於上一版 {a.prev}")
     if not any("上一版：" in l and "整份重寫" in l for l in lines[:15]):
         err.append("表頭缺「上一版：PREV_TS｜本版：整份重寫」")
+    if not any(f"覆蓋期間：{cutoff}" in l for l in lines[:15]):
+        err.append(f"表頭「覆蓋期間」起日應為 CUTOFF {cutoff}（窗口 {a.days} 天）")
 
     # 2. 八大區各 1 次、順序固定
     heads = "".join(l[3] for l in lines if re.match(r"^## [一二三四五六七八]、", l))
@@ -62,20 +68,25 @@ def main():
         err.append(f"大區應為「{ZONES}」各 1 次且依序，實際為「{heads}」")
 
     # 3. 逐行掃描
-    zone, cur, items, top5, rumors, plans = None, None, [], [], [], []
+    zone, sub, cur, items, top5, fresh, rumors, plans = None, None, None, [], [], [], [], []
     zone_text = {z: [] for z in ZONES}
     for i, line in enumerate(lines, 1):
         if re.match(r"^\s*\|.*\|\s*$", line) or re.search(r"\|\s*:?-{3,}", line):
             err.append(f"第 {i} 行疑似 Markdown 表格")
         if line.startswith("## "):
             zone = line[3] if line[3] in ZONES else None
-            cur = None
+            sub, cur = None, None
             continue
+        if line.startswith("### "):
+            sub = line[4:7]
         if zone:
             zone_text[zone].append(line)
-        if zone == "一" and ITEM.match(line):
+        if zone == "一" and sub == "1.2" and ITEM.match(line):
             n = re.search(r"\*\*N(\d+)｜", line)
             top5.append(f"N{n.group(1)}" if n else "?")
+        elif zone == "一" and sub == "1.3" and line.startswith("- 🆕"):
+            n = re.search(r"\*\*N(\d+)｜", line)
+            fresh.append((i, int(n.group(1)) if n else None))
         elif zone == "二":
             if line.startswith("#"):
                 cur = None
@@ -83,7 +94,8 @@ def main():
                 n = re.search(r"\*\*N(\d+)｜\[(\d{2}-\d{2})\]", line)
                 lv = re.search(r"重要性：(HIGH|MEDIUM|LOW)", line)
                 sc = re.search(r"分數：(\d+)（幅(\d)\s*廣(\d)\s*急(\d)\s*險(\d)\s*注(\d)）", line)
-                cur = {"t": line.strip()[:50], "i": i, "n": n, "lv": lv, "sc": sc, "has": set(), "src": ""}
+                cur = {"t": line.strip()[:50], "i": i, "n": n, "lv": lv, "sc": sc, "has": set(), "src": "",
+                       "new": "🆕" in line, "cool": "（降溫）" in line}
                 items.append(cur)
             elif cur and (m := FIELD.match(line)):
                 cur["has"].add(m.group(1))
@@ -118,8 +130,16 @@ def main():
         if total != sum(parts):
             err.append(f"分數 {total} ≠ 分項加總 {sum(parts)}：{t}")
         lv = it["lv"].group(1)
-        if (lv == "HIGH" and total <= 3) or (lv == "LOW" and total >= 7):
+        if not it["cool"] and ((lv == "HIGH" and total <= 3) or (lv == "LOW" and total >= 7)):
             err.append(f"{lv} 卻 {total} 分，分級或分數有一個錯：{t}")
+        fu, urg = parts[0], parts[2]
+        if it["n"] and urg == 0 and (today - news_date(it["n"].group(2))).days > COOL_DAYS:
+            if lv == "HIGH" and fu <= 3:
+                err.append(f"已落幕超過 {COOL_DAYS} 天且幅 ≤ 3，HIGH 應降溫為 MEDIUM：{t}")
+            elif lv == "LOW" and not it["cool"]:
+                err.append(f"已落幕超過 {COOL_DAYS} 天的原始 LOW 應刪除（已落幕）：{t}")
+        if it["cool"] and lv == "HIGH":
+            err.append(f"標了降溫卻仍是 HIGH：{t}")
         it["key"] = (RANK[lv], -total)
         miss = "".join(c for c in NEED[lv] if c not in it["has"])
         if miss:
@@ -130,6 +150,17 @@ def main():
     for x, y in zip(ranked, ranked[1:]):
         if x["key"] > y["key"]:
             err.append(f"排序錯：{y['t']} 應排在 {x['t']} 之前")
+    over = sum(1 for it in ranked if it["key"][0] > 0)
+    if over > MAX_ITEMS:
+        err.append(f"第二區 MEDIUM＋LOW 共 {over} 則，超過上限 {MAX_ITEMS}（先合併同事件，再刪最低分 LOW）")
+    new_ids = {k for k, it in enumerate(items, 1) if it["new"]}
+    for i, k in fresh:
+        if k is None:
+            err.append(f"第 {i} 行 1.3 條目缺「N#｜」")
+        elif k not in new_ids:
+            err.append(f"1.3 列了 N{k}，但第二區該條沒有標 🆕")
+    for k in sorted(new_ids - {k for _, k in fresh}):
+        err.append(f"N{k} 標了 🆕，但沒有列在 1.3")
     want = [f"N{k}" for k in range(1, min(5, len(items)) + 1)]
     if top5 != want:
         err.append(f"1.2 應依序為 {want}，實際為 {top5}")
@@ -163,9 +194,9 @@ def main():
             err.append(f"第四區沒有列出持股 {name}")
 
     lv_count = {k: sum(1 for it in ranked if RANK[k] == it["key"][0]) for k in RANK}
-    print(f"TODAY {today}｜CUTOFF {cutoff}")
+    print(f"TODAY {today}｜CUTOFF {cutoff}（{a.days} 天）")
     print(f"二區 {len(items)} 則（HIGH {lv_count['HIGH']}／MEDIUM {lv_count['MEDIUM']}／LOW {lv_count['LOW']}）"
-          f"｜六區傳聞 {len(rumors)} 則｜五區項目 {len(plans)} 條")
+          f"｜🆕 {len(new_ids)} 則｜降溫 {sum(1 for it in items if it['cool'])} 則｜六區傳聞 {len(rumors)} 則｜五區項目 {len(plans)} 條")
     for e in err:
         print(" -", e)
     print(f"問題 {len(err)} 個")
