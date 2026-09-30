@@ -1,4 +1,4 @@
-/goal
+/goal /boost
 
 # 每週新聞與輿情掃描器（LatestNews）— Gemini / Claude 共用版
 
@@ -6,7 +6,7 @@
 >
 > **唯一輸出檔**：`gemini/LatestNewsResult.md`（整份覆寫；只保留 7 天內的新聞與輿情，超過 7 天的直接刪除）。
 >
-> **讀者**：使用者本人（台灣投資人，看繁體中文）＋下一輪執行的 AI（StockAnalysis / HkState / REIT Screener）。
+> **讀者**：初級股票分析師＋下一輪執行的 AI。
 >
 > **執行模式**：`/goal` 全自動。不中途向使用者提問；遇到錯誤記錄後繼續，一路做完 Step 0 → Step 8。
 >
