@@ -22,7 +22,7 @@
   - **股價為什麼便宜**：空租上升、利息變貴、物件老舊？
   - **利率壓力多大**：巡航殖利率與日本 10 年公債的利差、LTV、固定利率比率。
   - **管理費吃掉多少**：總費用率、運用報酬占 NOI、報酬與誰掛鉤。
-- **硬上限**：主結果檔 < 1000 行｜每個詳細檔 ≤ 1000 行｜每個 value ≤ 60 字｜修正紀錄只留最新 5 筆。
+- **硬上限**：主結果檔 ≤ 1000 行｜每個詳細檔 ≤ 1000 行｜每個 value ≤ 60 字｜修正紀錄只留最新 5 筆。
 - **repo**：本機 `d:\FinancialReport\`；GitHub `a9303001/FinancialReport`，分支 **`master`**（不可用 `main`）。
 - **總規則**：`AGENTS.md`。本機公司資料夾格式 `<代號><中文名>/`（例：`2971ES-CON日本REIT/`），存在就先讀本機再上網。
 
@@ -794,7 +794,7 @@ YYYY-MM-DD hh:mm:ss (UTC+8)
 
 格式：
 
-- [ ] 行數：主結果檔 < 1000、每個詳細檔 ≤ 1000（`wc -l`，或 PowerShell `(Get-Content <檔>).Count`）。
+- [ ] 行數：主結果檔 ≤ 1000、每個詳細檔 ≤ 1000（`wc -l`，或 PowerShell `(Get-Content <檔>).Count`）。
 - [ ] 零表格：`grep -nE '^\s*\|' JpReitScreenerResult/*.md`（PowerShell：`Select-String -Path JpReitScreenerResult\*.md -Pattern '^\s*\|'`）**沒有任何輸出**；也沒有 `<table>` 或假表格。
 - [ ] 修正紀錄只留最新 5 筆。
 - [ ] 只改了 `JpReitScreenerResult/`。
