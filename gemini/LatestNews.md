@@ -4,7 +4,9 @@
 
 > **一句話任務**：以本 repo 追蹤的公司與主題為準，蒐集「過去 7 天」與持股有關的新聞和社群輿情，查核真偽後寫入 `gemini/LatestNewsResult.md`，並列出「下一輪要深入分析的項目」。
 >
-> **唯一輸出檔**：`gemini/LatestNewsResult.md`（整份覆寫；只保留 7 天內的新聞與輿情，超過 7 天的直接刪除）。
+> **唯一輸出檔**：`gemini/LatestNewsResult.md`（只保留 7 天內的新聞與輿情，超過 7 天的直接刪除）。
+>
+> **🔁 每輪必做：整份重寫（Final Rewrite）**：每次執行本檔，**不論有沒有新新聞、不論搜尋成功或失敗**，結束前都必須把 `gemini/LatestNewsResult.md` **從頭到尾重新寫一份，整檔覆寫**（Step 6）。**禁止**在舊檔上局部修補、刪幾行、或把新內容接在後面。沒有重寫＝本輪沒做完。
 >
 > **讀者**：使用者本人（台灣投資人，看繁體中文）＋下一輪執行的 AI（StockAnalysis / HkState / REIT Screener）。
 >
@@ -24,6 +26,9 @@
   - 例：福耀 8/23 官網上架太陽能天窗、9/22 媒體再寫一次 → 新聞日期是 8/23，不是 9/22。
 - `持股清單`：`REPO_ROOT` 根目錄下所有「公司資料夾」（見 Step 1）。
 - `本地分析檔`：`<公司資料夾>/hourAnalysisResult.md`（第一行是更新時間戳，第 1 章有「一句話結論」與「本輪最重要的 3 件新事」）。
+- `舊檔`：本輪開始時的 `gemini/LatestNewsResult.md`。**只讀、不改**；它只是 Step 2 的輸入素材。
+- `PREV_TS`：舊檔第一行的時間戳（舊檔不存在就記為 `首輪`）。
+- `事件卡`：「一則一事」的暫存筆記（記在思考或 scratchpad，不寫進 repo），欄位：`日期｜標題｜內容與數字｜每股化｜多空｜重要性｜對應持股｜來源 URL｜狀態（保留／刪除／修正／新增）`。Step 6 只用事件卡來寫新檔。
 
 ---
 
@@ -40,6 +45,9 @@
 | 7 | **繁體中文**：專有名詞第一次出現附英文，如「日銀（BOJ）」；程式碼、路徑、代號維持原文 | — |
 | 8 | **輸出檔零表格**：`LatestNewsResult.md` 一律用條列（key-value），不用 Markdown 表格（手機好讀、模型好解析） | — |
 | 9 | **零阻塞**：網站被擋、逾時、額度用盡 → 換工具或換來源，全失敗就寫進「搜尋紀錄與缺口」，**繼續**下一項 | 停下 = 任務失敗 |
+| 10 | **每輪整份重寫**：`LatestNewsResult.md` 只能用「整檔覆寫」寫入（Claude `Write`；Gemini `write_to_file` 且 `Overwrite=true`），**一輪只寫一次、放在 Step 6**。嚴禁對它用 `Edit` / `replace_file_content` / 追加寫入（唯一例外：Step 6.1 第 5 步把第一行 `TIMESTAMP_PENDING` 換成時間戳） | 局部修補或追加 = 任務失敗 |
+| 11 | **重寫 ≠ 複製**：舊檔每一句都要重新判斷（日期、來源、重要性、每股化），重新組句後才寫進新檔；不可整段複製貼上。成品要像「今天第一次寫的週報」 | 疊加流水帳 = 任務失敗 |
+| 12 | **失敗也要重寫**：搜尋全被擋、時間不夠、某些 Step 跳過 → 仍必須完成 Step 6：留下仍在窗口內的舊事件、刪掉過期的、更新時間戳，並在「搜尋紀錄與缺口」寫明哪裡沒做 | 沒寫檔就結束 = 任務失敗 |
 
 ---
 
@@ -51,7 +59,8 @@
 | 列資料夾 | `list_dir` | `Glob` 或 `Bash ls` |
 | 讀檔 | `view_file` | `Read` |
 | 搜尋檔案內容 | `grep_search` | `Grep` |
-| 寫檔 | `write_to_file` / `replace_file_content` | `Write` / `Edit` |
+| 寫 `LatestNewsResult.md`（整檔覆寫） | `write_to_file`（`Overwrite=true`） | `Write` |
+| 改其他檔（例：本 prompt） | `replace_file_content` | `Edit` |
 | 網路搜尋 | `search_web` | `WebSearch` |
 | 讀網頁 | `read_url_content` | `WebFetch` |
 | 進階爬取（被擋時） | `call_mcp_tool`：Firecrawl → Bright Data → Apify → Playwright | 同名 MCP 工具（`mcp__firecrawl-mcp__*`、`mcp__brightdata__*`、`mcp__Apify__*`、`mcp__playwright__*`） |
@@ -68,14 +77,16 @@
 ```
 Step 0  取 TODAY / CUTOFF ＋ git pull
 Step 1  從 repo 建立「關注地圖」（我到底想看哪些新聞）
-Step 2  讀舊的 LatestNewsResult.md → 刪掉 < CUTOFF 的新聞與輿情
-Step 3  搜尋：宏觀 → 個股 → 社群輿情
-Step 4  查核：交叉驗證、對帳本地分析、標可信度
+Step 2  讀舊檔（只讀不改）→ 拆成事件卡 → 標出過期／待查／保留
+Step 3  搜尋：宏觀 → 個股 → 社群輿情（新增事件卡）
+Step 4  查核：交叉驗證、對帳本地分析、標可信度（更新事件卡）
 Step 5  產生「下一輪分析項目」
-Step 6  依固定格式整份重寫 LatestNewsResult.md
-Step 7  驗收（Definition of Done）
+Step 6  🔁 Final Rewrite：用事件卡整份重寫 LatestNewsResult.md（一次覆寫，時間戳最後蓋）
+Step 7  驗收（Definition of Done）→ 不過就回 Step 6 再整份重寫
 Step 8  git commit / push ＋ 精簡摘要
 ```
+
+> **時間不夠時的保底路徑**：Step 0 → Step 2 → Step 6 → Step 7 → Step 8。也就是說，就算一條新新聞都沒找到，也要把舊檔過期的刪掉、整份重寫、蓋新時間戳後交付。
 
 ---
 
@@ -84,6 +95,7 @@ Step 8  git commit / push ＋ 精簡摘要
 1. 實際執行指令取台北時間，得到 `TODAY` 與完整時間戳 `yyyy/MM/dd HH:mm:ss`。
 2. 算出 `CUTOFF = TODAY − 7 天`。
 3. `git pull`（Gemini 本機：`git pull origin master`；Claude 雲端：拉當前工作分支與 `origin master`）。衝突 → `git stash` → `pull` → `stash pop`；網路失敗重試 3 次（2s / 4s / 8s），仍失敗就記錄後**繼續**。
+4. **pull 之後**讀舊檔第一行，記為 `PREV_TS`（Step 6 表頭與 Step 7 驗收要用）。
 
 ---
 
@@ -157,17 +169,21 @@ Step 8  git commit / push ＋ 精簡摘要
 
 ---
 
-## Step 2 — 讀舊檔並刪除過期項目
+## Step 2 — 讀舊檔、拆成事件卡（只讀不改）
 
-1. 讀 `gemini/LatestNewsResult.md`（不存在就視為首輪）。
-2. 逐條檢查「重大事件」「宏觀」「個股新聞」「社群輿情」四區的每一條：
-   - 日期 **< CUTOFF** → **直接刪除**（不搬家、不封存）。
-   - 沒有日期、日期只寫「9 月」「持續」→ 查出確切日期；查不到就刪。
-   - 日期寫錯（例：把 9/18 的日銀決議寫成 9/24）→ 以正確日期重新判斷去留。
-3. 「下一輪分析項目」：
-   - 本地分析檔的時間戳已晚於該項目建立日，且內容已涵蓋 → 視為完成，刪除。
-   - 建立日 < CUTOFF 且這週沒有新證據 → 刪除；有新證據 → 更新建立日與觸發原因後保留。
-4. 「未來 14 天關鍵日曆」：已過的日期刪除，其餘保留。
+> 這一步**不動檔案**。舊檔只是素材；過期項目「不寫進新檔」就等於刪除，全部在 Step 6 一次完成。
+
+1. 從頭到尾讀完舊檔（不存在就視為首輪，跳到 Step 3）。**不可只讀前幾段**。
+2. 把「一、四、五、六」區的每一條拆成事件卡，逐張判定狀態：
+   - 日期 **< CUTOFF** → `刪除（過期）`（不搬家、不封存）。
+   - 沒有日期、日期只寫「9 月」「持續」→ 查出確切日期；查不到 → `刪除（無日期）`。
+   - 日期寫錯（例：把 9/18 的日銀決議寫成 9/24）→ `修正`，以正確日期重新判斷去留。
+   - 日期 ≥ CUTOFF → `保留（待 Step 4 複查）`；Step 3 若找到更新的後續，合併成一張卡、保留最新來源。
+3. 「二、下一輪分析項目」：
+   - 本地分析檔的時間戳已晚於該項目建立日，且內容已涵蓋 → `刪除（已完成）`。
+   - 建立日 < CUTOFF 且這週沒有新證據 → `刪除（過期）`；有新證據 → 更新建立日與觸發原因後保留。
+4. 「三、未來 14 天關鍵日曆」：已過的日期 → `刪除`；其餘保留，並把窗口改成 `TODAY+1 ～ TODAY+14` 重新補齊。
+5. 每一張 `刪除`／`修正` 卡都要留一行理由，Step 6 寫進「七、本輪刪除與修正紀錄」。
 
 ---
 
@@ -258,9 +274,23 @@ Step 8  git commit / push ＋ 精簡摘要
 
 ---
 
-## Step 6 — 輸出格式（`gemini/LatestNewsResult.md`，整份覆寫）
+## Step 6 — 🔁 Final Rewrite：整份重寫 `gemini/LatestNewsResult.md`
 
-> 第一行必須是真實時間戳，接著照下面的骨架寫。每一區都要有內容；該區真的沒東西就寫「本週無」並說明原因。**全檔不使用表格。**
+> **每輪必做，沒有例外。** 定義：**重寫（rewrite）≠ 修補（patch）≠ 重排（rearrange）**。不是在舊檔上刪幾行、也不是把段落搬位置，而是用事件卡**重新寫出一整份新檔，再一次覆寫舊檔**。
+
+### 6.1 重寫五步驟
+
+1. **收齊事件卡**：Step 2（舊檔保留／修正）＋ Step 3（新增）＋ Step 4（查核結果）＋ Step 5（下一輪項目）。狀態為 `刪除` 的卡不寫進正文，只寫進第七區。
+2. **重新排序**：各區內依「重要性 HIGH → MEDIUM → LOW」，同級再依日期新 → 舊。第一區「本週最重要 5 件事」**每輪重選**，不可沿用上一版的 5 件。
+3. **重新寫句子**：每張卡重新組句；數字重新對一次來源，金額**重新每股化**（股數可能已變，不沿用上一版每股數字）。上一版殘留的表格、錯字、模糊日期一律在這一步修掉。
+4. **一次覆寫**：在記憶體／草稿中組好**完整全文**，用 Claude `Write`／Gemini `write_to_file`（`Overwrite=true`）**寫一次**。第一行先放佔位字串 `TIMESTAMP_PENDING`。
+5. **最後蓋時間戳**：全文寫好後才實際執行指令取台北時間，把第一行的 `TIMESTAMP_PENDING` 換成 `YYYY/MM/DD HH:MM:SS (UTC+8)`（這是本輪唯一允許的局部修改）。時間戳必須晚於 `PREV_TS`。
+
+> 首輪（沒有舊檔）也照這五步走；第七區寫「首輪，無」。
+
+### 6.2 輸出骨架
+
+> 第一行必須是真實時間戳，接著照下面的骨架寫。「一～八」八個大區**每區只出現一次**、順序固定；該區真的沒東西就寫「本週無」並說明原因。**全檔不使用表格。**
 
 ```markdown
 YYYY/MM/DD HH:MM:SS (UTC+8)
@@ -269,8 +299,9 @@ YYYY/MM/DD HH:MM:SS (UTC+8)
 
 > 覆蓋期間：CUTOFF ～ TODAY（只保留這 7 天，較舊的已刪除）
 > 追蹤持股：N 檔（港 a／日 b／台 c／美 d）｜宏觀主題：M 項
-> 本輪刪除過期項目：K 條｜本輪修正錯誤：J 條
-> ⚠️ 自動化產出，投資前請回原始來源核實。
+> 本輪刪除過期項目：K 條｜本輪修正錯誤：J 條｜本輪新增：X 條
+> 上一版：PREV_TS｜本版：整份重寫（Final Rewrite）
+> 產出規則：`gemini/LatestNews.md`｜⚠️ 自動化產出，投資前請回原始來源核實。
 
 ## 一、30 秒看完：本週最重要 5 件事
 - 🔴/🟢/⚪ **[MM-DD] 標題**｜影響：<代號>｜一句話：<對 EPS／配息／估值的影響>
@@ -326,23 +357,57 @@ YYYY/MM/DD HH:MM:SS (UTC+8)
 
 ---
 
-## Step 7 — 驗收（Definition of Done，不過就修）
+## Step 7 — 驗收（Definition of Done）
 
-- [ ] 第一行是真實系統時間戳（不是整點、不是猜的）
+> 任何一項不過 → **回 Step 6 整份重寫**（不是用 Edit 補那一行），再從頭驗收一次。
+
+### 7.1 重寫驗收（每輪必過）
+
+- [ ] 第一行是真實系統時間戳（不是整點、不是猜的），且**晚於 `PREV_TS`**；檔內找不到 `TIMESTAMP_PENDING`
+- [ ] 表頭有「上一版：PREV_TS｜本版：整份重寫」一行
+- [ ] `## 一、` ～ `## 八、` 八個大區各出現**剛好 1 次**、順序正確（沒有把新內容接在舊檔後面造成重複區塊）
+- [ ] `git diff --stat gemini/LatestNewsResult.md` 有變動（至少時間戳與覆蓋期間變了）
+- [ ] 舊檔中日期 < `CUTOFF` 的條目，新檔一條都沒有，且都列在第七區
+
+可直接執行的檢查指令（擇一）：
+
+```bash
+# Claude / Linux
+F=gemini/LatestNewsResult.md
+head -1 "$F"; grep -c TIMESTAMP_PENDING "$F"                          # 時間戳；應為 0
+for n in 一 二 三 四 五 六 七 八; do printf "%s:" "$n"; grep -c "^## $n、" "$F"; done   # 每區應為 1
+grep -nE '^\s*\|.*\|\s*$|\|\s*:?-{3,}' "$F" | wc -l                      # 表格；應為 0
+grep -oE '\[[0-9]{2}-[0-9]{2}\]' "$F" | sort -u                          # 列出所有日期，逐一對 CUTOFF
+```
+
+```powershell
+# Gemini / Windows
+$F = "gemini\LatestNewsResult.md"
+Get-Content $F -TotalCount 1; (Select-String -Path $F -Pattern "TIMESTAMP_PENDING").Count
+"一","二","三","四","五","六","七","八" | % { "$_:" + (Select-String -Path $F -Pattern "^## $_、").Count }
+(Select-String -Path $F -Pattern '^\s*\|.*\|\s*$|\|\s*:?-{3,}').Count
+Select-String -Path $F -Pattern '\[\d{2}-\d{2}\]' -AllMatches | % { $_.Matches.Value } | Sort-Object -Unique
+```
+
+> 跨年時（例：`CUTOFF = 12-28`、`TODAY = 01-04`）`MM-DD` 不能直接比大小，要補上年份再判斷。
+
+### 7.2 內容驗收
+
 - [ ] 第四～六區每條新聞的日期都 ≥ `CUTOFF`（逐條檢查一次）
 - [ ] 每條新聞都有 URL 或本地檔案路徑
 - [ ] 每則個股新聞都有 🟢/🔴/⚪ 與影響說明
 - [ ] 公司層級金額已每股化，或寫明無法每股化的原因
 - [ ] 「下一輪待分析項目」至少 5 條，且每條都有「觸發／交給／要回答／建立日」
 - [ ] 「本輪刪除與修正紀錄」有寫（首輪可寫「首輪，無」）
-- [ ] 全檔沒有 Markdown 表格（搜尋 `|---` 或 `|:-` 應為 0）
+- [ ] 全檔沒有 Markdown 表格（7.1 表格檢查應為 0）
 - [ ] 持股清單每一間公司都有出現（有新聞或列在「本週無新聞」）
+- [ ] 表頭的 K／J／X 條數，和第七區、正文實際條數一致
 
 ---
 
 ## Step 8 — 交付
 
-1. `git add gemini/LatestNewsResult.md`（有改 prompt 才加 `gemini/LatestNews.md`）
+1. `git add gemini/LatestNewsResult.md`（每輪都一定有變動，因為每輪都整份重寫；有改 prompt 才加 `gemini/LatestNews.md`）
 2. commit 訊息：`LatestNews: YYYY-MM-DD weekly scan (CUTOFF ~ TODAY)`
 3. push：Gemini 本機 → `git push origin master`；Claude 雲端 → 推到當前指定的工作分支。失敗重試 3 次（2s / 4s / 8s）。
 4. 在對話中輸出精簡摘要：
@@ -350,6 +415,7 @@ YYYY/MM/DD HH:MM:SS (UTC+8)
 ```
 ✅ LatestNews — YYYY-MM-DD HH:MM
 - 覆蓋：CUTOFF ～ TODAY｜新聞 X 條｜輿情 Y 條｜刪除過期 K 條｜修正 J 條
+- 重寫：✅ LatestNewsResult.md 已整份重寫（上一版 PREV_TS → 本版 YYYY/MM/DD HH:MM:SS）
 - 本週最重要：① … ② … ③ …
 - 下一輪 P0：…
 - Git：✅ 已 push <分支>
