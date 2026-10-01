@@ -137,6 +137,17 @@ graph TD
 | LIHKG | `lihkg.com` | `api_v2/thread/search` 回 `error_code 5`；Bright Data 需 KYC | 2026-09-23 實測：Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time` 可讀。2026-09-30 於 02633 補充：頁面有時不渲染結果，改用 `browser_network_request` 讀頁面自己發出的 `api_v2/thread/search` 回應即可；在頁內自行 `fetch` 該 API 仍回 error 5（缺前端簽章）。注意 `browser_network_request` 的 `filename` 只能寫在 repo 目錄內，存完須移出 repo |
 | yfinance 新聞（港股冷門股）| `get_yahoo_finance_news` | 無封鎖，但會以英文名關鍵字誤配（2026-09-30 於 02633 實測：「Jacobson」配到 GM 財務長 Paul Jacobson 的新聞）| 結果須逐則核對是否真與該公司相關，不相關一律捨棄 |
 | Reddit（Apify 額度用盡時）| `reddit.com` | Playwright 開 old.reddit 回 403＋登入導向；`search.json` 回 403 | Apify 不可用時目前無可行替代，只能以 Bright Data `search_engine` 取索引並註明 |
+| Yahoo 株つぶやき（J-REIT）| `finance.yahoo.co.jp/quote/{代碼}.T/post` | 2026-10-01 實測：J-REIT（2971.T、8951.T）回 **404**，REIT 頁面本來就沒有つぶやき分頁（一般股如 4979.T 正常 200）| 不是封鎖，不必跑 MCP 鏈；J-REIT 抓 X 直接用 `firecrawl_search` + `site:x.com`。索引摘要沒有時間戳時，可從網址的 status ID 還原真實發文時間：`((id >> 22) + 1288834974657)` 毫秒（snowflake），不必臆測 |
+| Yahoo JP 掲示板 | `finance.yahoo.co.jp/quote/{代碼}.T/forum` | 無（SSR）| 2026-10-01 實測：`curl` 帶瀏覽器 UA 一次取回約 50 則貼文；每則有獨立網址 `/forum/{No}`、精確到分鐘的時間與投票數，不需 MCP |
+| 株探 | `kabutan.jp` | 先前回 403，2026-10-01 實測未再出現 | `curl` 帶瀏覽器 UA 可讀個股頁（含每週信用餘額）與 `/stock/news?code=`；開示頁只是外殼，PDF 實際在 `https://tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf` |
+| みんかぶ | `minkabu.jp/stock/{代碼}` | `curl` 回 403 | 改用 `firecrawl_scrape` 可讀。注意：J-REIT 的目標株価／診斷顯示「対象外」，不能當 §5.1 的空方量化對照 |
+| JAPAN-REIT.COM | `japan-reit.com/meigara/{代碼}/`、`/topic/{yyyy}/{id}` | 無（SSR）| J-REIT 殖利率／NAV 排名與每期決算評論，`curl` 可讀；`/news/` 回 404，改用 `/topic/` 或 `/release/` |
+| note | `note.com` | `api/v3/searches` 回 403；搜尋頁用 curl 只拿到 JS 外殼 | 用 `firecrawl_scrape` 抓 `note.com/search?q=…&context=note&mode=search&sort=new`（`waitFor: 3000`）取得列表；單篇文章 `curl` 可讀，發文時間在 JSON-LD 的 `datePublished` |
+| 雪球（A 股代碼頁空白時）| `xueqiu.com/S/SH601318` | 2026-10-01 實測：Bright Data 回空白，同公司港股頁 `/S/02318` 卻成功 | 雙重上市公司的 A 股頁、H 股頁可互為備援。討論流顯示相對時間（如「昨天 HH:MM」），要以單篇頁的「发布于 YYYY-MM-DD HH:MM」校準；單篇長文 Bright Data 回空白時，改用 `firecrawl_scrape`（`proxy: stealth`）可成功 |
+| AAStocks 新聞內文（補充）| `aastocks.com/tc/stocks/analysis/stock-aafn-con/{代碼}/{來源}/{ID}/hk-stock-news` | 無 | 2026-10-01 實測：正文就在 SSR HTML 裡，`curl` 可取全文（`og:description` 只有約 50 字會截斷）；頁頭另附沽空金額與沽空比率 |
+| 新浪財經內文 | `finance.sina.com.cn`、`t.cj.sina.cn` | 2026-10-01 本環境 proxy 回 `ws_closed_mid_exchange`（列表頁 `stock.finance.sina.com.cn` 正常）| 屬 §2.5 純網路錯誤，零重試，只引用列表標題；可能是暫時性，下次再觀察 |
+| 富途 `/news` 列表連結 | `futunn.com/hk/stock/{代碼}-HK/news` | 無 | 很多項目只連到騰訊通用殼頁 `gu.qq.com/resources/shy/news/detail-v2/index.html`（沒有文章 ID），只有部分是 `news.futunn.com/hk/post/{id}`；解析時用 `li.news-item` 的 `news-title`、`news-source` 和時間 span |
+| ESCON 日本 REIT 英文 IR | `escon-reit.jp/en/ir/library.html` | 無 | 「Asset Management Reports」欄是完整英文 Semi-Annual Report（含經審計財報），沒有 cid 問題，是 2971 年報的最佳來源 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
