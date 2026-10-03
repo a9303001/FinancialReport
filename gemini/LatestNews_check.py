@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """LatestNewsResult.md 機械驗收（規則見 gemini/LatestNews.md Step 7）。
 
+檢查範圍：表頭（時間戳／覆蓋期間／匯率）、八大區結構、零表格、1.1 短句、排行榜
+（編號、日期、分級、分數、欄位、排序、降溫、篇幅）、⑤ 每股化、港股每股港幣化、
+傳聞日期、下一輪項目、第四區持股完整。
+
 用法（在 REPO_ROOT 執行）：
     python gemini/LatestNews_check.py --today 2026-09-30 --prev "2026/09/30 23:41:07"
     --today 省略 = 取台北今天；--prev 省略 = 不檢查「晚於上一版」；--file 可指定其他檔；
@@ -23,6 +27,13 @@ COOL_DAYS = 14                                              # 超過幾天且「
 ITEM = re.compile(r"^- (?:🔴|🟢|⚪)")                     # 排行榜條目的標題行
 FIELD = re.compile(r"^\s+- \*\*([①-⑩])")                  # W3 欄位行
 P_ITEM = re.compile(r"^- \*\*(P[012])｜")                  # 下一輪項目
+HK_CODE = re.compile(r"(?<![\d.,])(?:0\d{4}|87001)(?![\d])")   # 港股代號（5 位數）
+HOLD = re.compile(r"^\s+- (?:\*\*)?([0-9A-Z][0-9A-Z\-]*)")     # ⑤ 子條目開頭的持股代號
+# 每股／每單位／每口 後面接的金額與幣別（只抓「每X 數字 幣別」這種寫法）
+PS_CCY = re.compile(r"每(?:股|單位|口)[^0-9＋+−\-\n]{0,6}[＋+−\-]?\s*\d[\d.,]*"
+                    r"(?:\s*[~～]\s*[＋+−\-]?\d[\d.,]*)?\s*(HKD|港元|港幣|RMB|CNY|人民幣|元)")
+PS_OK = re.compile(r"每(?:股|單位|口)|無法量化|未每股化|影響可忽略")
+HKD = re.compile(r"HKD|港元|港幣")
 
 
 def main():
@@ -59,6 +70,8 @@ def main():
         err.append(f"時間戳 {ts.group(1)} 沒有晚於上一版 {a.prev}")
     if not any("上一版：" in l and "整份重寫" in l for l in lines[:15]):
         err.append("表頭缺「上一版：PREV_TS｜本版：整份重寫」")
+    if not any("匯率：" in l and HKD.search(l) for l in lines[:15]):
+        err.append("表頭缺「匯率：1 USD = X HKD｜1 RMB = X HKD…（日期、來源）」")
     if not any(f"覆蓋期間：{cutoff}" in l for l in lines[:15]):
         err.append(f"表頭「覆蓋期間」起日應為 CUTOFF {cutoff}（窗口 {a.days} 天）")
 
@@ -81,6 +94,8 @@ def main():
             sub = line[4:7]
         if zone:
             zone_text[zone].append(line)
+        if zone == "一" and sub == "1.1" and line.startswith("- ") and len(line) > 90:
+            err.append(f"第 {i} 行 1.1 句子太長（{len(line)} 字，上限 90）：三句話要白話、短句、最多 1–2 個數字")
         if zone == "一" and sub == "1.2" and ITEM.match(line):
             n = re.search(r"\*\*N(\d+)｜", line)
             top5.append(f"N{n.group(1)}" if n else "?")
@@ -95,12 +110,20 @@ def main():
                 lv = re.search(r"重要性：(HIGH|MEDIUM|LOW)", line)
                 sc = re.search(r"分數：(\d+)（幅(\d)\s*廣(\d)\s*急(\d)\s*險(\d)\s*注(\d)）", line)
                 cur = {"t": line.strip()[:50], "i": i, "n": n, "lv": lv, "sc": sc, "has": set(), "src": "",
-                       "new": "🆕" in line, "cool": "（降溫）" in line}
+                       "new": "🆕" in line, "cool": "（降溫）" in line, "lines": [(i, line)], "f5": [], "fld": None}
                 items.append(cur)
             elif cur and (m := FIELD.match(line)):
                 cur["has"].add(m.group(1))
+                cur["fld"] = m.group(1)
+                cur["lines"].append((i, line))
                 if m.group(1) == "⑩":
                     cur["src"] = line
+                if m.group(1) == "⑤" and line.split("：", 1)[-1].strip():
+                    cur["f5"].append((i, line))           # ⑤ 寫在同一行（LOW 常見）
+            elif cur and line.strip():
+                cur["lines"].append((i, line))
+                if cur["fld"] == "⑤" and line.startswith("    "):
+                    cur["f5"].append((i, line))           # ⑤ 的逐檔子條目
         elif zone == "五" and (m := P_ITEM.match(line)):
             cur = {"t": line.strip()[:50], "has": set()}
             plans.append(cur)
@@ -164,6 +187,28 @@ def main():
     want = [f"N{k}" for k in range(1, min(5, len(items)) + 1)]
     if top5 != want:
         err.append(f"1.2 應依序為 {want}，實際為 {top5}")
+
+    # 4b. 每股化與港股港幣化（W5）
+    for it in items:
+        t = it["t"]
+        for i, line in it["f5"]:
+            if not PS_OK.search(line):
+                err.append(f"第 {i} 行 ⑤ 沒有每股影響（要寫「每股／每單位／每口 ±X 幣別」，"
+                           f"或「無法量化：原因」「影響可忽略：原因」）：{line.strip()[:40]}")
+        codes = [m.group(1) for _, l in it["f5"] if (m := HOLD.match(l))]
+        it["hk_only"] = bool(codes) and all(HK_CODE.fullmatch(c) for c in codes)
+    hk_lines = [(i, l, it["hk_only"]) for it in items for i, l in it["lines"]]
+    seen = {i for i, _, _ in hk_lines}
+    hk_lines += [(i, l, False) for i, l in enumerate(lines, 1) if i not in seen]
+    for i, line, hk_only in hk_lines:
+        if not (hk_only or HK_CODE.search(line)):
+            continue
+        for m in PS_CCY.finditer(line):
+            ccy = m.group(1)
+            if ccy in ("RMB", "CNY", "人民幣") and not HKD.search(line[:m.start()]):
+                err.append(f"第 {i} 行港股每股金額以人民幣為主，應改成「每股 X HKD（原始 Y RMB，匯率）」：{m.group(0)}")
+            elif ccy == "元" and not HKD.search(line[:m.start()]):
+                err.append(f"第 {i} 行港股每股金額幣別不明（只寫「元」），應寫 HKD：{m.group(0)}")
 
     # 5. 傳聞區日期
     for i, line in rumors:
