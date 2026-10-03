@@ -148,6 +148,10 @@ graph TD
 | 新浪財經內文 | `finance.sina.com.cn`、`t.cj.sina.cn` | 2026-10-01 本環境 proxy 回 `ws_closed_mid_exchange`（列表頁 `stock.finance.sina.com.cn` 正常）| 屬 §2.5 純網路錯誤，零重試，只引用列表標題；可能是暫時性，下次再觀察 |
 | 富途 `/news` 列表連結 | `futunn.com/hk/stock/{代碼}-HK/news` | 無 | 很多項目只連到騰訊通用殼頁 `gu.qq.com/resources/shy/news/detail-v2/index.html`（沒有文章 ID），只有部分是 `news.futunn.com/hk/post/{id}`；解析時用 `li.news-item` 的 `news-title`、`news-source` 和時間 span |
 | ESCON 日本 REIT 英文 IR | `escon-reit.jp/en/ir/library.html` | 無 | 「Asset Management Reports」欄是完整英文 Semi-Annual Report（含經審計財報），沒有 cid 問題，是 2971 年報的最佳來源 |
+| HKEX 權益披露 (DI) | `di.hkex.com.hk` | 無（SSR）| 2026-10-03 於 01426 實測：`curl` 可讀。入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼代碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` 列出全部通知 → 明細在 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。用來核實「大股東增持 X 股」類新聞最準；注意交易代碼 3104「Services」是以單位支付酬金，不是董事自掏腰包買進 |
+| 富途 `/news`（補充）| `futunn.com/hk/stock/{代碼}-HK/news` | 無 | 2026-10-03 實測：約 2026-09-21 起 post ID 由 79xxxxxx 變成 10 碼 1000xxxxxx；智通的回購快訊偶爾漏日（01426 漏 09-17），要與 HKEX 翌日披露報表交叉核對 |
+| 新浪財經內文（追蹤）| `finance.sina.com.cn` | 2026-10-03 仍回 `Connection reset` / `ws_closed_mid_exchange` | 連兩次（10-01、10-03）失敗，視為持續性問題而非偶發；只引用列表頁標題 |
+| yfinance 新聞（港股 REIT）| `get_yahoo_finance_news` | 1426.HK 回「No news found」| 冷門港股 REIT 不必依賴此來源 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
