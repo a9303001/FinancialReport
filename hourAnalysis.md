@@ -16,11 +16,14 @@
 # 個股分析2
 <OUTPUT_FILENAME>` : hourAnalysisResult.md
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
-- `COMPANY_NAME`：2971ES-CON日本REIT
-- `MARKET`：日股
-- `COMPANY_FOLDER`：2971ES-CON日本REIT
+- `COMPANY_NAME`：1521大億
+- `MARKET`：台股
+- `COMPANY_FOLDER`：1521大億
 - `EXTRA_ANALYSIS`：
-1.物件都在哪裡?市中心嗎？
+  1. 跟小系製造所關係
+  2. 吳家未來還會繼續經驗大億嗎？
+  3. 經營權交給小系製造所後，EPS還會弱化嗎？毛利率會變低嗎？
+  4. 為什麼EPS從2019高峰掉到2026 1.X
 
 
 
