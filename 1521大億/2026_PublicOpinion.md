@@ -18,6 +18,16 @@
 - 2026-09-22 MoneyDJ〈大億營收動能回溫，Q4迎國瑞銷日新車款〉：上半年營收年增 14.43%（北美回溫），Q3 美國車廠訂單放緩；取得國瑞回銷日本 Toyota NOAH／VOXY 燈具訂單，9 月小量出貨、10 月放量；油價飆漲推升原料成本、短期難完全轉嫁，北美客戶年度議價；北美約佔營收三成、國內五成以上；美國對等關稅影響逐漸淡化（客戶取得稅額抵減）；明年營收有成長空間、淨利率期望維持今年水準。來源：https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=c9b44575-3566-42d6-98e8-1111d86494d2
 - 國瑞觀音廠 2026-10 起生產 Toyota Noah／Voxy 回銷日本，初期年產約 3 萬輛，日經報導上看 10 萬輛。來源：U-CAR 2026-05-25 https://news.u-car.com.tw/news/article/87714 、TVBS https://cars.tvbs.com.tw/car-news/322850
 
+## 北美 Stellantis 與 Marelli 破產（EXTRA 9 資料，2026-10-04 補）
+- 2025-06-24 中央社〈大億：第2季匯損難免 今年拚轉單和新訂單助攻〉：總經理莊智清稱「某些外國燈具供應商經營困難，大億有機會爭取部分轉單效應」；北美市場燃油車新應用預期 2026 下半年至 2027 年推出；美國約佔營收三成、台灣約七成；已在底特律設發貨倉庫；稼動率約七成、無海外擴廠計畫；關稅爭取由客戶負擔。來源：https://www.cna.com.tw/news/afe/202506240035.aspx
+- Marelli Holdings（前 Magneti Marelli，FCA 前子公司）2025-06-11 聲請美國 Chapter 11；Stellantis 為其全球最大客戶與最大非銀行債權人（約 4.54 億美元）。2026-09-02 報導：FCA US 向 Delaware 破產法院提出有限異議，要求先確定供貨協議（OEM Accommodation Agreements）；揭露文件聽證 2026-09-08。來源：https://www.clubalfa.it/en/stellantis-steps-into-marelli-restructuring-as-chapter-11-deal-remains-unresolved-44270 、https://www.cbtnews.com/tariffs-debt-push-stellantis-and-nissan-supplier-into-bankruptcy/
+- NHTSA 召回文件顯示 Marelli North America／Automotive Lighting North America 供應 2026 Ram 1500 高階頭燈、2021 Jeep Grand Cherokee L 頭燈（21V-950）、Jeep 尾燈（22E-062）。
+- 2025 年財經媒體：大億外銷成長動力主要來自 Stellantis 的「小燈及霧燈」訂單。
+
+## 歷史背景（FCA 小燈，2018–2019）
+- 2018-10-29 中時：北美 FCA 是「在小糸的支持下」拓展；當時大億在 FCA 滲透率「還不到 2 成」，目標切入霧燈與後燈。來源：https://www.chinatimes.com/realtimenews/20181029003498-260410
+- 2019-06-17／19 工商時報、Yahoo：北美 FCA 新增兩款車型小燈訂單；大億佔北美 FCA 小燈供應比重三～四成；小燈改用高單價 LED 比率提升。來源：https://www.ctee.com.tw/news/20190619700054-430298
+
 ## 歷史背景（對小糸日本出貨合約終止，2024-03）
 - 2024-03-26 工商時報〈甩日圓貶值虧損 大億回銷日本燈具3／31到期不再續約〉：回銷日本產品因日幣持續貶值「大都為負利潤」，改由福州小糸大億承製；公司估月營收約減 12.81%，單月 EPS 反增約 0.33%；小糸撤回前一年基本交易契約爭議之強制執行案。來源：https://www.ctee.com.tw/news/20240326701966-430503
 - 鏡週刊 2023-12-01：日圓兌新台幣由約 0.30 貶到 0.21（約 −30%）；「日方手中握有技術與訂單」。來源：https://www.mirrormedia.mg/story/20231201fin009
