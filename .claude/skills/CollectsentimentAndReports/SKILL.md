@@ -152,6 +152,10 @@ graph TD
 | 富途 `/news`（補充）| `futunn.com/hk/stock/{代碼}-HK/news` | 無 | 2026-10-03 實測：約 2026-09-21 起 post ID 由 79xxxxxx 變成 10 碼 1000xxxxxx；智通的回購快訊偶爾漏日（01426 漏 09-17），要與 HKEX 翌日披露報表交叉核對 |
 | 新浪財經內文（追蹤）| `finance.sina.com.cn` | 2026-10-03 仍回 `Connection reset` / `ws_closed_mid_exchange` | 連兩次（10-01、10-03）失敗，視為持續性問題而非偶發；只引用列表頁標題 |
 | yfinance 新聞（港股 REIT）| `get_yahoo_finance_news` | 1426.HK 回「No news found」| 冷門港股 REIT 不必依賴此來源 |
+| 5ch 討論串內文 | `*.5ch.io/test/read.cgi/{板}/{串ID}/` | 無封鎖，但頁面是 **Shift_JIS**，直接當 UTF-8 解析會整頁亂碼 | 2026-10-04 於 9435 實測：`find.5ch.net/search?q={公司名}` 列表為 UTF-8、`curl` 可讀（含板名、最後書込時間、レス數）；單串內文 `curl` 後要用 `decode('cp932')`。注意 ニュース速報+／嫌儲 的串標題常誇大，要回頭比對 1 樓轉貼的原始新聞 |
+| Yahoo 株つぶやき（社名是常見名詞時）| `finance.yahoo.co.jp/quote/9435.T/post` | 無封鎖，但 Yahoo 以社名關鍵字聚合 | 2026-10-04 實測：「光通信」同時是「光通訊」產業詞，20 則幾乎全是 フジクラ、古河電工 等無關貼文，且混入假的「株式分割」消息。社名是一般名詞的公司要逐則核對，必要時改抓掲示板 `/forum` 為主 |
+| 東洋経済オンライン | `toyokeizai.net/articles/-/{id}` | 無（SSR）| 2026-10-04 實測：`curl` 可取前段公開文字與 JSON-LD `datePublished`；後段付費內容取不到，屬付費牆非封鎖，不必跑 MCP 鏈 |
+| 株探 開示 PDF 清單 | `kabutan.jp/stock/news?code={代碼}&nmode=3` | 無 | 2026-10-04 實測：`nmode=3` 只列開示，可直接找到決算短信（含英文版）的 `disclosures/pdf/{yyyymmdd}/{id}/`，PDF 實體在 `tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf`。日股找季報最快路徑 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
