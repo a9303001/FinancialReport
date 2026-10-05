@@ -1,4 +1,4 @@
-2026/10/05 13:26:49 (UTC+8)
+2026/10/05 13:35:54 (UTC+8)
 
 # 近 30 天新聞與輿情掃描（LatestNews）
 
@@ -8,7 +8,7 @@
 > 本輪刪除：1 條（日程到期 1）｜本輪修正：18 條（全檔追蹤持股清單擴充至 33 檔並更新 10/05 最新收盤價與即期匯率、N2 湧盛確認競拍投標自明日 10/06 展開並列出完整時程、N4 整合 OPEC+ 10/4 會議決議維持產量配額不變與布蘭特 101.51 美元即期行情、N5 大億日商小糸採購主管黑津彰久兼任副總經理全面掌舵與國瑞訂單放量、N7 美非農降溫激勵亞股 10/05 反彈、N9 光通信 9 月自社株買回 6.59 億 JPY 與 Leopalace21 爭議、N13 UHS OBBBA 法案 Medicaid 新制與退保逆風、N16 2971 10/05 股價收 100,800 円破底與融資買殘高掛、N26 3445RS 股價反彈至 6,530 円且對帳 10/05 分析檔 39.1% 持分與 SGRS 虧損拖累、日曆區間平移至 10/06～10/19、更新 1.1/1.2/1.3 導讀、對帳全檔持股每股基準與交叉引用、以 /boost /goal 雙參數完成深度覆核與 Final Rewrite）
 > 匯率：1 USD = 7.8469 HKD｜1 RMB = 1.1697 HKD｜1 USD = 157.98 JPY｜1 USD = 31.81 TWD（2026-10-05 即期報價，yfinance HKD=X、CNYHKD=X、JPY=X、TWD=X）
 > 每股化規則：港股每股一律 HKD（原幣放括號）｜日股 JPY｜台股 TWD（寫「元」）｜美股 USD｜股數見第四區各檔「每股基準」
-> 上一版：2026/10/05 13:06:00 (UTC+8)｜本版：整份重寫（Final Rewrite）
+> 上一版：2026/10/05 13:26:49 (UTC+8)｜本版：整份重寫（Final Rewrite）
 > 產出規則：`gemini/LatestNews.md`｜⚠️ 自動化產出，投資前請回原始來源核實。
 
 ## 一、30 秒看完
@@ -913,9 +913,7 @@
 
 
 ## 八、搜尋紀錄與缺口
-- 使用工具：
-un_command（Get-Date, git, python）、search_web（Yahoo Finance、Google Search、TradingEconomics、BigGo、工商時報、MoneyDJ、Argus Media、ClubAlfa、OPEC+ 官方決議、KFF、Health Affairs、MOPS、台灣證券交易所）、
-iew_file（本地 hourAnalysisResult.md、PublicOpinion.md、LatestNews.md）、yfinance（匯率與商品行情）。
+- 使用工具：run_command（Get-Date, git, python）、search_web（Yahoo Finance、Google Search、TradingEconomics、BigGo、工商時報、MoneyDJ、Argus Media、ClubAlfa、OPEC+ 官方決議、KFF、Health Affairs、MOPS、台灣證券交易所）、view_file（本地 hourAnalysisResult.md、PublicOpinion.md、LatestNews.md）、yfinance（匯率與商品行情）。
 - 被擋／失敗：無重大阻塞，網絡搜尋與本地檔案讀取均順暢。
 - 匯率來源：yfinance 2026-10-05 最新即期報價（1 USD = 7.8469 HKD、1 RMB = 1.1697 HKD、1 USD = 157.98 JPY、1 USD = 31.81 TWD，HKD=X、CNYHKD=X、JPY=X、TWD=X），依規則全檔維持統一最新基準匯率。
 - 缺口補搜：無缺口（上一版覆蓋起日 2026-09-05 早於或等於本版 CUTOFF 2026-09-05）。
