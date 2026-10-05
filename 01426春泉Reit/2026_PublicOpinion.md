@@ -2,7 +2,7 @@
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
 > 不含年報、季報、公司公告 report。
-> 最後彙整時間：2026-09-21 02:02｜本次併入：1 檔｜累計併入：10 檔
+> 最後彙整時間：2026-10-05 02:02｜本次併入：1 檔｜累計併入：11 檔
 
 ## 目錄
 
@@ -17,8 +17,10 @@
 - [2026-09 · 輿情新聞](#2026-09--輿情新聞)
 - [2026-08 · 輿情新聞 (更新)](#2026-08--輿情新聞-更新)
 - [2026-09 · 09-18](#2026-09--09-18)
+- [2026-10 · 輿情新聞](#2026-10--輿情新聞)
 
 <!-- body:start -->
+
 
 
 
@@ -1217,5 +1219,255 @@ co­m­m­e­nt：春泉产业信托2025年年报给出的北京写字楼市场�
 <!-- source-file: 2026-09-18.md | bytes: 2999 | sha1: 2eda3100114e | merged-at: 2026-09-21 -->
 
 蓝鲸新闻8月29日讯，8月28日，春泉产业信托（01426.HK）披露2026年中期财报，截至报告期末，公司实现营业收入人民币2.90亿元，同比下降10.2%；归属于单位持有人的期内亏损为人民币2.42亿元，同比由盈转亏。截至2026年6月30日，公司资产合计人民币114.00亿元，负债合计人民币51.58亿元，基本每股收益亏损人民币0.16元。从核心物业板块表现来看，北京写字楼业务受市场环境影响业绩承压，惠州零售业务则保持相对稳健。报告期内，位于北京CBD的华贸中心写字楼租金收入为人民币1.74亿元，环比下降6.1%，主要系北京甲级写字楼租赁市场需求持续疲弱，租户成本控制严格导致租金水平承压。该部分物业经营净额为人民币12.76亿元，同比下降14.4%。另一方面，位于大湾区的华贸天地购物中心表现韧性较强，收益达人民币1.13亿元，环比增长2.9%，得益于其高端定位及商户组合优化，平均月租回升至每平方米人民币173元。整体而言，投资组合物业收入净额为人民币20.50亿元，同比增长1.6%，但未能完全抵消融资成本上升及资产估值波动带来的影响。管理层指出，本期业绩出现显著下滑并录得大额亏损，主要归因于投资物业公允价值变动及融资成本正常化。截至2026年6月30日，集团确认投资物业公允价值亏损达人民币3.67亿元，其中北京及惠州物业估值分别较年初下降3.6%和2.5%，直接拉低了账面利润。在成本端，受利率环境变化及此前低息对冲工具到期影响，现金利息开支增至人民币1.06亿元，同比增加25.2%。尽管出租率维持稳定，北京写字楼出租率为90.8%，惠州商场出租率为95.2%，但宏观经济的调整期及新增供应压力仍对租金前景构成挑战。关于资本运作与股东回报，管理人宣布派发2026年中期分派，每基金单位4.0港仙，分派比率维持在90%。尽管分派金额较上年同期减少47.4%，但环比上半年增加了11.1%。截至报告期末，每基金单位资产净值为4.08港元，较市价存在显著溢价。此外，管理人在报告期内回购了约958万个基金单位，以优化资本结构并提升每股价值。目前集团资产负债率为39.4%，处于可控范围，且约77%的借贷已通过利率互换等衍生工具进行对冲，以规避利率波动风险。展望未来，管理层预计短期内北京写字楼市场仍将面临竞争加剧的挑战，新增供应量可能进一步压制租金水平。为此，公司将优先保障出租率，通过灵活的租赁策略挽留优质租户。在零售板块，随着惠州商场改造项目的逐步释放及业态优化，预计将带动客流与租金需求回升。同时，管理人将继续探索具选择性的资产循环机会，并审慎管理债务组合，以提升长期财务灵活性及单位持有人回报。
+
+---
+
+## 2026-10 · 輿情新聞
+
+<!-- source-file: 202610_輿情新聞.md | bytes: 22765 | sha1: 5b3e201a6910 | merged-at: 2026-10-05 -->
+
+### [01426 春泉Reit] 輿情與新聞整理 (2026/10)
+
+- **分析月份**：2026/10
+- **資料範圍**：過去三個月（2026-07-03 ~ 2026-10-03），本檔聚焦 `2026_PublicOpinion.md` 尚未收錄的增量（約 2026-09-16 之後）
+- **最後更新**：2026-10-03 20:18
+
+---
+
+#### [公司公告 HKEXnews]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：`curl` 呼叫 HKEXnews JSON API（`prefix.do` → stockId `97366`；`titleSearchServlet.do`，fromDate=20260801、toDate=20261003，EN/ZH 各一次），再以 `curl` 下載各份 PDF、`pdftotext` 解析
+- **抓取結果**：✅ 成功（EN/ZH 各 35 筆；2026-09-01 之後共 21 筆：20 份《翌日披露報表》+ 1 份 8 月單位變動月報表）
+- **定期報告檢查**：2026-09-01 ~ 2026-10-03 **無**新的定期報告（無 2026Q3 營運統計、無通函、無其他重大交易公告）。依往年節奏，第三季度未經審核營運統計約於 10 月下旬公布，尚未到期。
+
+##### 🎯 [基金單位回購｜9/16~9/28 增量] 回購價由 1.25 港元一路墊高至 1.385 港元
+- **來源連結**:
+  - [翌日披露報表 2026-09-16](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0916/2026091600787.pdf)
+  - [翌日披露報表 2026-09-17](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0917/2026091700995.pdf)
+  - [翌日披露報表 2026-09-18](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0918/2026091800847.pdf)
+  - [翌日披露報表 2026-09-21](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0921/2026092100885.pdf)
+  - [翌日披露報表 2026-09-22](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0922/2026092200586.pdf)
+  - [翌日披露報表 2026-09-23](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0923/2026092301000.pdf)
+  - [翌日披露報表 2026-09-24](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0924/2026092401052.pdf)
+  - [翌日披露報表 2026-09-25](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0925/2026092500720.pdf)
+  - [翌日披露報表 2026-09-28](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092801011.pdf)
+- **發布時間**: 2026-09-16 17:45 ~ 2026-09-28 17:23（HKEXnews 刊發時間）
+- **核心觀點與論述（原文逐筆摘錄，Section II Repurchase report）**:
+  > - 16 September 2026｜80,000 units｜On the Exchange｜HKD 1.265 / HKD 1.255｜Aggregate HKD 100,992
+  > - 17 September 2026｜80,000 units｜HKD 1.29 / HKD 1.25｜HKD 101,576
+  > - 18 September 2026｜63,000 units｜HKD 1.31 / HKD 1.275｜HKD 81,503.1
+  > - 21 September 2026｜80,000 units｜HKD 1.33 / HKD 1.295｜HKD 105,720
+  > - 22 September 2026｜80,000 units｜HKD 1.34 / HKD 1.325｜HKD 106,592
+  > - 23 September 2026｜80,000 units｜HKD 1.34 / HKD 1.325｜HKD 106,880
+  > - 24 September 2026｜80,000 units｜HKD 1.34 / HKD 1.33｜HKD 106,648
+  > - 25 September 2026｜68,000 units｜HKD 1.36 / HKD 1.325｜HKD 91,691.2
+  > - 28 September 2026｜18,000 units｜HKD 1.385 / HKD 1.38｜HKD 24,924.6
+  >
+  > 28/9 報表：「Closing balance as at 28 September 2026 — 1,487,202,230（issued units excluding treasury）｜2,238,000（treasury units）｜1,489,440,230（total）」；「Date of the resolution granting the repurchase mandate: 27 May 2026」；「Total number of units which the Scheme is authorised to repurchase under the repurchase mandate: 148,116,321」；「Number of units repurchased ... under the repurchase mandate (a) 2,360,000 ... 0.159 %」；「Moratorium period for any issue of new units, or sale or transfer of treasury units ... Up to 28 October 2026」
+- **關鍵要點**:
+  - 9/16~9/28 共 9 個交易日回購 629,000 單位、合計約 HKD 826,527（自行加總），全部持作庫存單位（treasury units），未註銷。
+  - **回購價逐日墊高**：最低價由 9/16 的 1.255 港元升至 9/28 的 1.38 港元（+約 10%），9/28 回購量驟降至 18,000 單位，顯示管理人可能設有價格上限，股價上漲後回購力道縮小。
+  - 授權額度 148,116,321 單位僅用掉 2,360,000（0.159%），回購規模相對流通量極小，支撐作用有限；庫存單位 30 日內不得再出售（至 2026-10-28）。
+  - 以 2026 中報 NAV 每單位 4.08 港元計，1.38 港元回購價仍約為 NAV 的 34%（折價約 66%）。
+  - 截至 10/3，HKEXnews 尚未出現 9 月份單位變動月報表（通常於次月首個營業日左右刊發），9/29~9/30 是否續回購待確認。
+
+##### 🎯 [單位變動月報表｜截至 2026-08-31]
+- **來源連結**: [月報表（EN）](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0901/2026090101961.pdf)
+- **發布時間**: 2026-09-01 16:53
+- **核心觀點與論述**: 標題原文「MONTHLY RETURN FOR COLLECTIVE INVESTMENT SCHEME LISTED UNDER CHAPTER 20 OF THE EXCHANGE LISTING RULES ...（截至2026年8月31日）」
+- **關鍵要點**: 已於 `2026_PublicOpinion.md`（2026-09 章節）收錄，本次僅列出供引用，不重複分析。
+
+---
+
+#### [富途牛牛 Futu 新聞]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：`curl` 帶瀏覽器 UA 抓 `https://www.futunn.com/hk/stock/01426-HK/news`（SSR，HTTP 200、約 1.25MB），解析 `li.news-item`
+- **抓取結果**：✅ 成功（列表共 20 則，最舊至 2026-08-28；9/16 之後新增 8 則，全部為智通財經回購快訊）
+
+##### 🎯 [智通財經回購快訊｜9/16~9/28] 與 HKEXnews 翌日披露報表逐筆吻合
+- **來源連結**:
+  - [9/28 斥資2.49萬港元回購1.8萬個基金單位](https://news.futunn.com/hk/post/1000286076/on-september-28-spring-reit-01426-repurchased-18000-fund-units)（09/28 17:29）
+  - [9/25 斥資9.17萬港元回購6.8萬個基金單位](https://news.futunn.com/hk/post/1000211225/spring-real-estate-investment-trust-01426-repurchased-68000-fund-units)（09/25 17:28）
+  - [9/24 斥資10.66萬港元回購8萬個基金單位](https://news.futunn.com/hk/post/1000159904/on-september-24-spring-reit-01426-repurchased-80000-fund-units)（09/24 17:17）
+  - [9/23 斥資10.69萬港元回購8萬個基金單位](https://news.futunn.com/hk/post/1000087645/spring-reit-01426-repurchased-80000-fund-units-for-hk-106900)（09/23 17:56）
+  - [9/22 斥資10.66萬港元回購8萬個基金單位](https://news.futunn.com/hk/post/1000011849/spring-reit-01426-repurchased-80000-fund-units-for-hk-106600)（09/22 17:13）
+  - [9/21 斥資10.57萬港元回購8萬個基金單位](https://news.futunn.com/hk/post/1000006083/spring-reit-01426-repurchased-80000-fund-units-for-hk-105700)（09/21 18:00）
+  - [9/18 斥資8.15萬港元回購6.3萬個基金單位](https://news.futunn.com/hk/post/79472986/spring-real-estate-investment-trust-01426-repurchased-63000-fund-units)（09/18 17:26）
+  - [9/16 斥資10.1萬港元回購8萬個基金單位](https://news.futunn.com/hk/post/79352046/spring-reit-01426-repurchased-80000-fund-units-for-hk-101000)（09/16 17:49）
+- **發布時間**: 2026-09-16 ~ 2026-09-28（列表顯示時間，見上）
+- **核心觀點與論述**:
+  > "智通財經APP訊，春泉產業信託(01426)發佈公告，該基金於2026年9月28日斥資2.49萬港元回購1.8萬個基金單位，每單位回購價格爲1.38-1.385港元。"
+  > "春泉產業信託(01426)發佈公告，該基金於2026年9月25日斥資9.17萬港元回購6.8萬個基金單位，每單位回購價格爲1.325-1.36港元。"
+- **關鍵要點**:
+  - 富途列表未見 9/17 的回購快訊（HKEXnews 有 9/17 報表，回購 80,000 單位），屬媒體漏轉而非公司未回購。
+  - 列表內 9/16 之後無任何分析師評論、評級或非公告類新聞；新聞流 100% 為回購快訊，顯示市場關注度仍極低。
+
+---
+
+#### [AAStocks 阿思達克新聞]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：`curl -L` 抓列表 `http://www.aastocks.com/tc/stocks/analysis/stock-aafn/01426/0/hk-stock-news/1`（302→https，HTTP 200）；單篇正文 `curl -L` 抓 SSR 頁
+- **抓取結果**：✅ 成功（列表最新 20 則；過去三個月內 4 則，其中 3 則〔7/29 租用率、8/21 中期業績及更正〕已收錄於 `2026_PublicOpinion.md`，**新增 1 則**）
+
+##### 🎯 [政策利多｜2026 施政報告] 爭取盡快落實 REITs 納入互聯互通、年內提交便利 REITs 私有化/重組條例草案
+- **來源連結**: [《施政報告》爭取盡快落實將REITs納入互聯互通 吸引海外REITs來港雙重上市](http://www.aastocks.com/tc/stocks/analysis/stock-aafn-con/01426/AAFN/NOW.1544779/hk-stock-news)
+- **發布時間**: 2026-09-16 13:29
+- **核心觀點與論述**:
+  > "行政長官李家超發表新一份《施政報告》，表示會繼續爭取盡快落實把房託基金(REITs)納入互聯互通，今年內會提交有關便利REITs私有化或重組的條例草案，明年上半年提交為準備上市REITs寬免轉讓非住宅物業印花稅的條例草案。"
+  > "證監會計劃將精簡程序，吸引優質海外REITs來港雙重上市，今年第四季會修訂守則，促進基金產品創新，擴闊投資者選擇。"
+- **關鍵要點**:
+  - 與 2026 年 2 月預算案（已收錄於 `2026_PublicOpinion.md`）相比，本次施政報告把「便利 REITs 私有化或重組的條例草案」時程明確化為**今年內提交**。
+  - 對春泉的潛在意義：單位價格長期深度折讓 NAV（約 66%），私有化/重組法律框架若落地，理論上提高大股東或第三方以溢價私有化的可行性（屬推論，原文未點名春泉）；互聯互通則有望改善小型 REIT 流動性，但時程仍為「爭取盡快」，未有確定日期。
+
+---
+
+#### [新浪港股新聞 Sina]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：`curl` 抓列表 `https://stock.finance.sina.com.cn/hkstock/news/01426.html`（SSR，HTTP 200）；單篇內文 `finance.sina.com.cn` 回 `Connection reset by peer`（agent proxy：`ws_closed_mid_exchange`），依 §2.5 純網路錯誤零重試，改以 HKEX 權益披露原始表格（見下一節）佐證
+- **抓取結果**：✅ 列表成功（過去三個月 5 則，其中 4 則〔7/29 華貿平均月租、8/21×2 中期業績、8/29 半年報〕已收錄於 `2026_PublicOpinion.md`，**新增 1 則**）／⚠️ 內文失敗
+
+##### 🎯 [大股東增持] Mercuria Holdings 增持 12 萬單位，作價 1.29 港元
+- **來源連結**: [Mercuria Holdings Co., Ltd.增持春泉产业信托(01426)12万股 每股作价1.29港元](https://finance.sina.com.cn/stock/hkstock/marketalerts/2026-09-21/doc-inisqzxx9174423.shtml)
+- **發布時間**: 2026-09-21 19:58:52
+- **核心觀點與論述**:
+  > "Mercuria Holdings Co., Ltd.增持春泉产业信托(01426)12万股 每股作价1.29港元"（列表標題原文；內文因網路錯誤未取得）
+- **關鍵要點**:
+  - 原始權益披露表格 CS20260921E00028 已核實（見下節）：持倉由 31.99% 升至 32.01%。
+
+---
+
+#### [HKEX 權益披露 DI（di.hkex.com.hk）]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：`curl` 抓 `https://di.hkex.com.hk/di/NSSrchCorpList.aspx?sa1=cl&scsd=01/07/2026&sced=03/10/2026&sc=01426&src=MAIN&lang=EN` → `NSAllFormList.aspx`（List of all notices，SSR）→ 各 `NSForm2.aspx` / `NSForm3A.aspx` 表格頁
+- **抓取結果**：✅ 成功（2026-07-01 ~ 2026-10-03 共 5 份通知；8/21 管理費單位〔DA20260825E00054〕已於 8 月收錄，**新增 4 份**）
+
+##### 🎯 [大股東 Form 2] Mercuria Holdings 9/18 場內現金買入 120,000 單位
+- **來源連結**: [Form 2 CS20260921E00028](https://di.hkex.com.hk/di/NSForm2.aspx?fn=CS20260921E00028&sa2=an&sid=95074&corpn=Spring+Real+Estate+Investment+Trust&sd=01%2f07%2f2026&ed=03%2f10%2f2026&cid=0&sa1=cl&scsd=01%2f07%2f2026&sced=03%2f10%2f2026&sc=01426&src=MAIN&lang=EN&)
+- **發布時間**: 事件日 2026-09-18；申報日 2026-09-21
+- **核心觀點與論述**:
+  > "1101 The percentage level of your interest in the shares has increased because: you purchased the shares ... 120,000 HKD 1.2900 3101 Cash"
+  > "Total shares immediately before the relevant event: Long position 476,588,829 31.99 / Short position 334,720,159 22.56"
+  > "Total shares immediately after the relevant event: Long position 476,708,829 32.01 / Short position 334,720,159 22.53"
+  > "Spring Asset Management Limited ... Mercuria Holdings Co., Ltd. 80.40 ... Long position 87,118,012"；"RCA Fund 01, L.P. ... Mercuria Holdings Co., Ltd. 47.19 ... Long position 380,274,452 / Short position 334,720,159"
+- **關鍵要點**:
+  - 金額僅約 HKD 15.5 萬（自行計算 120,000×1.29），屬象徵性增持，但為大股東以**現金**在場內買入（非管理費換單位），訊號意義大於金額。
+  - ⚠️ 空倉 334,720,159 單位（22.53%）全部掛在 RCA Fund 01 名下，與先前已知的「RCA Fund 單位質押」結構一致；Mercuria 對 RCA Fund 僅控制 47.19%。
+  - Mercuria 長倉 476,708,829 單位 ≈ 32.01%，較 2025 年報的 451,542,159（30.55%）明顯上升（差異主要來自管理人以單位收取管理費及本次增持）。
+
+##### 🎯 [管理人轉讓單位予董事 Form 3A ×3] 9/23 以 1.287 港元、「Services」對價轉出 175,000 單位
+- **來源連結**:
+  - [Form 3A DA20260928E00295（Spring Asset Management Limited）](https://di.hkex.com.hk/di/NSForm3A.aspx?fn=DA20260928E00295&sa2=an&sid=95074&corpn=Spring+Real+Estate+Investment+Trust&sd=01%2f07%2f2026&ed=03%2f10%2f2026&cid=0&sa1=cl&scsd=01%2f07%2f2026&sced=03%2f10%2f2026&sc=01426&src=MAIN&lang=EN&)
+  - [Form 3A DA20260928E00145（LAM Yiu Kin 林耀堅）](https://di.hkex.com.hk/di/NSForm3A.aspx?fn=DA20260928E00145&sa2=an&sid=95074&corpn=Spring+Real+Estate+Investment+Trust&sd=01%2f07%2f2026&ed=03%2f10%2f2026&cid=0&sa1=cl&scsd=01%2f07%2f2026&sced=03%2f10%2f2026&sc=01426&src=MAIN&lang=EN&)
+  - [Form 3A DA20260928E00169（QIU Liping 邱立平）](https://di.hkex.com.hk/di/NSForm3A.aspx?fn=DA20260928E00169&sa2=an&sid=95074&corpn=Spring+Real+Estate+Investment+Trust&sd=01%2f07%2f2026&ed=03%2f10%2f2026&cid=0&sa1=cl&scsd=01%2f07%2f2026&sced=03%2f10%2f2026&sc=01426&src=MAIN&lang=EN&)
+- **發布時間**: 事件日 2026-09-23；申報日 2026-09-28
+- **核心觀點與論述**:
+  > 管理人："1201 The number of shares in which you are interested has reduced because: you completed a sale of the shares ... 175,000 HKD 1.2870 3104 Services"；"before 87,118,012 5.84 / after 86,943,012 5.83"
+  > 林耀堅："1101 ... you purchased the shares ... 91,000 HKD 1.2870 3104 Services"；"before 1,961,000 0.13 / after 2,052,000 0.13"
+  > 邱立平：清單列示 "1101 (L) 84,000(L) HKD 1.2870 1,944,000(L) 0.13(L) 23/09/2026"
+- **關鍵要點**:
+  - 對價代碼 3104「Services」＝非現金買入，屬管理人以其收取之基金單位支付董事酬金，**不是董事自掏腰包增持**，不宜解讀為內部人看多訊號。
+  - 175,000 = 91,000 + 84,000，三份表格數字互相吻合。
+
+---
+
+#### [雪球 Xueqiu]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：Bright Data `scrape_as_markdown`（`https://xueqiu.com/S/01426`，一次成功）
+- **抓取結果**：✅ 成功（討論流第 1 頁；9/18 之後新增散戶貼文 2 則、轉載新聞 1 則，其餘為翌日披露報表公告自動同步）
+- **頁面行情快照（原文）**：「HK$1.520 -0.040 -2.56% … 休市 10-02 16:08:09 北京时间 … 成交量：5.10万 … 成交额：7.55万 … 52周最高：1.760 … 52周最低：1.130 … 总市值：22.61亿 … 587 球友关注」
+
+##### 🎯 [散戶觀點｜股息率與北京 CBD 新供應] 1.52 港元價位估全年息 0.08、殖利率約 5%
+- **來源連結**: [指数投资的阿语人 10-02 14:13](https://xueqiu.com/2546127700/411205472)
+- **發布時間**: 2026-10-02 14:13
+- **核心觀點與論述**:
+  > "按目前1.52的价格 估计全年0.08的股息吧 预计股息率5%多 不是特别多 还是要看cbd中服地块大规模供应上来之后的影响 供应量还是挺大的 还有就是未来利率走向了"
+- **關鍵要點**:
+  - 偏空/中性：股價上漲後殖利率吸引力下降（以中期 4 仙年化 8 仙計約 5.3%）。
+  - 點名風險：北京 CBD「中服地塊」大規模寫字樓新供應，可能壓制華貿中心租金；以及利率走向。
+
+##### 🎯 [散戶觀點｜國慶前一個月走勢] 「國慶前的這一個月表現很不錯」
+- **來源連結**: [指数投资的阿语人 修改於 09-30 17:49](https://xueqiu.com/2546127700/411064085)
+- **發布時間**: 2026-09-30 17:49（修改時間）
+- **核心觀點與論述**:
+  > "国庆前的这一个月表现很不错 即便有派息含在里面[很赞]"
+- **關鍵要點**:
+  - 偏多：與回購價走勢吻合——HKEX 報表顯示 9/3 回購價約 1.185~1.22 港元、9/28 已達 1.38~1.385 港元，10/2 收 1.52 港元（雪球行情），一個月漲幅逾 25%（部分為除淨前的派息預期，作者亦已註明）。
+
+##### 🎯 [轉載新聞｜Mercuria 增持]
+- **來源連結**: [新浪财经 09-22 08:30](https://xueqiu.com/3338215700/410122820)
+- **發布時間**: 2026-09-22 08:30
+- **核心觀點與論述**:
+  > "香港联交所最新数据显示，9月18日，Mercuria Holdings Co．， Ltd．增持春泉产业信托（01426）12万股，每股作价1.29港元，总金额为15.48万港元。增持后最新持股数目约为4.77亿股，最新持股比例为32.01%。"
+- **關鍵要點**: 與 HKEX DI Form 2（CS20260921E00028）一致；無散戶評論互動。
+
+##### 公告自動同步（僅列出，不另分析）
+- 翌日披露報表：[09-18](https://xueqiu.com/S/01426/409827942)、[09-21](https://xueqiu.com/S/01426/410073021)、[09-22](https://xueqiu.com/S/01426/410220780)、[09-23](https://xueqiu.com/S/01426/410376372)、[09-24](https://xueqiu.com/S/01426/410523088)、[09-25](https://xueqiu.com/S/01426/410592405)、[09-28](https://xueqiu.com/S/01426/410793889)
+
+---
+
+#### [Yahoo Finance（yfinance）]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：yfinance MCP `get_yahoo_finance_news`（ticker `1426.HK`）
+- **抓取結果**：⚪ 無資料——回傳原文 "No news found for company that searched with 1426.HK ticker."
+- **結論**：已搜尋 Yahoo Finance，過去三個月內無符合 01426 春泉產業信託的新內容。
+
+---
+
+#### [東方財富股吧 春泉产业信托吧]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：`curl` 帶瀏覽器 UA 抓 `https://guba.eastmoney.com/list,hk01426.html`（SSR，HTTP 200），解析頁內 `var article_list` JSON
+- **抓取結果**：✅ 成功，但⚪ 無散戶新內容
+- **結論**：已搜尋東方財富股吧，2026-09-16 之後共 9 篇貼文，全部為帳號「基金资讯」自動轉貼的《翌日披露報表》（9/16、9/17、9/18、9/21、9/22、9/23、9/24、9/25、9/28，點閱 27~62、留言皆 0），過去三個月內無符合 01426 的散戶實質討論新內容。
+  - 範例連結：[2026-09-28 17:25 翌日披露报表](https://guba.eastmoney.com/news,hk01426,1778359666.html)、[2026-09-18 17:22 翌日披露报表](https://guba.eastmoney.com/news,hk01426,1775160680.html)
+
+---
+
+#### [LIHKG 連登]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：Playwright 開 `https://lihkg.com/search?q=春泉&sort=desc_create_time`，以 `browser_network_request` 讀取頁面自發的 `api_v2/thread/search?q=春泉&page=1&count=30&sort=desc_create_time&type=thread`（HTTP 200）
+- **抓取結果**：✅ 成功，但⚪ 無相關新內容
+- **結論**：已搜尋 LIHKG（關鍵字「春泉」），共 5 筆結果，其中 4 筆為動漫台/娛樂台無關帖（「黃泉使者」、「稲垣來泉」等字詞誤配）；唯一財經台相關帖為 2018-10-03 的「大家點睇 春泉產業信託 1426 收購戰」（thread 846262），已超出三個月範圍。過去三個月內 LIHKG 無符合 01426 的新內容。
+
+---
+
+#### [網路搜尋補充（WebSearch / WebFetch）]
+
+- **抓取時間**：2026-10-03
+- **抓取方式**：內建 `WebSearch`（關鍵字：「春泉產業信託 01426 2026年9月 OR 10月」、「"Spring REIT" 1426 September 2026」、「春泉产业信托 华贸 2026 资产 出售 OR 估值 OR 私有化」、「北京CBD 中服地块 写字楼 入市 2026」），再以內建 `WebFetch` 抓取原文頁
+- **抓取結果**：✅ 成功（新增 2 則；回購快訊類結果與富途/HKEX 重複不另列；**未發現**任何 2026 年資產出售、私有化、英國/日本資產處分或估值重估的新消息）
+
+##### 🎯 [英文分析｜偏空] Simply Wall St：「Can Deeper Losses Undercut Its Value Case」
+- **來源連結**: [Spring REIT (SEHK:1426) Can Deeper Losses Undercut Its Value Case](https://simplywall.st/stocks/hk/real-estate/hkg-1426/spring-real-estate-investment-trust-shares/news/spring-reit-sehk1426-can-deeper-losses-undercut-its-value-ca)
+- **發布時間**: 2026-08-21（WebFetch 頁面顯示）
+- **核心觀點與論述**:
+  > "came into this earnings season as a deep value story on paper, with the stock at HK$1.20 and trading well below some valuation estimates."
+  > "Revenue for the half year sits at ¥289.6m, but investors face a net loss of ¥241.8m and a trailing twelve month loss of ¥386.3m."
+  > "For an income oriented REIT story, this combination of softer top line and deeper losses challenges the idea of resilient cash generation from Beijing offices and the Huizhou mall."
+  > 風險點："shrinking earnings and interest costs that earnings do not comfortably cover"
+- **關鍵要點**:
+  - 偏空：認為營收下滑＋虧損擴大削弱「深度價值」論點，並點出利息覆蓋不足。
+  - ⚠️ 註：帳面淨虧損主要來自投資物業公允價值虧損（非現金），與可分派收入不同口徑，引用時需區分。
+  - 註：內容經 WebFetch 小模型摘要後引述，原句以頁面為準。
+
+##### 🎯 [產業背景｜偏空] 北京 CBD 新甲級寫字樓竣工、全市甲級空置率 15.9%
+- **來源連結**: [CBD新地标竣工，原计划成为北京第二高楼！（騰訊新聞）](https://news.qq.com/rain/a/20260905A07KD300)
+- **發布時間**: 2026-09-05 14:42
+- **核心觀點與論述**:
+  > 維晟中心（Vision Place）"高160米，地上33层，地下5层，总建筑面积约18万平方米。" "标准层面积在3800到4400平方米之间"
+  > "全市甲级写字楼平均空置率15.9%…平均净有效租金每月每平方米219.2元，环比下降0.8%。"
+- **關鍵要點**:
+  - 呼應雪球散戶對「CBD 中服地塊大規模供應」的擔憂：CBD 新增超甲級供應持續入市，華貿中心（春泉北京寫字樓，2026Q2 租用率約 91%）面臨租金與續租議價壓力。
+  - 搜尋結果另見網易標題「CBD中服Z3地块即将在2026年6月底正式入市」（https://c.m.163.com/news/a/KIGK1V880556A0TO.html），未抓取原文、發布時間未知，僅列為線索。
+
+---
 
 ---
