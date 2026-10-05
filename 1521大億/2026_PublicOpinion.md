@@ -22,7 +22,7 @@
 ## 北美 Stellantis 與 Marelli 破產（EXTRA 9 資料，2026-10-04 補）
 - 2025-06-24 中央社〈大億：第2季匯損難免 今年拚轉單和新訂單助攻〉：總經理莊智清稱「某些外國燈具供應商經營困難，大億有機會爭取部分轉單效應」；北美市場燃油車新應用預期 2026 下半年至 2027 年推出；美國約佔營收三成、台灣約七成；已在底特律設發貨倉庫；稼動率約七成、無海外擴廠計畫；關稅爭取由客戶負擔。來源：https://www.cna.com.tw/news/afe/202506240035.aspx
 - Marelli Holdings（前 Magneti Marelli，FCA 前子公司）2025-06-11 聲請美國 Chapter 11；Stellantis 為其全球最大客戶與最大非銀行債權人（約 4.54 億美元）。2026-09-02 報導：FCA US 向 Delaware 破產法院提出有限異議，要求先確定供貨協議（OEM Accommodation Agreements）；揭露文件聽證 2026-09-08。來源：https://www.clubalfa.it/en/stellantis-steps-into-marelli-restructuring-as-chapter-11-deal-remains-unresolved-44270 、https://www.cbtnews.com/tariffs-debt-push-stellantis-and-nissan-supplier-into-bankruptcy/
-- 2026-10-05 補：Marelli 重整案網站（Stretto）列確認聽證 2026-10-16、獨家提案期限 10-13，但投票截止列 12-10，時程可能延後。來源：https://case.stretto.com/marelli
+- 2026-10-05 補（更正）：Marelli 揭露文件聽證已從 2026-09-08 延到 2026-10-13 下午 3 點（美東時間）（09-11 延期通知，Dkt. 2687）。Stretto 網站上的 10-16 是 DIP 融資里程碑「Proposed Entry of the Confirmation Order」，不是已排定的確認聽證；揭露文件核准後還要投票，確認預估 11–12 月（投票截止 12-10、DIP 12-31 到期，可延到 2027-03-31）。債務人 09-24 申請第四次延長獨家提案期（Dkt. 2722）。來源：https://www.veritaglobal.net/marelli 、https://case.stretto.com/marelli/dates 、https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
 - 美國對台非半導體 232 關稅優惠 2026-05-01 生效，汽車零組件稅率由約 25% 降至 15%（與日韓歐盟同級）。來源：https://news.pts.org.tw/article/810513 、https://technews.tw/2026/05/29/us-taiwan-non-semiconductor-232-tariff-relief-investment-mou/
 - NHTSA 召回文件顯示 Marelli North America／Automotive Lighting North America 供應 2026 Ram 1500 高階頭燈、2021 Jeep Grand Cherokee L 頭燈（21V-950）、Jeep 尾燈（22E-062）。
 - 2025 年財經媒體：大億外銷成長動力主要來自 Stellantis 的「小燈及霧燈」訂單。
