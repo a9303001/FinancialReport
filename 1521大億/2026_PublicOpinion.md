@@ -1,12 +1,13 @@
 # 1521 大億 2026 輿情／新聞整理
 
-> 整理日期：2026-10-04。原始來源連結附於各條。
+> 整理日期：2026-10-05。原始來源連結附於各條。
 
 ## 經營權交棒（2026-09）
 - 2026-09-21：董事長吳俊億（83 歲）辭任董事長，保留董事身分；副董事長岩邊惠（小糸製作所代表人）代理。來源：https://finance.biggo.com.tw/news/928bf77e-7033-47ad-bce4-a9d86ec11510
 - 2026-09-29：董事會推選岩邊惠真除董事長；公司稱啟動「兩階段接班」，培養專業經理人；吳俊億轉任大億集團總裁。來源：經濟日報 https://udn.com/news/story/7252/9784165 、工商時報 https://www.ctee.com.tw/news/20260929701506-430503
 - 2026-09-29：小糸製作所法人董事代表人由山本格也（國際本部副本部長）改派黑津彰久（調達管理部主管），自 2026-10-01 生效。來源：https://tw.stock.yahoo.com/news/%E5%85%AC%E5%91%8A-%E5%A4%A7%E5%84%84%E6%B3%95%E4%BA%BA%E8%91%A3%E4%BA%8B%E6%94%B9%E6%B4%BE%E4%BB%A3%E8%A1%A8%E4%BA%BA-085421870.html
 - 2026-10-01 商業周刊〈83歲創辦人突請辭，車燈代工龍頭大億變「日商類直營」：獲利穩，爆發力沒了？〉：小糸改派調達（採購）管理部人員，代表將深度介入採購與成本控制；2023 年日圓貶值導致出貨給小糸「賣一個賠一個」，引爆父子路線之爭。來源：https://www.businessweekly.com.tw/business/blog/3022458
+- 2026-09-29 公告「新聘任副總經理」：黑津彰久（株式會社小糸製作所調達管理部主管）新任副總經理，115/10/01 生效；同日亦改派為小糸法人董事代表人。前一位小糸派任副總山本英嗣於 2026-04-21 以「派任任期屆滿」卸任。來源：https://tw.stock.yahoo.com/news/%E5%85%AC%E5%91%8A-%E5%A4%A7%E5%84%84%E6%96%B0%E8%81%98%E4%BB%BB%E5%89%AF%E7%B8%BD%E7%B6%93%E7%90%86-085423989.html 、https://tw.stock.yahoo.com/news/%E5%85%AC%E5%91%8A-%E5%A4%A7%E5%84%84%E5%89%AF%E7%B8%BD%E7%B6%93%E7%90%86%E7%95%B0%E5%8B%95-064321205.html
 - 股市爆料同學會（CMoney）2026-10-01 貼文「大億交通首由日方掌舵」，轉述新聞，散戶情緒中性偏樂觀。來源：https://www.cmoney.tw/forum/article/185035593
 
 ## 股東會與董事改選（2026-06-11）
@@ -21,6 +22,8 @@
 ## 北美 Stellantis 與 Marelli 破產（EXTRA 9 資料，2026-10-04 補）
 - 2025-06-24 中央社〈大億：第2季匯損難免 今年拚轉單和新訂單助攻〉：總經理莊智清稱「某些外國燈具供應商經營困難，大億有機會爭取部分轉單效應」；北美市場燃油車新應用預期 2026 下半年至 2027 年推出；美國約佔營收三成、台灣約七成；已在底特律設發貨倉庫；稼動率約七成、無海外擴廠計畫；關稅爭取由客戶負擔。來源：https://www.cna.com.tw/news/afe/202506240035.aspx
 - Marelli Holdings（前 Magneti Marelli，FCA 前子公司）2025-06-11 聲請美國 Chapter 11；Stellantis 為其全球最大客戶與最大非銀行債權人（約 4.54 億美元）。2026-09-02 報導：FCA US 向 Delaware 破產法院提出有限異議，要求先確定供貨協議（OEM Accommodation Agreements）；揭露文件聽證 2026-09-08。來源：https://www.clubalfa.it/en/stellantis-steps-into-marelli-restructuring-as-chapter-11-deal-remains-unresolved-44270 、https://www.cbtnews.com/tariffs-debt-push-stellantis-and-nissan-supplier-into-bankruptcy/
+- 2026-10-05 補：Marelli 重整案網站（Stretto）列確認聽證 2026-10-16、獨家提案期限 10-13，但投票截止列 12-10，時程可能延後。來源：https://case.stretto.com/marelli
+- 美國對台非半導體 232 關稅優惠 2026-05-01 生效，汽車零組件稅率由約 25% 降至 15%（與日韓歐盟同級）。來源：https://news.pts.org.tw/article/810513 、https://technews.tw/2026/05/29/us-taiwan-non-semiconductor-232-tariff-relief-investment-mou/
 - NHTSA 召回文件顯示 Marelli North America／Automotive Lighting North America 供應 2026 Ram 1500 高階頭燈、2021 Jeep Grand Cherokee L 頭燈（21V-950）、Jeep 尾燈（22E-062）。
 - 2025 年財經媒體：大億外銷成長動力主要來自 Stellantis 的「小燈及霧燈」訂單。
 
