@@ -1,6 +1,6 @@
 # 1521 大億 2026 輿情／新聞整理
 
-> 整理日期：2026-10-05。原始來源連結附於各條。
+> 整理日期：2026-10-06。原始來源連結附於各條。
 
 ## 經營權交棒（2026-09）
 - 2026-09-21：董事長吳俊億（83 歲）辭任董事長，保留董事身分；副董事長岩邊惠（小糸製作所代表人）代理。來源：https://finance.biggo.com.tw/news/928bf77e-7033-47ad-bce4-a9d86ec11510
@@ -17,6 +17,9 @@
 ## 營運
 - 2026 年 1–8 月合併營收 25.54 億元，年增 9.41%；8 月營收 2.49 億元，年減 6.07%。1H2026 營收 20.04 億元、營業利益 5,983 萬元、稅後淨利 7,193 萬元、EPS 0.94 元。來源：經濟日報 2026-09-30
 - 2026-09-22 MoneyDJ〈大億營收動能回溫，Q4迎國瑞銷日新車款〉：上半年營收年增 14.43%（北美回溫），Q3 美國車廠訂單放緩；取得國瑞回銷日本 Toyota NOAH／VOXY 燈具訂單，9 月小量出貨、10 月放量；油價飆漲推升原料成本、短期難完全轉嫁，北美客戶年度議價；北美約佔營收三成、國內五成以上；美國對等關稅影響逐漸淡化（客戶取得稅額抵減）；明年營收有成長空間、淨利率期望維持今年水準。來源：https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=c9b44575-3566-42d6-98e8-1111d86494d2
+- 2026-10-01 9 月車市：新車掛牌 37,054 輛（年增 15%），進口車 20,562 輛（佔 55.5%），國產車 16,492 輛；Toyota＋Lexus 12,370 輛（市佔 33.4%），Corolla Cross 3,615 輛居國產車之冠。來源：工商時報 https://www.ctee.com.tw/news/20261001701071-430503 、中央社 https://www.cna.com.tw/news/afe/202610010182.aspx
+- 2026-10-01 Stellantis 美國 Q3 銷量 324,277 輛（−0.17%）；Ram 品牌 134,072 輛（+29%，Ram 1500 +73%、皮卡合計 +34%）；Jeep 128,542 輛（−20%，Wrangler +5%）；重申 2026 財測。來源：https://www.detroitnews.com/story/business/autos/chrysler/2026/10/01/stellantis-sales-decrease-slightly-in-q3-as-ram-rises-jeep-sinks/92041623007/ 、https://www.stocktitan.net/news/STLA/stellantis-reports-q3-q1go4e3aoepk.html
+- 2026-10-06 查詢：9 月營收尚未公布（Yahoo 股市營收表最新為 8 月）；09-29 後無新重大訊息；副董事長仍出缺。小糸（7276.T）2026-10-28 公布上半年財報（Yahoo Finance）。
 - 國瑞觀音廠 2026-10 起生產 Toyota Noah／Voxy 回銷日本，初期年產約 3 萬輛，日經報導上看 10 萬輛。來源：U-CAR 2026-05-25 https://news.u-car.com.tw/news/article/87714 、TVBS https://cars.tvbs.com.tw/car-news/322850
 
 ## 北美 Stellantis 與 Marelli 破產（EXTRA 9 資料，2026-10-04 補）
