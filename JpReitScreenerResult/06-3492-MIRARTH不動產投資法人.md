@@ -1,5 +1,5 @@
-# 第 6 名：3492 MIRARTH不動產投資法人（MIRARTH不動産投資法人／MIRARTH Real Estate Investment Corporation）
-> 最後更新：2026-10-07｜取價日：2026-10-07｜幣別：JPY
+﻿# 第 6 名：3492 MIRARTH不動產投資法人（MIRARTH不動産投資法人／MIRARTH Real Estate Investment Corporation）
+> 最後更新：2026-10-08｜取價日：2026-10-07｜幣別：JPY
 > 研究優先度：🟡 —— 配息 7% 靠動用保留，其餘條件都合格
 ## 一、30 秒結論
 - **定位**：商辦、住宅、商業、飯店綜合型，85 物件

@@ -1,5 +1,5 @@
-# 第 8 名：2971 ES-CON日本REIT（エスコンジャパンリート投資法人／ES-CON JAPAN REIT Investment Corporation）
-> 最後更新：2026-10-07｜取價日：2026-10-07｜幣別：JPY
+﻿# 第 8 名：2971 ES-CON日本REIT（エスコンジャパンリート投資法人／ES-CON JAPAN REIT Investment Corporation）
+> 最後更新：2026-10-08｜取價日：2026-10-07｜幣別：JPY
 > 研究優先度：🟢 —— 配息全來自租金，股價比淨值便宜 25%
 ## 一、30 秒結論
 - **定位**：生活型商業設施與底地為主，關西、九州占比高
