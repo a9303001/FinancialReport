@@ -1,6 +1,6 @@
 # 1521 大億 2026 輿情／新聞整理
 
-> 整理日期：2026-10-06。原始來源連結附於各條。
+> 整理日期：2026-10-07。原始來源連結附於各條。
 
 ## 經營權交棒（2026-09）
 - 2026-09-21：董事長吳俊億（83 歲）辭任董事長，保留董事身分；副董事長岩邊惠（小糸製作所代表人）代理。來源：https://finance.biggo.com.tw/news/928bf77e-7033-47ad-bce4-a9d86ec11510
@@ -20,6 +20,9 @@
 - 2026-10-01 9 月車市：新車掛牌 37,054 輛（年增 15%），進口車 20,562 輛（佔 55.5%），國產車 16,492 輛；Toyota＋Lexus 12,370 輛（市佔 33.4%），Corolla Cross 3,615 輛居國產車之冠。來源：工商時報 https://www.ctee.com.tw/news/20261001701071-430503 、中央社 https://www.cna.com.tw/news/afe/202610010182.aspx
 - 2026-10-01 Stellantis 美國 Q3 銷量 324,277 輛（−0.17%）；Ram 品牌 134,072 輛（+29%，Ram 1500 +73%、皮卡合計 +34%）；Jeep 128,542 輛（−20%，Wrangler +5%）；重申 2026 財測。來源：https://www.detroitnews.com/story/business/autos/chrysler/2026/10/01/stellantis-sales-decrease-slightly-in-q3-as-ram-rises-jeep-sinks/92041623007/ 、https://www.stocktitan.net/news/STLA/stellantis-reports-q3-q1go4e3aoepk.html
 - 2026-10-06 查詢：9 月營收尚未公布（Yahoo 股市營收表最新為 8 月）；09-29 後無新重大訊息；副董事長仍出缺。小糸（7276.T）2026-10-28 公布上半年財報（Yahoo Finance）。
+- 2026-10-07 查詢：9 月營收仍未公布（Yahoo 股市營收表最新為 8 月）；09-29 後無新重大訊息，副董事長仍出缺（09-29「副董事長異動」公告為岩邊惠升任董事長而卸下副董事長）。股價 10-06 收盤 25.95 元；堤維西 25.40 元；小糸 2,741.5 日圓（TTM PE 45.1、Forward PE 18.1）。來源：Yahoo 股市、Yahoo Finance
+- 2025 年 9–12 月營收基期：3.198、3.449、3.148、3.160 億元（年增 27.3%、22.4%、11.0%、20.1%），合計 12.96 億元。來源：Yahoo 股市營收表 https://tw.stock.yahoo.com/quote/1521.TW/revenue
+- 2026-10-06 Marelli 案卷（Dkt. 2816–2821）僅為專業費用申請與 8 月營運報告；10-13 揭露文件聽證未改期。來源：https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
 - 國瑞觀音廠 2026-10 起生產 Toyota Noah／Voxy 回銷日本，初期年產約 3 萬輛，日經報導上看 10 萬輛。來源：U-CAR 2026-05-25 https://news.u-car.com.tw/news/article/87714 、TVBS https://cars.tvbs.com.tw/car-news/322850
 
 ## 北美 Stellantis 與 Marelli 破產（EXTRA 9 資料，2026-10-04 補）
