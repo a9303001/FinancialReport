@@ -162,6 +162,9 @@ graph TD
 | Reuters 文章頁（補充）| `reuters.com` | 2026-10-06 於 7203 實測：`firecrawl_scrape`（basic proxy）抓文章頁 HTTP 200 取得全文，未遇驗證牆 | 文章頁可直接用 Firecrawl |
 | Seeking Alpha | `seekingalpha.com` | 2026-10-06 實測：`firecrawl_scrape`（含 stealth）回 `All scraping engines failed` | 用 `firecrawl_search` + `site:seekingalpha.com` + `tbs: qdr:m` 找文章，Bright Data `scrape_as_markdown` 取標題／日期／Summary（正文有付費牆）。WebSearch 會混入仿冒 Seeking Alpha 的 SEO 垃圾頁（被入侵的 `.gov.my`、`.ca.gov`、`.edu.tw` 網域），一律排除 |
 | yfinance 新聞（大型股）| `get_yahoo_finance_news` | 2026-10-06 實測：7203.T 與 TM（大型 ADR）都回「No news found」| 不只冷門股，目前整體不可依賴此來源 |
+| yfinance 新聞（美股大型股）| `get_yahoo_finance_news` | 2026-10-07 於 UHS 實測：美股也回「No news found」| 所有市場都不可依賴。改用內建 `WebFetch` 抓 `finance.yahoo.com/quote/{代號}/news/`，可取得約 12 則標題（含來源與相對時間），單篇文章頁也可讀，不需 MCP |
+| Seeking Alpha（Bright Data 補充）| `seekingalpha.com/news/*` | 2026-10-07 實測：第一次 `scrape_as_markdown` 回空白，重試一次才成功；只取得標題、日期與第一段，之後是「enable Javascript and cookies」牆 | 第一次空白時照 §2.1 重試 1 次即可 |
+| Reddit（短代號誤配）| Apify `trudax/reddit-scraper-lite` | 2026-10-07 實測：關鍵字「UHS」在 wallstreetbets／investing 配到無關貼文（白銀賣權、家庭理財）| 短代號要搭配公司全名再搜一次，逐則核對標題／內文是否真與該公司相關 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
