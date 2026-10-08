@@ -1,6 +1,6 @@
 # 1521 大億 2026 輿情／新聞整理
 
-> 整理日期：2026-10-07。原始來源連結附於各條。
+> 整理日期：2026-10-08。原始來源連結附於各條。
 
 ## 經營權交棒（2026-09）
 - 2026-09-21：董事長吳俊億（83 歲）辭任董事長，保留董事身分；副董事長岩邊惠（小糸製作所代表人）代理。來源：https://finance.biggo.com.tw/news/928bf77e-7033-47ad-bce4-a9d86ec11510
@@ -21,6 +21,7 @@
 - 2026-10-01 Stellantis 美國 Q3 銷量 324,277 輛（−0.17%）；Ram 品牌 134,072 輛（+29%，Ram 1500 +73%、皮卡合計 +34%）；Jeep 128,542 輛（−20%，Wrangler +5%）；重申 2026 財測。來源：https://www.detroitnews.com/story/business/autos/chrysler/2026/10/01/stellantis-sales-decrease-slightly-in-q3-as-ram-rises-jeep-sinks/92041623007/ 、https://www.stocktitan.net/news/STLA/stellantis-reports-q3-q1go4e3aoepk.html
 - 2026-10-06 查詢：9 月營收尚未公布（Yahoo 股市營收表最新為 8 月）；09-29 後無新重大訊息；副董事長仍出缺。小糸（7276.T）2026-10-28 公布上半年財報（Yahoo Finance）。
 - 2026-10-07 查詢：9 月營收仍未公布（Yahoo 股市營收表最新為 8 月）；09-29 後無新重大訊息，副董事長仍出缺（09-29「副董事長異動」公告為岩邊惠升任董事長而卸下副董事長）。股價 10-06 收盤 25.95 元；堤維西 25.40 元；小糸 2,741.5 日圓（TTM PE 45.1、Forward PE 18.1）。來源：Yahoo 股市、Yahoo Finance
+- 2026-10-08 查詢：9 月營收仍未公布（Yahoo 股市營收表最新為 8 月）；09-29 後無新重大訊息，副董事長仍出缺。股價 10-07 收盤 25.70 元；堤維西 25.95 元；小糸 2,752 日圓。Marelli 案卷 10-07 僅新增債權轉讓通知（Dkt. 2822），10-13 揭露文件聽證未改期。來源：Yahoo 股市、Yahoo Finance、ElevenFlo
 - 2025 年 9–12 月營收基期：3.198、3.449、3.148、3.160 億元（年增 27.3%、22.4%、11.0%、20.1%），合計 12.96 億元。來源：Yahoo 股市營收表 https://tw.stock.yahoo.com/quote/1521.TW/revenue
 - 2026-10-06 Marelli 案卷（Dkt. 2816–2821）僅為專業費用申請與 8 月營運報告；10-13 揭露文件聽證未改期。來源：https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
 - 國瑞觀音廠 2026-10 起生產 Toyota Noah／Voxy 回銷日本，初期年產約 3 萬輛，日經報導上看 10 萬輛。來源：U-CAR 2026-05-25 https://news.u-car.com.tw/news/article/87714 、TVBS https://cars.tvbs.com.tw/car-news/322850
@@ -38,6 +39,7 @@
 - 2019-06-17／19 工商時報、Yahoo：北美 FCA 新增兩款車型小燈訂單；大億佔北美 FCA 小燈供應比重三～四成；小燈改用高單價 LED 比率提升。來源：https://www.ctee.com.tw/news/20190619700054-430298
 
 ## 歷史背景（對小糸日本出貨合約終止，2024-03）
+- 2025-04-01 小糸製作所公告解散清算子公司 Fuzhou Koito Automotive Lamp Co., Ltd.（福州小糸車燈，原福州合資，大億 2024 年已出售持股），原因為中國市場銷售與獲利下滑（EV 崛起），中國業務改由廣州小糸、湖北小糸承接；公告未提及大億。2026 Q2 季報關係人名單仍列福州小糸車燈。來源：https://www.tipranks.com/news/company-announcements/koito-manufacturing-to-liquidate-fuzhou-koito-amid-market-shifts
 - 2024-03-26 工商時報〈甩日圓貶值虧損 大億回銷日本燈具3／31到期不再續約〉：回銷日本產品因日幣持續貶值「大都為負利潤」，改由福州小糸大億承製；公司估月營收約減 12.81%，單月 EPS 反增約 0.33%；小糸撤回前一年基本交易契約爭議之強制執行案。來源：https://www.ctee.com.tw/news/20240326701966-430503
 - 鏡週刊 2023-12-01：日圓兌新台幣由約 0.30 貶到 0.21（約 −30%）；「日方手中握有技術與訂單」。來源：https://www.mirrormedia.mg/story/20231201fin009
 
