@@ -1,6 +1,6 @@
 # 1521 大億 2026 輿情／新聞整理
 
-> 整理日期：2026-10-08。原始來源連結附於各條。
+> 整理日期：2026-10-10。原始來源連結附於各條。
 
 ## 經營權交棒（2026-09）
 - 2026-09-21：董事長吳俊億（83 歲）辭任董事長，保留董事身分；副董事長岩邊惠（小糸製作所代表人）代理。來源：https://finance.biggo.com.tw/news/928bf77e-7033-47ad-bce4-a9d86ec11510
@@ -23,6 +23,8 @@
 - 2026-10-07 查詢：9 月營收仍未公布（Yahoo 股市營收表最新為 8 月）；09-29 後無新重大訊息，副董事長仍出缺（09-29「副董事長異動」公告為岩邊惠升任董事長而卸下副董事長）。股價 10-06 收盤 25.95 元；堤維西 25.40 元；小糸 2,741.5 日圓（TTM PE 45.1、Forward PE 18.1）。來源：Yahoo 股市、Yahoo Finance
 - 2026-10-08 查詢：9 月營收仍未公布（Yahoo 股市營收表最新為 8 月）；09-29 後無新重大訊息，副董事長仍出缺。股價 10-07 收盤 25.70 元；堤維西 25.95 元；小糸 2,752 日圓。Marelli 案卷 10-07 僅新增債權轉讓通知（Dkt. 2822），10-13 揭露文件聽證未改期。來源：Yahoo 股市、Yahoo Finance、ElevenFlo
 - 2026-10-09 查詢：9 月合併營收 278,188 千元（2.78 億元），月增 11.77%、年減 13.02%；1–9 月累計 2,832,332 千元，年增 6.71%（公開資訊觀測站 2026-10-08 公告，Yahoo 股市轉載）。Q3 營收 8.29 億元，年減約 8.3%。10-08 後無新重大訊息，副董事長仍出缺。股價 10-08 收盤 25.80 元；堤維西 26.40 元；小糸 2,732 日圓。Marelli 案查無 10-07 後新文件，10-13 揭露文件聽證未改期。來源：Yahoo 股市、Yahoo Finance、Verita／ElevenFlo
+- 2026-10-10 查詢：10-09 國慶補假休市，股價仍為 10-08 收盤 25.80 元；堤維西 26.40 元；小糸 10-09 收盤 2,737.5 日圓。10-08 後無新重大訊息，副董事長仍出缺。Marelli 官方案件網站（Verita）顯示揭露文件聽證「由 2026-09-08 延至 2026-10-20 下午 1 點（美東時間）」，ElevenFlo 仍列 10-13，以 Verita 為準；案卷至 Dkt. 2829（10-08，律師費與債權登記），無 Stellantis 供貨協議。來源：https://www.veritaglobal.net/marelli 、https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
+- 2026-10-08 TVBS〈候車期長達半年！Toyota Noah、Voxy供不應求，MIT回銷得加快〉：兩款車已於 10 月初開始下線；Q4 外銷數量上看 5,000 輛，2027 Q1 有望突破 1 萬輛；文中未提及大億或車燈供應商。來源：https://cars.tvbs.com.tw/car-news/342175
 - 2025 年 9–12 月營收基期：3.198、3.449、3.148、3.160 億元（年增 27.3%、22.4%、11.0%、20.1%），合計 12.96 億元。來源：Yahoo 股市營收表 https://tw.stock.yahoo.com/quote/1521.TW/revenue
 - 2026-10-06 Marelli 案卷（Dkt. 2816–2821）僅為專業費用申請與 8 月營運報告；10-13 揭露文件聽證未改期。來源：https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
 - 國瑞觀音廠 2026-10 起生產 Toyota Noah／Voxy 回銷日本，初期年產約 3 萬輛，日經報導上看 10 萬輛。來源：U-CAR 2026-05-25 https://news.u-car.com.tw/news/article/87714 、TVBS https://cars.tvbs.com.tw/car-news/322850
@@ -30,7 +32,7 @@
 ## 北美 Stellantis 與 Marelli 破產（EXTRA 9 資料，2026-10-04 補）
 - 2025-06-24 中央社〈大億：第2季匯損難免 今年拚轉單和新訂單助攻〉：總經理莊智清稱「某些外國燈具供應商經營困難，大億有機會爭取部分轉單效應」；北美市場燃油車新應用預期 2026 下半年至 2027 年推出；美國約佔營收三成、台灣約七成；已在底特律設發貨倉庫；稼動率約七成、無海外擴廠計畫；關稅爭取由客戶負擔。來源：https://www.cna.com.tw/news/afe/202506240035.aspx
 - Marelli Holdings（前 Magneti Marelli，FCA 前子公司）2025-06-11 聲請美國 Chapter 11；Stellantis 為其全球最大客戶與最大非銀行債權人（約 4.54 億美元）。2026-09-02 報導：FCA US 向 Delaware 破產法院提出有限異議，要求先確定供貨協議（OEM Accommodation Agreements）；揭露文件聽證 2026-09-08。來源：https://www.clubalfa.it/en/stellantis-steps-into-marelli-restructuring-as-chapter-11-deal-remains-unresolved-44270 、https://www.cbtnews.com/tariffs-debt-push-stellantis-and-nissan-supplier-into-bankruptcy/
-- 2026-10-05 補（更正）：Marelli 揭露文件聽證已從 2026-09-08 延到 2026-10-13 下午 3 點（美東時間）（09-11 延期通知，Dkt. 2687）。Stretto 網站上的 10-16 是 DIP 融資里程碑「Proposed Entry of the Confirmation Order」，不是已排定的確認聽證；揭露文件核准後還要投票，確認預估 11–12 月（投票截止 12-10、DIP 12-31 到期，可延到 2027-03-31）。債務人 09-24 申請第四次延長獨家提案期（Dkt. 2722）。來源：https://www.veritaglobal.net/marelli 、https://case.stretto.com/marelli/dates 、https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
+- 2026-10-05 補（更正）：Marelli 揭露文件聽證已從 2026-09-08 延到 2026-10-13 下午 3 點（美東時間）（09-11 延期通知，Dkt. 2687）。【2026-10-10 註：Verita 官方網站現列 2026-10-20 下午 1 點，以官方為準】Stretto 網站上的 10-16 是 DIP 融資里程碑「Proposed Entry of the Confirmation Order」，不是已排定的確認聽證；揭露文件核准後還要投票，確認預估 11–12 月（投票截止 12-10、DIP 12-31 到期，可延到 2027-03-31）。債務人 09-24 申請第四次延長獨家提案期（Dkt. 2722）。來源：https://www.veritaglobal.net/marelli 、https://case.stretto.com/marelli/dates 、https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
 - 美國對台非半導體 232 關稅優惠 2026-05-01 生效，汽車零組件稅率由約 25% 降至 15%（與日韓歐盟同級）。來源：https://news.pts.org.tw/article/810513 、https://technews.tw/2026/05/29/us-taiwan-non-semiconductor-232-tariff-relief-investment-mou/
 - NHTSA 召回文件顯示 Marelli North America／Automotive Lighting North America 供應 2026 Ram 1500 高階頭燈、2021 Jeep Grand Cherokee L 頭燈（21V-950）、Jeep 尾燈（22E-062）。
 - 2025 年財經媒體：大億外銷成長動力主要來自 Stellantis 的「小燈及霧燈」訂單。
