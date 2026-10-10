@@ -165,6 +165,9 @@ graph TD
 | yfinance 新聞（美股大型股）| `get_yahoo_finance_news` | 2026-10-07 於 UHS 實測：美股也回「No news found」| 所有市場都不可依賴。改用內建 `WebFetch` 抓 `finance.yahoo.com/quote/{代號}/news/`，可取得約 12 則標題（含來源與相對時間），單篇文章頁也可讀，不需 MCP |
 | Seeking Alpha（Bright Data 補充）| `seekingalpha.com/news/*` | 2026-10-07 實測：第一次 `scrape_as_markdown` 回空白，重試一次才成功；只取得標題、日期與第一段，之後是「enable Javascript and cookies」牆 | 第一次空白時照 §2.1 重試 1 次即可 |
 | Reddit（短代號誤配）| Apify `trudax/reddit-scraper-lite` | 2026-10-07 實測：關鍵字「UHS」在 wallstreetbets／investing 配到無關貼文（白銀賣權、家庭理財）| 短代號要搭配公司全名再搜一次，逐則核對標題／內文是否真與該公司相關 |
+| MOPS 法說會簡報 PDF | `mopsov.twse.com.tw/nas/STR/{代碼}{yyyyMMdd}M001.pdf` | 2026-10-10 於 4417 實測：`curl` 不跟隨轉址只拿到 307 + 「因為安全性考量」封鎖頁；`curl -L` 不帶 cookie 會下載到被截斷的 PDF（pdfinfo 報 `Couldn't find trailer dictionary`）| `curl -sL -c cj -b cj` 帶 cookie jar 即可取得完整 PDF（49 頁、7.2MB）。簡報連結可從 `poorstock.com/earningcall/{代碼}` 頁面取得（SSR）。下載後務必用 `pdfinfo` 確認檔案完整 |
+| 工商時報搜尋 | `ctee.com.tw/search?q=` | 2026-10-10 實測：`curl` 回 403；Firecrawl 抓同網址回 HTTP 404（站方已移除此搜尋路徑，不是封鎖）| 不必跑 MCP 鏈，改用 WebSearch／`firecrawl_search` 搭 `site:ctee.com.tw` 找個別文章 |
+| Dcard 搜尋 API | `dcard.tw/service/api/v2/search/posts` | 2026-10-10 實測：`curl` 回 403 Cloudflare 挑戰頁 | `firecrawl_search` 搭 `site:dcard.tw {公司名} {代碼}` 可取得索引（含發文日期摘要），足以判斷近期有無新文 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
