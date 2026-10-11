@@ -168,6 +168,7 @@ graph TD
 | MOPS 法說會簡報 PDF | `mopsov.twse.com.tw/nas/STR/{代碼}{yyyyMMdd}M001.pdf` | 2026-10-10 於 4417 實測：`curl` 不跟隨轉址只拿到 307 + 「因為安全性考量」封鎖頁；`curl -L` 不帶 cookie 會下載到被截斷的 PDF（pdfinfo 報 `Couldn't find trailer dictionary`）| `curl -sL -c cj -b cj` 帶 cookie jar 即可取得完整 PDF（49 頁、7.2MB）。簡報連結可從 `poorstock.com/earningcall/{代碼}` 頁面取得（SSR）。下載後務必用 `pdfinfo` 確認檔案完整 |
 | 工商時報搜尋 | `ctee.com.tw/search?q=` | 2026-10-10 實測：`curl` 回 403；Firecrawl 抓同網址回 HTTP 404（站方已移除此搜尋路徑，不是封鎖）| 不必跑 MCP 鏈，改用 WebSearch／`firecrawl_search` 搭 `site:ctee.com.tw` 找個別文章 |
 | Dcard 搜尋 API | `dcard.tw/service/api/v2/search/posts` | 2026-10-10 實測：`curl` 回 403 Cloudflare 挑戰頁 | `firecrawl_search` 搭 `site:dcard.tw {公司名} {代碼}` 可取得索引（含發文日期摘要），足以判斷近期有無新文 |
+| Mobile01 討論串 | `mobile01.com/topicdetail.php?f=..&t=..` | 2026-10-11 於 2881 實測：`curl` 帶瀏覽器 UA 回 **403 Access Denied（Akamai edgesuite）** | `firecrawl_search` 搭 `site:mobile01.com {公司名}` + `tbs: qdr:m` 找文章，再用 `firecrawl_scrape` 抓單篇（自動走 stealth proxy，HTTP 200 含發文時間）即可 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
