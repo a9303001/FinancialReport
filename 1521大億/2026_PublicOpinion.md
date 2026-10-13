@@ -1,6 +1,6 @@
 # 1521 大億 2026 輿情／新聞整理
 
-> 整理日期：2026-10-12。原始來源連結附於各條。
+> 整理日期：2026-10-13。原始來源連結附於各條。
 
 ## 經營權交棒（2026-09）
 - 2026-09-21：董事長吳俊億（83 歲）辭任董事長，保留董事身分；副董事長岩邊惠（小糸製作所代表人）代理。來源：https://finance.biggo.com.tw/news/928bf77e-7033-47ad-bce4-a9d86ec11510
@@ -26,6 +26,7 @@
 - 2026-10-10 查詢：10-09 國慶補假休市，股價仍為 10-08 收盤 25.80 元；堤維西 26.40 元；小糸 10-09 收盤 2,737.5 日圓。10-08 後無新重大訊息，副董事長仍出缺。Marelli 官方案件網站（Verita）顯示揭露文件聽證「由 2026-09-08 延至 2026-10-20 下午 1 點（美東時間）」，ElevenFlo 仍列 10-13，以 Verita 為準；案卷至 Dkt. 2829（10-08，律師費與債權登記），無 Stellantis 供貨協議。來源：https://www.veritaglobal.net/marelli 、https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
 - 2026-10-11 查詢：10-09 國慶補假、10-10–11 週末休市，股價仍為 10-08 收盤 25.80 元；小糸 10-09 收盤 2,737.5 日圓。Yahoo 股市新聞列表最新仍為 10-08 的 9 月營收公告，副董事長仍出缺。Marelli：Verita 官方網站 HTTP 503 無法讀取；ElevenFlo 案卷仍至 Dkt. 2829（10-08），聽證列 10-13 下午 3 點（與 Verita 10-10 所列 10-20 不一致，兩者並列待確認）；Stretto 10-16 為「預定確認令」里程碑。CMoney 1521 討論區無貼文；網路搜尋無 Noah／Voxy 或大億 10-08 後新報導。來源：Yahoo 股市、Yahoo Finance、ElevenFlo、Stretto
 - 2026-10-12 查詢：Yahoo 股市新聞列表最新仍為 10-08 的 9 月營收公告，副董事長仍出缺。10-12 開盤後至 09:23 尚無成交（昨收 25.80 元，委買 25.55／委賣 25.85）；小糸 10-12 日本體育節休市，最新為 10-09 收盤 2,737.5 日圓。Marelli：Verita 官方網站仍 HTTP 503；ElevenFlo 案卷仍至 Dkt. 2829（10-08），揭露文件聽證列 10-13 下午 3 點（美東），無延期通知。網路搜尋無大億 10-08 後新報導。來源：Yahoo 股市、Yahoo Finance、ElevenFlo
+- 2026-10-13 查詢：Yahoo 股市新聞列表最新仍為 10-08 的 9 月營收公告，副董事長仍出缺。10-12 收盤 25.85 元（Yahoo 股市 10-13 昨收）；10-13 開盤後至 09:21 尚無成交（委買 25.50／委賣 26.80）；堤維西 10-12 收 26.55 元；小糸 10-13 盤中 2,754 日圓。Marelli：ElevenFlo 案卷新增 Dkt. 2834（10-12）「Disclosure Hearing Adjourned」，揭露文件聽證由 10-13 延至 2026-10-20（與 Verita 10-10 所列一致），仍無 Stellantis 供貨協議。網路搜尋無大億 10-08 後新報導。來源：Yahoo 股市、Yahoo Finance、ElevenFlo https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
 - 2026-10-08 TVBS〈候車期長達半年！Toyota Noah、Voxy供不應求，MIT回銷得加快〉：兩款車已於 10 月初開始下線；Q4 外銷數量上看 5,000 輛，2027 Q1 有望突破 1 萬輛；文中未提及大億或車燈供應商。來源：https://cars.tvbs.com.tw/car-news/342175
 - 2025 年 9–12 月營收基期：3.198、3.449、3.148、3.160 億元（年增 27.3%、22.4%、11.0%、20.1%），合計 12.96 億元。來源：Yahoo 股市營收表 https://tw.stock.yahoo.com/quote/1521.TW/revenue
 - 2026-10-06 Marelli 案卷（Dkt. 2816–2821）僅為專業費用申請與 8 月營運報告；10-13 揭露文件聽證未改期。來源：https://elevenflo.com/cases/marelli-automotive-lighting-usa-llc-2122
