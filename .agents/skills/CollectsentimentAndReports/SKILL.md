@@ -168,6 +168,14 @@ graph TD
 | MOPS 法說會簡報 PDF | `mopsov.twse.com.tw/nas/STR/{代碼}{yyyyMMdd}M001.pdf` | 2026-10-10 於 4417 實測：`curl` 不跟隨轉址只拿到 307 + 「因為安全性考量」封鎖頁；`curl -L` 不帶 cookie 會下載到被截斷的 PDF（pdfinfo 報 `Couldn't find trailer dictionary`）| `curl -sL -c cj -b cj` 帶 cookie jar 即可取得完整 PDF（49 頁、7.2MB）。簡報連結可從 `poorstock.com/earningcall/{代碼}` 頁面取得（SSR）。下載後務必用 `pdfinfo` 確認檔案完整 |
 | 工商時報搜尋 | `ctee.com.tw/search?q=` | 2026-10-10 實測：`curl` 回 403；Firecrawl 抓同網址回 HTTP 404（站方已移除此搜尋路徑，不是封鎖）| 不必跑 MCP 鏈，改用 WebSearch／`firecrawl_search` 搭 `site:ctee.com.tw` 找個別文章 |
 | Dcard 搜尋 API | `dcard.tw/service/api/v2/search/posts` | 2026-10-10 實測：`curl` 回 403 Cloudflare 挑戰頁 | `firecrawl_search` 搭 `site:dcard.tw {公司名} {代碼}` 可取得索引（含發文日期摘要），足以判斷近期有無新文 |
+| Mobile01 討論串 | `mobile01.com/topicdetail.php?f=..&t=..` | 2026-10-11 於 2881 實測：`curl` 帶瀏覽器 UA 回 **403 Access Denied（Akamai edgesuite）** | `firecrawl_search` 搭 `site:mobile01.com {公司名}` + `tbs: qdr:m` 找文章，再用 `firecrawl_scrape` 抓單篇（自動走 stealth proxy，HTTP 200 含發文時間）即可 |
+| TPEx 申請上櫃清單 | `tpex.org.tw/openapi/v1/tpex_esb_applicant_companies` | 無（JSON API）| 2026-10-13 於 2245 實測：`curl` 可直接讀，含申請日、審議會日、董事會核准日、主辦承銷商。查台股興櫃股「有無申請轉上櫃」最快最準，不需 MCP |
+| CMoney Readmo | `cmoney.tw/forum/readmo/{uuid}` | 無（SSR）| 2026-10-13 實測：`curl` 可讀，正文在 Nuxt state `content` 欄位，JSON-LD 有 `datePublished`。**屬平台 AI 自動生成文章**，引用時必須標為 AI 內容，不可當網友輿情 |
+| 財報狗 e-report（curl）| `statementdog.com/analysis/{代碼}/e-report` | 2026-10-13 實測：`curl` 回 HTTP 202、0 bytes（反爬空回應）| 改用 `firecrawl_scrape`（basic proxy）可取得 HTTP 200 完整頁 |
+| 旺得富搜尋 | `wantrich.chinatimes.com/search?q=` | 2026-10-13 實測：回 404（路徑不存在，非封鎖）| 同工商時報搜尋頁，不必跑 MCP 鏈，改用 `firecrawl_search` / Bright Data `search_engine` 搭 `site:` |
+| 經濟日報搜尋頁 | `money.udn.com/search/result/...` | 2026-10-13 實測：`curl` 只拿到 JS 外殼 | Bright Data `scrape_as_markdown` 可取得「共找到N筆」與結果列表 |
+| Yahoo 股市（興櫃股）| `tw.stock.yahoo.com/quote/{代號}.TWO` | 無封鎖；`/news` 子頁 302 轉回個股頁 | 興櫃股「成交」欄可能是造市商報價，總量可能為 0，判斷價格須同時看總量 |
+| `firecrawl_search` 多 site 查詢 | — | 2026-10-13 實測：同一 query 用多個 `site:` 加 OR 回 0 筆 | 拆成一次一個 `site:` 分別查詢 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
