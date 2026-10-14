@@ -131,8 +131,8 @@ companies = 輪替表中所有 [執行日期 == target_date] 的公司
 **搜尋來源順序（找到即停）：**
 - **台股**：MOPS（英文版優先）→ 財報狗 → 官網 IR
 - **美股**：官網 IR → SEC EDGAR → 財報狗 → 富途牛牛
-- **日股**：官網 IR（英文優先）→ EDINET → IR Bank → 富途牛牛
-- **港股**：披露易 → 新浪財經 → 富途牛牛
+- **日股**：官網 IR（英文優先）→ 株探開示清單 → EDINET → IR Bank → 富途牛牛
+- **港股**：披露易 JSON API → 富途牛牛 → 官網 IR
 
 **下載驗證：**
 - 檔案 < 10KB → 無效，刪除
@@ -144,7 +144,7 @@ companies = 輪替表中所有 [執行日期 == target_date] 的公司
 
 **存檔**：`d:\FinancialReport\{COMPANY_FOLDER}\{yyyyMM}_輿情新聞.md`（一月一檔，Append 模式）
 
-**抓取工具鏈**（遇阻時依序升級，詳見 SKILL.md §2）：
+**抓取工具鏈**（先查 SKILL.md §4 站點知識庫捷徑，遇阻再依序升級，詳見 SKILL.md §3）：
 
 ```
 ① 內建工具（search_web / read_url_content）
@@ -164,10 +164,10 @@ companies = 輪替表中所有 [執行日期 == target_date] 的公司
 
 | 站點 | 做法 | 詳見 |
 |:-----|:-----|:-----|
-| **雪球** | 直接用 `brightdata scrape_as_markdown` | SKILL.md §2.7 |
-| **CMoney 股市爆料同學會** | 直接打官方 API（curl）| SKILL.md §2.8 |
-| **Reddit** | 直接用 Apify `trudax/reddit-scraper-lite` | SKILL.md §2.9 |
-| **X (Twitter)** | 用 `firecrawl_search` + `site:x.com` 搜尋 | SKILL.md §2.4 |
+| **雪球** | 直接用 `brightdata scrape_as_markdown` | SKILL.md §5.6 |
+| **CMoney 股市爆料同學會** | 直接打官方 API（curl）| SKILL.md §5.2 |
+| **Reddit** | 直接用 Apify `trudax/reddit-scraper-lite` | SKILL.md §5.3 |
+| **X (Twitter)** | 日股先用 Yahoo 株つぶやき；其他用 `firecrawl_search` + `site:x.com` | SKILL.md §4.1、§4.4 |
 
 **寫入規則：**
 - 檔案不存在 → 新建，含標頭
