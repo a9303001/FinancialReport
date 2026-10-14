@@ -1,298 +1,227 @@
 ---
 name: CollectsentimentAndReports
-description: 收集個股「最新財務報告」與「輿情討論/新聞」
+description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「近三個月輿情討論/新聞」，存入公司資料夾，轉 Markdown 後產出執行報告並 push。輸入 COMPANY_TICKER 與 COMPANY_NAME。
 ---
 /goal
-# CollectsentimentAndReports Skill — 執行指南 (Execution Guide)
+# CollectsentimentAndReports — 執行指南
 
-> **[Role & Objective]**
-> 你是一個專業的 AI Agent。當此 Skill 啟動時，你的任務是：
-> 1. 先下載指定公司的「最新財務報告（2 年報 + 1 季報）」。
-> 2. 再收集該公司「過去三個月內的社群輿情/新聞」。
-> 3. **嚴格禁止** 從 GitHub (a9303001/FinancialReport) 收集任何東西，包含財報和新聞。
->
-> 請嚴格遵循本指南的步驟，確保過程不卡死、檔案有效且格式正確。本指南專為所有 AI 模型（包含較輕量的 Gemini Flash、Claude Sonnet）設計，請一步一步執行。
+> **任務**：對指定公司 ① 補齊最新財報（2 份年報 + 1 份季報）② 收集過去三個月的輿情/新聞 ③ 轉 Markdown ④ 寫執行報告並 push。
+> 本指南適用所有 AI（Claude / Gemini，含輕量模型），請一步一步照做。
 
-> [!IMPORTANT]
-> **全篇只有一套抓取規則：§2「通用抓取規則」。** 任何時候（Phase 2 下載財報、Phase 3 抓輿情）遇到抓不到、空白頁、被擋、JS 動態渲染，都回到 §2 照做，不要在別處另立規則。
+## 0. 四條底線（違反任一 = 任務失敗）
+
+1. **防幻覺**：只記錄真實抓到的內容，附真實 URL 與真實發布時間。抓不到就照 §8.5 誠實記錄，**嚴禁**用訓練資料補內容、捏造連結或分配日期。
+2. **不從本 repo 線上倉庫收集**：嚴禁從 GitHub `a9303001/FinancialReport` 下載財報或新聞；也嚴禁訪問 `macrotrends.net`。（本機資料夾已有的檔案可以盤點，見 §7.1）
+3. **即時存檔**：每下載完一份財報、每抓完一個來源，立刻寫檔，不要等全部做完。
+4. **不卡死**：抓取一律照 §3 的固定順序與次數上限，不無限重試、不空等背景任務。
 
 ---
 
-## 0. 執行參數 (Parameters)
-| 參數名稱 | 說明 | 範例 | 若缺失 |
+## 1. 參數與工具對照
+
+| 參數 | 說明 | 範例 | 若缺失 |
 | :--- | :--- | :--- | :--- |
-| **`COMPANY_TICKER`** | 股票代碼 | `2881`, `UHS`, `3445`, `02318` | **必填**。立刻詢問使用者。 |
-| **`COMPANY_NAME`** | 公司名稱 | `富邦金`, `Universal Health Services` | **必填**。若無，請用代碼先 Google 查出。 |
+| `COMPANY_TICKER` | 股票代碼（港股補齊 5 碼） | `2881`、`UHS`、`3445`、`02318` | 必填，立刻詢問 |
+| `COMPANY_NAME` | 公司名稱 | `富邦金`、`Universal Health Services` | 用代碼先搜尋查出 |
 
----
+文中提到的工具名一律視為「動作」，用你手上對應的工具完成，名字對不上不要卡住：
 
-## 0.5 工具名稱對照 (Tool Mapping — Claude / Gemini 通用)
-> 本指南後文用「動作」描述要做的事，不綁定特定工具名。請依你（Claude 或 Gemini）實際擁有的工具自行對應：
-
-| 要做的動作 | Claude 對應工具 | Gemini / 其他對應工具 |
+| 動作 | Claude | Gemini / 其他 |
 | :--- | :--- | :--- |
 | 網路搜尋 | `WebSearch` | `search_web` / `google_search` |
-| 抓取網頁內容 | `WebFetch` | `read_url` / `read_url_content` |
-| MCP 進階爬取（內建失敗時） | `firecrawl_scrape` 等 MCP 工具 | 同（已連接的 MCP 工具） |
-| 呼叫 Apify Actor（結構化資料，如 Reddit，見 §2.9） | `mcp__Apify__call-actor` + `mcp__Apify__get-dataset-items` | 同（已連接的 Apify MCP 工具） |
-| 讀寫本機檔案 | `Read` / `Edit` / `Write` | `view_file` / `write_file` / `edit_file` |
-| 執行指令 / 下載 | `Bash`（`curl` 等） | `run_shell_command` |
+| 抓網頁 | `WebFetch` | `read_url` / `read_url_content` |
+| 指令 / 下載 | `Bash`（`curl` 等） | `run_shell_command` |
+| 讀寫檔 | `Read` / `Edit` / `Write` | `view_file` / `write_file` / `edit_file` |
+| MCP 爬取 | `firecrawl_*`、Bright Data `scrape_as_markdown` / `search_engine`、`mcp__Apify__*`、`mcp__playwright__*` | 已連接的同名 MCP 工具 |
 
-- 文中出現任一具體工具名（如 `read_url`、`WebFetch`、`search_web`）時，**一律視為「該動作」**，用你自己有的工具完成即可，不要因為名字對不上就卡住或報錯。
-- 「內建工具」= `WebFetch` / `read_url` / `WebSearch` 這類 AI 原生的抓取/搜尋工具。「MCP 工具」= `firecrawl` / `brightdata` / `apify` / `playwright` 這類外接爬取服務。
-
----
-
-## 1. 執行流程概覽 (Workflow)
-
-```mermaid
-graph TD
-    A["Phase 1: 初始化目錄"] --> B["Phase 2: 最新財報下載"]
-    B --> C["Phase 3: 輿情新聞收集"]
-    C --> D["Phase 4: Convert2md 轉換"]
-    D --> E["Phase 5: 產出報告 + Push master"]
-```
-
-**【重要規則】子代理人 (Subagent)**：
-1. **每個公司請使用一個獨立的子代理人 (Subagent)** 來執行 Phase 2 和 Phase 3。
-2. 主代理人負責 Phase 1, Phase 4, Phase 5。
-3. **即時存檔**：每下載完一份財報，或抓完一個網站的輿情，就要**立刻存檔**。不要等全部做完才存。
+- **內建工具** = `WebSearch` / `WebFetch` / `curl` 這類原生工具；**MCP 工具** = Firecrawl / Bright Data / Apify / Playwright。
+- `curl` 一律帶瀏覽器 User-Agent：`-A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"`。
 
 ---
 
-## 2. 通用抓取規則（Universal Fetch Rule）★ 全流程唯一標準
+## 2. 流程總覽
 
-> [!IMPORTANT]
-> **這一整節是本 Skill 唯一的抓取準則，Phase 2 與 Phase 3 都套用它。** 不管抓的是財報 PDF 還是雪球貼文，只要「抓不到 / 空白 / 被擋」，就照這裡的 §2.1 黃金規則做。**別處不再重複寫抓取邏輯，一律回到本節。**
+| Phase | 內容 | 執行者 |
+| :--- | :--- | :--- |
+| 1 | 建立/確認公司資料夾（§6） | 主代理人 |
+| 2 | 盤點並下載最新財報（§7） | 每家公司一個子代理人 |
+| 3 | 收集近三個月輿情/新聞（§8） | 同上子代理人 |
+| 4 | 呼叫 `Convert2md` Skill 轉 Markdown（§9） | 主代理人 |
+| 5 | 寫執行報告、維護本 Skill、push（§10、§11） | 主代理人 |
 
-### 2.1 🏆 黃金規則（一句話記住）
+---
 
-> **任何網站、任何內容，只要用「內建工具」抓不到（空白、報錯、被擋、只剩選單框架、搜尋回報「網域被封鎖 / user-agent 不可存取」），都不可以馬上放棄，也不可以直接改用 WebSearch 摘要打發 —— 一定要把 `firecrawl` → `brightdata` → `apify` → `playwright` 這四個 MCP 抓取工具「依序」各試過一次。四個 MCP 全部失敗，才可以放棄或改用搜尋摘要。**
+## 3. 通用抓取規則（Phase 2、3 共用，全篇唯一抓取標準）
 
-**固定順序（每個工具最多試 2 次，失敗就換下一個，不重試同一工具）：**
+### 3.1 固定順序
 
-```mermaid
-graph TD
-    A["① 內建工具<br>WebFetch / read_url / WebSearch"] -->|"成功(有實質內容)"| S["✅ 完成，記錄內容"]
-    A -->|"失敗(空白/報錯/被擋)"| B["② firecrawl_scrape"]
-    B -->|失敗/被拒| C["③ brightdata scrape_as_markdown"]
-    C -->|失敗/被拒| D["④ apify"]
-    D -->|失敗/被拒| E["⑤ playwright"]
-    B & C & D & E -->|任一成功| S
-    E -->|四個 MCP 全失敗| F["❌ 才可放棄該網站<br>照 §5.4 誠實記錄，換下一個來源"]
-```
+1. **先查 §4 站點知識庫**：該站有已驗證的免 MCP 捷徑（官方 API、SSR 頁、替代站），直接用，成功即止。
+2. **內建工具**：`curl` / `WebFetch`。
+3. **MCP 鏈**：`firecrawl_scrape` → Bright Data `scrape_as_markdown` → Apify → Playwright，依序遞補，任一成功即止。Apify 抓一般網頁用 `apify/rag-web-browser`（`query` 填網址、`maxResults: 1`，一次約 0.01 CU）。
 
 | 規則 | 內容 |
 | :--- | :--- |
-| **順序不可跳** | 內建 → firecrawl → brightdata → apify → playwright。中間任一個 MCP 都不可略過（除非該環境確實沒連上某 MCP，才跳過它並在 Phase 5 報告註明「{該 MCP} 未連線」）。 |
-| **每工具 2 次** | 同一個工具失敗（含被拒、逾時、空白）**只重試1次**，直接換鏈中下一個。 |
-| **單一 URL 上限** | 內建 1 次 + 每個 MCP 各 2 次，整條鏈跑完即止。 |
-| **「明確拒絕」也算失敗** | 有些 MCP 會對特定站直接回「we do not support this site」（如 **Firecrawl 平台級不支援 `reddit.com`**）。這**不代表該站抓不到**，要往下一個 MCP 繼續試。 |
-| **整條鏈都不支援時的替代路徑** | 若所有 MCP 對某站都不支援（如 Reddit），可改用 MCP 的**搜尋**功能（如 `firecrawl_search`）搜該站內容當替代 —— 這仍算「有嘗試過 MCP」，比只用內建 WebSearch 摘要好。 |
+| 次數上限 | 每個工具最多 2 次（失敗只重試 1 次），然後換下一個；不可對同一工具無限重試 |
+| 不可跳過 | 中間的 MCP 不可略過；只有該環境確實沒連上某 MCP 才跳過，並在報告註明「{MCP} 未連線」 |
+| 「不支援此站」也算失敗 | 如 Firecrawl 對 `reddit.com` 回「we do not support this site」→ 換下一個，不代表該站抓不到 |
+| 整條鏈都不支援 | 改用 MCP 的搜尋功能（`firecrawl_search`、Bright Data `search_engine`）搭 `site:` 取索引 |
+| 四個 MCP 都失敗 | 才可放棄該站，照 §8.5 記錄，換下一個來源 |
 
-> [!CAUTION]
-> **嚴禁對「同一個工具」無限重試。** 一個工具失敗就換下一個工具。也**嚴禁**在沒跑完 MCP 鏈的情況下就用 WebSearch 摘要頂替。若最後真的只能用 WebSearch 摘要，必須在該筆內容加註：「⚠️ MCP 抓取失敗/不可用，以下為 WebSearch 摘要，非原始頁面逐字引述」，這樣 Phase 5 的「MCP 使用紀錄」才對得上實際動作。
+### 3.2 什麼算「抓取失敗」（→ 往下一步走，不是放棄理由）
 
-### 2.2 什麼叫「抓取失敗 / 抓不到」？（符合任一項就算失敗 → 換 MCP）
+- 空白、只剩選單框架、`<title>Document` 之類的 JS 外殼。
+- 網站封鎖：`not accessible to our user agent`、HTTP 403 / 429、Cloudflare `Just a moment...`、Akamai `Access Denied`。
 
-- **空白 / JS 動態渲染**：回傳空白、內容極少、只有網頁框架/選單，沒有真正的文字（常見於 §2.3 清單的網站）。
-- **網站主動封鎖爬蟲**：內建工具/`WebSearch` 回 `not accessible to our user agent`、`domain not accessible`、`400` 網域封鎖類錯誤（常見於 §2.4 清單的網站）。
-- **被防護頁擋**：Cloudflare 驗證頁（`Just a moment...`、`Attention Required!`、`DDoS protection`）、HTTP 403 / 429。
+**例外：HTTP 404 或「路徑不存在」不是封鎖**，代表站方沒有這個頁面，不必跑 MCP 鏈，直接換來源（§4 有記錄的例子）。
 
-> 上面三種都要照 §2.1 黃金規則**先換 MCP 再試**，不是放棄理由。
-> **唯一例外 → 見 §2.5 純網路錯誤**（Read Timeout / EOF / Connection Reset），那類是「零重試、直接換來源」。
+### 3.3 純網路錯誤 → 零重試、直接換來源
 
-### 2.3 已知 JS 動態渲染網站清單（內建工具幾乎必抓空白 → 直接上 MCP）
+`Read Timeout`、連線超過 10 秒、`EOF`、`Connection reset`、`forcibly closed`、`ECONNREFUSED`、`EHOSTUNREACH` 等 socket 錯誤：見到就放棄這個 URL，刪掉殘留暫存檔（如 `.tmp`），換下一個來源。**不可**開背景下載後空等，也不可反覆重試。
 
-看到這些網站被內建工具抓成空白是「正常、預期中」的事，**不是放棄理由**。看到空白直接照 §2.1 換 MCP（`firecrawl_scrape` 優先）。
+### 3.4 帳號級錯誤 → 該 MCP 本次全程停用
 
-| 網站 | 網域 | 為什麼內建工具常抓不到 |
+| 回應 | 意義 | 處置 |
 | :--- | :--- | :--- |
-| 雪球 (Xueqiu) | `xueqiu.com` | 內容由前端 JS 動態載入，直接抓常只拿到空白外殼（實戰 SOP 見 §2.7） |
-| 股市爆料同學會 (CMoney) | `cmoney.tw` | 頁面是 SSR 殼，`__NUXT__` 內 `articles` 為空陣列，貼文全由前端打 API 載入 → **不要爬頁面，直接打官方 API，SOP 見 §2.8** |
-| MOPS 台股進階查詢頁 | `mops.twse.com.tw` | 查詢頁需 JS 互動/POST 才出結果，直接 GET 常抓不到清單 |
-| moomoo 社區/新聞 | `moomoo.com` | 正文常由 JS 載入，直接抓常只拿到標題與版型 |
-| 東方財富股吧 | `guba.eastmoney.com` | 部分列表頁需 JS 分頁載入，抓不到完整貼文。**但第一頁是 SSR**：2026-09-22 於 03606 實測，`curl` 帶一般瀏覽器 UA 抓 `https://guba.eastmoney.com/list,{A股代碼}.html`，頁內 `var article_list = {...}` JSON 即含 40 筆貼文（`post_id`、`post_title`、`post_publish_time`、點閱/留言數）；單篇全文抓 `https://guba.eastmoney.com/news,{A股代碼},{post_id}.html`，以 `json.JSONDecoder().raw_decode` 解析 `var post_article=` 後的 JSON 取 `post_content`。**不需動用任何 MCP**，抓股吧一律先試此法 |
-| 富途牛牛 個股頁 | `futunn.com/hk/stock/{代碼}/quote`、`/announcement` | 行情與公告頁由 JS 載入，Bright Data `scrape_as_markdown` 只回空殼（標題僅 `Document`）。**但 `/news` 列表頁是 SSR**：2026-09-16 於 00546 實測，用 `curl` 帶一般瀏覽器 UA 即可直接取得完整新聞標題與日期（HTTP 200、1.2MB），**不需動用任何 MCP**。抓富途新聞一律先試 `curl .../{5碼代碼}-HK/news` |
+| Firecrawl `HTTP 402` 或 `Insufficient credits` | 額度用盡 | 本次不再呼叫 Firecrawl，改用 Apify `rag-web-browser` |
+| Apify `Monthly usage hard limit exceeded` | 月額度用盡 | 本次不再呼叫任何 Actor |
+| Bright Data `Residential Failed (bad_endpoint)` | 帳號未完成 KYC | 需 residential 的站（雪球、LIHKG）改走其他 MCP |
+| Bright Data `502 origin_bad_gateway` | MCP 閘道故障 | 照 §3.1 試 2 次即換，不要空等 `retry_after` |
 
-### 2.4 已知會「封鎖爬蟲」的網站清單（要換 MCP，不是放棄）
+不要對每個網站重踩同一顆地雷；先找 §4 的免 MCP 替代路徑，也不可因此直接改用搜尋摘要打發。所有帳號級錯誤都寫進 §10 報告的 MCP 紀錄。
 
-這些網站對內建工具（含 `WebSearch`）常回「被封鎖 / user-agent 不可存取」。成因跟 §2.3 的 JS 空白頁不同（一個是網站主動封鎖、一個是前端渲染），但**處理方式一樣**：照 §2.1 換 MCP 再試。
+### 3.5 請求頻率
 
-| 網站 | 網域 | 常見錯誤 | 建議做法 |
-| :--- | :--- | :--- | :--- |
-| Reddit | `reddit.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；**Firecrawl 也會回「we do not support this site」** | **不要照 §2.1 順序逐一試 firecrawl/brightdata/playwright，直接跳到 Apify Reddit Actor**（已驗證最快最準，SOP 見 §2.9） |
-| Reuters | `reuters.com` | 內建 `WebSearch` 回 `400 not accessible to our user agent`；文章頁常有 DataDome/PerimeterX 真人驗證牆 | 換 `firecrawl_scrape` 抓公司頁通常可讀（能拿到新聞列表與財報摘要）；「Load more」翻頁可能被驗證牆擋，取得已載入部分即可 |
-| Bloomberg | `bloomberg.com` | 搜尋多半只回股價報價頁，深度文章有付費牆 | 屬付費牆限制、非封鎖；MCP 也難突破付費牆，取得摘要即可並在報告註明「付費牆限制」 |
-| X (Twitter) | `x.com` / `twitter.com` | 未登入即封鎖：Firecrawl `firecrawl_scrape`（含 `proxy: stealth`）回 `All scraping engines failed`；Bright Data 需 token 有效；**Playwright 開 `x.com/search` 會被導向 `x.com/i/jf/onboarding/web?...&mode=login` 登入牆**（2026-09-20 實測，與 §2.10 的 Playwright 啟動問題無關，屬站方登入牆） | **日股一律先試 Yahoo「株つぶやき」（見下一列），不要動 MCP。** 其他市場才退回 **Firecrawl `firecrawl_search` 搭配 `site:x.com` 運算子**取索引摘要（注意：`includeDomains: ["x.com"]` 參數實測回傳 0 筆，**必須改用 `site:` 運算子寫在 query 裡**）。索引摘要**不含時間戳**，依 §5.0 不可臆測日期，須標註「⚠️ 為索引摘要、非原始頁面逐字引述」 |
-| **Yahoo!ファイナンス「株つぶやき」（日股抓 X 的最佳路徑）** | `finance.yahoo.co.jp/quote/{代碼}.T/post` | **無**——此頁是 SSR，`curl` 帶一般瀏覽器 UA 即可（2026-09-20 於 4979 實測 HTTP 200、178KB） | ✅ **2026-09-20 新增，已驗證有效。** Yahoo 官方聚合該檔股票的真實 X 貼文，**保留真實 `x.com/{帳號}/status/{id}` 網址、真實帳號與真實發布時間（到分鐘）**，品質遠優於 `firecrawl_search` 的索引摘要，且**零 MCP 成本**。抓法：`curl -A "<瀏覽器 UA>" https://finance.yahoo.co.jp/quote/{代碼}.T/post`，再用 regex 取 `https://x\.com/[A-Za-z0-9_]+/status/[0-9]+` 與頁面文字配對。**限制**：僅節錄貼文正文，不含圖片與回覆；單頁約 8~10 則。**日股輿情抓 X 一律先試此頁，成功即止，不需進 §2.1 MCP 鏈** |
-| MOPS 公開資訊觀測站 | `mops.twse.com.tw` | `curl` POST `t164sb01` 回 HTTP 000；GET 新舊 API 回「因為安全性考量，您所執行的頁面無法呈現」封鎖頁；`firecrawl_scrape` 只拿到空的查詢表單外殼（需 JS 表單提交）| 2026-09-12 實測：**不要在 MOPS 上耗時**。**重訊全文改用鉅亨網關鍵字 API（§2.11），這是目前取得 MOPS 重大訊息全文最快、最完整的路徑**（鉅亨「台股公告」分類即為 MOPS 重訊轉載，含發言日期/時間、事實發生日、發生緣由、因應措施等完整欄位）。台股財報版本查核改用**財報狗 e-report**（能列出官方 `doc.twse.com.tw` 原始檔名，可直接比對年度/季別），上櫃掛牌進度改用**櫃買中心 TPEx 官網**。若真的必須查 MOPS 原站，才改用 Playwright 做表單互動 |
-| Goodinfo 台灣股市資訊網 | `goodinfo.tw` | Bright Data `scrape_as_markdown` 60 秒逾時 | 改用 `firecrawl_search`／搜尋摘要，並依 §2.1 於該筆內容標註「非原始頁面逐字引述」 |
-| 雪球（Bright Data 路徑受限時）| `xueqiu.com` | Bright Data 回 `Residential Failed (bad_endpoint)`（帳號未完成 KYC，非網站封鎖）| §2.7 仍以 Bright Data 優先，但**本環境 Bright Data residential 不可用時，直接改 `firecrawl_scrape` 搭 `proxy: stealth`**（2026-09-12 實測可成功取得雪球頁面）|
-| 券商承銷公告頁（嘉實資訊 iframe）| 如玉山證券等券商承銷頁 | Firecrawl 只取得嘉實資訊 iframe 外殼，無實質表格 | 台股新股申購/承銷日程改抓 **HiStock 公開申購頁**（表格為靜態，內建工具或 Firecrawl 皆可讀）|
-| 富途新聞內文 | `news.futunn.com/hk/post/*` | `curl` 與 Bright Data 只回 JS challenge 空殼（`<title>Document`）；`/hk/stock/{代碼}-HK/community` 302 導向 `passport.futunn.com` 登入牆 | 2026-09-23 於 01816 實測：**內文改用 Playwright** 可取得全文（MT Newswires 文章仍需登入）；列表仍先用 `curl .../news`（§2.3）|
-| AAStocks 新聞 | `aastocks.com` | 文章頁正文為 JS 載入 | 2026-09-23 實測：列表頁 `stock-aafn/{代碼}/0/hk-stock-news/1` 為 SSR，`curl` 可讀；單篇摘要取頁面 `og:description` meta 即可。2026-09-30 於 02633 補充：`http://` 列表網址會 302 轉 https，`curl` 必須加 `-L` |
-| 新浪港股新聞 | `stock.finance.sina.com.cn/hkstock/news/{代碼}.html` | 無（SSR）| 2026-09-23 實測 `curl` 可讀且為最新（不同於 §4.2 已失修的 `/notice/` 公告頁）|
-| 香港經濟日報 | `hket.com` | `curl` 回 HTTP 405「Human Verification」；`/search?keyword=` 路徑本身 404 | 需改找個別文章 URL；搜尋頁不可用 |
-| LIHKG | `lihkg.com` | `api_v2/thread/search` 回 `error_code 5`；Bright Data 需 KYC | 2026-09-23 實測：Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time` 可讀。2026-09-30 於 02633 補充：頁面有時不渲染結果，改用 `browser_network_request` 讀頁面自己發出的 `api_v2/thread/search` 回應即可；在頁內自行 `fetch` 該 API 仍回 error 5（缺前端簽章）。注意 `browser_network_request` 的 `filename` 只能寫在 repo 目錄內，存完須移出 repo |
-| yfinance 新聞（港股冷門股）| `get_yahoo_finance_news` | 無封鎖，但會以英文名關鍵字誤配（2026-09-30 於 02633 實測：「Jacobson」配到 GM 財務長 Paul Jacobson 的新聞）| 結果須逐則核對是否真與該公司相關，不相關一律捨棄 |
-| Reddit（Apify 額度用盡時）| `reddit.com` | Playwright 開 old.reddit 回 403＋登入導向；`search.json` 回 403 | Apify 不可用時目前無可行替代，只能以 Bright Data `search_engine` 取索引並註明 |
-| Yahoo 株つぶやき（J-REIT）| `finance.yahoo.co.jp/quote/{代碼}.T/post` | 2026-10-01 實測：J-REIT（2971.T、8951.T）回 **404**，REIT 頁面本來就沒有つぶやき分頁（一般股如 4979.T 正常 200）| 不是封鎖，不必跑 MCP 鏈；J-REIT 抓 X 直接用 `firecrawl_search` + `site:x.com`。索引摘要沒有時間戳時，可從網址的 status ID 還原真實發文時間：`((id >> 22) + 1288834974657)` 毫秒（snowflake），不必臆測 |
-| Yahoo JP 掲示板 | `finance.yahoo.co.jp/quote/{代碼}.T/forum` | 無（SSR）| 2026-10-01 實測：`curl` 帶瀏覽器 UA 一次取回約 50 則貼文；每則有獨立網址 `/forum/{No}`、精確到分鐘的時間與投票數，不需 MCP |
-| 株探 | `kabutan.jp` | 先前回 403，2026-10-01 實測未再出現 | `curl` 帶瀏覽器 UA 可讀個股頁（含每週信用餘額）與 `/stock/news?code=`；開示頁只是外殼，PDF 實際在 `https://tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf` |
-| みんかぶ | `minkabu.jp/stock/{代碼}` | `curl` 回 403 | 改用 `firecrawl_scrape` 可讀。注意：J-REIT 的目標株価／診斷顯示「対象外」，不能當 §5.1 的空方量化對照 |
-| JAPAN-REIT.COM | `japan-reit.com/meigara/{代碼}/`、`/topic/{yyyy}/{id}` | 無（SSR）| J-REIT 殖利率／NAV 排名與每期決算評論，`curl` 可讀；`/news/` 回 404，改用 `/topic/` 或 `/release/` |
-| note | `note.com` | `api/v3/searches` 回 403；搜尋頁用 curl 只拿到 JS 外殼 | 用 `firecrawl_scrape` 抓 `note.com/search?q=…&context=note&mode=search&sort=new`（`waitFor: 3000`）取得列表；單篇文章 `curl` 可讀，發文時間在 JSON-LD 的 `datePublished` |
-| 雪球（A 股代碼頁空白時）| `xueqiu.com/S/SH601318` | 2026-10-01 實測：Bright Data 回空白，同公司港股頁 `/S/02318` 卻成功 | 雙重上市公司的 A 股頁、H 股頁可互為備援。討論流顯示相對時間（如「昨天 HH:MM」），要以單篇頁的「发布于 YYYY-MM-DD HH:MM」校準；單篇長文 Bright Data 回空白時，改用 `firecrawl_scrape`（`proxy: stealth`）可成功 |
-| AAStocks 新聞內文（補充）| `aastocks.com/tc/stocks/analysis/stock-aafn-con/{代碼}/{來源}/{ID}/hk-stock-news` | 無 | 2026-10-01 實測：正文就在 SSR HTML 裡，`curl` 可取全文（`og:description` 只有約 50 字會截斷）；頁頭另附沽空金額與沽空比率 |
-| 新浪財經內文 | `finance.sina.com.cn`、`t.cj.sina.cn` | 2026-10-01 本環境 proxy 回 `ws_closed_mid_exchange`（列表頁 `stock.finance.sina.com.cn` 正常）| 屬 §2.5 純網路錯誤，零重試，只引用列表標題；可能是暫時性，下次再觀察 |
-| 富途 `/news` 列表連結 | `futunn.com/hk/stock/{代碼}-HK/news` | 無 | 很多項目只連到騰訊通用殼頁 `gu.qq.com/resources/shy/news/detail-v2/index.html`（沒有文章 ID），只有部分是 `news.futunn.com/hk/post/{id}`；解析時用 `li.news-item` 的 `news-title`、`news-source` 和時間 span |
-| ESCON 日本 REIT 英文 IR | `escon-reit.jp/en/ir/library.html` | 無 | 「Asset Management Reports」欄是完整英文 Semi-Annual Report（含經審計財報），沒有 cid 問題，是 2971 年報的最佳來源 |
-| HKEX 權益披露 (DI) | `di.hkex.com.hk` | 無（SSR）| 2026-10-03 於 01426 實測：`curl` 可讀。入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼代碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` 列出全部通知 → 明細在 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。用來核實「大股東增持 X 股」類新聞最準；注意交易代碼 3104「Services」是以單位支付酬金，不是董事自掏腰包買進 |
-| 富途 `/news`（補充）| `futunn.com/hk/stock/{代碼}-HK/news` | 無 | 2026-10-03 實測：約 2026-09-21 起 post ID 由 79xxxxxx 變成 10 碼 1000xxxxxx；智通的回購快訊偶爾漏日（01426 漏 09-17），要與 HKEX 翌日披露報表交叉核對 |
-| 新浪財經內文（追蹤）| `finance.sina.com.cn` | 2026-10-03 仍回 `Connection reset` / `ws_closed_mid_exchange` | 連兩次（10-01、10-03）失敗，視為持續性問題而非偶發；只引用列表頁標題 |
-| yfinance 新聞（港股 REIT）| `get_yahoo_finance_news` | 1426.HK 回「No news found」| 冷門港股 REIT 不必依賴此來源 |
-| 5ch 討論串內文 | `*.5ch.io/test/read.cgi/{板}/{串ID}/` | 無封鎖，但頁面是 **Shift_JIS**，直接當 UTF-8 解析會整頁亂碼 | 2026-10-04 於 9435 實測：`find.5ch.net/search?q={公司名}` 列表為 UTF-8、`curl` 可讀（含板名、最後書込時間、レス數）；單串內文 `curl` 後要用 `decode('cp932')`。注意 ニュース速報+／嫌儲 的串標題常誇大，要回頭比對 1 樓轉貼的原始新聞 |
-| Yahoo 株つぶやき（社名是常見名詞時）| `finance.yahoo.co.jp/quote/9435.T/post` | 無封鎖，但 Yahoo 以社名關鍵字聚合 | 2026-10-04 實測：「光通信」同時是「光通訊」產業詞，20 則幾乎全是 フジクラ、古河電工 等無關貼文，且混入假的「株式分割」消息。社名是一般名詞的公司要逐則核對，必要時改抓掲示板 `/forum` 為主 |
-| 東洋経済オンライン | `toyokeizai.net/articles/-/{id}` | 無（SSR）| 2026-10-04 實測：`curl` 可取前段公開文字與 JSON-LD `datePublished`；後段付費內容取不到，屬付費牆非封鎖，不必跑 MCP 鏈 |
-| 株探 開示 PDF 清單 | `kabutan.jp/stock/news?code={代碼}&nmode=3` | 無 | 2026-10-04 實測：`nmode=3` 只列開示，可直接找到決算短信（含英文版）的 `disclosures/pdf/{yyyymmdd}/{id}/`，PDF 實體在 `tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf`。日股找季報最快路徑 |
-| 5ch 搜尋（網域搬遷）| `find.5ch.net` | 2026-10-06 於 7203 實測：301 轉到 `find.5ch.io`，`curl` 不加 `-L` 只回 162 bytes | `curl -L`；列表仍為 UTF-8，內文仍用 cp932 |
-| Yahoo JP 掲示板（大型股）| `finance.yahoo.co.jp/quote/{代碼}.T/forum` | 2026-10-06 於 7203 實測：`?page=N` 不會翻頁，永遠回最新約 60 則；熱門大型股只涵蓋約 11 小時 | 大型股無法靠此頁取得 2 週以上的討論，要在輿情檔註明涵蓋區間，以 5ch／株つぶやき 補足 |
-| 雪球（Firecrawl 時區）| `xueqiu.com/S/{代碼}` | 2026-10-06 實測：Firecrawl 渲染瀏覽器時區為 `America/New_York`，個股頁討論流時間是美東時間；單篇頁「发布于」是北京時間（相差 12 小時）| 一律以單篇頁時間校準 |
-| Reuters 文章頁（補充）| `reuters.com` | 2026-10-06 於 7203 實測：`firecrawl_scrape`（basic proxy）抓文章頁 HTTP 200 取得全文，未遇驗證牆 | 文章頁可直接用 Firecrawl |
-| Seeking Alpha | `seekingalpha.com` | 2026-10-06 實測：`firecrawl_scrape`（含 stealth）回 `All scraping engines failed` | 用 `firecrawl_search` + `site:seekingalpha.com` + `tbs: qdr:m` 找文章，Bright Data `scrape_as_markdown` 取標題／日期／Summary（正文有付費牆）。WebSearch 會混入仿冒 Seeking Alpha 的 SEO 垃圾頁（被入侵的 `.gov.my`、`.ca.gov`、`.edu.tw` 網域），一律排除 |
-| yfinance 新聞（大型股）| `get_yahoo_finance_news` | 2026-10-06 實測：7203.T 與 TM（大型 ADR）都回「No news found」| 不只冷門股，目前整體不可依賴此來源 |
-| yfinance 新聞（美股大型股）| `get_yahoo_finance_news` | 2026-10-07 於 UHS 實測：美股也回「No news found」| 所有市場都不可依賴。改用內建 `WebFetch` 抓 `finance.yahoo.com/quote/{代號}/news/`，可取得約 12 則標題（含來源與相對時間），單篇文章頁也可讀，不需 MCP |
-| Seeking Alpha（Bright Data 補充）| `seekingalpha.com/news/*` | 2026-10-07 實測：第一次 `scrape_as_markdown` 回空白，重試一次才成功；只取得標題、日期與第一段，之後是「enable Javascript and cookies」牆 | 第一次空白時照 §2.1 重試 1 次即可 |
-| Reddit（短代號誤配）| Apify `trudax/reddit-scraper-lite` | 2026-10-07 實測：關鍵字「UHS」在 wallstreetbets／investing 配到無關貼文（白銀賣權、家庭理財）| 短代號要搭配公司全名再搜一次，逐則核對標題／內文是否真與該公司相關 |
-| MOPS 法說會簡報 PDF | `mopsov.twse.com.tw/nas/STR/{代碼}{yyyyMMdd}M001.pdf` | 2026-10-10 於 4417 實測：`curl` 不跟隨轉址只拿到 307 + 「因為安全性考量」封鎖頁；`curl -L` 不帶 cookie 會下載到被截斷的 PDF（pdfinfo 報 `Couldn't find trailer dictionary`）| `curl -sL -c cj -b cj` 帶 cookie jar 即可取得完整 PDF（49 頁、7.2MB）。簡報連結可從 `poorstock.com/earningcall/{代碼}` 頁面取得（SSR）。下載後務必用 `pdfinfo` 確認檔案完整 |
-| 工商時報搜尋 | `ctee.com.tw/search?q=` | 2026-10-10 實測：`curl` 回 403；Firecrawl 抓同網址回 HTTP 404（站方已移除此搜尋路徑，不是封鎖）| 不必跑 MCP 鏈，改用 WebSearch／`firecrawl_search` 搭 `site:ctee.com.tw` 找個別文章 |
-| Dcard 搜尋 API | `dcard.tw/service/api/v2/search/posts` | 2026-10-10 實測：`curl` 回 403 Cloudflare 挑戰頁 | `firecrawl_search` 搭 `site:dcard.tw {公司名} {代碼}` 可取得索引（含發文日期摘要），足以判斷近期有無新文 |
+- 同一網域兩次請求至少間隔 3 秒（官方 JSON API 如鉅亨、CMoney 0.3~0.5 秒即可）。
+- 多站輪流抓（A → B → C → A），不要一口氣爬完一站。
+- 一般網頁同一網域單次任務最多 5 頁；官方 API 分頁不受此限。
 
-> [!NOTE]
-> **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
+### 3.6 搜尋摘要的使用條件
 
-> [!WARNING]
-> **§2.1 的 MCP 鏈會因「帳號額度」而整條斷掉，不是網站的問題——要分辨清楚再記錄。** 2026-09-20 於 4979 實測，四個 MCP 同時處於不可用狀態：
->
-> | MCP | 實際回應 | 性質 |
-> | :--- | :--- | :--- |
-> | Firecrawl | 所有工具回 **HTTP 402** | **帳號額度用盡**，非網站封鎖；整個 session 都不會恢復，第一次遇到 402 後就**不要再對任何網站呼叫 Firecrawl** |
-> | Bright Data | 連續回 **HTTP 502 `origin_bad_gateway`**（Cloudflare 提示 `retryable`、`retry_after: 60`） | **MCP 閘道端故障**，非網站封鎖；依 §2.1「每工具最多 2 次」試完即換，不要空等 60 秒重試 |
-> | Apify | `Monthly usage hard limit exceeded` | **帳號月額度用盡**；同樣是整個 session 不會恢復，遇到後不要再呼叫任何 Actor |
-> | Playwright | 可正常啟動（§2.10 修正有效），但**擋在各站登入牆／403** | 工具本身正常，屬**站方層級封鎖** |
->
-> **處置原則**：遇到 402／`hard limit exceeded` 這類**帳號級**錯誤，該 MCP 視為「本次執行全程不可用」，在 Phase 5 報告的 MCP 紀錄中明確註明，並直接跳到鏈中下一個工具；**不要對每個網站重複踩同一顆地雷**，也不要因此就用 WebSearch 摘要打發——先找**免 MCP 的 SSR 替代頁**（如富途 `/news`、Yahoo `/post`、CMoney 官方 API），這類替代路徑通常比 MCP 更快更準。
+只有在 §3.1 整條鏈都失敗、或該站在 §4 註明「只能取索引」時，才可用搜尋摘要，且該筆必須加註：「⚠️ 為搜尋索引摘要，非原始頁面逐字引述」。
 
-### 2.5 純網路錯誤 → 零重試、直接換來源（不套 MCP 鏈）
+---
 
-以下屬「純網路層斷線」，不是被擋、也不是 JS 渲染，**見到即放棄這個 URL、零重試**，立刻切到搜尋順序中的下一個來源，並刪除殘留臨時檔（如 `.tmp`）：
+## 4. 站點知識庫（依市場分類）
 
-- 連線逾時超過 10 秒、**Read Timeout**（伺服器有回應但讀取超時）
-- **EOF / Connection Reset**（錯誤訊息含 `EOF`、`Connection reset`、`forcibly closed`）
-- **任何 Socket / Network Error**（`ECONNREFUSED`、`EHOSTUNREACH` 等）
+> 格式：站點 / 網址 | 狀況 | 做法。`[yyyy-mm]` 是最後驗證月份。表內只留「目前仍有效」的做法；過時的寫法依 §11 刪除。
 
-> [!CAUTION]
-> **Read Timeout 與 EOF 是最容易讓 AI Agent 卡死的錯誤。** 遇到必須「見到即放棄、零重試」，**絕對不可**啟動背景下載任務後空等，也不可反覆重試同一個 URL。
+### 4.1 通用 / 英文圈
 
-### 2.6 請求頻率控制與交錯爬取（避免被封）
+| 站點 / 網址 | 狀況 | 做法 |
+| :--- | :--- | :--- |
+| Reddit | 內建工具 400、Firecrawl 不支援、Playwright 與 `search.json` 回 403 | **跳過 §3.1，直接用 Apify Reddit Actor（§5.3）**。Apify 不可用時只能用 Bright Data `search_engine` 取索引並註明 [2026-10] |
+| X (Twitter) | 未登入即封鎖：Firecrawl 全引擎失敗、Playwright 被導到登入頁 | 日股先用 Yahoo 株つぶやき（§4.4）。其他用 `firecrawl_search`，query 內寫 `site:x.com`（`includeDomains` 參數會回 0 筆）。索引沒有時間時，用網址的 status ID 還原：`(id >> 22) + 1288834974657` 毫秒（UTC） [2026-10] |
+| Reuters `reuters.com` | 內建 `WebSearch` 被擋 | `firecrawl_scrape`（basic proxy）可抓公司頁與文章頁全文 [2026-10] |
+| Bloomberg | 付費牆，不是封鎖 | 取摘要即可，報告註明「付費牆」 |
+| Seeking Alpha | `firecrawl_scrape` 全引擎失敗 | `firecrawl_search` + `site:seekingalpha.com` + `tbs: qdr:m` 找文章；Bright Data `scrape_as_markdown` 取標題/日期/第一段（第一次常空白，重試 1 次）。WebSearch 會混入仿冒 SA 的垃圾頁（被入侵的 `.gov.my`、`.ca.gov`、`.edu.tw`），一律排除 [2026-10] |
+| Yahoo Finance（美股新聞） | yfinance `get_yahoo_finance_news` 各市場都回「No news found」或誤配同名人物 | **不要用 yfinance 新聞**。改用 `WebFetch` 抓 `finance.yahoo.com/quote/{代號}/news/`（約 12 則標題），單篇文章頁也可讀 [2026-10] |
+| `firecrawl_search` 本身 | 一個 query 放多個 `site:` 用 OR 連接會回 0 筆 | 一次只放一個 `site:`，分開查 [2026-10] |
 
-> **核心原則：不要連續密集爬同一個網站。**
+### 4.2 台股
 
-| 規則 | 說明 |
-| :--- | :--- |
-| **同網域間隔** | 對同一網域（如 `irbank.net`），兩次請求至少間隔 **3 秒**。 |
-| **交錯爬取** | 不要一口氣爬完一站所有頁面。用「A 站 → B 站 → C 站 → A 站」輪流。 |
-| **單站上限** | 同一網域單次任務最多爬 **5 個頁面**，超過就停，用已取得資料即可。 |
-| **優先用搜尋** | 能用 `search_web` 取得摘要的，就不必逐頁爬，減少無謂 `read_url`。 |
+| 站點 / 網址 | 狀況 | 做法 |
+| :--- | :--- | :--- |
+| 鉅亨網 | 有官方關鍵字 API | **台股新聞與 MOPS 重訊全文第一站**，照 §5.1 [2026-09] |
+| 股市爆料同學會 `cmoney.tw/forum/stock/{代號}` | 頁面是空殼，貼文由 API 載入 | **直接打官方 API**，照 §5.2 [2026-07] |
+| CMoney Readmo `cmoney.tw/forum/readmo/{uuid}` | SSR，`curl` 可讀，正文在 Nuxt state `content`，JSON-LD 有 `datePublished` | **屬平台 AI 自動生成文章**，引用時標為 AI 內容，不可當網友輿情 [2026-10] |
+| MOPS `mops.twse.com.tw` | `curl` 被安全性封鎖頁擋；查詢頁需 JS 表單；Firecrawl 只拿到空表單 | **不要在 MOPS 耗時**：重訊 → §5.1 鉅亨；財報版本核對 → 財報狗 e-report；上櫃進度 → TPEx。真的必要才用 Playwright 表單互動 [2026-09] |
+| MOPS 法說會簡報 PDF `mopsov.twse.com.tw/nas/STR/{代號}{yyyyMMdd}M001.pdf` | 不帶 cookie 會拿到封鎖頁或被截斷的 PDF | `curl -sL -c cj -b cj {URL} -o out.pdf`，下載後用 `pdfinfo` 確認完整。簡報連結可從 `poorstock.com/earningcall/{代號}` 取得 [2026-10] |
+| 財報狗 e-report `statementdog.com/analysis/{代號}/e-report` | `curl` 回 202 空內容；Playwright 回 403 | `firecrawl_scrape`（basic proxy）可取得完整頁，能列出 `doc.twse.com.tw` 原始檔名以核對年度/季別 [2026-10] |
+| TPEx 申請上櫃清單 `tpex.org.tw/openapi/v1/tpex_esb_applicant_companies` | JSON API，`curl` 可讀 | 含申請日、審議會日、董事會核准日、主辦承銷商；查興櫃股是否申請轉上櫃用這個 [2026-10] |
+| Yahoo 股市（興櫃）`tw.stock.yahoo.com/quote/{代號}.TWO` | 可讀；`/news` 會 302 回個股頁 | 「成交」可能是造市商報價、總量可能為 0，判斷價格要同時看總量 [2026-10] |
+| 經濟日報搜尋 `money.udn.com/search/result/...` | `curl` 只拿到 JS 外殼 | Bright Data `scrape_as_markdown` 可取得結果列表 [2026-10] |
+| 工商時報 `ctee.com.tw/search?q=`、旺得富 `wantrich.chinatimes.com/search?q=` | 搜尋路徑 404（站方沒有此頁） | 不跑 MCP 鏈，用 `firecrawl_search` / Bright Data `search_engine` 搭 `site:` 找個別文章 [2026-10] |
+| Dcard 搜尋 API | 403 Cloudflare | `firecrawl_search` + `site:dcard.tw {公司名} {代號}` 取索引（含發文日期）[2026-10] |
+| Mobile01 討論串 | `curl` 403（Akamai） | `firecrawl_search` + `site:mobile01.com {公司名}` + `tbs: qdr:m` 找文章，再 `firecrawl_scrape` 單篇（含發文時間）[2026-10] |
+| Goodinfo `goodinfo.tw` | Bright Data 60 秒逾時 | 用 `firecrawl_search` 取索引，依 §3.6 加註 [2026-09] |
+| 券商承銷公告頁（嘉實資訊 iframe） | Firecrawl 只拿到 iframe 外殼 | 新股申購/承銷日程改抓 HiStock 公開申購頁（靜態表格）[2026-09] |
 
-> [!WARNING]
-> 「優先用搜尋」只是叫你別對同一頁重複發無謂請求，**不等於可以用搜尋摘要取代抓取**。指定來源（如雪球）內建工具抓空白時，仍要照 §2.1 先跑完 MCP 鏈，不能直接跳到 WebSearch 摘要。
+### 4.3 港股 / 中國
 
-### 2.7 實戰範例：雪球（Xueqiu）抓取 SOP（2026-07-03 驗證有效）
+| 站點 / 網址 | 狀況 | 做法 |
+| :--- | :--- | :--- |
+| HKEXnews 披露易 | 有官方 JSON API | **港股財報與公告第一站**，照 §5.4 [2026-09] |
+| HKEX 權益披露 `di.hkex.com.hk` | SSR，`curl` 可讀 | 入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` → 明細 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。核實「大股東增持」類新聞最準；交易代碼 3104「Services」是以單位支付酬金，不是自掏腰包買進 [2026-10] |
+| 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | SSR，`curl` 可讀 | 解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購快訊偶爾漏日，要與 HKEX 翌日披露報表交叉核對 [2026-10] |
+| 富途個股頁 `/quote`、`/announcement`、新聞內文 `news.futunn.com/hk/post/*` | JS 外殼；`/community` 導向登入頁 | 內文改用 Playwright 可取全文（MT Newswires 文章仍需登入）[2026-09] |
+| AAStocks | 列表 `aastocks.com/tc/stocks/analysis/stock-aafn/{代號}/0/hk-stock-news/1` 為 SSR；`http://` 會 302 | `curl -L` 抓列表；單篇 `.../stock-aafn-con/{代號}/{來源}/{ID}/hk-stock-news` 正文就在 SSR HTML（`og:description` 只有約 50 字，不要只取它）。頁頭附沽空金額與比率 [2026-10] |
+| 新浪港股新聞 `stock.finance.sina.com.cn/hkstock/news/{代號}.html` | SSR，最新 | `curl` 可讀 [2026-09] |
+| 新浪財經內文 `finance.sina.com.cn`、`t.cj.sina.cn` | 本環境 proxy 持續 `Connection reset` | 依 §3.3 零重試，只引用列表標題 [2026-10] |
+| 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 | 照 §5.6 [2026-10] |
+| 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR | 照 §5.5，不需 MCP [2026-09] |
+| moomoo 社區/新聞 | 正文 JS 載入 | 走 §3.1 MCP 鏈 |
+| LIHKG | `api_v2/thread/search` 直接打回 `error_code 5` | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`；頁面沒渲染時用 `browser_network_request` 讀頁面自己發出的 API 回應（在頁內自行 `fetch` 仍回 error 5）。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo [2026-09] |
+| 香港經濟日報 `hket.com` | HTTP 405 真人驗證；搜尋頁 404 | 只能找個別文章 URL |
 
-> 這是把 §2.1 黃金規則套在雪球上的具體版本，已驗證有效，直接照做別重複踩坑。
+### 4.4 日股
 
-0. 雪球是港股、A 股輿情的核心來源，但因 JS 動態渲染（§2.3），抓取難度高。
-1. **直接跳過內建工具**，呼叫 `brightdata scrape_as_markdown` 抓 `https://xueqiu.com/S/{代號}`。（雪球用 brightdata 的成功率最高，故此站可優先跳到 brightdata；其餘 MCP 仍依 §2.1 順序遞補）
-2. 若 brightdata 失敗，再依序 `firecrawl_scrape` → `apify` → `playwright`。
-3. 若頁面有深度專欄連結（如「一文梳理…」），可再用 brightdata 抓該文章頁補充論述。
-4. **只記錄真實存在於頁面上的貼文、連結、時間戳**，不可補充訓練資料知識（見 §5.0 防幻覺）。
+| 站點 / 網址 | 狀況 | 做法 |
+| :--- | :--- | :--- |
+| Yahoo!ファイナンス 株つぶやき `finance.yahoo.co.jp/quote/{代碼}.T/post` | SSR，`curl` 可讀 | **日股抓 X 貼文的最佳路徑**：頁面聚合真實 X 貼文，保留 `x.com/{帳號}/status/{id}` 與到分鐘的時間；用 regex `https://x\.com/[A-Za-z0-9_]+/status/[0-9]+` 配對文字，單頁約 8~10 則。限制：① J-REIT 沒有此頁（404，不是封鎖）→ 改用 `firecrawl_search` + `site:x.com`；② 社名是一般名詞的公司（如「光通信」）會混入大量無關貼文與假消息，要逐則核對 [2026-10] |
+| Yahoo JP 掲示板 `finance.yahoo.co.jp/quote/{代碼}.T/forum` | SSR，`curl` 一次約 50~60 則，每則有 `/forum/{No}` 網址、分鐘級時間 | `?page=N` 不會翻頁；熱門大型股只涵蓋約 11 小時 → 報告註明涵蓋區間，用 5ch / 株つぶやき 補足 [2026-10] |
+| 株探 `kabutan.jp` | `curl` 可讀 | 個股頁含每週信用餘額；`/stock/news?code={代碼}&nmode=3` 只列開示，可直接找到決算短信（含英文版），PDF 實體在 `tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf`。**日股找季報最快路徑**。新聞第 1 頁只涵蓋約 1 個月，加 `&page=2` 可再往前約 1.5 個月 [2026-10] |
+| みんかぶ `minkabu.jp/stock/{代碼}` | `curl` 與 Playwright 都 403 | `firecrawl_scrape` 或 Apify `rag-web-browser` 可讀。有目標株価／株価診断，常與掲示板情緒相反，可當空方對照；J-REIT 顯示「対象外」不可用 [2026-10] |
+| 5ch | `find.5ch.net` 已 301 到 `find.5ch.io` | `curl -L "https://find.5ch.io/search?q={公司名}"`（UTF-8）；討論串內文是 Shift_JIS，要 `decode('cp932')`。ニュース速報+／嫌儲 的串標題常誇大，要比對 1 樓轉貼的原始新聞 [2026-10] |
+| note `note.com` | API 403/404；搜尋頁 `curl` 只拿到外殼 | `firecrawl_scrape` 抓 `note.com/search?q=…&context=note&mode=search&sort=new`（`waitFor: 3000`），Firecrawl 不可用時改 Apify `rag-web-browser`；單篇 `curl` 可讀，時間取 JSON-LD `datePublished`；付費文章只取得免費段落 [2026-10] |
+| 東洋経済オンライン `toyokeizai.net/articles/-/{id}` | SSR，後段付費 | `curl` 取公開段落與 `datePublished`；付費牆不必跑 MCP 鏈 [2026-10] |
+| JAPAN-REIT.COM `japan-reit.com/meigara/{代碼}/` | `curl` 回 SSL 憑證鏈錯誤（站方問題，**不可**關閉 TLS 驗證）；`WebFetch` 回 503 | `firecrawl_scrape` 可讀：價格、利回り、排名、近一年日線、銘柄ニュース與開示。`/news/` 404，改用 `/topic/` 或 `/release/` [2026-10] |
+| Shared Research `sharedresearch.jp/ja/companies/{代碼}` | J-REIT 回 404（沒有覆蓋） | 小型股常是唯一的第三方研究覆蓋；J-REIT 不必查 [2026-10] |
 
-### 2.8 實戰範例：股市爆料同學會（CMoney）API 抓取 SOP（2026-07-19 驗證有效）
+---
 
-> **結論先講：不要爬網頁、不要開瀏覽器，直接打 CMoney 官方 API。** 兩支 curl 就能拿到某股票討論區的「全部歷史貼文＋留言」的乾淨 JSON，比任何 MCP 爬蟲都快且完整。此 SOP 於 2026-07-19 在 2249 湧盛實測：一次抓下 294 篇貼文＋567 則留言（2021~2026 全部歷史）。
+## 5. 已驗證的 API / 站點 SOP
 
-**背景**：`https://www.cmoney.tw/forum/stock/{股票代號}`（`api.cmoney.tw/forum/...` 是同一頁）是 Nuxt SSR 殼，HTML 裡只有標題與股價 meta，貼文列表是空的（§2.3）。前端實際是先拿「訪客 token」再打 ForumOcean API，我們直接模仿它。
-
-**步驟 1：取得訪客 token（免帳號、免登入）**
+### 5.1 鉅亨網關鍵字 API（台股新聞 + MOPS 重訊全文）
 
 ```bash
+# 步驟 1：清單（q 可填公司中文名或代號，中文要 URL-encode；limit 上限 100，可加 page=N）
+curl -s -A "<UA>" "https://ess.api.cnyes.com/ess/api/v1/news/keyword?q={公司名或代號}&limit=30"
+# 步驟 2：單篇全文（SSR）
+curl -s -A "<UA>" "https://news.cnyes.com/news/id/{newsId}"
+```
+
+- 公司名、代號各查一次，用 `newsId` 去重（代號常命中盤後速報，公司名常命中重訊）。
+- `items` 欄位：`newsId`、`title`、`summary`、`publishAt`（**秒級** timestamp，不要除以 1000）、`category[].name`（`台股公告` = MOPS 重訊轉載）。
+- 用中文名查時 `title` / `summary` 會被包上 `<mark>`，寫檔前用 regex 移除 `</?mark>`。
+- 全文取頁面 JSON-LD 的 `"articleBody"`（純文字）。引用網址：`https://news.cnyes.com/news/id/{newsId}`。
+- `api.cnyes.com/media/api/v1/newspage/{newsId}` 已失效，不要用。查不到時改用較短的簡稱或代號。
+- 超出三個月的項目不必抓全文。
+
+### 5.2 股市爆料同學會（CMoney）官方 API
+
+```bash
+# 步驟 1：訪客 token（免登入，access_token 效期約 24 小時）
 curl -s -X POST "https://www.cmoney.tw/api/identity/token" \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -d "grant_type=guest&client_id=cmstockcommunity-web"
-# 回傳 JSON，取其中的 access_token（JWT，效期約 24 小時）
-```
-
-**步驟 2：抓貼文列表（cursor 分頁）**
-
-```bash
-curl -s "https://www.cmoney.tw/api/mach/api/Article/Stocks/{股票代號}/AllLatest?fetchCount=20" \
-  -H "Authorization: Bearer {access_token}" \
-  -H "X-Version: 3.0"
-```
-
-- 回傳 `{ "articles": [...], "hasNext": true/false, "nextCursor": <數字> }`。
-- **分頁方式**：下一頁帶 `&cursor={nextCursor}`，直到 `hasNext=false`。**注意：`skipCount`/`offset` 在這支 API 無效**（會一直回同一頁，曾因此誤以為抓到 300 篇其實是同 20 篇重複——務必用 `cursor` 並以文章 `id` 去重驗證）。
-- 型別段（`AllLatest` 位置）可用：`AllLatest`（最新，抓輿情用這個）、`AllHottest`（最熱）、`news`（相關新聞）。填錯會回 400 `不支援的類型: xxx`。
-- 每篇文章重點欄位：`id`（文章 ID）、`content.text`（內文）、`content.multiMedia`（附圖）、`createTime`（**毫秒** timestamp）、`commentCount`、`emojiCount`（like/dislike/laugh…）。
-- 文章原文網址 = `https://www.cmoney.tw/forum/article/{id}`（寫報告引用來源時用）。
-
-**步驟 3：抓留言（逐篇，選擇性）**
-
-```bash
+# 步驟 2：貼文列表（X-Version: 3.0）
+curl -s "https://www.cmoney.tw/api/mach/api/Article/Stocks/{代號}/AllLatest?fetchCount=20" \
+  -H "Authorization: Bearer {access_token}" -H "X-Version: 3.0"
+# 步驟 3：留言（X-Version: 2.0，參數是 fetch/offset）
 curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50&offset=0" \
-  -H "Authorization: Bearer {access_token}" \
-  -H "X-Version: 2.0"
+  -H "Authorization: Bearer {access_token}" -H "X-Version: 2.0"
 ```
 
-- **注意版本不同：留言 API 用 `X-Version: 2.0`**（3.0 會回 UnsupportedApiVersion）；參數名是 `fetch` / `offset`（不是 fetchCount）。
-- 只對 `commentCount > 0` 的文章呼叫即可，省請求數。
+- 回傳 `{articles, hasNext, nextCursor}`；**分頁只能用 `&cursor={nextCursor}`**（`skipCount`/`offset` 無效，會一直回同一頁），並用 `id` 去重。
+- 型別段：`AllLatest`（抓輿情用）、`AllHottest`、`news`。美股端點 `.../Article/USStocks/{代號}/{型別}`（未逐一驗證）。
+- 欄位：`id`、`content.text`、`createTime`（**毫秒**，要除以 1000）、`commentCount`、`emojiCount`。原文網址：`https://www.cmoney.tw/forum/article/{id}`。
+- 只對 `commentCount > 0` 的文章抓留言。
 
-**常見錯誤對照（照著修，不要換工具重試）**：
-
-| 症狀 | 原因 → 修法 |
+| 症狀 | 修法 |
 | :--- | :--- |
-| 回 HTML 而不是 JSON | 打錯路徑。正確 base 是 `www.cmoney.tw/api/mach/api/...`（不是 `/mach/api/...` 也不是 `forumocean.cmoney.tw`） |
-| 400 `UnsupportedApiVersion` | 缺 `X-Version` header，或版本錯（文章列表 3.0、留言 2.0） |
-| 401（無 body） | 缺 `Authorization: Bearer`，或 token 過期 → 回步驟 1 重拿 |
-| 400 `不支援的類型: xxx` | 型別段拼錯 → 用 `AllLatest` / `AllHottest` / `news` |
-| 每頁內容都一樣 | 用了 `skipCount` 分頁 → 改用 `cursor`，並以文章 `id` 去重 |
+| 回 HTML 而不是 JSON | base 必須是 `www.cmoney.tw/api/mach/api/...` |
+| 400 `UnsupportedApiVersion` | 補 `X-Version`（列表 3.0、留言 2.0） |
+| 401 | 缺 Bearer 或 token 過期 → 重拿 token |
+| 400 `不支援的類型` | 型別段拼錯 |
+| 每頁內容都一樣 | 改用 `cursor` 分頁 |
 
-**其他注意**：
-- 請求間隔 0.3~0.5 秒即可，未見封鎖；仍遵守 §2.6 頻率原則。
-- 美股同學會有對應端點 `.../api/Article/USStocks/{代號}/{型別}`（同一套 token 與 header，未逐一驗證型別值）。
-- 抓回的是結構化 JSON，直接依 §5.3 範本整理成 Markdown；`createTime` 記得除以 1000 再轉日期。
-
-### 2.9 實戰範例：Reddit 抓取 SOP（Apify Actor，2026-08-28 驗證有效）
-
-> **結論先講：Reddit 不要照 §2.1 順序逐一試 firecrawl → brightdata → playwright，直接跳到 Apify 的 Reddit Actor。** 內建工具與 Firecrawl 對 `reddit.com` 都明確不支援（§2.4），但 Apify 上的 Reddit 專用 Actor 可以直接用關鍵字＋股票代號搜尋，免登入、無 rate limit、結果乾淨。此 SOP 於 2026-08-28 實測有效：搜尋 `wallstreetbets` 版的 `NVDA` 關鍵字，成功抓到真實貼文與留言（含標題、原文、時間、作者、URL）。
-
-**背景**：`reddit.com` 是英文圈輿情的重要來源（`r/wallstreetbets`、`r/stocks`、`r/investing` 等）。內建 `WebSearch`/`read_url` 對 reddit.com 常回 `400 not accessible to our user agent`；Firecrawl 對 reddit.com 會直接回「we do not support this site」。不需要浪費時間依序試這些工具，改用 Apify 的 Reddit Actor 是目前驗證最有效的做法。
-
-**步驟 1：確認可用的 Reddit Actor**
-- 目前驗證有效：`trudax/reddit-scraper-lite`（pay-per-event 計費，約 $0.004 美元/則結果，便宜且不需登入）。
-- 若此 Actor 失效或改版，才需要用 Apify 的 Actor 搜尋工具（Claude 是 `mcp__Apify__search-actors`，Gemini 用對應已連接的 Apify MCP 工具）搜關鍵字 `"Reddit"`，換一個評分高、月用量大的替代 Actor。
-
-**步驟 2：呼叫 Actor 搜尋該公司股票的討論**
-
-呼叫方式（Claude 用 `mcp__Apify__call-actor`，Gemini 用對應已連接的 Apify MCP 工具）：
+### 5.3 Reddit（Apify Actor `trudax/reddit-scraper-lite`）
 
 ```json
 {
   "actor": "trudax/reddit-scraper-lite",
   "input": {
-    "searches": ["{COMPANY_TICKER 或公司英文名}"],
+    "searches": ["{代號}", "{公司英文全名}"],
     "searchCommunityName": "wallstreetbets",
     "searchPosts": true,
     "sort": "new",
@@ -304,394 +233,210 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 }
 ```
 
-| 參數 | 說明 |
-| :--- | :--- |
-| `searches` | 關鍵字陣列。**必須用股票代號（如 `NVDA`）或公司英文全名，絕對不可用「stock」這種泛用字**（原因見下方 ⚠️ 警告，已實測踩雷） |
-| `searchCommunityName` | 鎖定 subreddit，可依序試 `wallstreetbets`、`stocks`、`investing`，或該產業專屬版；不填則搜全站，雜訊會變多 |
-| `sort` | 填 `"new"` 抓最新貼文（配合本 Skill「近三個月輿情」的範圍）|
-| `maxItems` / `maxPostCount` | 控制抓取則數，測試/單次任務用 5~10 即可，避免超支 |
-| `callOptions.maxTotalChargeUsd` | **必填，不填會直接報錯**（Apify 對 pay-per-event 型 Actor 要求至少設定費用上限，實測低於 `$0.04` 會報 `Maximum cost per run is less than the allowed minimum`，建議填 `0.1`）|
+- `callOptions.maxTotalChargeUsd` **必填**，低於 0.04 會報 `less than the allowed minimum`。
+- `searchCommunityName` 依序試 `wallstreetbets`、`stocks`、`investing` 或產業版。
+- **關鍵字不可用泛用詞**（如單獨的 `stock` 會抓到卡車避震、商品補貨）。短代號（如 `UHS`）也常誤配，要再用公司全名搜一次，逐則核對是否真與該公司相關。
+- 回 `RUNNING` 也不用等：直接拿 `datasetId` 呼叫 `get-dataset-items`（`fields: "title,communityName,url,createdAt,username,body"`）。
+- 排除 `AutoModerator` 制式文、純表情回覆、標題與內文都沒提到該公司的貼文。
+- Actor 下架時，用 Apify Actor 搜尋 `Reddit`，挑月用量高、有評分的替代品。
 
-> [!WARNING]
-> ⚠️ **關鍵字絕對不可用泛用詞（如單獨的 "stock"）。** 實測搜尋 `"stock"` 且未鎖定 `searchCommunityName` 時，抓回的是「Toyota Tundra 拖車避震（stock suspension）」「樂團周邊補貨（back in stock）」等完全無關內容——因為 "stock" 在英文口語裡意思很廣（庫存、股票、原廠零件都算），AI 執行本 SOP 時**必須**搭配股票代號或公司全名，並盡量加上 `searchCommunityName` 鎖定財經板，才能抓到真正的股票討論。
+### 5.4 HKEXnews 官方 JSON API（港股財報/公告）
 
-**步驟 3：取得結果**
+1. `https://www1.hkexnews.hk/search/prefix.do?callback=c&lang=EN&type=A&name={代號}` → 取得 `stockId`。
+2. `https://www1.hkexnews.hk/search/titleSearchServlet.do?sortDir=0&sortByOptions=DateTime&category=0&market=SEHK&stockId={stockId}&documentType=-1&fromDate={yyyyMMdd}&toDate={yyyyMMdd}&lang=EN&searchType=1`
+   - servlet 名稱**大小寫敏感**，必須是 `titleSearchServlet.do`（全小寫回 404）。
+   - 不要帶 `t1code` / `t2Gcode` / `t2code`；若一定要帶，值是 `-2`（填 `-1` 會讓任何查詢都回 0 筆）。
+3. `lang=ZH` 取中文版；`recordCnt: 0` 代表該期間確實沒有公告。
+4. PDF 連結 = `https://www1.hkexnews.hk` + `FILE_LINK`。
 
-Actor 執行後會回傳 `status`（`SUCCEEDED`/`RUNNING`）與 `datasetId`。不論是否跑完，都可直接用 `datasetId` 呼叫 `mcp__Apify__get-dataset-items`（Gemini 用對應工具）取結果，不必死等：
+### 5.5 東方財富股吧（A 股代碼）
 
-```json
-{ "datasetId": "{回傳的 datasetId}", "clean": true, "fields": "title,communityName,url,createdAt,username,body" }
-```
+- 列表：`curl -A "<UA>" https://guba.eastmoney.com/list,{A股代碼}.html`，頁內 `var article_list = {...}` 含約 40 筆（`post_id`、`post_title`、`post_publish_time`、點閱/留言數）。
+- 單篇：`https://guba.eastmoney.com/news,{A股代碼},{post_id}.html`，用 `json.JSONDecoder().raw_decode` 解析 `var post_article=` 之後的 JSON，取 `post_content`。
 
-回傳欄位說明：`title`（貼文/留言標題）、`communityName`（所屬 subreddit）、`url`（真實貼文/留言網址）、`createdAt`（發布時間）、`body`（正文或留言內容）、`username`（作者帳號）。**只保留 `title`/`body` 有實質內容、且明確與該公司/代號相關的項目**，依 §5.2 過濾規則排除無關留言（如 `AutoModerator` 的制式公告、單純表情符號回覆）。
+### 5.6 雪球
 
-**步驟 4：寫入輿情檔案**
-
-依 §5.3 範本，將整理後的結果寫入 `{yyyyMM}_輿情新聞.md` 的 `## [Reddit]` 章節：
-- 來源連結：填 `url`（必須是爬取結果中真實存在的網址，不可捏造）
-- 發布時間：填 `createdAt`
-- 核心觀點：引述 `body` 原文，不可改寫或用訓練資料補充（見 §5.0 防幻覺規則）
-
-**常見錯誤對照（照著修，不要換工具重試）**：
-
-| 症狀 | 原因 → 修法 |
-| :--- | :--- |
-| `Maximum cost per run is less than the allowed minimum of $0.04` | 沒設定 `callOptions.maxTotalChargeUsd`，或設太低 → 補上 `"maxTotalChargeUsd": 0.1` 之類的值 |
-| 抓到大量無關內容（卡車、家具、遊戲周邊等） | 關鍵字太泛用（如單獨用 `"stock"`）→ 換成股票代號 + `searchCommunityName` |
-| Actor 一直顯示 `status: "RUNNING"` | 屬正常現象，直接拿回傳的 `datasetId` 呼叫 `get-dataset-items` 也能取得目前已抓到的部分結果，不需要空等或反覆輪詢 |
-| 找不到指定 Actor 或 Actor 已下架 | 用 Apify 的 Actor 搜尋工具，關鍵字填 `"Reddit"`，改選 `monthlyUsers` 高、有評分的替代 Actor |
-
-### 2.10 Playwright MCP 環境設定與疑難排解（2026-09-20 修正並實測）
-
-> **結論先講：Playwright 不再是「本環境沒裝瀏覽器所以不能用」的工具。** 之前 §2.1 鏈末端的 playwright 會直接啟動失敗（見 `Log/CollectsentimentAndReports_Summary_20260919.md`），根因是設定問題而非環境缺瀏覽器。已於 2026-09-20 修正，雲端與本機皆實測可用。
-
-**設定方式（`.mcp.json` / `.claude/mcp_config.json` / `.agents/mcp_config.json` 三份一致）**：
-
-```json
-"playwright": { "command": "node", "args": [".claude/scripts/playwright-mcp.mjs"] }
-```
-
-啟動器 `.claude/scripts/playwright-mcp.mjs` 會自動偵測當前機器，決定瀏覽器執行檔、headless、sandbox 與憑證參數，因此 **Claude Code on the cloud（Linux 容器）與 Google Antigravity（本機 Windows/macOS）共用同一份設定**，不需要各自改檔。
-
-**原本 `npx -y @playwright/mcp@latest`（無參數）在雲端必然失敗的三層原因**：
-
-| # | 錯誤訊息 | 真正原因 | 啟動器怎麼解 |
-| :--- | :--- | :--- | :--- |
-| 1 | `Chromium distribution 'chrome' is not found at /opt/google/chrome/chrome` | MCP 預設走 **真實 Google Chrome 通道**，但雲端映像只有 Playwright 自帶的開源 Chromium，沒有 Google Chrome | 自動偵測並指定 `executablePath` |
-| 2 | `Browser "chrome-for-testing" is not installed; expected /opt/pw-browsers/chromium-1246/...` | 加 `--browser chromium` 也沒用：雲端預裝的是 **chromium-1194**，新版 MCP 期待 **1246**，build 版號不匹配 | 直接指向實際存在的執行檔，繞過版號查表 |
-| 3 | `net::ERR_CERT_AUTHORITY_INVALID` | 雲端 HTTPS 走 agent proxy 並重新簽發 TLS，Chromium 不信任該 proxy CA | 讀取 `/root/.ccr/agent-proxy-ca.crt`，計算 SPKI 指紋後以 `--ignore-certificate-errors-spki-list` **只信任這一張已驗證的 CA**（不是關閉 TLS 驗證） |
-
-**環境變數覆寫（平時不用設，排錯時才用）**：
-
-| 變數 | 用途 |
-| :--- | :--- |
-| `PLAYWRIGHT_MCP_EXECUTABLE` | 手動指定瀏覽器執行檔路徑（自動偵測選錯時用） |
-| `PLAYWRIGHT_MCP_HEADLESS` | `1` 強制無頭、`0` 強制有頭。預設：Linux 無 `DISPLAY` 時無頭，其餘有頭 |
-| `PLAYWRIGHT_MCP_VERSION` | 指定 `@playwright/mcp` 版本（預設 `0.0.82`，已實測；勿隨意改回 `latest`，新版可能再次出現 build 版號不匹配） |
-| `PLAYWRIGHT_MCP_CA_CERT` | 手動指定 proxy CA 憑證路徑 |
-| `PLAYWRIGHT_MCP_DEBUG` | 設任意值即在 stderr 印出實際傳給 MCP 的設定 |
-
-**2026-09-20 實測結果**：
-
-- ✅ `example.com`、**雪球 `xueqiu.com/S/SH600519`**（成功取得「贵州茅台(SH600519)…」真實頁面標題，此站在 §2.3 標記為 JS 動態渲染高難度站）
-- ❌ 財報狗 `statementdog.com` 回 **HTTP 403** — 這是站方封鎖 datacenter IP／無頭瀏覽器，**屬網站層級封鎖，不是設定壞掉**，照 §2.1 換其他 MCP 或改用官方來源
-
-**本機 Antigravity 注意事項**：
-
-- 需要 `node` 在 `PATH` 上（原本設定就依賴 `npx`，條件相同）。
-- 啟動器路徑是**相對於工作目錄**（與既有 `yfinance` 的 `PYTHONPATH: ".claude/mcp-patch"` 同一慣例），所以工作目錄要是 repo 根目錄（如 `d:\FinancialReport`）。若該環境工作目錄不同，把 `args` 改成絕對路徑即可。
-- 本機通常已裝 Google Chrome，啟動器會自動選用（Chrome → Playwright 快取 Chromium → Edge 依序偵測），**不需要另外執行 `npx playwright install`**。
-- 本機無 proxy MITM，第 3 層 CA 參數會自動略過（stderr 會顯示 `proxy-ca=none`），屬正常。
-
-**排錯第一步**：看 stderr 的 `[playwright-mcp-launcher]` 那兩行，它會直接寫出這次選到的瀏覽器、是否無頭、是否套用 proxy CA。
-
-### 2.11 實戰範例：鉅亨網（cnyes）關鍵字 API — 台股新聞＋MOPS 重訊全文（2026-09-22 驗證有效）
-
-> **結論先講：台股要抓新聞或 MOPS 重大訊息全文，第一步就打鉅亨網關鍵字 API，不要先去 MOPS（§2.4 已記載 MOPS 不可爬）、也不要先跑 §2.1 MCP 鏈。** 兩支 `curl`（一支拿清單、一支拿全文）即可，**零 MCP 成本、免登入、免 token**。2026-09-22 於 5306 桂盟實測：關鍵字 `桂盟` 回 84 筆、`5306` 同樣可查；重訊全文（含「發言日期/發言人/事實發生日/發生緣由/因應措施/其他應敘明事項」完整欄位）從鉅亨文章頁一次取回。
-
-**適用時機**：Phase 3 抓台股輿情/新聞、以及 Phase 2 想確認「某季財報或重大事件是否已公告」時。**僅適用台股**（鉅亨的「台股公告」分類就是 MOPS 重訊轉載）。
-
-**步驟 1：關鍵字查新聞清單（回 JSON）**
-
-```bash
-curl -s "https://ess.api.cnyes.com/ess/api/v1/news/keyword?q={公司名或股票代號}&limit=30" \
-  -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
-```
-
-- **`q` 可填公司中文名（如 `桂盟`）或股票代號（如 `5306`）**，兩者皆實測可用。中文名須 URL-encode。建議**兩種都查一次再用 `newsId` 去重**，涵蓋率最高（代號常命中盤後速報類，公司名常命中重訊與產業報導）。
-- **`limit` 上限 100**；另支援 `page={N}` 翻頁。回傳的 `data` 除 `items` 外還有 `total`、`perPage`、`currentPage`、`lastPage`、`nextPageUrl`，可直接據此判斷還有幾頁。
-- 每筆 `items` 重點欄位：
-  - `newsId`：文章 ID，用於步驟 2。
-  - `title` / `summary`：標題與摘要。
-  - `publishAt`：**秒級** timestamp（**注意：與 §2.8 CMoney 的毫秒不同，這裡不要除以 1000**）。
-  - `category[].name`：分類，**`台股公告` 即為 MOPS 重訊轉載**，`台股盤後`、`台股新聞` 等為一般新聞。要抓重訊就先用這個欄位過濾。
-- ⚠️ **用公司中文名查詢時，`title` / `summary` 會被包上 `<mark>` 標籤**（如 `<mark>桂盟</mark>:公告…`），寫入 Markdown 前**必須先移除 `<mark>` / `</mark>`**；用股票代號查詢時則不會出現。
-
-**步驟 2：取單篇全文（含 MOPS 重訊完整欄位）**
-
-```bash
-curl -s "https://news.cnyes.com/news/id/{newsId}" \
-  -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
-```
-
-- 這是 **SSR 頁面**（HTTP 200、約 180KB），正文直接在 HTML 裡，**不需要 MCP、不需要瀏覽器**。
-- **最乾淨的取文方式：抓頁面 JSON-LD 裡的 `"articleBody":"…"` 欄位**，那是不含任何 HTML 標籤的純文字全文，直接可用。退而求其次才去剝 `<main>` 區塊的標籤（換行會比較零碎）。
-- 文章原文網址 = `https://news.cnyes.com/news/id/{newsId}`（寫報告引用來源時用這個）。
-
-**常見錯誤對照（照著修，不要換工具重試）**：
-
-| 症狀 | 原因 → 修法 |
-| :--- | :--- |
-| 標題出現 `<mark>` 字樣 | 用中文名查詢的正常現象 → 寫檔前以 regex 移除 `</?mark>` |
-| 日期算出來差了 1970 年或離譜的未來 | 把 `publishAt` 當成毫秒了 → **鉅亨是秒級，直接轉換，不要除以 1000** |
-| `https://api.cnyes.com/media/api/v1/newspage/{newsId}` 回 `404` | 該端點已失效 → **不要用**，全文一律走步驟 2 的 `news.cnyes.com/news/id/{newsId}` SSR 頁 |
-| 查不到任何結果 | 關鍵字太長或含空白/全形括號 → 改用純公司簡稱或股票代號重查 |
-
-**其他注意**：
-- 只收 §5「過去三個月內」的項目：用 `publishAt` 過濾，超出範圍的不必進步驟 2，省請求數。
-- 請求間隔 0.3~0.5 秒即可，未見封鎖；仍遵守 §2.6 頻率原則。
-- 取回的是**真實頁面內容**，依 §5.0 只引述原文、附真實 `newsId` 網址與真實 `publishAt` 時間，不可改寫或用訓練資料補充。
+1. 先用 Bright Data `scrape_as_markdown` 抓 `https://xueqiu.com/S/{代號}`（雪球用 Bright Data 成功率最高，可跳過內建工具）。
+2. Bright Data 失敗或回 `bad_endpoint`（KYC）→ `firecrawl_scrape` 搭 `proxy: stealth`，再依序 Apify → Playwright。
+3. 雙重上市公司的 A 股頁（`SH601318`）與 H 股頁（`02318`）互為備援。
+4. **時間要校準**：討論流顯示相對時間，且 Firecrawl 渲染時區是 `America/New_York`；一律以單篇頁的「发布于 YYYY-MM-DD HH:MM」（北京時間）為準。
+5. 只抓討論，不從雪球抓財報。
 
 ---
 
-## 3. Phase 1 — 初始化目錄 (Setup Directory)
+## 6. Phase 1 — 建立資料夾
 
-建立公司專屬資料夾：`FinancialReport/{COMPANY_FOLDER_NAME}/`
-- 台/日/港股：`{代碼}{名稱}`（例：`FinancialReport/2881富邦金/`）
-- 美股：`{代碼}`（例：`FinancialReport/UHS/`）
-- **動作**：若資料夾不存在，請自動建立。
+- 台/日/港股：`FinancialReport/{代碼}{名稱}/`（例：`2881富邦金/`）；美股：`FinancialReport/{代碼}/`（例：`UHS/`）。
+- 若 `Routines_CollectsentimentAndReports.md` 輪替表有寫資料夾名稱，以表上為準。不存在就建立。
 
 ---
 
-## 4. Phase 2 — 最新財報搜尋與下載 (Report Retrieval)
+## 7. Phase 2 — 最新財報
 
-> **【執行邏輯】逐份下載、立即存檔**
-> 1. 目標：最新的 2 份年報、1 份季報。
-> 2. 找到一份就立刻下載並存檔，不要等所有連結找齊。
-> 3. **若該期財報已存在資料夾中，直接跳過不下載。**
-> 4. **嚴禁**從 GitHub (a9303001/FinancialReport) 下載。
-> 5. **抓取遇阻**（空白、被擋、逾時）一律回到 **§2 通用抓取規則** 處理。
+目標：最新 **2 份年報 + 1 份季報**（只有半年報的公司，用最新半年報代替季報）。找到一份就下載、驗證、存檔，再找下一份。
 
-### 4.0 盤點現有檔案與統一命名規則（先做，避免重複下載/誤判）
+### 7.1 先盤點，再下載
 
-**先盤點**：列出該公司資料夾現有檔案，依下方命名規則解析出已涵蓋的「年報年度」與「季報期間」，再決定缺哪些、要下載哪些。**不要肉眼比對檔案大小猜測，要靠檔名直接判斷。**
+列出資料夾既有檔案，用檔名判斷已涵蓋哪些期別，**已有的直接跳過**。新檔一律用統一命名：
 
-> [!WARNING]
-> 過去曾出現同一份年報被不同 AI/不同次執行用了至少 3 種命名（如 `{代碼}_annual_{年度}.md`、`{年度}_{代碼}_年報.md`、`{年度}_{代碼}_{申報日期}FE4.md`），導致無法靠檔名判斷「是否已下載」，只能逐檔開啟比對，嚴重浪費時間。**本次起統一規則如下，新建檔案必須遵守；舊檔案不強制改名，但新增/補充時要往新規則靠。**
-
-| 報告類型 | 統一命名規則 | 範例 |
+| 類型 | 命名 | 範例 |
 | :--- | :--- | :--- |
-| 年報 | `{COMPANY_TICKER}_AnnualReport_{FY}.{ext}` | `5306_AnnualReport_2025.pdf` |
-| 季報 | `{COMPANY_TICKER}_Quarter_{FY}Q{N}.{ext}` | `5306_Quarter_2026Q1.pdf` |
+| 年報 | `{TICKER}_AnnualReport_{FY}.{ext}` | `5306_AnnualReport_2025.pdf` |
+| 季報 | `{TICKER}_Quarter_{FY}Q{N}.{ext}` | `5306_Quarter_2026Q2.pdf` |
+| 半年報 | `{TICKER}_Quarter_{FY}H1.{ext}` | `2245_Quarter_2026H1.pdf` |
 
-- `{ext}` 轉換前為 `pdf`/`html`，轉換後變成 `md`（同檔名只換副檔名，不要額外加時間戳、表單代碼等雜訊）。
-- `{FY}` 一律使用財報所屬的**年度/季度**（西元年），不要用申報日期或下載時間戳。
+- `{FY}` 是財報所屬的年度/期間，不是申報日或下載日；檔名不要加時間戳或表單代碼。
+- 舊檔名不強制改名，但盤點時要認得：`{TICKER}_annual_{FY}`、`{TICKER}_quarter_{FY}Q{N}`、`{TICKER}_interim_{FY}`、台股 `{FY}_{TICKER}_{申報日}F04/FE4`（年報）、`{yyyyMM}_{TICKER}_AI1`（季報）、美股 `{TICKER}_10K_{期末日}` / `{TICKER}_10Q_{期末日}`、日股 `有価証券報告書`、`決算短信`。
+- 已有 `.md` 的期別視為已下載，不必再抓 PDF。
 
-### 4.1 驗證與格式
-- **英文優先（重要：不只是偏好，也是避免亂碼的手段）**：若有英文版請優先下載。**原因**：部分中文版 PDF（尤其台股 MOPS 中文版）使用未內嵌 ToUnicode CMap 的字型，`markitdown` 轉換後會產生大量 `(cid:N)` 亂碼，且**無法用 regex 修復**（底層根本沒對應到 Unicode，整段內容報廢）。英文版通常用標準字型，轉換後乾淨。
-- **下載後立即試轉換、立刻驗證**：不要等到 Phase 4 才發現問題。下載完一份後**馬上用 `markitdown` 轉一頁/全文試跑**，檢查 `(cid:` 出現次數：
-  - 若 `(cid:` 明顯偏高（例如整份 > 50 次），視為**此來源版本無效**（即使檔案大小、公司名稱檢查都通過也一樣），立刻刪除並換下一個來源或改抓英文版，**不要嘗試用 Phase 4 的清理規則去「修」**（那套規則處理的是 XBRL 標籤/SEC iXBRL blob，不是字型缺字）。
-  - 若乾淨，才視為下載成功，繼續下一份。
-- **保留副檔名**：保留原始 `.pdf` 或 `.html`，請勿手動改成 `.md`。
-- **檔案大小檢查**：下載後若小於 10KB (10240 bytes)，視為無效，立刻刪除並換來源。
-- **內容檢查**：讀取前 4 頁，若沒出現公司名稱或代碼，視為無效，立刻刪除並換來源。
-- **下載逾時**：遭遇 Read Timeout / EOF / Connection Reset 等網路錯誤，照 **§2.5** 處理（零重試、刪臨時檔、換下一個來源）。
+### 7.2 下載驗證（每份下載完立刻做）
 
-### 4.2 搜尋來源與順序 (找到即停，依序尋找)
+| 檢查 | 不合格處置 |
+| :--- | :--- |
+| 檔案 < 10KB | 刪除，換來源 |
+| 前 4 頁沒有公司名稱或代碼 | 刪除，換來源 |
+| 用 `markitdown`（或 `convert_pdf_to_markdown`）試轉，`(cid:` ≥ 50 次或佔比 ≥ 5% | 字型缺字，無法修復 → 刪除，改抓英文版或換來源 |
+| 網路錯誤 | 照 §3.3 |
 
-**台股 (TW)**
-1. **MOPS/TWSE 系統**（用 POST 取得檔案。英文版優先：`_AIA.pdf`；季報通常只有中文：`_AI1.pdf`。查詢頁為 JS 動態渲染，見 §2.3）
-2. **財報狗**（`https://statementdog.com/analysis/{代碼}/e-report`）
-3. **官網 IR 頁面**
+- **英文版優先**：台股 MOPS 中文 PDF 常有 `(cid:` 亂碼，英文版通常乾淨。
+- 保留原始副檔名（`.pdf` / `.html`），不要手動改成 `.md`。
 
-> [!TIP]
-> 想確認「某季財報／某重大事件是否已公告、公告了什麼」，**不要去爬 MOPS**（§2.4 已記載不可爬）。改打**鉅亨網關鍵字 API（§2.11）**，用 `category[].name == "台股公告"` 過濾即可拿到 MOPS 重訊全文，比 MOPS 官網快且免 MCP。注意該 API 提供的是**重訊全文，不是財報 PDF 本身**，PDF 仍須回到上方 1~3 的來源下載。
+### 7.3 搜尋來源（依序，找到即停）
 
-**美股 (US)**
-1. **官網 IR 頁面**（SEC Filings）
-2. **SEC EDGAR**
-3. **財報狗**（`https://statementdog.com/analysis/{代碼}/e-report`）
-4. **富途牛牛**（`https://www.futunn.com/hk/stock/{代碼}-US/announcement`）
-
-**日股 (JP)**
-1. **官網 IR 頁面**（優先找英文 Annual Report）
-2. **EDINET**
-3. **IR Bank**（`https://irbank.net/{代碼}/ir`）
-4. **富途牛牛**（`https://www.futunn.com/hk/stock/{代碼}-JP/announcement`）
-
-**港股 (HK)**（代碼必須補齊 5 碼，如 `02318`）
-1. **HKEXnews 披露易**（`https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en`）
-   - ✅ **最快路徑（2026-09-15 於 87001 驗證有效）：直接打官方 JSON API，免 JS、免 MCP、可指定日期區間。**
-     1. 先用 `https://www1.hkexnews.hk/search/prefix.do?callback=c&lang=EN&type=A&name={股票代號}` 取得 `stockId`（例：87001 → `61711`）。
-     2. 再打 `https://www1.hkexnews.hk/search/titleSearchServlet.do?sortDir=0&sortByOptions=DateTime&category=0&market=SEHK&stockId={stockId}&documentType=-1&fromDate={yyyyMMdd}&toDate={yyyyMMdd}&lang=EN&searchType=1`，回傳 JSON 含標題、刊發時間與 PDF 連結。
-        - ⚠️ **servlet 名稱大小寫敏感**：必須是 `titleSearchServlet.do`（駝峰）。2026-09-16 實測全小寫 `titlesearchservlet.do` 回 **HTTP 404**（`Not Found`），駝峰寫法同參數回 HTTP 200 正常 JSON。
-        - ⚠️ **若要額外帶分類參數 `t1code` / `t2Gcode` / `t2code`，值必須是 `-2`（= All），不是 `-1`**。2026-09-16 實測填 `-1` 會讓**任何股票、任何日期區間都回 `recordCnt: 0`**（連「不指定股票查全 SEHK」的對照組也是 0），極易被誤判成「該期間無公告」。不確定時**直接省略這三個參數**最安全。
-     3. `lang` 可改 `ZH` 取中文版；`count=0` 即代表該區間確實無公告（非抓取失敗）。
-     4. 每筆結果的 PDF 連結為 `https://www1.hkexnews.hk` + `FILE_LINK` 欄位值。
-2. **富途牛牛**（`https://www.futunn.com/hk/stock/{5碼代碼}-HK/announcement`）
-3. **公司官網 IR 頁面**
-4. ~~新浪財經~~（`https://stock.finance.sina.com.cn/hkstock/notice/{5碼代碼}.html`）
-   - ⚠️ **2026-09-15 實測：頁面可正常讀取（非封鎖、非 JS 空白），但部分港股清單停留在 2018 年即停止更新**（87001 最新一筆為 2018-07-17）。屬**資料源失修**而非抓取失敗，**不要**觸發 §2.1 MCP 遞補鏈，直接改用上方 HKEXnews JSON API。
+- **台股**：① MOPS/TWSE（英文年報 `_AIA.pdf`；季報多只有中文 `_AI1.pdf`）② 財報狗 e-report（§4.2）③ 官網 IR。想確認「是否已公告」用 §5.1 鉅亨（它給的是重訊全文，不是財報 PDF）。興櫃公司只有半年報與年報，不會有 Q1/Q3。
+- **美股**：① 官網 IR（SEC Filings）② SEC EDGAR（可用 `sec-edgar-mcp`）③ 財報狗 ④ 富途 `futunn.com/hk/stock/{代號}-US/announcement`。
+- **日股**：① 官網 IR（英文 Annual Report 優先）② 株探開示清單（§4.4，決算短信最快）③ EDINET ④ IR Bank `irbank.net/{代碼}/ir` ⑤ 富途 `{代碼}-JP/announcement`。J-REIT 的經審計英文財報常在官網英文 IR 庫，無 cid 問題：ES-CON（2971）`escon-reit.jp/en/ir/library.html` 的「Asset Management Reports」欄；HCM（3455）`hcm3455.co.jp/en/ir/library.html` 的「Semi-annual report」欄。決算後約 1 個月內英文頁常只有 Summary of accounts，簡報要到日文頁抓；頁頂「As of …」日期不會更新，不能拿來判斷新舊。
+- **港股**：① HKEXnews JSON API（§5.4）② 富途 `{5碼}-HK/announcement` ③ 官網 IR。（新浪 `/hkstock/notice/` 公告頁已停更，不要用）
 
 ---
 
-## 5. Phase 3 — 輿情與新聞收集 (Sentiment & News Scrape)
+## 8. Phase 3 — 近三個月輿情/新聞
 
-> **【執行邏輯】逐源抓取、立即存檔（Append 模式，每月一檔）**
-> 1. 範圍：**過去三個月內**。
-> 2. **每月所有來源的輿情/新聞統一存入同一份檔案**：`{yyyyMM}_輿情新聞.md`（`yyyyMM` 為**執行當月**，如 `202608_輿情新聞.md`）。
-> 3. 爬完一個網站，**立刻以 Append 模式**將該來源的內容附加到 `{yyyyMM}_輿情新聞.md`。**不要砍掉或覆蓋舊內容；若該來源的 H2 章節已存在，將新內容補充在該章節末尾。**
-> 4. **絕對不要**等所有網站爬完才存檔。
-> 5. **嚴禁**訪問 `macrotrends.net` 和 GitHub `a9303001/FinancialReport`。
-> 6. **抓取遇阻**（空白、被擋、JS 渲染）一律回到 **§2 通用抓取規則** 處理，禁止直接跳過用 WebSearch 摘要打發。
-> 7. **找不到符合條件的近期內容時，不要略過不寫**：仍要在 `{yyyyMM}_輿情新聞.md` 該來源章節明確記錄「已搜尋 {來源}，過去三個月內無符合 {公司} 的新內容」，並簡述搜尋方式（哪些關鍵字/頁面）。這樣下次執行才知道這來源**已查過**，不會誤判成「還沒查」而重複嘗試，也能讓 Phase 5 報告如實反映冷門股狀況。
+### 8.1 存檔規則
 
-> [!IMPORTANT]
-> **「一月一檔」命名規則（強制執行）**
-> | 項目 | 說明 |
-> | :--- | :--- |
-> | **檔名** | `{yyyyMM}_輿情新聞.md`，`yyyyMM` = 執行當月（如 `202608_輿情新聞.md`）|
-> | **路徑** | `FinancialReport/{COMPANY_FOLDER_NAME}/{yyyyMM}_輿情新聞.md` |
-> | **模式** | **Append（附加）**：新來源的區塊加到檔案末尾；若同來源已有章節，補充在章節末尾 |
-> | **舊檔相容** | 執行前先盤點資料夾，若有舊格式（如 `202607_xueqiu.md`）**不強制改名**，但新資料一律存入新格式 |
+- 檔名：`FinancialReport/{資料夾}/{yyyyMM}_輿情新聞.md`（`yyyyMM` = 執行當月），一個月一檔、所有來源合併。
+- **Append 模式**：檔案不存在 → 建立並寫標頭；來源章節不存在 → 在末尾新增 `## [來源名稱]`；章節已存在 → 補在該章節末尾。不可覆蓋舊內容。
+- 每抓完一個來源就立刻寫入。
+- 開始前先讀資料夾內的 `{YYYY}_PublicOpinion.md`（`ArrangePublicOpinionMd` 合併後的年度檔）與當月檔，確認上次收集到哪一天，只補新內容，避免重複。
 
-### ⚠️ 5.0 防幻覺強制規則（Anti-Hallucination — 最優先執行，不可違反）
+### 8.2 來源（依市場，抓不到照 §3 處理，不可當成「沒資料」略過）
 
-> [!CAUTION]
-> **這是本 Skill 最重要的規則。違反此規則等同於任務失敗。**
+- **台股**：鉅亨網（§5.1）、MoneyDJ、經濟日報、PTT 股市板、Dcard、Mobile01、股市爆料同學會（§5.2）、財報狗社群、HiStock、TPEx（興櫃股）。
+- **美股**：Yahoo Finance（§4.1）、Reuters、Bloomberg、Seeking Alpha、Reddit（§5.3）、X。
+- **港股 / 中國**：富途、AAStocks、新浪港股新聞、HKEX 權益披露、雪球（§5.6）、東方財富股吧（§5.5）、moomoo、LIHKG、香港經濟日報。
+- **日股**：日經、Yahoo JP 掲示板與株つぶやき、株探、みんかぶ、5ch、note、Shared Research、東洋経済；J-REIT 加 JAPAN-REIT.COM。
+- 雙重上市公司（如港股 + A 股、日股 + 美股 ADR）主市場來源不足時，再查另一邊市場的來源。
 
-**絕對禁止的行為：**
+### 8.3 過濾規則
 
-| 禁止行為 | 說明 | 典型失敗案例 |
-| :--- | :--- | :--- |
-| ❌ 自行撰寫「模擬」或「示範」討論內容 | 就算你覺得「很像真實討論」也不允許 | 用訓練資料以「雪球語氣」捏造不存在的用戶留言 |
-| ❌ 捏造來源連結（URL）| 不可編造不存在的用戶 ID、文章 ID | `https://xueqiu.com/7550137613/384237494`（用戶 ID 真實，但文章 ID 捏造）|
-| ❌ 捏造發布時間 | 不可自行猜測或「分配」日期給無來源的內容 | 把四筆討論分配到「2026-04-22, 05-18, 06-10, 06-25」 |
-| ❌ 用訓練資料「補充」爬取失敗的內容 | 爬取失敗就是失敗，不能用「我知道這家公司的產品特點」來填充 | 用「智能天幕、HUD」等公司知識寫成假討論 |
+1. 只記錄實質的基本面/事件/觀點；略過純漲跌數字、表情符號。
+2. 每筆都要和該公司直接相關；排除標題與內文都沒提到公司或代號的貼文、媒體網站自我介紹文、仿冒/垃圾站。
+3. 要寫出原作者的核心論點與細節，不能只貼網址。
+4. 平台 AI 生成的內容（如 CMoney Readmo）要標明「AI 生成」，不可當網友輿情。
+5. 遇到明顯誇大或與官方資料矛盾的說法，可註明「與 {官方來源} 不符」，但不可自行改寫原文。
 
-**正確做法：**
-- 爬取成功 → 只記錄**真實存在於網頁上**的內容，原文引述，附上真實 URL。
-- 爬取失敗（§2 整條 MCP 鏈都試過）→ **誠實記錄失敗**（見 §5.4），寫明「已嘗試 {工具清單}，均失敗，本次無法取得 {來源} 的真實輿情」。
-- **不允許**在失敗後用「讓我來補充一些可能的觀點」來遮掩失敗。
-
-### 5.1 搜尋來源 (Sources)
-> 標 ⚠️ 者為 JS 動態渲染或會封鎖爬蟲的網站，抓不到時一律照 **§2 通用抓取規則** 換 MCP，不要當成「這站沒資料」而略過。
-
-- **台股**：鉅亨網（✅ **有官方關鍵字 API，直接照 §2.11 SOP 打 API，不要爬網頁**；亦為 MOPS 重訊全文的最快來源）, MoneyDJ, 經濟日報, PTT 股市板, Dcard 理財, 股市爆料同學會（✅ 有官方 API，直接照 §2.8 SOP 打 API，不要爬網頁）, 財報狗社群, etc...
-- **美股**：Yahoo Finance, Bloomberg（⚠️ 付費牆，見 §2.4）, Reuters（⚠️ 封鎖爬蟲，見 §2.4）, X (Twitter), Reddit（⚠️ 內建工具/Firecrawl 不支援，**直接用 Apify Reddit Actor，SOP 見 §2.9**）, Seeking Alpha, etc...
-- **港股**：香港經濟日報, 雪球（⚠️ `xueqiu.com`，只抓討論、不抓財報，SOP 見 §2.7）, moomoo 社區（⚠️ JS 渲染）, 東方財富股吧（⚠️ JS 渲染）, LIHKG, etc...
-- **日股**：日本經濟新聞, Yahoo Finance JP 掲示板, **Yahoo Finance JP 株つぶやき（`/quote/{代碼}.T/post`，抓 X 貼文的最佳路徑，見 §2.4）**, みんかぶ（`https://minkabu.jp/stock/{代碼}`，⚠️ 無留言板，但有「目標株価／株価診断／個人予想」量化評價，常與掲示板情緒相反，是重要的空方對照）, Shared Research（`https://sharedresearch.jp/ja/companies/{代碼}`，小型股常為唯一的第三方研究覆蓋）, note（`https://note.com/search?q={股票代號}`，⚠️ `api/v3/searchnote` 已回 404，改抓 `note.com/search` 頁）, 5ch（`https://find.5ch.net/search?q={公司名}`）, X (Twitter), etc...
-
-### 5.2 過濾規則 (嚴格執行)
-1. **略過無意義內容**：只記錄實質基本面/事件分析，忽略純漲跌數字或表情符號。
-2. **排除 Reddit 通用文**：標題沒提到該公司或代號的，一律排除。
-3. **內容要具體**：不要只貼網址。要記錄原作者的核心論點與細節，不能過度簡化。
-4. **禁止記錄媒體/網站自我介紹文字**：若搜尋結果只是「某新聞網提供即時財經新聞、涵蓋產業股市…」這類描述網站本身的介紹文（而非該公司的具體報導），**直接捨棄，不算一筆有效紀錄**。每筆都必須是「跟該公司股票直接相關」的具體事件、數字或觀點。
-5. **每筆記錄必須有真實來源佐證**：必須能在爬取結果中找到對應原文，才能寫入檔案。若爬取結果沒有，就不寫、不補充。
-
-### 5.3 Markdown 存檔範本
-
-**檔名**：`FinancialReport/{COMPANY_FOLDER_NAME}/{yyyyMM}_輿情新聞.md`
-
-> 每月所有來源統一存入同一個檔案，每個來源用 `## [來源名稱]` H2 標題區隔。第一次建立時先寫檔案標頭，後續每個來源用 Append 在末尾加入對應章節。
+### 8.4 範本
 
 ````markdown
 # [{代碼} {公司名稱}] 輿情與新聞整理 ({YYYY}/{MM})
 
 - **分析月份**：YYYY/MM
-- **資料範圍**：過去三個月
+- **資料範圍**：YYYY-MM-DD ~ YYYY-MM-DD
 - **最後更新**：YYYY-MM-DD HH:MM
 
 ---
 
-## [雪球 Xueqiu]
+## [來源名稱]
 
 - **抓取時間**：YYYY-MM-DD
-- **抓取方式**：brightdata scrape_as_markdown（填寫實際成功的工具）
-- **抓取結果**：✅ 成功 / ❌ 失敗
-
-### 🎯 [主題] (例如: Q2營收暴增原因討論)
-- **來源連結**: [網址連結](URL)  ← 必須是爬取結果中真實存在的 URL
-- **發布時間**: YYYY-MM-DD  ← 必須是爬取結果中真實顯示的時間
-- **核心觀點與論述**:
-  > "引述原文..."  ← 必須是真實爬取到的原文，不可改寫或補充
-- **關鍵要點**:
-  - 重點A (細節與原因)
-  - 重點B (市場看法)
-
----
-
-## [PTT 股市板]
-
-- **抓取時間**：YYYY-MM-DD
-- **抓取方式**：內建工具 read_url_content
-- **抓取結果**：✅ 成功
+- **抓取方式**：{實際成功的工具，如 curl 官方 API / firecrawl_scrape}
+- **抓取結果**：✅ 成功 / ⚠️ 僅索引摘要 / ❌ 失敗 / ⭕ 無新內容
 
 ### 🎯 [主題]
-...（同上格式）
+- **來源連結**：[標題](真實 URL)
+- **發布時間**：YYYY-MM-DD HH:MM（頁面上真實顯示的時間）
+- **核心觀點**：
+  > "原文引述"
+- **關鍵要點**：
+  - 重點 A（細節與原因）
+  - 重點 B（市場看法）
 ````
 
-> [!TIP]
-> **Append 操作說明**：
-> - 若 `{yyyyMM}_輿情新聞.md` **不存在** → 建立新檔，先寫標頭，再加入第一個來源章節。
-> - 若 **已存在，且該來源的 H2 章節不存在** → 在檔案末尾 Append 新的 `## [來源名稱]` 章節。
-> - 若 **已存在，且該來源的 H2 章節已存在** → 在該章節末尾補充新內容（不重複寫標頭）。
-
-### 5.4 爬取失敗時的標準寫法
-
-若 §2 整條工具鏈均失敗，**必須**在 `{yyyyMM}_輿情新聞.md` 的對應來源章節寫入以下格式，禁止改用 AI 生成內容填充：
+### 8.5 失敗與無新內容的寫法（不可留空章節）
 
 ````markdown
 ## [東方財富股吧]
 
 - **抓取時間**：YYYY-MM-DD
 - **抓取結果**：❌ 失敗
-
-### 搜尋嘗試紀錄
-
-- 已嘗試：內建工具 read_url_content → 回傳 HTML 骨架（JS 渲染，無內容）
-- 已嘗試：firecrawl_scrape → 只取得快取的基本資料，無近期討論
-- 已嘗試：brightdata scrape_as_markdown → 連線逾時
-- 已嘗試：apify → 服務不支援此網域
-- 已嘗試：playwright → 連線失敗
-- **結論**：本次無法取得東方財富股吧的真實輿情，非 AI 生成，請下次重新嘗試。
+- 已嘗試：curl → JS 外殼；firecrawl_scrape → 403；Bright Data → 逾時；Apify → 不支援；Playwright → 登入牆
+- **結論**：本次無法取得真實輿情，非 AI 生成，下次重試。
 ````
 
----
-
-## 6. Phase 4 — 執行 Convert2md 檔案轉換
-
-當 Phase 2（財報下載）完成後，主代理人必須**自動呼叫 `Convert2md` Skill**。
-- 目的：掃描資料夾中的 PDF/HTML，轉為純淨的 Markdown (`.md`)，並清除亂碼（XBRL/iXBRL 標籤、SEC blob）。
-- 提醒：字型缺字造成的 `(cid:N)` 亂碼**無法**由此清理修復，應在 §4.1 下載階段就換英文版避開。
+查得到站但三個月內沒有該公司新內容時，結果寫 `⭕ 無新內容`，並寫明搜尋方式（關鍵字、頁面），讓下次知道這個來源已查過。
 
 ---
 
-## 7. Phase 5 — 產出最終狀態報告與推送至儲存庫 (強制 Push to master)
+## 9. Phase 4 — 轉 Markdown
 
-完成 Phase 4 後，將最終報告產出至 `FinancialReport/Log/CollectsentimentAndReports_Summary_{yyyyMMdd}.md`（依 `stock_queries.md` 規則加當日日期後綴；這份是一次性報告、不是累加檔案，所以**要**加日期，跟 §5.3 輿情檔案命名不同）。
+- Phase 2 有新下載 PDF 時，主代理人呼叫 **`Convert2md` Skill**（用 `convert_pdf_to_markdown` 轉 PDF，自動刪除 CID 亂碼失敗檔）。
+- `convert_pdf_to_markdown` 輸出的 `.md` 會含指向暫存 `pdf_images/` 的圖片連結，暫存圖刪除後會失效 → 轉檔後移除 `![](…/pdf_images/…)` 行。
+- `Convert2md` **只處理 PDF**。若下載的是 HTML（如 SEC 10-K/10-Q），要自己轉成同檔名 `.md`，移除 XBRL/iXBRL 標籤與內嵌 blob，確認正文可讀後再刪原始 HTML。
+- 沒有新檔就略過，並在報告註明。
 
-> [!IMPORTANT]
-> **【強制規則 — 不可省略，亦不可因分支限制而停下詢問使用者】**
-> **報告產出後，強制將所有新增與變更的檔案 push 到本 repo 的 `master` branch**，任務才算完成。
+---
 
-### 7.1 MCP 工具使用紀錄（強制記錄，Gemini / Claude 通用）
+## 10. Phase 5 — 執行報告與 push
 
-- 整個執行過程（Phase 1~5），**只要呼叫過任何 MCP server 的工具**（名稱通常帶 `mcp__` 前綴，或 Gemini 端為已連接的 MCP tool），就必須在報告中列出。
-- 用**人類可讀名稱**，不要用內部 ID／UUID（不要寫 `83f48fe8-...`，要寫 `Firecrawl`、`Apify`、`Bright Data`、`Playwright`、`GitHub` 等）。
-- 每筆需含：**MCP 服務名稱**、**呼叫的工具/函式名稱**、**用途（一句話）**。
-- 若本次**完全沒用到任何 MCP**（只用內建工具），需明確寫：「本次未使用 MCP，僅使用內建工具（列出工具名稱）」。
-- 目的：讓 Gemini 與 Claude 兩種 AI 都能清楚交接「這次動用了哪些外部 MCP 能力」，方便除錯與成本追蹤。
+報告寫到 `FinancialReport/Log/CollectsentimentAndReports_Summary_{yyyyMMdd}.md`（一次性報告，檔名要加日期）。
 
-```markdown
-# 任務執行最終報告 - YYYY/MM
+````markdown
+# 任務執行最終報告 - YYYY/MM/DD
+
+- **執行日**：YYYY-MM-DD（輪替表第 N 日 → {代碼} {名稱}）
+- **公司資料夾**：`{資料夾}/`
 
 ## 1. 成功紀錄
-| 股號/名稱 | 資料來源 | 產生的檔案/下載的財報檔名 | 狀態/備註 |
+| 股號/名稱 | 資料來源 | 產生/下載的檔案 | 狀態/備註 |
 | :--- | :--- | :--- | :--- |
-| `2881富邦金` | 財報狗 | `2881_AnnualReport_2024.pdf` | 下載成功 |
-| `2881富邦金` | PTT、雪球、CMoney | `202608_輿情新聞.md` | 輿情更新成功（三來源合併）|
+
+**本期重點**：（條列近三個月的關鍵事件與輿情；提到金額時附每股金額）
 
 ## 2. 失敗或被擋網站
-- **來源**: [網站名稱](URL)
-- **原因**: (如 Cloudflare 阻擋、連線逾時、付費牆等)
-- **已依 §2 換過的 MCP**: firecrawl / brightdata / apify / playwright（列出實際試過的）
+- **來源**：[網站](URL)｜**原因**：{403 / 逾時 / 付費牆…}｜**已試過**：{實際試過的工具}
 
 ## 3. 資料缺失說明
-- 說明為何某些財報或輿情找不到（如冷門股、未發布等）。
+（如：財報尚未公布、興櫃只有半年報、冷門股無討論）
 
 ## 4. 異常檔案刪除紀錄
-- 說明哪些下載檔因 <10KB、沒有公司名稱、或 `(cid:` 亂碼過多而被刪除。
+（< 10KB、無公司名稱、`(cid:` 亂碼等被刪的檔案；沒有就寫「無」）
 
-## 5. 本次執行使用的 MCP（強制填寫，無則註明「未使用」）
-| MCP 服務名稱 | 用到的工具/函式 | 用途說明 |
+## 5. 本次使用的 MCP
+| MCP 服務名稱 | 工具/函式 | 用途 |
 | :--- | :--- | :--- |
-| Firecrawl | `firecrawl_search` | 搜尋官網 IR 季報 PDF 連結 |
-| （若無使用 MCP） | — | 本次未使用 MCP，僅使用內建工具 `WebFetch`、`Bash` |
-```
+（用人類可讀名稱，如 Firecrawl、Bright Data、Apify、Playwright、yfinance；帳號級錯誤也寫在這裡。完全沒用 MCP 就寫「本次未使用 MCP，僅用 {內建工具}」）
+
+## 6. Phase 4 Convert2md
+## 7. Skill 維護
+（本次新增、修改、刪除了哪些 §4 / §5 內容；沒有就寫「無」）
+````
+
+> [!IMPORTANT]
+> **報告寫完後，必須把所有新增與變更的檔案 commit 並 push 到 `master`，任務才算完成。不可因分支限制停下來詢問使用者。**
 
 ---
 
-## 8. 完整性保護 (Completeness)
-- 就算放棄某個網站，也**不要留下空白的檔案**（改用 §5.4 誠實記錄格式）。
-- 若某來源被擋，先照 §2 換 MCP；整條鏈都失敗才嘗試下一個替代來源（參考 §4.2 財報搜尋順序或 §5.1 輿情來源）。
+## 11. Skill 維護規則（每次更新本 Skill 都要做）
+
+執行中發現新的網站行為（新封鎖、新 API、新捷徑、舊做法失效）時，在 Phase 5 更新本 Skill，**並同時做以下清理**：
+
+1. **加到正確位置**：網站行為放 §4 對應市場的表格（一個站點一列）；多步驟的 API 用法放 §5。不要另開新段落或在別處重寫抓取規則。
+2. **合併而不是追加**：同一站點已有一列時，直接改寫那一列，更新 `[yyyy-mm]`；不可再新增一列「補充」或「追蹤」。
+3. **刪除無用資料**：
+   - 已失效的做法、已被新做法取代的舊寫法、改版前的網址 → 刪除。
+   - 重複的說明、與 §3 通用規則重複的敘述 → 刪除。
+   - 一次性的除錯過程、實測流水帳（某天抓到幾筆、檔案多大）、指向已不存在檔案的連結 → 刪除，只留結論。
+   - 環境設定細節（如 Playwright 啟動器原理）不寫在這裡；需要時看 `.claude/scripts/playwright-mcp.mjs` 開頭註解。
+4. **檢查一致性**：確認內文的 § 編號引用都還對得上；`gemini/gemini_CollectsentimentAndReports.md` 若有引用本 Skill 的章節，一併更新。
+5. **兩份同步**：`.claude/skills/CollectsentimentAndReports/SKILL.md` 與 `.agents/skills/CollectsentimentAndReports/SKILL.md` 內容必須完全相同（改完用 `diff` 確認）。
+6. 在 §10 報告的「Skill 維護」寫明本次新增、修改、刪除了什麼。
