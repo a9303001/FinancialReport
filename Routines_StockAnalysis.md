@@ -481,11 +481,11 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 27
-- `COMPANY_NAME`：8435 鉅邁
-- `MARKET`：台股
-- `COMPANY_FOLDER`：8435鉅邁
+- `COMPANY_NAME`：3455 醫療保健投資法人
+- `MARKET`：日股
+- `COMPANY_FOLDER`：3455醫療保健投資法人
 - `EXTRA_ANALYSIS`：
-
+- reit
 ---
 
 - 執行日期: 28
