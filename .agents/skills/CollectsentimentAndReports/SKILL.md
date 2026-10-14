@@ -91,7 +91,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 ### 3.5 請求頻率
 
-- 同一網域兩次請求至少間隔 3 秒（官方 JSON API 如鉅亨、CMoney 0.3~0.5 秒即可）。
+- 同一網域兩次請求至少間隔 3 秒。
 - 多站輪流抓（A → B → C → A），不要一口氣爬完一站。
 - 一般網頁同一網域單次任務最多 5 頁；官方 API 分頁不受此限。
 
@@ -126,13 +126,16 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | CMoney Readmo `cmoney.tw/forum/readmo/{uuid}` | SSR，`curl` 可讀，正文在 Nuxt state `content`，JSON-LD 有 `datePublished` | **屬平台 AI 自動生成文章**，引用時標為 AI 內容，不可當網友輿情 [2026-10] |
 | MOPS `mops.twse.com.tw` | `curl` 被安全性封鎖頁擋；查詢頁需 JS 表單；Firecrawl 只拿到空表單 | **不要在 MOPS 耗時**：重訊 → §5.1 鉅亨；財報版本核對 → 財報狗 e-report；上櫃進度 → TPEx。真的必要才用 Playwright 表單互動 [2026-09] |
 | MOPS 法說會簡報 PDF `mopsov.twse.com.tw/nas/STR/{代號}{yyyyMMdd}M001.pdf` | 不帶 cookie 會拿到封鎖頁或被截斷的 PDF | `curl -sL -c cj -b cj {URL} -o out.pdf`，下載後用 `pdfinfo` 確認完整。簡報連結可從 `poorstock.com/earningcall/{代號}` 取得 [2026-10] |
-| 財報狗 e-report `statementdog.com/analysis/{代號}/e-report` | `curl` 回 202 空內容；Playwright 回 403 | `firecrawl_scrape`（basic proxy）可取得完整頁，能列出 `doc.twse.com.tw` 原始檔名以核對年度/季別 [2026-10] |
+| 財報狗 `statementdog.com/analysis/{代號}/...` | `curl` 回 202 空內容；Apify `rag-web-browser` 回 202 + `x-amzn-waf-action: challenge`（AWS WAF）；Playwright 回 403 | 只有 `firecrawl_scrape`（basic proxy）可取得完整頁（e-report 能列出 `doc.twse.com.tw` 原始檔名以核對年度/季別）。Firecrawl 沒額度時目前無替代路徑，直接記 ❌ [2026-10] |
 | TPEx 申請上櫃清單 `tpex.org.tw/openapi/v1/tpex_esb_applicant_companies` | JSON API，`curl` 可讀 | 含申請日、審議會日、董事會核准日、主辦承銷商；查興櫃股是否申請轉上櫃用這個 [2026-10] |
-| Yahoo 股市（興櫃）`tw.stock.yahoo.com/quote/{代號}.TWO` | 可讀；`/news` 會 302 回個股頁 | 「成交」可能是造市商報價、總量可能為 0，判斷價格要同時看總量 [2026-10] |
-| 經濟日報搜尋 `money.udn.com/search/result/...` | `curl` 只拿到 JS 外殼 | Bright Data `scrape_as_markdown` 可取得結果列表 [2026-10] |
+| Yahoo 股市 `tw.stock.yahoo.com/quote/{代號}.TW` / `.TWO` | SSR，`curl` 可讀。上市/上櫃股的 `/news` 可讀（HTML 內有文章 URL 與 `pubtime` 毫秒）；興櫃股的 `/news` 會 302 回個股頁 | 上市櫃股可當台股新聞備援。興櫃股「成交」可能是造市商報價、總量可能為 0，判斷價格要同時看總量 [2026-10] |
+| 經濟日報 `money.udn.com` | 搜尋頁 `search/result/1001/{關鍵字}` 與單篇 `money/story/{cate}/{id}` 皆 SSR，`curl` 可讀 | 正文在 `article-body__editor`，時間取 JSON-LD `datePublished`。搜尋頁失效時用 `WebSearch` 搭 `site:money.udn.com` 找網址 [2026-10] |
+| MoneyDJ `moneydj.com` | 搜尋 `kmdj/search/list.aspx?_QueryType_=NW&_Query_={公司名}` 為 SSR（含到秒的時間）；**少了 `_QueryType_=NW` 會 302 回首頁**；單篇 `kmdj/news/newsviewer.aspx?a={GUID}` 為 SSR | 搜尋也會命中每日「投信買賣超排行」「鉅額交易」，可當籌碼資料。時間取 JSON-LD `datePublished` [2026-10] |
+| HiStock `histock.tw/stock/{代號}` | 個股頁 `curl` 可讀；舊討論區 `/stock/{代號}/討論` 404；`news.aspx` 渲染後仍空白 | 只用來取已發行股數、PE/PB、三大法人、融資券、借券；其新聞/重訊區落後數月，不可用來判斷近期公告 [2026-10] |
 | 工商時報 `ctee.com.tw/search?q=`、旺得富 `wantrich.chinatimes.com/search?q=` | 搜尋路徑 404（站方沒有此頁） | 不跑 MCP 鏈，用 `firecrawl_search` / Bright Data `search_engine` 搭 `site:` 找個別文章 [2026-10] |
-| Dcard 搜尋 API | 403 Cloudflare | `firecrawl_search` + `site:dcard.tw {公司名} {代號}` 取索引（含發文日期）[2026-10] |
-| Mobile01 討論串 | `curl` 403（Akamai） | `firecrawl_search` + `site:mobile01.com {公司名}` + `tbs: qdr:m` 找文章，再 `firecrawl_scrape` 單篇（含發文時間）[2026-10] |
+| Dcard | 搜尋 API、Apify `rag-web-browser`、Playwright 皆 403 Cloudflare | `firecrawl_search` + `site:dcard.tw {公司名} {代號}` 取索引（含發文日期）；Firecrawl 沒額度時只能用 `WebSearch` 索引確認有無新文並依 §3.6 加註 [2026-10] |
+| Mobile01 討論串 | `curl`、Apify `rag-web-browser`、Playwright 皆 403（Akamai） | `firecrawl_search` + `site:mobile01.com {公司名}` + `tbs: qdr:m` 找文章，再 `firecrawl_scrape` 單篇（含發文時間）；Firecrawl 沒額度時只能取 `WebSearch` 索引 [2026-10] |
+| yfinance 台股日線（`{代號}.TW` / `.TWO`） | `Date` 欄是前一天 UTC 16:00 | 加 8 小時（即日期 +1）才是台北交易日 [2026-10] |
 | Goodinfo `goodinfo.tw` | Bright Data 60 秒逾時 | 用 `firecrawl_search` 取索引，依 §3.6 加註 [2026-09] |
 | 券商承銷公告頁（嘉實資訊 iframe） | Firecrawl 只拿到 iframe 外殼 | 新股申購/承銷日程改抓 HiStock 公開申購頁（靜態表格）[2026-09] |
 
@@ -180,7 +183,7 @@ curl -s -A "<UA>" "https://ess.api.cnyes.com/ess/api/v1/news/keyword?q={公司�
 curl -s -A "<UA>" "https://news.cnyes.com/news/id/{newsId}"
 ```
 
-- 公司名、代號各查一次，用 `newsId` 去重（代號常命中盤後速報，公司名常命中重訊）。
+- 公司名、代號、常用簡稱（如 `AES-KY` 與 `AES`）各查一次，用 `newsId` 去重（代號常命中盤後速報，公司名常命中重訊；代號索引可能落後數週，不可只查代號）。
 - `items` 欄位：`newsId`、`title`、`summary`、`publishAt`（**秒級** timestamp，不要除以 1000）、`category[].name`（`台股公告` = MOPS 重訊轉載）。
 - 用中文名查時 `title` / `summary` 會被包上 `<mark>`，寫檔前用 regex 移除 `</?mark>`。
 - 全文取頁面 JSON-LD 的 `"articleBody"`（純文字）。引用網址：`https://news.cnyes.com/news/id/{newsId}`。
@@ -295,7 +298,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 | :--- | :--- |
 | 檔案 < 10KB | 刪除，換來源 |
 | 前 4 頁沒有公司名稱或代碼 | 刪除，換來源 |
-| 用 `markitdown`（或 `convert_pdf_to_markdown`）試轉，`(cid:` ≥ 50 次或佔比 ≥ 5% | 字型缺字，無法修復 → 刪除，改抓英文版或換來源 |
+| 用  `convert_pdf_to_markdown`試轉，`(cid:` ≥ 50 次或佔比 ≥ 5% | 字型缺字，無法修復 → 刪除，改抓英文版或換來源 |
 | 網路錯誤 | 照 §3.3 |
 
 - **英文版優先**：台股 MOPS 中文 PDF 常有 `(cid:` 亂碼，英文版通常乾淨。
@@ -440,3 +443,4 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 4. **檢查一致性**：確認內文的 § 編號引用都還對得上；`gemini/gemini_CollectsentimentAndReports.md` 若有引用本 Skill 的章節，一併更新。
 5. **兩份同步**：`.claude/skills/CollectsentimentAndReports/SKILL.md` 與 `.agents/skills/CollectsentimentAndReports/SKILL.md` 內容必須完全相同（改完用 `diff` 確認）。
 6. 在 §10 報告的「Skill 維護」寫明本次新增、修改、刪除了什麼。
+
