@@ -57,7 +57,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 1. **先查 §4 站點知識庫**：該站有已驗證的免 MCP 捷徑（官方 API、SSR 頁、替代站），直接用，成功即止。
 2. **內建工具**：`curl` / `WebFetch`。
-3. **MCP 鏈**：`firecrawl_scrape` → Bright Data `scrape_as_markdown` → Apify → Playwright，依序遞補，任一成功即止。
+3. **MCP 鏈**：`firecrawl_scrape` → Bright Data `scrape_as_markdown` → Apify → Playwright，依序遞補，任一成功即止。Apify 抓一般網頁用 `apify/rag-web-browser`（`query` 填網址、`maxResults: 1`，一次約 0.01 CU）。
 
 | 規則 | 內容 |
 | :--- | :--- |
@@ -82,7 +82,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 | 回應 | 意義 | 處置 |
 | :--- | :--- | :--- |
-| Firecrawl `HTTP 402` | 額度用盡 | 本次不再呼叫 Firecrawl |
+| Firecrawl `HTTP 402` 或 `Insufficient credits` | 額度用盡 | 本次不再呼叫 Firecrawl，改用 Apify `rag-web-browser` |
 | Apify `Monthly usage hard limit exceeded` | 月額度用盡 | 本次不再呼叫任何 Actor |
 | Bright Data `Residential Failed (bad_endpoint)` | 帳號未完成 KYC | 需 residential 的站（雪球、LIHKG）改走其他 MCP |
 | Bright Data `502 origin_bad_gateway` | MCP 閘道故障 | 照 §3.1 試 2 次即換，不要空等 `retry_after` |
@@ -159,13 +159,13 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | :--- | :--- | :--- |
 | Yahoo!ファイナンス 株つぶやき `finance.yahoo.co.jp/quote/{代碼}.T/post` | SSR，`curl` 可讀 | **日股抓 X 貼文的最佳路徑**：頁面聚合真實 X 貼文，保留 `x.com/{帳號}/status/{id}` 與到分鐘的時間；用 regex `https://x\.com/[A-Za-z0-9_]+/status/[0-9]+` 配對文字，單頁約 8~10 則。限制：① J-REIT 沒有此頁（404，不是封鎖）→ 改用 `firecrawl_search` + `site:x.com`；② 社名是一般名詞的公司（如「光通信」）會混入大量無關貼文與假消息，要逐則核對 [2026-10] |
 | Yahoo JP 掲示板 `finance.yahoo.co.jp/quote/{代碼}.T/forum` | SSR，`curl` 一次約 50~60 則，每則有 `/forum/{No}` 網址、分鐘級時間 | `?page=N` 不會翻頁；熱門大型股只涵蓋約 11 小時 → 報告註明涵蓋區間，用 5ch / 株つぶやき 補足 [2026-10] |
-| 株探 `kabutan.jp` | `curl` 可讀 | 個股頁含每週信用餘額；`/stock/news?code={代碼}&nmode=3` 只列開示，可直接找到決算短信（含英文版），PDF 實體在 `tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf`。**日股找季報最快路徑** [2026-10] |
-| みんかぶ `minkabu.jp/stock/{代碼}` | `curl` 403 | `firecrawl_scrape` 可讀。有目標株価／株価診断，常與掲示板情緒相反，可當空方對照；J-REIT 顯示「対象外」不可用 [2026-10] |
+| 株探 `kabutan.jp` | `curl` 可讀 | 個股頁含每週信用餘額；`/stock/news?code={代碼}&nmode=3` 只列開示，可直接找到決算短信（含英文版），PDF 實體在 `tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf`。**日股找季報最快路徑**。新聞第 1 頁只涵蓋約 1 個月，加 `&page=2` 可再往前約 1.5 個月 [2026-10] |
+| みんかぶ `minkabu.jp/stock/{代碼}` | `curl` 與 Playwright 都 403 | `firecrawl_scrape` 或 Apify `rag-web-browser` 可讀。有目標株価／株価診断，常與掲示板情緒相反，可當空方對照；J-REIT 顯示「対象外」不可用 [2026-10] |
 | 5ch | `find.5ch.net` 已 301 到 `find.5ch.io` | `curl -L "https://find.5ch.io/search?q={公司名}"`（UTF-8）；討論串內文是 Shift_JIS，要 `decode('cp932')`。ニュース速報+／嫌儲 的串標題常誇大，要比對 1 樓轉貼的原始新聞 [2026-10] |
-| note `note.com` | API 403/404；搜尋頁 `curl` 只拿到外殼 | `firecrawl_scrape` 抓 `note.com/search?q=…&context=note&mode=search&sort=new`（`waitFor: 3000`）；單篇 `curl` 可讀，時間取 JSON-LD `datePublished` [2026-10] |
+| note `note.com` | API 403/404；搜尋頁 `curl` 只拿到外殼 | `firecrawl_scrape` 抓 `note.com/search?q=…&context=note&mode=search&sort=new`（`waitFor: 3000`），Firecrawl 不可用時改 Apify `rag-web-browser`；單篇 `curl` 可讀，時間取 JSON-LD `datePublished`；付費文章只取得免費段落 [2026-10] |
 | 東洋経済オンライン `toyokeizai.net/articles/-/{id}` | SSR，後段付費 | `curl` 取公開段落與 `datePublished`；付費牆不必跑 MCP 鏈 [2026-10] |
-| JAPAN-REIT.COM `japan-reit.com/meigara/{代碼}/` | SSR | J-REIT 殖利率／NAV 排名與決算評論；`/news/` 404，改用 `/topic/` 或 `/release/` [2026-10] |
-| Shared Research `sharedresearch.jp/ja/companies/{代碼}` | — | 小型股常是唯一的第三方研究覆蓋 |
+| JAPAN-REIT.COM `japan-reit.com/meigara/{代碼}/` | `curl` 回 SSL 憑證鏈錯誤（站方問題，**不可**關閉 TLS 驗證）；`WebFetch` 回 503 | `firecrawl_scrape` 可讀：價格、利回り、排名、近一年日線、銘柄ニュース與開示。`/news/` 404，改用 `/topic/` 或 `/release/` [2026-10] |
+| Shared Research `sharedresearch.jp/ja/companies/{代碼}` | J-REIT 回 404（沒有覆蓋） | 小型股常是唯一的第三方研究覆蓋；J-REIT 不必查 [2026-10] |
 
 ---
 
@@ -305,7 +305,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 - **台股**：① MOPS/TWSE（英文年報 `_AIA.pdf`；季報多只有中文 `_AI1.pdf`）② 財報狗 e-report（§4.2）③ 官網 IR。想確認「是否已公告」用 §5.1 鉅亨（它給的是重訊全文，不是財報 PDF）。興櫃公司只有半年報與年報，不會有 Q1/Q3。
 - **美股**：① 官網 IR（SEC Filings）② SEC EDGAR（可用 `sec-edgar-mcp`）③ 財報狗 ④ 富途 `futunn.com/hk/stock/{代號}-US/announcement`。
-- **日股**：① 官網 IR（英文 Annual Report 優先）② 株探開示清單（§4.4，決算短信最快）③ EDINET ④ IR Bank `irbank.net/{代碼}/ir` ⑤ 富途 `{代碼}-JP/announcement`。J-REIT 的資產運用報告常在官網英文 IR 庫（如 ES-CON `escon-reit.jp/en/ir/library.html`）。
+- **日股**：① 官網 IR（英文 Annual Report 優先）② 株探開示清單（§4.4，決算短信最快）③ EDINET ④ IR Bank `irbank.net/{代碼}/ir` ⑤ 富途 `{代碼}-JP/announcement`。J-REIT 的經審計英文財報常在官網英文 IR 庫，無 cid 問題：ES-CON（2971）`escon-reit.jp/en/ir/library.html` 的「Asset Management Reports」欄；HCM（3455）`hcm3455.co.jp/en/ir/library.html` 的「Semi-annual report」欄。決算後約 1 個月內英文頁常只有 Summary of accounts，簡報要到日文頁抓；頁頂「As of …」日期不會更新，不能拿來判斷新舊。
 - **港股**：① HKEXnews JSON API（§5.4）② 富途 `{5碼}-HK/announcement` ③ 官網 IR。（新浪 `/hkstock/notice/` 公告頁已停更，不要用）
 
 ---
@@ -380,6 +380,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ## 9. Phase 4 — 轉 Markdown
 
 - Phase 2 有新下載 PDF 時，主代理人呼叫 **`Convert2md` Skill**（用 `convert_pdf_to_markdown` 轉 PDF，自動刪除 CID 亂碼失敗檔）。
+- `convert_pdf_to_markdown` 輸出的 `.md` 會含指向暫存 `pdf_images/` 的圖片連結，暫存圖刪除後會失效 → 轉檔後移除 `![](…/pdf_images/…)` 行。
 - `Convert2md` **只處理 PDF**。若下載的是 HTML（如 SEC 10-K/10-Q），要自己轉成同檔名 `.md`，移除 XBRL/iXBRL 標籤與內嵌 blob，確認正文可讀後再刪原始 HTML。
 - 沒有新檔就略過，並在報告註明。
 
