@@ -295,7 +295,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 | :--- | :--- |
 | 檔案 < 10KB | 刪除，換來源 |
 | 前 4 頁沒有公司名稱或代碼 | 刪除，換來源 |
-| 用 `markitdown`（或 `convert_pdf_to_markdown`）試轉，`(cid:` ≥ 50 次或佔比 ≥ 5% | 字型缺字，無法修復 → 刪除，改抓英文版或換來源 |
+| 用  `convert_pdf_to_markdown`試轉，`(cid:` ≥ 50 次或佔比 ≥ 5% | 字型缺字，無法修復 → 刪除，改抓英文版或換來源 |
 | 網路錯誤 | 照 §3.3 |
 
 - **英文版優先**：台股 MOPS 中文 PDF 常有 `(cid:` 亂碼，英文版通常乾淨。
