@@ -430,7 +430,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 執行中發現新的網站行為（新封鎖、新 API、新捷徑、舊做法失效）時，在 Phase 5 更新本 Skill，**並同時做以下清理**：
 
-1. **加到正確位置**：網站行為放 §4 對應市場的表格（一個站點一列）；多步驟的 API 用法放 §5。不要另開新段落或在別處重寫抓取規則。
+1. **加到正確位置**：網站行為放 §4 對應市場的表格（一個站點一列）；多步驟的 API 用法放 §5。不要另開新段落或在別處重寫抓取規則。-
 2. **合併而不是追加**：同一站點已有一列時，直接改寫那一列，更新 `[yyyy-mm]`；不可再新增一列「補充」或「追蹤」。
 3. **刪除無用資料**：
    - 已失效的做法、已被新做法取代的舊寫法、改版前的網址 → 刪除。
@@ -440,3 +440,4 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 4. **檢查一致性**：確認內文的 § 編號引用都還對得上；`gemini/gemini_CollectsentimentAndReports.md` 若有引用本 Skill 的章節，一併更新。
 5. **兩份同步**：`.claude/skills/CollectsentimentAndReports/SKILL.md` 與 `.agents/skills/CollectsentimentAndReports/SKILL.md` 內容必須完全相同（改完用 `diff` 確認）。
 6. 在 §10 報告的「Skill 維護」寫明本次新增、修改、刪除了什麼。
+
