@@ -176,6 +176,14 @@ graph TD
 | 經濟日報搜尋頁 | `money.udn.com/search/result/...` | 2026-10-13 實測：`curl` 只拿到 JS 外殼 | Bright Data `scrape_as_markdown` 可取得「共找到N筆」與結果列表 |
 | Yahoo 股市（興櫃股）| `tw.stock.yahoo.com/quote/{代號}.TWO` | 無封鎖；`/news` 子頁 302 轉回個股頁 | 興櫃股「成交」欄可能是造市商報價，總量可能為 0，判斷價格須同時看總量 |
 | `firecrawl_search` 多 site 查詢 | — | 2026-10-13 實測：同一 query 用多個 `site:` 加 OR 回 0 筆 | 拆成一次一個 `site:` 分別查詢 |
+| JAPAN-REIT.COM（curl）| `japan-reit.com/meigara/{代碼}/` | 2026-10-14 於 3455 實測：`curl` 回 `SSL certificate problem: unable to get local issuer certificate`（站方憑證鏈不完整，**不可**關閉 TLS 驗證）；`WebFetch` 回 HTTP 503 | `firecrawl_scrape`（自動走 stealth）成功，頁面含當日價格、利回り、各項排名、近一年日線價量表、銘柄ニュース與開示清單 |
+| みんかぶ（Playwright）| `minkabu.jp/stock/{代碼}` | 2026-10-14 實測：Playwright 也回 HTTP 403 | Apify `apify/rag-web-browser`（`query` 填網址、`maxResults: 1`）HTTP 200 成功，一次約 0.01 CU |
+| note 搜尋頁（Firecrawl 不可用時）| `note.com/search?q=…&sort=new` | 2026-10-14 實測：Firecrawl 額度用盡 | Apify `apify/rag-web-browser` 可取得完整列表（標題、作者、相對時間）；單篇仍用 `curl` + JSON-LD `datePublished`。付費文章只取得免費段落 |
+| 株探 新聞第 2 頁 | `kabutan.jp/stock/news?code={代碼}&page=2` | 無 | 2026-10-14 實測：第 1 頁只涵蓋約 1 個月，加 `&page=2` 可再往前約 1.5 個月，`curl` 可讀 |
+| Shared Research（J-REIT）| `sharedresearch.jp/ja/companies/{代碼}` | 2026-10-14 於 3455 回 404 | J-REIT 沒有覆蓋，不必跑 MCP 鏈 |
+| Firecrawl 額度 | 全部 Firecrawl 工具 | 2026-10-14 實測：用了 3 次後回「Insufficient credits」（帳號級） | 與 §2.4 WARNING 的 402 同性質，遇到後本次不再呼叫；改走 Apify `rag-web-browser` |
+| convert_pdf_to_markdown 圖片連結 | `pymupdf4llm-mcp` | 2026-10-14 實測：輸出的 `.md` 內含指向 `<SCRATCH>/pdf_images/…` 的圖片連結，Convert2md 步驟 4 刪掉暫存圖片後會變成失效連結（3455 簡報有 253 個） | 轉檔後移除 `![](…/pdf_images/…)` 行，與既有公司 `.md` 一致 |
+| HCM 英文 IR | `hcm3455.co.jp/en/ir/library.html` | 無（SSR，表格欄位：Summary of accounts／Presentation material／Semi-annual report／Security report） | 「Semi-annual report」欄是英文經審計財報（約 50 頁、無 cid），是 3455 年報的最佳來源；最新一期決算後約 1 個月內英文只有 Summary of accounts，簡報要到日文頁 `/ja/ir/library.html` 抓（日文版也無 cid）。頁頂「As of …」日期不會更新，不能拿來判斷資料新舊 |
 
 > [!NOTE]
 > **這張表會隨經驗累積增補。每次遇到新的「封鎖爬蟲」或「JS 空白」網站，處理完後把它加進 §2.3 或 §2.4**（網域 + 錯誤樣態 + 有效的替代做法），下次執行才不會重蹈覆轍。
