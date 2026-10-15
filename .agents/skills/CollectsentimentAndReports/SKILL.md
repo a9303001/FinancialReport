@@ -150,7 +150,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | AAStocks | 列表 `aastocks.com/tc/stocks/analysis/stock-aafn/{代號}/0/hk-stock-news/1` 為 SSR；`http://` 會 302 | `curl -L` 抓列表；單篇 `.../stock-aafn-con/{代號}/{來源}/{ID}/hk-stock-news` 正文就在 SSR HTML（`og:description` 只有約 50 字，不要只取它）。頁頭附沽空金額與比率 [2026-10] |
 | 新浪港股新聞 `stock.finance.sina.com.cn/hkstock/news/{代號}.html` | SSR，最新 | `curl` 可讀 [2026-09] |
 | 新浪財經內文 `finance.sina.com.cn`、`t.cj.sina.cn` | 本環境 proxy 持續 `Connection reset` | 依 §3.3 零重試，只引用列表標題 [2026-10] |
-| 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 | 照 §5.6 [2026-10] |
+| 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 + WAF；Apify `rag-web-browser` 只拿到 WAF JS 外殼，Playwright 回 HTTP 567「请求异常已被安全策略拦截」（對 AI Agent 限制數小時） | 照 §5.6 [2026-10] |
 | 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR | 照 §5.5，不需 MCP [2026-09] |
 | moomoo 社區/新聞 | 正文 JS 載入 | 走 §3.1 MCP 鏈 |
 | LIHKG | `api_v2/thread/search` 直接打回 `error_code 5` | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`；頁面沒渲染時用 `browser_network_request` 讀頁面自己發出的 API 回應（在頁內自行 `fetch` 仍回 error 5）。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo [2026-09] |
@@ -249,7 +249,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 2. `https://www1.hkexnews.hk/search/titleSearchServlet.do?sortDir=0&sortByOptions=DateTime&category=0&market=SEHK&stockId={stockId}&documentType=-1&fromDate={yyyyMMdd}&toDate={yyyyMMdd}&lang=EN&searchType=1`
    - servlet 名稱**大小寫敏感**，必須是 `titleSearchServlet.do`（全小寫回 404）。
    - 不要帶 `t1code` / `t2Gcode` / `t2code`；若一定要帶，值是 `-2`（填 `-1` 會讓任何查詢都回 0 筆）。
-3. `lang=ZH` 取中文版；`recordCnt: 0` 代表該期間確實沒有公告。
+3. `lang=ZH` 取中文版；`recordCnt: 0` 代表該期間確實沒有公告。中文 PDF（檔名 `_c.pdf`）用 `pdftotext` 常因缺 Adobe-GB1 字型解析失敗 → 改用 `lang=EN` 回傳的英文版 `FILE_LINK`（同編號去掉 `_c`）。
 4. PDF 連結 = `https://www1.hkexnews.hk` + `FILE_LINK`。
 
 ### 5.5 東方財富股吧（A 股代碼）
@@ -261,6 +261,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 1. 先用 Bright Data `scrape_as_markdown` 抓 `https://xueqiu.com/S/{代號}`（雪球用 Bright Data 成功率最高，可跳過內建工具）。
 2. Bright Data 失敗或回 `bad_endpoint`（KYC）→ `firecrawl_scrape` 搭 `proxy: stealth`，再依序 Apify → Playwright。
+   - 整條鏈都失敗時，用 Exa `web_search_exa`（query 寫「雪球 {公司名} {代號} 讨论 {年月}」）：它回傳雪球單篇頁的索引全文，含「发布于 YYYY-MM-DD HH:MM」、回覆數與部分留言，比搜尋摘要完整；仍依 §3.6 標註為索引。要逐則確認是否屬該公司（留言頁常是其他個股的討論串）。
 3. 雙重上市公司的 A 股頁（`SH601318`）與 H 股頁（`02318`）互為備援。
 4. **時間要校準**：討論流顯示相對時間，且 Firecrawl 渲染時區是 `America/New_York`；一律以單篇頁的「发布于 YYYY-MM-DD HH:MM」（北京時間）為準。
 5. 只抓討論，不從雪球抓財報。
