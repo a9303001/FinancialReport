@@ -153,7 +153,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 + WAF；Apify `rag-web-browser` 只拿到 WAF JS 外殼，Playwright 回 HTTP 567「请求异常已被安全策略拦截」（對 AI Agent 限制數小時） | 照 §5.6 [2026-10] |
 | 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR | 照 §5.5，不需 MCP [2026-09] |
 | moomoo 社區/新聞 | 正文 JS 載入 | 走 §3.1 MCP 鏈 |
-| LIHKG | `api_v2/thread/search` 直接打回 `error_code 5` | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`；頁面沒渲染時用 `browser_network_request` 讀頁面自己發出的 API 回應（在頁內自行 `fetch` 仍回 error 5）。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo [2026-09] |
+| LIHKG | `api_v2/thread/search` 直接打回 `error_code 5`；2026-10 起頁面自己發出的 `api_v2/thread/search`、`system/property` 也回 HTTP 503（頁面空白） | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`，用 `browser_network_requests`（`filter: thread/search`）看頁面 API 狀態；200 時用 `browser_network_request` 讀回應（在頁內自行 `fetch` 仍回 error 5），503 時試 2 次即記 ❌。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo [2026-10] |
 | 香港經濟日報 `hket.com` | HTTP 405 真人驗證；搜尋頁 404 | 只能找個別文章 URL |
 
 ### 4.4 日股
@@ -255,7 +255,8 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ### 5.5 東方財富股吧（A 股代碼）
 
 - 列表：`curl -A "<UA>" https://guba.eastmoney.com/list,{A股代碼}.html`，頁內 `var article_list = {...}` 含約 40 筆（`post_id`、`post_title`、`post_publish_time`、點閱/留言數）。
-- 單篇：`https://guba.eastmoney.com/news,{A股代碼},{post_id}.html`，用 `json.JSONDecoder().raw_decode` 解析 `var post_article=` 之後的 JSON，取 `post_content`。
+- 單篇：`https://guba.eastmoney.com/news,{A股代碼},{post_id}.html`，用 `json.JSONDecoder().raw_decode` 解析 `post_article` 之後的 JSON，取 `post_content`。連續抓取時部分單篇會回約 2.8KB 空殼（無 `post_article`）→ 帶 `Referer: https://guba.eastmoney.com/list,{代碼}.html`、間隔 4 秒重試 1 次即可。
+- 港股也有股吧：代碼寫 `hk{5碼}`（如 `list,hk00546.html`），格式同上 [2026-10]。
 
 ### 5.6 雪球
 
