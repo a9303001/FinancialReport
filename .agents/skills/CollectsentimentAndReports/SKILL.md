@@ -126,17 +126,17 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | CMoney Readmo `cmoney.tw/forum/readmo/{uuid}` | SSR，`curl` 可讀，正文在 Nuxt state `content`，JSON-LD 有 `datePublished` | **屬平台 AI 自動生成文章**，引用時標為 AI 內容，不可當網友輿情 [2026-10] |
 | MOPS `mops.twse.com.tw` | `curl` 被安全性封鎖頁擋；查詢頁需 JS 表單；Firecrawl 只拿到空表單 | **不要在 MOPS 耗時**：重訊 → §5.1 鉅亨；財報版本核對 → 財報狗 e-report；上櫃進度 → TPEx。真的必要才用 Playwright 表單互動 [2026-09] |
 | MOPS 法說會簡報 PDF `mopsov.twse.com.tw/nas/STR/{代號}{yyyyMMdd}M001.pdf` | 不帶 cookie 會拿到封鎖頁或被截斷的 PDF | `curl -sL -c cj -b cj {URL} -o out.pdf`，下載後用 `pdfinfo` 確認完整。簡報連結可從 `poorstock.com/earningcall/{代號}` 取得 [2026-10] |
-| 財報狗 `statementdog.com/analysis/{代號}/...` | `curl` 回 202 空內容；Apify `rag-web-browser` 回 202 + `x-amzn-waf-action: challenge`（AWS WAF）；Playwright 回 403 | 只有 `firecrawl_scrape`（basic proxy）可取得完整頁（e-report 能列出 `doc.twse.com.tw` 原始檔名以核對年度/季別）。Firecrawl 沒額度時目前無替代路徑，直接記 ❌ [2026-10] |
+| 財報狗 `statementdog.com/analysis/{代號}/...` | `curl` 回 202 空內容；Apify `rag-web-browser` 回 202 + `x-amzn-waf-action: challenge`（AWS WAF）；Playwright 回 403 | 只有 `firecrawl_scrape`（basic proxy）可取得完整頁（e-report 能列出 `doc.twse.com.tw` 原始檔名以核對年度/季別）。Firecrawl 沒額度時目前無替代路徑，直接記 ❌（Exa 索引的 e-report 版本落後，不可用來判斷是否有新財報）[2026-10] |
 | TPEx 申請上櫃清單 `tpex.org.tw/openapi/v1/tpex_esb_applicant_companies` | JSON API，`curl` 可讀 | 含申請日、審議會日、董事會核准日、主辦承銷商；查興櫃股是否申請轉上櫃用這個 [2026-10] |
-| Yahoo 股市 `tw.stock.yahoo.com/quote/{代號}.TW` / `.TWO` | SSR，`curl` 可讀。上市/上櫃股的 `/news` 可讀（HTML 內有文章 URL 與 `pubtime` 毫秒）；興櫃股的 `/news` 會 302 回個股頁 | 上市櫃股可當台股新聞備援。興櫃股「成交」可能是造市商報價、總量可能為 0，判斷價格要同時看總量 [2026-10] |
+| Yahoo 股市 `tw.stock.yahoo.com/quote/{代號}.TW` / `.TWO` | SSR，`curl` 可讀。上市/上櫃股的 `/news` 可讀（HTML 內有文章 URL 與 `pubtime` 毫秒，但兩者在 HTML 中順序不固定）；興櫃股的 `/news` 會 302 回個股頁 | 上市櫃股可當台股新聞備援；**發布時間取各單篇 JSON-LD `datePublished`**，不要按位置配對 `pubtime`。興櫃股「成交」可能是造市商報價、總量可能為 0，判斷價格要同時看總量 [2026-10] |
 | 經濟日報 `money.udn.com` | 搜尋頁 `search/result/1001/{關鍵字}` 與單篇 `money/story/{cate}/{id}` 皆 SSR，`curl` 可讀 | 正文在 `article-body__editor`，時間取 JSON-LD `datePublished`。搜尋頁失效時用 `WebSearch` 搭 `site:money.udn.com` 找網址 [2026-10] |
-| MoneyDJ `moneydj.com` | 搜尋 `kmdj/search/list.aspx?_QueryType_=NW&_Query_={公司名}` 為 SSR（含到秒的時間）；**少了 `_QueryType_=NW` 會 302 回首頁**；單篇 `kmdj/news/newsviewer.aspx?a={GUID}` 為 SSR | 搜尋也會命中每日「投信買賣超排行」「鉅額交易」，可當籌碼資料。時間取 JSON-LD `datePublished` [2026-10] |
+| MoneyDJ `moneydj.com` | 搜尋 `kmdj/search/list.aspx?_QueryType_=NW&_Query_={公司名}` 為 SSR（含到秒的時間）；**少了 `_QueryType_=NW` 會 302 回首頁**；單篇 `kmdj/news/newsviewer.aspx?a={GUID}` 為 SSR | 搜尋也會命中每日「投信買賣超排行」「鉅額交易」，可當籌碼資料，也會命中名稱相近的其他公司，要逐則核對。時間取 JSON-LD `datePublished`、正文取 JSON-LD `articleBody` [2026-10] |
 | HiStock `histock.tw/stock/{代號}` | 個股頁 `curl` 可讀；舊討論區 `/stock/{代號}/討論` 404；`news.aspx` 渲染後仍空白 | 只用來取已發行股數、PE/PB、三大法人、融資券、借券；其新聞/重訊區落後數月，不可用來判斷近期公告 [2026-10] |
 | 工商時報 `ctee.com.tw/search?q=`、旺得富 `wantrich.chinatimes.com/search?q=` | 搜尋路徑 404（站方沒有此頁） | 不跑 MCP 鏈，用 `firecrawl_search` / Bright Data `search_engine` 搭 `site:` 找個別文章 [2026-10] |
-| Dcard | 搜尋 API、Apify `rag-web-browser`、Playwright 皆 403 Cloudflare | `firecrawl_search` + `site:dcard.tw {公司名} {代號}` 取索引（含發文日期）；Firecrawl 沒額度時只能用 `WebSearch` 索引確認有無新文並依 §3.6 加註 [2026-10] |
-| Mobile01 討論串 | `curl`、Apify `rag-web-browser`、Playwright 皆 403（Akamai） | `firecrawl_search` + `site:mobile01.com {公司名}` + `tbs: qdr:m` 找文章，再 `firecrawl_scrape` 單篇（含發文時間）；Firecrawl 沒額度時只能取 `WebSearch` 索引 [2026-10] |
+| Dcard | 搜尋 API、Apify `rag-web-browser`、Playwright 皆 403 Cloudflare | `firecrawl_search` + `site:dcard.tw {公司名} {代號}` 取索引（含發文日期）；Firecrawl 沒額度時改用 Exa `web_search_exa` 或 `WebSearch` 索引確認有無新文並依 §3.6 加註 [2026-10] |
+| Mobile01 討論串 | `curl`、Playwright 皆 403（Akamai）；Apify `rag-web-browser` 直接給網址 403，但用 Google 搜尋模式（`query` 填關鍵字）曾以 200 取得討論串頁 | `firecrawl_search` + `site:mobile01.com {公司名}` + `tbs: qdr:m` 找文章，再 `firecrawl_scrape` 單篇（含發文時間）；Firecrawl 沒額度時改用 Apify `rag-web-browser` 搜尋模式，或 Exa `web_search_exa` 取索引 [2026-10] |
 | yfinance 台股日線（`{代號}.TW` / `.TWO`） | `Date` 欄是前一天 UTC 16:00 | 加 8 小時（即日期 +1）才是台北交易日 [2026-10] |
-| Goodinfo `goodinfo.tw` | Bright Data 60 秒逾時 | 用 `firecrawl_search` 取索引，依 §3.6 加註 [2026-09] |
+| Goodinfo `goodinfo.tw` | Bright Data 60 秒逾時 | 用 `firecrawl_search` 取索引，Firecrawl 沒額度時改用 Exa `web_search_exa`，依 §3.6 加註 [2026-10] |
 | 券商承銷公告頁（嘉實資訊 iframe） | Firecrawl 只拿到 iframe 外殼 | 新股申購/承銷日程改抓 HiStock 公開申購頁（靜態表格）[2026-09] |
 
 ### 4.3 港股 / 中國
@@ -160,13 +160,15 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 | 站點 / 網址 | 狀況 | 做法 |
 | :--- | :--- | :--- |
-| Yahoo!ファイナンス 株つぶやき `finance.yahoo.co.jp/quote/{代碼}.T/post` | SSR，`curl` 可讀 | **日股抓 X 貼文的最佳路徑**：頁面聚合真實 X 貼文，保留 `x.com/{帳號}/status/{id}` 與到分鐘的時間；用 regex `https://x\.com/[A-Za-z0-9_]+/status/[0-9]+` 配對文字，單頁約 8~10 則。限制：① J-REIT 沒有此頁（404，不是封鎖）→ 改用 `firecrawl_search` + `site:x.com`；② 社名是一般名詞的公司（如「光通信」）會混入大量無關貼文與假消息，要逐則核對 [2026-10] |
-| Yahoo JP 掲示板 `finance.yahoo.co.jp/quote/{代碼}.T/forum` | SSR，`curl` 一次約 50~60 則，每則有 `/forum/{No}` 網址、分鐘級時間 | `?page=N` 不會翻頁；熱門大型股只涵蓋約 11 小時 → 報告註明涵蓋區間，用 5ch / 株つぶやき 補足 [2026-10] |
-| 株探 `kabutan.jp` | `curl` 可讀 | 個股頁含每週信用餘額；`/stock/news?code={代碼}&nmode=3` 只列開示，可直接找到決算短信（含英文版），PDF 實體在 `tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf`。**日股找季報最快路徑**。新聞第 1 頁只涵蓋約 1 個月，加 `&page=2` 可再往前約 1.5 個月 [2026-10] |
-| みんかぶ `minkabu.jp/stock/{代碼}` | `curl` 與 Playwright 都 403 | `firecrawl_scrape` 或 Apify `rag-web-browser` 可讀。有目標株価／株価診断，常與掲示板情緒相反，可當空方對照；J-REIT 顯示「対象外」不可用 [2026-10] |
+| Yahoo!ファイナンス 株つぶやき `finance.yahoo.co.jp/quote/{代碼}.T/post` | SSR，`curl` 可讀 | **日股抓 X 貼文的最佳路徑**：頁面聚合真實 X 貼文，保留 `x.com/{帳號}/status/{id}` 與到分鐘的時間；用 regex `https://x\.com/[A-Za-z0-9_]+/status/[0-9]+` 配對文字，單頁約 8~10 則。限制：① J-REIT 沒有此頁（404，不是封鎖）→ 改用 `firecrawl_search` + `site:x.com`；② 社名是一般名詞的公司（如「光通信」）會混入大量無關貼文與假消息，要逐則核對；③ 常混入「爆上げ」導流垃圾帳號（連到外部「新聞」站），一律排除 [2026-10] |
+| Yahoo JP 掲示板 `finance.yahoo.co.jp/quote/{代碼}.T/forum` | SSR，`curl` 一次約 50~60 則，每則有 `/forum/{No}` 網址、分鐘級時間 | `?page=N` 不會翻頁；熱門大型股只涵蓋約 11 小時、冷門股可涵蓋數月 → 報告註明涵蓋區間，用 5ch / 株つぶやき 補足 [2026-10] |
+| 株探 `kabutan.jp` | `curl` 可讀 | 個股頁含每週信用餘額；`/stock/news?code={代碼}&nmode=3` 只列開示，可直接找到決算短信（含英文版）。列表連結指向包裝頁 `kabutan.jp/disclosures/pdf/{yyyymmdd}/{id}/`（HTML），PDF 實體網址 `tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf` 要從該頁取出。**日股找季報最快路徑**。新聞第 1 頁只涵蓋約 1 個月，加 `&page=2` 可再往前約 1.5 個月 [2026-10] |
+| みんかぶ `minkabu.jp/stock/{代碼}` | `curl` 405、Apify `rag-web-browser` 405「Human Verification」（AWS WAF）、Playwright 403 | `firecrawl_scrape` 或 Apify `apify/web-fetch` 可讀。有目標株価／株価診断，常與掲示板情緒相反，可當空方對照；J-REIT 顯示「対象外」不可用 [2026-10] |
 | 5ch | `find.5ch.net` 已 301 到 `find.5ch.io` | `curl -L "https://find.5ch.io/search?q={公司名}"`（UTF-8）；討論串內文是 Shift_JIS，要 `decode('cp932')`。ニュース速報+／嫌儲 的串標題常誇大，要比對 1 樓轉貼的原始新聞 [2026-10] |
-| note `note.com` | API 403/404；搜尋頁 `curl` 只拿到外殼 | `firecrawl_scrape` 抓 `note.com/search?q=…&context=note&mode=search&sort=new`（`waitFor: 3000`），Firecrawl 不可用時改 Apify `rag-web-browser`；單篇 `curl` 可讀，時間取 JSON-LD `datePublished`；付費文章只取得免費段落 [2026-10] |
-| 東洋経済オンライン `toyokeizai.net/articles/-/{id}` | SSR，後段付費 | `curl` 取公開段落與 `datePublished`；付費牆不必跑 MCP 鏈 [2026-10] |
+| note `note.com` | API 403/404；搜尋頁 `curl` 只拿到外殼 | `firecrawl_scrape` 抓 `note.com/search?q=…&context=note&mode=search&sort=new`（`waitFor: 3000`），Firecrawl 不可用時改 Apify `apify/web-fetch`（markdown 不含文章網址，要再跑一次 `formats: ["links"]`）；單篇 `curl` 可讀，時間取 JSON-LD `datePublished`；付費文章只取得免費段落 [2026-10] |
+| 東洋経済オンライン `toyokeizai.net/articles/-/{id}` | SSR，後段付費；`/search/?q=` 404；四季報 `shikiho.toyokeizai.net` 為 JS 外殼 + 付費 | 找文章用全文搜尋 `toyokeizai.net/list/search?fulltext={關鍵字}`（SSR，`curl` 可讀）；單篇 `curl` 取公開段落與 `datePublished`；付費牆不必跑 MCP 鏈 [2026-10] |
+| 日経 `nikkei.com/nkd/company/news/?scode={代碼}&ba=1` | SSR，`curl` 可讀；日期在 `m-listItem_time`，付費文章有標記 | 單篇 `curl` 取 `datePublished` 與導言段；付費牆不必跑 MCP 鏈 [2026-10] |
+| E-IR 代管的官網 IR 頁（如小糸 `koito.co.jp/english/ir/info/earningsreport/`） | PDF 連結由 `eir-parts` JS 注入，`curl` 看不到 | Playwright `browser_evaluate` 列出連結；PDF 實體在 `ssl4.eir-parts.net/doc/{代碼}/{tdnet\|yuho_pdf\|…}/{id}/00.pdf`，`curl` 可直接下載（`yuho_pdf` = 有価証券報告書全文）[2026-10] |
 | JAPAN-REIT.COM `japan-reit.com/meigara/{代碼}/` | `curl` 回 SSL 憑證鏈錯誤（站方問題，**不可**關閉 TLS 驗證）；`WebFetch` 回 503 | `firecrawl_scrape` 可讀：價格、利回り、排名、近一年日線、銘柄ニュース與開示。`/news/` 404，改用 `/topic/` 或 `/release/` [2026-10] |
 | Shared Research `sharedresearch.jp/ja/companies/{代碼}` | J-REIT 回 404（沒有覆蓋） | 小型股常是唯一的第三方研究覆蓋；J-REIT 不必查 [2026-10] |
 
