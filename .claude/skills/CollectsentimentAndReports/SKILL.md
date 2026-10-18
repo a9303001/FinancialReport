@@ -113,7 +113,8 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | X (Twitter) | 未登入即封鎖：Firecrawl 全引擎失敗、Playwright 被導到登入頁 | 日股先用 Yahoo 株つぶやき（§4.4）。其他用 `firecrawl_search`，query 內寫 `site:x.com`（`includeDomains` 參數會回 0 筆）。索引沒有時間時，用網址的 status ID 還原：`(id >> 22) + 1288834974657` 毫秒（UTC） [2026-10] |
 | Reuters `reuters.com` | 內建 `WebSearch` 被擋 | `firecrawl_scrape`（basic proxy）可抓公司頁與文章頁全文 [2026-10] |
 | Bloomberg | 付費牆，不是封鎖 | 取摘要即可，報告註明「付費牆」 |
-| Seeking Alpha | `firecrawl_scrape` 全引擎失敗 | `firecrawl_search` + `site:seekingalpha.com` + `tbs: qdr:m` 找文章；Bright Data `scrape_as_markdown` 取標題/日期/第一段（第一次常空白，重試 1 次）。WebSearch 會混入仿冒 SA 的垃圾頁（被入侵的 `.gov.my`、`.ca.gov`、`.edu.tw`），一律排除 [2026-10] |
+| 美股分析師評級 | yfinance `get_recommendations`（`upgrades_downgrades`）可列出券商、評等、目標價與時間 | 細節（理由、EBITDA 預估）用 `WebSearch` 找 `goldesel.de` 德文轉述單篇，`WebFetch` 可讀（頁面自註為 AI 輔助撰寫，引用時註明）；Yahoo UK `research/reports/ARGUS_*_{毫秒時間戳}` 頁可見 Argus 目標價標題，網址內時間戳即報告日 [2026-10] |
+| Seeking Alpha | `firecrawl_scrape` 全引擎失敗 | `firecrawl_search` + `site:seekingalpha.com` + `tbs: qdr:m` 找文章；Firecrawl 沒額度時改用 `WebSearch` 搭 `allowed_domains: ["seekingalpha.com"]`（可排除仿冒 SA 的垃圾頁；不加 domain 限制會混入被入侵的 `.gov.my`、`.ca.gov`、`.edu.tw`，一律排除）。Bright Data `search_engine` 選 `bing` 會回原始 HTML、無法解析，不要用。Bright Data `scrape_as_markdown` 取標題/日期/摘要（第一次常空白，重試 1 次）[2026-10] |
 | Yahoo Finance（美股新聞） | yfinance `get_yahoo_finance_news` 各市場都回「No news found」或誤配同名人物 | **不要用 yfinance 新聞**。改用 `WebFetch` 抓 `finance.yahoo.com/quote/{代號}/news/`（約 12 則標題），單篇文章頁也可讀 [2026-10] |
 | `firecrawl_search` 本身 | 一個 query 放多個 `site:` 用 OR 連接會回 0 筆 | 一次只放一個 `site:`，分開查 [2026-10] |
 
