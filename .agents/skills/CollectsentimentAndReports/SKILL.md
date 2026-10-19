@@ -86,6 +86,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | Apify `Monthly usage hard limit exceeded` | 月額度用盡 | 本次不再呼叫任何 Actor |
 | Bright Data `Residential Failed (bad_endpoint)` | 帳號未完成 KYC | 需 residential 的站（雪球、LIHKG）改走其他 MCP |
 | Bright Data `502 origin_bad_gateway` | MCP 閘道故障 | 照 §3.1 試 2 次即換，不要空等 `retry_after` |
+| Bright Data `needs you to sign in again` | MCP 授權過期，本次無法自行重新登入 | 本次全程停用，報告註明請使用者重新授權；改走 Apify / Exa |
 
 不要對每個網站重踩同一顆地雷；先找 §4 的免 MCP 替代路徑，也不可因此直接改用搜尋摘要打發。所有帳號級錯誤都寫進 §10 報告的 MCP 紀錄。
 
@@ -110,11 +111,12 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 站點 / 網址 | 狀況 | 做法 |
 | :--- | :--- | :--- |
 | Reddit | 內建工具 400、Firecrawl 不支援、Playwright 與 `search.json` 回 403 | **跳過 §3.1，直接用 Apify Reddit Actor（§5.3）**。Apify 不可用時只能用 Bright Data `search_engine` 取索引並註明 [2026-10] |
-| X (Twitter) | 未登入即封鎖：Firecrawl 全引擎失敗、Playwright 被導到登入頁 | 日股先用 Yahoo 株つぶやき（§4.4）。其他用 `firecrawl_search`，query 內寫 `site:x.com`（`includeDomains` 參數會回 0 筆）。索引沒有時間時，用網址的 status ID 還原：`(id >> 22) + 1288834974657` 毫秒（UTC） [2026-10] |
-| Reuters `reuters.com` | 內建 `WebSearch` 被擋 | `firecrawl_scrape`（basic proxy）可抓公司頁與文章頁全文 [2026-10] |
+| X (Twitter) | 未登入即封鎖：Firecrawl 全引擎失敗、Playwright 被導到登入頁 | 日股先用 Yahoo 株つぶやき（§4.4）。其他用 `firecrawl_search`，query 內寫 `site:x.com`（`includeDomains` 參數會回 0 筆）；Firecrawl 沒額度時用 `WebSearch` 搭 `allowed_domains: ["x.com", "twitter.com"]` 取索引。索引沒有時間時，用網址的 status ID 還原：`(id >> 22) + 1288834974657` 毫秒（UTC） [2026-10] |
+| Reuters `reuters.com` | 內建 `WebSearch` 被擋（`allowed_domains` 含 reuters.com 會直接回 400） | `firecrawl_scrape`（basic proxy）可抓公司頁與文章頁全文。Firecrawl 沒額度時用 Exa `web_search_exa` 找轉載頁（`tradingview.com/news/reuters.com,...`、`marketscreener.com`），可取標題與時間，正文多半沒有 [2026-10] |
 | Bloomberg | 付費牆，不是封鎖 | 取摘要即可，報告註明「付費牆」 |
 | 美股分析師評級 | yfinance `get_recommendations`（`upgrades_downgrades`）可列出券商、評等、目標價與時間 | 細節（理由、EBITDA 預估）用 `WebSearch` 找 `goldesel.de` 德文轉述單篇，`WebFetch` 可讀（頁面自註為 AI 輔助撰寫，引用時註明）；Yahoo UK `research/reports/ARGUS_*_{毫秒時間戳}` 頁可見 Argus 目標價標題，網址內時間戳即報告日 [2026-10] |
-| Seeking Alpha | `firecrawl_scrape` 全引擎失敗 | `firecrawl_search` + `site:seekingalpha.com` + `tbs: qdr:m` 找文章；Firecrawl 沒額度時改用 `WebSearch` 搭 `allowed_domains: ["seekingalpha.com"]`（可排除仿冒 SA 的垃圾頁；不加 domain 限制會混入被入侵的 `.gov.my`、`.ca.gov`、`.edu.tw`，一律排除）。Bright Data `search_engine` 選 `bing` 會回原始 HTML、無法解析，不要用。Bright Data `scrape_as_markdown` 取標題/日期/摘要（第一次常空白，重試 1 次）[2026-10] |
+| Seeking Alpha | `firecrawl_scrape` 全引擎失敗 | `firecrawl_search` + `site:seekingalpha.com` + `tbs: qdr:m` 找文章；Firecrawl 沒額度時改用 `WebSearch` 搭 `allowed_domains: ["seekingalpha.com"]`（可排除仿冒 SA 的垃圾頁；不加 domain 限制會混入被入侵的 `.gov.my`、`.ca.gov`、`.edu.tw`，一律排除）。Bright Data `search_engine` 選 `bing` 會回原始 HTML、無法解析，不要用。Bright Data `scrape_as_markdown` 取標題/日期/摘要（第一次常空白，重試 1 次）；Bright Data 不可用時 Apify `apify/rag-web-browser`（`query` 填文章網址）回 200，`markdown` 含發布時間、作者、Summary 與 Quick Insights（`WebFetch` 回 403）[2026-10] |
+| MSCI 新聞稿 | `ir.msci.com` 回 Akamai Access Denied | 改抓 `msci.com/downloads/documents/press-releases/media-room/*.pdf`，`curl` + `pdftotext` 可讀全文；PDF 網址用 `WebSearch` 找 [2026-10] |
 | Yahoo Finance（美股新聞） | yfinance `get_yahoo_finance_news` 各市場都回「No news found」或誤配同名人物 | **不要用 yfinance 新聞**。改用 `WebFetch` 抓 `finance.yahoo.com/quote/{代號}/news/`（約 12 則標題），單篇文章頁也可讀 [2026-10] |
 | `firecrawl_search` 本身 | 一個 query 放多個 `site:` 用 OR 連接會回 0 筆 | 一次只放一個 `site:`，分開查 [2026-10] |
 
@@ -172,6 +174,14 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | E-IR 代管的官網 IR 頁（如小糸 `koito.co.jp/english/ir/info/earningsreport/`） | PDF 連結由 `eir-parts` JS 注入，`curl` 看不到 | Playwright `browser_evaluate` 列出連結；PDF 實體在 `ssl4.eir-parts.net/doc/{代碼}/{tdnet\|yuho_pdf\|…}/{id}/00.pdf`，`curl` 可直接下載（`yuho_pdf` = 有価証券報告書全文）[2026-10] |
 | JAPAN-REIT.COM `japan-reit.com/meigara/{代碼}/` | `curl` 回 SSL 憑證鏈錯誤（站方問題，**不可**關閉 TLS 驗證）；`WebFetch` 回 503 | `firecrawl_scrape` 可讀：價格、利回り、排名、近一年日線、銘柄ニュース與開示。`/news/` 404，改用 `/topic/` 或 `/release/` [2026-10] |
 | Shared Research `sharedresearch.jp/ja/companies/{代碼}` | J-REIT 回 404（沒有覆蓋） | 小型股常是唯一的第三方研究覆蓋；J-REIT 不必查 [2026-10] |
+
+### 4.5 印尼（美股 ADR 的母股，如 TLK ↔ IDX `TLKM`）
+
+| 站點 / 網址 | 狀況 | 做法 |
+| :--- | :--- | :--- |
+| CNBC Indonesia `cnbcindonesia.com`、Katadata `katadata.co.id`、Selular.ID `selular.id` | SSR，`curl` 可讀，JSON-LD 有 `datePublished` | 用 `WebSearch`（印尼文關鍵字，如「saham {代號} anjlok」）找網址再 `curl` 單篇；Katadata 是 IDX 公告與券商觀點的主力轉述來源 [2026-10] |
+| Stockbit `stockbit.com/symbol/{代號}`、`stockbit.com/post/{id}` | JS 載入 | Exa `web_search_exa`（query 寫「Stockbit stream {代號} diskusi saham {月份年份}」）回傳單篇全文與時間，依 §3.6 標註為索引；Stockbit 自標「Potential Junk」的貼文排除。研究摘要 `snips.stockbit.com` 也在索引內 [2026-10] |
+| Reddit 印尼版 | `r/finansial` 搜尋多為無關貼文；Apify 每次約 0.1 美元上限即中止 | 個股討論以 Stockbit 為主，Reddit 只取大盤情緒 [2026-10] |
 
 ---
 
@@ -312,7 +322,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ### 7.3 搜尋來源（依序，找到即停）
 
 - **台股**：① MOPS/TWSE（英文年報 `_AIA.pdf`；季報多只有中文 `_AI1.pdf`）② 財報狗 e-report（§4.2）③ 官網 IR。想確認「是否已公告」用 §5.1 鉅亨（它給的是重訊全文，不是財報 PDF）。興櫃公司只有半年報與年報，不會有 Q1/Q3。
-- **美股**：① 官網 IR（SEC Filings）② SEC EDGAR（可用 `sec-edgar-mcp`）③ 財報狗 ④ 富途 `futunn.com/hk/stock/{代號}-US/announcement`。
+- **美股**：① 官網 IR（SEC Filings）② SEC EDGAR（可用 `sec-edgar-mcp`）③ 財報狗 ④ 富途 `futunn.com/hk/stock/{代號}-US/announcement`。外國發行人（ADR）年報是 20-F、季報夾在 6-K 裡：`curl -A "{名稱} {email}" https://data.sec.gov/submissions/CIK{10碼}.json` 列出所有申報，再用 `.../Archives/edgar/data/{CIK}/{去掉 - 的 accession}/index.json` 看附件，6-K 主文件開頭會寫 "Consolidated financial statements as of …" 即為季報。
 - **日股**：① 官網 IR（英文 Annual Report 優先）② 株探開示清單（§4.4，決算短信最快）③ EDINET ④ IR Bank `irbank.net/{代碼}/ir` ⑤ 富途 `{代碼}-JP/announcement`。J-REIT 的經審計英文財報常在官網英文 IR 庫，無 cid 問題：ES-CON（2971）`escon-reit.jp/en/ir/library.html` 的「Asset Management Reports」欄；HCM（3455）`hcm3455.co.jp/en/ir/library.html` 的「Semi-annual report」欄。決算後約 1 個月內英文頁常只有 Summary of accounts，簡報要到日文頁抓；頁頂「As of …」日期不會更新，不能拿來判斷新舊。
 - **港股**：① HKEXnews JSON API（§5.4）② 富途 `{5碼}-HK/announcement` ③ 官網 IR。（新浪 `/hkstock/notice/` 公告頁已停更，不要用）
 
@@ -330,7 +340,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ### 8.2 來源（依市場，抓不到照 §3 處理，不可當成「沒資料」略過）
 
 - **台股**：鉅亨網（§5.1）、MoneyDJ、經濟日報、PTT 股市板、Dcard、Mobile01、股市爆料同學會（§5.2）、財報狗社群、HiStock、TPEx（興櫃股）。
-- **美股**：Yahoo Finance（§4.1）、Reuters、Bloomberg、Seeking Alpha、Reddit（§5.3）、X。
+- **美股**：Yahoo Finance（§4.1）、Reuters、Bloomberg、Seeking Alpha、Reddit（§5.3）、X。ADR 的母股市場另查 SEC 6-K（母國公告英文版）與母國媒體/社群（印尼見 §4.5）。
 - **港股 / 中國**：富途、AAStocks、新浪港股新聞、HKEX 權益披露、雪球（§5.6）、東方財富股吧（§5.5）、moomoo、LIHKG、香港經濟日報。
 - **日股**：日經、Yahoo JP 掲示板與株つぶやき、株探、みんかぶ、5ch、note、Shared Research、東洋経済；J-REIT 加 JAPAN-REIT.COM。
 - 雙重上市公司（如港股 + A 股、日股 + 美股 ADR）主市場來源不足時，再查另一邊市場的來源。
