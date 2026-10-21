@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 27 |
-| **last_executed_companies** | 3455 醫療保健投資法人 |
-| **last_executed_time** | 2026-10-21 12:47 |
-| **next_date** | 28 |
+| **last_executed_date** | 28 |
+| **last_executed_companies** | 01044 恒安國際 |
+| **last_executed_time** | 2026-10-21 13:01 |
+| **next_date** | 29 |
 | **stock_analysis_status** | ✅ |
