@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 10 |
-| **last_executed_companies** | 4417 金洲 |
-| **last_executed_time** | 2026-10-21 16:02 |
-| **next_date** | 11 |
+| **last_executed_date** | 11 |
+| **last_executed_companies** | 2881 富邦金 |
+| **last_executed_time** | 2026-10-21 16:17 |
+| **next_date** | 12 |
 | **stock_analysis_status** | ✅ |
