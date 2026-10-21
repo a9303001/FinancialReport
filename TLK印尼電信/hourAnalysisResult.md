@@ -1,4 +1,4 @@
-> **更新時間（Last Updated）：2026/10/21 09:29:31 (UTC+8)**
+> **更新時間（Last Updated）：2026/10/21 12:01:31 (UTC+8)**
 
 # TLK 印尼電信（Telkom Indonesia）個股深度分析
 
