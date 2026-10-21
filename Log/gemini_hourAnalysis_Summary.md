@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 25 |
-| **last_executed_companies** | 01866 中國心連心化肥 |
-| **last_executed_time** | 2026-10-21 19:46 |
-| **next_date** | 26 |
+| **last_executed_date** | 26 |
+| **last_executed_companies** | 1264 德麥 |
+| **last_executed_time** | 2026-10-21 20:01 |
+| **next_date** | 27 |
 | **stock_analysis_status** | ✅ |
