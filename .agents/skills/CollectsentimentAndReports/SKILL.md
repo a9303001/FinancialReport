@@ -152,8 +152,8 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | SSR，`curl` 可讀；只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天） | 解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購快訊偶爾漏日，要與 HKEX 翌日披露報表交叉核對。較早期間改看 AAStocks／股吧 [2026-10] |
 | 富途個股頁 `/quote`、`/announcement`、新聞內文 `news.futunn.com/hk/post/*` | JS 外殼；`/community` 導向登入頁 | 內文改用 Playwright 可取全文（MT Newswires 文章仍需登入）[2026-09] |
 | AAStocks | 列表 `aastocks.com/tc/stocks/analysis/stock-aafn/{代號}/0/hk-stock-news/1` 為 SSR；`http://` 會 302 | `curl -L` 抓列表（約 20 則；`/hk-stock-news/2` 回傳與第 1 頁相同，無法翻頁）；單篇 `.../stock-aafn-con/{代號}/{來源}/{ID}/hk-stock-news` 正文就在 SSR HTML（`og:description` 只有約 50 字，不要只取它）。頁頭附沽空金額與比率 [2026-10] |
-| 新浪港股新聞 `stock.finance.sina.com.cn/hkstock/news/{代號}.html` | SSR，最新；只列約 30 則（財報後熱門期僅涵蓋約 2 天），含券商研報標題 | `curl`（gb18030 解碼）可讀；內文依下方新浪財經內文列處理 [2026-10] |
-| 新浪財經內文 `finance.sina.com.cn`、`t.cj.sina.cn` | 本環境 proxy 持續 `Connection reset` | 依 §3.3 零重試，只引用列表標題 [2026-10] |
+| 新浪港股新聞 `stock.finance.sina.com.cn/hkstock/news/{代號}.html` | SSR，最新；只列約 30 則（財報後熱門期僅涵蓋約 2 天，冷門期可涵蓋約 1 個月），含券商研報標題 | `curl`（gb18030 解碼）可讀；研報頁 `stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/{id}/` 為 SSR（gb18030），正文在 `div.blk_container`、機構/研究員/日期在 `div.creab`，可取研報摘要全文 [2026-10] |
+| 新浪財經內文 `finance.sina.com.cn`、`t.cj.sina.cn` | 時好時壞：10 月上旬持續 `Connection reset`，10-23 `curl -m 10` 可讀（UTF-8） | 先 `curl -m 10` 試 1 次；正文在 `id="artibody"` 之後、時間在 `span.date`。連線重置時依 §3.3 零重試，只引用列表標題 [2026-10] |
 | 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 + WAF；Apify `rag-web-browser` 只拿到 WAF JS 外殼，Playwright 回 HTTP 567「请求异常已被安全策略拦截」（對 AI Agent 限制數小時） | 照 §5.6 [2026-10] |
 | 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR | 照 §5.5，不需 MCP [2026-09] |
 | moomoo 社區 `moomoo.com/hk/stock/{5碼}-HK/community` | Firecrawl 需額度；Bright Data 回 403「Operations too frequent」或 `Document` 外殼；Apify `rag-web-browser` 回 200 但只有 `Document` 外殼 | **直接用 Playwright**（會導向 `/hant/stock/...`），snapshot 內含作者、`MM/DD HH:MM` 時間連結與貼文摘要；冷門港股常數月才一則 [2026-10] |
@@ -271,11 +271,11 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 - 列表：`curl -A "<UA>" https://guba.eastmoney.com/list,{A股代碼}.html`，頁內 `var article_list = {...}` 含約 40 筆（`post_id`、`post_title`、`post_publish_time`、點閱/留言數）。
 - 單篇：`https://guba.eastmoney.com/news,{A股代碼},{post_id}.html`，用 `json.JSONDecoder().raw_decode` 解析 `post_article` 之後的 JSON，取 `post_content`。連續抓取時部分單篇會回約 2.8KB 空殼（無 `post_article`）→ 帶 `Referer: https://guba.eastmoney.com/list,{代碼}.html`、間隔 4 秒重試 1 次即可。
-- 港股也有股吧：代碼寫 `hk{5碼}`（如 `list,hk00546.html`），格式同上；但部分港股（如 `hk03606`）連續回約 2.8KB 空殼、無 `article_list`，此時雙重上市股改用 A 股代碼的股吧 [2026-10]。
+- 港股也有股吧：代碼寫 `hk{5碼}`（如 `list,hk00546.html`），格式同上。H 股吧與 A 股吧都可能連續回約 2.8KB 空殼、無 `article_list`（如 `hk03606` 空殼而 600660 正常；`003816` 空殼而 `hk01816` 正常），雙重上市股兩邊互為備援 [2026-10]。
 
 ### 5.6 雪球
 
-1. 先用 Bright Data `scrape_as_markdown` 抓 `https://xueqiu.com/S/{代號}`（雪球用 Bright Data 成功率最高，可跳過內建工具）。
+1. 先用 Bright Data `scrape_as_markdown` 抓 `https://xueqiu.com/S/{代號}`（雪球用 Bright Data 成功率最高，可跳過內建工具）。單篇長文 `xueqiu.com/{用戶id}/{貼文id}` 也用 Bright Data，第一次常回空白，重試 1 次即可取得全文與「发布于」時間 [2026-10]。
 2. Bright Data 失敗或回 `bad_endpoint`（KYC）→ `firecrawl_scrape` 搭 `proxy: stealth`，再依序 Apify → Playwright。
    - 整條鏈都失敗時，用 Exa `web_search_exa`（query 寫「雪球 {公司名} {代號} 讨论 {年月}」）：它回傳雪球單篇頁的索引全文，含「发布于 YYYY-MM-DD HH:MM」、回覆數與部分留言，比搜尋摘要完整；仍依 §3.6 標註為索引。要逐則確認是否屬該公司（留言頁常是其他個股的討論串）。
 3. 雙重上市公司的 A 股頁（`SH601318`）與 H 股頁（`02318`）互為備援。
