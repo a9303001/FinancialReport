@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 2 |
-| **last_executed_companies** | 00941 中國移動（中股: 600941 中國移動） |
-| **last_executed_time** | 2026-10-24 01:56 |
-| **next_date** | 3 |
+| **last_executed_date** | 3 |
+| **last_executed_companies** | 01426 春泉產業信託 REIT |
+| **last_executed_time** | 2026-10-24 02:02 |
+| **next_date** | 4 |
 | **stock_analysis_status** | ✅ |
