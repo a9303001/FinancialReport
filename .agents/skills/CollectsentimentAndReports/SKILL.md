@@ -181,7 +181,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 | 站點 / 網址 | 狀況 | 做法 |
 | :--- | :--- | :--- |
-| CNBC Indonesia `cnbcindonesia.com`、Katadata `katadata.co.id`、Selular.ID `selular.id` | SSR，`curl` 可讀，JSON-LD 有 `datePublished` | 用 `WebSearch`（印尼文關鍵字，如「saham {代號} anjlok」）找網址再 `curl` 單篇；Katadata 是 IDX 公告與券商觀點的主力轉述來源 [2026-10] |
+| CNBC Indonesia `cnbcindonesia.com`、Katadata `katadata.co.id`、Selular.ID `selular.id`、periskop.id `periskop.id` | SSR，`curl` 可讀，JSON-LD 有 `datePublished` | 用 `WebSearch`（印尼文關鍵字，如「saham {代號} anjlok」）找網址再 `curl` 單篇；Katadata 是 IDX 公告與券商觀點的主力轉述來源；periskop.id 常逐條轉述公司對 BEI 異常波動詢問的回覆（keterbukaan informasi）[2026-10] |
 | Stockbit `stockbit.com/symbol/{代號}`、`stockbit.com/post/{id}` | JS 載入 | Exa `web_search_exa`（query 寫「Stockbit stream {代號} diskusi saham {月份年份}」）回傳單篇全文與時間，依 §3.6 標註為索引；Stockbit 自標「Potential Junk」的貼文排除。研究摘要 `snips.stockbit.com` 也在索引內 [2026-10] |
 | Reddit 印尼版 | `r/finansial` 搜尋多為無關貼文；Apify 每次約 0.1 美元上限即中止 | 個股討論以 Stockbit 為主，Reddit 只取大盤情緒 [2026-10] |
 
