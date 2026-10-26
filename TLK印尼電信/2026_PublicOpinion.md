@@ -1,4 +1,20 @@
-# [TLK 印尼電信 PT Telkom Indonesia] 輿情與新聞整理 (2026/10)
+# [TLK印尼電信] 2026 年 輿情彙整
+
+> 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
+> 不含年報、季報、公司公告 report。
+> 最後彙整時間：2026-10-26 02:11｜本次併入：1 檔｜累計併入：1 檔
+
+## 目錄
+
+- [2026-10 · 輿情新聞](#2026-10--輿情新聞)
+
+<!-- body:start -->
+
+## 2026-10 · 輿情新聞
+
+<!-- source-file: 202610_輿情新聞.md | bytes: 54905 | sha1: 0de71d8705c9 | merged-at: 2026-10-26 -->
+
+### [TLK 印尼電信 PT Telkom Indonesia] 輿情與新聞整理 (2026/10)
 
 - **分析月份**：2026/10
 - **資料範圍**：2026-07-19 ~ 2026-10-19（首次收集，涵蓋近三個月）
@@ -8,13 +24,13 @@
 
 ---
 
-## [SEC EDGAR 6-K 官方公告]
+#### [SEC EDGAR 6-K 官方公告]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：curl SEC `data.sec.gov/submissions` + 各 6-K 原文（sec-edgar-mcp `get_recent_filings` 交叉核對）
 - **抓取結果**：✅ 成功
 
-### 🎯 2026 上半年（Q2）合併財報（未經查核）
+##### 🎯 2026 上半年（Q2）合併財報（未經查核）
 - **來源連結**：[6-K 2026-07-31 Consolidated financial statements as of June 30, 2026](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000052/tmb-20260731x6k.htm)
 - **發布時間**：2026-07-31（EDGAR 收件 16:09 UTC）
 - **核心觀點**：
@@ -26,7 +42,7 @@
   - 營運/維護/電信服務費用 21.47 兆盧比，年增 8.7%，成長快於營收。
   - 完整財報已轉存 `TLK_Quarter_2026Q2.md`。
 
-### 🎯 批發光纖連網業務第二階段分拆（Spin-off Phase 2）至 PT Telkom Infrastruktur Indonesia（TIF）
+##### 🎯 批發光纖連網業務第二階段分拆（Spin-off Phase 2）至 PT Telkom Infrastruktur Indonesia（TIF）
 - **來源連結**：[6-K 2026-08-07 Spin-off plan](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000058/tmb-20260807x6k.htm)、[6-K 2026-09-08 EGM Notice](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000060/tmb-20260908x6k.htm)、[6-K 2026-09-30 Deed of Spin-Off](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000066/tmb-20260930x6k.htm)
 - **發布時間**：2026-08-07 / 2026-09-08 / 2026-09-30
 - **核心觀點**：
@@ -35,7 +51,7 @@
   - 延續 2025-12-12 臨時股東會通過的 Phase 1；公司稱這符合全球電信業把基礎設施獨立成實體的趨勢，以利效率、透明度與資產價值釋放。
   - 2026-09-30 已簽署分拆契據，TIF 增資預計 2026-10-01 生效；Telkom 持股 TIF 由 99.9999997% 升至 99.9999999%，不影響現有股東持股。
 
-### 🎯 2026-09-30 臨時股東會（EGMS）：分拆高票通過，但換將案有三成三反對
+##### 🎯 2026-09-30 臨時股東會（EGMS）：分拆高票通過，但換將案有三成三反對
 - **來源連結**：[6-K 2026-10-02 Summary of Minutes of EGMS](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000068/tmb-20261002x6k.htm)、[6-K 2026-09-30 Changes in Management](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000064/tmb-20260930x6k.htm)
 - **發布時間**：2026-10-02 / 2026-09-30
 - **核心觀點**：
@@ -47,7 +63,7 @@
   - 總裁 Dian Siswarini 與 IT 數位董事 Faizal Rochmad Djoemadi 去職；原網路董事 Nanang Hendarno 升任總裁（President Director），Budi Satria Dharma Purba 改任網路董事，新增 Radita Ali Putra（批發與國際）、Kharim I. G. Siregar（IT 數位）。
   - 董事會改組依據新的國營企業管理規章 GR 38/2026。
 
-### 🎯 反對分拆股東之法定股份收買請求權（Share Buyback）
+##### 🎯 反對分拆股東之法定股份收買請求權（Share Buyback）
 - **來源連結**：[6-K 2026-10-02 Information Disclosure on the Share Buyback](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000072/tmb-20261002x6k.htm)
 - **發布時間**：2026-10-02
 - **核心觀點**：
@@ -56,7 +72,7 @@
   - 只有出席並在第一議案投反對票的股東（最多約 2.78 億股）可申請，申請期至 2026-10-05；以 2,290 盧比收購，上限約 6,362 億盧比（每股約 6.5 盧比），金額不大。（2026-10-20 補註：實際收買 15,956,199 股、金額 365.4 億盧比，付款已於 10/20 完成；來源 Kontan）
   - 公告揭露 2026-09-30 當日 TLKM 收盤 2,290 盧比。
 
-### 🎯 收購 Telkomsigma 持有之 Telkom Data Ekosistem（TDE）19.19% 股權
+##### 🎯 收購 Telkomsigma 持有之 Telkom Data Ekosistem（TDE）19.19% 股權
 - **來源連結**：[6-K 2026-09-18](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000062/tmb-20260918x6k.htm)
 - **發布時間**：2026-09-18（交易日 2026-09-17）
 - **核心觀點**：
@@ -65,7 +81,7 @@
   - Telkom 由子公司 Telkomsigma 買下 TDE 19.19% 股權，持股升至 100%；屬集團內交易，公司稱對財務無重大影響。
   - 目的是為資料中心子公司（DC Co）引進策略夥伴鋪路（「Unlock DC Co」）。
 
-### 🎯 內部稽核主管更迭
+##### 🎯 內部稽核主管更迭
 - **來源連結**：[6-K 2026-08-07](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000054/tmb-20260807x6k.htm)、[6-K 2026-10-02](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000070/tmb-20261002x6k.htm)
 - **發布時間**：2026-08-07 / 2026-10-02
 - **關鍵要點**：
@@ -73,7 +89,7 @@
 
 ---
 
-## [Yahoo Finance 新聞頁]
+#### [Yahoo Finance 新聞頁]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：WebFetch `finance.yahoo.com/quote/TLK/news/`
@@ -82,13 +98,13 @@
 
 ---
 
-## [MSCI 官方公告：印尼可能由新興市場降為獨立市場]
+#### [MSCI 官方公告：印尼可能由新興市場降為獨立市場]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：curl MSCI 新聞稿 PDF（`ir.msci.com` 網頁版回 Akamai Access Denied，改抓 `msci.com` PDF 成功）
 - **抓取結果**：✅ 成功
 
-### 🎯 MSCI 啟動諮詢：擬將 MSCI Indonesia 指數由 Emerging Market 改列 Standalone Market
+##### 🎯 MSCI 啟動諮詢：擬將 MSCI Indonesia 指數由 Emerging Market 改列 Standalone Market
 - **來源連結**：[MSCI Launches a Consultation on a Proposal to Reclassify Indonesia from Emerging Market to Standalone Market Status](https://www.msci.com/downloads/documents/press-releases/media-room/Indonesia_PR_Oct_26.pdf)
 - **發布時間**：2026-10-15（紐約）
 - **核心觀點**：
@@ -102,13 +118,13 @@
 
 ---
 
-## [CNBC Indonesia / Katadata / JournalArta（印尼財經媒體）]
+#### [CNBC Indonesia / Katadata / JournalArta（印尼財經媒體）]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：WebSearch 找網址 → curl 單篇（JSON-LD `datePublished`）
 - **抓取結果**：✅ 成功
 
-### 🎯 10/16 IHSG 單日重挫 11.57%，TLKM 跌近跌停；10/19 新 ARB 7% 首日再度跌停
+##### 🎯 10/16 IHSG 單日重挫 11.57%，TLKM 跌近跌停；10/19 新 ARB 7% 首日再度跌停
 - **來源連結**：[Batas Auto Reject Turun, 351 Saham ARB Hari Ini（CNBC Indonesia）](https://www.cnbcindonesia.com/market/20261019174233-17-777615/batas-auto-reject-turun-351-saham-arb-hari-ini)
 - **發布時間**：2026-10-19 18:01（WIB）
 - **核心觀點**：
@@ -118,21 +134,21 @@
   - 印尼證交所（BEI）經 OJK 支持，依 Kep-00157/BEI/10-2026 把跌停限制由 15% 縮為 7%，實施期間 2026-10-19 ~ 12-31。
   - IHSG 10/19 收 4,996.61（−3.64%）。BEI 總裁 Jeffrey Hendrik 稱新規「有效緩和第一盤的恐慌」。
 
-### 🎯 LQ45 權值股集體觸及新 ARB
+##### 🎯 LQ45 權值股集體觸及新 ARB
 - **來源連結**：[Saham LQ45 BBCA, TLKM hingga UNVR Sentuh ARB setelah BEI Ubah Batas Jadi 7%（Katadata）](https://katadata.co.id/finansial/bursa/6ad5be4792a34/saham-lq45-bbca-tlkm-hingga-unvr-sentuh-arb-setelah-bei-ubah-batas-jadi-7)
 - **發布時間**：2026-10-19 11:39（WIB）
 - **關鍵要點**：
   - BBCA、BBRI、TLKM、UNVR 等 LQ45 成分股同步跌停；BEI 開發董事 Iding Pardi 表示調整是為了「讓投資人有時間消化資訊」。
   - 顯示這波是全市場系統性賣壓，不是 TLKM 個別利空。
 
-### 🎯 10/15 外資賣超榜首為 TLKM
+##### 🎯 10/15 外資賣超榜首為 TLKM
 - **來源連結**：[IHSG Sesi I Net Sell Rp 182,9 Miliar, Investor Asing Jual Saham TLKM, GOTO, ADRO（JournalArta）](https://journalarta.com/news/2026/10/15/ihsg-sesi-i-net-sell-rp-1829-miliar-investor-asing-jual-saham-tlkm-goto-adro/)
 - **發布時間**：2026-10-15 16:36（WIB）
 - **關鍵要點**：
   - MSCI 公告前一天（雅加達時間 10/15 上午），外資已在第一盤賣超 TLKM 349.3 億盧比，居全市場之首；IHSG 年初至今跌 32.75%。
   - 文章自承資料不足以說明個股被賣的原因。
 
-### 🎯 臨時股東會換將：Nanang Hendarno 接任總裁
+##### 🎯 臨時股東會換將：Nanang Hendarno 接任總裁
 - **來源連結**：[Rombak Direksi, Telkom (TLKM) Angkat Nanang Hendarno jadi Direktur Utama（Katadata）](https://katadata.co.id/finansial/bursa/6abce56180422/rombak-direksi-telkom-tlkm-angkat-nanang-hendarno-jadi-direktur-utama)
 - **發布時間**：2026-09-30 17:33（WIB）
 - **關鍵要點**：
@@ -141,13 +157,13 @@
 
 ---
 
-## [Selular.ID（印尼電信產業媒體）]
+#### [Selular.ID（印尼電信產業媒體）]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：curl 單篇（SSR，JSON-LD `datePublished`）
 - **抓取結果**：✅ 成功
 
-### 🎯 前總裁任期僅 16 個月，換將前兩週股價跌約 15%
+##### 🎯 前總裁任期僅 16 個月，換將前兩週股價跌約 15%
 - **來源連結**：[Saham TLKM Anjlok di Era Dian Siswarini, Jadi Alasan Dicopot?](https://selular.id/2026/10/saham-tlkm-anjlok-di-era-dian-siswarini-jadi-alasan-dicopot/)
 - **發布時間**：2026-10-01 17:00（WIB）
 - **核心觀點**：
@@ -156,7 +172,7 @@
   - TLKM 9/14 2,690 → 9/18 2,560 → 9/22 2,470 → 9/29 2,370 → 9/30 2,290 盧比；52 週區間 2,270 ~ 3,990。
   - 作者也提醒「斷言 Dian 因股價下跌被撤換還太早」。
 
-### 🎯 主權基金 Danantara 要求新總裁加速「瘦身」（streamlining）
+##### 🎯 主權基金 Danantara 要求新總裁加速「瘦身」（streamlining）
 - **來源連結**：[Danantara Beri Target Dirut Baru Telkom, Perampingan Anak Usaha Dikebut](https://selular.id/2026/10/danantara-beri-target-dirut-baru-telkom-perampingan-anak-usaha-dikebut/)
 - **發布時間**：2026-10-01 18:00（WIB）
 - **核心觀點**：
@@ -165,7 +181,7 @@
   - 新經營層延續「TLKM 30」策略四主軸：營運與服務卓越、瘦身（Streamlining）、價值釋放（Unlock Value）、營運模式系統。
   - 子公司整併目標在 2026 年底前開始完成、延續至 2027 年初。
 
-### 🎯 InfraNexia（TIF）接收約 85.7 兆盧比光纖資產
+##### 🎯 InfraNexia（TIF）接收約 85.7 兆盧比光纖資產
 - **來源連結**：[Aset Rp85,7 Triliun Dipindah, InfraNexia Jadi Raksasa Fiber Telkom](https://selular.id/2026/10/aset-rp857-triliun-dipindah-infranexia-jadi-raksasa-fiber-telkom/)
 - **發布時間**：2026-10-05 06:00（WIB）
 - **關鍵要點**：
@@ -174,13 +190,13 @@
 
 ---
 
-## [Investortrust / Katadata（Q2 財報解讀與信評）]
+#### [Investortrust / Katadata（Q2 財報解讀與信評）]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：WebSearch 找網址 → curl 單篇（JSON-LD `datePublished`）
 - **抓取結果**：✅ 成功
 
-### 🎯 Q2 單季淨利年增 28%，券商維持買進
+##### 🎯 Q2 單季淨利年增 28%，券商維持買進
 - **來源連結**：[Dialing In: How Indonesia's Telkom Engineered a Second-Quarter Comeback（Investortrust）](https://investortrust.id/business/111695/dialing-in-how-indonesias-telkom-engineered-a-second-quarter-comeback)
 - **發布時間**：2026-08-04 10:43（GMT+7）
 - **核心觀點**：
@@ -196,7 +212,7 @@
   - 全年營收成長指引維持 1%~3%。
   - BRI Danareksa 目標價 3,750 盧比（約為 10/19 收盤 1,770 的 2.1 倍）——此為 8 月初、MSCI 事件前的評估。
 
-### 🎯 Fitch 維持 BBB／展望負向，但上調獨立信用狀況至 'a'
+##### 🎯 Fitch 維持 BBB／展望負向，但上調獨立信用狀況至 'a'
 - **來源連結**：[Fitch Ratings Sorot Telkom (TLKM), Ungkap Prospek Kinerja hingga Margin EBITDA（Katadata）](https://katadata.co.id/finansial/bursa/6ac3593a7b3e8/fitch-ratings-sorot-telkom-tlkm-ungkap-prospek-kinerja-hingga-margin-ebitda)
 - **發布時間**：2026-10-05 15:07（WIB）
 - **核心觀點**：
@@ -209,13 +225,13 @@
 
 ---
 
-## [w.media（資料中心產業媒體）]
+#### [w.media（資料中心產業媒體）]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：WebFetch（curl 只拿到頁框）
 - **抓取結果**：✅ 成功
 
-### 🎯 Telkomsel 擬出售資料中心 NeutraDC 多數股權，進入有約束力報價評估
+##### 🎯 Telkomsel 擬出售資料中心 NeutraDC 多數股權，進入有約束力報價評估
 - **來源連結**：[Telkomsel mulls stake sale of NeutraDC](https://w.media/telkomsel-mulls-stake-sale-of-neutradc/)
 - **發布時間**：2026-09-11 15:20（GMT+8），作者 Jan Yong
 - **核心觀點**：
@@ -227,13 +243,13 @@
 
 ---
 
-## [GuruFocus / MarketBeat（美股 ADR 端）]
+#### [GuruFocus / MarketBeat（美股 ADR 端）]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：curl 單篇（JSON-LD `datePublished`）
 - **抓取結果**：✅ 成功（皆為自動化/模板化快訊）
 
-### 🎯 ADR 10/16 單日跌 13.7%，10/19 再跳空開低
+##### 🎯 ADR 10/16 單日跌 13.7%，10/19 再跳空開低
 - **來源連結**：[TLK Stock Down 13.7% -- Now Undervalued? GF Score: 72/100（GuruFocus）](https://www.gurufocus.com/news/9128468/pt-telkom-indonesia-persero-tbk-tlk-stock-down-137-now-undervalued-gf-score-72100)、[TLK Shares Gap Down - What's Next?（MarketBeat）](https://www.marketbeat.com/instant-alerts/price-pt-telekomunikasi-indonesia-tbk-nyse-tlk-shares-gap-down-whats-next-2026-10-19/)
 - **發布時間**：2026-10-16 22:31 UTC / 2026-10-19 15:00 UTC
 - **核心觀點**：
@@ -246,13 +262,13 @@
 
 ---
 
-## [Seeking Alpha]
+#### [Seeking Alpha]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：WebSearch（`allowed_domains: seekingalpha.com`）找文章 → Apify `apify/rag-web-browser` 取標題/日期/摘要（WebFetch 403；Firecrawl 額度用盡；Bright Data 需重新授權）
 - **抓取結果**：⚠️ 僅標題、日期與摘要（正文付費牆）
 
-### 🎯 The Value Pendulum：分拆後維持「買進」，預期 Q3 優於共識
+##### 🎯 The Value Pendulum：分拆後維持「買進」，預期 Q3 優於共識
 - **來源連結**：[Telekomunikasi Indonesia: A 'Buy' After Infrastructure Unit Spinoff And Q3 Preview](https://seekingalpha.com/article/4954723-telekomunikasi-indonesia-a-buy-after-infrastructure-unit-spinoff-and-q3-preview)
 - **發布時間**：2026-10-16 07:27 ET（7 則留言）
 - **核心觀點**：
@@ -266,7 +282,7 @@
 
 ---
 
-## [Reddit]
+#### [Reddit]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：Apify `trudax/reddit-scraper-lite`（第 1 次：全站 "Telkom Indonesia"、"TLKM"；第 2 次：r/finansial "TLKM"、"Telkom"，觸及 0.1 美元上限中止）
@@ -278,13 +294,13 @@
 
 ---
 
-## [Stockbit（印尼最大投資社群）]
+#### [Stockbit（印尼最大投資社群）]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：Exa `web_search_exa`（索引含單篇貼文全文與發布時間）
 - **抓取結果**：⚠️ 為搜尋索引內容，非原始頁面逐字擷取（Stockbit 頁面需 JS 載入）
 
-### 🎯 Stockbit Snips 研究部：Q2 優於預期（8/3）
+##### 🎯 Stockbit Snips 研究部：Q2 優於預期（8/3）
 - **來源連結**：[📡 TLKM: Pemulihan pada 2Q26, Kinerja 1H26 Lampaui Ekspektasi](https://snips.stockbit.com/snips-terbaru/-tlkm-pemulihan-pada-2q26-kinerja-1h26-lampaui-ekspektasi)
 - **發布時間**：2026-08-03（Stockbit Investment Research）
 - **核心觀點**：
@@ -296,7 +312,7 @@
   - 管理層稱：光纖 InfraNexia 第二階段在 2H26 完成並找策略夥伴，重要里程碑於 3Q26 末宣布、4Q26 開始執行；資料中心目標 2026 年底前完成價值釋放。
   - 8/3 當天 TLKM 收漲 4.2%。
 
-### 🎯 散戶輿情（10/16 ~ 10/19，MSCI 衝擊期間）
+##### 🎯 散戶輿情（10/16 ~ 10/19，MSCI 衝擊期間）
 - **來源連結**：[ReiganDesu](https://stockbit.com/post/36797063)、[Cuan100M](https://stockbit.com/post/36796833)、[AwanDeru](https://stockbit.com/post/36797270)、[Dandyrachmadika](https://stockbit.com/post/36751819)、[skydrugz27](https://stockbit.com/post/36738215)、[TLKM 個股串流](https://stockbit.com/symbol/TLKM)
 - **發布時間**：2026-10-16 22:20 ~ 2026-10-19 17:30（WIB，依索引時間）
 - **核心觀點**：
@@ -312,13 +328,13 @@
 
 ---
 
-## [X（Twitter）]
+#### [X（Twitter）]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：WebSearch（`allowed_domains: x.com, twitter.com`）取索引；時間由 status ID 換算（UTC）。Firecrawl 額度用盡未使用。
 - **抓取結果**：⚠️ 為搜尋索引摘要，非原始頁面逐字引述
 
-### 🎯 媒體帳號與財經帳號貼文
+##### 🎯 媒體帳號與財經帳號貼文
 - [Radio Elshinta](https://x.com/RadioElshinta/status/2110934188149133463)｜2026-10-16 03:21 UTC｜IHSG 開盤重挫 8.01% 至 5,393.92，觸發暫停交易（trading halt），起因為 MSCI 公告。
 - [The New York Times](https://x.com/nytimes/status/2111028319177064889)｜2026-10-16 09:35 UTC｜"Indonesian stocks suffered their biggest plunge since 1998, deepening investor fears about Southeast Asia's largest economy."
 - [Merapi Uncover](https://x.com/merapi_uncover/status/2112028054461780159)｜2026-10-19 03:48 UTC｜IHSG 10/19 盤中再跌逾 5% 至 4,911，為 2020 年疫情以來低點。
@@ -328,13 +344,13 @@
 
 ---
 
-## [Simply Wall St]
+#### [Simply Wall St]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：Exa `web_search_exa` 索引全文
 - **抓取結果**：⚠️ 為搜尋索引內容
 
-### 🎯 〈3 Indonesian Telecom Stocks After The MSCI Selloff〉
+##### 🎯 〈3 Indonesian Telecom Stocks After The MSCI Selloff〉
 - **來源連結**：[3 Indonesian Telecom Stocks After The MSCI Selloff](https://simplywall.st/stocks/id/telecom/idx-tlkm/perusahaan-perseroan-persero-pt-telekomunikasi-indonesia-shares/news/3-indonesian-telecom-stocks-after-the-msci-selloff)
 - **發布時間**：2026-10-19 09:33 UTC
 - **核心觀點**：
@@ -345,13 +361,13 @@
 
 ---
 
-## [Rikopedia Research]
+#### [Rikopedia Research]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：curl 單篇（JSON-LD `datePublished`）
 - **抓取結果**：✅ 成功（⚠️ 可信度待查）
 
-### 🎯 〈TLKM Terkoreksi ke 1.900: Peluang Upside 90% Terbuka〉
+##### 🎯 〈TLKM Terkoreksi ke 1.900: Peluang Upside 90% Terbuka〉
 - **來源連結**：[TLKM Terkoreksi ke 1.900: Peluang Upside 90% Terbuka](https://www.rikopedia.com/2026/10/tlkm-terkoreksi-ke-1900-peluang-upside.html)
 - **發布時間**：2026-10-19 15:05（WIB）
 - **核心觀點**：
@@ -362,7 +378,7 @@
 
 ---
 
-## [Reuters / Bloomberg]
+#### [Reuters / Bloomberg]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：Firecrawl → HTTP 402 額度用盡；WebSearch → `reuters.com` 被內建搜尋封鎖；改用 Exa `web_search_exa` 找轉載頁（TradingView、MarketScreener）
@@ -373,13 +389,13 @@
 
 ---
 
-## [The Jakarta Post / Katadata / DCD / DealStreetAsia（資料中心與重組進度）]
+#### [The Jakarta Post / Katadata / DCD / DealStreetAsia（資料中心與重組進度）]
 
 - **抓取時間**：2026-10-19
 - **抓取方式**：Exa `web_search_exa` 索引全文
 - **抓取結果**：⚠️ 為搜尋索引內容，非原始頁面逐字擷取
 
-### 🎯 公開說明會（Public Expose 2026，9/7）：NeutraDC 進入 binding offer 評估、可能出售多數股權
+##### 🎯 公開說明會（Public Expose 2026，9/7）：NeutraDC 進入 binding offer 評估、可能出售多數股權
 - **來源連結**：[Progres Telkom (TLKM) Jual Mayoritas Saham NeutraDC, Target Rampung Akhir 2026（Katadata）](https://katadata.co.id/finansial/bursa/6a9e796d86aba/progres-telkom-tlkm-jual-mayoritas-saham-neutradc-target-rampung-akhir-2026)、[Telkom ramps up data center expansion, seeks strategic partner（The Jakarta Post）](https://www.thejakartapost.com/business/2026/09/10/telkom-ramps-up-data-center-expansion-seeks-strategic-partner)
 - **發布時間**：2026-09-07 15:44（WIB）／2026-09-10 11:48（WIB）
 - **核心觀點**：
@@ -389,21 +405,21 @@
   - NeutraDC（PT Telkom Data Ekosistem）2026 上半年營收 8,670 億盧比（年增 11%，換算每股約 8.8 盧比，占集團營收約 1.1%）；集團有效資料中心容量 49.9MW，Cikarang 15.5MW、使用率 96%。
   - 出售所得可能用於核心業務、強化資產負債表或股東回饋。
 
-### 🎯 NeutraDC 擴產目標 300MW（2030）
+##### 🎯 NeutraDC 擴產目標 300MW（2030）
 - **來源連結**：[Data centers emerge as next major growth driver for Indonesian listed companies（Indonesia Business Post）](https://indonesiabusinesspost.com/7217/markets-and-finance/data-centers-emerge-as-next-major-growth-driver-for-indonesian-listed-companies)
 - **發布時間**：2026-08-26（GMT+7）
 - **關鍵要點**：
   - 引 BRI Danareksa 報告：NeutraDC IT 容量 90.4MW（與 Jakarta Post 的 49.9MW「有效容量」口徑不同），目標 2030 年 300MW；Cikarang 第二園區規劃總容量 120MW；Batam 18MW、新加坡 17.4MW。
   - BRI Danareksa 將 TLKM、ISAT、DSSA、DCII 列為資料中心直接受惠股。
 
-### 🎯 InfraCo Phase 2 完成，兩階段合計約 48 億美元
+##### 🎯 InfraCo Phase 2 完成，兩階段合計約 48 億美元
 - **來源連結**：[Telkom Indonesia finalizes spin-off of $4.8bn InfraCo（DCD）](https://www.datacenterdynamics.com/en/news/telkom-indonesia-finalizes-spin-off-of-48bn-infraco/)、[Fokus 'AI Ready', Telkom Spin-Off Bisnis Fiber Rp85,7 T ke InfraNexia（CNN Indonesia）](https://www.cnnindonesia.com/ekonomi/20261001094733-625-1410327/fokus-ai-ready-telkom-spin-off-bisnis-fiber-rp857-t-ke-infranexia)
 - **發布時間**：2026-08-12（DCD）／2026-10-01 09:53（WIB，CNN Indonesia，作者標示「Telkom」＝公司新聞稿）
 - **關鍵要點**：
   - Phase 1 於 2026 年 1 月完成（移轉 50% 光纖資產）；Phase 2 約 49.9 兆盧比（28 億美元）。⚠️ DCD 8/12 寫「已完成」，但股東會 9/30 才通過、契據 9/30 才簽，DCD 用語過早，以 6-K 為準。
   - InfraNexia 總裁 Lukman Hakim Abd. Rauf：主打 5G 回傳、批發網路、FTTx、被動基礎設施共享，定位「AI Ready Infrastructure」。
 
-### 🎯 下半年再出售 6 家子公司
+##### 🎯 下半年再出售 6 家子公司
 - **來源連結**：[Indonesia's Telkom eyes six more divestments as restructuring gathers pace（DealStreetAsia）](https://www.dealstreetasia.com/stories/indonesia-telkom-restructuring-491278)
 - **發布時間**：2026-08-05 14:52 UTC
 - **關鍵要點**：
@@ -411,9 +427,9 @@
 
 ---
 
-## [2026-10-22 ~ 10-23 補充（StockAnalysis 例行更新蒐集）]
+#### [2026-10-22 ~ 10-23 補充（StockAnalysis 例行更新蒐集）]
 
-### 🎯 IDX 剔除 HSC 股票時程指向 11 月；Danantara 承接國營股
+##### 🎯 IDX 剔除 HSC 股票時程指向 11 月；Danantara 承接國營股
 - **來源連結**：[IHSG Hari Ini Meroket ke 5.439!（Merahputih）](https://www.merahputih.com/post/read/ihsg-hari-ini-meroket-ke-5-439-aturan-saham-hsc-bei-dan-manuver-danantara-jadi-penyelamat)、[IHSG menguat di tengah pasar cermati perkembangan regulasi dan MSCI（Antara）](https://www.antaranews.com/berita/5803781/ihsg-menguat-di-tengah-pasar-cermati-perkembangan-regulasi-dan-msci)、[BEI Keluarkan Saham HSC dari IHSG, Bobot 18%（Katadata）](https://katadata.co.id/amp/finansial/bursa/6ad5f8c1dfe35/bei-keluarkan-saham-hsc-dari-perhitungan-ihsg-bobot-18-termasuk-dssa-dan-bren)
 - **發布時間**：2026-10-22 ~ 10-23（WIB）
 - **關鍵要點**：
@@ -422,14 +438,14 @@
   - Danantara 執行長 Rosan 稱國營股估值已很便宜，備約 10 億美元至年底可進場；尚無買進 TLKM 的正式揭露。
   - BI 10/22：BI-Rate 維持 5.75%、存款便利利率升至 5.00%、11–12 月法定準備率 9%→7%（約 190 兆盧比）、DNDF 避險成本最多降 45%。
 
-### 🎯 Kontan：TLKM 三天反彈是否為多頭陷阱
+##### 🎯 Kontan：TLKM 三天反彈是否為多頭陷阱
 - **來源連結**：[Diguyur Net Sell Triliunan Rupiah, Apakah Kenaikan Tiga Hari TLKM Cuma Bull Trap?（Kontan Insight）](https://insight.kontan.co.id/news/diguyur-net-sell-triliunan-rupiah-apakah-kenaikan-tiga-hari-tlkm-cuma-bull-trap)
 - **發布時間**：2026-10-23 14:00（WIB）
 - **關鍵要點**：
   - TLKM 10/22 收 2,200 盧比，較 10/19 的 1,770 盧比 +24.3%，但外資未回流；10/19 外資賣超 3,674.8 億盧比。正文付費，僅取前言。
   - TLKM 10/23 收 2,240 盧比（Yahoo Finance）；TLK ADR 10/23 收 12.13 美元。
 
-### 🎯 BNY Mellon 持股增至 6.52%；新加坡政府續賣 MTEL
+##### 🎯 BNY Mellon 持股增至 6.52%；新加坡政府續賣 MTEL
 - **來源連結**：[Singapore Government Sells MTEL Shares Again（IDN Financials）](https://www.idnfinancials.com/news/70748/singapore-government-sells-mtel-shares-again)
 - **發布時間**：2026-10-24 01:00（WIB；持股異動資料日 10/22）
 - **關鍵要點**：
@@ -438,9 +454,9 @@
 
 ---
 
-## [2026-10-24 補充（StockAnalysis 例行更新蒐集）]
+#### [2026-10-24 補充（StockAnalysis 例行更新蒐集）]
 
-### 🎯 IDX 正式公告：HSC 股票 2026-11-02 起不計入 JCI
+##### 🎯 IDX 正式公告：HSC 股票 2026-11-02 起不計入 JCI
 - **來源連結**：[BEI: Saham HSC Resmi Keluar dari IHSG Mulai 2 November（Bisnis.com）](https://market.bisnis.com/read/20261022/7/2014729/bei-saham-hsc-resmi-keluar-dari-ihsg-mulai-2-november)、[BEI Kecualikan Saham HSC dari IHSG Mulai 2 November 2026（Media Indonesia）](https://mediaindonesia.com/ekonomi/947430/bei-kecualikan-saham-hsc-dari-ihsg-mulai-2-november-2026)、[Efektif 2 November 2026（Metro TV News）](https://www.metrotvnews.com/read/NG9Cw2RD-efektif-2-november-2026-bei-kecualikan-saham-hsc-dari-perhitungan-ihsg)、[BEI Keluarkan Saham HSC dan Papan Akselerasi dari IHSG, Mampukan Meyakinkan MSCI?（Kontan）](https://investasi.kontan.co.id/news/bei-keluarkan-saham-hsc-dan-papan-akselerasi-dari-ihsg-mampukan-meyakinkan-msci)、[Kuasai 28,8% Kapitalisasi Pasar, BEI Keluarkan HSC dari IHSG（Kontan）](https://investasi.kontan.co.id/news/kuasai-288-kapitalisasi-pasar-bei-keluarkan-hsc-dari-ihsg)
 - **發布時間**：2026-10-22（WIB；公告日期 2026-10-21）
 - **關鍵要點**：
@@ -450,13 +466,13 @@
   - Kontan 引述分析師：此舉「可能還不足以說服 MSCI」。MSCI 的 Standalone 諮詢仍在進行。
   - TLKM 不在 HSC 名單；剔除後非 HSC 大型股在 JCI 的相對權重上升。
 
-### 🎯 反對股東收買價格確認
+##### 🎯 反對股東收買價格確認
 - **來源連結**：[Telkom Rampungkan Buyback Saham, Serok Rp36,54 Miliar（CNBC Indonesia）](https://cnbcindonesia.com/market/20261023094855-17-778800/telkom-rampungkan-buyback-saham-serok-rp3654-miliar)、[TLKM Eksekusi Buyback 15,95 Juta Saham（Bloomberg Technoz）](https://www.bloombergtechnoz.com/detail-news/125494/tlkm-eksekusi-buyback-15-95-juta-saham-terkait-spin-off-fiber)
 - **發布時間**：2026-10-23（WIB）
 - **關鍵要點**：
   - 15,956,199 股 × 2,290 盧比 ＝ 365.4 億盧比，10/20 付款完成；與前述一致。
 
-### 🎯 NeutraDC、Danantara、3Q 財報：本輪查無新進度
+##### 🎯 NeutraDC、Danantara、3Q 財報：本輪查無新進度
 - **關鍵要點**：
   - NeutraDC 最新公開資訊仍為 9/7 公開說明會（binding offer 評估，目標年底完成）。
   - Danantara 仍無買進 TLKM 的正式揭露（Katadata 10/20 標題為問句「Sinyal Danantara Masuk?」）。
@@ -464,20 +480,20 @@
 
 ---
 
-## [2026-10-24 晚間補充（CollectsentimentAndReports 例行收集）]
+#### [2026-10-24 晚間補充（CollectsentimentAndReports 例行收集）]
 
 - **抓取時間**：2026-10-24 20:00 UTC
 - **抓取方式**：SEC EDGAR submissions JSON（curl）；`WebSearch`（印尼文關鍵字）＋ `curl` 單篇；Exa `web_search_exa`（Stockbit 索引）；`WebFetch` Yahoo Finance 新聞頁
 - **抓取結果**：✅ 成功（SEC、periskop 全文）／⚠️ Stockbit 為 Exa 索引全文／⭕ Yahoo Finance 新聞頁無 TLK 新文章（仍為 MT Newswires ADR 盤勢稿與 17 天前的美債殖利率文）
 
-### 🎯 SEC 6-K（2026-10-22）：反對股東收買結果報告
+##### 🎯 SEC 6-K（2026-10-22）：反對股東收買結果報告
 - **來源連結**：[Form 6-K tmb-20261022x6k.htm（SEC EDGAR）](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000074/tmb-20261022x6k.htm)
 - **發布時間**：2026-10-22（申報日）
 - **關鍵要點**：
   - 為向 OJK 提交的〈依公司法第 62 條執行之股份買回結果報告〉，交割日 2026-10-20，內容與前述 CNBC Indonesia 報導（15,956,199 股 × 2,290 盧比）一致。
   - 截至 10-24，EDGAR 最新申報仍為此件；**尚無 3Q2026 財報 6-K**。
 
-### 🎯 Telkom 回覆 BEI 異常波動詢問：買回計畫至 2027-06-08，三個月內無其他公司行動
+##### 🎯 Telkom 回覆 BEI 異常波動詢問：買回計畫至 2027-06-08，三個月內無其他公司行動
 - **來源連結**：[Telkom (TLKM) Jelaskan ke BEI, Buyback Saham Berjalan sampai Juni 2027（periskop.id）](https://periskop.id/pasar-modal/20261024/telkom-tlkm-jelaskan-bei-buyback-saham)
 - **發布時間**：2026-10-24 17:11 WIB（JSON-LD `datePublished` 2026-10-24T10:11Z；公司回覆於 10-22 揭露）
 - **核心觀點**：
@@ -487,7 +503,7 @@
   - 除已揭露事項外，三個月內無其他公司行動計畫（含影響上市地位者）；正在進行子公司整併簡化。
   - 公司表示不知悉任何未揭露重大資訊，亦不知悉特定股東持股變動（與 BNY Mellon 10/22 增持 5,759 萬股屬存託銀行 ADR 轉換一致，並非特定大股東進場）。
 
-### 🎯 Stockbit 社群：短線反彈派 vs. MSCI 外資賣壓派、殖利率陷阱警告
+##### 🎯 Stockbit 社群：短線反彈派 vs. MSCI 外資賣壓派、殖利率陷阱警告
 - **來源連結**：[stockbit.com/symbol/TLKM 討論流](https://stockbit.com/symbol/TLKM)、[owennath 技術面貼文](https://stockbit.com/post/36915899)
 - **發布時間**：2026-10-22 21:50 ~ 2026-10-24 16:14（WIB，Stockbit 顯示時間）
 - ⚠️ 為 Exa 搜尋索引全文，非原始頁面逐字擷取；mhilmi2703 貼文被 Stockbit 標為「Potential Junk」，僅作情緒參考
@@ -498,7 +514,7 @@
   - **股利品質警告**（10/24 15:14）：一則推廣影片貼文把 TLKM 列入 8%~15% 高殖利率股，但指出其配息率已 > 100%、部分動用保留盈餘，提醒「股利陷阱」。（該說法未在本文中核實，需對照 FY2025 年報股利政策）
   - 情緒面：散戶貼文多聚焦 10/16 崩跌、ARB 下限改 7%、10/21 Prabowo 演說「嗆 MSCI」造成的焦慮；ISAT（Indosat）AI／資料中心題材被拿來與 TLKM 比較。
 
-### 🎯 3Q2026 財報日期：第三方網站多指向 10/30
+##### 🎯 3Q2026 財報日期：第三方網站多指向 10/30
 - **來源連結**：[Earnings Whispers TLK](https://beta.earningswhispers.com/go/w/TLK)、[AJ Bell TLK company info](https://www.ajbell.co.uk/market-research/sub/NYSE:TLK/company-info)、[TipRanks](https://www.tipranks.com/stocks/mx:tlkn/earnings)
 - ⚠️ 為搜尋索引摘要，非原始頁面逐字引述
 - **關鍵要點**：
@@ -506,13 +522,13 @@
 
 ---
 
-## [2026-10-25 補充（StockAnalysis 例行更新蒐集）]
+#### [2026-10-25 補充（StockAnalysis 例行更新蒐集）]
 
 - **抓取時間**：2026-10-25（台北時間上午，週末休市）
 - **抓取方式**：`WebSearch`（印尼文／英文關鍵字）；Yahoo Finance 歷史股價（TLK、TLKM.JK 確認 10/23 後無新報價）
 - **抓取結果**：✅ 成功（搜尋摘要，非全文逐字擷取）
 
-### 🎯 FTSE Russell 10/7 維持印尼 Secondary Emerging、不列觀察名單
+##### 🎯 FTSE Russell 10/7 維持印尼 Secondary Emerging、不列觀察名單
 - **來源連結**：[Kontan](https://investasi.kontan.co.id/news/ftse-russell-pertahankan-status-indonesia-di-emerging-market-ini-alasannya)、[Bisnis.com](https://market.bisnis.com/read/20261007/7/2010623/ihsg-tak-bergeming-walau-ftse-russell-pertahankan-status-ri)、[Investortrust](https://investortrust.id/market/118752/ftse-keeps-indonesia-in-emerging-market-fold-as-watchdog-hails-global-vote-of-confidence)
 - **發布時間**：2026-10-07
 - **關鍵要點**：
@@ -520,20 +536,20 @@
   - FTSE 將在 2026 年 12 月指數檢討前更新對印尼股票的處理方式。
   - 對 TLK 的意義：若 MSCI 降級，追蹤 FTSE 新興市場指數的資金（如 VWO）不必跟賣，可作為被動賣壓的緩衝（TLKM 在 FTSE 指數權重未取得，無法量化）。
 
-### 🎯 10/20 外資淨買超第一名為 TLKM（約 2,550 億盧比）
+##### 🎯 10/20 外資淨買超第一名為 TLKM（約 2,550 億盧比）
 - **來源連結**：[Kontan 10/20](https://pusatdata.kontan.co.id/news/ihsg-melonjak-565-ke-5278-asing-justru-net-sell-rp-221-triliun-hari-ini-2010)、[Katadata 10/20](https://katadata.co.id/finansial/bursa/6ad716556afdf/ihsg-naik-4-51-saat-net-sell-tembus-rp-1-9-t-asing-borong-saham-tlkm-dan-goto)
 - **發布時間**：2026-10-20
 - **關鍵要點**：
   - JCI 收 5,278.89（+5.65%），外資全市場淨賣超約 2.21 兆盧比，但 TLKM 為外資淨買超第一（約 2,550 億盧比 ≒ 每股 2.59 盧比 ≒ 每 ADS 0.014 美元）；BBCA、BBRI、BMRI 為主要淨賣超。
   - 與 10/19 TLKM 外資淨賣超 3,674.8 億盧比合看，外資對 TLKM 為「進出反覆」，非單向撤出。
 
-### 🎯 Moody's：印尼 Baa2、展望負向（2026-02），7 月稱風險再偏負面
+##### 🎯 Moody's：印尼 Baa2、展望負向（2026-02），7 月稱風險再偏負面
 - **來源連結**：[Bank Indonesia 新聞稿](https://www.bi.go.id/en/publikasi/ruang-media/news-release/Pages/sp_282726.aspx)、[Bloomberg 2026-07-21](https://www.bloomberg.com/news/articles/2026-07-21/moody-s-flags-rising-risks-in-indonesia-on-policy-uncertainty)
 - **關鍵要點**：
   - 2026-02 展望由穩定轉負向，主因政策可預測性下降、支出增加但收入未跟上、Danantara 相關或有負債；7 月表示風險「再偏負面一點」。本輪查無 10 月新動作。
   - TLK 的 Fitch BBB 評等受主權上限壓制，主權若降評，TLK 評等可能連動。
 
-### 🎯 其他
+##### 🎯 其他
 - **Prabowo 10/21 內閣會議**：稱 MSCI 試圖「恐嚇」印尼、印尼不會被嚇倒（[The Star](https://www.thestar.com.my/aseanplus/aseanplus-news/2026/10/21/prabowo-vows-indonesia-will-not-be-frightened-by-msci-amid-proposed-market-downgrade)、[DealStreetAsia](https://www.dealstreetasia.com/stories/prabowo-msci-indonesia-498821/)）。
 - **AI 資料中心**：網路董事 Budi Satria Dharma Purba 10/20 於 Bali Tech Week 表示將把資料中心建在電源附近，主打印尼電價較鄰國便宜（[Bisnis.com](https://teknologi.bisnis.com/read/20261020/84/2014206/permintaan-data-center-ai-melonjak-telkom-bidik-pembangunan-dekat-sumber-energi)）；未揭露金額。
 - **Goldman Sachs**：印尼 underweight 為 2026-01-29 調降、6 月維持；本輪查無 10 月新動作。
@@ -541,8 +557,48 @@
 
 ---
 
-## [本期小結（2026-07-19 ~ 2026-10-19）]
+#### [本期小結（2026-07-19 ~ 2026-10-19）]
 
 - **利多**：Q2 獲利強勁反彈（單季淨利 +28% YoY）、Telkomsel ARPU 連續上升、資本支出偏低使自由現金流 +12.8%；光纖分拆 Phase 2 完成、資料中心出售進入 binding offer；Fitch 上調獨立信用狀況至 'a'；淨槓桿僅約 0.4 倍。
 - **利空**：MSCI 擬將印尼降為獨立市場（2027-06 前決定），被動資金賣壓是 10 月崩跌主因；ADR 自 9/14 15.26 美元跌至 10/19 10.59 美元（約 −31%）；換將案三成三反對、稽核主管兩個月兩度更換，治理與政策干預疑慮升高；IndiHome 固網持續衰退；評等受主權天花板壓制（BBB／負向）。
 - **待觀察**：Q3 財報（Earnings Whispers／AJ Bell 標 2026-10-30 盤前，尚待公司公告確認）、NeutraDC 買家與價格、MSCI 11 月季檢與諮詢進度、BEI 新 ARB 7% 規定（至 12/31）。
+
+---
+
+#### [2026-10-26 補充（StockAnalysis 例行更新蒐集）]
+
+- **抓取時間**：2026-10-26（台北時間上午，雅加達與紐約皆未開盤）
+- **抓取方式**：`WebSearch` ＋ Firecrawl 抓 Kontan、Suara.com、Selular.ID 全文；Yahoo Finance 歷史股價（TLK、TLKM.JK 確認 10/23 後無新報價）
+- **抓取結果**：✅ 成功（Kontan Insight 專題為付費文章，只取得標題與導言）
+
+##### 🎯 MSCI 降級諮詢歷史：12 次有 10 次成真
+- **來源連結**：[Kontan Insight 2026-10-25](https://insight.kontan.co.id/news/dari-12-konsultasi-penurunan-klasifikasi-market-oleh-msci-hanya-dua-yang-selamat)、[KabarBursa（Stockbit 統計）](https://www.kabarbursa.com/market-hari-ini/ri-terancam-downgrade-ke-standalone-market-begini-dampaknya.md)
+- **關鍵要點**：
+  - Stockbit 研究團隊統計 2006 年以來 MSCI 12 次降級諮詢，10 次最後降級；Kontan 專題標題「12 次只有 2 次逃過」，並指外資在 MSCI 決定前已在調整部位。
+  - 兩次未降級的市場名稱未查到。
+
+##### 🎯 BRI Danareksa（10/22 報告）：維持 buy、TP 3,500 盧比；2027 CapEx 可能上修
+- **來源連結**：[Kontan 2026-10-25](https://investasi.kontan.co.id/news/telkom-tlkm-ekspansi-pusat-data-ai-bri-danareksa-targetkan-harga-saham-rp-3500)
+- **關鍵要點**：
+  - NeutraDC Batam 由 3 × 18MW 擴大為總計 118MW：BTM-1 18MW 已全數簽約、首批 6MW 4Q26 上線；BTM-2 100MW 2028 年服務，CapEx 約 13–17 兆盧比（視 NeutraDC 出售而定），已取得 90MW 供電、Medco 為合資夥伴。
+  - Telin 海纜容量售出 >85%，Bifrost 預計 1Q27 售罄；2026 EBITDA 目標 2 兆盧比；2030 企業價值目標 40–45 兆；2031 前 CapEx 32 兆。
+  - 2027 合併 CapEx 可能由 29 兆升至約 35 兆盧比；淨負債／EBITDA 0.6 倍。風險：5G 投資不足。
+
+##### 🎯 家寬資費月減 2.2%；TLKM 2H 可能再提 6–8 兆減損
+- **來源連結**：[Kontan 2026-10-25](https://investasi.kontan.co.id/news/tarif-internet-rumah-turun-22-bagaimana-prospek-saham-telekomunikasi)
+- **關鍵要點**：
+  - Mirae Asset（10/23）：10 月家寬資費平均月減 2.2%，IndiHome、XL Satu、ICON+、Biznet 調價。
+  - 券商估 TLKM 固網 ARPU 約 219,000 盧比（年增 5%）、用戶 9.86 百萬（年減 4%）；2H2026 可能再提 6–8 兆盧比減損，ERP 費用壓 3Q 獲利（公司未證實）。
+  - 印尼電信類股 EV/EBITDA 約 4.1 倍，約低於歷史平均 2 個標準差。
+
+##### 🎯 外資整週淨賣 TLKM 6,068 億盧比；Danantara 證實進場
+- **來源連結**：[Kontan 2026-10-24](https://investasi.kontan.co.id/news/asing-net-sell-rp-872-triliun-sepekan-cermati-saham-yang-banyak-dijual)、[Suara.com 2026-10-25](https://suara.com/bisnis/2026/10/25/155845/danantara-getol-serok-saham-saat-ihsg-diguncang-msci)
+- **關鍵要點**：
+  - 10/19–10/23 JCI 漲 4.9% 至 5,439.25，外資全市場淨賣 8.72 兆盧比；TLKM 淨賣 6,068.3 億（第 4 大，次於 BBCA、BBRI、BMRI）。與 10/20 單日淨買超合看，外資整週仍偏賣。
+  - Danantara 投資長 Pandu Sjahrir 證實已開始買股，18 兆盧比（10 億美元）分批投入至年底；標的未揭露。Danantara 持 TLKM 52.09%。
+
+##### 🎯 其他
+- **CGS International**（[Selular.ID 2026-10-26](https://selular.id/2026/10/dividen-telkom-makin-menggiurkan-usai-kisruh-msci-ai-jadi-andalan/)）：股價下跌推高殖利率；TLKM 30 目標 EBITDA 率 50%、ICT 2030 年佔營收 25%、NeutraDC 2030 年 400MW。媒體自注殖利率上升不代表股利增加。
+- **3Q2026 財報日期**：仍未見公司公告；3Q2025 為 2025-10-30 發布（Bisnis.com／Kontan）。
+
+---

@@ -39,7 +39,7 @@ BLACK_KEYWORDS = [
     '半期報告書', 'quarter', '季報', '四半期', '決算短信', '決算説明', '適時開示',
     '10-k', '10k', '10-q', '10q', '20-f', '6-k', '8-k', 'def 14a',
     '公告', 'announcement', '股東會', '通知書', 'notice', 'official_ir',
-    '財務報告', 'financial_report', 'earnings_release',
+    '財務報告', 'financial_report', 'earnings_release', 'presentation', 'irpresentation',
     '第一季度', '第二季度', '第三季度', '第四季度', '未經審核', '營運統計',
     '業績公告', '中期業績', '年度業績',
 ]
