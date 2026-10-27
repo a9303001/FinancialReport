@@ -602,3 +602,26 @@
 - **3Q2026 財報日期**：仍未見公司公告；3Q2025 為 2025-10-30 發布（Bisnis.com／Kontan）。
 
 ---
+
+#### [2026-10-26 ~ 10-27 補充（StockAnalysis 例行更新蒐集）]
+
+##### 🎯 OJK 推三項措施回應 MSCI
+- **來源連結**：[CNBC Indonesia 2026-10-26](https://www.cnbcindonesia.com/market/20261026094013-17-779355/hadapi-msci-ojk-siapkan-3-jurus-ini)
+- **關鍵要點**：
+  - ①免股東會（RUPS）買回延長至 2027 年 6 月，但不得違反最低自由流通股規定；②要求 IDX 讓 HSC 委員會納入 SRO 以外獨立人士；③強化異常交易與協同交易監控。
+  - 2026 年至今 OJK 對 166 方罰款 2.3 兆盧比；OJK 表示指數回穩不代表壓力結束。IDX 已於 10/19 聯繫 MSCI 要求說明諮詢依據，尚未見回覆。
+
+##### 🎯 10/26 外資淨賣 TLKM 3,294 億盧比
+- **來源連結**：[Kontan 2026-10-26](https://investasi.kontan.co.id/news/ihsg-terkoreksi-121-ke-5373-cek-saham-net-sell-terbesar-asing-di-awal-pekan)
+- **關鍵要點**：
+  - JCI 連漲四天後跌 1.21% 至 5,373.09；外資全市場淨賣 1.85 兆盧比；TLKM 淨賣 3,293.9 億（第 2 大，次於 BMRI 4,000.3 億）。
+  - TLKM 10/26 收 2,250 盧比；TLK ADR 10/26 收 12.25 美元（+1.0%）。BRI Danareksa 10/27 晨報推薦 TLKM。
+
+##### 🎯 3Q2026 財報日期與券商評等
+- **來源連結**：[ad-hoc-news 2026-10-26](https://www.ad-hoc-news.de/boerse/news/corporate-news/bank-of-america-keeps-buy-on-telkom-indonesia-stock/70415087)、[BatamToday](https://batamtoday.com/news/telkom-percepat-buyback-saham-rp-4-triliun-sisa-anggaran-di-atas-rp-3-triliun)
+- **關鍵要點**：
+  - Quanteia 標 3Q 財報 10/29，Earnings Whispers 標 10/30；公司未正式公告。
+  - Bank of America 10/21 維持 Buy（目標價未揭露）。
+  - Telkom 宣布加速執行 4 兆盧比買回，至 10/19 尚餘 3 兆以上，未公布時程與金額。
+
+---
