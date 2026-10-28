@@ -625,3 +625,30 @@
   - Telkom 宣布加速執行 4 兆盧比買回，至 10/19 尚餘 3 兆以上，未公布時程與金額。
 
 ---
+
+#### [2026-10-27 ~ 10-28 補充（StockAnalysis 例行更新蒐集）]
+
+- **抓取時間**：2026-10-28（台北時間上午）
+- **抓取方式**：`WebSearch` ＋ Firecrawl 抓 CNBC Indonesia、investor.id、Katadata、StockAnalysis 全文；Yahoo Finance（TLKM、IDR=X、同業）
+- **抓取結果**：✅ 成功（Yahoo TLK 10/27 收盤缺值，改用 StockAnalysis）
+
+##### 🎯 10/27 TLKM −4.89%、外資淨賣 2,344 億盧比
+- **來源連結**：[investor.id 2026-10-27](https://investor.id/market/459629/tiga-raksasa-bursa-terempas-asing-belum-juga-puas)、[CNBC Indonesia 2026-10-28](https://www.cnbcindonesia.com/market/20261028063818-17-780036/ihsg-ditutup-turun-19-asing-buang-10-saham-ini)、[Katadata 2026-10-27](https://katadata.co.id/finansial/bursa/6ae07b6a97539/ihsg-anjlok-1-99-jelang-rupslb-bei-saham-grup-astra-untr-aali-justru-melesat)
+- **關鍵要點**：
+  - JCI 收 5,266.13（−1.99%），盤中一度 −3.49% 至 5,185；外資全市場淨賣約 6,512–6,683 億盧比，年初至今累計淨賣 97.3 兆。
+  - 外資淨賣前三：BMRI 2,663 億、TLKM 2,344.5 億、BBNI 1,195.7 億；TLKM 收 2,140（−4.89%），IDXBUMN20 −1.86%。
+  - Katadata 指跌勢發生在 IDX 10/28 臨時股東會前（市場關注 demutualization，POJK 13/2026 已於 9/21 發布）。
+  - TLK ADR 10/27 收 11.76 美元（−4.0%）；USD/IDR 收 18,144。
+
+##### 🎯 BRI Danareksa 外資流出壓力測試
+- **來源連結**：[investor.id 2026-10-27](https://investor.id/market/459629/tiga-raksasa-bursa-terempas-asing-belum-juga-puas)
+- **關鍵要點**：
+  - 若 MSCI 降為 Standalone，最壞情境到 4Q2027 外資累計流出 140–160 億美元（252–288 兆盧比）。
+  - 主動型基金賣壓約 40 億美元（72 兆盧比），集中在 4Q2026（front-loaded）；被動型基金在 3Q2027 MSCI 定案後賣出。
+  - 賣壓大小取決於執法進展、投資人信心與估值。
+
+##### 🎯 3Q2026 財報日期
+- **來源連結**：[ad-hoc-news 2026-10-27](https://www.ad-hoc-news.de/boerse/news/corporate-news/telkom-indonesia-completes-buyback-bri-keeps-target-for-telkom-indonesia-stock/70418463)
+- **關鍵要點**：ad-hoc-news 標 10/29，Earnings Whispers 標 10/30；公司 IR 與 IDX 尚未見正式公告。
+
+---
