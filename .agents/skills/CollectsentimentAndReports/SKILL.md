@@ -149,7 +149,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | :--- | :--- | :--- |
 | HKEXnews 披露易 | 有官方 JSON API | **港股財報與公告第一站**，照 §5.4 [2026-09] |
 | HKEX 權益披露 `di.hkex.com.hk` | SSR，`curl` 可讀 | 入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` → 明細 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。核實「大股東增持」類新聞最準；交易代碼 3104「Services」是以單位支付酬金，不是自掏腰包買進 [2026-10] |
-| 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | SSR，`curl` 可讀；只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天） | 解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購快訊偶爾漏日，要與 HKEX 翌日披露報表交叉核對。較早期間改看 AAStocks／股吧 [2026-10] |
+| 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | 只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天，冷門期可涵蓋約 1 個月）；`curl` 時而 SSR、時而只回約 11KB `<title>Document` JS 外殼 | `curl` 有 SSR 時解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span；回外殼時直接改 Playwright（snapshot 每則 link 含標題、摘要、來源與時間，時間為 UTC，+8 小時）。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購/CCASS 快訊偶爾漏日，要與 HKEX 披露交叉核對。較早期間改看 AAStocks／股吧 [2026-10] |
 | 富途個股頁 `/quote`、`/announcement`、新聞內文 `news.futunn.com/hk/post/*` | JS 外殼；`/community` 導向登入頁 | 內文改用 Playwright 可取全文（MT Newswires 文章仍需登入）；Playwright 渲染出的發文時間是 UTC，+8 小時才是香港時間 [2026-10] |
 | AAStocks | 列表 `aastocks.com/tc/stocks/analysis/stock-aafn/{代號}/0/hk-stock-news/1` 為 SSR；`http://` 會 302 | `curl -L` 抓列表（約 20 則；`/hk-stock-news/2` 回傳與第 1 頁相同，無法翻頁）；單篇 `.../stock-aafn-con/{代號}/{來源}/{ID}/hk-stock-news` 正文就在 SSR HTML（`og:description` 只有約 50 字，不要只取它）。頁頭附沽空金額與比率 [2026-10] |
 | 新浪港股新聞 `stock.finance.sina.com.cn/hkstock/news/{代號}.html` | SSR，最新；只列約 30 則（財報後熱門期僅涵蓋約 2 天，冷門期可涵蓋約 1 個月），含券商研報標題 | `curl`（gb18030 解碼）可讀；研報頁 `stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/{id}/` 為 SSR（gb18030），正文在 `div.blk_container`、機構/研究員/日期在 `div.creab`，可取研報摘要全文 [2026-10] |
