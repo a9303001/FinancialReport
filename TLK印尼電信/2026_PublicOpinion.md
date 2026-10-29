@@ -652,3 +652,37 @@
 - **關鍵要點**：ad-hoc-news 標 10/29，Earnings Whispers 標 10/30；公司 IR 與 IDX 尚未見正式公告。
 
 ---
+
+#### [2026-10-28 ~ 10-29 補充（StockAnalysis 例行更新蒐集）]
+
+- **抓取時間**：2026-10-29（台北時間上午）
+- **抓取方式**：Firecrawl 抓 Kontan Pusat Data、CNBC Indonesia 全文；`WebSearch`；Yahoo Finance（TLK、TLKM.JK、ISAT.JK、IDR=X）；SEC EDGAR 近期申報
+- **抓取結果**：✅ 成功
+
+##### 🎯 10/28 JCI 反彈，但 TLKM 仍是外資第一大淨賣股
+- **來源連結**：[Kontan Pusat Data 2026-10-28](https://pusatdata.kontan.co.id/news/ihsg-menguat-031-ada-net-buy-asing-besar-di-saham-saham-ini-rabu-2810)
+- **關鍵要點**：
+  - JCI 盤中重挫後收 5,282.31（+0.31%）；外資全市場「淨買」6,642 億盧比（BBCA 淨買 1.2 兆）。
+  - 外資淨賣前三：TLKM 4,335 億、BMRI 2,765 億、BBNI 859 億；TLKM 收 2,070（−3.27%），基礎建設類股 −2.13%。
+  - Indosat（ISAT）−6.82% 至 1,570，為 LQ45 最大跌幅；電信股集體走弱。
+  - TLK ADR 10/28 收 11.43 美元（−2.8%），盤後 11.35。
+
+##### 🎯 CNBC Indonesia：WisdomTree 指數調整剔除 TLKM
+- **來源連結**：[CNBC Indonesia 2026-10-28](https://www.cnbcindonesia.com/market/20261028081539-17-780048/ihsg-ditutup-turun-19-simak-5-saham-pilihan-hari-ini)
+- **關鍵要點**：報導稱 10/27 跌勢「也受 WisdomTree 指數 rebalancing 影響，23 檔被剔除，包括 TLKM、PTBA、PGAS、BREN」；未寫指數名稱與生效日，其他來源查無佐證。
+
+##### 🎯 IDX 臨時股東會通過 demutualization 章程修改
+- **來源連結**：[CNBC Indonesia 2026-10-28](https://www.cnbcindonesia.com/market/20261028123721-17-780150/jelang-demutualisasi-bei-bagikan-dividen-tunai-rp156-triliun)、[Bisnis.com 2026-10-28](https://market.bisnis.com/read/20261028/7/2016309/bei-gelar-rupslb-hari-ini-2810-minta-restu-demutualisasi-bursa)
+- **關鍵要點**：
+  - 股東會通過 demutualization 相關章程修改，須再經 OJK 與法務人權部核准才生效。
+  - 另通過特別現金股利 1.564 兆盧比（每股 170 億盧比），2 兆盧比保留盈餘轉營運與發展準備。
+
+##### 🎯 印尼盾創紀錄新低
+- **來源連結**：[Kontan Pusat Data 2026-10-28](https://pusatdata.kontan.co.id/news/rupiah-melemah-6-hari-beruntun-kurs-jisdor-cetak-rekor-terlemah-sepanjang-masa)
+- **關鍵要點**：即期匯率收 18,184（−0.15%，連 6 天走弱）；JISDOR 18,183，為有紀錄以來最弱。
+
+##### 🎯 3Q2026 財報日期
+- **來源連結**：Yahoo Finance TLK 報價頁（earnings 時間戳 2026-10-30 美東、法說 2026-11-01，皆標「預估」）、[AJ Bell](https://www.ajbell.co.uk/market-research/sub/NYSE:TLK/company-info)
+- **關鍵要點**：多數來源指向 10/30；SEC EDGAR 至 10/29 台北上午最新 6-K 仍為 10/22，尚未申報 3Q。
+
+---
