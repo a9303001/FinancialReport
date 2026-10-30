@@ -686,3 +686,34 @@
 - **關鍵要點**：多數來源指向 10/30；SEC EDGAR 至 10/29 台北上午最新 6-K 仍為 10/22，尚未申報 3Q。
 
 ---
+
+#### [2026-10-29 ~ 10-30 補充（StockAnalysis 例行更新蒐集）]
+
+- **抓取時間**：2026-10-30（台北時間上午）
+- **抓取方式**：Firecrawl 抓 Kontan Pusat Data、CNBC Indonesia 全文；Firecrawl 搜尋；Yahoo Finance（TLK、TLKM.JK、IDR=X）；SEC EDGAR 近期申報
+- **抓取結果**：✅ 成功（10/29 外資淨賣 TLKM 精確金額未取得）
+
+##### 🎯 10/29 JCI 崩 3.49%，TLKM −4.35%
+- **來源連結**：[Kontan Pusat Data 2026-10-29](https://pusatdata.kontan.co.id/news/ihsg-tumbang-349-diiringi-net-sell-asing-rp-108-triliun-hari-ini-2910)、[CNBC Indonesia 2026-10-30](https://www.cnbcindonesia.com/research/20261029184133-128-780742/jumat-krusial-10-sentimen-panas-ini-bisa-bikin-pasar-ri-bergejolak)、[Emitennews 2026-10-29](https://emitennews.com/news/anjlok-349-persen-ihsg-dekati-level-5000)
+- **關鍵要點**：
+  - JCI 收 5,098.06（−3.49%），一週 −5.38%、年初至今 −41.04%；LQ45 全數下跌，基礎建設類股 −4.24%（CNBC 口徑 utilities −5.99%）。
+  - 外資全市場淨賣 1.08 兆盧比（常規市場 1.52 兆）；淨賣前三：BBCA 5,035 億、BBRI 1,645 億、BMRI 1,559 億。TLKM 不在前三，Kontan 排行圖顯示約第 5 名。
+  - TLKM 收 1,980（−4.35%），成交 5,410 億盧比；CNBC 點名 BBCA、ASII、BBRI、TLKM、BMRI 為主要拖累。
+  - TLK ADR 10/29 收 11.22 美元（−1.8%），盤後 11.15；以 18,125 換算 ADR 溢價約 +2.7%。
+
+##### 🎯 主權風險指標升溫
+- **來源連結**：[CNBC Indonesia 2026-10-30](https://www.cnbcindonesia.com/research/20261029184133-128-780742/jumat-krusial-10-sentimen-panas-ini-bisa-bikin-pasar-ri-bergejolak)
+- **關鍵要點**：
+  - 印尼 5 年 CDS 10/29 為 103.48bp（10/28 106.34、10/14 91.78）。
+  - 10 年公債殖利率 10/28 7.706%（2020 年 5 月以來最高），10/29 回落至 7.643%；公債標售投標金額由 10/13 的 64.86 兆降到 10/27 的 31.09 兆（−52%）。
+  - 印尼盾 10/29 收 18,125（Refinitiv，+0.28%），前一日為紀錄最弱收盤。Fed 10/28 維持 3.75%–4.00%；BI 表示 11 月利率決策視數據而定。
+
+##### 🎯 3Q2026 財報仍未發布
+- **來源連結**：Yahoo Finance TLK 報價頁（earnings 時間戳美東 2026-10-30 16:00、法說 2026-11-01，皆標「預估」）；SEC EDGAR（最新 6-K 仍為 2026-10-22）
+- **關鍵要點**：截至台北 10/30 上午尚無 3Q 6-K 或 IDX 公告；Telkom 官網 10/29 僅有新總裁在 DTIIF 論壇談 AI 基礎建設（連網、資料中心、AI 模型平台）的新聞稿。
+
+##### 🎯 指數成分調整
+- **來源連結**：[Kontan Pusat Data 2026-10-29](https://pusatdata.kontan.co.id/news/ini-daftar-lengkap-saham-baru-lq45-untuk-periode-2-november-2026-29-januari-2027)
+- **關鍵要點**：LQ45、IDX30、IDX80 新名單 11/2 生效；IDX30 剔除 PGEO、UNVR；TLKM 續留。
+
+---
