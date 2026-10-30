@@ -10,7 +10,7 @@
 | 同上 | HKEXnews JSON API | `202610_輿情新聞.md` | ✅ 2026-09-20 ~ 10-30 僅 1 筆公告（9 月月報表，股數 2,000,221,000 不變、庫存股 0）；尚未發布中期業績董事會通知 |
 | 同上 | HKEX 權益披露 | 同上 | ⭕ 2026-08-01 ~ 10-30 無任何權益變動申報 |
 | 同上 | AAStocks | 同上 | ✅ 新增 2 則 AI 自動技術面稿（10-14 黃金交叉、10-23 死亡交叉，觸及 52 週低 0.925 HKD） |
-| 同上 | 新浪港股、富途、WebSearch | 同上 | ⭕ 無 10 月新報導 |
+| 同上 | 新浪港股、富途、香港經濟日報（WebSearch／firecrawl_search）、WebSearch | 同上 | ⭕ 無 10 月新報導 |
 | 同上 | 東方財富股吧（Firecrawl）、雪球（Bright Data）、moomoo、LIHKG（Playwright） | 同上 | ⭕ 10 月零原創討論；雪球取得 10-30 行情快照 |
 
 **本期重點**：
@@ -25,7 +25,7 @@
 
 ## 3. 資料缺失說明
 - FY2027 中期報告（截至 2026-09-30）尚未公布，屬正常時程，非資料庫延遲。
-- 冷門港股：雪球、股吧、moomoo、LIHKG 近期皆無原創討論；Reddit/X 未查（過往輪次已確認無相關內容，且公司為純港股小型股）。
+- 冷門港股：雪球、股吧、moomoo、LIHKG 近期皆無原創討論。Reddit／X／Seeking Alpha／Yahoo Finance 為 §8.2 美股來源，PTT／Dcard 為台股來源，本公司為純港股，不適用。
 
 ## 4. 異常檔案刪除紀錄
 無。
@@ -34,7 +34,7 @@
 | MCP 服務名稱 | 工具/函式 | 用途 |
 | :--- | :--- | :--- |
 | Bright Data | `scrape_as_markdown` | 雪球個股頁討論流與行情 |
-| Firecrawl | `firecrawl_scrape` | 東方財富股吧 hk02633 列表（curl 空殼後） |
+| Firecrawl | `firecrawl_scrape`、`firecrawl_search` | 東方財富股吧 hk02633 列表（curl 空殼後）；hket 索引搜尋 |
 | Playwright | `browser_navigate`、`browser_snapshot`、`browser_network_requests`、`browser_network_request` | moomoo 社區、LIHKG 搜尋 API |
 | yfinance | `get_historical_stock_prices` | 2633.HK 近三個月日線（成交量核對） |
 
