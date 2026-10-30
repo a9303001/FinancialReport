@@ -1,4 +1,4 @@
-2026/10/31 00:08:53 (UTC+8)
+2026/10/31 00:09:56 (UTC+8)
 
 # 近 30 天新聞與輿情掃描（LatestNews）
 
@@ -120,6 +120,7 @@
     - 前三季：營收 3,555.74 億 RMB（+13.8%）、油氣銷售收入 3,053.54 億 RMB（+19.5%）、歸母淨利 1,191.18 億 RMB（+16.8%，基本每股盈餘 2.51 RMB）、經營現金流 1,995.86 億 RMB（÷ 475.30 億股 = 每股 4.95 HKD〔原始 4.20 RMB〕）
     - 第三季單季：營收 1,129.14 億 RMB（+7.6%）、歸母淨利 333.00 億 RMB（+2.7%）；單季油氣淨產量 194.9 百萬桶油當量，僅年增 0.6%
     - 前三季：油氣淨產量 593.7 百萬桶油當量（+2.7%，創同期新高）；平均實現油價 86.32 美元／桶（+26.4%），布蘭特均價 88.86 美元（+27.1%）；桶油主要成本 30.57 美元／桶油當量；資本支出約 899 億 RMB（+4.5%）
+    - 交叉核對：Quartr 摘要另列 Q3 稅前利潤 463.21 億 RMB（+4.6%）、Q3 基本 EPS 0.70 RMB、前三季稅前利潤 1,600.34 億 RMB（+15.0%）、扣除非經常性項目的前三季歸母淨利 1,189.25 億 RMB（+17.8%），與新浪、每經、財聯社、路透報導一致
   - **③ 背景**：中海油桶油主要成本僅 28.2 美元，純上游開採對油價敏感度極高；CF 則以北美低價頁岩氣生產氮肥，受惠中東供給受阻。
   - **④ 影響路徑**：荷莫茲海峽封鎖與油輪觸雷 → 國際油價破 110 美元、波斯灣化肥斷供 → 中海油實現油價與 CF 氮肥售價跳升 → 每股 EPS 與現金流同步擴張。
   - **⑤ 對持股**：
@@ -133,7 +134,7 @@
     - 假消息已澄清：10/23 雪球流傳『前三季 976.45 億（−10.23%）、Q3 338.84 億（−8.13%）』的數字，同串網友指出是 2023 年資料，與公司實際公布不符（見第六區）
   - **⑧ 接下來看什麼**：11/04 美股盤後 CF 公布 Q3 財報（日期待確認）；中海油 Q4 實現油價與年度股息政策（季報未宣布）；荷莫茲海峽每日通行量是否由 2 艘回升；港股 11/02 對中海油 Q3 業績的首個交易日反應。
   - **⑨ 與本地分析**：🔄 本地 `00883中國海洋石油/hourAnalysisResult.md`（2026-09-29 版）以布蘭特 101.25 美元為基準、2026E EPS 4.42 HKD；前三季實現油價僅 86.32 美元／桶、每股淨利 2.95 HKD，以 Q3 速率外推全年約 3.78 HKD，本地模型可能偏高，已列第五區 P0；CF 部分一致（`CF/hourAnalysisResult.md` 2026-10-18 版）。
-  - **⑩ 來源**：[EnergyNow／Reuters：Oil settles near $110](https://energynow.com/)、[港交所披露易：00883 董事會召開日期與派息公告](https://www.hkexnews.hk/)、[`CF/hourAnalysisResult.md`](file:///d:/FinancialReport/CF/hourAnalysisResult.md)、[CNBC：油價 10/29 收盤](https://www.cnbc.com/2026/10/29/oil-price-today-wti-brent.html)、[QNA：10/26 油價結算](https://qna.org.qa/en/News-Area/News/2026-10/27/oil-prices-fall-at-settlement)、[新浪財經：中國海油前三季度](https://finance.sina.com.cn/stock/companyt/2026-10-30/doc-iniwzazt8147666.shtml)、[每經網](https://www.nbd.com.cn/articles/2026-10-30/4632020.html)、[財聯社](https://m.cls.cn/detail/2520685)、[東方財富股吧 600938](https://gubapost.eastmoney.com/list,600938.html)
+  - **⑩ 來源**：[EnergyNow／Reuters：Oil settles near $110](https://energynow.com/)、[港交所披露易：00883 董事會召開日期與派息公告](https://www.hkexnews.hk/)、[`CF/hourAnalysisResult.md`](file:///d:/FinancialReport/CF/hourAnalysisResult.md)、[CNBC：油價 10/29 收盤](https://www.cnbc.com/2026/10/29/oil-price-today-wti-brent.html)、[QNA：10/26 油價結算](https://qna.org.qa/en/News-Area/News/2026-10/27/oil-prices-fall-at-settlement)、[新浪財經：中國海油前三季度](https://finance.sina.com.cn/stock/companyt/2026-10-30/doc-iniwzazt8147666.shtml)、[每經網](https://www.nbd.com.cn/articles/2026-10-30/4632020.html)、[財聯社](https://m.cls.cn/detail/2520685)、[東方財富股吧 600938](https://gubapost.eastmoney.com/list,600938.html)、[路透（MarketScreener）：中海油第三季淨利 +2.7%](https://uk.marketscreener.com/news/cnooc-s-third-quarter-net-income-rises-2-7-on-higher-oil-prices-ce785fdbdc8aff22)、[Quartr：CNOOC 2026 Q3 摘要](https://quartr.com/events/cnooc-883-q3-2026_FGIImiEE)
 
 - 🔴 **N4｜[10-30] 日銀 10/30 維持利率 1.25%（8 比 1，1 人主張升到 1.5%）並宣告物價已達 2% 目標 → 12 月升息機率約 75%，借浮動利率的 2971 壓力未解除**｜〔宏觀〕｜重要性：HIGH｜分數：8（幅2 廣2 急2 險1 注1）｜可信度：⭐｜🆕
   - **① 發生什麼**：日本央行（BOJ）10/30 結束兩天會議，政策利率維持 1.25%，投票 8 比 1，高田委員提案升到 1.5% 被否決。同時首度表示基調物價「大致符合」2% 目標，並把 ETF（上市基金）年賣出量從 3,300 億 JPY 提高到 8,600 億 JPY（簿價，2027 年 1 月起；J-REIT 維持每年 50 億 JPY）。
@@ -1032,5 +1033,5 @@
 - 資料缺口：
   - TLK 印尼電信：Q3 財報／6-K 尚未發布（SEC EDGAR 查至 10/30 無 Q3 6-K）；Telkom 庫藏股買回的金額未取得。
   - 台股 2881、2832、6121、AES-KY、8433、4417、1264、8435、2245：10/28～10/30 無新公告或未查到。
-  - 4507、7276、02318、01816、01866、00941、03606 已用決算短信、公司季報或港交所／巨潮資訊原文核對；00883 Q3 數字來自新浪財經、每經網、財聯社三家對公司公告的報導（未開啟公告 PDF）。
+  - 4507、7276、02318、01816、01866、00941、03606 已用決算短信、公司季報或港交所／巨潮資訊原文核對；00883 Q3 數字由新浪財經、每經網、財聯社、路透、Quartr 五個來源交叉一致；公司公告 PDF 在港交所標題搜尋結果中尚未出現（搜尋結果停留在 10/23），因此未能開啟原文。
   - 可能原因：論壇網站限制爬取、部分公司尚未發布、搜尋引擎索引延遲。
