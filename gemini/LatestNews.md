@@ -14,15 +14,27 @@
 >   4. **越重要越上面**：新聞、輿情、宏觀、個股混在同一條排行榜，依重要性分數排序。讀到哪停下，都已看完最重要的事。
 >   5. **新舊分得清**：上一版之後才出現或有新進展的條目一律標 `🆕`，並在 1.3 集中列出。
 > - **執行模式**：`/goal` 全自動。不中途提問；遇到錯誤記錄後繼續，一路做完 Step 0 → Step 8。
-> - **適用模型**：Gemini（Pro / Flash）與 Claude（Opus / Sonnet / Haiku）。本檔只用步驟、條列與少量表格，不用模型專屬語法。
+> - **適用模型**：Gemini（Antigravity / Gemini CLI；Pro / Flash）與 Claude（Claude Code；Opus / Sonnet / Haiku）。本 prompt 只用步驟、條列與少量表格，不用模型專屬語法；工具名稱差異見 D 表。
 > - **機械驗收**：`gemini/LatestNews_check.py`（Step 7）。腳本回報「問題 0 個」才算交付。
+
+---
+
+## 0. 給執行 AI 的閱讀說明（先讀這段）
+
+- **第一行 `/goal /boost`**：執行模式標記，不是要呼叫的工具。`/goal` = 全自動做到 Step 8；`/boost` = 每條都查原文、交叉驗證，不走捷徑。不認得這兩個指令的模型，照這個意思執行即可。
+- **兩種檔案，不要搞混**：「本 prompt」= `gemini/LatestNews.md`（規則，本輪不改）；「輸出檔」= `gemini/LatestNewsResult.md`（本輪要整份重寫的成品）。E 區 W1–W6 只約束輸出檔。
+- **閱讀順序**：0 → A（流程）→ C（鐵則）→ B（名詞）→ D（工具）→ 依序執行 Step 0～8；寫輸出檔前再讀 E 區 W1–W6 與 Step 6.2 骨架。
+- **規則衝突時的優先序**：C 鐵則 ＞ E-W6 格式硬規格（腳本要解析）＞ Step 內文 ＞ E 區其他寫作規範 ＞ W4 範例。範例只示範結構，不是事實。
+- **佔位符一律換成真值**：`TODAY`、`CUTOFF`、`PREV_TS`、`MM-DD`、`N#`、`X`、`Y`、`A`、`B`、`<…>`、`（…）` 都是佔位符；照抄進輸出檔 = 需重寫。
+- **輸出語言**：繁體中文（台灣用語）；程式碼、路徑、代號、URL 維持原文。
+- **不確定時的預設**：查不到 → 寫「無法量化／查不到：原因」並記進第八區，繼續下一項；**不要問使用者、不要停下、不要用訓練資料補**。
 
 ---
 
 ## A. 流程總覽（先看這張）
 
 ```
-Step 0  取 TODAY / CUTOFF / PREV_TS ＋ git pull ＋ 取當日匯率
+Step 0  取 TODAY / CUTOFF / PREV_TS ＋ git pull ＋ 取當日匯率（子步驟 0.1～0.5）
 Step 1  從 repo 建立「關注地圖」（要找哪些新聞）＋ 每檔的股數口徑與幣別
 Step 2  讀舊檔（只讀不改）→ 拆成事件卡 → 刪除 30 天外 → 判定保留／修正／降溫
 Step 3  搜尋：補缺口 → 宏觀 → 利空個股 → 其餘個股 → 社群輿情（新增事件卡）
@@ -53,6 +65,7 @@ Step 8  git commit / push ＋ 精簡摘要（不再碰輸出檔）
 - `本地分析檔`：`<公司資料夾>/hourAnalysisResult.md`。第一行是更新時間戳；第 1 章有「一句話結論」「本輪最重要的 3 件新事」「股數口徑聲明」「本檔主要幣別」。
 - `股數口徑`：每股化用的分母。一般股票 = 期末流通在外股數；REIT = 已發行基金單位數（口數）。來源優先序見 W5.2。
 - `匯率聲明`：全檔唯一一套匯率（Step 0.5），寫在表頭。所有跨幣別換算都用它。
+- `Step X.Y`：指該 Step 底下編號 X.Y 的子步驟（例：Step 0.4 = Step 0 的第 4 小步），不是「半個步驟」。
 - `舊檔`：本輪開始時的 `gemini/LatestNewsResult.md`。只讀，是 Step 2 的素材。它可能是任何版本的骨架，**依內容拆卡，不依區號**。
 - `事件卡`：「一則一事」的暫存筆記，記在思考或 scratchpad，**不寫進 repo**。欄位：
   `日期｜類型（宏觀／個股／輿情）｜標題｜內容與數字｜每股化（逐檔：金額 ÷ 股數 = 每股 X 幣別，約當 EPS/DPS 的 ±Y%）｜多空｜重要性｜分數（幅／廣／急／險／注）｜可信度｜對應持股｜來源 URL｜🆕／降溫｜狀態（保留／刪除／修正／新增）｜刪改理由`
@@ -91,26 +104,31 @@ Step 8  git commit / push ＋ 精簡摘要（不再碰輸出檔）
 
 ## D. 工具對照
 
-| 動作 | Gemini（Antigravity / CLI） | Claude（Claude Code） |
-|:-----|:---------------------------|:----------------------|
-| 取台北時間 | `run_command`：`Get-Date -Format "yyyy/MM/dd HH:mm:ss"` | `Bash`：`TZ=Asia/Taipei date "+%Y/%m/%d %H:%M:%S"` |
-| 算 CUTOFF | `run_command`：`(Get-Date).AddDays(-30).ToString("yyyy-MM-dd")` | `Bash`：`TZ=Asia/Taipei date -d "30 days ago" +%F` |
-| 取匯率 | yfinance MCP：`HKD=X`、`CNYHKD=X`（若有）；否則 `search_web` | `mcp__yfinance__get_stock_info`：`HKD=X`（1 USD 兌 HKD）、`CNYHKD=X`（1 RMB 兌 HKD）；失敗改 `WebSearch` |
-| 列資料夾／讀檔／搜內容 | `list_dir`／`view_file`／`grep_search` | `Glob` 或 `Bash ls`／`Read`／`Grep` |
-| 寫 `LatestNewsResult.md` | `write_to_file`（`Overwrite=true`） | `Write` |
-| 改其他檔（例：本 prompt） | `replace_file_content` | `Edit` |
-| 網路搜尋／讀網頁 | `search_web`／`read_url_content` | `WebSearch`／`WebFetch` |
-| 被擋時的進階爬取 | `call_mcp_tool`：Firecrawl → Bright Data → Apify → Playwright | `mcp__firecrawl-mcp__*` → `mcp__brightdata__*` → `mcp__Apify__*` → `mcp__playwright__*` |
-| 股價／新聞 API | yfinance MCP（若有） | `mcp__yfinance__get_yahoo_finance_news`、`get_stock_info` |
-| 美股公告 | SEC EDGAR 網頁 | `mcp__sec-edgar-mcp__get_recent_filings`、`analyze_8k` |
-| 驗收腳本 | `run_command`：`python gemini\LatestNews_check.py …` | `Bash`：`python3 gemini/LatestNews_check.py …` |
-| Git | `run_command`（cwd = `REPO_ROOT`） | `Bash` |
+| 動作 | Gemini Antigravity | Gemini CLI | Claude Code |
+|:-----|:-------------------|:-----------|:------------|
+| 執行指令 | `run_command`（cwd = `REPO_ROOT`） | `run_shell_command` | `Bash` |
+| 取台北時間 | PowerShell：`[TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTime]::UtcNow,'Taipei Standard Time').ToString('yyyy/MM/dd HH:mm:ss')` | 同左（Windows）；macOS／Linux 同右 | `TZ=Asia/Taipei date "+%Y/%m/%d %H:%M:%S"` |
+| 算 CUTOFF | PowerShell：`[TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTime]::UtcNow,'Taipei Standard Time').AddDays(-30).ToString('yyyy-MM-dd')` | 同左（Windows）；macOS／Linux 同右 | `TZ=Asia/Taipei date -d "30 days ago" +%F` |
+| 取匯率 | yfinance MCP：`HKD=X`、`CNYHKD=X`；否則 `search_web` | yfinance MCP `get_stock_info`；否則 `google_web_search` | `mcp__yfinance__get_stock_info`：`HKD=X`（1 USD 兌 HKD）、`CNYHKD=X`（1 RMB 兌 HKD）；失敗改 `WebSearch` |
+| 列資料夾 | `list_dir` | `list_directory`／`glob` | `Glob` 或 `Bash ls` |
+| 讀檔 | `view_file` | `read_file`／`read_many_files` | `Read` |
+| 搜內容 | `grep_search` | `search_file_content` | `Grep` |
+| 寫 `LatestNewsResult.md`（整檔） | `write_to_file`（`Overwrite=true`） | `write_file` | `Write`（本輪須先 `Read` 過該檔；Step 2 已讀） |
+| 改其他檔（本輪通常不用） | `replace_file_content` | `replace` | `Edit` |
+| 網路搜尋 | `search_web` | `google_web_search` | `WebSearch` |
+| 讀網頁 | `read_url_content` | `web_fetch` | `WebFetch` |
+| 被擋時的進階爬取 | MCP：Firecrawl → Bright Data → Apify → Playwright | 同左（MCP 工具名依 `settings.json`） | `mcp__firecrawl-mcp__*` → `mcp__brightdata__*` → `mcp__Apify__*` → `mcp__playwright__*` |
+| 股價／新聞 API | yfinance MCP（若有） | yfinance MCP（若有） | `mcp__yfinance__get_yahoo_finance_news`、`get_stock_info` |
+| 美股公告 | SEC EDGAR 網頁 | SEC EDGAR 網頁 | `mcp__sec-edgar-mcp__*`（連不上改 EDGAR 網頁） |
+| 驗收腳本 | `python gemini\LatestNews_check.py …` | 同左（Windows）或 `python3 gemini/LatestNews_check.py …` | `python3 gemini/LatestNews_check.py …` |
 
-> 缺工具就改用同列其他工具或上一層工具，不要停下。
+> - 缺工具就改用同列其他工具或上一層工具，不要停下。
+> - 工具名稱以當下環境實際提供的為準；名稱不同但功能相同就直接用，不必回報。
+> - Windows 的時區 ID 是 `Taipei Standard Time`；本機時區本來就是台北時，`Get-Date` 也可以，但結果要跟上式一致。
 
 ---
 
-## E. 寫作規範（W1–W5，只約束輸出檔）
+## E. 寫作規範（W1–W6，只約束輸出檔）
 
 ### W1 讀者畫像與白話規則
 
@@ -243,6 +261,7 @@ A、B、X、Y 等必須用本地分析檔、財報或行情來源的真實數字
 - 🇯🇵 日股：每股（每口）**JPY**。子公司／投資標的以外幣計價（例：3445 持有的有研硅 688432.SH）→ 換成 JPY，原幣放括號。
 - 🇹🇼 台股：每股 **新台幣（TWD）**，寫「元新台幣」或「TWD」，不可只寫「元」後面又出現其他幣別。
 - 🇺🇸 美股：每股 **USD**。
+  - **ADR**（如 `TLK` 印尼電信）：以「每 1 ADS」USD 為主，原幣（IDR）放括號，並寫明換股比：`每 1 ADS −0.34 USD（原始 −61.6 IDR／股 × 100 股 = −6,160 IDR；1 USD = 18,125 IDR；1 ADS = 100 股 TLKM）`。分母用本地分析檔「股數口徑聲明」的 ADS 口徑。
 - **匯率**：全檔只用 Step 0.5 取得的一套匯率，寫在表頭「匯率：」。寫法：`HKD 金額 = RMB 金額 × (1 RMB 兌 HKD)`；`HKD 金額 = USD 金額 × (1 USD 兌 HKD)`。
 
 #### W5.4 寫法（三種，擇一）
@@ -261,16 +280,36 @@ A、B、X、Y 等必須用本地分析檔、財報或行情來源的真實數字
 - [ ] 每張卡的 ⑤ 逐檔都有「每股 ±X 幣別、約當 EPS ±Y%」或「無法量化／影響可忽略：原因」？
 - [ ] 同一檔持股全檔股數一致？跟第四區「股數口徑」一致？
 
+### W6 格式硬規格（驗收腳本逐字解析，差一個字元就判失敗）
+
+> Gemini 與 Claude 都容易「自動美化」標點或縮排。下列字元與縮排**照抄，不可替換**。
+
+- **全形符號**：分隔符 `｜`（U+FF5C）、冒號 `：`、括號 `（）`，用在標題行、欄位名、分數、表頭。❌ 半形 `|`、`:`、`()`。
+  - 例外：日期括號 `[MM-DD]` 用**半形**方括號，月日都補零（`[10-05]`，不是 `[10-5]`）。
+- **第一行**：只有時間戳 `YYYY/MM/DD HH:MM:SS (UTC+8)`（這裡的 `(UTC+8)` 用半形括號），前面不可有空行、BOM、標題或說明文字。
+- **大區標題**：`## 一、`～`## 八、`，`##` 後一個半形空白，接中文數字與頓號 `、`。子區用 `### 1.1`、`### 2.1` 這類寫法。
+- **排行榜標題行**：從行首開始寫 `- 🔴 **N1｜[MM-DD] 標題**｜…`（`-`、半形空白、燈號 emoji 🔴／🟢／⚪ 三選一、半形空白、`**N`）。前面不可縮排，不可用 `*` 或 `1.` 當清單符號。
+- **分數**：`分數：8（幅3 廣2 急1 險1 注1）`；分項都是 1 位數、用半形空白隔開、順序固定。
+- **重要性**：`重要性：HIGH`／`MEDIUM`／`LOW`（英文大寫）。
+- **縮排（只用半形空白，禁止 Tab）**：
+  - 標題行：0 格
+  - ①～⑩ 欄位行：2 格，寫成 `  - **① 發生什麼**：…`（`**` 後面緊接圈號）
+  - 子條目：4 格。⑤ 的逐檔子條目**以持股代號開頭**：`    - 02318 中國平安（港交所）：…`；① 的時間軸以日期開頭：`    - 10-05：…`
+- **下一輪項目**：`- **P0｜…**`，子欄位 `  - **觸發**：`、`  - **交給**：`、`  - **要回答**：`、`  - **建立日**：YYYY-MM-DD`。
+- **1.3 條目**：以 `- 🆕 **N#｜` 開頭；第六區傳聞以 `- ⚠️ **` 開頭，且同一行有 `[MM-DD]`。
+- **零表格**：任何一行都不可以 `|` 開頭並以 `|` 結尾，也不可出現 `|---|`。
+- **不要把輸出檔整份包進 ```markdown 程式碼區塊**：Step 6.2 的骨架外框只是給你看的，寫檔時不含那層外框。
+
 ---
 
 ## Step 0 — 取日期、同步、匯率
 
-1. 實際執行指令取台北時間 → 得到 `TODAY`；算出 `CUTOFF = TODAY − 30 天`（D 表「算 CUTOFF」）。
-2. `git pull`（Gemini 本機：`git pull origin master`；Claude 雲端：拉當前工作分支與 `origin master`）。
-   - 衝突 → `git stash` → `pull` → `stash pop`；網路失敗重試 3 次（2s／4s／8s），仍失敗就記錄後繼續。
-3. pull **之後**讀舊檔第一行 → `PREV_TS`、`PREV_DATE`；讀表頭「覆蓋期間」起日 → `PREV_START`（舊檔沒有就記為 `TODAY`）。
-4. 若 `PREV_START > CUTOFF`（例：舊檔是 7 天版、或上一輪隔了很久）→ `CUTOFF ～ PREV_START` 這段是**缺口**，Step 3.1 第 0 項要補搜。
-5. **取匯率（全檔唯一一套）**：最近一個交易日收盤的 `1 USD = ? HKD`、`1 RMB = ? HKD`；有日股、台股換算需要再加 `1 USD = ? JPY`、`1 USD = ? TWD`。寫下日期與來源（D 表「取匯率」）。取不到 → 沿用本地分析檔最新的匯率聲明並標「沿用：檔名、日期」。
+- **0.1 取日期**：實際執行指令取台北時間 → 得到 `TODAY`；算出 `CUTOFF = TODAY − 30 天`（D 表「算 CUTOFF」）。寫下這兩個值，之後全程沿用。
+- **0.2 同步**：`git pull`（Gemini 本機：`git pull origin master`；Claude 雲端：拉當前工作分支與 `origin master`）。分支名是 `master`，不是 `main`。
+  - 衝突 → `git stash` → `pull` → `stash pop`；網路失敗重試 3 次（2s／4s／8s），仍失敗就記錄後繼續。
+- **0.3 讀上一版資訊**：pull **之後**讀舊檔第一行 → `PREV_TS`、`PREV_DATE`；讀表頭「覆蓋期間」起日 → `PREV_START`（舊檔沒有就記為 `TODAY`）。
+- **0.4 判斷缺口**：若 `PREV_START > CUTOFF`（例：舊檔是 7 天版、或上一輪隔了很久）→ `CUTOFF ～ PREV_START` 這段是**缺口**，Step 3.1 第 0 項要補搜。
+- **0.5 取匯率（全檔唯一一套）**：最近一個交易日收盤的 `1 USD = ? HKD`、`1 RMB = ? HKD`；有日股、台股、ADR 換算需要再加 `1 USD = ? JPY`、`1 USD = ? TWD`、`1 USD = ? IDR`。寫下日期與來源（D 表「取匯率」）。取不到 → 沿用本地分析檔最新的匯率聲明並標「沿用：檔名、日期」。
 
 ---
 
@@ -282,7 +321,8 @@ A、B、X、Y 等必須用本地分析檔、財報或行情來源的真實數字
 
 - 列出 `REPO_ROOT` 根目錄資料夾，保留公司資料夾：「代號＋名稱」（如 `02318中國平安`、`2881富邦金`）或純英文代碼（如 `UHS`、`CF`、`EVTC`、`AES-KY`）。
 - 排除：`History`、`Log`、`Prompt`、`gemini`、`StkScreenerResult`、`HkReitScreenerResult`、`JpReitScreenerResult`，以及 `.` 開頭的資料夾。
-- 分組：🇭🇰 港股（5 位數代號）、🇯🇵 日股（4 位數且本地分析檔寫日股）、🇹🇼 台股（4 位數且本地分析檔寫台股／興櫃，含 `AES-KY`）、🇺🇸 美股（英文代碼）。
+- 分組：🇭🇰 港股（5 位數代號）、🇯🇵 日股（4 位數且本地分析檔寫日股）、🇹🇼 台股（4 位數且本地分析檔寫台股／興櫃，含 `AES-KY`）、🇺🇸 美股（英文代碼，含 ADR 如 `TLK`）。
+- **持股清單以資料夾為準**：1.3 種子裡有、但 `REPO_ROOT` 沒有資料夾的代號 → 視為已出清，不主動搜尋、不列第四區；有資料夾、但種子沒有 → 照 1.2 自行建立種子。
 
 ### 1.2 每間公司抽 4 樣東西（只讀需要的段落）
 
@@ -291,7 +331,7 @@ A、B、X、Y 等必須用本地分析檔、財報或行情來源的真實數字
 3. **每股化基準**：本地分析檔的「股數口徑聲明」（股數＋單位＋日期）、本年預估 EPS／DPU、最新收盤價、主要幣別 → 記進事件卡，Step 6 每股化重算用。
 4. 本地分析檔「資料缺口／後續追蹤」章節（若有）→ 這輪要補的東西。
 
-### 1.3 關注地圖種子（2026-09 版；Step 1.2 讀到新東西就以新的為準）
+### 1.3 關注地圖種子（2026-10 版；Step 1.2 讀到新東西就以新的為準）
 
 > 格式：`代號 名稱`：要找的新聞 → 為什麼重要。清單外的新資料夾也要照 1.2 建立種子。
 
@@ -312,29 +352,34 @@ A、B、X、Y 等必須用本地分析檔、財報或行情來源的真實數字
   - `9435 光通信`：Leopalace21 公開收購（TOB）進度、大量保有報告、業務改善勧告 → 投資標的變化
   - `3445 RS 科技`：有研硅（688432.SH）股價與 12 吋收購案、再生晶圓需求 → 子公司市值倒掛
   - `7203 Toyota`：月銷量（尤其中國）、美國關稅、日圓匯率、自駕／機器人 → EPS 與匯率敏感度
-  - `4507 鹽野義製藥`：ViiV／HIV 權利金、Gilead 競品、新藥核准、期中財報 → 最大藥 2028 專利到期
-  - `4979 OAT`、`8117 中央自動車工業`：TDnet 公告、庫藏股、指數納入 → 小型股籌碼事件
+  - `7276 小糸製作所`：車燈訂單、Toyota 等日系車廠產量、回購進度、對 1521 大億的控制與採購整合 → 母子公司連動
+  - `3455 醫療保健投資法人`：2026-09 公募增資後的每口稀釋、LTV、借款利率、DPU 預估 → 增資後每口配息能否回升
+  - `4979 OAT`：TDnet 公告、庫藏股、指數納入 → 小型股籌碼事件
 - 🇹🇼 台股（每股 TWD）
   - `2881 富邦金`：月自結獲利、股利政策、壽險避險成本、股價是否過熱 → 高 P/B 的回檔風險
   - `2832 台產`：月自結、館前路都更、承德路新總部 → 未來 3 年 EPS
+  - `1521 大億`：Stellantis 單一客戶集中、月營收、Koito（7276）接掌經營後的定位、淨現金與配息 → 客戶集中與母公司壓價風險
   - `6121 新普`、`AES-KY (6781)`：月營收、AI 伺服器 BBU 訂單、筆電出貨 → AES-KY 佔新普 EPS 比重
   - `5306 桂盟`：月營收、自行車庫存、私募案、ECFA → 私募稀釋
-  - `8433 弘帆`、`4417 金洲`、`1264 德麥`、`8435 鉅邁`：月營收、關稅、匯率、原料（奶油）、併購子公司 → 中小型股消息少，有就要抓
+  - `8433 弘帆`、`4417 金洲`、`1264 德麥`：月營收、關稅、匯率、原料（奶油）、併購子公司 → 中小型股消息少，有就要抓
   - `2249 湧盛`、`2245 詠勝昌`：上櫃進度、承銷價、法說會 → 流動性重估
 - 🇺🇸 美股（每股 USD）
   - `UHS`：Medicaid／大而美法案（OBBBA）、ACA 退保、新院開幕、回購 → EPS 下修幅度
   - `CF`：氮肥／尿素價格、天然氣、評等調整、反壟斷訴訟（MDL 3187）、DOJ 調查 → 高峰後獲利腰斬風險
   - `EVTC`：拉美業務、併購攤銷、2027 Term Loan 再融資、Popular 續約、資安訴訟 → GAAP EPS
+  - `TLK 印尼電信`（NYSE ADR；1 ADS = 100 股 IDX `TLKM`，每 1 ADS 寫 USD）：季報減損、光纖資產分拆、MSCI 對印尼市場分類、外資買賣超、印尼盾匯率 → 一次性減損與資金面賣壓
+- 已無資料夾（視為出清，不主動搜尋）：`4507 鹽野義製藥`、`8117 中央自動車工業`、`8435 鉅邁`
 
 ### 1.4 宏觀主題與持股連動
 
 - 中國房地產政策與銷售 → 02318、01426、87001、HkState 五盞燈
 - 中國 PMI、CPI、逆週期政策 → 全部港股
-- 日銀利率、JGB 殖利率、日圓 → 2971、全部日股、4507 權利金、7203 匯率
+- 日銀利率、JGB 殖利率、日圓 → 2971、3455、全部日股、7203 匯率
 - 聯準會、美國通膨與就業、美元 → 美股估值、港元（聯繫匯率）、HIBOR
 - 台灣央行、出口訂單、新台幣匯率、外資動向 → 台股
 - 油價、天然氣、尿素／化肥 → 00883、CF、01866
-- 美中關係、關稅、台海 → 7203、03606、8433、CF、台股整體
+- 美中關係、關稅、台海 → 7203、7276、1521、03606、8433、CF、台股整體
+- 印尼盾匯率、MSCI 市場分類、新興市場資金流 → TLK
 - 香港 REIT 政策（「房託通」REIT Connect、施政報告）→ 01426、87001、Reit_Hk
 - 人民幣兌港幣匯率 → 所有人民幣財報的港股（每股 HKD 換算會變）
 
@@ -525,6 +570,7 @@ A、B、X、Y 等必須用本地分析檔、財報或行情來源的真實數字
 ### 6.2 輸出骨架
 
 > 「一～八」八個大區各出現一次、順序固定；該區沒東西就寫「無」並說明原因。**全檔不用表格。**
+> 下面 ```markdown 外框只是展示用，寫檔時**不含外框**；字元與縮排依 W6。
 > 一、二是「必讀」；三～八是「查閱用」。只讀前兩區，就不會漏掉任何 HIGH 事件或新進展。
 
 ```markdown
@@ -536,8 +582,8 @@ YYYY/MM/DD HH:MM:SS (UTC+8)
 > 追蹤持股：N 檔（港 a／日 b／台 c／美 d）｜宏觀主題：M 項
 > 排行榜：共 T 則（HIGH h／MEDIUM m／LOW l）｜其中 🆕 X 則｜降溫 D 則
 > 本輪刪除：K 條（過期 k1／已落幕 k2／篇幅 k3／其他 k4）｜本輪修正：J 條
-> 匯率：1 USD = X HKD｜1 RMB = X HKD｜1 USD = X JPY｜1 USD = X TWD（YYYY-MM-DD 收盤，來源）
-> 每股化規則：港股每股一律 HKD（原幣放括號）｜日股 JPY｜台股 TWD｜美股 USD｜股數見第四區各檔「股數口徑」
+> 匯率：1 USD = X HKD｜1 RMB = X HKD｜1 USD = X JPY｜1 USD = X TWD｜1 USD = X IDR（YYYY-MM-DD 收盤，來源；用不到的幣別可省略）
+> 每股化規則：港股每股一律 HKD（原幣放括號）｜日股 JPY｜台股 TWD｜美股 USD（ADR 每 1 ADS）｜股數見第四區各檔「股數口徑」
 > 上一版：PREV_TS｜本版：整份重寫（Final Rewrite）
 > 產出規則：`gemini/LatestNews.md`｜⚠️ 自動化產出，投資前請回原始來源核實。
 
@@ -626,7 +672,7 @@ YYYY/MM/DD HH:MM:SS (UTC+8)
 
 ### 6.3 Final Rewrite 清單（寫檔前在草稿上跑一次）
 
-- **A. 結構**：八大區各 1 次、順序固定；第一行留給真實時間戳；表頭含「覆蓋期間」「匯率」「每股化規則」「上一版…整份重寫」；全檔零表格。
+- **A. 結構**：W6 格式硬規格全過（全形 `｜：（）`、縮排 2／4 格、無 Tab、無外框）；八大區各 1 次、順序固定；第一行留給真實時間戳；表頭含「覆蓋期間」「匯率」「每股化規則」「上一版…整份重寫」；全檔零表格。
 - **B. 每股化**：W5.5 四項全過；1.2 每件都有「每股影響」；第四區每檔有「每股基準」與「近 30 天每股影響合計」。
 - **C. 港股港幣化**：所有港股的每股數字 HKD 在前；人民幣／美元只在括號、有匯率；股價、股息、目標價也是 HKD。
 - **D. 看得懂**：1.1 三句話零術語、每句 ≤ 60 字；每個術語第一次出現有白話；每段過了「說人話測試」；標題就是結論。
