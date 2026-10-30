@@ -10,6 +10,11 @@
     --today 省略 = 取台北今天；--prev 省略 = 不檢查「晚於上一版」；--file 可指定其他檔；
     --days 窗口天數（預設 30，CUTOFF = TODAY − days）。
 輸出最後一行「問題 0 個」才算通過；有問題時 exit code = 1。
+
+列出本輪持股（Step 1，每輪開頭跑一次）：
+    python gemini/LatestNews_check.py --list
+    每行：資料夾｜代號｜市場（HK/JP/TW/US/?）｜本地分析檔有無｜本地輿情檔
+
 """
 import argparse
 import datetime as dt
@@ -36,6 +41,46 @@ PS_OK = re.compile(r"每(?:股|單位|口)|無法量化|未每股化|影響可�
 HKD = re.compile(r"HKD|港元|港幣")
 
 
+def holdings(root):
+    """REPO_ROOT 根目錄的股票資料夾（排除 NON_COMPANY 與 . 開頭），回傳 (資料夾, 代號)。"""
+    out = []
+    for name in sorted(os.listdir(root)):
+        if name.startswith(".") or name in NON_COMPANY or not os.path.isdir(os.path.join(root, name)):
+            continue
+        code = re.match(r"^\d+", name)
+        out.append((name, code.group(0) if code else re.match(r"^[A-Za-z\-]+", name).group(0)))
+    return out
+
+
+def market(root, name, code):
+    """5 位數 = HK；英文代碼 = US（-KY 結尾 = TW）；4 位數看本地檔內容判斷 JP/TW。"""
+    if re.fullmatch(r"\d{5}", code):
+        return "HK"
+    if code.upper().endswith("-KY"):
+        return "TW"
+    if not code.isdigit():
+        return "US"
+    text = ""
+    for f in sorted(os.listdir(os.path.join(root, name))):
+        if f.endswith(".md"):
+            with open(os.path.join(root, name, f), encoding="utf-8", errors="ignore") as fh:
+                text += fh.read(20000)
+    jp = len(re.findall(r"東證|東京證券|TSE|円|JPY", text))
+    tw = len(re.findall(r"證交所|TWSE|TPEx|櫃|新台幣|TWD", text))
+    return "JP" if jp > tw else "TW" if tw > jp else "?"
+
+
+def list_holdings(root):
+    rows = holdings(root)
+    for name, code in rows:
+        d = os.path.join(root, name)
+        files = os.listdir(d)
+        po = sorted(f for f in files if f.endswith("PublicOpinion.md") or "輿情" in f)
+        has = "有" if "hourAnalysisResult.md" in files else "無"
+        print(f"{name}｜{code}｜{market(root, name, code)}｜本地分析：{has}｜輿情：{'、'.join(po) or '無'}")
+    print(f"共 {len(rows)} 檔")
+
+
 def main():
     try:
         sys.stdout.reconfigure(encoding="utf-8")
@@ -48,7 +93,11 @@ def main():
     ap.add_argument("--today")
     ap.add_argument("--prev")
     ap.add_argument("--days", type=int, default=30)
+    ap.add_argument("--list", action="store_true", help="只列出根目錄股票資料夾後結束")
     a = ap.parse_args()
+    if a.list:
+        list_holdings(a.root)
+        return
 
     taipei = dt.timezone(dt.timedelta(hours=8))
     today = dt.date.fromisoformat(a.today) if a.today else dt.datetime.now(taipei).date()
@@ -230,11 +279,7 @@ def main():
 
     # 7. 每間公司都要出現在第四區
     idx = "\n".join(zone_text["四"])
-    for name in sorted(os.listdir(a.root)):
-        if name.startswith(".") or name in NON_COMPANY or not os.path.isdir(os.path.join(a.root, name)):
-            continue
-        code = re.match(r"^\d+", name)
-        code = code.group(0) if code else name
+    for name, code in holdings(a.root):
         if not re.search(rf"(?<![A-Za-z0-9]){re.escape(code)}(?![A-Za-z0-9])", idx):
             err.append(f"第四區沒有列出持股 {name}")
 
