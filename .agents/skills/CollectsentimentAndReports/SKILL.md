@@ -157,7 +157,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 + WAF；Apify `rag-web-browser` 只拿到 WAF JS 外殼，Playwright 回 HTTP 567「请求异常已被安全策略拦截」（對 AI Agent 限制數小時） | 照 §5.6 [2026-10] |
 | 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR | 照 §5.5，不需 MCP [2026-09] |
 | moomoo 社區 `moomoo.com/hk/stock/{5碼}-HK/community` | Firecrawl 需額度；Bright Data 回 403「Operations too frequent」或 `Document` 外殼；Apify `rag-web-browser` 回 200 但只有 `Document` 外殼 | **直接用 Playwright**（會導向 `/hant/stock/...`），snapshot 內含作者、`MM/DD HH:MM` 時間連結與貼文摘要；冷門港股常數月才一則 [2026-10] |
-| LIHKG | `api_v2/thread/search` 直接打回 `error_code 5`；頁面自己發出的 `api_v2/thread/search` 時好時壞（2026-10 上旬 503、10-22 與 10-25 回 200） | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`，用 `browser_network_requests`（`filter: thread/search`）看頁面 API 狀態；200 時用 `browser_network_request` 讀回應（在頁內自行 `fetch` 仍回 error 5；`create_time` 為 Unix 秒），503 時試 2 次即記 ❌。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo，並刪除 repo 內 `.playwright-mcp/` [2026-10] |
+| LIHKG | `api_v2/thread/search` 直接打回 `error_code 5`；頁面自己發出的 `api_v2/thread/search` 時好時壞（2026-10 上旬 503、10-22 起多次回 200） | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`，用 `browser_network_requests`（`filter: thread/search`）看頁面 API 狀態；200 時用 `browser_network_request` 讀回應（在頁內自行 `fetch` 仍回 error 5；`create_time` 為 Unix 秒），503 時試 2 次即記 ❌；200 但內容為 `{"success":0,"error_code":100,"error_message":"沒有相關文章"}` 代表站內確實沒有符合的討論串，記 ⭕。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo，並刪除 repo 內 `.playwright-mcp/` [2026-10] |
 | 香港經濟日報 `hket.com` | HTTP 405 真人驗證；搜尋頁 404 | 只能找個別文章 URL |
 
 ### 4.4 日股
@@ -271,7 +271,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 - 列表：`curl -A "<UA>" https://guba.eastmoney.com/list,{A股代碼}.html`，頁內 `var article_list = {...}` 含約 40 筆（`post_id`、`post_title`、`post_publish_time`、點閱/留言數）。
 - 單篇：`https://guba.eastmoney.com/news,{A股代碼},{post_id}.html`，用 `json.JSONDecoder().raw_decode` 解析 `post_article` 之後的 JSON，取 `post_content`。連續抓取時部分單篇會回約 2.8KB 空殼（無 `post_article`）→ 帶 `Referer: https://guba.eastmoney.com/list,{代碼}.html`、間隔 4 秒重試 1 次即可。
-- 港股也有股吧：代碼寫 `hk{5碼}`（如 `list,hk00546.html`），格式同上。H 股吧與 A 股吧都可能連續回約 2.8KB 空殼、無 `article_list`（如 `hk03606` 空殼而 600660 正常；`003816` 空殼而 `hk01816` 正常），雙重上市股兩邊互為備援 [2026-10]。
+- 港股也有股吧：代碼寫 `hk{5碼}`（如 `list,hk00546.html`），格式同上。H 股吧與 A 股吧都可能連續回約 2.8KB 空殼、無 `article_list`（如 `hk03606` 空殼而 600660 正常；`003816` 空殼而 `hk01816` 正常），雙重上市股兩邊互為備援；純港股（無 A 股）兩次皆空殼時，`firecrawl_scrape`（basic proxy）可取得完整列表表格（閱讀、評論、標題、最後更新）[2026-10]。
 
 ### 5.6 雪球
 
