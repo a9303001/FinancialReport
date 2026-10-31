@@ -2,7 +2,7 @@
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
 > 不含年報、季報、公司公告 report。
-> 最後彙整時間：2026-10-26 02:11｜本次併入：1 檔｜累計併入：1 檔
+> 最後彙整時間：2026-10-26 02:11（2026-10-31 補充 3Q 財報與 10/30 市場資料）｜本次併入：1 檔｜累計併入：1 檔
 
 ## 目錄
 
@@ -715,5 +715,45 @@
 ##### 🎯 指數成分調整
 - **來源連結**：[Kontan Pusat Data 2026-10-29](https://pusatdata.kontan.co.id/news/ini-daftar-lengkap-saham-baru-lq45-untuk-periode-2-november-2026-29-januari-2027)
 - **關鍵要點**：LQ45、IDX30、IDX80 新名單 11/2 生效；IDX30 剔除 PGEO、UNVR；TLKM 續留。
+
+---
+
+#### [2026-10-30 ~ 10-31 補充（StockAnalysis 例行更新蒐集）]
+
+- **抓取時間**：2026-10-31（台北時間上午）
+- **抓取方式**：SEC EDGAR（sec-edgar-mcp `get_recent_filings` + 6-K 原文 curl）；Firecrawl 抓 investortrust、Kontan 全文；WebSearch；Yahoo Finance（TLK、TLKM.JK、IDR=X、同業）
+- **抓取結果**：✅ 成功
+
+##### 🎯 3Q2026（9M）合併財報已發布（6-K）
+- **來源連結**：[6-K 2026-10-30 Consolidated financial statements as of September 30, 2026](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000076/0001001807-26-000076-index.htm)（EDGAR 收件 2026-10-30 19:59 UTC，美東收盤前 1 分鐘）
+- **核心觀點**：
+  > "REVENUES 113,502 / 109,617 … Unrealized loss on changes in fair value of investments (1,663) / (360) … OPERATING PROFIT 27,999 / 28,244 … Owners of the parent company 14,446 / 15,031 … Profit per share 146.31 / 151.73"（單位：十億盧比；9M2026 / 9M2025，比較期已依新會計政策調整）
+- **關鍵要點**：
+  - 9M 營收 +3.5%，歸屬母公司淨利 −3.9%；推算 3Q 單季淨利 3.82 兆（年減 16.1%），主因投資公允價值損失 3Q 單季 1.33 兆（9M 合計 1.663 兆：Telkomsel 持有 GOTO 0.759 兆、MDI 新創投資 0.794 兆）。
+  - 市場傳聞的 6–8 兆減損 **3Q 未認列**。
+  - 9/30 庫藏股 594,375,800 股（流通 98,467,840,800 股）；2026 年至 9/30 買回金額 1,749 十億盧比。
+  - 員工數 17,442 人（2025 年底 19,082 人，−8.6%），付給員工現金 +22.7%（自願離職金）。
+  - Telkomsel 2023 年度補稅（Art.23 預扣稅 12,844 十億＋公司所得稅 1,623 十億，含罰款）異議於 2026-09-15 被稅局全數駁回，將於 2026-12-14 前上訴稅務法院；公司未提列。
+  - 期後事項：TIF 光纖分拆適用帳面價值法被稅局拒絕，公司 10/15 提出答辯，等待開庭。
+
+##### 🎯 媒體報導 3Q 財報
+- **來源連結**：[investortrust 2026-10-31](https://investortrust.id/market/121081/pendapatan-telkom-tlkm-tumbuh-jadi-rp-113-5-triliun-hingga-kuartal-i-2026)（標題誤植「Kuartal I」，內文為 9M）
+- **關鍵要點**：營收 113.50 兆（+3.54%）、淨利 14.45 兆（−3.89%）；點名公允價值損失 1.66 兆拖累獲利。
+
+##### 🎯 10/30 JCI −0.80%，外資淨賣 TLKM 第 2 大
+- **來源連結**：[Kontan 2026-10-30](https://investasi.kontan.co.id/news/ihsg-terkoreksi-080-ke-5057-cek-saham-net-sell-terbesar-asing-di-akhir-pekan-ini)、[Kontan Pusat Data 2026-10-30](https://pusatdata.kontan.co.id/news/ihsg-turun-1670-sepanjang-oktober-2026-ditutup-5057-pada-jumat-3010)
+- **關鍵要點**：JCI 收 5,057.05（−0.80%），一週 −7.03%，整個 10 月約 −16.2% 到 −16.7%；外資全市場淨賣 1,402.7 億，一週 4.20 兆、一個月 16.50 兆。淨賣前三：BBRI 2,065.4 億、TLKM 1,194.8 億、AMMN 593.3 億。TLKM 收 1,980（平盤，財報在收盤後才公布）。
+
+##### 🎯 Telkom × PLN × Danantara：National AI Data Center Hub MoU
+- **來源連結**：[investortrust 2026-10-30](https://www.investortrust.id/business/121017/telkomgroup-gandeng-pln-dan-danantara-kembangkan-hub-data-center-ai-perkuat-infrastruktur-digital-indonesia)
+- **關鍵要點**：10/27 在 DTIIF 論壇簽 MoU，合作電力、連網與資料中心；投資金額與商業模式仍在討論。
+
+##### 🎯 同業：Indosat 10/30 跌 6.8%
+- **來源連結**：Yahoo Finance ISAT.JK（2026-10-30）
+- **關鍵要點**：ISAT 收 1,365（52 週新低），Yahoo 顯示最近一季淨利年減 51%；Forward PE 6.85 倍、殖利率 7.58%。
+
+##### 🎯 OJK 主席回應 MSCI
+- **來源連結**：[IDN Financials](https://idnfinancials.com/news/71078/capital-market-faces-msci-threat-ojk-chief-relies-on-retail-investors)
+- **關鍵要點**：OJK 主席表示會持續建立市場對改革的信心，並認為本地散戶力量變強可緩衝外資撤出；MSCI 本身無新表態。
 
 ---
