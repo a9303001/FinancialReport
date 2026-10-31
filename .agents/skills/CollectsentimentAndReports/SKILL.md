@@ -149,7 +149,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | :--- | :--- | :--- |
 | HKEXnews 披露易 | 有官方 JSON API | **港股財報與公告第一站**，照 §5.4 [2026-09] |
 | HKEX 權益披露 `di.hkex.com.hk` | SSR，`curl` 可讀 | 入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` → 明細 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。核實「大股東增持」類新聞最準；交易代碼 3104「Services」是以單位支付酬金，不是自掏腰包買進 [2026-10] |
-| 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | 只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天，冷門期可涵蓋約 1 個月）；`curl` 時而 SSR、時而只回約 11KB `<title>Document` JS 外殼 | `curl` 有 SSR 時解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span；回外殼時直接改 Playwright（snapshot 每則 link 含標題、摘要、來源與時間，時間為 UTC，+8 小時）。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購/CCASS 快訊偶爾漏日，要與 HKEX 披露交叉核對。較早期間改看 AAStocks／股吧 [2026-10] |
+| 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | 只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天，冷門期可涵蓋約 1 個月）；`curl` 時而 SSR、時而只回約 11KB `<title>Document` JS 外殼 | `curl` 有 SSR 時解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span；回外殼時直接改 Playwright（snapshot 每則 link 含標題、摘要、來源與時間，時間為 UTC，+8 小時；`curl` SSR 拿到的時間已是香港時間，不必換算）。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購/CCASS 快訊偶爾漏日，要與 HKEX 披露交叉核對。較早期間改看 AAStocks／股吧 [2026-10] |
 | 富途個股頁 `/quote`、`/announcement`、新聞內文 `news.futunn.com/hk/post/*` | JS 外殼；`/community` 導向登入頁 | 內文改用 Playwright 可取全文（MT Newswires 文章仍需登入）；Playwright 渲染出的發文時間是 UTC，+8 小時才是香港時間 [2026-10] |
 | AAStocks | 列表 `aastocks.com/tc/stocks/analysis/stock-aafn/{代號}/0/hk-stock-news/1` 為 SSR；`http://` 會 302 | `curl -L` 抓列表（約 20 則；`/hk-stock-news/2` 回傳與第 1 頁相同，無法翻頁）；單篇 `.../stock-aafn-con/{代號}/{來源}/{ID}/hk-stock-news` 正文就在 SSR HTML（`og:description` 只有約 50 字，不要只取它）。頁頭附沽空金額與比率 [2026-10] |
 | 新浪港股新聞 `stock.finance.sina.com.cn/hkstock/news/{代號}.html` | SSR，最新；只列約 30 則（財報後熱門期僅涵蓋約 2 天，冷門期可涵蓋約 1 個月），含券商研報標題 | `curl`（gb18030 解碼）可讀；研報頁 `stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/{id}/` 為 SSR（gb18030），正文在 `div.blk_container`、機構/研究員/日期在 `div.creab`，可取研報摘要全文 [2026-10] |
@@ -158,7 +158,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR | 照 §5.5，不需 MCP [2026-09] |
 | moomoo 社區 `moomoo.com/hk/stock/{5碼}-HK/community` | Firecrawl 需額度；Bright Data 回 403「Operations too frequent」或 `Document` 外殼；Apify `rag-web-browser` 回 200 但只有 `Document` 外殼 | **直接用 Playwright**（會導向 `/hant/stock/...`），snapshot 內含作者、`MM/DD HH:MM` 時間連結與貼文摘要；冷門港股常數月才一則 [2026-10] |
 | LIHKG | `api_v2/thread/search` 直接打回 `error_code 5`；頁面自己發出的 `api_v2/thread/search` 時好時壞（2026-10 上旬 503、10-22 起多次回 200） | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`，用 `browser_network_requests`（`filter: thread/search`）看頁面 API 狀態；200 時用 `browser_network_request` 讀回應（在頁內自行 `fetch` 仍回 error 5；`create_time` 為 Unix 秒），503 時試 2 次即記 ❌；200 但內容為 `{"success":0,"error_code":100,"error_message":"沒有相關文章"}` 代表站內確實沒有符合的討論串，記 ⭕。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo，並刪除 repo 內 `.playwright-mcp/` [2026-10] |
-| 香港經濟日報 `hket.com` | HTTP 405 真人驗證；搜尋頁 404 | 只能找個別文章 URL |
+| 香港經濟日報 `hket.com` | `inews` 回 HTTP 405 真人驗證；`invest.hket.com/article/{id}` 用 `curl` 回 200 但只有約 1.3KB 外殼；搜尋頁 404 | 用 `WebSearch` 搭 `allowed_domains: ["hket.com"]` 找文章網址，再 `firecrawl_scrape`（basic proxy）取標題、作者、發布日期與導言；後段為會員牆，不必再跑 MCP 鏈 [2026-10] |
 
 ### 4.4 日股
 
@@ -169,7 +169,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | Yahoo JP 掲示板 `finance.yahoo.co.jp/quote/{代碼}.T/forum` | SSR，`curl` 一次約 50~60 則，每則有 `/forum/{No}` 網址、分鐘級時間 | `?page=N` 不會翻頁；熱門大型股只涵蓋約 11 小時、冷門股可涵蓋數月 → 報告註明涵蓋區間，用 5ch / 株つぶやき 補足 [2026-10] |
 | 株探 `kabutan.jp` | `curl` 可讀 | 個股頁含每週信用餘額；`/stock/news?code={代碼}&nmode=3` 只列開示，可直接找到決算短信（含英文版）。列表連結指向包裝頁 `kabutan.jp/disclosures/pdf/{yyyymmdd}/{id}/`（HTML），PDF 實體網址 `tdnet-pdf.kabutan.jp/{yyyymmdd}/{id}.pdf` 要從該頁取出。**日股找季報最快路徑**。新聞第 1 頁只涵蓋約 1 個月，加 `&page=2` 可再往前約 1.5 個月 [2026-10] |
 | みんかぶ `minkabu.jp/stock/{代碼}` | `curl` 405、Apify `rag-web-browser` 405「Human Verification」（AWS WAF）、Playwright 403 | `firecrawl_scrape` 或 Apify `apify/web-fetch` 可讀。有目標株価／株価診断，常與掲示板情緒相反，可當空方對照；J-REIT 顯示「対象外」不可用 [2026-10] |
-| 5ch | `find.5ch.net` 已 301 到 `find.5ch.io` | `curl -L "https://find.5ch.io/search?q={公司名}"`（UTF-8）；討論串內文是 Shift_JIS，要 `decode('cp932')`。ニュース速報+／嫌儲 的串標題常誇大，要比對 1 樓轉貼的原始新聞 [2026-10] |
+| 5ch | `find.5ch.net` 已 301 到 `find.5ch.io` | `curl -L "https://find.5ch.io/search?q={公司名}"`（UTF-8）；討論串內文是 Shift_JIS，要 `decode('cp932')`。ニュース速報+／嫌儲 的串標題常誇大，要比對 1 樓轉貼的原始新聞。搜尋結果連結為協定相對網址（`//xxx.5ch.io/test/read.cgi/...`），要補 `https:`；短社名常撞名（如「エスコン」= Ace Combat／エスコンフィールド），要逐串核對 [2026-10] |
 | note `note.com` | API 403/404；搜尋頁 `curl` 只拿到外殼 | `firecrawl_scrape` 抓 `note.com/search?q=…&context=note&mode=search&sort=new`（`waitFor: 3000`），Firecrawl 不可用時改 Apify `apify/web-fetch`（markdown 不含文章網址，要再跑一次 `formats: ["links"]`）；單篇 `curl` 可讀，時間取 JSON-LD `datePublished`；付費文章只取得免費段落 [2026-10] |
 | 東洋経済オンライン `toyokeizai.net/articles/-/{id}` | SSR，後段付費；`/search/?q=` 404；四季報 `shikiho.toyokeizai.net` 為 JS 外殼 + 付費 | 找文章用全文搜尋 `toyokeizai.net/list/search?fulltext={關鍵字}`（SSR，`curl` 可讀）；單篇 `curl` 取公開段落與 `datePublished`；付費牆不必跑 MCP 鏈 [2026-10] |
 | 日経 `nikkei.com/nkd/company/news/?scode={代碼}&ba=1` | SSR，`curl` 可讀；日期在 `m-listItem_time`，付費文章有標記 | 單篇 `curl` 取 `datePublished` 與導言段；付費牆不必跑 MCP 鏈 [2026-10] |
@@ -264,13 +264,13 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 2. `https://www1.hkexnews.hk/search/titleSearchServlet.do?sortDir=0&sortByOptions=DateTime&category=0&market=SEHK&stockId={stockId}&documentType=-1&fromDate={yyyyMMdd}&toDate={yyyyMMdd}&lang=EN&searchType=1`
    - servlet 名稱**大小寫敏感**，必須是 `titleSearchServlet.do`（全小寫回 404）。
    - 不要帶 `t1code` / `t2Gcode` / `t2code`；若一定要帶，值是 `-2`（填 `-1` 會讓任何查詢都回 0 筆）。
-3. `lang=ZH` 取中文版；`recordCnt: 0` 代表該期間確實沒有公告。中文 PDF（檔名 `_c.pdf`）用 `pdftotext` 常因缺 Adobe-GB1 字型解析失敗 → 改用 `lang=EN` 回傳的英文版 `FILE_LINK`（同編號去掉 `_c`）。
+3. `lang=ZH` 取中文版；`recordCnt: 0` 代表該期間確實沒有公告。中文 PDF（檔名 `_c.pdf`）用 `pdftotext` 常因缺 Adobe-GB1 字型解析失敗 → 改用 `lang=EN` 回傳的英文版 `FILE_LINK`（同編號去掉 `_c`）。季報日常有兩份英文檔：「Announcement of Unaudited Results…」才是正式季報，「ORA - … Quarterly Results」是業績簡報。
 4. PDF 連結 = `https://www1.hkexnews.hk` + `FILE_LINK`。
 
 ### 5.5 東方財富股吧（A 股代碼）
 
 - 列表：`curl -A "<UA>" https://guba.eastmoney.com/list,{A股代碼}.html`，頁內 `var article_list = {...}` 含約 40 筆（`post_id`、`post_title`、`post_publish_time`、點閱/留言數）。
-- 單篇：`https://guba.eastmoney.com/news,{A股代碼},{post_id}.html`，用 `json.JSONDecoder().raw_decode` 解析 `post_article` 之後的 JSON，取 `post_content`。連續抓取時部分單篇會回約 2.8KB 空殼（無 `post_article`）→ 帶 `Referer: https://guba.eastmoney.com/list,{代碼}.html`、間隔 4 秒重試 1 次即可。
+- 單篇：`https://guba.eastmoney.com/news,{A股代碼},{post_id}.html`，用 `json.JSONDecoder().raw_decode` 解析 `post_article` 之後的 JSON，取 `post_content`。連續抓取時部分單篇會回約 2.8KB 空殼（無 `post_article`）→ 帶 `Referer: https://guba.eastmoney.com/list,{代碼}.html`、間隔 4 秒重試 1 次；連抓約 3 篇後常整批回空殼且重試無效 → 每吧單篇最多抓 3~4 篇，雙重上市股兩個吧輪流抓，抓不到全文就只引用列表標題 [2026-10]。
 - 港股也有股吧：代碼寫 `hk{5碼}`（如 `list,hk00546.html`），格式同上。H 股吧與 A 股吧都可能連續回約 2.8KB 空殼、無 `article_list`（如 `hk03606` 空殼而 600660 正常；`003816` 空殼而 `hk01816` 正常），雙重上市股兩邊互為備援；純港股（無 A 股）兩次皆空殼時，`firecrawl_scrape`（basic proxy）可取得完整列表表格（閱讀、評論、標題、最後更新）[2026-10]。
 
 ### 5.6 雪球
@@ -319,13 +319,14 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 | 網路錯誤 | 照 §3.3 |
 
 - **英文版優先**：台股 MOPS 中文 PDF 常有 `(cid:` 亂碼，英文版通常乾淨。
+- 日文 PDF 用 `pdftotext` 常因缺 Adobe-Japan1 字型失敗，名稱檢查與 cid 檢查改用 `convert_pdf_to_markdown` 試轉 [2026-10]。
 - 保留原始副檔名（`.pdf` / `.html`），不要手動改成 `.md`。
 
 ### 7.3 搜尋來源（依序，找到即停）
 
 - **台股**：① MOPS/TWSE（英文年報 `_AIA.pdf`；季報多只有中文 `_AI1.pdf`）② 財報狗 e-report（§4.2）③ 官網 IR。想確認「是否已公告」用 §5.1 鉅亨（它給的是重訊全文，不是財報 PDF）。興櫃公司只有半年報與年報，不會有 Q1/Q3。
 - **美股**：① 官網 IR（SEC Filings）② SEC EDGAR（可用 `sec-edgar-mcp`）③ 財報狗 ④ 富途 `futunn.com/hk/stock/{代號}-US/announcement`。外國發行人（ADR）年報是 20-F、季報夾在 6-K 裡：`curl -A "{名稱} {email}" https://data.sec.gov/submissions/CIK{10碼}.json` 列出所有申報，再用 `.../Archives/edgar/data/{CIK}/{去掉 - 的 accession}/index.json` 看附件，6-K 主文件開頭會寫 "Consolidated financial statements as of …" 即為季報。
-- **日股**：① 官網 IR（英文 Annual Report 優先）② 株探開示清單（§4.4，決算短信最快）③ EDINET ④ IR Bank `irbank.net/{代碼}/ir` ⑤ 富途 `{代碼}-JP/announcement`。J-REIT 的經審計英文財報常在官網英文 IR 庫，無 cid 問題：ES-CON（2971）`escon-reit.jp/en/ir/library.html` 的「Asset Management Reports」欄；HCM（3455）`hcm3455.co.jp/en/ir/library.html` 的「Semi-annual report」欄。決算後約 1 個月內英文頁常只有 Summary of accounts，簡報要到日文頁抓；頁頂「As of …」日期不會更新，不能拿來判斷新舊。英文版還沒出時，日文 IR 庫的「資産運用報告」PDF 約在決算發表後 3 週就會上架（HCM 日文庫是 `hcm3455.co.jp/ja/ir/library.html`，`/ir/library.html` 只是首頁殼），`convert_pdf_to_markdown` 轉出 0 個 `(cid:`，可以直接當該期年報用 [2026-10]。
+- **日股**：① 官網 IR（英文 Annual Report 優先）② 株探開示清單（§4.4，決算短信最快）③ EDINET ④ IR Bank `irbank.net/{代碼}/ir` ⑤ 富途 `{代碼}-JP/announcement`。J-REIT 的經審計英文財報常在官網英文 IR 庫，無 cid 問題：ES-CON（2971）`escon-reit.jp/en/ir/library.html` 的「Asset Management Reports」欄；HCM（3455）`hcm3455.co.jp/en/ir/library.html` 的「Semi-annual report」欄。決算後約 1 個月內英文頁常只有 Summary of accounts，簡報要到日文頁抓；頁頂「As of …」日期不會更新，不能拿來判斷新舊。英文版還沒出時，日文 IR 庫的「資産運用報告」PDF 約在決算發表後 3 週就會上架（HCM 日文庫是 `hcm3455.co.jp/ja/ir/library.html`，`/ir/library.html` 只是首頁殼；ES-CON 日文庫是 `escon-reit.jp/ja/ir/library.html`，`/ir/library.html` 回 S3 403，第 19 期資産運用報告於決算後約 3.5 週上架，有価証券報告書 PDF 在同一列），`convert_pdf_to_markdown` 轉出 0 個 `(cid:`，可以直接當該期年報用 [2026-10]。
 - **港股**：① HKEXnews JSON API（§5.4）② 富途 `{5碼}-HK/announcement` ③ 官網 IR。（新浪 `/hkstock/notice/` 公告頁已停更，不要用）
 
 ---
