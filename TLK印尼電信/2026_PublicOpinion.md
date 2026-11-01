@@ -757,3 +757,33 @@
 - **關鍵要點**：OJK 主席表示會持續建立市場對改革的信心，並認為本地散戶力量變強可緩衝外資撤出；MSCI 本身無新表態。
 
 ---
+
+#### [2026-10-31 ~ 11-01 補充（StockAnalysis 例行更新蒐集）]
+
+> 10/31–11/01 為週末，IDX 與 NYSE 休市；TLK 11.17 USD、TLKM 1,980 IDR 均為 10/30 收盤。
+
+##### 🎯 3Q ADR EPS 低於共識
+- **來源連結**：[MarketBeat 2026-10-30](https://www.marketbeat.com/instant-alerts/earnings-pt-telekomunikasi-indonesia-tbk-nyse-tlk-posts-earnings-results-misses-expectations-by-011-eps-2026-10-30/)
+- **關鍵要點**：3Q EPS 0.22 USD／ADS，共識 0.33（差 −0.11）；營收 21.1 億 USD，共識 21.3 億。MarketBeat 彙整評等為「Reduce」（Weiss sell (d)、Wall Street Zen 10/17 降為 hold、Zacks 10/8 升為 hold）。Yahoo 共識 FY2026E 仍為 202.08 IDR／股（1.179 USD／ADS，Yahoo 匯率口徑），尚未下修。
+
+##### 🎯 MSCI 提案後外資累計淨賣
+- **來源連結**：[IDN Financials](https://idnfinancials.com/news/71106/foreigners-sell-these-stocks-after-msci-replication-proposal)
+- **關鍵要點**：10/16–10/30 外資淨賣 TLKM 約 1.7 兆 IDR，排名第 5（本檔換算每 ADS 約 0.096 USD）。
+
+##### 🎯 9M 財報媒體報導
+- **來源連結**：[Liputan6 2026-10-31](https://www.liputan6.com/bisnis/read/8325693/pendapatan-tumbuh-354-telkom-kantongi-laba-rp-1946-triliun)
+- **關鍵要點**：營收 113.50 兆（+3.54%）；合併淨利（含少數股權）19.46 兆，年減 1.91%；稅前淨利 25.73 兆；EPS 146.31 IDR（去年 151.73）。
+
+##### 🎯 後量子資安 MoU
+- **來源連結**：[ad-hoc-news](https://www.ad-hoc-news.de/boerse/news/corporate-news/telkom-indonesia-stock-gains-post-quantum-security-focus/70435354)
+- **關鍵要點**：10/28 Telkom 與 BSSN、Peruri 簽兩份後量子資安 MoU（Danantara「Quantum-Safe Indonesia」計畫），屬探索性合作，無金額。
+
+##### 🎯 3Q 法說會時點
+- **來源連結**：Yahoo Finance TLKM.JK earningsCallTimestamp（推估值）
+- **關鍵要點**：顯示 2026-11-02 16:15 WIB（標記為 estimate）。
+
+##### 🎯 MSCI 諮詢
+- **來源連結**：[investortrust](https://investortrust.id/market/119472/msci-threatens-rare-standalone-demotion-as-idx-governance-woes-deepen)、[IDN Financials](https://www.idnfinancials.com/news/70379/idx-to-seek-clarification-from-msci-over-proposed-double-downgrade)
+- **關鍵要點**：11/1 前無新進展；MSCI 收意見至 2027-04-30、最遲 2027-06 公布，預設照案執行；IDX 要求 MSCI 正式說明理由。
+
+---
