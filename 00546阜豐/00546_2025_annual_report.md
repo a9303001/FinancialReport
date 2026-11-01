@@ -1,3 +1,19 @@
+<!-- MdClean:v1 | sha1:f0d0292e1d1f | cleaned:2026-11-01 | mode:report -->
+<!-- AI-META
+company_folder: 00546阜豐
+file: 00546_2025_annual_report.md
+doc_type_guess: annual_report (年報)
+period_hint_from_filename: 2025
+source_format: pdf_text (PDF 轉 md)
+clean_mode: report (財報類；已重整表格與頁碼)
+unit_hints: RMB million ; RMB’000 ; (RMB’000)
+page_markers: "<!-- p.N -->" = 原始文件印刷頁碼 N 出現的位置（頁首或頁尾），引用頁數時用它
+number_conventions: (1,234) = 負數；表格內單獨的 "-" / "–" / "−" = 零或無；% 已併回數字
+tables: 已刪空白欄/空白列與重複分隔列；表格第一列為表頭（PDF 碎表的表頭可能其實是資料列）
+tables_as_text: PDF 轉檔時部分表格列被輸出成「項目 數字 數字」的純文字行，數字依序對應上方表頭的期間欄
+cleanup_applied: empty_cols_removed=2201, empty_rows_removed=440, header_cols_aligned=33, page_markers=113, running_header_lines_removed=126, separator_rows_removed=683, single_col_tables_to_text=2, tables_seen=683, wrapped_lines_joined=338
+-->
+
 (incorporated in the Cayman Islands with limited liability)
 (於開曼群島註冊成立之有限公司)
 Stock Code 股份代號 : 546
@@ -7,41 +23,53 @@ ANNUAL REPORT
 
 CONTENTS
 目錄
+
 | Index of Notes to the Financial | 2 | Directors’ Report | 42 |
-| -------------------------------- | --- | ----------------- | --- |
-| Statements | | 董事會報告 | |
+| --- | --- | --- | --- |
+| Statements |  | 董事會報告 |  |
+
 財務報表附註索引
-| | | Independent Auditor’s Report | 55 |
-| --- | --- | ---------------------------- | --- |
+
+| Independent Auditor’s Report | 55 |
+| --- | --- |
+
 獨立核數師報告
-| Chairman’s Letter | 4 | | |
-| -------------------- | --- | --------------------------------- | --- |
-| 董事長信札 | | Consolidated Financial Statements | 62 |
-| Financial Highlights | 5 | 合併財務報表 | |
+
+| Chairman’s Letter | 4 |  |  |
+| --- | --- | --- | --- |
+| 董事長信札 |  | Consolidated Financial Statements | 62 |
+| Financial Highlights | 5 | 合併財務報表 |  |
+
 財務摘要
 Corporate & Share Information
-| Management Review | | 公司及股份資料 | |
-| ----------------------------- | --- | ------------------------------------ | --- |
-| 管理層回顧 | | Corporate Information | 205 |
-| Market Overview | 6 | 公司資料 | |
-| 市場概覽 | | Biographies of Directors and Senior | 207 |
-| Business and Financial Review | 7 | Management | |
-| 業務及財務回顧 | | 董事及高級管理層履歷 | |
+
+| Management Review |  | 公司及股份資料 |  |
+| --- | --- | --- | --- |
+| 管理層回顧 |  | Corporate Information | 205 |
+| Market Overview | 6 | 公司資料 |  |
+| 市場概覽 |  | Biographies of Directors and Senior | 207 |
+| Business and Financial Review | 7 | Management |  |
+| 業務及財務回顧 |  | 董事及高級管理層履歷 |  |
 | Outlook | 19 | Five-year Summary | 211 |
-| 展望 | | 五年摘要 | |
+| 展望 |  | 五年摘要 |  |
 | Future Plan | 20 | Production Bases | 213 |
-| 未來計劃 | | 生產基地 | |
+| 未來計劃 |  | 生產基地 |  |
 | Other Information | 20 | Major Products Processing Map | 214 |
-| 其他資料 | | 主要產品生產程序圖 | |
+| 其他資料 |  | 主要產品生產程序圖 |  |
+
 Share Information
-| Reports and Financials | | | 215 |
-| ----------------------- | --- | --- | --- |
+
+| Reports and Financials | 215 |
+| --- | --- |
+
 股份資料
 報告及財務資料
+
 | ESG Executive Summary | 22 | Glossary | 216 |
-| --------------------------- | --- | -------- | --- |
-| ESG管理層摘要 | | 詞彙 | |
-| Corporate Governance Report | 24 | | |
+| --- | --- | --- | --- |
+| ESG管理層摘要 |  | 詞彙 |  |
+| Corporate Governance Report | 24 |  |  |
+
 企業管治報告
 
 INDEX OF NOTES TO THE FINANCIAL STATEMENTS
@@ -134,7 +162,7 @@ Note Page
 39. SUMMARY OF OTHER ACCOUNTING POLICIES INFORMATION 181
 其他會計政策資料摘要
 
-4 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.4 -->
 CHAIRMAN’S LETTER
 董事長信札
 To My Fellow Shareholders, 致我的股東同仁：
@@ -150,8 +178,7 @@ last year.
 A big step in our internationalisation is encouraging. After years of 我們國際化邁出一大步令人鼓舞。經過多年
 unremitting efforts, we started the construction of phase I of our first 不懈努力，我們於本年度開始在哈薩克斯坦
 overseas production base in Kazakhstan in the Year. The target is to 建設首個海外生產基地的第一期工程。目標
-commence the production and contribute to our results in 2026. 是在二零二六年開始生產並為我們的業績作
-出貢獻。
+commence the production and contribute to our results in 2026. 是在二零二六年開始生產並為我們的業績作出貢獻。
 2026 may be another extraordinary year posing a big challenge for 二零二六年或許又是一個不尋常的一年，對
 us. 我們來說是一大挑戰。
 Since 2024, the selling prices of some of our products have begun 自二零二四年起，我們部分產品的售價開始
@@ -185,31 +212,43 @@ RMB million
 3,861
 32,000
 3,500
-| | 28,007 | 27,879 | | | | |
-| --- | ------ | ------ | --- | --- | --- | --- |
+
+| 28,007 | 27,879 |
+| --- | --- |
+
 27,475 27,757
-| 28,000 | | | | 3,144 | | |
-| ------ | --- | --- | --- | ----- | --- | --- |
+
+| 28,000 | 3,144 |
+| --- | --- |
+
 3,000
 24,000
-| 21,540 | | | | | | 2,465 |
-| ------ | --- | --- | --- | --- | --- | ----- |
+
+| 21,540 | 2,465 |
+| --- | --- |
+
 2,500
 2,312
 20,000
 2,000
 16,000
 1,500
-| 12,000 | | | 1,281 | | | |
-| ------ | --- | --- | ----- | --- | --- | --- |
+
+| 12,000 | 1,281 |
+| --- | --- |
+
 8,000 1,000
-| 4,000 | | 500 | | | | |
-| ----- | --- | --- | --- | --- | --- | --- |
+
+| 4,000 | 500 |
+| --- | --- |
+
 0
 0
-| 2021 2022 | 2023 2024 | 2025 | | | | |
-| --------- | --------- | ---- | ---- | --------- | ---- | ---- |
-| | | | 2021 | 2022 2023 | 2024 | 2025 |
+
+| 2021 2022 | 2023 2024 | 2025 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 2021 | 2022 2023 | 2024 | 2025 |
+
 Revenue Analysis
 收入分析
 39.6%
@@ -218,30 +257,39 @@ Revenue Analysis
 14.4%
 10.5%
 9.9% 9.9%
-| | 9.1% | 8.8% | | | | |
-| --- | ---- | -------------- | --- | --- | --- | --- |
-| | | 8.1% 7.1% 8.0% | | | | |
+
+| 9.1% | 8.8% |
+| --- | --- |
+|  | 8.1% 7.1% 8.0% |
+
 6.4%
 4.3%
 2.6%
-| | | | | 2.0% | 2.2% 1.9% | |
-| --- | --- | --- | --- | ---- | --------- | --------- |
-| | | | | | | 0.5% 0.6% |
+
+| 2.0% | 2.2% 1.9% |  |
+| --- | --- | --- |
+|  |  | 0.5% 0.6% |
+
 MSG Corn refined Threonine Lysine Starch High-end Xanthan Fertilisers Glutamic Others
-| products | | sweeteners amino | gum | | acid | |
-| -------- | --- | ----------------- | --- | --- | ---- | --- |
-| 味精 | 蘇氨酸 | 賴氨酸 | | 肥料 | | 其他 |
+
+| products |  | sweeteners amino | gum |  | acid |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| 味精 | 蘇氨酸 | 賴氨酸 |  | 肥料 |  | 其他 |
+
 acid
-| 玉米提煉 | | 澱粉甜味劑 | 黃原膠 | | 谷氨酸 | |
-| ---- | --- | ----- | --- | --- | --- | --- |
+
+| 玉米提煉 | 澱粉甜味劑 | 黃原膠 | 谷氨酸 |
+| --- | --- | --- | --- |
+
 products
 產品
 高檔氨基酸
 產品
-| | | 2025 | 2024 | | | |
-| --- | --- | ---- | ---- | --- | --- | --- |
 
-6 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+| 2025 | 2024 |
+| --- | --- |
+
+<!-- p.6 -->
 MANAGEMENT REVIEW
 管理層回顧
 Market Overview 市場概覽
@@ -271,8 +319,7 @@ high for the fifth consecutive year. The PRC government continued 中國政府�
 to ensure a stable supply and price regulation on coal. According to 控。根據中華人民共和國海關總署數據，二
 the data from the General Administration of Customs of the People’s 零二五年進口煤炭下降至約490,000,000噸，
 Republic of China, coal imports fell to approximately 490 million 同比下降9.6%。這反映減少對海外進口的依賴。
-tonnes in 2025, a year-on-year decline of 9.6%. It reflects a reduced
-reliance on overseas imports.
+tonnes in 2025, a year-on-year decline of 9.6%. It reflects a reduced reliance on overseas imports.
 Major Products 主要產品
 In 2025, China’s MSG market remained sluggish. Demand from the 於二零二五年，中國味精市場持續低迷。食
 food and beverage industry remained persistently soft throughout the 品和飲料行業於整個年度的需求持續疲軟。
@@ -285,12 +332,9 @@ reasonable level since 2024. However, the price remained under 相對合理水�
 pressure due to the additional new production capacities in the 現新增產能，價格仍然受壓。根據卓創資訊
 market during the Year. Based on the data from the Sublime China 的數據，黃原膠平均售價較二零二四年減少
 Information, the average selling price of xanthan gum decreased 21.1%至本年度的每噸約人民幣19,997元。
-by 21.1% to approximately RMB19,997 per tonne in the Year, as
-compared to 2024.
+by 21.1% to approximately RMB19,997 per tonne in the Year, as compared to 2024.
 
-阜豐集團有限公司 年報 2025 7
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.7 -->
 As the threonine and lysine sectors are unconsolidated, new 由於蘇氨酸及賴氨酸行業尚未整合，市場上
 capacities are constantly emerging in the market. Together with the 不斷出現新產能。連同本年度第四季度推出
 new 80% lysine which has been launched in the fourth quarter of 的新80% 賴氨酸，對價格造成壓力。根據
@@ -328,59 +372,55 @@ approximately RMB2,465.2 million in 2025, as compared to 2024. 6.6%至約人民�
 
 8
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-MANAGEMENT REVIEW
-管理層回顧
-| Analysis of Five Product Segments | | | | | | | | 五個產品分部分析 | | | | | | |
-| --------------------------------- | --- | --- | --- | --- | --- | --- | --- | -------- | --- | --- | --- | --- | --- | --- |
+
+| Analysis of Five Product Segments | 五個產品分部分析 |
+| --- | --- |
+
 The Group’s products are organised into five product segments: 本集團的產品分類為五個產品分部：
-| Segment | | Key products of the segment | | | | | | 分部 | | | 分部主要產品 | | | |
-| -------------- | --- | --------------------------- | --- | --- | --- | --- | --- | ----- | --- | --- | ------ | --- | --- | --- |
-| Food additives | | MSG | | | | | | 食品添加劑 | | | 味精 | | | |
-Animal nutrition Threonine, lysine, corn refined products 動物營養 蘇氨酸、賴氨酸、玉米提煉
-產品
-High-end amino acid Tryptophan, valine, leucine, isoleucine, 高檔氨基酸 色氨酸、纈氨酸、亮氨酸、
-異亮氨酸、谷氨醯胺、
+
+| Segment | Key products of the segment | 分部 | 分部主要產品 |
+| --- | --- | --- | --- |
+| Food additives | MSG | 食品添加劑 | 味精 |
+
+Animal nutrition Threonine, lysine, corn refined products 動物營養 蘇氨酸、賴氨酸、玉米提煉產品
+High-end amino acid Tryptophan, valine, leucine, isoleucine, 高檔氨基酸 色氨酸、纈氨酸、亮氨酸、異亮氨酸、谷氨醯胺、
 glutamine, hyaluronic acid
 透明質酸
-| Colloid | | Xanthan gum | | | | | | 膠體 | | | 黃原膠 | | | |
-| ----------------------------------- | --- | ----------- | --------- | ----- | --------- | --- | ---------- | ----------------- | ------- | --- | ------- | --- | ------- | ----- |
-| Others | | Fertilisers | | | | | | 其他 | | | 肥料 | | | |
-| For the year ended 31 December 2025 | | | | | | | | 截至二零二五年十二月三十一日止年度 | | | | | | |
-| | | | | Food | Animal | | High-end | | | | | | | |
-| | | | additives | | nutrition | | amino acid | | Colloid | | Others | | | Total |
-| | | | 食品添加劑 | | 動物營養 | | 高檔氨基酸 | | | 膠體 | | 其他 | | 總計 |
-| | | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | | | | | | | |
+
+| Colloid | Xanthan gum |  |  |  |  | 膠體 |  |  | 黃原膠 |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Others | Fertilisers |  |  |  |  | 其他 |  |  | 肥料 |  |  |  |
+| For the year ended 31 December 2025 |  |  |  |  |  | 截至二零二五年十二月三十一日止年度 |  |  |  |  |  |  |
+|  |  |  | Food | Animal | High-end |  |  |  |  |  |  |  |
+|  |  | additives |  | nutrition | amino acid |  | Colloid |  | Others |  |  | Total |
+|  |  | 食品添加劑 |  | 動物營養 | 高檔氨基酸 |  |  | 膠體 |  | 其他 |  | 總計 |
+|  |  | RMB’000 |  | RMB’000 | RMB’000 |  | RMB’000 |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  |
+
 Revenue 收入 13,389,212 10,526,636 1,974,292 1,225,787 763,267 27,879,194
 Gross profit 毛利 1,813,197 2,495,166 783,944 438,489 (48,861) 5,481,935
 毛利率(%)
 Gross profit margin (%) 13.5 23.7 39.7 35.8 (6.4) 19.7
-| | | | | | | | | | | | | | | |
-| ----------------------------------- | --- | --- | --------- | ----- | --------- | ------- | ---------- | ----------------- | ------- | ------- | ------- | ------ | ------- | ----- |
-| For the year ended 31 December 2024 | | | | | | | | 截至二零二四年十二月三十一日止年度 | | | | | | |
-| | | | | Food | | Animal | High-end | | | | | | | |
-| | | | additives | | nutrition | | amino acid | | | Colloid | | Others | | Total |
-| | | | 食品添加劑 | | 動物營養 | | 高檔氨基酸 | | | 膠體 | | 其他 | | 總計 |
-| | | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | | | | | | | |
+
+| For the year ended 31 December 2024 |  |  |  |  |  | 截至二零二四年十二月三十一日止年度 |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | Food |  | Animal | High-end |  |  |  |  |  |  |  |
+|  | additives |  | nutrition |  | amino acid |  |  | Colloid |  | Others |  | Total |
+|  | 食品添加劑 |  | 動物營養 |  | 高檔氨基酸 |  |  | 膠體 |  | 其他 |  | 總計 |
+|  | RMB’000 |  | RMB’000 |  | RMB’000 |  | RMB’000 |  | RMB’000 |  | RMB’000 |  |
+|  | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  |
+
 Revenue 收入 14,365,304 8,739,272 2,217,371 1,816,506 618,857 27,757,310
 Gross profit 毛利 1,548,514 2,029,373 819,752 753,745 (94,562) 5,056,822
 毛利率(%)
 Gross profit margin (%) 10.8 23.2 37.0 41.5 (15.3) 18.2
-| | | | | | | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
-阜豐集團有限公司 年報 2025 9
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.9 -->
 1. Food additives segment 1. 食品添加劑分部
 Revenue of the food additives segment decreased by 6.8% to 於本年度，食品添加劑分部的收入
 approximately RMB13,389.2 million in the Year, as compared 較二零二四年減少6.8% 至約人民幣
 to 2024, mainly due to the decrease in the ASP of MSG and 13,389,200,000元，主要由於本年度味精
-decrease in the sales volume of starch sweetener for the Year. 平均售價下降及澱粉甜味劑的銷量下跌
-所致。
+decrease in the sales volume of starch sweetener for the Year. 平均售價下降及澱粉甜味劑的銷量下跌所致。
 Gross profit of the food additives segment increased by 17.1% 於本年度，食品添加劑分部的毛利
 to approximately RMB1,813.2 million in the Year, as compared 較二零二四年增加17.1%至約人民幣
 to 2024, mainly due to increased gross profit contribution from 1,813,200,000元，主要由於味精及澱粉
@@ -413,9 +453,7 @@ of 0.5 percentage points, as compared to 2024. Please refer to 百分點。有�
 the “Market Overview” section for the analysis of threonine and 請參閱「市場概覽」一節。
 lysine.
 
-10 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.10 -->
 Key products: 主要產品：
 Threonine: Revenue of threonine increased by 16.4% to 蘇氨酸：於本年度，蘇氨酸收入較
 approximately RMB2,931.2 million in the Year, as compared to 二零二四年增加16.4% 至約人民幣
@@ -459,30 +497,29 @@ million in the Year. 48,900,000元。
 
 11
 阜豐集團有限公司 年報 2025
-MANAGEMENT REVIEW
-管理層回顧
-| Analysis of Key Production Costs | | | | 主要生產成本分析 | | | |
-| -------------------------------- | --- | --- | --- | -------- | --- | --- | --- |
-| Production costs | | | | 生產成本 | | | |
+
+| Analysis of Key Production Costs | 主要生產成本分析 |
+| --- | --- |
+| Production costs | 生產成本 |
+
 Year ended 31 December
 截至十二月三十一日止年度
-| | | | 2025 | | 2024 | | Change |
-| ------------------- | ------- | ---------- | ----- | --------------- | ------- | ----------- | ------ |
-| | | | 二零二五年 | | 二零二四年 | | 變動 |
-| | | | | % of total | | % of total | |
-| | | | | production | | production | |
-| | | RMB’000 | | costs | RMB’000 | costs | |
-| | | | | 佔總生產 | | 佔總生產 | |
-| | | | | 成本的 | | 成本的 | |
-| | | 人民幣千元 | | 百分比 人民幣千元 | | 百分比 | % |
-| | | | | | | | |
-| Major raw materials | 主要原材料 | | | | | | |
-| • Corn kernels | • 玉米顆粒 | 13,243,206 | | 56.6 12,775,954 | | 56.5 | 3.7 |
-| Energy | 能源 | | | | | | |
-| • Coal | • 煤炭 | 3,676,812 | | 15.7 3,942,987 | | 17.4 | (6.8) |
-| | | | | | | | |
-| | | | | | | | |
-| Corn kernels | | | | 玉米顆粒 | | | |
+
+|  |  |  | 2025 |  | 2024 |  | Change |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 二零二五年 |  | 二零二四年 |  | 變動 |
+|  |  |  |  | % of total |  | % of total |  |
+|  |  |  |  | production |  | production |  |
+|  |  | RMB’000 |  | costs | RMB’000 | costs |  |
+|  |  |  |  | 佔總生產 |  | 佔總生產 |  |
+|  |  |  |  | 成本的 |  | 成本的 |  |
+|  |  | 人民幣千元 |  | 百分比 人民幣千元 |  | 百分比 | % |
+| Major raw materials | 主要原材料 |  |  |  |  |  |  |
+| • Corn kernels | • 玉米顆粒 | 13,243,206 |  | 56.6 12,775,954 |  | 56.5 | 3.7 |
+| Energy | 能源 |  |  |  |  |  |  |
+| • Coal | • 煤炭 | 3,676,812 |  | 15.7 3,942,987 |  | 17.4 | (6.8) |
+| Corn kernels |  |  |  | 玉米顆粒 |  |  |  |
+
 In the Year, corn kernels accounted for approximately 56.6% (2024: 於本年度，玉米顆粒佔總生產成本約56.6%（二
 56.5%) of the total production cost. The average price of corn kernels, 零二四年：56.5%）。本年度玉米顆粒（主要
 the key material cost, in the Year was approximately RMB1,826 per 材料成本）平均價格為每噸約人民幣1,826元，
@@ -491,9 +528,7 @@ The increase in the volume of corn consumption in the Year was 本年度玉米�
 offset by the decrease in corn price, which resulted in the total cost of 所抵銷，導致本年度及二零二四年玉米顆粒
 corn kernels remaining at a similar level in the Year and 2024. 的總成本維持相近水平。
 
-12 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.12 -->
 The following chart shows the price trend of corn kernels from the 下圖列示自二零二三年上半年至二零二五年
 first half of 2023 to the second half of 2025: 下半年玉米顆粒的價格趨勢：
 Price Trend of Corn Kernels
@@ -515,8 +550,7 @@ RMB/Tonne
 1,800
 1,700
 1H2023 2H2023 1H2024 2H2024 1H2025 2H2025
-二零二三年 二零二三年 二零二四年 二零二四年 二零二五年 二零二五年
-上半年 下半年 上半年 下半年 上半年 下半年
+二零二三年 二零二三年 二零二四年 二零二四年 二零二五年 二零二五年上半年 下半年 上半年 下半年 上半年 下半年
 Energy cost 能源成本
 The coal cost is the main energy cost. Coal accounted for 煤炭成本為主要的能源成本。於本年度，
 approximately 15.7% (2024: 17.4%) of the total production cost in 煤炭佔總生產成本約15.7%（二零二四年：
@@ -530,58 +564,57 @@ supply volume. 證我們的煤炭供應量。
 
 13
 阜豐集團有限公司 年報 2025
-MANAGEMENT REVIEW
-管理層回顧
 生產
 Production
 The annual designed production capacity of the major products by 按產品類別劃分的主要產品的年設計產能如
-| product categories were as follows: | | 下： | | | | | |
-| ----------------------------------- | --- | --- | --- | --- | --- | --- | --- |
+
+| product categories were as follows: | 下： |
+| --- | --- |
+
 Annual production capacity
 as at 31 December
 於十二月三十一日的年產能
-| | | | 2025 | | 2024 | Change | |
-| --- | --- | --- | ---- | --- | ---- | ------ | --- |
+
+| 2025 | 2024 | Change |
+| --- | --- | --- |
+
 變動
-| | | 二零二五年 | | 二零二四年 | | | |
-| -------------------------------------------- | ----- | ---------- | ------ | --------- | ------ | --- | --- |
-| | | Tonnes | | | Tonnes | | |
-| Product | 產品 | | 噸 | | 噸 | | % |
-| | | | | | | | |
-| Food additives | 食品添加劑 | | | | | | |
-| MSG | 味精 | 1,730,000 | | 1,650,000 | | | 4.8 |
-| Starch sweeteners | 澱粉甜味劑 | 720,000 | | 720,000 | | | – |
-| Animal nutrition | 動物營養 | | | | | | |
-| Threonine | 蘇氨酸 | 263,000 | | 263,000 | | | – |
-| Lysine | 賴氨酸 | 380,000 | | 380,000 | | | – |
-| Colloid | 膠體 | | | | | | |
-| Xanthan gum | 黃原膠 | | 80,000 | | 80,000 | | – |
-| | | | | | | | |
-| | | | | | | | |
-| Analysis of capacity usage of major products | | 主要產品產能使用分析 | | | | | |
+
+|  |  | 二零二五年 |  | 二零二四年 |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  | Tonnes |  |  | Tonnes |  |
+| Product | 產品 |  | 噸 |  | 噸 | % |
+| Food additives | 食品添加劑 |  |  |  |  |  |
+| MSG | 味精 | 1,730,000 |  | 1,650,000 |  | 4.8 |
+| Starch sweeteners | 澱粉甜味劑 | 720,000 |  | 720,000 |  | – |
+| Animal nutrition | 動物營養 |  |  |  |  |  |
+| Threonine | 蘇氨酸 | 263,000 |  | 263,000 |  | – |
+| Lysine | 賴氨酸 | 380,000 |  | 380,000 |  | – |
+| Colloid | 膠體 |  |  |  |  |  |
+| Xanthan gum | 黃原膠 |  | 80,000 |  | 80,000 | – |
+| Analysis of capacity usage of major products |  | 主要產品產能使用分析 |  |  |  |  |
+
 Business strategy of production remained unchanged and the Group 生產的業務策略維持不變，本集團根據市場
-sets production volume according to market demand. During the 需求決定產量。本年度味精、蘇氨酸及賴氨
-酸的產能使用率達至滿負荷。本年度黃原膠（分
-Year, the capacity utilisation rates of MSG, threonine and lysine
-reached full capacity. Xanthan gum, as classified in the Colloid 類為膠體分部）達至95%產能。
+sets production volume according to market demand. During the 需求決定產量。本年度味精、蘇氨酸及賴氨酸的產能使用率達至滿負荷。本年度黃原膠（分
+Year, the capacity utilisation rates of MSG, threonine and lysine reached full capacity. Xanthan gum, as classified in the Colloid 類為膠體分部）達至95%產能。
 segment, reached 95% of the capacity utilisation in the Year.
-| Other Financial Information | | 其他財務資料 | | | | | |
-| --------------------------- | --- | ------ | --- | --- | --- | --- | --- |
-| Other income | | 其他收益 | | | | | |
+
+| Other Financial Information | 其他財務資料 |
+| --- | --- |
+| Other income | 其他收益 |
+
 In the Year, other income amounted to approximately RMB482.9 於本年度，其他收益約為人民幣482,900,000
-million, which was mainly comprised of the income from the sales of 元，主要包括廢料產品銷售收益、遞延收益
-攤銷及政府補助。
-waste products, amortisation of deferred income and government
-grants.
-| Other gains | | 其他利得 | | | | | |
-| ----------- | --- | ---- | --- | --- | --- | --- | --- |
+million, which was mainly comprised of the income from the sales of 元，主要包括廢料產品銷售收益、遞延收益攤銷及政府補助。
+waste products, amortisation of deferred income and government grants.
+
+| Other gains | 其他利得 |
+| --- | --- |
+
 It mainly represents the compensation received from a lawsuit, as well 這主要指於本年度自訴訟中獲得的賠償金，
 as the gains from sales of carbon emission quota and the net foreign 以及出售碳排放配額的利得及外匯虧損淨額。
 exchange losses for the Year.
 
-14 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.14 -->
 Selling and marketing expenses 銷售及市場推廣開支
 Selling and marketing expenses increased by approximately 於本年度，銷售及市場推廣開支增加約人民
 RMB203.2 million, or 10.3% in the Year, mainly due to the increase in 幣203,200,000元或10.3%，主要由於運輸開
@@ -613,9 +646,7 @@ Shareholders’ approval at the annual general meeting. 東批准後方告作實
 Details of the dividend for the Year are set out in the “Results and 有關年度股息詳情載於董事會報告內「業績及
 Appropriations” section in the Directors’ Report on page 42. 分配」一節第42頁。
 
-阜豐集團有限公司 年報 2025 15
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.15 -->
 Capital Structure, Liquidity and Financial Resources 資本架構、流動資金及財務資源
 Capital Structure and Financial Resources 資本架構及財務資源
 The capital structure of the Group comprises share capital and bank 本集團的資本架構包括股本及銀行借貸。本
@@ -635,8 +666,7 @@ RMB199.9 million (2024: RMB348.0 million) were long term bank 幣11,016,500,000�
 borrowings. The Group’s bank borrowings were denominated in RMB 人民幣199,900,000元（二零二四年：人民幣
 at year end date. Depending on the needs and market situation, 348,000,000元）為長期銀行借貸。本集團銀
 the Group may issue bonds and/or raise foreign currency bank 行借貸於年結日以人民幣計值。視乎需要及
-borrowings for the daily operation and investment of the Group. 市況而定，本集團可發行債券及╱或籌集外
-幣銀行借貸，用於本集團日常營運及投資。
+borrowings for the daily operation and investment of the Group. 市況而定，本集團可發行債券及╱或籌集外幣銀行借貸，用於本集團日常營運及投資。
 The Group did not use financial instruments for hedging purposes. 本集團並無使用金融工具作對沖用途。
 Liquidity 流動資金
 The Group met the working capital requirements by cash generated 於本年度，本集團以營運產生的現金及銀行
@@ -648,13 +678,10 @@ available, the Group was financially sound throughout the Year. 度，本集團�
 As at 31 December 2025, the Group’s net current assets were 於二零二五年十二月三十一日，本集團的
 approximately RMB5,459.4 million (31 December 2024: RMB6,291.6 流動資產淨值約為人民幣5,459,400,000
 million) and the current ratio (current assets divided by current 元（二零二四年十二月三十一日：人民幣
-liabilities) was 1.24 times (2024: 1.39 times). 6,291,600,000元）及流動比率（流動資產除以
-流動負債）為1.24倍（二零二四年：1.39倍）。
+liabilities) was 1.24 times (2024: 1.39 times). 6,291,600,000元）及流動比率（流動資產除以流動負債）為1.24倍（二零二四年：1.39倍）。
 
 16
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-MANAGEMENT REVIEW
-管理層回顧
 資產負債比率
 Gearing ratio
 As at 31 December 2025, the total assets of the Group amounted 於二零二五年十二月三十一日，本集團
@@ -665,45 +692,43 @@ gearing ratio was approximately 40.4% (31 December 2024: 31.5%) 17,645,800,000�
 which was calculated based on the Group’s total debts over total 日：人民幣11,364,500,000元）。資產負債比
 assets. Total debts include current and non-current bank borrowings 率約為40.4%（二零二四年十二月三十一日：
 and non-current borrowings from third parties as at 31 December 31.5%），其乃按本集團債務總額除以資產總
-2025 and 2024. 值計算。於二零二五年及二零二四年十二月
-三十一日，債務總額包括流動及非流動銀行
-借貸以及來自第三方的非流動借貸。
+2025 and 2024. 值計算。於二零二五年及二零二四年十二月三十一日，債務總額包括流動及非流動銀行借貸以及來自第三方的非流動借貸。
 Foreign exchange exposure 外匯風險
-Foreign currencies of the Group are received from the export sales. 本集團的外幣來自出口銷售。於收取有關所
-得款項或將其兌換為人民幣前，均須承受外
-Such proceeds are subject to foreign exchange risk before receiving
-or converting them into RMB. The foreign currencies are converted 匯風險。外幣按需要及市況兌換為人民幣。
+Foreign currencies of the Group are received from the export sales. 本集團的外幣來自出口銷售。於收取有關所得款項或將其兌換為人民幣前，均須承受外
+Such proceeds are subject to foreign exchange risk before receiving or converting them into RMB. The foreign currencies are converted 匯風險。外幣按需要及市況兌換為人民幣。
 into RMB depending on needs and market conditions.
-During the Year, the Group recorded a net foreign exchange (losses)/ 年內，本集團錄得外匯（虧損）╱利得淨額如
-下：
+During the Year, the Group recorded a net foreign exchange (losses)/ 年內，本集團錄得外匯（虧損）╱利得淨額如下：
 gains as follow:
-| | | | 2025 | 2024 |
-| --- | --- | ------- | ----- | ------- |
-| | | 二零二五年 | 二零二四年 | |
-| | | RMB’000 | | RMB’000 |
-人民幣千元
-人民幣千元
-| | | | | |
-| ---------------------------------------------- | ---------------- | --- | --- | --- |
-| Foreign exchange (losses)/gains: | 外匯（虧損）╱利得︰ | | | |
-| – Fr om operating activities classified under | － 來 自經營活動，分類為其他 | | | |
-other (losses)/gains – net (a) (Note 7) （虧損）╱利得－淨額(a（) 附註7） (208,128) 194,106
-| – Fr om financing activities classified under | － 來 自融資活動，分類為財務 | | | |
-| ---------------------------------------------- | ---------------- | --- | --- | --- |
-收入╱（財務成本（）附註10）
-| finance income/(finance costs) (Note 10) | | | 2,07 3 | (1,245) |
-| ---------------------------------------- | --- | --- | ---------- | ------- |
-Net foreign exchange (losses)/gains 外匯（虧損）╱利得淨額 (206,055) 192,861
-| | | | | |
-| --- | --- | --- | --- | --- |
-| | | | | |
-a. The net foreign exchange losses from operating activities were a. 經營活動外匯虧損淨額主要是由於美元
-| mainly due to the depreciation of USD to RMB. | 兌人民幣貶值所致。 | | | |
-| --------------------------------------------- | --------- | --- | --- | --- |
 
-阜豐集團有限公司 年報 2025 17
-MANAGEMENT REVIEW
-管理層回顧
+|  | 2025 | 2024 |
+| --- | --- | --- |
+| 二零二五年 | 二零二四年 |  |
+| RMB’000 |  | RMB’000 |
+
+人民幣千元
+人民幣千元
+
+| Foreign exchange (losses)/gains: | 外匯（虧損）╱利得︰ |
+| --- | --- |
+| – Fr om operating activities classified under | － 來 自經營活動，分類為其他 |
+
+other (losses)/gains – net (a) (Note 7) （虧損）╱利得－淨額(a（) 附註7） (208,128) 194,106
+
+| – Fr om financing activities classified under | － 來 自融資活動，分類為財務 |
+| --- | --- |
+
+收入╱（財務成本（）附註10）
+
+| finance income/(finance costs) (Note 10) | 2,07 3 | (1,245) |
+| --- | --- | --- |
+
+Net foreign exchange (losses)/gains 外匯（虧損）╱利得淨額 (206,055) 192,861
+a. The net foreign exchange losses from operating activities were a. 經營活動外匯虧損淨額主要是由於美元
+
+| mainly due to the depreciation of USD to RMB. | 兌人民幣貶值所致。 |
+| --- | --- |
+
+<!-- p.17 -->
 Contingent Liabilities 或然負債
 As at 31 December 2025, the Group had no material contingent 於二零二五年十二月三十一日，本集團並無
 liabilities. 重大或然負債。
@@ -712,17 +737,14 @@ As at 31 December 2025, RMB5,762.6 million of restricted bank 於二零二五年
 balances (31 December 2024: RMB2,599.1 million) and no notes 行結餘人民幣5,762,600,000元（二零二四年
 receivable (31 December 2024: RMB8.0 million) were pledged to 十二月三十一日：人民幣2,599,100,000元）
 certain banks to secure bank borrowings of RMB6,580.0 million (31 及沒有應收票據（二零二四年十二月三十一日：
-December 2024: RMB3,833.4 million) of the Group. 人民幣8,000,000元）已抵押予若干銀行，以
-取得本集團的銀行借貸人民幣6,580,000,000
+December 2024: RMB3,833.4 million) of the Group. 人民幣8,000,000元）已抵押予若干銀行，以取得本集團的銀行借貸人民幣6,580,000,000
 元（二零二四年十二月三十一日：人民幣
 3,833,400,000元）。
 As at 31 December 2025, RMB249.0 million restricted bank balances 於二零二五年十二月三十一日，受限制的銀
 (31 December 2024: RMB386.1 million) were pledged as security for 行結餘人民幣249,000,000元（二零二四年
 issuing notes payable and RMB18.6 million restricted bank balances 十二月三十一日：人民幣386,100,000元）已
 (31 December 2024: RMB19.9 million) were pledged as security for 抵押為發行應付票據的抵押品，及受限制的
-cross currency swaps. 銀行結餘人民幣18,600,000元（二零二四年
-十二月三十一日：人民幣19,900,000元）已抵
-押為交叉貨幣掉期的抵押品。
+cross currency swaps. 銀行結餘人民幣18,600,000元（二零二四年十二月三十一日：人民幣19,900,000元）已抵押為交叉貨幣掉期的抵押品。
 Connected Transaction 關連交易
 Reference is made to the announcement of the Company dated 21 茲提述本公司日期為二零二五年七月二十一
 July 2025. 日的公告。
@@ -735,14 +757,12 @@ Company, entered into a sale and purchase agreement (the 南智豐」）、臨�
 “Agreement”) with 莒南智豐置業有限公司 (Junan Zhifeng Real 沂誠創」）（統稱為「賣方」）及青島沂景置業有
 Estate Co., Ltd#) (“Junan Zhifeng”) and 臨沂誠創置業發展有限公司 限公司（「青島沂景」）（「開發商」）訂立買賣協
 (Linyi Chengchuang Real Estate Development Co., Ltd#) (“Linyi 議（「協議」）。
-Chengchuang”) (collectively the “Vendors”) and 青島沂景置業有限公
-司 (Qingdao Yijing Real Estate Co., Ltd#) (“Qingdao Yijing”) (the
+Chengchuang”) (collectively the “Vendors”) and 青島沂景置業有限公司 (Qingdao Yijing Real Estate Co., Ltd#) (“Qingdao Yijing”) (the
 “Developer”).
+
 # for identification purposes only
 
-18 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.18 -->
 Pursuant to the terms of the Agreement, the Developer agreed to 根據協議的條款，開發商同意根據買方指
 develop a parcel of land owned by it, being constructing the new 示開發其擁有的一幅土地，建造本公司的
 headquarters, dormitory and ancillary buildings (in bare shell condition) 新總部、宿舍及其他配套樓宇（毛坯狀態）
@@ -782,9 +802,7 @@ addition, as the new location is situated near the railway station and 於新選
 the airport, the new location will further enhance the convenience and 步提升本集團僱員、客戶及供應商的便利性
 accessibility of the Group’s employees, customers and suppliers. 及可達性。
 
-阜豐集團有限公司 年報 2025 19
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.19 -->
 The Developer is owned as to 99% and 1% by Junan Zhifeng and 開發商分別由莒南智豐及臨沂誠創擁有99%
 Linyi Chengchuang respectively. Junan Zhifeng is owned as to 及1%。莒南智豐分別由李鴻鈺女士、李
 86.98%, 2.46%, 0.82% and 0.82% by Ms. Li Hongyu, Mr. Li Deheng, 德衡先生、來鳳堂先生、趙蘭坤先生擁有
@@ -826,9 +844,7 @@ of 3.3% in 2026 which is the same as that in 2025. The Government 增長為3.3%�
 Work Report of China estimated that the economic growth of China 工作報告預計中國經濟增長約為4.5%至5%，
 is about 4.5% to 5%, about the same as in 2025. 與二零二五年的預測類似。
 
-20 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.20 -->
 The selling prices of our products have increased since late first 自二零二六年第一季末以來，我們產品的售
 quarter of 2026, which may indicate that the price cycle reached its 價有所提升。這可能表示價格週期觸底並進
 bottom and entered the rising phase. However, the weak ASP in early 入上升階段。然而，二零二六年初疲弱的平
@@ -842,8 +858,7 @@ costs diminished relative to that in 2025. 二五年，低原材料成本效益�
 Future Plan 未來計劃
 In addition to ongoing market development, our focus in 2026 is on 除持續拓展市場外，我們在二零二六年的重
 establishing phase I of the Kazakhstan production base. The target is 點是在哈薩克斯坦建設生產基地的第一期工
-to commence production and contribute to our results in 2026. 程。目標是在二零二六年開始生產並為我們
-的業績作出貢獻。
+to commence production and contribute to our results in 2026. 程。目標是在二零二六年開始生產並為我們的業績作出貢獻。
 In order to take advantage of Kazakhstan, we may begin planning 為充分發揮哈薩克斯坦的優勢，我們可能於
 and construction of phase II of the Kazakhstan production base in 二零二六年開展規劃及建設哈薩克斯坦生產
 2026. 基地第二期工程。
@@ -872,9 +887,7 @@ production. The Group provides supporting materials of the exported 動」。本
 products to CBP for approval and then the products are continuously 以供批准，其後產品不斷通關並進入美國市場。
 cleared and released into the U.S. market.
 
-阜豐集團有限公司 年報 2025 21
-MANAGEMENT REVIEW
-管理層回顧
+<!-- p.21 -->
 Corporate governance report 企業管治報告
 The Company’s corporate governance practises are based on the 本公司之企業管治常規乃以企業管治守則所
 principles and code provisions set out in the CG Code. During the 載之原則及守則條文為基準。於本年度，本
@@ -897,8 +910,7 @@ with the Company’s branch registrar in Hong Kong, Tricor Investor 關股票最
 Services Limited at 17/F, Far East Finance Centre, 16 Harcourt Road, 午四時三十分前，交回本公司的香港股份過
 Hong Kong no later than 4:30 p.m. on 22 May 2026. The record date 戶登記分處卓佳證券登記有限公司，地址為
 for determining the identity of members who are entitled to attend 香港夏愨道16號遠東金融中心17樓。釐定有
-and vote at the annual general meeting is 29 May 2026. 權出席股東週年大會並於會上投票的股東身
-份的記錄日期為二零二六年五月二十九日。
+and vote at the annual general meeting is 29 May 2026. 權出席股東週年大會並於會上投票的股東身份的記錄日期為二零二六年五月二十九日。
 The register of members of the Company will be closed from 4 June 本公司將於二零二六年六月四日至二零二六
 2026 to 5 June 2026 (both dates inclusive), during which no transfer 年六月五日（包括首尾兩日）暫停辦理股份過
 of shares will be registered. In order to qualify for the proposed 戶登記手續，期間將不會辦理股份過戶登記。
@@ -908,14 +920,13 @@ with the Company’s branch registrar in Hong Kong, Tricor Investor 於二零二
 Services Limited at 17/F, Far East Finance Centre, 16 Harcourt Road, 交回本公司的香港股份過戶登記分處卓佳證
 Hong Kong no later than 4:30 p.m. on 3 June 2026. The record 券登記有限公司，地址為香港夏愨道16號遠
 date for determining shareholders’ entitlement to the proposed final 東金融中心17樓。釐定股東可享有收取建議
-dividend and special final dividend is 5 June 2026. 末期股息及特別末期股息權利的記錄日期為
-二零二六年六月五日。
+dividend and special final dividend is 5 June 2026. 末期股息及特別末期股息權利的記錄日期為二零二六年六月五日。
 Annual general meeting 股東週年大會
 The annual general meeting is expected to be held on 29 May 2026. 預期股東週年大會將於二零二六年五月
 A notice convening the annual general meeting will be dispatched to 二十九日舉行。本公司將於適當時候向股東
 the Shareholders in due course. 寄發召開股東週年大會的通告。
 
-22 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.22 -->
 ESG EXECUTIVE SUMMARY
 ESG管理層摘要
 This is the ESG executive summary of 2025 ESG Report. For details, 這是二零二五年ESG報告之ESG管理層摘要，
@@ -942,7 +953,7 @@ design patents. 項和外觀設計專利4項。
 In 2025, 15,815 employees joined training sessions accounting for 二零二五年，員工受訓人數15,815人，佔員
 90.2% of the total number of employees. 工總數90.2%。
 
-阜豐集團有限公司 年報 2025 23
+<!-- p.23 -->
 ESG EXECUTIVE SUMMARY
 ESG管理層摘要
 Environmental Performance 環境績效
@@ -974,14 +985,12 @@ RMB3,018,000. 元。
 • Received more than 5 quality hazard reports and effectively • 收集5餘份質量隱患報告，本年度內整
 rectified the issues during the Year. 改良好。
 
-24 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.24 -->
 CORPORATE GOVERNANCE REPORT
-企業管治報告
 The Company is committed to maintaining a high standard on 本公司致力維持高水平企業管治常規。本集
 corporate governance practises. Continuous efforts are made 團會因應法規之變動及最佳常規之發展，不
 to review and enhance the Group’s internal controls and risk 斷致力檢討及提升其內部控制及風險管理程序。
-management procedures in light of changes in regulations and
-developments in best practices.
+management procedures in light of changes in regulations and developments in best practices.
 Corporate Governance Code 企業管治守則
 The Company’s corporate governance practises are based on the 本公司之企業管治常規乃以企業管治守則所
 principles and code provisions set out in the CG Code. During the 載之原則及守則條文為基準。於本年度，本
@@ -999,9 +1008,7 @@ designated as Co-chief executive officer on the same day. 於同日獲調任為�
 Biographies of Directors are set out on page 207 of this annual 董事履歷載於本年報第207頁。
 report.
 
-阜豐集團有限公司 年報 2025 25
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.25 -->
 Responsibilities, Accountabilities and 董事會及管理層之職責、問責性
 Contributions of the Board and Management 及貢獻
 The Board is collectively responsible for promoting the success and 董事會通過領導及監督，共同負責推動本集
@@ -1021,8 +1028,7 @@ No event or condition of material uncertainties was found that may 於本年度�
 cast significant doubt on the Company’s ability to continue as a 營能力存重大疑問之事件或重大不明朗情況。
 going concern during the Year. The Directors were responsible for 董事有責任根據適用法規規定，在各重要範
 the preparation and the true and fair presentation of the financial 疇上編製及呈列真實公平之本公司財務報表。
-statements of the Company, in all material respects, in accordance
-with the applicable regulatory requirements.
+statements of the Company, in all material respects, in accordance with the applicable regulatory requirements.
 The Division of Responsibilities Between the 主席與行政總裁之職責應有區分
 Chairman and the Chief Executive Officer
 The roles of the chairman and the chief executive officer should 主席與行政總裁之職權應有所區分。李學純
@@ -1030,12 +1036,9 @@ be separated. Mr. Li Xuechun, being the chairman of the Group, is 先生為本�
 responsible for the orderly conduct and operation of the Board while 及運作，而李德衡先生及李廣玉先生為本集
 Mr. Li Deheng and Mr. Li Guangyu, being the Co-chief executive 團聯席行政總裁，負責本集團之日常運作。
 officers of the Group, are responsible for the daily operations of the 主席與行政總裁之職責有清晰之區別。
-Group. The division of responsibilities between the chairman and the
-chief executive officer is clearly established.
+Group. The division of responsibilities between the chairman and the chief executive officer is clearly established.
 
-26 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.26 -->
 The main duties of the Chairman include providing leadership for 主席之主要職責包括領導董事會及監察董事
 and overseeing the functioning of the Board; formulating overall 會功能；制定本公司整體策略及政策；確保
 strategies and policies of the Company; ensuring that all directors of 董事會會議上所有董事均適當知悉當前之事
@@ -1054,9 +1057,7 @@ a full and active contribution to the Board’s affairs and take the lead 保持
 to ensure that the Board acts in the best interests of the Company; 傳達至整個董事會；及促進董事對董事會作
 ensuring that appropriate steps are taken to provide effective 出有效貢獻，並確保執行董事與非執行董事
 communication with Shareholders and that views of Shareholders are 之間維持建設性的關係。
-communicated to the Board as a whole; and facilitating the effective
-contribution of Directors and ensuring constructive relations between
-executive Directors and non-executive Directors.
+communicated to the Board as a whole; and facilitating the effective contribution of Directors and ensuring constructive relations between executive Directors and non-executive Directors.
 The duties of the chief executive officer include taking responsibility 行政總裁之職責包括負責本集團之經營和管
 for the Group’s operation and management; implementing decisions 理；執行董事會批准之決議及計劃；作出經
 and plans approved by the Board; making day-to-day operational and 營管理之日常決策；及協調整體業務營運。
@@ -1071,12 +1072,9 @@ to Rule 3.13 of the Listing Rules, the Board is of the view that all 事會認�
 independent non-executive Directors are independent. As the three 由於三名獨立非執行董事佔董事會人數三分
 Independent non-executive Directors represents over one-third of 之一以上，該成員組成構成適當權力平衡，
 the Board, this composition constituted a proper balance of power 對本集團及其行政管理維持全面及有效控制。
-maintaining full and effective control of both the Group and its
-executive management.
+maintaining full and effective control of both the Group and its executive management.
 
-阜豐集團有限公司 年報 2025 27
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.27 -->
 Skills, Knowledge, Experience and Attributes 董事技能、知識、經驗及特性
 of Directors
 All Directors of the Board had served in office during the Year. Every 所有董事會之董事均於本年度服務本集團。
@@ -1089,8 +1087,7 @@ non-executive Directors contribute their own skills and experience, 對本地及
 understanding of local and global economies, and knowledge of 至本集團業務之知識而作出貢獻。本公司有
 capital markets to the Group’s business. The Company is responsible 責任為全體董事安排及資助合適之持續專業
 for arranging and funding suitable continuous professional 發展計劃，以發展及更新彼等之知識及技能。
-development programmes for all Directors to hone and refresh their
-knowledge and skills.
+development programmes for all Directors to hone and refresh their knowledge and skills.
 Directors’ Induction and Continuous 董事就職及持續專業發展
 Professional Development
 The Directors are regularly briefed on the amendments to or updates 董事亦定期獲簡介相關法例、規則及規例之
@@ -1099,8 +1096,7 @@ has been encouraging the Directors and senior executives to enrol in 事及高�
 a wide range of professional development courses or and seminars 上市規則、公司條例或法例及企業管治常規
 relating to the Listing Rules, companies ordinance or act and 之全面專業發展課程及講座，使彼等可持續
 corporate governance practises organised by professional bodies so 更新及進一步提升相關知識及技能。
-that they can continuously update and further improve their relevant
-knowledge and skills.
+that they can continuously update and further improve their relevant knowledge and skills.
 From time to time, the Directors are provided with written materials to 董事亦不時獲提供書面培訓材料以發展及更
 develop and refresh their professional skills; the company secretary 新彼等之專業技能；公司秘書亦可就有關董
 may also organises and arranges seminars on the latest development 事之適用法例、規則及規例之最新發展組織
@@ -1109,11 +1105,8 @@ them in discharging their duties.
 
 28
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-CORPORATE GOVERNANCE REPORT
-企業管治報告
 根據本公司存置之記錄，為符合企業管治守
-According to the records maintained by the Company, the Directors
-received the following training with an emphasis on the roles, 則關於持續專業發展之規定，董事於本年度
+According to the records maintained by the Company, the Directors received the following training with an emphasis on the roles, 則關於持續專業發展之規定，董事於本年度
 functions and duties of a director of a listed company in compliance 接受以下重點在於上市公司董事之角色、職
 with the requirement of the CG Code on continuous professional 能及職責之培訓：
 development during the Year:
@@ -1122,82 +1115,77 @@ Updates on laws,
 rules and regulations
 企業管治╱法例、規則及
 規例之更新
-| | | Read | Attend |
-| ------------------- | ----- | --------- | -------- |
-| | | materials | seminars |
+
+|  |  | Read | Attend |
+| --- | --- | --- | --- |
+|  |  | materials | seminars |
 | Director | 董事 | 閱讀材料 | 出席講座 |
-| | | | |
-| Executive Directors | 執行董事 | | |
-| Mr. Li Xuechun | 李學純先生 | | |
-| Mr. Li Deheng | 李德衡先生 | | |
+| Executive Directors | 執行董事 |  |  |
+| Mr. Li Xuechun | 李學純先生 |  |  |
+| Mr. Li Deheng | 李德衡先生 |  |  |
+
 李廣玉先生
 Mr. Li Guangyu
-| Independent non-executive Directors | 獨立非執行董事 | | |
-| ----------------------------------- | ------- | --- | --- |
-| Mr. Lau Chung Wai | 劉仲緯先生 | | |
-| Mr. Zhang Youming | 張友明先生 | | |
+
+| Independent non-executive Directors | 獨立非執行董事 |
+| --- | --- |
+| Mr. Lau Chung Wai | 劉仲緯先生 |
+| Mr. Zhang Youming | 張友明先生 |
+
 李銘女士
-| Ms. Li Ming | | | |
-| ------------- | --- | --- | --- |
+
+Ms. Li Ming
+
 Board Meetings 董事會會議
-The chairman is responsible for the leadership of the Board, ensuring 主席負責領導董事會，確保董事會各方面角
-色可有效地運作及釐定董事會會議之議程，
-the effectiveness of the Board in all aspects of its role, setting agenda
-for board meetings, and taking into account any matters proposed by 並考慮將其他董事提議之任何事宜加入議程。
+The chairman is responsible for the leadership of the Board, ensuring 主席負責領導董事會，確保董事會各方面角色可有效地運作及釐定董事會會議之議程，
+the effectiveness of the Board in all aspects of its role, setting agenda for board meetings, and taking into account any matters proposed by 並考慮將其他董事提議之任何事宜加入議程。
 other Directors for inclusion in the agenda.
 
 29
 阜豐集團有限公司 年報 2025
-CORPORATE GOVERNANCE REPORT
-企業管治報告
 主席亦應負責確保董事會會議上所有董事均
-The chairman is also responsible for making sure that all the Directors
-are properly briefed on issues arising at board meetings. The 適當知悉當前的討論事項。主席亦確保董事
+The chairman is also responsible for making sure that all the Directors are properly briefed on issues arising at board meetings. The 適當知悉當前的討論事項。主席亦確保董事
 chairman also ensures that the Directors receive accurate, timely 收到準確、適時及清楚的資料，並鼓勵各董
 and clear information. The Directors are encouraged to update their 事透過就職時所獲的就任須知、持續參與董
-skills, knowledge and familiarity with the Company through their initial 事會及委員會會議，以及與主要管理人員於
-總部及分公司會面，不斷更新其技能、知識，
-induction, ongoing participation at board and committee meetings,
-and through meeting key people at head office and in the divisions. 以及加深對本公司的熟悉程度。
+skills, knowledge and familiarity with the Company through their initial 事會及委員會會議，以及與主要管理人員於總部及分公司會面，不斷更新其技能、知識，
+induction, ongoing participation at board and committee meetings, and through meeting key people at head office and in the divisions. 以及加深對本公司的熟悉程度。
 All the Directors have access to the services of the company secretary 所有董事均可使用公司秘書所提供的服務，
-who regularly updates the Board on governance and regulatory 公司秘書須定期讓董事會知悉有關管治及規
-管事宜的最新資料。任何董事可為履行職責
-matters. Any Director, who wishes to do so in the furtherance of his
-or her duties, may seek independent professional advice through the 而透過主席尋求獨立專業意見，費用由本公
+who regularly updates the Board on governance and regulatory 公司秘書須定期讓董事會知悉有關管治及規管事宜的最新資料。任何董事可為履行職責
+matters. Any Director, who wishes to do so in the furtherance of his or her duties, may seek independent professional advice through the 而透過主席尋求獨立專業意見，費用由本公
 chairman at the Company’s expense. The availability of professional 司承擔。審計委員會、薪酬委員會及其他委
 advice extends to the Audit, Remuneration and other Committees. 員會亦可尋求專業意見。
 於本年度，董事會已舉行四次定期會議，董
-Four regular Board meetings were held during the Year and the Board
-will convene other meetings when necessary. Before a Board meeting 事會將於有需要時召開其他會議。召開董事
+Four regular Board meetings were held during the Year and the Board will convene other meetings when necessary. Before a Board meeting 事會將於有需要時召開其他會議。召開董事
 is convened, relevant documents will be sent to the Directors for their 會會議前，會根據上市規則及企業管治守則
 review pursuant to the Listing Rules and the CG Code. Attendance of 將相關文件發送予董事供其審閱。各董事於
-each Director at the Board meeting and the annual general meeting 本年度在董事會會議及股東週年大會的出席
-記錄載列如下：
+each Director at the Board meeting and the annual general meeting 本年度在董事會會議及股東週年大會的出席記錄載列如下：
 during the Year is set out below:
 Annual
-| | | Board | general |
-| ------------------------- | --------- | ---------- | ---------- |
-| | | meeting | meeting |
-| | | attendance | attendance |
-| | | 董事會會議 | 股東週年大會 |
+
+|  |  | Board | general |
+| --- | --- | --- | --- |
+|  |  | meeting | meeting |
+|  |  | attendance | attendance |
+|  |  | 董事會會議 | 股東週年大會 |
 | Director | 董事 | 出席率 | 出席率 |
-| | | | |
-| Executive Directors | 執行董事 | | |
+| Executive Directors | 執行董事 |  |  |
 | Mr. Li Xuechun (Chairman) | 李學純先生（主席） | 9/9 | 1/1 |
 | Mr. Li Deheng | 李德衡先生 | 9/9 | 1/1 |
+
 李廣玉先生
-| Mr. Li Guangyu | | 9/9 | 1/1 |
-| ----------------------------------- | ------- | --- | --- |
-| Independent non-executive Directors | 獨立非執行董事 | | |
+
+| Mr. Li Guangyu |  | 9/9 | 1/1 |
+| --- | --- | --- | --- |
+| Independent non-executive Directors | 獨立非執行董事 |  |  |
 | Mr. Lau Chung Wai | 劉仲緯先生 | 9/9 | 1/1 |
 | Mr. Zhang Youming | 張友明先生 | 8/9 | 1/1 |
-李銘女士
-| Ms. Li Ming | | 9/9 | 1/1 |
-| -------------- | --- | ----- | ----- |
 
-30 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+李銘女士
+
+| Ms. Li Ming | 9/9 | 1/1 |
+| --- | --- | --- |
+
+<!-- p.30 -->
 Minutes of Board meetings are taken by the company secretary 董事會會議記錄由公司秘書或董事會秘書負
 or the secretary to the Board, and together with any supporting 責撰寫，該等會議記錄連同任何有關的董事
 Board papers, are available to all Board members. Board meetings 會會議文件，均向所有董事會成員提供。董
@@ -1232,9 +1220,7 @@ background, ethnicity, professional experience, skills and knowledge. 董事會�
 All Board appointments will continue to be made on a merit basis with 董事會成員多元化的裨益。
 due regard for the benefits of diversity of the Board members.
 
-阜豐集團有限公司 年報 2025 31
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.31 -->
 The Board currently has one female Director. The Board recognises 目前，董事會有一名女性董事。董事會知悉
 the importance and benefits of gender diversity at the Board level and 董事會層面中性別多元化的重要性和裨益，
 continue to take initiatives to identify female candidate(s) to enhance 並繼續採取行動，物色女性候選人以提升董
@@ -1259,9 +1245,7 @@ The Company has adopted the Model Code. Having made specific 本公司已採納�
 enquiry of all the Directors, the Directors have complied with the 事後，董事於本年度一直遵守標準守則。
 Model Code for the Year.
 
-32 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.32 -->
 Accountability and Auditor’s Remuneration 問責性及核數師酬金
 The Directors acknowledge their responsibility for preparation of 董事知悉彼等編製本集團合併財務報表的責
 consolidated financial statements of the Group. This responsibility has 任。有關責任亦於第55頁的獨立核數師報告
@@ -1291,9 +1275,7 @@ The principal functions of the Audit Committee are to review the 審計委員會
 Group’s audit, interim and annual accounts of the Group and the 本集團中期及年度賬目以及本集團風險管理
 system of risk management and internal control of the Group. 及內部控制系統。
 
-阜豐集團有限公司 年報 2025 33
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.33 -->
 The Audit Committee meetings will be held at least twice a year. For 審計委員會將每年最少舉行兩次會議。於本
 the Year, three Audit Committee meetings were held with all Audit 年度，審計委員會曾舉行三次會議，全體審
 Committee members attended all the meetings. 計委員會成員均出席所有會議。
@@ -1318,9 +1300,7 @@ designed to manage rather than eliminate the risk of failure to achieve 而非�
 business objectives, and can only provide reasonable and not 能提供合理而非絕對保證不會存在重大錯誤
 absolute assurance against material misstatement or loss. 陳述或損失。
 
-34 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.34 -->
 Risk management and internal control framework 風險管理及內部控制架構
 Risk Management 風險管理
 In order to continuously improve the risk management and internal 為不斷改良風險管理及內部控制系統，以及
@@ -1328,8 +1308,7 @@ control systems, as well as to enhance the level of management 提升管理和�
 and risk prevention capabilities, the Company has developed a 於本年度制定風險管理手冊、成立風險管理
 Risk Management Manual, established a risk management strategy 策略及架構，並界定風險評估措施和風險管
 and structure, as well as defined the measures for risk assessment 理匯報程序。風險管理組織架構載列如下：
-and risk management reporting procedures during the Year. The
-organisational structure for risk management is set out as follows:
+and risk management reporting procedures during the Year. The organisational structure for risk management is set out as follows:
 Board and Audit Committee
 Board Level
 董事會及審計委員會
@@ -1350,9 +1329,7 @@ The Risk Management Team is responsible for coordinating 根據風險管理手�
 and conducting risk assessments in accordance with the Risk
 Management Manual.
 
-阜豐集團有限公司 年報 2025 35
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.35 -->
 Management of business units work together with the Risk 業務單位管理人員聯同風險管理小組在營運
 Management Team to perform risk assessment at operational level, 層面進行風險評估，並負責監察及管理在活
 and is responsible for monitoring and managing the risks identified in 動及營運中所識別出的風險。風險管理小組
@@ -1381,9 +1358,7 @@ carries out reviews on the effectiveness of the internal control in order 制的
 to ensure that they are able to meet and deal with the dynamic and 對靈活多變的經營環境。
 ever changing business environment.
 
-36 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.36 -->
 Review the effectiveness of the risk management and internal control 審閱風險管理及內部控制系統的有效性
 systems
 The Risk Management Team assisted by external internal control 由外聘內部控制顧問協助的風險管理小組已
@@ -1407,12 +1382,9 @@ the handling and dissemination of inside information to ensure that 內部控制
 disclosures are made and/or announcements are published on a 作出披露及╱或刊發公告。本公司已實施有
 timely basis in accordance with the applicable laws and regulations. 關回應本集團事務的外部查詢的程序及嚴禁
 The Company has implemented procedures for responding to 非法使用內幕消息。
-external enquiries about the Group’s affairs and has in place a strict
-prohibition on unauthorised use of inside information.
+external enquiries about the Group’s affairs and has in place a strict prohibition on unauthorised use of inside information.
 
-阜豐集團有限公司 年報 2025 37
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.37 -->
 Remuneration Committee 薪酬委員會
 The Remuneration Committee established in compliance with the CG 本公司根據企業管治守則成立薪酬委員會，
 Code, comprises an executive Director, Mr. Li Xuechun and three 其成員包括執行董事李學純先生以及三名獨
@@ -1428,8 +1400,7 @@ own remuneration. The Remuneration Committee considers factors 較公司支付�
 such as salaries paid by comparable companies, time commitment 的時間及職責、本集團內其他職位的僱傭條
 and responsibilities of the directors and senior management, 件及是否應該按表現釐定薪酬等因素，使管
 employment conditions elsewhere in the Group and desirability 理層的獎金符合股東利益。
-of performance-based remuneration so as to align management
-incentives with Shareholders’ interests.
+of performance-based remuneration so as to align management incentives with Shareholders’ interests.
 The remuneration committee has reviewed the Share Option Scheme. 薪酬委員會已審閱購股權計劃。除董事會報
 Except for the major terms disclosed in the Share Option Scheme 告項下購股權計劃中披露的主要條款外，薪
 under the Directors’ Report, the remuneration committee has not 酬委員會未發現任何重大事項。 於本年度，
@@ -1442,9 +1413,7 @@ The purposes of the meetings were to review and recommend to 審閱董事及聯�
 the Board the remuneration packages of the Directors and Co-chief 董事會提出建議。
 executive officers.
 
-38 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.38 -->
 Remuneration of Senior Management and Five 高級管理層及五名最高薪員工的
 Highest Paid Employee 酬金
 The remuneration paid/payable to senior management and five 於本年度，已付╱應付高級管理層及五名最
@@ -1463,8 +1432,7 @@ or as additional Board members. When assessing candidates for 提名委員會將
 directorship, the nomination committee will take into consideration the 教育背景、專業知識、個人誠信、董事會成
 skills, experience, education background, professional knowledge, 員多元化及對本公司的潛在貢獻。合資格候
 personal integrity, board diversity and potential contribution to the 選人將獲推薦以供董事會批准。
-Company of the proposed candidates. Qualified candidates will then
-be recommended to the Board for approval.
+Company of the proposed candidates. Qualified candidates will then be recommended to the Board for approval.
 The Nomination Committee comprises one executive Director, Mr. 提名委員會包括一名執行董事李學純先生及
 Li Xuechun and three Independent non-executive Directors, Mr. Lau 三名獨立非執行董事劉仲緯先生、張友明先
 Chung Wai, Mr. Zhang Youming and Ms. Li Ming. Mr. Li Xuechun 生及李銘女士。李學純先生為提名委員會主
@@ -1472,9 +1440,7 @@ is the chairman of the Nomination Committee. For the Year, one 席。於本年�
 Nomination Committee meetings were held. All members attended all 全體成員均出席所有會議。
 meetings.
 
-阜豐集團有限公司 年報 2025 39
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.39 -->
 ESG Committee ESG委員會
 The Company has established the ESG Committee on 31 August 本公司已於二零二一年八月三十一日成立
 2021. The ESG Committee is responsible for the promotion of the ESG委員會。ESG委員會負責推動本集團環
@@ -1493,9 +1459,7 @@ recognises the value of providing current and relevant information 及相關資�
 to Shareholders and the investors. The Board has established 政策，列出本公司有關股東通訊之原則，旨
 a Shareholders’ communication policy setting out the principles 在確保股東及投資者均可及時取得全面、相
 of the Company in relation to the Shareholders’ communication, 同及當前本公司的相關資料。
-with the objective of ensuring the Shareholders and investors are
-provided with ready, equal and timely access to current and relevant
-information about the Company.
+with the objective of ensuring the Shareholders and investors are provided with ready, equal and timely access to current and relevant information about the Company.
 The Company maintains on-going dialogue with Shareholders to 本公司透過股東週年大會或其他股東大會與
 communicate with them and encourage their participation through 股東一直保持溝通並鼓勵彼等參與。
 annual general meetings or other general meetings.
@@ -1503,9 +1467,7 @@ Registered Shareholders are notified by post for the Shareholders’ 登記股�
 meetings. Notice of meeting contains agenda, proposed resolutions 會通告載有議程、提呈的決議案及郵遞投票
 and postal voting form. 表格。
 
-40 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.40 -->
 All registered Shareholders are entitled to attend annual and 所有登記股東均有權出席股東週年大會及股
 extraordinary general meetings, provided that their shares have been 東特別大會，惟彼等的股份必須已登記於股
 recorded in the Register of Shareholders. 東名冊內。
@@ -1522,8 +1484,7 @@ months after the deposit of such requisition. If within 21 days of 開有關大�
 such deposit, the Board fails to proceed to convene such meeting, 以同樣方式作出此舉，而遞呈要求人士因董
 the requisitionist(s) himself (themselves) may do so in the same 事會之缺失而產生的所有合理開支應由本公
 manner, and all reasonable expenses incurred by the requisitionist(s) 司向遞呈要求人士償付。
-as a result of the failure of the Board shall be reimbursed to the
-requisitionist(s) by the Company.
+as a result of the failure of the Board shall be reimbursed to the requisitionist(s) by the Company.
 Annual and interim reports offer comprehensive operational and 年度及中期報告為股東提供經營及財務表現
 financial performance information to Shareholders and the annual 的詳盡資料，本公司的股東週年大會為股東
 general meeting of the Company provides a forum for Shareholders to 提供與董事會成員直接交換意見的機會，這
@@ -1534,9 +1495,7 @@ the Company’s Share Registrar the proxy form enclosed with notice 以委任彼
 of meeting to give proxy to their representatives, another Shareholder 為彼等的代表。
 or chairman of the meetings.
 
-阜豐集團有限公司 年報 2025 41
-CORPORATE GOVERNANCE REPORT
-企業管治報告
+<!-- p.41 -->
 Investor Relations and Communications 與投資者的關係及溝通
 The Company recognises the importance of efficient and effective 本公司非常重視與投資界的高效及有效的溝
 communications with the investor community. Briefings and 通。本公司會定期與機構投資者舉行簡報會
@@ -1554,9 +1513,7 @@ investors to our main plants in China. Last but not least, the 問公司負責�
 Company has established a function dedicated to investor relations 站(http://www.fufeng-group.com)亦為本公司
 and engaged an external investor relations consulting company to 與其股東、投資者及公眾人士提供直接通訊
 take care of investor relations matters. The Company also maintains a 渠道，以及時獲取有關本公司之資料。
-website (http://www.fufeng-group.com) which renders Shareholders,
-investors and the general public direct access to the information of
-the Company on a timely basis.
+website (http://www.fufeng-group.com) which renders Shareholders, investors and the general public direct access to the information of the Company on a timely basis.
 In order to enable Shareholders to exercise their rights in an informed 為了讓股東在知情的情況下行使其股東的權
 manner, and to allow them to engage actively with the Company, 利，並讓他們積極參與本公司事務，本公司
 a shareholders communication policy of the Company has been 訂立了股東通訊政策。股東可在任何時間通
@@ -1575,69 +1532,71 @@ DIRECTORS’ REPORT
 董事會報告
 董事會欣然提呈本集團於本年度的報告及經
 The Board has the pleasure in presenting the report and the audited
-| financial statements of the Group for the Year. | | | | | | | 審核財務報表。 | | | | |
-| ----------------------------------------------- | --- | --- | --- | --- | --- | --- | ------- | --- | --- | --- | --- |
+
+| financial statements of the Group for the Year. | 審核財務報表。 |
+| --- | --- |
+
 主要業務
 Principal Activities
-The principal activity of the Company is investment holding. The 本公司的主要業務為投資控股，其附屬公司
-的業務活動載於合併財務報表附註38。
-activities of its subsidiaries are set out in Note 38 to the consolidated
-financial statements.
-| Results and Appropriations | | | | | | | 業績及分配 | | | | |
-| -------------------------- | --- | --- | --- | --- | --- | --- | ----- | --- | --- | --- | --- |
-Results of the Group for the Year are set out under the consolidated 本集團於本年度的業績載於第62頁的合併利
-潤表。
+The principal activity of the Company is investment holding. The 本公司的主要業務為投資控股，其附屬公司的業務活動載於合併財務報表附註38。
+activities of its subsidiaries are set out in Note 38 to the consolidated financial statements.
+
+| Results and Appropriations | 業績及分配 |
+| --- | --- |
+
+Results of the Group for the Year are set out under the consolidated 本集團於本年度的業績載於第62頁的合併利潤表。
 income statement on page 62.
 Dividend for the years are shown in the table below: 各年度的股息於下表列示︰
-| | | | | | 2025 | | | | | 2024 | |
-| ------------------------- | ------- | --- | --------- | ---------- | ---- | ------ | ---------- | --------- | ---------- | ------ | ---------- |
-| | | | | 二零二五年 | | | | | 二零二四年 | | |
-| | | | Per share | | | Amount | | Per share | | Amount | |
-| | | | 每股股份 | | | 金額 | | 每股股份 | | 金額 | |
-| | | | | RMB | | | RMB | | RMB | | RMB |
-| | | | HKD | cents | | HKD | ’000 | HKD | cents | HKD | ’000 |
-| | | | cents | equivalent | | ’000 | equivalent | cents | equivalent | ’000 | equivalent |
-| | | | | 等值 | | | 等值 | | 等值 | | 等值 |
-| | | | 港仙 | 人民幣分 | 港幣千元 | | 人民幣千元 | 港仙 | 人民幣分 | 港幣千元 | 人民幣千元 |
-| | | | | | | | | | | | |
-| Final dividend – Proposed | 末期股息－建議 | | | | | | | | | | |
+
+|  |  |  |  | 2025 |  |  |  |  | 2024 |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 二零二五年 |  |  |  |  | 二零二四年 |  |  |
+|  |  | Per share |  |  | Amount |  | Per share |  | Amount |  |
+|  |  | 每股股份 |  |  | 金額 |  | 每股股份 |  | 金額 |  |
+|  |  |  | RMB |  |  | RMB |  | RMB |  | RMB |
+|  |  | HKD | cents |  | HKD | ’000 | HKD | cents | HKD | ’000 |
+|  |  | cents | equivalent |  | ’000 | equivalent | cents | equivalent | ’000 | equivalent |
+|  |  |  | 等值 |  |  | 等值 |  | 等值 |  | 等值 |
+|  |  | 港仙 | 人民幣分 | 港幣千元 |  | 人民幣千元 | 港仙 | 人民幣分 | 港幣千元 | 人民幣千元 |
+| Final dividend – Proposed | 末期股息－建議 |  |  |  |  |  |  |  |  |  |
+
 基本(35%)
 Basic (35%) 10.7 9.4 268,286 236,108 19.0 17.5 476,263 439,486
 特別(5%)
 Special (5%) 1.5 1.3 37,610 33,099 3.0 2.8 75,200 69,393
-| | | | 12.2 | 10.7 | 305,896 | | 269,207 | 22.0 | 20.3 | 551,463 | 508,879 |
-| ----------------------- | ------- | --- | ---- | ---- | ------- | --- | ------- | ---- | ---- | ------- | ------- |
-| | | | | | | | | | | | |
-| Interim dividend – Paid | 中期股息－已付 | | | | | | | | | | |
+
+|  | 12.2 | 10.7 | 305,896 | 269,207 | 22.0 | 20.3 | 551,463 | 508,879 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Interim dividend – Paid | 中期股息－已付 |  |  |  |  |  |  |  |
+
 Basic (35%) 基本(35%) 24.4 22.3 611,767 558.219 16.0 14.6 402,800 368,659
 Special (5%) 特別(5%) 3.5 3.2 87,753 80,072 2.0 1.8 50,350 46,082
 除稅後的梅花賠償
 Special dividend on after-tax
 特別股息
 compensation from Meihua 8.6 7.8 215,623 196,749 – – – –
-| | | | 36.5 | 33.3 | 915,143 | | 835,040 | 18.0 | 16.4 | 453,150 | 414,741 |
-| --------------------------- | ------ | --- | ---- | ---- | ------- | --- | ------- | ---- | ---- | ------- | ------- |
-| | | | | | | | | | | | |
-| Total dividend for the year | 年度股息總額 | | | | | | | | | | |
+
+|  | 36.5 | 33.3 | 915,143 | 835,040 | 18.0 | 16.4 | 453,150 | 414,741 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Total dividend for the year | 年度股息總額 |  |  |  |  |  |  |  |
+
 Basic (35%) 基本(35%) 35.1 31.7 880,053 794,327 35.0 32.1 879,063 808,145
 Special (5%) 特別(5%) 5.0 4.5 125,363 113,171 5.0 4.6 125,550 115,475
 除稅後的梅花賠償
 Special dividend on after-tax
 特別股息
 compensation from Meihua 8.6 7.8 215,623 196,749 – – – –
-| | | | 48.7 | 44.0 | 1,221,039 | | 1,104,247 | 40.0 | 36.7 | 1,004,613 | 923,620 |
-| --- | --- | --- | ---- | ---- | --------- | --- | --------- | ---- | ---- | --------- | ------- |
-| | | | | | | | | | | | |
-| | | | | | | | | | | | |
-The final dividend for the Year will be payable on or about 30 June 本年度末期股息將於二零二六年六月三十日
-或前後向於二零二六年六月五日名列本公司
-2026 to Shareholders whose names appear on the register of
-| members of the Company on 5 June 2026. | | | | | | | 股東名冊的股東派付。 | | | | |
-| -------------------------------------- | --- | --- | --- | --- | --- | --- | ---------- | --- | --- | --- | --- |
 
-阜豐集團有限公司 年報 2025 43
-DIRECTORS’ REPORT
-董事會報告
+| 48.7 | 44.0 | 1,221,039 | 1,104,247 | 40.0 | 36.7 | 1,004,613 | 923,620 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+The final dividend for the Year will be payable on or about 30 June 本年度末期股息將於二零二六年六月三十日或前後向於二零二六年六月五日名列本公司
+2026 to Shareholders whose names appear on the register of
+
+| members of the Company on 5 June 2026. | 股東名冊的股東派付。 |
+| --- | --- |
+
+<!-- p.43 -->
 Material Acquisitions or Disposal of 附屬公司及聯營公司的重大收購
 Subsidiaries and Associated Companies 或出售
 The Group had no material acquisition or disposal of subsidiaries or 本集團於本年度並無進行任何附屬公司或聯
@@ -1672,9 +1631,7 @@ Ms. Li Ming 李銘女士
 Biographies of Directors are set out on page 207 of this annual 董事履歷載於本年報第207頁。
 report.
 
-44 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-DIRECTORS’ REPORT
-董事會報告
+<!-- p.44 -->
 According to Article 84 of the articles of association of the Company, 根據本公司的組織章程細則第84條，李德衡
 Mr. Li Deheng and Mr. Zhang Youming should retire by rotation and, 先生及張友明先生須於本公司應屆股東週年
 being eligible, offer themselves for re-election at the forthcoming 大會上輪值告退，惟合資格並願意重選連任。
@@ -1709,9 +1666,7 @@ Review and analysis of the Group’s activities can be found in the 構成本董
 Management Review and ESG Executive Summary of this annual 願及分析可參見本年報中的管理層回顧及
 report which forms part of this Directors’ Report. ESG管理層摘要。
 
-阜豐集團有限公司 年報 2025 45
-DIRECTORS’ REPORT
-董事會報告
+<!-- p.45 -->
 Compliance with Relevant Laws and 遵守相關法例及規例
 Regulations
 The Group recognises the importance of compliance with 本集團認同遵守監管規定的重要性及不遵守
@@ -1742,9 +1697,7 @@ profits and to distribute dividends to Shareholders. Hence, the Key 派股息。
 performance indicators are the profits attributable to the Shareholders 利和股息支付。
 and dividend payout.
 
-46 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-DIRECTORS’ REPORT
-董事會報告
+<!-- p.46 -->
 Relationship with Suppliers, Customers and 與供應商、客戶及其他持份者的
 Other Stakeholders 關係
 The Group maintained a good relationship with its suppliers and 本集團與其供應商及客戶維持良好的關係以
@@ -1771,9 +1724,7 @@ profitability of the Group which in turn the wealth of the Shareholders. 東財�
 The Group maintains regular communication with Shareholders by 東維持定期溝通。
 way of general meetings and announcements.
 
-阜豐集團有限公司 年報 2025 47
-DIRECTORS’ REPORT
-董事會報告
+<!-- p.47 -->
 Directors’ and Chief Executives’ Interests in 董事及最高行政人員的股份權益
 Shares
 The interest and short positions of the Directors and chief executives 於二零二五年十二月三十一日，董事及本公
@@ -1821,95 +1772,114 @@ to the Model Code. 交所之權益或淡倉。
 
 48
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-DIRECTORS’ REPORT
-董事會報告
-| Substantial Shareholders | | | 主要股東 | | |
-| ------------------------ | --- | --- | ---- | --- | --- |
+
+| Substantial Shareholders | 主要股東 |
+| --- | --- |
+
 As at 31 December 2025, the interests and short positions of the 於二零二五年十二月三十一日，根據證券及
 persons, other than a Director or chief executive of the Company, in 期貨條例第336條規定須存置之登記冊記錄，
 the Shares and underlying Shares as recorded in the register required 下列人士（董事或本公司最高行政人員除外）
 to be kept under section 336 of the SFO were as follows: 在股份及相關股份中擁有權益及淡倉：
-| Long position | | | 好倉 | | |
-| ------------- | --- | --- | --- | --- | --- |
+
+| Long position | 好倉 |
+| --- | --- |
+
 Percentage of
 interests to
 Class and total issued
-| | Name of Group | | number of | share capital | |
-| ---- | -------------- | -------- | ---------- | ------------- | --- |
-| Name | member | Capacity | securities | (approximate) | |
+
+|  | Name of Group |  | number of | share capital |
+| --- | --- | --- | --- | --- |
+| Name | member | Capacity | securities | (approximate) |
+
 權益佔
 已發行股本
 總數百分比
-| 名稱╱姓名 | 本集團成員公司名稱 | 身份 | 證券類別及數目 | | （約數） |
-| ----- | --------- | --- | ------- | --- | ---- |
-| | | | | | |
+
+| 名稱╱姓名 | 本集團成員公司名稱 | 身份 | 證券類別及數目 | （約數） |
+| --- | --- | --- | --- | --- |
+
 Motivator Enterprises The Company Beneficial interests 1,000,217,461 Shares 39.90%
 Limited (Note 1)
-| Motivator Enterprises | 本公司 | 實益權益 | 1,000,217,461股股份 | | 39.90% |
-| ---------------------- | --- | ---- | ---------------- | --- | ------ |
+
+| Motivator Enterprises | 本公司 | 實益權益 | 1,000,217,461股股份 | 39.90% |
+| --- | --- | --- | --- | --- |
+
 Limited（附註1）
 Shi Guiling (Note 2) The Company Interests of spouse 1,000,217,461 Shares 39.90%
-| 侍桂玲（附註2） | 本公司 | 配偶權益 | 1,000,217,461股股份 | | 39.90% |
-| ---------- | ----------- | ---------- | ------------------ | --- | ------ |
-| Stichting | The Company | Depositary | 251,155,403 Shares | | 10.02% |
+
+| 侍桂玲（附註2） | 本公司 | 配偶權益 | 1,000,217,461股股份 | 39.90% |
+| --- | --- | --- | --- | --- |
+| Stichting | The Company | Depositary | 251,155,403 Shares | 10.02% |
+
 Administratiekantoor
 Hermes Hercule
 (Note 3)
-| Stichting | 本公司 | 存託人 | 251,155,403股股份 | | 10.02% |
-| ---------- | --- | --- | -------------- | --- | ------ |
+
+| Stichting | 本公司 | 存託人 | 251,155,403股股份 | 10.02% |
+| --- | --- | --- | --- | --- |
+
 Administratiekantoor
 Hermes Hercule
 （附註3）
 Christiane Louise M. The Company Beneficiary of a trust 333,153,785 Shares 13.29%
-| Waucquez (Note 3) | | (other than a discretionary | | | |
-| ----------------- | --- | ---------------------------- | --- | --- | --- |
+
+| Waucquez (Note 3) | (other than a discretionary |
+| --- | --- |
+
 interest)
-| Christiane Louise M. | 本公司 | 信託受益人 | 333,153,785股股份 | | 13.29% |
-| --------------------- | --- | -------- | -------------- | --- | ------ |
-| Waucquez（ 附註3） | | （酌情權益除外） | | | |
+
+| Christiane Louise M. | 本公司 | 信託受益人 | 333,153,785股股份 | 13.29% |
+| --- | --- | --- | --- | --- |
+| Waucquez（ 附註3） |  | （酌情權益除外） |  |  |
+
 Jacques Marie J. The Company Founder of a discretionary 333,153,785 Shares 13.29%
-| Berghmans (Note 3) | | trust who can influence how | | | |
-| ------------------ | --- | ---------------------------- | --- | --- | --- |
+
+| Berghmans (Note 3) | trust who can influence how |
+| --- | --- |
+
 the trustee exercises his
 discretion
-| Jacques Marie J. | 本公司 | 全權信託的創始人， | 333,153,785股股份 | | 13.29% |
-| ----------------- | --- | ---------- | -------------- | --- | ------ |
-| Berghmans（ 附註3） | | 可以影響受託人 | | | |
+
+| Jacques Marie J. | 本公司 | 全權信託的創始人， | 333,153,785股股份 | 13.29% |
+| --- | --- | --- | --- | --- |
+| Berghmans（ 附註3） |  | 可以影響受託人 |  |  |
+
 行使其酌情權的方式
-| | | | | | |
-| ------ | --- | --- | --- | --- | --- |
-| Notes: | | | 附註： | | |
+
+| Notes: | 附註： |
+| --- | --- |
+
 1. The interest in these Shares is held by Motivator Enterprises Limited, the entire 1. 該等股份權益由Motivator Enterprises Limited持有，
 其全部已發行股本由本公司執行董事兼主席李學純
-issued share capital of which is wholly and beneficially owned by Mr. Li Xuechun,
-an executive Director and the chairman of the Company. Accordingly, Mr. Li 先生全資實益擁有，故此，根據證券及期貨條例，
+issued share capital of which is wholly and beneficially owned by Mr. Li Xuechun, an executive Director and the chairman of the Company. Accordingly, Mr. Li 先生全資實益擁有，故此，根據證券及期貨條例，
 Xuechun is deemed to be interested in all Shares held by Motivator Enterprises 李學純先生被視為於Motivator Enterprises Limited所
-| Limited under the SFO. | | | 持全部股份中擁有權益。 | | |
-| ---------------------- | --- | --- | ----------- | --- | --- |
+
+| Limited under the SFO. | 持全部股份中擁有權益。 |
+| --- | --- |
+
 侍桂玲女士為李學純先生之配偶，故此，根據證
-| 2. Ms. Shi Guiling is the spouse of Mr. Li Xuechun. Accordingly, she is deemed to | | | 2. | | |
-| ----------------------------------------------------------------------------------- | --- | --- | --- | --- | --- |
-be interested in the 1,000,217,461 Shares held by Motivator Enterprises Limited, 券及期貨條例，彼被視為於Motivator Enterprises
-which in turn is also deemed to be interested by Mr. Li Xuechun under the SFO. Limited所持1,000,217,461股股份中擁有權益；而李
-學純先生亦被視為於該等股份中擁有權益。
+
+| 2. Ms. Shi Guiling is the spouse of Mr. Li Xuechun. Accordingly, she is deemed to | 2. |
+| --- | --- |
+
+be interested in the 1,000,217,461 Shares held by Motivator Enterprises Limited, 券及期貨條例，彼被視為於Motivator Enterprises which in turn is also deemed to be interested by Mr. Li Xuechun under the SFO. Limited所持1,000,217,461股股份中擁有權益；而李學純先生亦被視為於該等股份中擁有權益。
 該等股份權益由Stichting Administratiekantoor
-| 3. The interest in these Shares is held by Stichting Administratiekantoor Hermes | | | 3. | | |
-| ---------------------------------------------------------------------------------- | --- | --- | --- | --- | --- |
+
+| 3. The interest in these Shares is held by Stichting Administratiekantoor Hermes | 3. |
+| --- | --- |
+
 Hercule (“STAK”), which is a trust office foundation established under the laws of Hermes Hercule（「STAK」）持有，該公司為根據荷
 the Netherlands. Mr. Jacques Marie J. Berghmans, being the founder and sole 蘭法例成立之信託辦事處基金會。Jacques Marie J.
 board member, controls STAK, whereas Ms. Christiane Louise M. Waucquez is a Berghmans先生（即STAK的創始人及唯一董事會成
-beneficiary thereof by virtue of her ownership of depositary receipts issued by the 員）控制STAK，而Christiane Louise M. Waucquez女
-士因擁有STAK發行的存託憑證而為其受益人。
+beneficiary thereof by virtue of her ownership of depositary receipts issued by the 員）控制STAK，而Christiane Louise M. Waucquez女士因擁有STAK發行的存託憑證而為其受益人。
 STAK.
 
-阜豐集團有限公司 年報 2025 49
-DIRECTORS’ REPORT
-董事會報告
+<!-- p.49 -->
 Save as disclosed above, as at 31 December 2025, according to 除上文所披露者外，於二零二五年十二月
 the register of interests required to be kept by the Company under 三十一日，根據本公司按照證券及期貨條例
 section 336 of the SFO, there was no person who had any interest or 第336條規定須存置之權益登記冊，概無人
-short position in the shares or underlying shares of the Company. 士於本公司股份或相關股份中擁有任何權益
-或淡倉。
+short position in the shares or underlying shares of the Company. 士於本公司股份或相關股份中擁有任何權益或淡倉。
 Arrangements to Purchase Shares or 購買股份或債券的安排
 Debentures
 Save as disclosed in the below section of share option scheme, no 除下文購股權計劃一節所披露外，於本年度
@@ -1919,8 +1889,7 @@ enable the Directors to acquire benefits by means of the acquisition 過收購�
 of shares in, or debentures of, the Company or any other body 債券而獲得利益；而董事、最高行政人員或
 corporate, and neither the Directors nor the chief executives, nor 彼等任何配偶或18歲以下子女概無任何權利
 any of their spouses or children under the age of 18, had any right 認購本公司證券，亦無行使任何有關權利。
-to subscribe for the securities of the Company, or had exercised any
-such right.
+to subscribe for the securities of the Company, or had exercised any such right.
 Share Option Scheme 購股權計劃
 On 12 May 2017, the Shareholders approved the adoption of the 於二零一七年五月十二日，股東批准採納購
 Share Option Scheme. A summary of the principal terms of the share 股權計劃。根據上市規則披露的購股權計劃
@@ -1944,9 +1913,7 @@ executive Directors) of the Group or any Invested Entity; 董事（包括獨立�
 (c) any supplier of goods or services to any member of the Group (c) 向本集團任何成員公司或任何被投資
 or any Invested Entity; 實體供應貨品或服務的供應商；
 
-50 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-DIRECTORS’ REPORT
-董事會報告
+<!-- p.50 -->
 (d) any customer of any member of the Group or any Invested (d) 本集團任何成員公司或任何被投資實
 Entity; and 體的任何客戶；及
 (e) any consultant, adviser, manager, officer or entity that provide (e) 向本集團或任何被投資實體提供研究、
@@ -1976,8 +1943,7 @@ The exercise price shall not be less than the highest of (i) the closing 行使�
 price of the shares as stated in the Stock Exchange’s daily quotation 每日報價表所示收市價；(ii)股份於緊接授出
 sheet on the date of grant; (ii) the average closing price of the shares 日期前五個營業日在聯交所每日報價表所示
 as stated in the Stock Exchange’s daily quotation sheet for the five 平均收市價；及(iii)股份面值（以最高者為準）。
-business days immediately preceding the date of grant; and (iii) the
-nominal value of a share.
+business days immediately preceding the date of grant; and (iii) the nominal value of a share.
 Pursuant to an ordinary resolution passed by shareholders in annual 根據股東於日期為二零一七年五月十二日股
 general meeting dated on 12 May 2017, the scheme mandate limit 東週年大會上通過之普通決議案，購股權計
 for the Share Option Scheme allow the Company to issue a maximum 劃之計劃授權限額允許本公司根據購股權
@@ -1988,15 +1954,14 @@ December 2025. 前）之10.16%。
 
 51
 阜豐集團有限公司 年報 2025
-DIRECTORS’ REPORT
-董事會報告
 此外，根據購股權計劃可供發行之尚未發行
-In addition, the outstanding number of the shares available for issue
-under the Share Option Scheme is 251,573,403, representing 股份數目為251,573,403股，相當於本年度
+In addition, the outstanding number of the shares available for issue under the Share Option Scheme is 251,573,403, representing 股份數目為251,573,403股，相當於本年度
 10.03% of the weighted average issued share capital of 加權平均已發行股本2,507,006,818股股份之
-| 2,507,006,818 Shares for the Year. | | | | | | | 10.03%。 | | | |
-| ---------------------------------- | --- | --- | --- | --- | --- | --- | ------- | --- | --- | --- |
-| Share options granted | | | | | | | 已授出的購股權 | | | |
+
+| 2,507,006,818 Shares for the Year. | 10.03%。 |
+| --- | --- |
+| Share options granted | 已授出的購股權 |
+
 As at 1 January 2025 and 31 December 2025, the number of 於二零二五年一月一日及二零二五年十二月
 share options available for grant under the Share Option Scheme 三十一日，購股權計劃可供授出的購股權數
 were 249,585,403 Shares and 251,573,403 Shares respectively, 目分別為249,585,403股股份及251,573,403
@@ -2009,8 +1974,7 @@ and 888,000 Shares on 31 March 2021, 4 July 2022 and 29 April 年四月二十九
 and 888,000 outstanding share options lapsed during the Year. 份及888,000股股份。1,100,000份及888,000
 The scheme mandate limit of the Share Option Scheme allows the 份尚未行使的購股權在本年度內失效。購股
 Company to issue up to 254,673,403 Shares. Details of the share 權計劃的計劃授權限額准許本公司發行最多
-options granted and outstanding for the Year, are as follows: 254,673,403股股份。已授出及於年內尚未行
-使的購股權詳情如下：
+options granted and outstanding for the Year, are as follows: 254,673,403股股份。已授出及於年內尚未行使的購股權詳情如下：
 Number of share options
 購股權數目
 The closing
@@ -2019,34 +1983,41 @@ the shares
 immediately
 before
 the date on
-| | | At | Granted | Exercised | Lapsed | Cancelled | At | Exercise | | which |
-| --- | --- | --- | ------- | --------- | ------ | ---------- | --- | -------- | --- | ------ |
-Director and eligible 1 January during during during during 31 December Date of price the options Exercise Vesting
-employees Note 2025 the Year the Year# the Year the Year 2025 grant (HKD)were granted period Period*
-| | | | | | | | 於 | | | 緊接 |
-| -------- | --- | ----- | --- | --- | --- | --- | --------- | ---- | ----- | --------- |
-| | | 於 | | | | | 二零二五年 | | 授出購股權 | |
-| | | 二零二五年 | 於年內 | 於年內 | 於年內 | 於年內 | 十二月 | 行使價 | 日期前股份 | |
+
+| At | Granted | Exercised | Lapsed | Cancelled | At | Exercise | which |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+Director and eligible 1 January during during during during 31 December Date of price the options Exercise Vesting employees Note 2025 the Year the Year# the Year the Year 2025 grant (HKD)were granted period Period*
+
+|  |  |  |  |  |  |  | 於 |  |  | 緊接 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | 於 |  |  |  |  | 二零二五年 |  | 授出購股權 |  |
+|  |  | 二零二五年 | 於年內 | 於年內 | 於年內 | 於年內 | 十二月 | 行使價 | 日期前股份 |  |
 | 董事及合資格僱員 | 附註 | 一月一日 | 授出 | 行使# | 失效 | 註銷 | 三十一日 授出日期 | （港元） | 的收市價 | 行使期限 歸屬期* |
-| | | | | | | | | | | |
+
 Under the Share Option Scheme
 根據購股權計劃
 Eligible employees A 1,100,000 – – (1,100,000) – 0 31/3/2021 2.95 2.8731/3/2023– 31/3/2021–
-| 合資格僱員 | | | | | | | | | | 30/3/2027 30/3/2026 |
-| ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------------------- |
+
+| 合資格僱員 | 30/3/2027 30/3/2026 |
+| --- | --- |
+
 Eligible employees B 2,000,000 – (591,000) – – 1,409,000 4/7/2022 4.96 5.03 4/7/2024– 4/7/2022–
-| 合資格僱員 | | | | | | | | | | 3/7/2028 3/7/2027 |
-| ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ----------------- |
+
+| 合資格僱員 | 3/7/2028 3/7/2027 |
+| --- | --- |
+
 Eligible employees C 888,000 – – (888,000) – 0 29/4/2024 5.52 5.4729/4/2026– 29/4/2024–
-| 合資格僱員 | | | | | | | | | | 28/4/2030 28/4/2029 |
-| ----- | --- | --------- | --- | ----------- | ----------- | --- | ----------- | --- | --- | ------------------- |
-| | | | | | | | | | | |
-| | | 3,988,000 | | – (591,000) | (1,988,000) | | – 1,409,000 | | | |
-| | | | | | | | | | | |
-| | | | | | | | | | | |
+
+| 合資格僱員 |  |  |  |  | 28/4/2030 28/4/2029 |
+| --- | --- | --- | --- | --- | --- |
+|  | 3,988,000 | – (591,000) | (1,988,000) | – 1,409,000 |  |
+
 # The weighted average closing price of the Shares immediately before the dates on # 緊接行使購股權日期前股份的加權平均收市價為
-| which the options were exercised was HKD6.639. | | | | | | | 6.639港元。 | | | |
-| ---------------------------------------------- | --- | --- | --- | --- | --- | --- | -------- | --- | --- | --- |
+
+| which the options were exercised was HKD6.639. | 6.639港元。 |
+| --- | --- |
+
 * The vesting schedule of all share options granted under the Share Option Scheme * 根據購股權計劃授出的所有購股權的歸屬時間表均
 are the same. The options under each grant vest in tranches over a period of 相同。每次授出之購股權按最長5年的期限分批歸屬。
 up to 5 years. Each tranche represents up to 25% of the granted share options, 每批最多佔已授出購股權的25%，總共有四批。第
@@ -2056,49 +2027,52 @@ following the date of the grant. The remaining 3 tranches vest annually on the 3
 
 52
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-DIRECTORS’ REPORT
-董事會報告
 以股份支付所採納的會計準則與政策載於合
-The accounting standards and policy adopted for share-based
-payments are set out in Note 39.20 to the consolidated financial 併財務報表附註39.20。
+The accounting standards and policy adopted for share-based payments are set out in Note 39.20 to the consolidated financial 併財務報表附註39.20。
 statements.
-The fair values, which were determined by an independent qualified 於授出日期授出的購股權的公平值由獨立合
-資格估值師採用二項式期權定價模式釐定，
-appraiser using the Binomial Option Pricing Model, of the options
-granted as at the grant dates are noted in the following table. The 如下表所示。計算於授出日期購股權公平值
+The fair values, which were determined by an independent qualified 於授出日期授出的購股權的公平值由獨立合資格估值師採用二項式期權定價模式釐定，
+appraiser using the Binomial Option Pricing Model, of the options granted as at the grant dates are noted in the following table. The 如下表所示。計算於授出日期購股權公平值
 following assumptions were adopted to calculate the fair values of the 採納的假設如下：
 options on the grant dates:
-| | | | | (A) | | (B) | | (C) |
-| ------------- | ---- | --- | --------- | ---- | ----- | ------- | ------ | -------- |
-| | | | 31 March | | | 4 July | | 29 April |
-| Date of grant | 授出日期 | | | 2021 | | 2022 | | 2024 |
-| | | | 二零二一年 | | 二零二二年 | | | 二零二四年 |
-| | | | 三月三十一日 | | 七月四日 | | 四月二十九日 | |
-| | | | | | | | | |
+
+|  |  |  | (A) |  | (B) |  | (C) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | 31 March |  |  | 4 July |  | 29 April |
+| Date of grant | 授出日期 |  | 2021 |  | 2022 |  | 2024 |
+|  |  | 二零二一年 |  | 二零二二年 |  |  | 二零二四年 |
+|  |  | 三月三十一日 |  | 七月四日 |  | 四月二十九日 |  |
+
 Fair value as at the grant date 於授出日期的公平值 RMB1,164,000 RMB2,589,000 RMB832,000
-| | | 人民幣1,164,000元 | | 人民幣2,589,000元 | | | 人民幣832,000元 | |
-| ------------------- | ---- | ------------- | ------- | ------------- | ------- | --- | ----------- | ------- |
-| Assumptions: | 假設： | | | | | | | |
-| Average share price | 平均股價 | | HKD2.80 | | HKD4.96 | | | HKD5.52 |
-| | | | 2.80港元 | | 4.96港元 | | | 5.52港元 |
-| Exercise price | 行使價 | | HKD2.95 | | HKD4.96 | | | HKD5.52 |
-| | | | 2.95港元 | | 4.96港元 | | | 5.52港元 |
+
+|  |  | 人民幣1,164,000元 |  | 人民幣2,589,000元 |  | 人民幣832,000元 |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Assumptions: | 假設： |  |  |  |  |  |  |
+| Average share price | 平均股價 |  | HKD2.80 |  | HKD4.96 |  | HKD5.52 |
+|  |  |  | 2.80港元 |  | 4.96港元 |  | 5.52港元 |
+| Exercise price | 行使價 |  | HKD2.95 |  | HKD4.96 |  | HKD5.52 |
+|  |  |  | 2.95港元 |  | 4.96港元 |  | 5.52港元 |
+
 Expected life of options 購股權預計年期 6.0 years 6.0 years 6.0 years
-| | | | | 6.0年 | | 6.0年 | | 6.0年 |
-| ----------------------- | ----- | --- | --- | ------ | --- | ------ | --- | ------ |
-| Expected volatility | 預計波幅 | | | 44.35% | | 42.06% | | 40.46% |
-| Expected dividend yield | 預計股息率 | | | 6.93% | | 3.76% | | 9.89% |
+
+|  |  | 6.0年 | 6.0年 | 6.0年 |
+| --- | --- | --- | --- | --- |
+| Expected volatility | 預計波幅 | 44.35% | 42.06% | 40.46% |
+| Expected dividend yield | 預計股息率 | 6.93% | 3.76% | 9.89% |
+
 零風險利率
-| Risk free rate | | | | 1.22% | | 2.85% | | 4.06% |
-| -------------- | --- | --- | --- | ------- | --- | ------- | --- | ------- |
-| | | | | | | | | |
+
+| Risk free rate | 1.22% | 2.85% | 4.06% |
+| --- | --- | --- | --- |
+
 In determining the assumptions for the valuation, the appraiser was 在釐定估值的假設時，估值師由本公司管理
 furnished with records and documents by the management of the 層提供相關紀錄與文件，並參考財務及商業
 Company and consulted sources of financial and business information 資料來源，以補充本公司管理層提供的資料。
 to supplement the information provided by the management of the
 Company.
-| Major Customers and Suppliers | | | 主要客戶及供應商 | | | | | |
-| ----------------------------- | --- | --- | -------- | --- | --- | --- | --- | --- |
+
+| Major Customers and Suppliers | 主要客戶及供應商 |
+| --- | --- |
+
 The aggregate sales attributable to the Group’s largest customer and 本集團最大客戶及五大客戶應佔的銷售總額
 five largest customers taken together were less than 30% of the total 合共佔本年度銷售總額少於30%。
 sales for the Year.
@@ -2106,9 +2080,7 @@ The aggregate purchases attributable to the Group’s five largest 本集團五�
 suppliers taken together were less than 30% of the Group’s total 集團本年度購貨總額少於30%。
 purchases for the Year.
 
-阜豐集團有限公司 年報 2025 53
-DIRECTORS’ REPORT
-董事會報告
+<!-- p.53 -->
 Management Contracts 管理合約
 No contracts concerning the management and administration of the 本年度概無訂立或存有任何有關管理及經營
 whole or any substantial part of the business of the Company were 本公司全部或任何重大部分業務的合約。
@@ -2145,9 +2117,7 @@ Except for dividend income which is exempt from tax in Hong Kong, 除股息收�
 the Directors are not aware of any tax relief and exemption available 股東因持有股份而可享有任何稅務寬減及豁免。
 to the Shareholders by reason of holding the Shares.
 
-54 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-DIRECTORS’ REPORT
-董事會報告
+<!-- p.54 -->
 Dividend Policy 股息政策
 The Board may declare dividend from time to time. The Board has 董事會可不時宣派股息。董事會於考慮以下
 absolute discretion in the declaration of dividend after taking into 因素後全權酌情決定股息之宣派：
@@ -2174,7 +2144,7 @@ Li Xuechun 主席
 Chairman 李學純
 26 March 2026 二零二六年三月二十六日
 
-阜豐集團有限公司 年報 2025 55
+<!-- p.55 -->
 INDEPENDENT AUDITOR’S REPORT
 獨立核數師報告
 To the Shareholders of Fufeng Group Limited 致阜豐集團有限公司股東
@@ -2209,7 +2179,7 @@ Kong Companies Ordinance.
 PricewaterhouseCoopers, 22/F, Prince’s Building, Central, Hong Kong 羅兵咸永道會計師事務所，香港中環太子大廈廿二樓
 T: +852 2289 8888, F: +852 2810 9888, www.pwchk.com 總機：+852 2289 8888，傳真：+852 2810 9888，www.pwchk.com
 
-56 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.56 -->
 INDEPENDENT AUDITOR’S REPORT (Continued)
 獨立核數師報告（續）
 BASIS FOR OPINION 意見的基礎
@@ -2234,64 +2204,36 @@ addressed in the context of our audit of the consolidated financial 出具意見
 statements as a whole, and in forming our opinion thereon, and we 項發表單獨意見。
 do not provide a separate opinion on these matters.
 
-阜豐集團有限公司 年報 2025 57
-INDEPENDENT AUDITOR’S REPORT (Continued)
-獨立核數師報告（續）
+<!-- p.57 -->
 The key audit matter identified in our audit is related to “Revenue 我們於審計中識別出的關鍵審計事項與「收入
 Recognition”. 確認」有關。
 Key Audit Matter How our audit addressed the Key Audit Matter
 關鍵審計事項 我們的審計如何處理關鍵審計事項
 Revenue Recognition We evaluated and validated management’s key controls
-收入確認 that are present in the Group’s sales process from end-to-
-end, from customer order’s approval, sales recording, all
+收入確認 that are present in the Group’s sales process from end-to-end, from customer order’s approval, sales recording, all
 Refer to Note 5 to the Group’s consolidated financial the way through to reconciliations with customers’ records.
-statements. 我們對 貴集團銷售流程中管理層現有的關鍵控制進行
-請參閱 貴集團合併財務報表附註5。 評估及驗證，包括從客戶訂單批准、記錄銷售一直到客
-戶記錄對賬整個過程。
+statements. 我們對 貴集團銷售流程中管理層現有的關鍵控制進行請參閱 貴集團合併財務報表附註5。 評估及驗證，包括從客戶訂單批准、記錄銷售一直到客戶記錄對賬整個過程。
 Revenue from sales of goods amounted to RMB27,879
-million for the year ended 31 December 2025. Revenue is We conducted testing of sales revenue recorded covering
-recognized when control of the underlying products has different products, locations and customers on a sample
-been transferred to the customers. basis, by examining the relevant supporting documents
+million for the year ended 31 December 2025. Revenue is We conducted testing of sales revenue recorded covering recognized when control of the underlying products has different products, locations and customers on a sample been transferred to the customers. basis, by examining the relevant supporting documents
 截至二零二五年十二月三十一日止年度，商品銷售收入 including customer orders, goods delivery notes and/or
 為人民幣27,879,000,000元。相關商品控制權轉移至客 customs declaration notices. In addition, we confirmed
-戶時，確認相關收入。 certain customers’ receivable balances at the balance
-sheet date, and tested the reconciliations between the
-We focused on this area due to the huge volume of revenue book amounts and confirmed amounts if these were
-transactions generated from sales of numerous kinds of different. The items tested were selected on a sample basis
-products to a large number of customers that occurred by considering the amount, nature and characteristics of
-in many different locations. There is potential risk of those customers.
+戶時，確認相關收入。 certain customers’ receivable balances at the balance sheet date, and tested the reconciliations between the
+We focused on this area due to the huge volume of revenue book amounts and confirmed amounts if these were transactions generated from sales of numerous kinds of different. The items tested were selected on a sample basis products to a large number of customers that occurred by considering the amount, nature and characteristics of in many different locations. There is potential risk of those customers.
 misstatement in relation to whether revenue is recognized 我們對不同產品、地點及客戶記錄的銷售收入進行了抽
-in the correct reporting periods. 樣測試，檢查銷售相關支持性文件，包括客戶訂單、發
-我們考慮到於眾多不同地點與眾多客戶進行交易，銷售 貨單及╱或報關單。此外，我們對資產負債表日的特定
-多種商品且交易量巨大，我們對該領域重點關注。收入 客戶應收賬款餘額進行了發函確認，如果回函金額同賬
-是否已確認在正確報告期間存在潛在錯報風險。 面金額存在差異，則對差異調節表進行測試。抽樣測試
-項目乃通過考慮交易金額、交易性質及客戶特徵等基礎
-上挑選的。
-Our work also included testing of a sample of revenue-
-related adjusting journal entries by inquiring management
-of the nature of these journals and inspection of the
-supporting documents.
+in the correct reporting periods. 樣測試，檢查銷售相關支持性文件，包括客戶訂單、發我們考慮到於眾多不同地點與眾多客戶進行交易，銷售 貨單及╱或報關單。此外，我們對資產負債表日的特定多種商品且交易量巨大，我們對該領域重點關注。收入 客戶應收賬款餘額進行了發函確認，如果回函金額同賬是否已確認在正確報告期間存在潛在錯報風險。 面金額存在差異，則對差異調節表進行測試。抽樣測試項目乃通過考慮交易金額、交易性質及客戶特徵等基礎上挑選的。
+Our work also included testing of a sample of revenue-related adjusting journal entries by inquiring management of the nature of these journals and inspection of the supporting documents.
 我們的工作還包括通過詢問管理層該些分錄的性質以及
 檢查其支持性文件來測試被抽樣的與收入相關的調整分錄。
-Furthermore, one of our focused audit efforts was testing
-sales transactions that took place shortly before and after
-the balance sheet date, by reconciling recognized revenue
-with the goods delivery notes and/or customs declaration
-notices to assess whether revenue was recognized in the
-correct reporting periods.
+Furthermore, one of our focused audit efforts was testing sales transactions that took place shortly before and after the balance sheet date, by reconciling recognized revenue with the goods delivery notes and/or customs declaration notices to assess whether revenue was recognized in the correct reporting periods.
 此外，我們的審計工作重點之一是對資產負債表日前後
 不久發生的銷售交易進行測試，通過檢查發貨單及╱或
 報關單，與已確認收入進行對比，評估收入是否確認在
 正確報告期間。
-We found the Group’s sales transactions being tested
-were recognized in a manner consistent with the Group’s
-revenue recognition accounting policy.
+We found the Group’s sales transactions being tested were recognized in a manner consistent with the Group’s revenue recognition accounting policy.
 我們認為已測試的 貴集團銷售交易的確認與 貴集團
 收入確認的會計政策保持一致。
 
-58 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-INDEPENDENT AUDITOR’S REPORT (Continued)
-獨立核數師報告（續）
+<!-- p.58 -->
 OTHER INFORMATION 其他資料
 The directors of the Company are responsible for the other 貴公司董事須對其他資料負責。其他資料包
 information. The other information comprises all of the information 括年報內的所有資料，但不包括合併財務報
@@ -2317,8 +2259,7 @@ view in accordance with HKFRS Accounting Standards as issued 的披露規定擬�
 by the HKICPA and the disclosure requirements of the Hong Kong 並對董事認為為使合併財務報表的擬備不存
 Companies Ordinance, and for such internal control as the directors 在由於欺詐或錯誤而導致的重大錯誤陳述所
 determine is necessary to enable the preparation of consolidated 需的內部控制負責。
-financial statements that are free from material misstatement, whether
-due to fraud or error.
+financial statements that are free from material misstatement, whether due to fraud or error.
 In preparing the consolidated financial statements, the directors are 在擬備合併財務報表時，董事負責評估 貴
 responsible for assessing the Group’s ability to continue as a going 集團持續經營的能力，並在適用情況下披露
 concern, disclosing, as applicable, matters related to going concern 與持續經營有關的事項，以及使用持續經營
@@ -2328,9 +2269,7 @@ realistic alternative but to do so.
 The Audit Committee are responsible for overseeing the Group’s 審計委員會須負責監督 貴集團的財務報告
 financial reporting process. 過程。
 
-阜豐集團有限公司 年報 2025 59
-INDEPENDENT AUDITOR’S REPORT (Continued)
-獨立核數師報告（續）
+<!-- p.59 -->
 AUDITOR’S RESPONSIBILITIES FOR THE 核數師就審計合併財務報表承擔
 AUDIT OF THE CONSOLIDATED FINANCIAL 的責任
 STATEMENTS
@@ -2367,9 +2306,7 @@ on the effectiveness of the Group’s internal control.
 and the reasonableness of accounting estimates and related 出會計估計和相關披露的合理性。
 disclosures made by the directors.
 
-60 FUFENG GROUP LIMITED ANNUAL REPORT 2025
-INDEPENDENT AUDITOR’S REPORT (Continued)
-獨立核數師報告（續）
+<!-- p.60 -->
 • Conclude on the appropriateness of the directors’ use of the • 對董事採用持續經營會計基礎的恰當性
 going concern basis of accounting and, based on the audit 作出結論。根據所獲取的審計憑證，確
 evidence obtained, whether a material uncertainty exists related 定是否存在與事項或情況有關的重大不
@@ -2385,8 +2322,7 @@ Group to cease to continue as a going concern. 致 貴集團不能持續經營�
 • Evaluate the overall presentation, structure and content of the • 評價合併財務報表的整體列報方式、結
 consolidated financial statements, including the disclosures, 構和內容，包括披露，以及合併財務報
 and whether the consolidated financial statements represent the 表是否公平呈列相關交易和事項。
-underlying transactions and events in a manner that achieves fair
-presentation.
+underlying transactions and events in a manner that achieves fair presentation.
 • Plan and perform the group audit to obtain sufficient appropriate • 規劃並執行集團審計工作，以就 貴集
 audit evidence regarding the financial information of the entities 團內實體或業務單位的財務資料獲取充
 or business units within the Group as a basis for forming an 足、適當的審計憑證，作為對合併財務
@@ -2405,9 +2341,7 @@ that may reasonably be thought to bear on our independence, and 立性的所有�
 where applicable, actions taken to eliminate threats or safeguards 情況下，用以消除對獨立性產生威脅的行動
 applied. 或採取的防範措施。
 
-阜豐集團有限公司 年報 2025 61
-INDEPENDENT AUDITOR’S REPORT (Continued)
-獨立核數師報告（續）
+<!-- p.61 -->
 From the matters communicated with the Audit Committee, we 從與審計委員會溝通的事項中，我們確定對
 determine those matters that were of most significance in the audit 本期合併財務報表的審計最為重要的事項，
 of the consolidated financial statements of the current period and are 因而構成關鍵審計事項。我們在核數師報告
@@ -2416,8 +2350,7 @@ auditor’s report unless law or regulation precludes public disclosure 開披�
 about the matter or when, in extremely rare circumstances, we 如果合理預期在我們報告中溝通某事項造成
 determine that a matter should not be communicated in our report 的負面後果超過產生的公眾利益，我們決定
 because the adverse consequences of doing so would reasonably 不應在報告中溝通該事項。
-be expected to outweigh the public interest benefits of such
-communication.
+be expected to outweigh the public interest benefits of such communication.
 The engagement partner on the audit resulting in this independent 出具本獨立核數師報告的審計項目合夥人是
 auditor’s report is Leung, Wai Kin (practising certificate number: 梁偉堅（執業證書編號：P03880）。
 P03880).
@@ -2432,59 +2365,65 @@ CONSOLIDATED INCOME STATEMENT
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 Year ended 31 December
 截至十二月三十一日止年度
-| | | | | 2025 | | 2024 |
-| --- | --- | ---- | --- | ------- | --- | ------- |
-| | | | | 二零二五年 | | 二零二四年 |
-| | | Note | | RMB’000 | | RMB’000 |
-| | | 附註 | | | | 人民幣千元 |
+
+|  | 2025 | 2024 |
+| --- | --- | --- |
+|  | 二零二五年 | 二零二四年 |
+| Note | RMB’000 | RMB’000 |
+| 附註 |  | 人民幣千元 |
+
 人民幣千元
-| | | | | | | |
-| ------------- | ---- | --- | --- | ------------ | --- | ------------ |
-| Revenue | 收入 | 5 | | 27,879,194 | | 27,757,310 |
-| Cost of sales | 銷售成本 | 8 | | (22,397,259) | | (22,700,488) |
-| | | | | | | |
-| Gross profit | 毛利 | | | 5,481,935 | | 5,056,822 |
+
+| Revenue | 收入 | 5 | 27,879,194 | 27,757,310 |
+| --- | --- | --- | --- | --- |
+| Cost of sales | 銷售成本 | 8 | (22,397,259) | (22,700,488) |
+| Gross profit | 毛利 |  | 5,481,935 | 5,056,822 |
+
 Selling and marketing expenses 銷售及市場推廣開支 8 (2,166,944) (1,963,722)
-| Administrative expenses | 行政開支 | 8 | | (1,205,836) | | (1,091,267) |
-| ---------------------------------- | ---------- | ---------- | --- | ----------- | --- | ----------- |
-| Reversal of impairment losses on | 金融資產減值虧損撥回 | | | | | |
-| financial assets | | 3.1(b)(ii) | | 13,068 | | 7,170 |
+
+| Administrative expenses | 行政開支 | 8 | (1,205,836) | (1,091,267) |
+| --- | --- | --- | --- | --- |
+| Reversal of impairment losses on | 金融資產減值虧損撥回 |  |  |  |
+| financial assets |  | 3.1(b)(ii) | 13,068 | 7,170 |
+
 其他經營開支
-| Other operating expenses | | 8 | | (103,096) | | (63,219) |
-| ------------------------ | ------- | --- | --- | --------- | --- | --------- |
-| Other income | 其他收益 | 6 | | 482,936 | | 297,437 |
-| Other gains – net | 其他利得－淨額 | 7 | | 223,795 | | 300,293 |
-| | | | | | | |
-| Operating profit | 經營溢利 | | | 2,725,858 | | 2,543,514 |
-| | | | | | | |
+
+| Other operating expenses |  | 8 | (103,096) | (63,219) |
+| --- | --- | --- | --- | --- |
+| Other income | 其他收益 | 6 | 482,936 | 297,437 |
+| Other gains – net | 其他利得－淨額 | 7 | 223,795 | 300,293 |
+| Operating profit | 經營溢利 |  | 2,725,858 | 2,543,514 |
+
 財務收入
-| Finance income | | 10 | | 532,526 | | 498,661 |
-| -------------- | ---- | --- | --- | --------- | --- | --------- |
-| Finance costs | 財務成本 | 10 | | (262,075) | | (205,030) |
-| | | | | | | |
+
+| Finance income |  | 10 | 532,526 | 498,661 |
+| --- | --- | --- | --- | --- |
+| Finance costs | 財務成本 | 10 | (262,075) | (205,030) |
+
 財務收入－淨額
-| Finance income – net | | | | 270,451 | | 293,631 |
-| --------------------------------- | ----------- | --- | --- | ------- | --- | ------- |
-| Share of net loss of associates | 採用權益法列賬的應佔 | | | | | |
+
+| Finance income – net | 270,451 | 293,631 |
+| --- | --- | --- |
+| Share of net loss of associates | 採用權益法列賬的應佔 |  |
+
 聯營公司淨虧損
-| accounted for using the equity method | | 13 | | (213) | | (114) |
-| ------------------------------------- | --------- | --- | --- | --------- | --- | --------- |
-| Profit before income tax | 除所得稅前溢利 | | | 2,996,096 | | 2,837,031 |
-| Income tax expense | 所得稅開支 | 11 | | (530,868) | | (524,647) |
-| | | | | | | |
-| Profit for the year attributable to | 股東應佔年內溢利 | | | | | |
-| the Shareholders | | | | 2,465,228 | | 2,312,384 |
-| | | | | | | |
-| Earnings per share for profit | 年內股東應佔溢利 | | | | | |
-| attributable to the Shareholders | 每股盈利 | | | | | |
+
+| accounted for using the equity method |  | 13 | (213) | (114) |
+| --- | --- | --- | --- | --- |
+| Profit before income tax | 除所得稅前溢利 |  | 2,996,096 | 2,837,031 |
+| Income tax expense | 所得稅開支 | 11 | (530,868) | (524,647) |
+| Profit for the year attributable to | 股東應佔年內溢利 |  |  |  |
+| the Shareholders |  |  | 2,465,228 | 2,312,384 |
+| Earnings per share for profit | 年內股東應佔溢利 |  |  |  |
+| attributable to the Shareholders | 每股盈利 |  |  |  |
+
 during the year
-| (expressed in RMB cents per share) | （以每股人民幣分呈列） | | | | | |
-| ---------------------------------- | ----------- | --- | --- | ----- | --- | ----- |
-| – basic | －基本 | 12 | | 98.33 | | 91.86 |
-| | | | | | | |
-| – diluted | －攤薄 | 12 | | 98.31 | | 91.84 |
-| | | | | | | |
-| | | | | | | |
+
+| (expressed in RMB cents per share) | （以每股人民幣分呈列） |  |  |  |
+| --- | --- | --- | --- | --- |
+| – basic | －基本 | 12 | 98.33 | 91.86 |
+| – diluted | －攤薄 | 12 | 98.31 | 91.84 |
+
 The above consolidated income statement should be read in 上述合併利潤表應與隨附附註一併閱讀。
 conjunction with the accompanying notes.
 
@@ -2495,28 +2434,29 @@ CONSOLIDATED STATEMENT OF COMPREHENSIVE INCOME
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 Year ended 31 December
 截至十二月三十一日止年度
-| | | | 2025 | | 2024 |
-| --- | --- | --- | ---- | --- | ---- |
+
+| 2025 | 2024 |
+| --- | --- |
+
 二零二四年
 二零二五年
-| | | | RMB’000 | | RMB’000 |
-| ------------------------------------------------ | ------------ | ----- | --------- | ----- | --------- |
-| | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | |
-| Profit for the year | 年內溢利 | | 2,465,228 | | 2,312,384 |
-| | | | | | |
-| Other comprehensive loss for the year | 年內其他綜合虧損 | | | | |
-| Items that may be reclassified to profit or loss | 可能重新分類至損益的項目 | | | | |
-| Exchange differences on translation of | 海外業務的匯兌折算差額 | | | | |
-| foreign operations | | | (6,525) | | (3,560) |
-| | | | | | |
-| | | | (6,525) | | (3,560) |
+
+|  |  |  | RMB’000 |  | RMB’000 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Profit for the year | 年內溢利 |  | 2,465,228 |  | 2,312,384 |
+| Other comprehensive loss for the year | 年內其他綜合虧損 |  |  |  |  |
+| Items that may be reclassified to profit or loss | 可能重新分類至損益的項目 |  |  |  |  |
+| Exchange differences on translation of | 海外業務的匯兌折算差額 |  |  |  |  |
+| foreign operations |  |  | (6,525) |  | (3,560) |
+|  |  |  | (6,525) |  | (3,560) |
+
 股東應佔年內綜合收益總額
 Total comprehensive income for the year
-| attributable to the Shareholders | | | 2,458,703 | | 2,308,824 |
-| -------------------------------- | --- | --- | --------- | --- | --------- |
-| | | | | | |
-| | | | | | |
+
+| attributable to the Shareholders | 2,458,703 | 2,308,824 |
+| --- | --- | --- |
+
 The above consolidated statement of comprehensive income should 上述合併綜合收益表應與隨附附註一併閱讀。
 be read in conjunction with the accompanying notes.
 
@@ -2527,63 +2467,70 @@ CONSOLIDATED BALANCE SHEET
 As at 31 December 2025 於二零二五年十二月三十一日
 As at 31 December
 於十二月三十一日
-| | | | | | 2025 | | 2024 |
-| --- | --- | --- | --- | --- | ---- | --- | ---- |
+
+| 2025 | 2024 |
+| --- | --- |
+
 二零二四年
 二零二五年
-| | | Note | | RMB’000 | | RMB’000 | |
-| ------------------ | ----- | ---- | --- | ------- | --- | ------- | --- |
-| | | 附註 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | |
-| ASSETS | 資產 | | | | | | |
-| Non-current assets | 非流動資產 | | | | | | |
+
+|  |  | Note | RMB’000 | RMB’000 |
+| --- | --- | --- | --- | --- |
+|  |  | 附註 | 人民幣千元 | 人民幣千元 |
+| ASSETS | 資產 |  |  |  |
+| Non-current assets | 非流動資產 |  |  |  |
+
 物業、廠房及設備
-| Property, plant and equipment | | 14 | | 13,768,311 | | 12,408,824 | |
-| ---------------------------------------- | ---------- | --- | --- | ---------- | ----- | ---------- | ------ |
-| Right-of-use assets | 使用權資產 | 15 | | 983,022 | | 935,929 | |
-| Intangible assets | 無形資產 | 16 | | 88,284 | | | 72,218 |
-| Deferred income tax assets | 遞延所得稅資產 | 30 | | 42,434 | | | 57,141 |
-| Investments accounted for using the | 採用權益法列賬的投資 | | | | | | |
-| equity method | | 13 | | | 9,703 | | 86 |
-| Financial assets at fair value through | 按公平值計入損益的 | | | | | | |
-| profit or loss | 金融資產 | 17 | | | 4,007 | | 5,232 |
+
+| Property, plant and equipment |  | 14 | 13,768,311 |  | 12,408,824 |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Right-of-use assets | 使用權資產 | 15 | 983,022 |  | 935,929 |  |
+| Intangible assets | 無形資產 | 16 | 88,284 |  |  | 72,218 |
+| Deferred income tax assets | 遞延所得稅資產 | 30 | 42,434 |  |  | 57,141 |
+| Investments accounted for using the | 採用權益法列賬的投資 |  |  |  |  |  |
+| equity method |  | 13 |  | 9,703 |  | 86 |
+| Financial assets at fair value through | 按公平值計入損益的 |  |  |  |  |  |
+| profit or loss | 金融資產 | 17 |  | 4,007 |  | 5,232 |
+
 Other receivables and prepayments 其他應收款項及預付款項 21 512,807 78,329
-| | | | | | | | |
-| ------------------------ | ------- | --- | --- | ---------- | --- | ---------- | --- |
-| Total non-current assets | 非流動資產總值 | | | 15,408,568 | | 13,557,759 | |
-| | | | | | | | |
-| Current assets | 流動資產 | | | | | | |
+
+| Total non-current assets | 非流動資產總值 | 15,408,568 | 13,557,759 |
+| --- | --- | --- | --- |
+| Current assets | 流動資產 |  |  |
+
 發展中物業
-| Properties under development | | 23 | | 125,514 | | 100,271 | |
-| ------------------------------ | --------- | --- | --- | --------- | --- | --------- | --- |
-| Inventories | 存貨 | 20 | | 6,756,748 | | 6,034,293 | |
-| Trade and other receivables, | 應收貿易賬款及 | | | | | | |
-| notes receivable and | 其他應收款項、 | | | | | | |
-| prepayments | 應收票據及預付款項 | 21 | | 1,927,867 | | 2,735,718 | |
+
+| Properties under development |  | 23 | 125,514 | 100,271 |
+| --- | --- | --- | --- | --- |
+| Inventories | 存貨 | 20 | 6,756,748 | 6,034,293 |
+| Trade and other receivables, | 應收貿易賬款及 |  |  |  |
+| notes receivable and | 其他應收款項、 |  |  |  |
+| prepayments | 應收票據及預付款項 | 21 | 1,927,867 | 2,735,718 |
+
 衍生金融工具
-| Derivative financial instruments | | 18 | | | – | | 4,706 |
-| -------------------------------------- | --------- | --- | --- | ---------- | --- | ---------- | ----- |
-| Time deposits | 定期存款 | 22 | | | – | 745,840 | |
-| Restricted bank balances | 受限制的銀行結餘 | 22 | | 6,030,251 | | 3,009,115 | |
-| Cash and cash equivalents | 現金及現金等值物 | 22 | | 13,465,776 | | 9,902,194 | |
-| | | | | | | | |
-| Total current assets | 流動資產總值 | | | 28,306,156 | | 22,532,137 | |
-| | | | | | | | |
-| Total assets | 資產總值 | | | 43,714,724 | | 36,089,896 | |
-| | | | | | | | |
-| EQUITY | 權益 | | | | | | |
-| Capital and reserves attributable to | 股東應佔股本及儲備 | | | | | | |
+
+| Derivative financial instruments |  | 18 |  | – |  | 4,706 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Time deposits | 定期存款 | 22 |  | – | 745,840 |  |
+| Restricted bank balances | 受限制的銀行結餘 | 22 | 6,030,251 |  | 3,009,115 |  |
+| Cash and cash equivalents | 現金及現金等值物 | 22 | 13,465,776 |  | 9,902,194 |  |
+| Total current assets | 流動資產總值 |  | 28,306,156 |  | 22,532,137 |  |
+| Total assets | 資產總值 |  | 43,714,724 |  | 36,089,896 |  |
+| EQUITY | 權益 |  |  |  |  |  |
+| Capital and reserves attributable to | 股東應佔股本及儲備 |  |  |  |  |  |
+
 the shareholders
-| Share capital | 股本 | 24(a) | | 240,840 | | 240,786 | |
-| -------------- | ---- | ----- | --- | --------- | --- | --------- | --- |
-| Share premium | 股份溢價 | 24(a) | | 155,360 | | 152,710 | |
-| Other reserves | 其他儲備 | 26 | | 1,497,547 | | 1,373,941 | |
+
+| Share capital | 股本 | 24(a) | 240,840 | 240,786 |
+| --- | --- | --- | --- | --- |
+| Share premium | 股份溢價 | 24(a) | 155,360 | 152,710 |
+| Other reserves | 其他儲備 | 26 | 1,497,547 | 1,373,941 |
+
 保留收益
-| Retained earnings | | | | 17,566,359 | | 16,575,617 | |
-| ----------------- | ---- | --- | --- | ---------- | --- | ------------ | --- |
-| Total equity | 權益總值 | | | 19,460,106 | | 18,343,054 | |
-| | | | | | | | |
-| | | | | | | | |
+
+| Retained earnings |  | 17,566,359 | 16,575,617 |
+| --- | --- | --- | --- |
+| Total equity | 權益總值 | 19,460,106 | 18,343,054 |
 
 65
 阜豐集團有限公司 年報 2025
@@ -2592,52 +2539,56 @@ CONSOLIDATED BALANCE SHEET (Continued)
 As at 31 December 2025 於二零二五年十二月三十一日
 As at 31 December
 於十二月三十一日
-| | | | | | 2025 | | 2024 |
-| --- | --- | --- | --- | --- | ---- | --- | ---- |
+
+| 2025 | 2024 |
+| --- | --- |
+
 二零二四年
 二零二五年
-| | | Note | | RMB’000 | | RMB’000 | |
-| ----------------------- | ----- | ---- | --- | ------- | --- | ------- | --- |
-| | | 附註 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | |
-| LIABILITIES | 負債 | | | | | | |
-| Non-current liabilities | 非流動負債 | | | | | | |
+
+|  |  | Note | RMB’000 | RMB’000 |
+| --- | --- | --- | --- | --- |
+|  |  | 附註 | 人民幣千元 | 人民幣千元 |
+| LIABILITIES | 負債 |  |  |  |
+| Non-current liabilities | 非流動負債 |  |  |  |
+
 遞延收益
-| Deferred income | | 29 | | 1,003,543 | | | 976,813 |
-| ------------------------------- | ------- | --- | --- | --------- | ------- | --------- | ------- |
-| Borrowings | 借貸 | 28 | | | 199,900 | | 348,000 |
-| Lease liabilities | 租賃負債 | 15 | | | 428 | | 1,298 |
-| Deferred income tax liabilities | 遞延所得稅負債 | 30 | | | 204,032 | | 180,234 |
-| | | | | | | | |
-| Total non-current liabilities | 非流動負債總額 | | | 1,407,903 | | 1,506,345 | |
-| | | | | | | | |
-| Current liabilities | 流動負債 | | | | | | |
+
+| Deferred income |  | 29 | 1,003,543 |  |  | 976,813 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Borrowings | 借貸 | 28 |  | 199,900 |  | 348,000 |
+| Lease liabilities | 租賃負債 | 15 |  | 428 |  | 1,298 |
+| Deferred income tax liabilities | 遞延所得稅負債 | 30 |  | 204,032 |  | 180,234 |
+| Total non-current liabilities | 非流動負債總額 |  | 1,407,903 |  | 1,506,345 |  |
+| Current liabilities | 流動負債 |  |  |  |  |  |
+
 應付貿易賬款、其他應付
 Trade, other payables, accruals
-| and advances | 款項、應計費用及 | | | | | | |
-| ------------------------------ | --------- | --- | --- | --------- | ------- | --------- | ------- |
-| | 預收款項 | 27 | | 4,035,772 | | 4,181,877 | |
-| Contract liabilities | 合約負債 | 5 | | 1,191,577 | | | 744,572 |
-| Current income tax liabilities | 即期所得稅負債 | | | | 163,077 | | 294,551 |
+
+| and advances | 款項、應計費用及 |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 預收款項 | 27 | 4,035,772 |  | 4,181,877 |  |
+| Contract liabilities | 合約負債 | 5 | 1,191,577 |  |  | 744,572 |
+| Current income tax liabilities | 即期所得稅負債 |  |  | 163,077 |  | 294,551 |
+
 借貸
-| Borrowings | | 28 | | 17,445,910 | | 11,016,468 | |
-| -------------------------------- | ------ | --- | --- | ---------- | ----- | ---------- | ----- |
-| Lease liabilities | 租賃負債 | 15 | | | 1,112 | | 845 |
-| Derivative financial instruments | 衍生金融工具 | 18 | | | 9,267 | | 2,184 |
+
+| Borrowings |  | 28 | 17,445,910 |  | 11,016,468 |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Lease liabilities | 租賃負債 | 15 |  | 1,112 |  | 845 |
+| Derivative financial instruments | 衍生金融工具 | 18 |  | 9,267 |  | 2,184 |
+
 流動負債總額
-| Total current liabilities | | | | 22,846,715 | | 16,240,497 | |
-| ---------------------------- | ------- | --- | --- | ---------- | --- | ------------ | --- |
-| Total liabilities | 負債總額 | | | 24,254,618 | | 17,746,842 | |
-| | | | | | | | |
-| Total equity and liabilities | 權益及負債總額 | | | 43,714,724 | | 36,089,896 | |
-| | | | | | | | |
-| | | | | | | | |
+
+| Total current liabilities |  | 22,846,715 | 16,240,497 |
+| --- | --- | --- | --- |
+| Total liabilities | 負債總額 | 24,254,618 | 17,746,842 |
+| Total equity and liabilities | 權益及負債總額 | 43,714,724 | 36,089,896 |
+
 The above consolidated balance sheet should be read in conjunction 上述合併資產負債表應與隨附附註一併閱讀。
 with the accompanying notes.
-The consolidated financial statements on pages 62 to 204 were 第62至204頁所載合併財務報表由董事會於
-二零二六年三月二十六日批准及代為簽署。
-approved by the Board of Directors on 26 March 2026 and were
-signed on its behalf.
+The consolidated financial statements on pages 62 to 204 were 第62至204頁所載合併財務報表由董事會於二零二六年三月二十六日批准及代為簽署。
+approved by the Board of Directors on 26 March 2026 and were signed on its behalf.
 Li Xuechun Li Deheng
 Director Director
 董事 董事
@@ -2648,81 +2599,97 @@ FUFENG GROUP LIMITED ANNUAL REPORT 2025
 CONSOLIDATED STATEMENT OF CHANGES IN EQUITY
 合併權益變動表
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| | | | | Share | | Share | Treasury | | Other | Retained | | |
-| ------------------------- | ------- | ---- | --- | ------- | ------- | ------ | --------- | -------- | ------ | --------- | --- | ------- |
-| | | | | capital | premium | | shares | reserves | | earnings | | Total |
-| | | | | 股本 | 股份溢價 | | 庫存股份 | 其他儲備 | | 保留收益 | | 總計 |
-| | | Note | | RMB’000 | RMB’000 | | RMB’000 | RMB’000 | | RMB’000 | | RMB’000 |
-| | | 附註 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | | | | | | |
-| Balance at 1 January 2024 | 於二零二四年 | | | | | | | | | | | |
+
+|  |  |  | Share |  | Share | Treasury |  | Other | Retained |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | capital | premium |  | shares | reserves |  | earnings | Total |
+|  |  |  | 股本 | 股份溢價 |  | 庫存股份 | 其他儲備 |  | 保留收益 | 總計 |
+|  |  | Note | RMB’000 | RMB’000 |  | RMB’000 | RMB’000 |  | RMB’000 | RMB’000 |
+|  |  | 附註 | 人民幣千元 | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |
+| Balance at 1 January 2024 | 於二零二四年 |  |  |  |  |  |  |  |  |  |
+
 一月一日結餘 243,510 267,716 (44,241) 1,276,731 15,580,498 17,324,214
-| | | | | | | | | | | | | |
-| -------------------- | ---- | --- | --- | --- | --- | --- | --- | --- | --- | --------- | --- | --------- |
-| Comprehensive Income | 綜合收益 | | | | | | | | | | | |
-| Profit for the year | 年內溢利 | | | | – | – | | – | – | 2,312,384 | | 2,312,384 |
+
+| Comprehensive Income | 綜合收益 |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Profit for the year | 年內溢利 | – | – | – | – | 2,312,384 | 2,312,384 |
+
 其他綜合虧損
-| Other comprehensive loss | | | | | – | – | | – | (3,560) | | – | (3,560) |
-| ------------------------ | --- | --- | --- | --- | --- | --- | --- | --- | ------- | --- | --- | ------- |
+
+| Other comprehensive loss | – | – | – | (3,560) | – | (3,560) |
+| --- | --- | --- | --- | --- | --- | --- |
+
 Total comprehensive income 綜合收益總額 – – – (3,560) 2,312,384 2,308,824
-| | | | | | | | | | | | | |
-| ---------------------------------- | -------- | --- | --- | --- | --- | --- | --- | --- | ------ | -------- | --- | --- |
-| Transactions with the shareholders | 與股東的交易 | | | | | | | | | | | |
-| Profit appropriation | 溢利分配 | | 26 | | – | – | | – | 88,116 | (88,116) | | – |
-| Employee share option schemes: | 僱員購股權計劃： | | | | | | | | | | | |
+
+| Transactions with the shareholders | 與股東的交易 |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Profit appropriation | 溢利分配 | 26 | – | – | – | 88,116 | (88,116) | – |
+| Employee share option schemes: | 僱員購股權計劃： |  |  |  |  |  |  |  |
+
 – Value of employee services －僱員服務價值 25, 26 – – – 1,024 – 1,024
-| – Issue of shares | －發行股份 | 24(a) | | 50 | | 1,422 | | – | – | | – | 1,472 |
-| ----------------- | ----- | ----- | --- | --- | --- | ----- | --- | --- | --- | --- | --- | ----- |
+
+| – Issue of shares | －發行股份 | 24(a) | 50 | 1,422 | – | – | – | 1,472 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
 Acquisition of treasury shares 收購庫存股份 24(b) – – (74,822) – – (74,822)
 Cancellation of treasury shares 註銷庫存股份 24(b) (2,774) (116,428) 119,063 – – (139)
 Provision for safety production fee 安全生產費用撥備 26 – – – 27,289 (27,289) –
 使用安全生產費用
 Utilisation of safety production fee 26 – – – (15,659) 15,659 –
 股息
-| Dividends | | | 31 | | – | – | | – | – | (1,217,519) | | (1,217,519) |
-| ---------------------------- | -------- | --- | ---- | --- | --- | --- | --- | --- | --- | ------------- | --- | ----------- |
-| Total transactions with the | 與股東的交易總額 | | | | | | | | | | | |
+
+| Dividends | 31 | – | – | – | – | (1,217,519) | (1,217,519) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Total transactions with the | 與股東的交易總額 |  |  |  |  |  |  |
+
 shareholders (2,724) (115,006) 44,241 100,770 (1,317,265) (1,289,984)
-| Balance at 31 December 2024 | 於二零二四年 | | | | | | | | | | | |
-| --------------------------- | --------- | --- | --- | ------- | --- | ------- | --- | ----------- | --- | ---------- | --- | ---------- |
-| | 十二月三十一日結餘 | | | 240,786 | | 152,710 | | – 1,373,941 | | 16,575,617 | | 18,343,054 |
-| | | | | | | | | | | | | |
-| Balance at 1 January 2025 | 於二零二五年 | | | | | | | | | | | |
+
+| Balance at 31 December 2024 | 於二零二四年 |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 十二月三十一日結餘 | 240,786 | 152,710 | – 1,373,941 | 16,575,617 | 18,343,054 |
+| Balance at 1 January 2025 | 於二零二五年 |  |  |  |  |  |
+
 一月一日結餘 240,786 152,710 – 1,373,941 16,575,617 18,343,054
-| Comprehensive Income | 綜合收益 | | | | | | | | | | | |
-| ------------------------ | ------ | --- | --- | --- | --- | --- | --- | --- | ------- | --------- | --- | --------- |
-| Profit for the year | 年內溢利 | | | | – | – | | – | – | 2,465,228 | | 2,465,228 |
-| Other comprehensive loss | 其他綜合虧損 | | | | – | – | | – | (6,525) | | – | (6,525) |
-| | | | | | | | | | | | | |
+
+| Comprehensive Income | 綜合收益 |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Profit for the year | 年內溢利 | – | – | – | – | 2,465,228 |  | 2,465,228 |
+| Other comprehensive loss | 其他綜合虧損 | – | – | – | (6,525) |  | – | (6,525) |
+
 Total comprehensive income 綜合收益總額 – – – (6,525) 2,465,228 2,458,703
-| | | | | | | | | | | | | |
-| ---------------------------------- | ------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Transactions with the shareholders | 與股東的交易 | | | | | | | | | | | |
+
+| Transactions with the shareholders | 與股東的交易 |
+| --- | --- |
+
 溢利分配
-| Profit appropriation | | | 26 | | – | – | | – | 119,425 | (119,425) | | – |
-| -------------------- | --- | --- | --- | --- | --- | --- | --- | --- | ------- | --------- | --- | --- |
+
+| Profit appropriation | 26 | – | – | – | 119,425 | (119,425) | – |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
 僱員購股權計劃：
 Employee share option schemes:
 – Value of employee services －僱員服務價值 25, 26 – – – (345) – (345)
-| – Issue of shares | －發行股份 | 24(a) | | 54 | | 2,650 | | – | – | | – | 2,704 |
-| ------------------------- | --------- | ----- | --- | --- | --- | ----- | --- | --- | ----- | --- | --- | ----- |
-| – Lapse of options issued | －已發行購股權失效 | 25(a) | | | – | – | | – | (540) | | 540 | – |
+
+| – Issue of shares | －發行股份 | 24(a) | 54 |  | 2,650 | – | – | – | 2,704 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| – Lapse of options issued | －已發行購股權失效 | 25(a) |  | – | – | – | (540) | 540 | – |
+
 Provision for safety production fee 安全生產費用撥備 26 – – – 37,419 (37,419) –
 Utilisation of safety production fee 使用安全生產費用 26 – – – (25,828) 25,828 –
-| Dividends | 股息 | | 31 | | – | – | | – | – | (1,344,010) | | (1,344,010) |
-| --------------------------- | -------- | --- | --- | --- | --- | ----- | --- | --- | ------- | ----------- | --- | ----------- |
-| | | | | | | | | | | | | |
-| Total transactions with | 與股東的交易總額 | | | | | | | | | | | |
-| the shareholders | | | | 54 | | 2,650 | | – | 130,131 | (1,474,486) | | (1,341,651) |
-| | | | | | | | | | | | | |
-| Balance at 31 December 2025 | 於二零二五年 | | | | | | | | | | | |
+
+| Dividends | 股息 | 31 |  | – | – | – | – | (1,344,010) | (1,344,010) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Total transactions with | 與股東的交易總額 |  |  |  |  |  |  |  |  |
+| the shareholders |  |  | 54 |  | 2,650 | – | 130,131 | (1,474,486) | (1,341,651) |
+| Balance at 31 December 2025 | 於二零二五年 |  |  |  |  |  |  |  |  |
+
 十二月三十一日結餘
-| | | | | 240,840 | | 155,360 | | – 1,497,547 | | 17,566,359 | | 19,460,106 |
-| --- | --- | --- | --- | ------- | --- | --------- | --- | ------------- | --- | ------------ | --- | ---------- |
-| | | | | | | | | | | | | |
+
+| 240,840 | 155,360 | – 1,497,547 | 17,566,359 | 19,460,106 |
+| --- | --- | --- | --- | --- |
+
 上述合併權益變動表應與隨附附註一併閱讀。
-The above consolidated statement of changes in equity should be
-read in conjunction with the accompanying notes.
+The above consolidated statement of changes in equity should be read in conjunction with the accompanying notes.
 
 67
 阜豐集團有限公司 年報 2025
@@ -2731,56 +2698,67 @@ CONSOLIDATED CASH FLOW STATEMENT
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 Year ended 31 December
 截至十二月三十一日止年度
-| | | | | 2025 | | 2024 |
-| --- | --- | --- | --- | ---- | --- | ---- |
+
+| 2025 | 2024 |
+| --- | --- |
+
 二零二四年
 二零二五年
-| | | Note | | RMB’000 | | RMB’000 |
-| ------------------------------------ | ---------- | ---- | --- | ------- | --- | ------- |
-| | | 附註 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | |
-| Cash flows from operating activities | 經營活動所得現金流量 | | | | | |
+
+|  |  | Note | RMB’000 | RMB’000 |
+| --- | --- | --- | --- | --- |
+|  |  | 附註 | 人民幣千元 | 人民幣千元 |
+| Cash flows from operating activities | 經營活動所得現金流量 |  |  |  |
+
 Cash generated from operations 經營業務所得現金 32(a) 3,812,763 3,586,352
 已付利息
-| Interest paid | | | | (279,540) | | (210,060) |
-| --------------- | ------ | --- | --- | ---------- | --- | --------- |
-| Income tax paid | 已繳納所得稅 | | | (621,879) | | (420,994) |
 
-| Net cash generated from operating | 經營活動所得現金淨額 | | | | | |
-| ------------------------------------ | ----------- | --- | --- | --------- | --- | --------- |
-| activities | | | | 2,911,344 | | 2,955,298 |
-| Cash flows from investing activities | 投資活動所得現金流量 | | | | | |
-| Payments for property, plant and | 支付物業、廠房及設備 | | | | | |
+| Interest paid |  | (279,540) | (210,060) |
+| --- | --- | --- | --- |
+| Income tax paid | 已繳納所得稅 | (621,879) | (420,994) |
+
+| Net cash generated from operating | 經營活動所得現金淨額 |  |
+| --- | --- | --- |
+| activities | 2,911,344 | 2,955,298 |
+| Cash flows from investing activities | 投資活動所得現金流量 |  |
+| Payments for property, plant and | 支付物業、廠房及設備 |  |
+
 款項
-| equipment | | | | (2,569,008) | | (1,192,616) |
-| ------------------------------------- | ----------- | --- | --- | ----------- | --- | ----------- |
-| Investment in an associate | 投資一間聯營公司 | | | (9,830) | | (200) |
-| Payments for intangible assets | 支付無形資產款項 | | | (29,248) | | (23,551) |
-| Payments for land-use rights | 支付土地使用權款項 | 15 | | (72,362) | | (5,239) |
-| Proceeds from disposal of property, | 出售物業、廠房及設備 | | | | | |
+
+| equipment |  |  | (2,569,008) | (1,192,616) |
+| --- | --- | --- | --- | --- |
+| Investment in an associate | 投資一間聯營公司 |  | (9,830) | (200) |
+| Payments for intangible assets | 支付無形資產款項 |  | (29,248) | (23,551) |
+| Payments for land-use rights | 支付土地使用權款項 | 15 | (72,362) | (5,239) |
+| Proceeds from disposal of property, | 出售物業、廠房及設備 |  |  |  |
+
 所得款項
-| plant and equipment | | 32(b) | | 235,034 | | 14,121 |
-| ---------------------------------- | ------------- | ----- | --- | ------- | --- | ------ |
-| Proceeds from disposal of cross | 出售交叉貨幣掉期及交叉貨幣 | | | | | |
-| currency swaps and Cross currency | 與利率掉期所得款項 | | | | | |
-| and interest rate swaps | | | | 23,795 | | 1,792 |
+
+| plant and equipment | 32(b) | 235,034 | 14,121 |
+| --- | --- | --- | --- |
+| Proceeds from disposal of cross | 出售交叉貨幣掉期及交叉貨幣 |  |  |
+| currency swaps and Cross currency | 與利率掉期所得款項 |  |  |
+| and interest rate swaps |  | 23,795 | 1,792 |
+
 Loan granted to a related party 授予一名關連方的貸款 34(c) (2,672) (75,500)
 一名關連方償還的貸款
-| Repayment of loan by a related party | | 34(c) | | 38,127 | | 34,584 |
-| ------------------------------------ | ---------- | ----- | --- | ------- | --- | ------- |
-| Assets-related government grants | 已收資產相關政府補助 | | | | | |
-| received | | 29 | | 117,719 | | 165,992 |
-| Interest received | 已收利息 | | | 537,825 | | 494,522 |
-| Proceeds from time deposits | 定期存款所得款項 | 22 | | 765,743 | | 200,000 |
+
+| Repayment of loan by a related party |  | 34(c) | 38,127 | 34,584 |
+| --- | --- | --- | --- | --- |
+| Assets-related government grants | 已收資產相關政府補助 |  |  |  |
+| received |  | 29 | 117,719 | 165,992 |
+| Interest received | 已收利息 |  | 537,825 | 494,522 |
+| Proceeds from time deposits | 定期存款所得款項 | 22 | 765,743 | 200,000 |
+
 存放定期存款及交叉貨幣
 Placement of time deposits and
-| deposits for cross currency swaps | 掉期存款 | 22 | | (18,614) | | (765,743) |
-| --------------------------------- | ---- | --- | --- | -------- | --- | --------- |
+
+| deposits for cross currency swaps | 掉期存款 | 22 | (18,614) | (765,743) |
+| --- | --- | --- | --- | --- |
+
 Proceeds from disposal of subsidiaries 出售附屬公司所得款項 21(c) 75,400 51,500
 投資活動所用現金淨額
 Net cash used in investing activities (908,091) (1,100,338)
-| | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- |
 
 68
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -2789,58 +2767,69 @@ CONSOLIDATED CASH FLOW STATEMENT (Continued)
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 Year ended 31 December
 截至十二月三十一日止年度
-| | | | | | 2025 | | 2024 |
-| --- | --- | --- | --- | --- | ---- | --- | ---- |
+
+| 2025 | 2024 |
+| --- | --- |
+
 二零二四年
 二零二五年
-| | | Note | | RMB’000 | | | RMB’000 |
-| ------------------------------------ | ---------- | ---- | --- | ----------- | --- | ----------- | ------- |
-| | | 附註 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | |
-| Cash flows from financing activities | 融資活動所得現金流量 | | | | | | |
-| Dividends paid to the Company’s | 向本公司股東支付股息 | | | | | | |
-| shareholders | | | | (1,341,937) | | (1,218,764) | |
+
+|  |  | Note | RMB’000 |  | RMB’000 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 附註 | 人民幣千元 | 人民幣千元 |  |
+| Cash flows from financing activities | 融資活動所得現金流量 |  |  |  |  |
+| Dividends paid to the Company’s | 向本公司股東支付股息 |  |  |  |  |
+| shareholders |  |  | (1,341,937) | (1,218,764) |  |
+
 Proceeds from bank borrowings 銀行借貸所得款項 32(d) 25,369,224 14,160,468
 Repayments of bank borrowings 償還銀行借貸 32(d) (19,079,840) (12,484,000)
 Principal elements of lease payments 租賃付款的本金部分 32(d) (1,119) (699)
-| Proceeds from issuance of shares under | 根據僱員購股權計劃發行股份 | | | | | | |
-| --------------------------------------- | ------------- | --- | --- | --- | --- | --- | --- |
+
+| Proceeds from issuance of shares under | 根據僱員購股權計劃發行股份 |
+| --- | --- |
+
 所得款項
-| employee share option scheme | | 24(a), 25 | | | 2,704 | | 1,472 |
-| -------------------------------------- | ------------- | --------- | --- | --- | ----- | --- | ----- |
-| Proceeds from bank deposit pledged as | 抵押作流動銀行借貸抵押品的 | | | | | | |
+
+| employee share option scheme | 24(a), 25 | 2,704 | 1,472 |
+| --- | --- | --- | --- |
+| Proceeds from bank deposit pledged as | 抵押作流動銀行借貸抵押品的 |  |  |
+
 security for current bank borrowings 銀行存款所得款項 22 2,599,103 3,390,000
-| Payments for bank deposit pledged as | 抵押作流動銀行借貸抵押品的 | | | | | | |
-| ------------------------------------- | ------------- | --- | --- | --- | --- | --- | --- |
+
+| Payments for bank deposit pledged as | 抵押作流動銀行借貸抵押品的 |
+| --- | --- |
+
 security for current bank borrowings 銀行存款支付 22 (5,762,637) (2,599,103)
 償還第三方借貸
 Repayment of borrowing from
-| third parties | | | | | – | | (77,100) |
-| ----------------------------------- | ---------- | ----- | --- | --------- | --- | ----------- | -------- |
-| Repurchase of shares of the Company | 回購本公司股份 | 24(b) | | | – | | (74,822) |
-| Cancellation of treasury shares | 註銷庫存股份 | | | | – | | (139) |
-| | | | | | | | |
-| Net cash generated from financing | 融資活動所得現金淨額 | | | | | | |
-| activities | | | | 1,785,498 | | 1,097,313 | |
+
+| third parties |  |  |  | – |  | (77,100) |
+| --- | --- | --- | --- | --- | --- | --- |
+| Repurchase of shares of the Company | 回購本公司股份 | 24(b) |  | – |  | (74,822) |
+| Cancellation of treasury shares | 註銷庫存股份 |  |  | – |  | (139) |
+| Net cash generated from financing | 融資活動所得現金淨額 |  |  |  |  |  |
+| activities |  |  | 1,785,498 |  | 1,097,313 |  |
+
 現金及現金等值物
 Net increase in cash and cash
-| equivalents | 增加淨額 | | | 3,788,751 | | 2,952,273 | |
-| ---------------------------------------- | ------------ | --- | --- | ---------- | --- | --------- | ------ |
-| | | | | | | | |
-| Cash and cash equivalents at beginning | 於年初的現金及現金等值物 | | | | | | |
-| of the year | | 22 | | 9,902,194 | | 6,856,177 | |
-| Effects of exchange rate changes on | 匯率變動對現金及 | | | | | | |
-| cash and cash equivalents | 現金等值物的影響 | | | (225,169) | | | 93,744 |
+
+| equivalents | 增加淨額 |  | 3,788,751 | 2,952,273 |  |
+| --- | --- | --- | --- | --- | --- |
+| Cash and cash equivalents at beginning | 於年初的現金及現金等值物 |  |  |  |  |
+| of the year |  | 22 | 9,902,194 | 6,856,177 |  |
+| Effects of exchange rate changes on | 匯率變動對現金及 |  |  |  |  |
+| cash and cash equivalents | 現金等值物的影響 |  | (225,169) |  | 93,744 |
+
 於年終的現金及
 Cash and cash equivalents at
-| end of the year | 現金等值物 | 22 | | 13,465,776 | | 9,902,194 | |
-| --------------- | ----- | --- | --- | ---------- | --- | --------- | --- |
-| | | | | | | | |
-| | | | | | | | |
+
+| end of the year | 現金等值物 | 22 | 13,465,776 | 9,902,194 |
+| --- | --- | --- | --- | --- |
+
 The above consolidated cash flow statement should be read in 上述合併現金流量表應與隨附附註一併閱讀。
 conjunction with the accompanying notes.
 
-阜豐集團有限公司 年報 2025 69
+<!-- p.69 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS
 合併財務報表附註
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -2883,7 +2872,7 @@ authoritative literature: 下權威文獻：
 • Interpretations developed by the HKICPA. • 香港會計師公會制定之詮
 釋。
 
-70 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.70 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -2923,59 +2912,76 @@ affect the current or future periods. 產生重大影響。
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-2. BASIS OF PREPARATION AND CHANGES 2. 編製基準及會計政策變動（續）
 IN ACCOUNTING POLICIES (Continued)
-| 2.1 Basis of preparation (Continued) | 2.1 編製基準（續） | | |
-| ------------------------------------- | ------------ | --- | --- |
+
+| 2.1 Basis of preparation (Continued) | 2.1 編製基準（續） |
+| --- | --- |
+
 (iv) New and amended standards and interpretations (iv) 尚未採納之新訂及經修訂準則
-| not yet adopted | | 及詮釋 | |
-| --------------- | --- | --- | --- |
+
+| not yet adopted | 及詮釋 |
+| --- | --- |
+
 Certain new accounting standards and amendments 本集團並未提前採用已發佈但
-| to accounting standards have been published | | 在二零二五年十二月三十一日 | |
-| -------------------------------------------- | --- | ------------- | --- |
-| that are not mandatory for 31 December 2025 | | 的報告期間尚未強制生效的若 | |
-reporting periods and have not been early adopted 干新訂會計準則及會計準則之
-修訂本。本集團計劃於該等新
+
+| to accounting standards have been published | 在二零二五年十二月三十一日 |
+| --- | --- |
+| that are not mandatory for 31 December 2025 | 的報告期間尚未強制生效的若 |
+
+reporting periods and have not been early adopted 干新訂會計準則及會計準則之修訂本。本集團計劃於該等新
 by the Group. The Group plans to adopt these new
-| standards, amendments to standards and new | | 訂準則、準則修訂本及新詮釋 | |
-| ------------------------------------------- | --- | ------------- | --- |
-| interpretations when they become effective: | | 生效時予以採納： | |
+
+| standards, amendments to standards and new | 訂準則、準則修訂本及新詮釋 |
+| --- | --- |
+| interpretations when they become effective: | 生效時予以採納： |
+
 Effective for 於以下日期
 annual periods 或之後起
 beginning 的年度期間
 on or after 生效
 Amendments Amendments to the Classification 1 January 2026 香港財務報告準則 金融工具分類及 二零二六年
 to HKFRS 9 and Measurement of Financial 第9號及香港財務報告 計量之修訂 一月一日
-| and HKFRS 7 | Instruments | 準則第7號之修訂本 | |
-| ----------- | ----------- | --------- | --- |
+
+| and HKFRS 7 | Instruments | 準則第7號之修訂本 |
+| --- | --- | --- |
+
 Amendment to Contracts Referencing Nature- 1 January 2026 香港財務報告準則 依賴自然能源 二零二六年
+
 | HKFRS 9 and | dependent Electricity | 第9號及香港財務報告 | 生產電力合約 一月一日 |
-| ------------ | --------------------- | ---------- | ----------- |
-| HKFRS 7 | | 準則第7號之修訂本 | |
+| --- | --- | --- | --- |
+| HKFRS 7 |  | 準則第7號之修訂本 |  |
+
 香港財務報告會計準則年度 二零二六年
 Annual Improvements to HKFRS Accounting 1 January 2026
-| Standards – Volume 11 | | 改良－第11號 | 一月一日 |
-| --------------------- | --- | ------- | ---- |
+
+| Standards – Volume 11 | 改良－第11號 | 一月一日 |
+| --- | --- | --- |
+
 HKFRS 18 Presentation and Disclosure in 1 January 2027 香港財務報告準則 財務報表之呈列 二零二七年
-| | Financial Statements | 第18號 | 及披露 一月一日 |
-| --- | -------------------- | ---- | -------- |
+
+| Financial Statements | 第18號 | 及披露 一月一日 |
+| --- | --- | --- |
+
 Hong Kong Presentation of Financial 1 January 2027 香港詮釋第5號 財務報表的呈列－ 二零二七年
 Interpretation Statements – Classification by （經修訂） 借款人對含有按 一月一日
-| 5 (Revised) | the Borrower of | | 要求償還條款的 |
-| ----------- | ---------------------------- | --- | ------- |
-| | a Term Loan that Contains a | | 定期貸款的分類 |
+
+| 5 (Revised) | the Borrower of | 要求償還條款的 |
+| --- | --- | --- |
+|  | a Term Loan that Contains a | 定期貸款的分類 |
+
 Repayment on Demand Clause
 HKFRS 19 Subsidiaries without Public 1 January 2028 香港財務報告準則 毋須作出公共 二零二八年
-| | | 第19號 | 問責的附屬公司： 一月一日 |
-| --- | --- | ---- | ------------- |
+
+| 第19號 | 問責的附屬公司： 一月一日 |
+| --- | --- |
+
 Accountability: Disclosures
 披露
 
-72 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.72 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-2. BASIS OF PREPARATION AND CHANGES 2. 編製基準及會計政策變動（續）
 IN ACCOUNTING POLICIES (Continued)
 2.1 Basis of preparation (Continued) 2.1 編製基準（續）
 (iv) New and amended standards and interpretations (iv) 尚未採納之新訂及經修訂準則
@@ -2998,14 +3004,12 @@ impacts on presentation and disclosure are expected 則第18號將不會影響�
 to be pervasive, in particular those related to the 項目的確認或計量，惟預計會
 statement of financial performance and providing 對呈列及披露帶來廣泛影響，
 management-defined performance measures within 尤其是與財務表現報表相關的
-the financial statements. 項目以及於財務報表中提供的
-管理層界定的業績指標。
+the financial statements. 項目以及於財務報表中提供的管理層界定的業績指標。
 
-阜豐集團有限公司 年報 2025 73
+<!-- p.73 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-2. BASIS OF PREPARATION AND CHANGES 2. 編製基準及會計政策變動（續）
 IN ACCOUNTING POLICIES (Continued)
 2.1 Basis of preparation (Continued) 2.1 編製基準（續）
 (iv) New and amended standards and interpretations (iv) 尚未採納之新訂及經修訂準則
@@ -3025,8 +3029,7 @@ new categories will impact how operating profit 項目組合為新類別將會�
 is calculated and reported. From the high- 響計算及報告經營溢利的
 level impact assessment that the Group has 方法。根據本集團已進行
 performed, the following items might potentially 的高層次影響評估，下列
-impact operating profit: 項目或會對經營溢利有潛
-在影響：
+impact operating profit: 項目或會對經營溢利有潛在影響：
 – HKFRS 18 has specific requirements on – 香港財務報告準則
 the category in which derivative gains or 第18號對確認衍生
 losses are recognised – which is the same 工具利得或虧損的
@@ -3044,11 +3047,10 @@ need for change. 或虧損，但當該等
 要作出更改進行評
 估。
 
-74 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.74 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-2. BASIS OF PREPARATION AND CHANGES 2. 編製基準及會計政策變動（續）
 IN ACCOUNTING POLICIES (Continued)
 2.1 Basis of preparation (Continued) 2.1 編製基準（續）
 (iv) New and amended standards and interpretations (iv) 尚未採納之新訂及經修訂準則
@@ -3083,11 +3085,10 @@ or loss – this break-down is only required 細－此明細僅就若
 for certain nature expenses; and 干性質開支所需要；
 及
 
-阜豐集團有限公司 年報 2025 75
+<!-- p.75 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-2. BASIS OF PREPARATION AND CHANGES 2. 編製基準及會計政策變動（續）
 IN ACCOUNTING POLICIES (Continued)
 2.1 Basis of preparation (Continued) 2.1 編製基準（續）
 (iv) New and amended standards and interpretations (iv) 尚未採納之新訂及經修訂準則
@@ -3098,11 +3099,7 @@ of HKFRS 18, a reconciliation for each 告準則第18號的首
 line item in the statement of profit or loss 個年度期間而言，
 between the restated amounts presented 應用香港財務報告
 by applying HKFRS 18 and the amounts 準則第18號所呈列
-previously presented applying HKAS 1. 的經重列金額與過
-往應用香港會計準
-則第1號所呈列的金
-額之間在損益表各
-項目中的對賬。
+previously presented applying HKAS 1. 的經重列金額與過往應用香港會計準則第1號所呈列的金額之間在損益表各項目中的對賬。
 Impact on cash flow statement: 對現金流量表的影響：
 • From a cash flow statement perspective, • 從現金流量表角度而言，
 there will be changes to how interest paid are 已付利息的呈列方式將有
@@ -3119,7 +3116,7 @@ comparative information for the financial year ending 因此截至二零二六�
 with HKFRS 18. 料將根據香港財務報告準則第
 18號重列。
 
-76 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.76 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -3163,50 +3160,59 @@ profit or loss. 損益中確認。
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 3. FINANCIAL RISK MANAGEMENT (Continued) | | | 3. | 財務風險管理（續） | | | | |
-| ---------------------------------------------- | --- | --- | --- | --------- | ------------ | ----------- | --- | --- |
-| 3.1 Financial risk factors (Continued) | | | | 3.1 | 財務風險因素（續） | | | |
-| (a) Market risk (Continued) | | | | | (a) 市場風險（續） | | | |
-| (i) Foreign exchange risk (Continued) | | | | | (i) | 外匯風險（續） | | |
-| Exposure | | | | | | 敞口 | | |
-| The Group’s exposure to foreign currency risk | | | | | | 本集團於報告期末以人民 | | |
-at the end of the reporting period, expressed in 幣列示的外匯風險敞口如
-下：
+
+| 3. FINANCIAL RISK MANAGEMENT (Continued) | 3. | 財務風險管理（續） |  |  |
+| --- | --- | --- | --- | --- |
+| 3.1 Financial risk factors (Continued) |  | 3.1 | 財務風險因素（續） |  |
+| (a) Market risk (Continued) |  |  | (a) 市場風險（續） |  |
+| (i) Foreign exchange risk (Continued) |  |  | (i) | 外匯風險（續） |
+| Exposure |  |  |  | 敞口 |
+| The Group’s exposure to foreign currency risk |  |  |  | 本集團於報告期末以人民 |
+
+at the end of the reporting period, expressed in 幣列示的外匯風險敞口如下：
 RMB, was as follows:
-| | | | USD | HKD | EUR | VND | Others | Total |
-| --- | --- | --- | --- | --- | --- | --- | ------ | ----- |
-| | | | 美元 | 港元 | 歐元 | 越南盾 | 其他 | 總計 |
+
+| USD | HKD | EUR | VND | Others | Total |
+| --- | --- | --- | --- | --- | --- |
+| 美元 | 港元 | 歐元 | 越南盾 | 其他 | 總計 |
+
 31 December 2025 RMB’000 RMB’000 RMB’000 RMB’000 RMB’000 RMB’000
  二零二五年十二月三十一日 人民幣千元 人民幣千元 人民幣千元 人民幣千元 人民幣千元 人民幣千元
-| Cash and cash equivalents | 現金及現金等值物 | | | | | | | |
-| --------------------------- | --------- | --- | --- | --- | --- | --- | --- | --- |
+
+| Cash and cash equivalents | 現金及現金等值物 |
+| --- | --- |
+
 （附註22(c)）
 (Note 22(c)) 10,816,947 20,568 213,916 19,865 7,864 11,079,160
-| Restricted bank balances | 受限制的銀行結餘 | | | | | | | |
-| ----------------------------- | ------------- | --- | ------- | --- | --- | ----- | --- | --------- |
-| (Note 22(c)) | （附註22(c)） | | 10,414 | – | – | – | | – 10,414 |
-| Trade and other receivables | 應收貿易賬款及其他應收款項 | | | | | | | |
-| (Note 21(f)) | （附註21(f)） | | 542,981 | – | – | 8,096 | | – 551,077 |
+
+| Restricted bank balances | 受限制的銀行結餘 |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| (Note 22(c)) | （附註22(c)） | 10,414 | – | – | – | – 10,414 |
+| Trade and other receivables | 應收貿易賬款及其他應收款項 |  |  |  |  |  |
+| (Note 21(f)) | （附註21(f)） | 542,981 | – | – | 8,096 | – 551,077 |
+
 應付貿易賬款及其他應付款項
 Trade and other payables
-| (Note 27) | （附註27） | | 204 | – | – | 637 | | – 841 |
-| --------- | ------ | --- | --- | --- | --- | --- | ------ | ----- |
-| | | | | | | | | |
-| | | | USD | HKD | EUR | VND | others | Total |
-| | | | 美元 | 港元 | 歐元 | 越南盾 | 其他 | 總計 |
+
+| (Note 27) | （附註27） | 204 | – | – | 637 |  | – 841 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | USD | HKD | EUR | VND | others | Total |
+|  |  | 美元 | 港元 | 歐元 | 越南盾 | 其他 | 總計 |
+
 31 December 2024 RMB’000 RMB’000 RMB’000 RMB’000 RMB’000 RMB’000
-| 二零二四年十二月三十一日 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |
-| --------------------------- | ----------------- | --------- | ----- | ------ | ------ | ------ | ----- | --------- |
-| | | | | | | | | |
-| Cash and cash equivalents | 現金及現金等值物（附註22(c)） | | | | | | | |
-| (Note 22(c)) | | 8,885,832 | | 36,495 | 90,509 | 10,115 | 77 | 9,023,028 |
-| Restricted bank balances | 受限制的銀行結餘（附註22(c)） | | | | | | | |
-| (Note 22(c)) | | | 7,403 | – | – | – | | – 7,403 |
+
+| 二零二四年十二月三十一日 |  | 人民幣千元 | 人民幣千元 |  | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Cash and cash equivalents | 現金及現金等值物（附註22(c)） |  |  |  |  |  |  |  |
+| (Note 22(c)) |  | 8,885,832 |  | 36,495 | 90,509 | 10,115 | 77 | 9,023,028 |
+| Restricted bank balances | 受限制的銀行結餘（附註22(c)） |  |  |  |  |  |  |  |
+| (Note 22(c)) |  |  | 7,403 | – | – | – |  | – 7,403 |
+
 Time deposits (Note 22(c)) 定期存款（附註22(c)） 718,840 – – – – 718,840
-| Trade and other receivables | 應收貿易賬款及其他應收款項 | | | | | | | |
-| ----------------------------- | ------------- | --- | ------- | --- | ----- | ------ | --- | --------- |
-| (Note 21(f)) | （附註21(f)） | | 701,786 | – | 6,583 | 11,923 | | – 720,292 |
-| | | | | | | | | |
+
+| Trade and other receivables | 應收貿易賬款及其他應收款項 |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| (Note 21(f)) | （附註21(f)） | 701,786 | – | 6,583 | 11,923 | – 720,292 |
 
 78
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -3214,61 +3220,75 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 3. FINANCIAL RISK MANAGEMENT (Continued) 3. 財務風險管理（續）
-| 3.1 Financial risk factors (Continued) | 3.1 | 財務風險因素（續） | |
-| ---------------------------------------------- | ---- | ------------ | --- |
-| (a) Market risk (Continued) | | (a) 市場風險（續） | |
-| (i) Foreign exchange risk (Continued) | | (i) 外匯風險（續） | |
-| Amounts recognised in the consolidated income | | 於合併利潤表確認的金額 | |
+
+| 3.1 Financial risk factors (Continued) | 3.1 | 財務風險因素（續） |
+| --- | --- | --- |
+| (a) Market risk (Continued) |  | (a) 市場風險（續） |
+| (i) Foreign exchange risk (Continued) |  | (i) 外匯風險（續） |
+| Amounts recognised in the consolidated income |  | 於合併利潤表確認的金額 |
+
 statement
-| During the year, the following foreign-exchange | | 年內，以下匯兌相關金額 | |
-| ------------------------------------------------ | --- | ----------- | --- |
+
+| During the year, the following foreign-exchange | 年內，以下匯兌相關金額 |
+| --- | --- |
+
 於合併利潤表中確認：
 related amounts were recognised in the
 consolidated income statement:
 2025 2024
-| | | 二零二五年 | 二零二四年 |
-| --- | --- | ------- | ------- |
-| | | RMB’000 | RMB’000 |
-| | | 人民幣千元 | 人民幣千元 |
-| | | | |
+
+| 二零二五年 | 二零二四年 |
+| --- | --- |
+| RMB’000 | RMB’000 |
+| 人民幣千元 | 人民幣千元 |
+
 於合併利潤表確認
 Amounts recognised in the
-| consolidated income statement | 的金額 | | |
-| ----------------------------------- | ---------- | --------- | ------- |
-| Other (losses)/gains – net (Note 7) | 其他（虧損）╱利得 | | |
-| | －淨額（附註7） | (208,128) | 194,106 |
-| Finance income and costs (Note 10) | 財務收入及成本 | | |
+
+| consolidated income statement | 的金額 |  |  |
+| --- | --- | --- | --- |
+| Other (losses)/gains – net (Note 7) | 其他（虧損）╱利得 |  |  |
+|  | －淨額（附註7） | (208,128) | 194,106 |
+| Finance income and costs (Note 10) | 財務收入及成本 |  |  |
+
 （附註10）
-| | | 2,073 | (1,245) |
-| ------------------------------------ | --------- | ------- | --------- |
-| Total net foreign exchange | 於期內除所得稅前 | | |
-| (losses)/gains recognised in profit | 溢利確認的淨外匯 | | |
+
+|  | 2,073 | (1,245) |
+| --- | --- | --- |
+| Total net foreign exchange | 於期內除所得稅前 |  |
+| (losses)/gains recognised in profit | 溢利確認的淨外匯 |  |
+
 （虧損）╱利得總額
-| before income tax for the period | | (206,055) | 192,861 |
-| --------------------------------------------- | --- | ----------- | --------- |
-| | | | |
-| At 31 December 2025, if RMB had strengthened/ | | 於二零二五年十二月 | |
-| weakened by 10% against the USD, HKD, | | 三十一日，倘人民幣兌 | |
-| EUR, VND and SGD with all other variables | | 美元、港元、歐元、越南 | |
+
+| before income tax for the period | (206,055) | 192,861 |
+| --- | --- | --- |
+| At 31 December 2025, if RMB had strengthened/ | 於二零二五年十二月 |  |
+| weakened by 10% against the USD, HKD, | 三十一日，倘人民幣兌 |  |
+| EUR, VND and SGD with all other variables | 美元、港元、歐元、越南 |  |
+
 盾及新加坡元升值╱貶
 held constant, the net profit for the year would
-| have been RMB987,963,000 lower/higher | | 值10%，而所有其他變數 | |
-| --------------------------------------------- | --- | ----------------- | --- |
-| (2024: RMB891,212,000 lower/higher), mainly | | 維持不變，則於本年度純 | |
-| as a result of foreign exchange losses/gains | | 利會減少╱增加人民幣 | |
-| on translation of USD, HKD, EUR, VND and | | 987,963,000元（二零二四 | |
+
+| have been RMB987,963,000 lower/higher | 值10%，而所有其他變數 |
+| --- | --- |
+| (2024: RMB891,212,000 lower/higher), mainly | 維持不變，則於本年度純 |
+| as a result of foreign exchange losses/gains | 利會減少╱增加人民幣 |
+| on translation of USD, HKD, EUR, VND and | 987,963,000元（二零二四 |
+
 年：減少╱增加人民幣
 SGD denominated cash and cash equivalents,
 restricted bank balances, trade receivables and 891,212,000元），主要由
-| trade payables. | | 於換算以美元、港元、歐 | |
-| --------------- | --- | ----------- | --- |
+
+| trade payables. | 於換算以美元、港元、歐 |
+| --- | --- |
+
 元、越南盾及新加坡元計
 值的現金及現金等值物、
 受限制的銀行結餘、應收
 貿易賬款及應付貿易賬款
 的匯兌虧損╱利得所致。
 
-阜豐集團有限公司 年報 2025 79
+<!-- p.79 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -3316,7 +3336,7 @@ cash equivalents with demand rates. 元（二零二四年：人民幣
 等值物的利息開支增加╱
 減少所致。
 
-80 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.80 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -3334,8 +3354,7 @@ receivables. 構存款，以及客戶的信貸風險，
 Credit risk is managed on a group basis. Bank 信貸風險按組合基準管
 deposits and cash at bank are deposited 理。銀行存款及銀行現金
 in reputable financial institutions which are 存入信譽良好的金融機
-considered with low credit risk. 構，信貸風險被視為低風
-險。
+considered with low credit risk. 構，信貸風險被視為低風險。
 For sales of goods, credit is normally granted to 就銷售貨品而言，通常向
 customers with long-term relationship and good 與建立長期關係且具有良
 credit history. The Group performs ongoing credit 好信貸歷史的客戶授出信
@@ -3350,11 +3369,9 @@ the sound collection history of receivables due 及其他因素評估其信貸�
 from them, management believes that the credit 素。鑑於應收客戶款項的
 risk inherent in the Group’s outstanding trade 收款紀錄良好，管理層認
 receivables arising from sales of products due 為本集團因產品銷售應收
-from them is not significant. 彼等的未償還應收貿易賬
-款的固有信貸風險並不重
-大。
+from them is not significant. 彼等的未償還應收貿易賬款的固有信貸風險並不重大。
 
-阜豐集團有限公司 年報 2025 81
+<!-- p.81 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -3381,12 +3398,10 @@ loss model. 信貸虧損模式。
 The Group applies the HKFRS 9 simplified 本集團採用香港財務報告
 approach to measuring expected credit losses 準則第9號的簡化方法計
 which uses a lifetime expected loss allowance for 量預期信貸虧損，即對所
-all trade receivables. 有應收貿易賬款確認整個
-存續期的預期虧損撥備。
+all trade receivables. 有應收貿易賬款確認整個存續期的預期虧損撥備。
 To measure the expected credit losses, trade 為計量預期信貸虧損，應
 receivables have been grouped based on shared 收貿易賬款已按照相同的
-credit risk characteristics and the days past due. 信貸風險特徵及逾期天數
-分組。
+credit risk characteristics and the days past due. 信貸風險特徵及逾期天數分組。
 
 82
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -3394,58 +3409,70 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 3. FINANCIAL RISK MANAGEMENT (Continued) 3. 財務風險管理（續）
-| 3.1 Financial risk factors (Continued) | | | 3.1 | 財務風險因素（續） | | | | |
-| --------------------------------------- | --- | --- | ---- | ------------ | --- | --- | --- | --- |
-| (b) Credit risk (Continued) | | | | (b) 信貸風險（續） | | | | |
+
+| 3.1 Financial risk factors (Continued) | 3.1 | 財務風險因素（續） |
+| --- | --- | --- |
+| (b) Credit risk (Continued) |  | (b) 信貸風險（續） |
+
 (ii) Impairment of financial assets (Continued) (ii) 金融資產減值（續）
-| Trade receivables (Continued) | | | | | 應收貿易賬款（續） | | | |
-| ----------------------------------------- | --- | --- | --- | --- | ----------- | --- | --- | --- |
-| The expected loss rates are based on the | | | | | 預期虧損率分別基於二零 | | | |
-| payment profiles of sales over a period | | | | | 二五年十二月三十一日或 | | | |
+
+| Trade receivables (Continued) | 應收貿易賬款（續） |
+| --- | --- |
+| The expected loss rates are based on the | 預期虧損率分別基於二零 |
+| payment profiles of sales over a period | 二五年十二月三十一日或 |
+
 二零二四年十二月三十一
 of 36 month before 31 December 2025
-| or 31 December 2024 respectively and | | | | | 日前36個月期間內銷售 | | | |
-| ------------------------------------------- | --- | --- | --- | --- | ----------- | --- | --- | --- |
-| the corresponding historical credit losses | | | | | 的付款情況及本期間內出 | | | |
+
+| or 31 December 2024 respectively and | 日前36個月期間內銷售 |
+| --- | --- |
+| the corresponding historical credit losses | 的付款情況及本期間內出 |
+
 experienced within this period. The historical loss 現的相應歷史信貸虧損
-rates are adjusted to reflect current and forward- 確定。歷史信貸虧損率已
-作出調整以反映影響客戶
+rates are adjusted to reflect current and forward- 確定。歷史信貸虧損率已作出調整以反映影響客戶
 looking information on macroeconomic factors
 affecting the ability of the customers to settle 結算應收賬款能力的當前
-| the receivables. The Group has considered the | | | | | 和前瞻性宏觀經濟因素資 | | | |
-| ---------------------------------------------- | --- | --- | --- | --- | ----------- | --- | --- | --- |
+
+| the receivables. The Group has considered the | 和前瞻性宏觀經濟因素資 |
+| --- | --- |
+
 business, financial or economic conditions of the 料。本集團已考慮客戶的
-| customers and the performance and behaviour | | | | | 業務、財務或經濟狀況以 | | | |
-| -------------------------------------------- | --- | --- | --- | --- | ----------- | --- | --- | --- |
+
+| customers and the performance and behaviour | 業務、財務或經濟狀況以 |
+| --- | --- |
+
 及客戶的表現及行為，並
 of customers, and accordingly adjusts the
-| historical loss rates based on expected changes | | | | | 根據該等因素的預期變動 | | | |
-| ------------------------------------------------ | --- | --- | --- | --- | ----------- | --- | --- | --- |
-| in these factors. | | | | | 相應地調整歷史信貸虧損 | | | |
+
+| historical loss rates based on expected changes | 根據該等因素的預期變動 |
+| --- | --- |
+| in these factors. | 相應地調整歷史信貸虧損 |
+
 率。
 按此基準，於二零二五年
 On that basis, the loss allowance for trade
-| receivables as at 31 December 2025 and 31 | | | | | 十二月三十一日及二零 | | | |
-| ------------------------------------------ | --- | --- | --- | --- | ----------- | --- | --- | --- |
-| December 2024 was determined under HKFRS | | | | | 二四年十二月三十一日根 | | | |
-| 9 as follows: | | | | | 據香港財務報告準則第9 | | | |
+
+| receivables as at 31 December 2025 and 31 | 十二月三十一日及二零 |
+| --- | --- |
+| December 2024 was determined under HKFRS | 二四年十二月三十一日根 |
+| 9 as follows: | 據香港財務報告準則第9 |
+
 號所釐定的應收貿易賬款
 的虧損撥備如下：
-| | | | Within | 3 to 12 | | Over 12 | | |
-| ---------------- | --- | -------- | ------- | -------- | ------ | -------- | ----- | ------- |
-| | | 3 months | | months | | months | | Total |
-| | | | 3個月內 | 3至12個月 | 12個月以上 | | | 總計 |
-| 31 December 2025 | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 |
-| 二零二五年十二月三十一日 | | 人民幣千元 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | |
+
+|  |  | Within | 3 to 12 |  | Over 12 |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  | 3 months |  | months |  | months |  | Total |
+|  |  | 3個月內 | 3至12個月 | 12個月以上 |  |  | 總計 |
+| 31 December 2025 | RMB’000 |  | RMB’000 |  | RMB’000 |  | RMB’000 |
+| 二零二五年十二月三十一日 | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |  | 人民幣千元 |  |
+
 預期虧損率
-| Expected loss rate | | | 0.10% | 4.11% | | 74.30% | | |
-| --------------------- | ----- | --- | ------- | ----- | --- | ------ | --- | ------- |
-| Gross carrying amount | 總賬面值 | | 692,310 | 8,300 | | 2,712 | | 703,322 |
-| | | | | | | | | |
-| Total loss allowance | 總虧損撥備 | | 702 | | 341 | 2,015 | | 3,058 |
-| | | | | | | | | |
-| | | | | | | | | |
+
+| Expected loss rate |  | 0.10% | 4.11% |  | 74.30% |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Gross carrying amount | 總賬面值 | 692,310 | 8,300 |  | 2,712 | 703,322 |
+| Total loss allowance | 總虧損撥備 | 702 |  | 341 | 2,015 | 3,058 |
 
 83
 阜豐集團有限公司 年報 2025
@@ -3453,50 +3480,54 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 3. FINANCIAL RISK MANAGEMENT (Continued) 3. 財務風險管理（續）
-| 3.1 Financial risk factors (Continued) | | | | 3.1 | 財務風險因素（續） | | | | |
-| --------------------------------------- | --- | --- | --- | ---- | ------------ | --- | --- | --- | --- |
-| (b) Credit risk (Continued) | | | | | (b) 信貸風險（續） | | | | |
+
+| 3.1 Financial risk factors (Continued) | 3.1 | 財務風險因素（續） |
+| --- | --- | --- |
+| (b) Credit risk (Continued) |  | (b) 信貸風險（續） |
+
 (ii) Impairment of financial assets (Continued) (ii) 金融資產減值（續）
-| Trade receivables (Continued) | | | | | | 應收貿易賬款（續） | | | |
-| ----------------------------- | ----- | --- | --------- | ------ | -------- | --------- | --------- | ----- | --------- |
-| | | | Within | | 3 to 12 | | Over | | |
-| | | | 3 months | | months | | 12 months | | Total |
-| | | | 3個月內 | 3至12個月 | | 12個月以上 | | | 總計 |
-| 31 December 2024 | | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 |
-| 二零二四年十二月三十一日 | | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | | |
-| Expected loss rate | 預期虧損率 | | 1.45% | | 11.94% | | 97.32% | | |
-| Gross carrying amount | 總賬面值 | | 1,070,254 | | 36,694 | | 7,653 | | 1,114,601 |
-| | | | | | | | | | |
-| Total loss allowance | 總虧損撥備 | | 15,539 | | 4,381 | | 7,448 | | 27,368 |
-| | | | | | | | | | |
-| | | | | | | | | | |
+
+| Trade receivables (Continued) |  |  |  |  | 應收貿易賬款（續） |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | Within |  | 3 to 12 |  | Over |  |  |
+|  |  | 3 months |  | months |  | 12 months |  | Total |
+|  |  | 3個月內 | 3至12個月 |  | 12個月以上 |  |  | 總計 |
+| 31 December 2024 |  | RMB’000 |  | RMB’000 |  | RMB’000 |  | RMB’000 |
+| 二零二四年十二月三十一日 |  | 人民幣千元 | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  |
+| Expected loss rate | 預期虧損率 | 1.45% |  | 11.94% |  | 97.32% |  |  |
+| Gross carrying amount | 總賬面值 | 1,070,254 |  | 36,694 |  | 7,653 |  | 1,114,601 |
+| Total loss allowance | 總虧損撥備 | 15,539 |  | 4,381 |  | 7,448 |  | 27,368 |
+
 The closing loss allowance for trade receivables 於十二月三十一日之應收
-| as at 31 December reconcile to the opening loss | | | | | | 貿易賬款之期末虧損撥備 | | | |
-| ------------------------------------------------ | --- | --- | --- | --- | --- | ----------- | --- | --- | --- |
+
+| as at 31 December reconcile to the opening loss | 貿易賬款之期末虧損撥備 |
+| --- | --- |
+
 與期初虧損撥備的對賬如
 allowance as follows:
 下：
 Trade receivables
 應收貿易賬款
-| | | | | | | 2025 | | | 2024 |
-| -------------------------------------- | --- | --------- | ---- | --- | ----- | ------- | --- | ------- | ------ |
-| | | | | | 二零二五年 | | | 二零二四年 | |
-| | | | | | | RMB’000 | | RMB’000 | |
-| | | | | | 人民幣千元 | | | 人民幣千元 | |
-| | | | | | | | | | |
-| Opening loss allowance as at 1 January | | 於一月一日的期初 | | | | | | | |
-| | | | 虧損撥備 | | | 27,368 | | | 34,538 |
-Reversal of impairment loss allowance 減值虧損撥備撥回 (24,310) (7,170)
-| | | | | | | | | | |
-| ------------------------------------- | --- | --------- | --- | --- | --- | --- | --- | --- | --- |
-| Closing loss allowance at 31 December | | 於十二月三十一日的 | | | | | | | |
-期末虧損撥備
-| | | | | | | 3,058 | | | 27,368 |
-| --- | --- | --- | --- | --- | --- | ----- | --- | --- | ------ |
-| | | | | | | | | | |
 
-84 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+|  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  |  | RMB’000 | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Opening loss allowance as at 1 January | 於一月一日的期初 |  |  |  |  |
+|  | 虧損撥備 |  | 27,368 |  | 34,538 |
+
+Reversal of impairment loss allowance 減值虧損撥備撥回 (24,310) (7,170)
+
+| Closing loss allowance at 31 December | 於十二月三十一日的 |
+| --- | --- |
+
+期末虧損撥備
+
+| 3,058 | 27,368 |
+| --- | --- |
+
+<!-- p.84 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -3511,9 +3542,7 @@ Impairment losses on trade receivables are 應收貿易賬款的減值虧損
 presented within operating profit. Subsequent 於經營溢利內呈列。先前
 recoveries of amounts previously written off are 已撇銷款項的後續收回將
 credited against the same line item. 貸記入同一明細項目。
-Other financial assets at amortised cost 按攤銷成本列賬的其他金
-融資產
-按攤銷成本列賬的其他金
+Other financial assets at amortised cost 按攤銷成本列賬的其他金融資產按攤銷成本列賬的其他金
 Other financial assets at amortised cost mainly
 融資產主要包括存款及其
 include deposits and other receivables, loan
@@ -3522,8 +3551,7 @@ to a related party and loan to a third party.
 連方的貸款及給予一名第
 Impairment on other receivables is measured as
 三方的貸款。其他應收款
-either 12-month expected credit losses or lifetime
-expected credit loss, depending on whether
+either 12-month expected credit losses or lifetime expected credit loss, depending on whether
 項的減值乃按12個月預
 期信貸虧損或整個存續期
 there has been a significant increase in credit risk
@@ -3545,48 +3573,52 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 3. FINANCIAL RISK MANAGEMENT (Continued) 3. 財務風險管理（續）
-| 3.1 Financial risk factors (Continued) | 3.1 | 財務風險因素（續） | | |
-| --------------------------------------- | ---- | ------------ | --- | --- |
-| (b) Credit risk (Continued) | | (b) 信貸風險（續） | | |
+
+| 3.1 Financial risk factors (Continued) | 3.1 | 財務風險因素（續） |
+| --- | --- | --- |
+| (b) Credit risk (Continued) |  | (b) 信貸風險（續） |
+
 (ii) Impairment of financial assets (Continued) (ii) 金融資產減值（續）
-| Net impairment losses on financial assets | | 已於損益中確認的金融資 | | |
-| ------------------------------------------ | --- | ----------- | --- | --- |
-| recognised in profit and loss | | 產的減值虧損淨額 | | |
-| During the years ended 31 December 2025 | | 截至二零二五年及二零 | | |
+
+| Net impairment losses on financial assets | 已於損益中確認的金融資 |
+| --- | --- |
+| recognised in profit and loss | 產的減值虧損淨額 |
+| During the years ended 31 December 2025 | 截至二零二五年及二零 |
+
 二四年十二月三十一日止
 and 2024, the following (gains)/losses were
 recognised in “Reversal of impairment losses on 年度，下列（利得）╱虧損
 financial assets”, respectively in the consolidated 分別於減值金融資產相關
 income statement in relation to impaired financial 合併利潤表中「金融資產
-| assets: | | 減值虧損撥回」確認： | | |
-| --------------------------------------- | ---------- | ---------- | ------- | ---- |
-| | | 2025 | | 2024 |
-| | | 二零二五年 | 二零二四年 | |
-| | | RMB’000 | RMB’000 | |
-| | | 人民幣千元 | 人民幣千元 | |
-| | | | | |
-| (Reversal of)/provision for impairment | 減值虧損（撥回）╱ | | | |
-| losses | 撥備 | | | |
+
+| assets: |  | 減值虧損撥回」確認： |  |  |
+| --- | --- | --- | --- | --- |
+|  |  | 2025 |  | 2024 |
+|  |  | 二零二五年 | 二零二四年 |  |
+|  |  | RMB’000 | RMB’000 |  |
+|  |  | 人民幣千元 | 人民幣千元 |  |
+| (Reversal of)/provision for impairment | 減值虧損（撥回）╱ |  |  |  |
+| losses | 撥備 |  |  |  |
+
 －應收貿易賬款的
 – loss allowance for trade receivables
-| | 虧損撥備 | (24,310) | (7,170) | |
-| -------------------------------------- | --------- | ----------- | ------- | --- |
-| – loss allowance for other receivables | －其他應收款項的 | | | |
-| | 虧損撥備 | 11,242 | | – |
-| | | (13,068) | (7,170) | |
-| | | | | |
-| | | | | |
-| (c) Liquidity risk | | (c) 流動資金風險 | | |
+
+|  | 虧損撥備 | (24,310) | (7,170) |  |
+| --- | --- | --- | --- | --- |
+| – loss allowance for other receivables | －其他應收款項的 |  |  |  |
+|  | 虧損撥備 | 11,242 |  | – |
+|  |  | (13,068) | (7,170) |  |
+| (c) Liquidity risk |  | (c) 流動資金風險 |  |  |
+
 審慎的流動資金風險管理包括
-Prudent liquidity risk management includes maintaining
-sufficient cash and available credit facilities to meet 保持充裕現金及可動用的信貸
-融資，以應付有關風險。
+Prudent liquidity risk management includes maintaining sufficient cash and available credit facilities to meet 保持充裕現金及可動用的信貸融資，以應付有關風險。
 obligations when they arise.
-Management monitors the funding requirements of 管理層監控本集團的資金需求
-及信貸融資的可用性，以確保
+Management monitors the funding requirements of 管理層監控本集團的資金需求及信貸融資的可用性，以確保
 the Group and the availability of credit facilities in order
-| to ensure the liquidity of the Group. | | 本集團資金流動性。 | | |
-| ------------------------------------- | --- | --------- | --- | --- |
+
+| to ensure the liquidity of the Group. | 本集團資金流動性。 |
+| --- | --- |
+
 The table below analyzes the Group’s financial 下表根據合約到期日按相關到
 liabilities into relevant maturity groupings based on 期組別分析本集團的金融負債。
 their contractual maturities.
@@ -3596,112 +3628,127 @@ FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 3. FINANCIAL RISK MANAGEMENT (Continued) | | | 3. 財務風險管理（續） | | | |
-| ----------------------------------------- | --- | --- | ------------- | --------- | --------- | --- |
-| 3.1 Financial risk factors (Continued) | | | 3.1 | 財務風險因素（續） | | |
-| (c) Liquidity risk (Continued) | | | | (c) | 流動資金風險（續） | |
-The amounts disclosed in the table are the contractual 表中披露的金額為合約未貼現
-現金流量。由於貼現影響並不
+
+| 3. FINANCIAL RISK MANAGEMENT (Continued) | 3. 財務風險管理（續） |  |  |
+| --- | --- | --- | --- |
+| 3.1 Financial risk factors (Continued) | 3.1 | 財務風險因素（續） |  |
+| (c) Liquidity risk (Continued) |  | (c) | 流動資金風險（續） |
+
+The amounts disclosed in the table are the contractual 表中披露的金額為合約未貼現現金流量。由於貼現影響並不
 undiscounted cash flows. Balances due within 12
 months equal their carrying balances, as the impact of 重大，故於十二個月內到期的
-| discounting is not significant. | | | | | 結餘相當於其賬面結餘。 | |
-| ------------------------------- | --- | --- | --- | --- | ----------- | --- |
+
+| discounting is not significant. | 結餘相當於其賬面結餘。 |
+| --- | --- |
+
 Total
-CCoonnttrraaccttuuaall mmaattuurriittiieess ooff Less than Between Between contractual
-financial liabilities 金融負債合約到期日 1 year 1 and 2 years 2 and 5 years cash flows
+CCoonnttrraaccttuuaall mmaattuurriittiieess ooff Less than Between Between contractual financial liabilities 金融負債合約到期日 1 year 1 and 2 years 2 and 5 years cash flows
 合約現金
-| | | | 少於一年 | 一至兩年 | 二至五年 | 流量總額 |
-| ------------------- | ------- | --- | ------- | ------- | ------- | ------- |
-| | | | RMB’000 | RMB’000 | RMB’000 | RMB’000 |
-| | | | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |
-| At 31 December 2025 | 於二零二五年 | | | | | |
+
+|  |  | 少於一年 | 一至兩年 | 二至五年 | 流量總額 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | RMB’000 | RMB’000 | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |
+
 十二月三十一日
-| Borrowings | 借貸 | | 17,445,910 | 199,900 | | – 17,645,810 |
-| ------------------------- | ---------- | --- | ---------- | ------- | ----- | ------------ |
-| Interests payments on | 就借貸支付利息(i) | | | | | |
-| borrowings (i) | | | 113,843 | | 3,259 | – 117,102 |
-| Lease liabilities | 租賃負債 | | 1,027 | | 435 | – 1,462 |
-| Trade and other payables | 應付貿易賬款及其他 | | | | | |
-| (excluding non-financial | 應付款項（不包括 | | | | | |
-| liabilities) | 非金融負債） | | 3,506,252 | | – | – 3,506,252 |
-| | | | | | | |
+
+| Borrowings | 借貸 | 17,445,910 | 199,900 |  | – 17,645,810 |
+| --- | --- | --- | --- | --- | --- |
+| Interests payments on | 就借貸支付利息(i) |  |  |  |  |
+| borrowings (i) |  | 113,843 |  | 3,259 | – 117,102 |
+| Lease liabilities | 租賃負債 | 1,027 |  | 435 | – 1,462 |
+| Trade and other payables | 應付貿易賬款及其他 |  |  |  |  |
+| (excluding non-financial | 應付款項（不包括 |  |  |  |  |
+| liabilities) | 非金融負債） | 3,506,252 |  | – | – 3,506,252 |
+
 Total non-derivatives 非衍生工具總額 21,067,032 203,594 – 21,270,626
-| | | | | | | |
-| ------------------------------ | ----------- | --- | --- | --- | --- | --- |
-| Derivatives | 衍生工具 | | | | | |
-| Gross settled (cross currency | 總額結算（交叉貨幣掉期 | | | | | |
+
+| Derivatives | 衍生工具 |
+| --- | --- |
+| Gross settled (cross currency | 總額結算（交叉貨幣掉期 |
+
 及交叉貨幣與利率掉期）
 swaps and cross currency and
 interest rate swaps)
-| – (inflow) | －（流入） | | (1,827,489) | | – | – (1,827,489) |
-| ---------- | ----- | --- | ----------- | ------- | --- | ------------- |
-| – outflow | －流出 | | 1,830,931 | | – | – 1,830,931 |
-| | | | | | | |
-| | | | 3,442 | | – | – 3,442 |
-| | | | | | | |
-| Total | 總計 | | 21,070,474 | 203,594 | | – 21,274,068 |
-| | | | | | | |
-| | | | | | | |
+
+| – (inflow) | －（流入） | (1,827,489) |  | – | – (1,827,489) |
+| --- | --- | --- | --- | --- | --- |
+| – outflow | －流出 | 1,830,931 |  | – | – 1,830,931 |
+|  |  | 3,442 |  | – | – 3,442 |
+| Total | 總計 | 21,070,474 | 203,594 |  | – 21,274,068 |
 
 87
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 3. FINANCIAL RISK MANAGEMENT (Continued) | | | 3. | 財務風險管理（續） | | | | |
-| ----------------------------------------- | --- | --- | --- | -------------- | --------- | --- | --- | --- |
-| 3.1 Financial risk factors (Continued) | | | | 3.1 財務風險因素（續） | | | | |
-| (c) Liquidity risk (Continued) | | | | (c) | 流動資金風險（續） | | | |
+
+| 3. FINANCIAL RISK MANAGEMENT (Continued) | 3. | 財務風險管理（續） |  |
+| --- | --- | --- | --- |
+| 3.1 Financial risk factors (Continued) |  | 3.1 財務風險因素（續） |  |
+| (c) Liquidity risk (Continued) |  | (c) | 流動資金風險（續） |
+
 Total
-Contractual maturities of Less than Between Between contractual
-financial liabilities 金融負債合約到期日 1 year 1 and 2 years 2 and 5 years cash flows
+Contractual maturities of Less than Between Between contractual financial liabilities 金融負債合約到期日 1 year 1 and 2 years 2 and 5 years cash flows
 合約現金
-| | | | 少於一年 | | 一至兩年 | | 二至五年 | 流量總額 |
-| ------------------- | ------- | ----- | ------- | ----- | ------- | ----- | ------- | ------- |
-| | | | RMB’000 | | RMB’000 | | RMB’000 | RMB’000 |
-| | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | | |
-| At 31 December 2024 | 於二零二四年 | | | | | | | |
+
+|  |  |  | 少於一年 |  | 一至兩年 |  | 二至五年 | 流量總額 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | RMB’000 |  | RMB’000 |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |
+| At 31 December 2024 | 於二零二四年 |  |  |  |  |  |  |  |
+
 十二月三十一日
-| Borrowings | 借貸 | 11,016,468 | | | 348,000 | | | – 11,364,468 |
-| ------------------------- | ---------- | ---------- | ------- | --- | ------- | --- | --- | ------------ |
-| Interests payments on | 就借貸支付利息(i) | | | | | | | |
-| borrowings (i) | | | 110,331 | | 3,558 | | | – 113,889 |
-| Lease liabilities | 租賃負債 | | 851 | | 857 | | 445 | 2,153 |
-| Trade and other payables | 應付貿易賬款及其他 | | | | | | | |
-| (excluding non-financial | 應付款項（不包括 | | | | | | | |
-| liabilities) | 非金融負債） | 3,667,842 | | | | – | | – 3,667,842 |
-| | | | | | | | | |
+
+| Borrowings | 借貸 | 11,016,468 |  | 348,000 |  |  | – 11,364,468 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Interests payments on | 就借貸支付利息(i) |  |  |  |  |  |  |
+| borrowings (i) |  |  | 110,331 | 3,558 |  |  | – 113,889 |
+| Lease liabilities | 租賃負債 |  | 851 | 857 |  | 445 | 2,153 |
+| Trade and other payables | 應付貿易賬款及其他 |  |  |  |  |  |  |
+| (excluding non-financial | 應付款項（不包括 |  |  |  |  |  |  |
+| liabilities) | 非金融負債） | 3,667,842 |  |  | – |  | – 3,667,842 |
+
 Total non-derivatives 非衍生工具總額 14,795,492 352,415 445 15,148,352
-| | | | | | | | | |
-| ----------- | ---- | --- | --- | --- | --- | --- | --- | --- |
-| Derivatives | 衍生工具 | | | | | | | |
+
+| Derivatives | 衍生工具 |
+| --- | --- |
+
 總額結算（交叉貨幣掉期
 Gross settled (cross currency
-| swaps and cross currency and | 及交叉貨幣與利率掉期） | | | | | | | |
-| ----------------------------- | ----------- | --- | --- | --- | --- | --- | --- | --- |
+
+| swaps and cross currency and | 及交叉貨幣與利率掉期） |
+| --- | --- |
+
 interest rate swaps)
-| – (inflow) | －（流入） | | (233,894) | | | – | | – (233,894) |
-| ---------- | ----- | --- | --------- | --- | --- | --- | --- | ----------- |
-| – outflow | －流出 | | 234,045 | | | – | | – 234,045 |
-| | | | | | | | | |
-| | | | 151 | | | – | | – 151 |
+
+| – (inflow) | －（流入） | (233,894) | – | – (233,894) |
+| --- | --- | --- | --- | --- |
+| – outflow | －流出 | 234,045 | – | – 234,045 |
+|  |  | 151 | – | – 151 |
+
 總計
-| Total | | 14,795,643 | | | 352,415 | | 445 | 15,148,503 |
-| ----- | --- | ------------ | --- | --- | ------- | --- | --- | ------------ |
-| | | | | | | | | |
+
+| Total | 14,795,643 | 352,415 | 445 | 15,148,503 |
+| --- | --- | --- | --- | --- |
+
 (i) The interests on borrowings are calculated (i) 借貸利息根據於二零二五
-| based on bank borrowings held as at 31 | | | | | | 年及二零二四年十二月 | | |
-| ------------------------------------------- | --- | --- | --- | --- | --- | ----------- | --- | --- |
-| December 2025 and 2024 without taking into | | | | | | 三十一日所持銀行借貸計 | | |
+
+| based on bank borrowings held as at 31 | 年及二零二四年十二月 |
+| --- | --- |
+| December 2025 and 2024 without taking into | 三十一日所持銀行借貸計 |
+
 account of future issues. Floating-rate interests 算，而不計及日後事項。
 are estimated using current interest rate as at 31 浮動利息分別使用二零
-| December 2025 and 2024 respectively. | | | | | | 二五年及二零二四年十二 | | |
-| ------------------------------------ | --- | --- | --- | --- | --- | ----------- | --- | --- |
+
+| December 2025 and 2024 respectively. | 二五年及二零二四年十二 |
+| --- | --- |
+
 月三十一日的現行利率估
 計。
 
-88 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.88 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -3712,8 +3759,7 @@ The Group’s objectives when managing capital are to: 本集團的資本管理�
 • safeguard their ability to continue as a going • 保障其按持續經營基準繼
 concern, so that they can continue to provide 續營運的能力，因此彼等
 returns for shareholders and benefits for other 可繼續為股東帶來回報，
-stakeholders, and 同時兼顧其他持份者的利
-益，及
+stakeholders, and 同時兼顧其他持份者的利益，及
 • maintain an optimal capital structure to reduce • 維持最佳資本結構以減低
 the cost of capital. 資金成本。
 In order to maintain or adjust the capital structure, 為維持或調整資本架構，本集
@@ -3724,46 +3770,49 @@ The Group monitors capital on the basis of the gearing 本集團根據資產負�
 ratio. This ratio is equal to total debt divided by total 察其資本。該比率相等於債務
 assets at the end of corresponding year. Total debt 總額除以對應年度年結日資
 includes current and non-current bank borrowings as 產總值。於二零二五年十二月
-at 31 December 2025. 三十一日，債務總額包括流動
-及非流動銀行借貸。
+at 31 December 2025. 三十一日，債務總額包括流動及非流動銀行借貸。
 
 89
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 3. FINANCIAL RISK MANAGEMENT (Continued) | 3. 財務風險管理（續） | | |
-| ----------------------------------------- | ------------- | ------------ | --- |
-| 3.2 Capital management (Continued) | 3.2 | 資本管理（續） | |
-| (a) Risk management (Continued) | | (a) 風險管理（續） | |
-The gearing ratios at 31 December 2025 and 2024 於二零二五年及二零二四年
-十二月三十一日的資產負債比
+
+| 3. FINANCIAL RISK MANAGEMENT (Continued) | 3. 財務風險管理（續） |  |
+| --- | --- | --- |
+| 3.2 Capital management (Continued) | 3.2 | 資本管理（續） |
+| (a) Risk management (Continued) |  | (a) 風險管理（續） |
+
+The gearing ratios at 31 December 2025 and 2024 於二零二五年及二零二四年十二月三十一日的資產負債比
 were as follows:
 率如下：
 2025 2024
-| | | 二零二五年 | 二零二四年 |
-| --------------------- | ---------- | ------------ | ------------ |
-| | | RMB’000 | RMB’000 |
-| | | 人民幣千元 | 人民幣千元 |
-| | | | |
+
+|  |  | 二零二五年 | 二零二四年 |
+| --- | --- | --- | --- |
+|  |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |
 | Total debt (Notes 28) | 債務總額（附註28） | 17,645,810 | 11,364,468 |
 | Total assets | 資產總值 | 43,714,724 | 36,089,896 |
 | Gearing ratio | 資產負債比率 | 40.37% | 31.49% |
-| | | | |
-| | | | |
+
 The increase in the gearing ratio of the Group was 本集團資產負債比率上漲主要
 mainly due to the increase in borrowings in 2025. 由於二零二五年借貸增加所致。
-| (i) Loan covenants | | (i) 貸款契諾 | |
-| ---------------------------------------------- | --- | ----------- | --- |
-| As at 31 December 2025, the Group’s certain | | 於二零二五年十二月 | |
-| bank borrowings are subject to the fulfilment | | 三十一日，本集團的若干 | |
+
+| (i) Loan covenants | (i) 貸款契諾 |
+| --- | --- |
+| As at 31 December 2025, the Group’s certain | 於二零二五年十二月 |
+| bank borrowings are subject to the fulfilment | 三十一日，本集團的若干 |
+
 銀行借貸須遵守與若干償
 of covenants relating to certain debt servicing
 financial indicators. The Group regularly monitors 債財務指標有關的契諾。
-| its compliance with these covenants. As at 31 | | 本集團定期監督其遵守 | |
-| ---------------------------------------------- | --- | ----------- | --- |
-| December 2025, none of these covenants had | | 該等契諾的情況。於二零 | |
-| been breached. | | 二五年十二月三十一日， | |
+
+| its compliance with these covenants. As at 31 | 本集團定期監督其遵守 |
+| --- | --- |
+| December 2025, none of these covenants had | 該等契諾的情況。於二零 |
+| been breached. | 二五年十二月三十一日， |
+
 本集團並無違反該等契諾。
 
 90
@@ -3771,100 +3820,121 @@ FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 3. FINANCIAL RISK MANAGEMENT (Continued) | | | 3. 財務風險管理（續） | | | |
-| ---------------------------------------------- | --- | --- | ------------- | ------------ | ----------- | --- |
-| 3.3 Fair value estimation | | | 3.3 | 公平值估算 | | |
-| (a) Financial assets and liabilities | | | | (a) 金融資產及負債 | | |
-| (i) Fair value hierarchy | | | | (i) | 公平值層級 | |
-| This section explains the judgments and | | | | | 本節闡述釐定於合併財務 | |
-| estimates made in determining the fair values | | | | | 報表中確認及按公平值計 | |
+
+| 3. FINANCIAL RISK MANAGEMENT (Continued) | 3. 財務風險管理（續） |  |  |
+| --- | --- | --- | --- |
+| 3.3 Fair value estimation | 3.3 | 公平值估算 |  |
+| (a) Financial assets and liabilities |  | (a) 金融資產及負債 |  |
+| (i) Fair value hierarchy |  | (i) | 公平值層級 |
+| This section explains the judgments and |  |  | 本節闡述釐定於合併財務 |
+| estimates made in determining the fair values |  |  | 報表中確認及按公平值計 |
+
 of the financial instruments that are recognised 量的金融工具公平值所作
-| and measured at fair value in the consolidated | | | | | 出的判斷及估算。為提供 | |
-| ----------------------------------------------- | --- | --- | --- | --- | ----------- | --- |
+
+| and measured at fair value in the consolidated | 出的判斷及估算。為提供 |
+| --- | --- |
+
 有關釐定公平值所用輸入
 financial statements. To provide an indication
-| about the reliability of the inputs used in | | | | | 數據的可靠性指標，本集 | |
-| -------------------------------------------- | --- | --- | --- | --- | ----------- | --- |
+
+| about the reliability of the inputs used in | 數據的可靠性指標，本集 |
+| --- | --- |
+
 determining fair value, the Group has classified 團已按會計準則規定將其
-| its financial instruments into the three levels | | | | | 金融工具分為三個等級。 | |
-| ------------------------------------------------ | --- | --- | --- | --- | ----------- | --- |
-| prescribed under the accounting standards. An | | | | | 各等級於下表進行闡述。 | |
+
+| its financial instruments into the three levels | 金融工具分為三個等級。 |
+| --- | --- |
+| prescribed under the accounting standards. An | 各等級於下表進行闡述。 |
+
 explanation of each level follows underneath the
 table.
 Recurring fair value
-| measurements | 經常性公平值計量 | | Level 1 | Level 2 | Level 3 | Total |
-| ------------------- | -------- | ---- | ------- | ------- | ------- | ------- |
-| | | | 第1層級 | 第2層級 | 第3層級 | 總計 |
-| | | Note | RMB’000 | RMB’000 | RMB’000 | RMB’000 |
-| | | 附註 | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |
-| | | | | | | |
-| At 31 December 2025 | 於二零二五年 | | | | | |
+
+| measurements | 經常性公平值計量 |  | Level 1 | Level 2 | Level 3 | Total |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 第1層級 | 第2層級 | 第3層級 | 總計 |
+|  |  | Note | RMB’000 | RMB’000 | RMB’000 | RMB’000 |
+|  |  | 附註 | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |  |
+
 十二月三十一日
-| Financial assets | 金融資產 | | | | | |
-| ---------------- | ---- | --- | --- | --- | --- | --- |
+
+| Financial assets | 金融資產 |
+| --- | --- |
+
 按公平值計入損益計量
 Financial assets measured
-| at FVPL | 的金融資產 | | | | | |
-| --------------------------- | ---------- | ----- | --- | --- | --------- | ------- |
-| – Equity investments | －股權投資 | 17 | | – | – 4,007 | 4,007 |
-| Notes receivable measured | 按公平值計入其他綜合 | | | | | |
-| at FVOCI | 收益計量的應收票據 | 21(g) | | – | – 481,765 | 481,765 |
-| | | | | | | |
-| Total financial assets | 金融資產總值 | | | – | – 485,772 | 485,772 |
-| | | | | | | |
-| Financial liabilities | 金融負債 | | | | | |
+
+| at FVPL | 的金融資產 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| – Equity investments | －股權投資 | 17 | – | – 4,007 | 4,007 |
+| Notes receivable measured | 按公平值計入其他綜合 |  |  |  |  |
+| at FVOCI | 收益計量的應收票據 | 21(g) | – | – 481,765 | 481,765 |
+| Total financial assets | 金融資產總值 |  | – | – 485,772 | 485,772 |
+| Financial liabilities | 金融負債 |  |  |  |  |
+
 衍生金融工具
-| Derivative financial instruments | | 18 | | – | – 9,267 | 9,267 |
-| -------------------------------- | --- | --- | --- | --- | --------- | ------- |
-| | | | | | | |
+
+| Derivative financial instruments | 18 | – | – 9,267 | 9,267 |
+| --- | --- | --- | --- | --- |
 
 91
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 3. FINANCIAL RISK MANAGEMENT (Continued) | | | 3. 財務風險管理（續） | | | |
-| ----------------------------------------- | --- | --- | ------------- | -------- | --- | --- |
-| 3.3 Fair value estimation (Continued) | | | 3.3 | 公平值估算（續） | | |
+
+| 3. FINANCIAL RISK MANAGEMENT (Continued) | 3. 財務風險管理（續） |  |
+| --- | --- | --- |
+| 3.3 Fair value estimation (Continued) | 3.3 | 公平值估算（續） |
+
 (a) Financial assets and liabilities (Continued) (a) 金融資產及負債（續）
-| (i) Fair value hierarchy (Continued) | | | | (i) | 公平值層級（續） | |
-| ------------------------------------- | --- | --- | --- | ---- | -------- | --- |
+
+| (i) Fair value hierarchy (Continued) | (i) | 公平值層級（續） |
+| --- | --- | --- |
+
 Recurring fair value
-| measurements | 經常性公平值計量 | | Level 1 | Level 2 | Level 3 | Total |
-| ------------------- | -------- | ---- | ------- | ------- | ------- | ------- |
-| | | | 第1層級 | 第2層級 | 第3層級 | 總計 |
-| | | Note | RMB’000 | RMB’000 | RMB’000 | RMB’000 |
-| | | 附註 | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |
-| | | | | | | |
-| At 31 December 2024 | 於二零二四年 | | | | | |
+
+| measurements | 經常性公平值計量 |  | Level 1 | Level 2 | Level 3 | Total |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 第1層級 | 第2層級 | 第3層級 | 總計 |
+|  |  | Note | RMB’000 | RMB’000 | RMB’000 | RMB’000 |
+|  |  | 附註 | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |
+| At 31 December 2024 | 於二零二四年 |  |  |  |  |  |
+
 十二月三十一日
-| Financial assets | 金融資產 | | | | | |
-| --------------------------- | ---------- | --- | --- | --- | --- | --- |
-| Financial assets measured | 按公平值計入損益計量 | | | | | |
+
+| Financial assets | 金融資產 |
+| --- | --- |
+| Financial assets measured | 按公平值計入損益計量 |
+
 的金融資產
 at FVPL
-| – Equity investments | －股權投資 | 17 | | – | – 5,232 | 5,232 |
-| -------------------------------- | ---------- | ----- | --- | --- | --------- | ------- |
-| Derivative financial instruments | 衍生金融工具 | 18 | | – | – 4,706 | 4,706 |
-| Notes receivable measured | 按公平值計入其他綜合 | | | | | |
-| at FVOCI | 收益計量的應收票據 | 21(g) | | – | – 915,336 | 915,336 |
-| | | | | | | |
-| Total financial assets | 金融資產總值 | | | – | – 925,274 | 925,274 |
-| | | | | | | |
-| Financial liabilities | 金融負債 | | | | | |
+
+| – Equity investments | －股權投資 | 17 | – | – 5,232 | 5,232 |
+| --- | --- | --- | --- | --- | --- |
+| Derivative financial instruments | 衍生金融工具 | 18 | – | – 4,706 | 4,706 |
+| Notes receivable measured | 按公平值計入其他綜合 |  |  |  |  |
+| at FVOCI | 收益計量的應收票據 | 21(g) | – | – 915,336 | 915,336 |
+| Total financial assets | 金融資產總值 |  | – | – 925,274 | 925,274 |
+| Financial liabilities | 金融負債 |  |  |  |  |
+
 衍生金融工具
-| Derivative financial instruments | | 18 | | – | – 2,184 | 2,184 |
-| -------------------------------- | --- | --- | --- | --- | --------- | ------- |
-| | | | | | | |
+
+| Derivative financial instruments | 18 | – | – 2,184 | 2,184 |
+| --- | --- | --- | --- | --- |
+
 應收貿易賬款及其他應收
 The carrying value less impairment provision
-| of trade and other receivables, cash and cash | | | | | 款項、現金及現金等值物 | |
-| ---------------------------------------------- | --- | --- | --- | --- | ----------- | --- |
-| equivalents and short-term bank deposits | | | | | 以及短期銀行存款的賬面 | |
-| approximated their fair values. | | | | | 值減去減值撥備與其公平 | |
+
+| of trade and other receivables, cash and cash | 款項、現金及現金等值物 |
+| --- | --- |
+| equivalents and short-term bank deposits | 以及短期銀行存款的賬面 |
+| approximated their fair values. | 值減去減值撥備與其公平 |
+
 值相若。
 
-92 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.92 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -3891,17 +3961,15 @@ maximise the use of observable market data 值技術盡量採用可觀察市
 and rely as little as possible on entity-specific 場數據，並盡可能不倚賴
 estimates. If all significant inputs required to 實體特定估計。倘計算工
 fair value an instrument are observable, the 具公平值所需的所有重大
-instrument is included in level 2. 輸入數據均可觀察，則該
-工具計入第2層級。
+instrument is included in level 2. 輸入數據均可觀察，則該工具計入第2層級。
 Level 3: If one or more of the significant inputs 第3層級：倘一項或多項
 is not based on observable market data, the 重大輸入數據並非以可觀
 instrument is included in level 3. This is the case 察市場數據為基礎，則該
 for unlisted equity securities and for instruments 工具計入第3層級。對於
 where climate risk gives rise to a significant 非上市股本證券及氣候風
-unobservable adjustment. 險會導致重大不可觀察調
-整的工具而言便是如此。
+unobservable adjustment. 險會導致重大不可觀察調整的工具而言便是如此。
 
-阜豐集團有限公司 年報 2025 93
+<!-- p.93 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -3918,20 +3986,15 @@ cash flows based on observable yield 收益曲線估計的未來
 curves 現金流量現值
 • for foreign currency forwards – present • 就外匯遠期合約而
 value of future cash flows based on forward 言－於資產負債表日
-exchange rates at the balance sheet date 根據遠期匯率計算的
-未來現金流量現值
+exchange rates at the balance sheet date 根據遠期匯率計算的未來現金流量現值
 • for foreign currency options – option pricing • 就外匯期權而言－期
-models (e.g. Black Scholes model), and 權定價模式（如布萊
-克斯科爾斯模型），
-及
+models (e.g. Black Scholes model), and 權定價模式（如布萊克斯科爾斯模型），及
 • for other financial instruments – discounted • 就其他金融工具而
-cash flow analysis. 言－貼現現金流量分
-析。
+cash flow analysis. 言－貼現現金流量分析。
 All of the resulting fair value estimates are 所有由此產生的公平值估
 included in level 3. The Group did not change 算都包含在第3層級。本
 any valuation techniques in determining the level 集團在確定第2層級及第
-2 and level 3 fair values. 3層級公平值時，並無改
-變任何估值技術。
+2 and level 3 fair values. 3層級公平值時，並無改變任何估值技術。
 
 94
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -3939,63 +4002,71 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 3. FINANCIAL RISK MANAGEMENT (Continued) 3. 財務風險管理（續）
-| 3.3 Fair value estimation (Continued) | | | | 3.3 公平值估算（續） | | | | |
-| -------------------------------------- | --- | --- | --- | ------------- | --- | --- | --- | --- |
+
+| 3.3 Fair value estimation (Continued) | 3.3 公平值估算（續） |
+| --- | --- |
+
 (a) Financial assets and liabilities (Continued) (a) 金融資產及負債（續）
 (iii) Fair value measurements using significant (iii) 採用重大不可觀察輸入數
 據（第3層級）的公平值計
 unobservable inputs (level 3)
 量
 The following table presents the changes in level 下表呈列截至二零二五年
-| 3 items for the years ended 31 December 2025 | | | | | 十二月三十一日及二零 | | | |
-| --------------------------------------------- | --- | --- | --- | --- | ---------- | --- | --- | --- |
+
+| 3 items for the years ended 31 December 2025 | 十二月三十一日及二零 |
+| --- | --- |
+
 二四年十二月三十一日止
 and 31 December 2024:
 年度第3層級項目的變動：
 Notes
-| | | | | receivable | | Derivative | | |
-| --- | --- | ----------- | ------- | ----------- | --- | ----------- | --- | ----- |
-| | | | Equity | measured | | financial | | |
-| | | investments | | at FVOCI | | instruments | | Total |
+
+|  |  | receivable | Derivative |  |
+| --- | --- | --- | --- | --- |
+|  | Equity | measured | financial |  |
+| investments |  | at FVOCI | instruments | Total |
+
 按公平值
 計入其他
 綜合收益計量
-| | | | 權益投資 | 的應收票據 | 衍生金融工具 | | | 總計 |
-| ----------------------- | ----------- | --- | ------- | ------------- | ------ | ------- | --- | ----------- |
-| | | | RMB’000 | RMB’000 | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | | |
-| Opening balance as at | 於二零二四年一月一日的 | | | | | | | |
-| 1 January 2024 | 期初結餘 | | 10,000 | 1,079,888 | | | – | 1,089,888 |
-| Acquisitions | 收購 | | | – 3,636,127 | | | – | 3,636,127 |
-| Disposals | 出售 | | | – (3,800,679) | | (1,792) | | (3,802,471) |
+
+|  |  | 權益投資 | 的應收票據 | 衍生金融工具 |  |  | 總計 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | RMB’000 | RMB’000 |  | RMB’000 |  | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |
+| Opening balance as at | 於二零二四年一月一日的 |  |  |  |  |  |  |
+| 1 January 2024 | 期初結餘 | 10,000 | 1,079,888 |  |  | – | 1,089,888 |
+| Acquisitions | 收購 |  | – 3,636,127 |  |  | – | 3,636,127 |
+| Disposals | 出售 |  | – (3,800,679) |  | (1,792) |  | (3,802,471) |
+
 於其他利得確認的
 (Losses)/gains recognised in
-| other gains – net | （虧損）╱利得－淨額 | | (4,768) | | – | 4,314 | | (454) |
-| ----------------------------- | ---------- | --- | ------- | ------------- | --- | -------- | --- | ----------- |
-| | | | | | | | | |
-| Closing balance as at | 於二零二四年十二月 | | | | | | | |
-| 31 December 2024 | 三十一日的期末結餘 | | 5,232 | 915,336 | | 2,522 | | 923,090 |
-| | | | | | | | | |
-| Acquisitions | 收購 | | | – 3,205,743 | | | – | 3,205,743 |
-| Disposals | 出售 | | | – (3,639,314) | | (23,795) | | (3,663,109) |
-| (Losses)/gains recognised in | 於其他利得確認的 | | | | | | | |
+
+| other gains – net | （虧損）╱利得－淨額 | (4,768) |  | – | 4,314 |  | (454) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Closing balance as at | 於二零二四年十二月 |  |  |  |  |  |  |
+| 31 December 2024 | 三十一日的期末結餘 | 5,232 | 915,336 |  | 2,522 |  | 923,090 |
+| Acquisitions | 收購 |  | – 3,205,743 |  |  | – | 3,205,743 |
+| Disposals | 出售 |  | – (3,639,314) |  | (23,795) |  | (3,663,109) |
+| (Losses)/gains recognised in | 於其他利得確認的 |  |  |  |  |  |  |
+
 （虧損）╱利得－淨額
-| other gains – net | | | (1,225) | | – | 12,006 | | 10,781 |
-| ----------------------------- | ------------- | --- | ------- | ------- | --- | ------- | --- | ------- |
-| Closing balance as at | 於二零二五年十二月 | | | | | | | |
-| 31 December 2025 | 三十一日的期末結餘 | | 4,007 | 481,765 | | (9,267) | | 476,505 |
-| | | | | | | | | |
-| * includes unrealised gains/ | * 包括報告期末所持結餘 | | | | | | | |
-| (losses) recognised in | 應佔損益中確認的未 | | | | | | | |
+
+| other gains – net |  | (1,225) |  | – | 12,006 | 10,781 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Closing balance as at | 於二零二五年十二月 |  |  |  |  |  |
+| 31 December 2025 | 三十一日的期末結餘 | 4,007 | 481,765 |  | (9,267) | 476,505 |
+| * includes unrealised gains/ | * 包括報告期末所持結餘 |  |  |  |  |  |
+| (losses) recognised in | 應佔損益中確認的未 |  |  |  |  |  |
+
 變現利得╱（虧損）
 profit or loss attributable to
 balances held at the end of
 the reporting period
-| 2025 | 二零二五年 | | | – | – | (9,267) | | (9,267) |
-| ---- | ----- | --- | --- | --- | --- | ------- | --- | ------- |
-| 2024 | 二零二四年 | | | – | – | 2,522 | | 2,522 |
-| | | | | | | | | |
+
+| 2025 | 二零二五年 | – | – | (9,267) | (9,267) |
+| --- | --- | --- | --- | --- | --- |
+| 2024 | 二零二四年 | – | – | 2,522 | 2,522 |
 
 95
 阜豐集團有限公司 年報 2025
@@ -4003,37 +4074,45 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 3. FINANCIAL RISK MANAGEMENT (Continued) 3. 財務風險管理（續）
-| 3.3 Fair value estimation (Continued) | | | | 3.3 | 公平值估算（續） | |
-| -------------------------------------- | --- | --- | --- | ---- | -------- | --- |
+
+| 3.3 Fair value estimation (Continued) | 3.3 | 公平值估算（續） |
+| --- | --- | --- |
+
 (a) Financial assets and liabilities (Continued) (a) 金融資產及負債（續）
 (iii) Fair value measurements using significant (iii) 採用重大不可觀察輸入數
 據（第3層級）的公平值計
 unobservable inputs (level 3) (Continued)
 量（續）
 Fair value
-| | | as at | | | | Relationship of |
-| ----------- | ------------ | ------ | ---------- | ------------- | --------- | -------------------- |
-| | 31 December | | Valuation | Unobservable | Range of | unobservable inputs |
-| Description | | 2025 | technique | inputs | inputs | to fair value |
+
+|  |  | as at |  |  |  | Relationship of |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 31 December |  | Valuation | Unobservable | Range of | unobservable inputs |
+| Description |  | 2025 | technique | inputs | inputs | to fair value |
+
 於二零二五年
 十二月
-| | | 三十一日 | | 不可觀察 | | 不可觀察輸入數據 |
-| --- | --- | ---- | ---- | ---- | ------ | -------- |
-| 描述 | | 的公平值 | 估值技術 | 輸入數據 | 輸入數據範圍 | 與公平值的關係 |
+
+|  | 三十一日 |  | 不可觀察 |  | 不可觀察輸入數據 |
+| --- | --- | --- | --- | --- | --- |
+| 描述 | 的公平值 | 估值技術 | 輸入數據 | 輸入數據範圍 | 與公平值的關係 |
+
 RMB’000
 人民幣千元
-| | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- |
 Notes receivable – bank 481,765 Discounted Expected 1.20%–1.80% A change in the discount
-| acceptance notes | | | cash flow | discount | | interest rate by 100 |
-| ---------------- | --- | --- | --------- | -------------- | --- | --------------------- |
-| | | | | interest rates | | basis points would |
+
+| acceptance notes | cash flow | discount | interest rate by 100 |
+| --- | --- | --- | --- |
+|  |  | interest rates | basis points would |
+
 increase/decrease
 the fair value by
 approximately
 RMB1,111,000
-| 應收票據－銀行承兌票據 | | 481,765 | 貼現現金流量 | 預期貼現利率 | 1.20%–1.80% | 貼現利率變動100個 |
-| ----------- | --- | ------- | ------ | ------ | ----------- | ---------- |
+
+| 應收票據－銀行承兌票據 | 481,765 | 貼現現金流量 | 預期貼現利率 | 1.20%–1.80% | 貼現利率變動100個 |
+| --- | --- | --- | --- | --- | --- |
+
 基點將令公平值增
 加╱減少約人民幣
 1,111,000元
@@ -4044,42 +4123,50 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 3. FINANCIAL RISK MANAGEMENT (Continued) 3. 財務風險管理（續）
-| 3.3 Fair value estimation (Continued) | | | | 3.3 | 公平值估算（續） | |
-| -------------------------------------- | --- | --- | --- | ---- | -------- | --- |
+
+| 3.3 Fair value estimation (Continued) | 3.3 | 公平值估算（續） |
+| --- | --- | --- |
+
 (a) Financial assets and liabilities (Continued) (a) 金融資產及負債（續）
 (iii) Fair value measurements using significant (iii) 採用重大不可觀察輸入數
 據（第3層級）的公平值計
 unobservable inputs (level 3) (Continued)
 量（續）
 Fair value
-| | | as at | | | | Relationship of |
-| ----------- | ------------ | ------ | ---------- | ------------- | --------- | -------------------- |
-| | 31 December | | Valuation | Unobservable | Range of | unobservable inputs |
-| Description | | 2024 | technique | inputs | inputs | to fair value |
+
+|  |  | as at |  |  |  | Relationship of |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 31 December |  | Valuation | Unobservable | Range of | unobservable inputs |
+| Description |  | 2024 | technique | inputs | inputs | to fair value |
+
 於二零二四年
 十二月
-| | | 三十一日 | | 不可觀察 | | 不可觀察輸入數據 |
-| --- | --- | ---- | ---- | ---- | ------ | -------- |
-| 描述 | | 的公平值 | 估值技術 | 輸入數據 | 輸入數據範圍 | 與公平值的關係 |
+
+|  | 三十一日 |  | 不可觀察 |  | 不可觀察輸入數據 |
+| --- | --- | --- | --- | --- | --- |
+| 描述 | 的公平值 | 估值技術 | 輸入數據 | 輸入數據範圍 | 與公平值的關係 |
+
 RMB’000
 人民幣千元
-| | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- |
 Notes receivable – bank 915,336 Discounted Expected 1.80%–2.90% A change in the discount
-| acceptance notes | | | cash flow | discount | | interest rate by 100 |
-| ---------------- | --- | --- | --------- | -------------- | --- | --------------------- |
-| | | | | interest rates | | basis points would |
+
+| acceptance notes | cash flow | discount | interest rate by 100 |
+| --- | --- | --- | --- |
+|  |  | interest rates | basis points would |
+
 increase/decrease
 the fair value by
 approximately
 RMB2,214,000
-| 應收票據－銀行承兌票據 | | 915,336 | 貼現現金流量 | 預期貼現利率 | 1.80%–2.90% | 貼現利率變動100個 |
-| ----------- | --- | ------- | ------ | ------ | ----------- | ---------- |
+
+| 應收票據－銀行承兌票據 | 915,336 | 貼現現金流量 | 預期貼現利率 | 1.80%–2.90% | 貼現利率變動100個 |
+| --- | --- | --- | --- | --- | --- |
+
 基點將令公平值增
 加╱減少約人民幣
 2,214,000元
 
-阜豐集團有限公司 年報 2025 97
+<!-- p.97 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -4087,8 +4174,7 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 3.3 Fair value estimation (Continued) 3.3 公平值估算（續）
 (a) Financial assets and liabilities (Continued) (a) 金融資產及負債（續）
 (iii) Fair value measurements using significant (iii) 採用重大不可觀察輸入數
-unobservable inputs (level 3) (Continued) 據（第3層級）的公平值計
-量（續）
+unobservable inputs (level 3) (Continued) 據（第3層級）的公平值計量（續）
 The Group’s equity investments are mainly 本集團的股權投資主要與
 related to equity assets. These investments do 股權資產有關。該等投資
 not have any quoted market price in an active 在活躍市場中並無任何市
@@ -4098,8 +4184,7 @@ flow model and comparable market multiples. 模型及可比市場倍數）釐
 The main unobservable inputs are the risk- 定。主要的不可觀察輸入
 adjusted discount rate, earnings growth factor, 數據為風險調整貼現率、
 price-earnings ratio, price-book ratio, volatility 盈利增長係數、市盈率、
-and lack of marketability discount, etc.. 市賬率、波動及缺乏流通
-性貼現等。
+and lack of marketability discount, etc.. 市賬率、波動及缺乏流通性貼現等。
 4. CRITICAL ACCOUNTING ESTIMATES AND 4. 重要會計估計及判斷
 JUDGEMENTS
 The preparation of financial statements requires the use of 財務報表之編製需要使用會計估計，根
@@ -4117,7 +4202,7 @@ assumptions that have a significant risk of causing a material 大風險會引�
 adjustment to the carrying amounts of assets and liabilities 產及負債的賬面值作出重大調整。
 within the next financial year are described below.
 
-98 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.98 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -4146,7 +4231,7 @@ the impairment at each reporting date.
 Details of the Group’s accounting estimates in impairment 有關本集團物業、廠房及設備減值
 of property, plant and equipment are disclosed in Note 14. 之會計估計詳情於附註14披露。
 
-阜豐集團有限公司 年報 2025 99
+<!-- p.99 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -4188,7 +4273,7 @@ different from the amounts that are initially recorded, such 等差額將影響�
 differences will impact the tax and deferred tax provisions 稅項及遞延稅項撥備。
 in the period in which such determination is made.
 
-100 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.100 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -4220,100 +4305,88 @@ segments.
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 5. SEGMENT INFORMATION (Continued) | 5. 分部資料（續） | | | | |
-| ----------------------------------- | ----------- | --- | --- | --- | --- |
+
+| 5. SEGMENT INFORMATION (Continued) | 5. 分部資料（續） |
+| --- | --- |
+
 本集團截至二零二五年及二零二四年
 The revenue of the Group for the years ended 31 December
-| 2025 and 2024 are set out as follows: | 十二月三十一日止年度的收入載列如下： | | | | |
-| ------------------------------------- | ------------------ | --- | ---------- | --- | ---------- |
-| | | | 2025 | | 2024 |
-| | | | 二零二五年 | | 二零二四年 |
-| Products by segments | 按分部劃分產品 | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
-| Food additives | 食品添加劑 | | | | |
-| MSG | 味精 | | 10,249,550 | | 10,996,590 |
-| Starch sweeteners | 澱粉甜味劑 | | 2,445,333 | | 2,756,261 |
-| Glutamic acid | 谷氨酸 | | 602,362 | | 516,605 |
-| Compound seasoning | 複合調味品 | | 90,316 | | 94,432 |
-| Corn oil | 玉米油 | | 1,651 | | 1,416 |
-| | | | 13,389,212 | | 14,365,304 |
-| | | | | | |
-| Animal nutrition | 動物營養 | | | | |
-| Corn refined products | 玉米提煉產品 | | 4,822,865 | | 3,986,255 |
-| Threonine | 蘇氨酸 | | 2,931,190 | | 2,517,266 |
-| Lysine | 賴氨酸 | | 2,772,581 | | 2,235,751 |
-| | | | | | |
-| | | | 10,526,636 | | 8,739,272 |
-| | | | | | |
-| High-end amino acid | 高檔氨基酸 | | | | |
-| High-end amino acid products | 高檔氨基酸產品 | | 1,974,292 | | 2,217,371 |
-| | | | | | |
-| Colloid | 膠體 | | | | |
-| Xanthan gum | 黃原膠 | | 1,189,137 | | 1,771,356 |
-| Gellan gum | 結冷膠 | | 36,650 | | 45,150 |
-| | | | 1,225,787 | | 1,816,506 |
-| | | | | | |
-| Others | 其他 | | | | |
-| Fertilisers | 肥料 | | 735,357 | | 560,799 |
-| Synthetic ammonia | 合成氨 | | 22,561 | | 45,264 |
-| Others | 其他 | | 5,349 | | 12,794 |
-| | | | | | |
-| | | | 763,267 | | 618,857 |
-| | | | | | |
-| | | | 27,879,194 | | 27,757,310 |
-| | | | | | |
+
+| 2025 and 2024 are set out as follows: | 十二月三十一日止年度的收入載列如下： |  |  |
+| --- | --- | --- | --- |
+|  |  | 2025 | 2024 |
+|  |  | 二零二五年 | 二零二四年 |
+| Products by segments | 按分部劃分產品 | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |
+| Food additives | 食品添加劑 |  |  |
+| MSG | 味精 | 10,249,550 | 10,996,590 |
+| Starch sweeteners | 澱粉甜味劑 | 2,445,333 | 2,756,261 |
+| Glutamic acid | 谷氨酸 | 602,362 | 516,605 |
+| Compound seasoning | 複合調味品 | 90,316 | 94,432 |
+| Corn oil | 玉米油 | 1,651 | 1,416 |
+|  |  | 13,389,212 | 14,365,304 |
+| Animal nutrition | 動物營養 |  |  |
+| Corn refined products | 玉米提煉產品 | 4,822,865 | 3,986,255 |
+| Threonine | 蘇氨酸 | 2,931,190 | 2,517,266 |
+| Lysine | 賴氨酸 | 2,772,581 | 2,235,751 |
+|  |  | 10,526,636 | 8,739,272 |
+| High-end amino acid | 高檔氨基酸 |  |  |
+| High-end amino acid products | 高檔氨基酸產品 | 1,974,292 | 2,217,371 |
+| Colloid | 膠體 |  |  |
+| Xanthan gum | 黃原膠 | 1,189,137 | 1,771,356 |
+| Gellan gum | 結冷膠 | 36,650 | 45,150 |
+|  |  | 1,225,787 | 1,816,506 |
+| Others | 其他 |  |  |
+| Fertilisers | 肥料 | 735,357 | 560,799 |
+| Synthetic ammonia | 合成氨 | 22,561 | 45,264 |
+| Others | 其他 | 5,349 | 12,794 |
+|  |  | 763,267 | 618,857 |
+|  |  | 27,879,194 | 27,757,310 |
 
 102
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 5. SEGMENT INFORMATION (Continued) | | | | 5. | 分部資料（續） | | | | |
-| ----------------------------------- | --- | --- | --- | --- | ------- | --- | --- | --- | --- |
+
+| 5. SEGMENT INFORMATION (Continued) | 5. | 分部資料（續） |
+| --- | --- | --- |
+
 The segment information for the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| is as follows: | | | | | 的分部資料如下： | | | | |
-| -------------- | --- | --------- | --------- | ---------- | -------- | ------- | ------- | --- | ------- |
-| | | Food | Animal | High-end | | | | | |
-| | | additives | nutrition | amino acid | | Colloid | Others | | Group |
-| | | 食品添加劑 | 動物營養 | 高檔氨基酸 | | 膠體 | 其他 | | 本集團 |
-| | | RMB’000 | RMB’000 | RMB’000 | | RMB’000 | RMB’000 | | RMB’000 |
-| | | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | | | |
+
+| is as follows: |  |  |  | 的分部資料如下： |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  | Food | Animal | High-end |  |  |  |  |
+|  | additives | nutrition | amino acid |  | Colloid | Others | Group |
+|  | 食品添加劑 | 動物營養 | 高檔氨基酸 |  | 膠體 | 其他 | 本集團 |
+|  | RMB’000 | RMB’000 | RMB’000 |  | RMB’000 | RMB’000 | RMB’000 |
+|  | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |
+
 Revenue 收入 13,389,212 10,526,636 1,974,292 1,225,787 763,267 27,879,194
 Cost of sales 銷售成本 (11,576,015) (8,031,470) (1,190,348) (787,298) (812,128) (22,397,259)
-| | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 Gross profit 毛利 1,813,197 2,495,166 783,944 438,489 (48,861) 5,481,935
-| | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | | | | |
-The segment information for the year ended 31 December 2024 截至二零二四年十二月三十一日止年度
-的分部資料如下：
+The segment information for the year ended 31 December 2024 截至二零二四年十二月三十一日止年度的分部資料如下：
 is as follows:
-| | | Food | Animal | High-end | | | | | |
-| --- | --- | --------- | --------- | ---------- | ----- | ------- | ------- | --- | ------- |
-| | | additives | nutrition | amino acid | | Colloid | Others | | Group |
-| | | 食品添加劑 | 動物營養 | 高檔氨基酸 | | 膠體 | 其他 | | 本集團 |
-| | | RMB’000 | RMB’000 | RMB’000 | | RMB’000 | RMB’000 | | RMB’000 |
-| | | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | | | |
+
+| Food | Animal | High-end |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| additives | nutrition | amino acid |  | Colloid | Others | Group |
+| 食品添加劑 | 動物營養 | 高檔氨基酸 |  | 膠體 | 其他 | 本集團 |
+| RMB’000 | RMB’000 | RMB’000 |  | RMB’000 | RMB’000 | RMB’000 |
+| 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |
+
 Revenue 收入 14,365,304 8,739,272 2,217,371 1,816,506 618,857 27,757,310
 Cost of sales 銷售成本 (12,816,790) (6,709,899) (1,397,619) (1,062,761) (713,419) (22,700,488)
-| | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 Gross profit 毛利 1,548,514 2,029,373 819,752 753,745 (94,562) 5,056,822
-| | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| | | | | | | | | | |
 The Group’s total non-current assets located in the PRC 不計及遞延所得稅資產，本集團位
 other than deferred income tax assets amounted to 於中國的非流動資產總值為人民幣
 RMB13,009,563,000 (2024: RMB13,316,950,000), and the total 13,009,563,000元（二零二四年：人民
-non-current assets located in Hong Kong, Kazakhstan, the U.S. 幣13,316,950,000元）。不計及遞延所
-得稅資產，位於香港、哈薩克斯坦、美
+non-current assets located in Hong Kong, Kazakhstan, the U.S. 幣13,316,950,000元）。不計及遞延所得稅資產，位於香港、哈薩克斯坦、美
 and Europe other than deferred income tax assets amounted to
-| RMB2,356,571,000 (2024: RMB183,668,000). | | | | | 國及歐洲的非流動資產總值則為人民幣 | | | | |
-| ---------------------------------------- | --- | --- | --- | --- | ----------------- | --- | --- | --- | --- |
+
+| RMB2,356,571,000 (2024: RMB183,668,000). | 國及歐洲的非流動資產總值則為人民幣 |
+| --- | --- |
+
 2,356,571,000元（二零二四年：人民幣
 183,668,000元）。
 
@@ -4322,98 +4395,109 @@ and Europe other than deferred income tax assets amounted to
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 5. SEGMENT INFORMATION (Continued) | | | 5. 分部資料（續） | | | | |
-| ----------------------------------- | --- | --- | ----------- | --- | --- | --- | --- |
+
+| 5. SEGMENT INFORMATION (Continued) | 5. 分部資料（續） |
+| --- | --- |
+
 Disaggregation of revenue from contracts with 與客戶之間的合約產生的收入分拆
 customers
 The Group derives revenue from the transfer of goods at a point 本集團在某個時間點在以下地理區域內
-| in time in the following geographical regions: | | | 通過轉讓商品獲得的收入： | | | | |
-| ---------------------------------------------- | --- | --- | ------------ | --- | --- | --- | --- |
+
+| in time in the following geographical regions: | 通過轉讓商品獲得的收入： |
+| --- | --- |
+
 Sales of goods
 銷售產品
-| 2025 | 二零二五年 | | Overseas | | PRC | | Total |
-| ---- | ----- | --- | -------- | --- | ------- | --- | ------- |
-| | | | 海外 | | 中國 | | 總計 |
-| | | | RMB’000 | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | |
+
+| 2025 | 二零二五年 | Overseas | PRC | Total |
+| --- | --- | --- | --- | --- |
+|  |  | 海外 | 中國 | 總計 |
+|  |  | RMB’000 | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 | 人民幣千元 |
+
 Revenue from external customers 來自外部客戶的收入 8,452,061 19,427,133 27,879,194
-| | | | | | | | |
-| ----------------------------- | ------- | --- | --------- | --- | ---------- | --- | ---------- |
-| Timing of revenue recognition | 確認收入的時間 | | | | | | |
-| At a point in time | 於某個時間點 | | 8,452,061 | | 19,427,133 | | 27,879,194 |
-| | | | | | | | |
-| | | | | | | | |
+
+| Timing of revenue recognition | 確認收入的時間 |  |  |  |
+| --- | --- | --- | --- | --- |
+| At a point in time | 於某個時間點 | 8,452,061 | 19,427,133 | 27,879,194 |
+
 Sales of goods
 銷售產品
-| 2024 | 二零二四年 | | Overseas | | PRC | | Total |
-| ---- | ----- | --- | -------- | --- | ------- | --- | ------- |
-| | | | 海外 | | 中國 | | 總計 |
-| | | | RMB’000 | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | |
+
+| 2024 | 二零二四年 | Overseas | PRC | Total |
+| --- | --- | --- | --- | --- |
+|  |  | 海外 | 中國 | 總計 |
+|  |  | RMB’000 | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 | 人民幣千元 |
+
 Revenue from external customers 來自外部客戶的收入 8,320,861 19,436,449 27,757,310
-| | | | | | | | |
-| ----------------------------- | ------- | --- | --- | --- | --- | --- | --- |
-| Timing of revenue recognition | 確認收入的時間 | | | | | | |
+
+| Timing of revenue recognition | 確認收入的時間 |
+| --- | --- |
+
 於某個時間點
-| At a point in time | | | 8,320,861 | | 19,436,449 | | 27,757,310 |
-| ------------------ | --- | --- | --------- | --- | ---------- | --- | ---------- |
-| | | | | | | | |
+
+| At a point in time | 8,320,861 | 19,436,449 | 27,757,310 |
+| --- | --- | --- | --- |
+
 Approximately 70% (2024: 70%) of the Group’s revenue is 本集團約70%（二零二四年：70%）的收
 generated from sales to customers in the PRC. The remaining 入來自向中國客戶的銷售。本集團餘下
-30% (2024: 30%) of the Group’s revenue is generated from the 30%（二零二四年：30%）的收入來自向
-海外的銷售，包括歐洲、拉丁美洲、美國、
+30% (2024: 30%) of the Group’s revenue is generated from the 30%（二零二四年：30%）的收入來自向海外的銷售，包括歐洲、拉丁美洲、美國、
 sales to overseas including Europe, Latin America, U.S., North
 America, South Africa, the Middle East and Asia. 北美、南非、中東及亞洲。
 No customer contributes 10% or more to the Group’s revenue 於截至二零二五年及二零二四年十二月
-for the years ended 31 December 2025 and 2024. 三十一日止年度，概無客戶佔本集團收
-入的10%或以上。
+for the years ended 31 December 2025 and 2024. 三十一日止年度，概無客戶佔本集團收入的10%或以上。
 
 104
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 5. SEGMENT INFORMATION (Continued) | 5. 分部資料（續） | | |
-| ----------------------------------- | ----------- | --- | --- |
-Liabilities related to contracts with customers 與客戶之間的合約有關的負債
-本集團已確認以下與客戶合約有關的負
+
+| 5. SEGMENT INFORMATION (Continued) | 5. 分部資料（續） |
+| --- | --- |
+
+Liabilities related to contracts with customers 與客戶之間的合約有關的負債本集團已確認以下與客戶合約有關的負
 The Group has recognised the following liabilities related to
-| contracts with customers: | 債： | | |
-| ------------------------- | --- | ------------ | ------------ |
-| | | 31 December | 31 December |
-2025 2024
-| | | 二零二五年 | 二零二四年 |
-| --- | --- | ------- | ------- |
-| | | RMB’000 | RMB’000 |
-人民幣千元
-人民幣千元
-| | | | |
+
+| contracts with customers: | 債： |  |  |
 | --- | --- | --- | --- |
+|  |  | 31 December | 31 December |
+
+2025 2024
+
+| 二零二五年 | 二零二四年 |
+| --- | --- |
+| RMB’000 | RMB’000 |
+
+人民幣千元
+人民幣千元
 Contract liabilities – sales of goods 合約負債－銷售貨品 1,191,577 744,572
-| | | | |
-| ------------------------------------ | ---- | ------- | --- |
-| | | | |
-| (i) Changes in contract liabilities | (i) | 合約負債的變動 | |
-The increase in 2025 and 2024 was due to the increase in 二零二五年及二零二四年的增加是
-由於年底向客戶預付的銷售訂單增
+
+| (i) Changes in contract liabilities | (i) | 合約負債的變動 |
+| --- | --- | --- |
+
+The increase in 2025 and 2024 was due to the increase in 二零二五年及二零二四年的增加是由於年底向客戶預付的銷售訂單增
 sales orders to customers at the year end with payments in
-| advance. | | 加所致。 | |
-| -------- | --- | ---- | --- |
-In 2025 and 2024, all the contract liabilities at the beginning 於二零二五年及二零二四年，於有
-關期初計入的所有合約負債已確認
+
+| advance. | 加所致。 |
+| --- | --- |
+
+In 2025 and 2024, all the contract liabilities at the beginning 於二零二五年及二零二四年，於有關期初計入的所有合約負債已確認
 of respective periods were recognised as revenue.
 為收入。
-| (ii) Unsatisfied long-term contracts | (ii) | 未履行的長期合約 | |
-| ------------------------------------- | ----- | -------- | --- |
-All of the sales are for periods of one year or less and the 所有銷售均為期一年或以下，且本
-集團並無重大未履行合約。
+
+| (ii) Unsatisfied long-term contracts | (ii) | 未履行的長期合約 |
+| --- | --- | --- |
+
+All of the sales are for periods of one year or less and the 所有銷售均為期一年或以下，且本集團並無重大未履行合約。
 Group does not have material unsatisfied contract.
 收益確認的會計政策
 Accounting policies of revenue recognition
-| Sales of goods | | 銷售貨品 | |
-| -------------- | --- | ---- | --- |
+
+| Sales of goods | 銷售貨品 |
+| --- | --- |
+
 The Group manufactures and sells a range of fermentation- 本集團在全球市場製造及銷售一系
 based food additives, biochemical products and starch- 列發酵食品添加劑、生化產品及澱
 based products in the worldwide market. Sales are 粉產品。當產品控制權已轉讓（即
@@ -4428,13 +4512,13 @@ by carriers designated by customers for domestic sales, 損失的風險已轉移
 or have been shipped on board for overseas sales, the 已根據銷售合約接納產品，接納條
 risks of obsolescence and loss have been transferred 文已失效，或本集團有客觀證據證
 to the customer, and either the customer has accepted 明已達成接納之所有條件時，即為
-| the products in accordance with the sales contract, the | | 交付。 | |
-| -------------------------------------------------------- | --- | --- | --- |
-acceptance provisions have lapsed, or the Group has
-objective evidence that all criteria for acceptance have been
-satisfied.
 
-阜豐集團有限公司 年報 2025 105
+| the products in accordance with the sales contract, the | 交付。 |
+| --- | --- |
+
+acceptance provisions have lapsed, or the Group has objective evidence that all criteria for acceptance have been satisfied.
+
+<!-- p.105 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -4451,8 +4535,7 @@ the price specified in the contract, net of the estimated 價格確認，並扣�
 volume discounts. Accumulated experience is used to 累計經驗用於估計及撥備折扣，採
 estimate and provide for the discount, using expected 用預期價值方式，而收入僅在極可
 value method, and revenue is only recognised to the extent 能未發生大幅撥回情況下方才確認。
-that it is highly probable that a significant reversal will not
-occur.
+that it is highly probable that a significant reversal will not occur.
 As receivable is recognised when the goods are delivered 應收款項於交付貨品時確認，原因
 as this is the point in time that the consideration is 為此時收回代價的權利是無條件的，
 unconditional because only the passage of time is required 僅需等待客戶付款。
@@ -4467,24 +4550,26 @@ FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 6. OTHER INCOME | 6. 其他收益 | | | |
-| ---------------- | -------- | --- | ------- | ------- |
-| | | | 2025 | 2024 |
-| | | | 二零二五年 | 二零二四年 |
-| | | | RMB’000 | RMB’000 |
-| | | | 人民幣千元 | 人民幣千元 |
-| | | | | |
+
+| 6. OTHER INCOME | 6. 其他收益 |  |  |
+| --- | --- | --- | --- |
+|  |  | 2025 | 2024 |
+|  |  | 二零二五年 | 二零二四年 |
+|  |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |
+
 攤銷遞延收益(（i) 附註29）
-| Amortisation of deferred income (i) (Note 29) | | | 90,989 | 82,188 |
-| --------------------------------------------- | --- | --- | ------ | ------ |
+
+| Amortisation of deferred income (i) (Note 29) | 90,989 | 82,188 |
+| --- | --- | --- |
+
 Government grants related to expenses (ii) 與開支有關的政府補助 (ii) 287,287 86,563
 Sales of waste products and raw materials 銷售廢料產品及原材料 54,490 82,571
-| Others | 其他 | | 50,170 | 46,115 |
-| ------ | --- | --- | ------- | ------- |
-| | | | | |
-| | | | 482,936 | 297,437 |
-| | | | | |
-| | | | | |
+
+| Others | 其他 | 50,170 | 46,115 |
+| --- | --- | --- | --- |
+|  |  | 482,936 | 297,437 |
+
 (i) Government grants relating to the purchase of property, (i) 與購買物業、廠房及設備有關的政
 plant and equipment are included in non-current liabilities 府補助計入非流動負債，列作遞延
 as deferred income and are credited to profit or loss on 收益，並於相關資產預期年期內以
@@ -4492,38 +4577,44 @@ a straight-line basis over the expected lives of the related 直線法計入損�
 assets.
 (ii) Government grants relating to costs or expenses are (ii) 與成本或開支有關的政府補助為已
 compensation for incurred costs or expenses and do not 產生的成本或開支的補償，且並無
-include unfulfilled conditions or other forms of contingency. 包括未達成條件或其他形式的或然
-事項。
+include unfulfilled conditions or other forms of contingency. 包括未達成條件或其他形式的或然事項。
 其他利得－淨額
 7. OTHER GAINS – NET 7.
-| | | | 2025 | 2024 |
-| --- | --- | --- | ------- | ------- |
-| | | | 二零二五年 | 二零二四年 |
-| | | | RMB’000 | RMB’000 |
-| | | | 人民幣千元 | 人民幣千元 |
-| | | | | |
-Indemnity received from a lawsuit (a) 自訴訟中獲得的賠償金(a) 233,000 15,000
-| Net foreign exchange (losses)/gains (Note 3.1) | 外匯（虧損）╱利得淨額 | | | |
-| ---------------------------------------------- | ------------ | --- | --------- | ------- |
-| | （附註3.1） | | (208,128) | 194,106 |
-Gains from sales of carbon emission quota (b) 出售碳排放配額的利得(b) 107,969 113,081
-| Gains from/(losses on) disposal of property, | 出售物業、廠房及設備利得╱ | | | |
-| ---------------------------------------------- | ------------- | --- | --- | --- |
-plant and equipment – net (Note 32(b)) （虧損）－淨額（附註32(b)） 71,919 (8,552)
-| Investment gains from cross currency swaps and | 交叉貨幣掉期及交叉貨幣與利 | | | |
-| ----------------------------------------------- | ------------- | --- | --- | --- |
-cross currency and interest rate swaps (Note 18) 率掉期的投資利得（附註18） 12,006 4,314
-| Fair value losses of financial assets at fair value | 按公平值計入損益的金融資產 | | | |
-| ---------------------------------------------------- | ------------- | --- | --- | --- |
-through profit and loss (Note 17) 的公平值虧損（附註17） (1,225) (4,768)
-| Others | 其他 | | 8,254 | (12,888) |
-| ------ | --- | --- | ------- | -------- |
-| | | | | |
-| | | | 223,795 | 300,293 |
-| | | | | |
-| | | | | |
 
-阜豐集團有限公司 年報 2025 107
+| 2025 | 2024 |
+| --- | --- |
+| 二零二五年 | 二零二四年 |
+| RMB’000 | RMB’000 |
+| 人民幣千元 | 人民幣千元 |
+
+Indemnity received from a lawsuit (a) 自訴訟中獲得的賠償金(a) 233,000 15,000
+
+| Net foreign exchange (losses)/gains (Note 3.1) | 外匯（虧損）╱利得淨額 |  |  |
+| --- | --- | --- | --- |
+|  | （附註3.1） | (208,128) | 194,106 |
+
+Gains from sales of carbon emission quota (b) 出售碳排放配額的利得(b) 107,969 113,081
+
+| Gains from/(losses on) disposal of property, | 出售物業、廠房及設備利得╱ |
+| --- | --- |
+
+plant and equipment – net (Note 32(b)) （虧損）－淨額（附註32(b)） 71,919 (8,552)
+
+| Investment gains from cross currency swaps and | 交叉貨幣掉期及交叉貨幣與利 |
+| --- | --- |
+
+cross currency and interest rate swaps (Note 18) 率掉期的投資利得（附註18） 12,006 4,314
+
+| Fair value losses of financial assets at fair value | 按公平值計入損益的金融資產 |
+| --- | --- |
+
+through profit and loss (Note 17) 的公平值虧損（附註17） (1,225) (4,768)
+
+| Others | 其他 | 8,254 | (12,888) |
+| --- | --- | --- | --- |
+|  |  | 223,795 | 300,293 |
+
+<!-- p.107 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -4545,8 +4636,7 @@ the Defendants signed a settlement agreement on 4 March 下：
 2025 with the following principal terms:
 (i) The Defendants shall pay a settlement amount of (i) 被告應於二零二五年三月十四
 RMB233 million (the “Compensation Amount”) to the 日前向原告支付和解金額人
-Plaintiff before 14 March 2025; 民幣233,000,000元（「賠償金
-額」）；
+Plaintiff before 14 March 2025; 民幣233,000,000元（「賠償金額」）；
 (ii) The Compensation Amount shall be treated as a one- (ii) 賠償金額將被視為被告及其聯
 off and complete compensation to the Plaintiff by the 營公司對原告的一次性完全賠
 Defendants and their associated companies, who 償，被告方將獲授權使用原告
@@ -4557,60 +4647,75 @@ The Plaintiff received the Compensation Amount on 11 原告於二零二五年三
 March 2025. 賠償金額。
 (b) During the year, the Group sold carbon emission quota (b) 本年度內，本集團向第三方出
 to third parties with amount of RMB107,969,000 (2024: 售碳排放配額，金額為人民幣
-RMB113,081,000). 107,969,000元（二零二四年：人民
-幣113,081,000元）。
+RMB113,081,000). 107,969,000元（二零二四年：人民幣113,081,000元）。
 
 108
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 8. EXPENSES BY NATURE | 8. 按性質劃分的開支 | | | | | |
-| ---------------------- | ------------ | --- | ------- | ---- | ------- | ---- |
-| | | | | 2025 | | 2024 |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
+
+| 8. EXPENSES BY NATURE | 8. 按性質劃分的開支 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  | 2025 |  | 2024 |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+
 製成品及在製品的存貨變動
 Changes in inventories of finished goods and
-| work-in-progress | | | (1,368,253) | | | (43,582) |
-| ---------------- | --- | --- | ----------- | --- | --- | -------- |
+
+| work-in-progress | (1,368,253) | (43,582) |
+| --- | --- | --- |
+
 Raw materials and consumables used* 已用原材料及耗材* 20,908,823 20,326,842
 Employee benefit expenses (Note 9)* 僱員福利開支（附註9）* 1,902,124 1,820,479
-| Depreciation | 折舊 | | | | | |
-| ------------ | --- | --- | --- | --- | --- | --- |
+
+| Depreciation | 折舊 |
+| --- | --- |
+
 －物業、廠房及設備
 – property, plant and equipment (Note 14)*
-| | （附註14）* | | 1,262,439 | | 1,179,269 | |
-| ------------------------------- | ------------ | --- | --------- | ------ | --------- | ------ |
-| – right-of-use assets (Note 15) | －使用權資產（附註15） | | | 25,696 | | 24,298 |
+
+|  | （附註14）* | 1,262,439 |  | 1,179,269 |  |
+| --- | --- | --- | --- | --- | --- |
+| – right-of-use assets (Note 15) | －使用權資產（附註15） |  | 25,696 |  | 24,298 |
+
 Amortisation of intangible assets (Note 16) 無形資產攤銷（附註16） 13,181 9,993
-| Impairment charges for property, plant and | 物業、廠房及設備減值支出 | | | | | |
-| ------------------------------------------- | ------------ | --- | --- | --- | --- | --- |
+
+| Impairment charges for property, plant and | 物業、廠房及設備減值支出 |
+| --- | --- |
+
 （附註14）
-| equipment (Note 14) | | | | 64,773 | | 834 |
-| ------------------------------ | -------- | --- | --------- | ------- | --------- | ------- |
-| Transportation expenses | 運輸開支 | | 1,671,955 | | 1,510,004 | |
-| Utilities purchased | 所購水電 | | | 197,392 | | 101,611 |
-| Travelling and office expenses | 差旅及辦公室開支 | | | 61,042 | | 49,921 |
+
+| equipment (Note 14) |  |  | 64,773 |  | 834 |
+| --- | --- | --- | --- | --- | --- |
+| Transportation expenses | 運輸開支 | 1,671,955 |  | 1,510,004 |  |
+| Utilities purchased | 所購水電 |  | 197,392 |  | 101,611 |
+| Travelling and office expenses | 差旅及辦公室開支 |  | 61,042 |  | 49,921 |
+
 Provision for inventory write-down (Note 20) 存貨撇減撥備（附註20） 242,146 127,649
 核數師酬金
 Auditors’ remuneration
-| – Audit services | －審核服務 | | | 2,970 | | 3,120 |
-| ----------------------------------------------- | ------------ | --- | --- | ------- | --- | ------- |
-| – Non-audit services | －非審核服務 | | | 642 | | 1,578 |
-| Land use tax, real estate tax and other taxes | 土地使用稅、房產稅以及 | | | | | |
-| and surcharges | 其他稅項及附加費 | | | 210,052 | | 188,081 |
+
+| – Audit services | －審核服務 | 2,970 | 3,120 |
+| --- | --- | --- | --- |
+| – Non-audit services | －非審核服務 | 642 | 1,578 |
+| Land use tax, real estate tax and other taxes | 土地使用稅、房產稅以及 |  |  |
+| and surcharges | 其他稅項及附加費 | 210,052 | 188,081 |
+
 其他
-| Others | | | | 678,153 | | 518,599 |
-| ------------------------------------------- | ------------- | --- | --- | --------- | --- | ------- |
-| Total cost of sales, selling and marketing | 銷售成本、銷售及市場推廣 | | | | | |
-| expenses, administrative expenses and | 開支、行政開支及其他經營 | | | | | |
+
+| Others | 678,153 | 518,599 |
+| --- | --- | --- |
+| Total cost of sales, selling and marketing | 銷售成本、銷售及市場推廣 |  |
+| expenses, administrative expenses and | 開支、行政開支及其他經營 |  |
+
 開支總計
-| other operating expenses | | | 25,873,135 | | 25,818,696 | |
-| ------------------------ | --- | --- | ---------- | --- | ---------- | --- |
-| | | | | | | |
+
+| other operating expenses | 25,873,135 | 25,818,696 |
+| --- | --- | --- |
+
 * The Group incurred expenses amounting to a total of approximately * 截至二零二五年及二零二四年十二月三十一
 RMB370,421,000 and RMB365,715,000 related to research and 日止年度，本集團產生的開支總額分別約為
 development of new products, and development of new manufacturing 人民幣370,421,000元及人民幣365,715,000
@@ -4626,104 +4731,108 @@ equipment of RMB6,555,000 in “Depreciation”. 中若干設備的折舊人民�
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 9. EMPLOYEE BENEFIT EXPENSES | 9. 僱員福利開支（包括董事酬金） | | | |
-| ------------------------------ | ------------------ | --- | --- | --- |
+
+| 9. EMPLOYEE BENEFIT EXPENSES | 9. 僱員福利開支（包括董事酬金） |
+| --- | --- |
+
 INCLUDING DIRECTORS’ EMOLUMENTS
-| | | | 2025 | 2024 |
-| --------------------------------------------- | ------------ | ------- | ---- | ------- |
-| | | 二零二五年 | | 二零二四年 |
-| | | RMB’000 | | RMB’000 |
-| | | 人民幣千元 | | 人民幣千元 |
-| | | | | |
-| Staff costs (including directors’ emoluments) | 員工成本（包括董事酬金） | | | |
+
+|  |  |  | 2025 | 2024 |
+| --- | --- | --- | --- | --- |
+|  |  | 二零二五年 |  | 二零二四年 |
+|  |  | RMB’000 |  | RMB’000 |
+|  |  | 人民幣千元 |  | 人民幣千元 |
+| Staff costs (including directors’ emoluments) | 員工成本（包括董事酬金） |  |  |  |
+
 – Wages, salaries and allowance －工資、薪金及津貼 1,640,541 1,628,626
-| – Pension costs – defined contribution | －退休金成本－定額供款 | | | |
-| ---------------------------------------- | ------------ | --- | ------- | ------- |
-| plans (a) | 計劃(a) | | 261,928 | 190,829 |
+
+| – Pension costs – defined contribution | －退休金成本－定額供款 |  |  |
+| --- | --- | --- | --- |
+| plans (a) | 計劃(a) | 261,928 | 190,829 |
+
 －授予董事及僱員的購股權
 – Share options granted to directors and
-| employees (Note 26) | （附註26） | | (345) | 1,024 |
-| ------------------- | ------- | --------- | ----- | --------- |
-| | | | | |
-| | | 1,902,124 | | 1,820,479 |
-| | | | | |
-| | | | | |
+
+| employees (Note 26) | （附註26） |  | (345) | 1,024 |
+| --- | --- | --- | --- | --- |
+|  |  | 1,902,124 |  | 1,820,479 |
+
 (a) Pension costs – defined contribution plans (a) 退休金成本－定額供款計劃
 The employees of the Group’s subsidiaries established in 本集團於中國成立的附屬公司的僱
 the PRC participated in defined contribution retirement 員參與由有關省政府統籌的定額供
 benefit plans organised by the relevant provincial 款退休福利計劃，根據該計劃，本
-governments under which the Group was required to make 集團須按僱員每月薪金及工資的百
-分比向該等計劃作出每月供款，且
-monthly contributions to these plans at the percentages
-of the employees’ monthly salaries and wages, subject to 有一定的上限。如附註39.19所披
+governments under which the Group was required to make 集團須按僱員每月薪金及工資的百分比向該等計劃作出每月供款，且
+monthly contributions to these plans at the percentages of the employees’ monthly salaries and wages, subject to 有一定的上限。如附註39.19所披
 certain ceilings. The employees of the Group’s subsidiaries 露，本集團於香港成立的附屬公司
 established in Hong Kong participate in MPF scheme as 的僱員參與強積金計劃。
 disclosed in Note 39.19.
 During the Year, no forfeited contributions were utilised by 於本年度，本集團並無沒收供款
 the Group to reduce its contributions for the current year 用於扣減其於本年度的供款（二零
-| (2024: nil). | | 二四年：無）。 | | |
-| ------------ | --- | ------- | --- | --- |
+
+| (2024: nil). | 二四年：無）。 |
+| --- | --- |
 
 110
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 9. EMPLOYEE BENEFIT EXPENSES | 9. 僱員福利開支（包括董事酬金） | | | |
-| -------------------------------- | ------------------ | --- | --- | --- |
-| INCLUDING DIRECTORS’ EMOLUMENTS | （續） | | | |
+
+| 9. EMPLOYEE BENEFIT EXPENSES | 9. 僱員福利開支（包括董事酬金） |
+| --- | --- |
+| INCLUDING DIRECTORS’ EMOLUMENTS | （續） |
+
 (Continued)
-| (b) Five highest paid individuals | (b) | 五名最高薪人士 | | |
-| ---------------------------------- | ---- | ------- | --- | --- |
-The five individuals whose emoluments were the highest in 截至二零二五年十二月三十一日止
-年度，本集團五名最高薪人士包括
-the Group for the year ended 31 December 2025 included
-three directors (2024: three) whose emoluments are 三名董事（二零二四年：三名），彼
+
+| (b) Five highest paid individuals | (b) | 五名最高薪人士 |
+| --- | --- | --- |
+
+The five individuals whose emoluments were the highest in 截至二零二五年十二月三十一日止年度，本集團五名最高薪人士包括
+the Group for the year ended 31 December 2025 included three directors (2024: three) whose emoluments are 三名董事（二零二四年：三名），彼
 reflected in the analysis shown in Note 37. The emoluments 等的酬金已於附註37呈列的分析中
 payable to the remaining two (2024: two) individuals during 反映。於年內應付予其餘兩名（二
-| the year are as follows: | | 零二四年：兩名）人士的酬金如下： | | |
-| ------------------------ | --- | ---------------- | ------- | ------- |
-| | | | 2025 | 2024 |
-| | | 二零二五年 | 二零二四年 | |
-| | | | RMB’000 | RMB’000 |
-| | | 人民幣千元 | 人民幣千元 | |
-| | | | | |
+
+| the year are as follows: | 零二四年：兩名）人士的酬金如下： |  |  |
+| --- | --- | --- | --- |
+|  |  | 2025 | 2024 |
+|  | 二零二五年 | 二零二四年 |  |
+|  |  | RMB’000 | RMB’000 |
+|  | 人民幣千元 | 人民幣千元 |  |
+
 薪金及津貼
-| Salaries and allowances | | | 2,893 | 5,609 |
-| ------------------------------------- | ----------- | --- | ----- | ----- |
-| Pension costs – defined contribution | 退休金成本－定額供款 | | | |
-| plans | 計劃 | | 87 | 171 |
-| Share options granted | 授予購股權 | | 404 | 356 |
-| | | | 3,384 | 6,136 |
-| | | | | |
-| | | | | |
+
+| Salaries and allowances |  | 2,893 | 5,609 |
+| --- | --- | --- | --- |
+| Pension costs – defined contribution | 退休金成本－定額供款 |  |  |
+| plans | 計劃 | 87 | 171 |
+| Share options granted | 授予購股權 | 404 | 356 |
+|  |  | 3,384 | 6,136 |
+
 For the year ended 31 December 2025, none of the five 截至二零二五年十二月三十一日止
 highest paid individuals received discretionary bonuses 年度，五名最高薪人士均未獲發酌
 (2024: one) and no emoluments were paid by the Group 情花紅（二零二四年：一名），本集
-to the five highest paid individuals as inducement to join 團並無向五名最高薪人士支付任何
-酬金作為加入或加入本集團後的獎
+to the five highest paid individuals as inducement to join 團並無向五名最高薪人士支付任何酬金作為加入或加入本集團後的獎
 or upon joining the Group or as compensation for loss of
-| office. | | 勵或作為離職補償。 | | |
-| ------- | --- | --------- | --- | --- |
+
+| office. | 勵或作為離職補償。 |
+| --- | --- |
+
 The remunerations paid to the above non-director 於截至二零二五年及二零二四年
-individuals for the years ended 31 December 2025 and 十二月三十一日止年度，向上述非
-董事人士支付的薪酬可劃分為以下
+individuals for the years ended 31 December 2025 and 十二月三十一日止年度，向上述非董事人士支付的薪酬可劃分為以下
 2024 fell within the following bands:
 組別：
 Number of individuals
 人數
-| | | | 2025 | 2024 |
-| ------------------------------ | ----------------------- | ----- | ----- | ---- |
-| | | 二零二五年 | 二零二四年 | |
-| | | | | |
-| Emolument bands (in HK dollar) | 薪酬組別（以港元列示） | | | |
-| HKD1,500,001 – HKD2,000,000 | 1,500,001港元至2,000,000港元 | | 1 | – |
-| HKD2,000,001 – HKD2,500,000 | 2,000,001港元至2,500,000港元 | | 1 | – |
-| HKD2,500,001 – HKD3,000,000 | 2,500,001港元至3,000,000港元 | | – | 1 |
-| HKD3,500,001 – HKD4,000,000 | 3,500,001港元至4,000,000港元 | | – | 1 |
-| | | | 2 | 2 |
-| | | | | |
-| | | | | |
+
+|  |  |  | 2025 | 2024 |
+| --- | --- | --- | --- | --- |
+|  |  | 二零二五年 | 二零二四年 |  |
+| Emolument bands (in HK dollar) | 薪酬組別（以港元列示） |  |  |  |
+| HKD1,500,001 – HKD2,000,000 | 1,500,001港元至2,000,000港元 |  | 1 | – |
+| HKD2,000,001 – HKD2,500,000 | 2,000,001港元至2,500,000港元 |  | 1 | – |
+| HKD2,500,001 – HKD3,000,000 | 2,500,001港元至3,000,000港元 |  | – | 1 |
+| HKD3,500,001 – HKD4,000,000 | 3,500,001港元至4,000,000港元 |  | – | 1 |
+|  |  |  | 2 | 2 |
 
 111
 阜豐集團有限公司 年報 2025
@@ -4731,90 +4840,97 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 10. FINANCE INCOME AND COSTS 10. 財務收入及成本
-| | | | | 2025 | | 2024 |
-| --- | --- | --- | ------- | ---- | ------- | ---- |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
+
+|  | 2025 |  | 2024 |
+| --- | --- | --- | --- |
+| 二零二五年 |  | 二零二四年 |  |
+| RMB’000 |  | RMB’000 |  |
+| 人民幣千元 |  | 人民幣千元 |  |
+
 財務收入：
 Finance income:
-| Interest income | 利息收入 | | | | | |
-| ------------------------------------------ | ----------- | --- | ------- | ----- | ------- | ----- |
-| – bank deposits and bank balances | －銀行存款及銀行結餘 | | 527,268 | | 492,456 | |
-| – other receivables | －其他應收款項 | | | 3,185 | | 6,205 |
-| Net foreign exchange gains from financing | 融資活動的外匯利得淨額 | | | | | |
+
+| Interest income | 利息收入 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| – bank deposits and bank balances | －銀行存款及銀行結餘 | 527,268 |  | 492,456 |  |
+| – other receivables | －其他應收款項 |  | 3,185 |  | 6,205 |
+| Net foreign exchange gains from financing | 融資活動的外匯利得淨額 |  |  |  |  |
+
 （附註3.1）
-| activities (Note 3.1) | | | | 2,073 | | – |
-| --------------------- | --- | --- | ------- | ------- | ------- | --- |
-| | | | 532,526 | | 498,661 | |
+
+| activities (Note 3.1) |  | 2,073 |  | – |
+| --- | --- | --- | --- | --- |
+|  | 532,526 |  | 498,661 |  |
+
 財務成本：
 Finance costs:
-| Interest expenses | 利息開支 | | | | | |
-| --------------------------------------------- | ----------- | --- | --------- | --- | --------- | --- |
-| – bank borrowings | －銀行借貸 | | (272,491) | | (219,681) | |
-| – other payables | －其他應付款項 | | | – | | (3) |
-| Interest charges paid for lease liabilities | 已付租賃負債利息支出 | | | | | |
+
+| Interest expenses | 利息開支 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| – bank borrowings | －銀行借貸 | (272,491) |  | (219,681) |  |
+| – other payables | －其他應付款項 |  | – |  | (3) |
+| Interest charges paid for lease liabilities | 已付租賃負債利息支出 |  |  |  |  |
+
 （附註15）
-| (Note 15) | | | | (89) | | (42) |
-| ----------------------------------------- | ------------ | --- | --------- | ---- | --------- | ------- |
-| Net foreign exchange losses on financing | 融資活動的外匯虧損淨額 | | | | | |
-| activities (Note 3.1) | （附註3.1） | | | – | | (1,245) |
-| | | | (272,580) | | (220,971) | |
-| Amounts capitalised (a) | 資本化金額(a) | | 10,505 | | 15,941 | |
-| | | | | | | |
-| | | | (262,075) | | (205,030) | |
-| | | | | | | |
-| Net finance income | 財務收入淨額 | | 270,451 | | 293,631 | |
-| | | | | | | |
-| (a) Capitalised borrowing costs | (a) 資本化借貸成本 | | | | | |
-The capitalisation rate used to determine the amount of 用於釐定將予資本化的借貸成本的
-金額的資本化率為年內適用於本
-borrowing costs to be capitalised is the weighted average
-interest rate applicable to the Group’s general borrowings 集團一般借貸的加權平均年利率，
+
+| (Note 15) |  |  | (89) |  | (42) |
+| --- | --- | --- | --- | --- | --- |
+| Net foreign exchange losses on financing | 融資活動的外匯虧損淨額 |  |  |  |  |
+| activities (Note 3.1) | （附註3.1） |  | – |  | (1,245) |
+|  |  | (272,580) |  | (220,971) |  |
+| Amounts capitalised (a) | 資本化金額(a) | 10,505 |  | 15,941 |  |
+|  |  | (262,075) |  | (205,030) |  |
+| Net finance income | 財務收入淨額 | 270,451 |  | 293,631 |  |
+| (a) Capitalised borrowing costs | (a) 資本化借貸成本 |  |  |  |  |
+
+The capitalisation rate used to determine the amount of 用於釐定將予資本化的借貸成本的金額的資本化率為年內適用於本
+borrowing costs to be capitalised is the weighted average interest rate applicable to the Group’s general borrowings 集團一般借貸的加權平均年利率，
 during the year, in this case 1.48% per annum (2024: 就此而言為1.48%（二零二四年：
-| 1.95%). | | 1.95%）。 | | | | |
-| ------- | --- | ------- | --- | --- | --- | --- |
+
+| 1.95%). | 1.95%）。 |
+| --- | --- |
 
 112
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 11. TAXATION | 11. 稅項 | | | | |
-| ----------------------- | ------ | ---------- | ------- | ---- | ------- |
-| (a) Income tax expense | | (a) 所得稅開支 | | | |
-| | | | | 2025 | 2024 |
-| | | | 二零二五年 | | 二零二四年 |
-| | | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
-| Current income tax | 即期所得稅 | | | | |
-| – PRC | －中國 | | | | |
-| – EIT | －企業所得稅 | | 395,347 | | 385,101 |
+
+| 11. TAXATION | 11. 稅項 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+| (a) Income tax expense |  | (a) 所得稅開支 |  |  |  |
+|  |  |  |  | 2025 | 2024 |
+|  |  |  | 二零二五年 |  | 二零二四年 |
+|  |  |  | RMB’000 |  | RMB’000 |
+|  |  |  | 人民幣千元 |  | 人民幣千元 |
+| Current income tax | 即期所得稅 |  |  |  |  |
+| – PRC | －中國 |  |  |  |  |
+| – EIT | －企業所得稅 |  | 395,347 |  | 385,101 |
+
 －附屬公司股息的預提
 – Withholding income tax on dividends
-| from subsidiaries | 所得稅 | | 86,042 | | 63,958 |
-| ----------------------- | -------- | --- | ------ | -------- | ------ |
-| – U.S. EIT | －美國企業所得稅 | | 14,725 | | 30,859 |
-| – Hong Kong profits tax | －香港利得稅 | | | (3,751) | 4,684 |
 
-| Total current income tax | 即期所得稅總額 | | 492,363 | | 484,602 |
-| ----------------------------- | ----------- | --- | ------- | ------- | ------- |
-| Deferred income tax (Note 30) | 遞延所得稅（附註30） | | 38,505 | | 40,045 |
-| | | | 530,868 | | 524,647 |
-| | | | | | |
-| | | 本 公 | 司 根 | 據 開 曼 群 | 島 公 司 法 |
-The Company was incorporated in the Cayman Islands
-as an exempted company with limited liability under the （一九六一年法例三，經綜合及修訂）
+| from subsidiaries | 所得稅 | 86,042 |  | 63,958 |
+| --- | --- | --- | --- | --- |
+| – U.S. EIT | －美國企業所得稅 | 14,725 |  | 30,859 |
+| – Hong Kong profits tax | －香港利得稅 |  | (3,751) | 4,684 |
+
+| Total current income tax | 即期所得稅總額 |  | 492,363 |  | 484,602 |
+| --- | --- | --- | --- | --- | --- |
+| Deferred income tax (Note 30) | 遞延所得稅（附註30） |  | 38,505 |  | 40,045 |
+|  |  |  | 530,868 |  | 524,647 |
+|  |  | 本公 | 司根 | 據開曼群 | 島公司法 |
+
+The Company was incorporated in the Cayman Islands as an exempted company with limited liability under the （一九六一年法例三，經綜合及修訂）
 Companies Law (Law 3 of 1961, as consolidated and 在開曼群島註冊成立為獲豁免有限
 revised) of the Cayman Islands and is exempted from 公司，並獲豁免繳交開曼群島所得稅。
 payment of the Cayman Islands income tax.
 The Group’s subsidiaries in BVI are exempted from 本集團於英屬處女群島的附屬公司
-| payment of the BVI income tax. | | 獲豁免繳交英屬處女群島所得稅。 | | | |
-| ------------------------------ | --- | --------------- | --- | --- | --- |
 
-阜豐集團有限公司 年報 2025 113
+| payment of the BVI income tax. | 獲豁免繳交英屬處女群島所得稅。 |
+| --- | --- |
+
+<!-- p.113 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -4845,20 +4961,16 @@ According to the Ministry of Finance Announcement No. 根據自二零二一年�
 tax policies of the western region development strategy 「財政部、稅務總局及國家發展改
 issued by the Ministry of Finance, the State Administration 革委關於延續西部大開發企業所得
 of Taxation and the National Development and Reform 稅政策的公告」，於西部地區成立
-Commission” (財政部公告二零二零年第23號「財政部、 並屬中國政府頒佈的若干鼓勵類產
-稅務總局、國家發展改革委關於延續西部大開發企業 業目錄的公司將有權享有15%優惠
-所得稅政策的公告」) taking effect from 1 January 2021, 稅率。本集團的四家附屬公司，即
+Commission” (財政部公告二零二零年第23號「財政部、 並屬中國政府頒佈的若干鼓勵類產稅務總局、國家發展改革委關於延續西部大開發企業 業目錄的公司將有權享有15%優惠所得稅政策的公告」) taking effect from 1 January 2021, 稅率。本集團的四家附屬公司，即
 companies set up in the western region and falling into 呼倫貝爾阜豐、寶雞阜豐、內蒙古
 certain encouraged industry catalogue promulgated by the 阜豐及新疆阜豐於西部開發區成立
 PRC government will be entitled to a preferential tax rate of 並屬於鼓勵類行業目錄，故有權享
 15%. Four subsidiaries of the Group including Hulunbeier 有上述15%優惠稅率（二零二四年：
 Fufeng, Baoji Fufeng, IM Fufeng and Xinjiang Fufeng, are 15%）。
-set up in the western development region and fall into the
-encouraged industry catalogue, and therefore they are
-entitled to the aforesaid preferential tax rate of 15% (2024:
+set up in the western development region and fall into the encouraged industry catalogue, and therefore they are entitled to the aforesaid preferential tax rate of 15% (2024:
 15%).
 
-114 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.114 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -4871,8 +4983,7 @@ The Group’s subsidiaries in the U.S. are subject to state 於本年度，本�
 income tax at a rate of approximately 8.84% and 9.5% 司須就估計應課稅溢利按稅率約
 (2024: 8.84% and 9.5%) and federal income tax at a 8.84%和9.5%（二零二四年：8.84%
 rate of approximately 21% (2024: 21%) on the estimated 和9.5%）繳納州所得稅及按稅率約
-assessable profit for the Year. 21%（二零二四年：21%）繳納聯邦
-所得稅。
+assessable profit for the Year. 21%（二零二四年：21%）繳納聯邦所得稅。
 The Group’s subsidiary in Vietnam is subject to income tax 於本年度，本集團的越南附屬公司
 at a rate of 20% (2024: 20%) for the Year. 須按稅率20%（二零二四年：20%）
 繳納所得稅。
@@ -4893,45 +5004,49 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 11. TAXATION (Continued) 11. 稅項（續）
 (b) Numerical reconciliation of income tax expense (b) 所得稅開支與理論應付稅額的
-| to prima facie tax payable | | 數值對賬 | | | |
-| -------------------------- | --- | ---- | ---- | --- | ---- |
-| | | | 2025 | | 2024 |
+
+| to prima facie tax payable | 數值對賬 |  |  |
+| --- | --- | --- | --- |
+|  |  | 2025 | 2024 |
+
 二零二四年
 二零二五年
-| | | | RMB’000 | | RMB’000 |
-| --- | --- | --- | ------- | --- | ------- |
-| | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
+
+| RMB’000 | RMB’000 |
+| --- | --- |
+| 人民幣千元 | 人民幣千元 |
+
 Profit before income tax expense 除所得稅開支前溢利 2,996,096 2,837,031
-| | | | | | |
-| ---------------------------------------- | ------------ | --- | ------- | --- | ------- |
-| Tax calculated at domestic tax rates | 按各司法權區溢利適用的國 | | | | |
-| applicable to profits in the respective | 內稅率計算的稅項 | | | | |
-| jurisdictions | | | 756,838 | | 726,398 |
+
+| Tax calculated at domestic tax rates | 按各司法權區溢利適用的國 |  |
+| --- | --- | --- |
+| applicable to profits in the respective | 內稅率計算的稅項 |  |
+| jurisdictions | 756,838 | 726,398 |
+
 Preferential tax of certain subsidiaries 若干附屬公司的優惠稅項 (331,711) (261,992)
 研發稅項抵免
-| Research and development tax credit | | | (41,813) | | (42,857) |
-| -------------------------------------- | ---------- | --- | -------- | --- | -------- |
-| Unrecognised tax losses and temporary | 未確認稅項虧損及 | | | | |
-| differences | 暫時性差額 | | 19,522 | | 24,457 |
-| Withholding tax on dividends from PRC | 中國附屬公司股息的 | | | | |
-| subsidiaries | 預扣稅 | | 125,000 | | 75,000 |
+
+| Research and development tax credit |  | (41,813) | (42,857) |
+| --- | --- | --- | --- |
+| Unrecognised tax losses and temporary | 未確認稅項虧損及 |  |  |
+| differences | 暫時性差額 | 19,522 | 24,457 |
+| Withholding tax on dividends from PRC | 中國附屬公司股息的 |  |  |
+| subsidiaries | 預扣稅 | 125,000 | 75,000 |
+
 不可扣稅開支
-| Expenses not deductible for tax purposes | | | 3,085 | | 3,791 |
-| ---------------------------------------- | ------ | --- | ------- | ---- | ------- |
-| Income not subject to tax | 毋須課稅收益 | | | (53) | (150) |
-| | | | | | |
-| | | | 530,868 | | 524,647 |
-| | | | | | |
-| | | | | | |
-The Pillar Two legislation has been enacted in Hong Kong, 香港、荷蘭及新加坡（本集團經營
-所在地區）已頒佈支柱二立法，該
-Netherlands and Singapore which the Group operates in,
-and the legislation was effective for the Group’s financial 法規自本集團二零二五年一月一日
+
+| Expenses not deductible for tax purposes |  | 3,085 |  | 3,791 |
+| --- | --- | --- | --- | --- |
+| Income not subject to tax | 毋須課稅收益 |  | (53) | (150) |
+|  |  | 530,868 |  | 524,647 |
+
+The Pillar Two legislation has been enacted in Hong Kong, 香港、荷蘭及新加坡（本集團經營所在地區）已頒佈支柱二立法，該
+Netherlands and Singapore which the Group operates in, and the legislation was effective for the Group’s financial 法規自本集團二零二五年一月一日
 year beginning 1 January 2025. Based on the assessment, 開始的財政年度起生效。基於評估，
 the Group does not expect a material exposure to Pillar 本集團預期不會因支柱二所得稅產
-| Two income taxes. | | 生重大風險。 | | | |
-| ----------------- | --- | ------ | --- | --- | --- |
+
+| Two income taxes. | 生重大風險。 |
+| --- | --- |
 
 116
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -4939,45 +5054,44 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 12. EARNINGS PER SHARE 12. 每股盈利
-| (a) Basic earnings per share | (a) | 每股基本盈利 | |
-| ----------------------------- | ---- | ------ | --- |
+
+| (a) Basic earnings per share | (a) | 每股基本盈利 |
+| --- | --- | --- |
+
 Basic earnings per share is calculated by dividing the profit 每股基本盈利乃按股東應佔溢利除
 attributable to the Shareholders by the weighted average 以年內已發行股份的加權平均數（不
 number of Shares in issue during the year, excluding 包括庫存股份）計算。
 treasury shares.
 2025 2024
-| | | 二零二五年 | 二零二四年 |
-| --- | --- | --------- | --------- |
-| | | RMB cents | RMB cents |
+
+| 二零二五年 | 二零二四年 |
+| --- | --- |
+| RMB cents | RMB cents |
+
 人民幣分
 人民幣分
-| | | | |
-| -------------------------------------------- | ------------ | ------ | ----- |
-| Total basic earnings per share attributable | 股東應佔每股基本盈利總額 | | |
-| to the Shareholders | | 98.33 | 91.86 |
-| | | | |
-| (b) Diluted earnings per share | (b) | 每股攤薄盈利 | |
-Diluted earnings per share adjusts the figures used in the 每股攤薄盈利對用於釐定每股基本
-盈利的數值進行調整，以計及：
-determination of basic earnings per share to take into
-account:
+
+| Total basic earnings per share attributable | 股東應佔每股基本盈利總額 |  |  |
+| --- | --- | --- | --- |
+| to the Shareholders |  | 98.33 | 91.86 |
+| (b) Diluted earnings per share | (b) | 每股攤薄盈利 |  |
+
+Diluted earnings per share adjusts the figures used in the 每股攤薄盈利對用於釐定每股基本盈利的數值進行調整，以計及：
+determination of basic earnings per share to take into account:
 • the after income tax effect of interest and other • 與具攤薄性的潛在普通股相關
-financing costs associated with dilutive potential 的利息及其他融資成本的除所
-得稅後影響，及
+financing costs associated with dilutive potential 的利息及其他融資成本的除所得稅後影響，及
 ordinary shares, and
 • the weighted average number of additional ordinary • 假設兌換全部具攤薄性的潛在
 shares that would have been outstanding assuming 普通股後將發行在外的額外普
 the conversion of all dilutive potential ordinary shares. 通股的加權平均數。
 2025 2024
-| | | 二零二五年 | 二零二四年 |
-| --------------------------------- | ------------ | --------- | --------- |
-| | | RMB cents | RMB cents |
-| | | 人民幣分 | 人民幣分 |
-| | | | |
-| Total diluted earnings per share | 股東應佔每股攤薄盈利總額 | | |
-| attributable to the Shareholders | | 98.31 | 91.84 |
-| | | | |
-| | | | |
+
+|  |  | 二零二五年 | 二零二四年 |
+| --- | --- | --- | --- |
+|  |  | RMB cents | RMB cents |
+|  |  | 人民幣分 | 人民幣分 |
+| Total diluted earnings per share | 股東應佔每股攤薄盈利總額 |  |  |
+| attributable to the Shareholders |  | 98.31 | 91.84 |
 
 117
 阜豐集團有限公司 年報 2025
@@ -4987,54 +5101,60 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 12. EARNINGS PER SHARE (Continued) 12. 每股盈利（續）
 (c) Reconciliations of earnings used in calculating (c) 計算每股盈利所用盈利之對賬
 earnings per share
-| | | | 2025 | | 2024 |
-| --- | --- | --- | ---- | --- | ---- |
+
+| 2025 | 2024 |
+| --- | --- |
+
 二零二四年
 二零二五年
-| | | | RMB’000 | | RMB’000 |
-| ---------------------------------------- | ----------- | --- | ------- | --- | ------- |
-| | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
-| Basic earnings per share | 每股基本盈利 | | | | |
-| Profit attributable to the Shareholders | 計算每股基本盈利所用之 | | | | |
+
+|  |  | RMB’000 | RMB’000 |
+| --- | --- | --- | --- |
+|  |  | 人民幣千元 | 人民幣千元 |
+| Basic earnings per share | 每股基本盈利 |  |  |
+| Profit attributable to the Shareholders | 計算每股基本盈利所用之 |  |  |
+
 股東應佔溢利
 used in calculating basic earnings per
-| share | | | 2,465,228 | | 2,312,384 |
-| ----------------------------------------- | ----------- | --- | --------- | --- | --------- |
-| | | | | | |
-| Diluted earnings per share | 每股攤薄盈利 | | | | |
-| Profit attributable to the Shareholders | 計算每股攤薄盈利所用之 | | | | |
-| used in calculating diluted earnings per | 股東應佔溢利 | | | | |
-| share | | | 2,465,228 | | 2,312,384 |
-| | | | | | |
-| | | | | | |
+
+| share | 2,465,228 | 2,312,384 |
+| --- | --- | --- |
+| Diluted earnings per share | 每股攤薄盈利 |  |
+| Profit attributable to the Shareholders | 計算每股攤薄盈利所用之 |  |
+| used in calculating diluted earnings per | 股東應佔溢利 |  |
+| share | 2,465,228 | 2,312,384 |
+
 (d) Weighted average number of shares used as the (d) 用作分母的股份加權平均數
 denominator
-| | | | 2025 | | 2024 |
-| --- | --- | --- | ----- | --- | ----- |
-| | | | 二零二五年 | | 二零二四年 |
-| | | | | | |
+
+| 2025 | 2024 |
+| --- | --- |
+| 二零二五年 | 二零二四年 |
+
 於計算每股基本盈利時用作
 Weighted average number of ordinary
-| shares used as the denominator in | 分母的普通股加權平均數 | | | | |
-| --------------------------------------- | -------------- | --- | --------- | --- | --------- |
-| calculating basic earnings per share | （千股） | | | | |
-| (thousands) | | | 2,507,007 | | 2,517,228 |
-| Adjustments for calculation of diluted | 就每股攤薄盈利計算作出調整： | | | | |
+
+| shares used as the denominator in | 分母的普通股加權平均數 |  |
+| --- | --- | --- |
+| calculating basic earnings per share | （千股） |  |
+| (thousands) | 2,507,007 | 2,517,228 |
+| Adjustments for calculation of diluted | 就每股攤薄盈利計算作出調整： |  |
+
 earnings per share:
-| – Assumed exercise of share options | －假設行使購股權（千股） | | | | |
-| ------------------------------------ | ------------ | --- | --- | --- | --- |
-| (thousands) | | | 642 | | 498 |
+
+| – Assumed exercise of share options | －假設行使購股權（千股） |  |
+| --- | --- | --- |
+| (thousands) | 642 | 498 |
+
 於計算每股攤薄盈利時用作
 Weighted average number of ordinary
-| shares and potential ordinary shares | 分母的普通股及潛在普通股 | | | | |
-| --------------------------------------- | ------------ | --- | --------- | --- | --------- |
-| used as the denominator in calculating | 加權平均數（千股） | | | | |
-| diluted earnings per share (thousands) | | | 2,507,649 | | 2,517,726 |
-| | | | | | |
-| | | | | | |
 
-118 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+| shares and potential ordinary shares | 分母的普通股及潛在普通股 |  |
+| --- | --- | --- |
+| used as the denominator in calculating | 加權平均數（千股） |  |
+| diluted earnings per share (thousands) | 2,507,649 | 2,517,726 |
+
+<!-- p.118 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -5049,8 +5169,7 @@ the average annual market share price of the Company’s （按本公司股份�
 shares) based on the monetary value of the subscription 價確定）獲得的股份數目。上文計
 rights attached to outstanding share options. The number 算的股份數目將與假設行使購股權
 of shares calculated as above is compared with the 時原應發行的股份數目作比較。
-number of shares that would have been issued assuming
-the exercise of the share options.
+number of shares that would have been issued assuming the exercise of the share options.
 For the year ended 31 December 2024, the 2,000,000 截至二零二四年十二月三十一日
 outstanding share options issued in July 2022 and 888,000 止年度，由於截至二零二四年十二
 outstanding share options issued in April 2024 are not 月三十一日止年度普通股的平均
@@ -5058,65 +5177,70 @@ included in the calculation of diluted earnings per share 市價並未超過各�
 because the average market price of ordinary shares for 使價，故於二零二二年七月發行的
 the year ended 31 December 2024 did not exceed the 2,000,000份尚未行使購股權及二零
 exercise prices of each tranche of the share options, hence 二四年四月發行的888,000份尚未
-the share options had no dilution effect for that year. 行使購股權於計算每股攤薄盈利時
-未計算在內，因此該年度購股權並
-無攤薄影響。
+the share options had no dilution effect for that year. 行使購股權於計算每股攤薄盈利時未計算在內，因此該年度購股權並無攤薄影響。
 
 119
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 13. INVESTMENTS ACCOUNTED FOR USING | | | | 13. 採用權益法入賬的投資 | | | | |
-| ------------------------------------ | --- | --- | --- | -------------- | --- | --- | --- | --- |
+
+| 13. INVESTMENTS ACCOUNTED FOR USING | 13. 採用權益法入賬的投資 |
+| --- | --- |
+
 THE EQUITY METHOD
-| Investment in associates | | | | | 於聯營公司的投資 | | | |
-| ------------------------ | --- | --- | --- | --- | -------- | --- | --- | --- |
+
+| Investment in associates | 於聯營公司的投資 |
+| --- | --- |
+
 The carrying amount of equity-accounted investments has 截至二零二五年十二月三十一日及二零
-changed as follows for the year ended 31 December 2025 and 二四年十二月三十一日止年度，權益入
-賬投資的賬面值變動如下：
+changed as follows for the year ended 31 December 2025 and 二四年十二月三十一日止年度，權益入賬投資的賬面值變動如下：
 31 December 2024:
-| | | | | | | 2025 | | 2024 |
-| --------------------- | --- | --- | --- | --- | ----- | ------- | ----- | ------- |
-| | | | | | 二零二五年 | | 二零二四年 | |
-| | | | | | | RMB’000 | | RMB’000 |
-| | | | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | |
-| Beginning of the year | | 年初 | | | | | 86 | – |
+
+|  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  |  | RMB’000 |  | RMB’000 |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Beginning of the year | 年初 |  |  | 86 | – |
+
 添置
-| Additions | | | | | | 9,830 | | 200 |
-| ----------------- | --- | ---- | --- | --- | --- | ----- | --- | ----- |
-| Loss for the year | | 年內虧損 | | | | (213) | | (114) |
-| | | | | | | | | |
-| End of the year | | 年末 | | | | 9,703 | | 86 |
-| | | | | | | | | |
-| | | | | | | | | |
+
+| Additions |  | 9,830 | 200 |
+| --- | --- | --- | --- |
+| Loss for the year | 年內虧損 | (213) | (114) |
+| End of the year | 年末 | 9,703 | 86 |
+
 Set out below are the associates of the Group as at 31 下文載列本集團於二零二五年十二月
-| December 2025. | | | | | 三十一日的聯營公司。 | | | |
-| ---------------------- | ----------------- | --- | ---------- | ----- | -------------- | --- | ------------ | --- |
-| | Place of | | | % of | | | | |
-| | business/country | | ownership | | Nature of the | | Measurement | |
-| Name of entity | of incorporation | | interest | | relationship | | method | |
-| | 營業地點╱ | | 擁有權權益百 | | | | | |
-| 實體名稱 | 註冊成立國家 | | | 分比 | 關係性質 | | 計量方法 | |
-| | | | | | | | | |
-| Jilin Zero Plastic (a) | PRC | | | 30 | Note 1 | | Equity | |
-| 吉林零塑(a) | 中國 | | | 30 | 附註1 | | 權益 | |
-| Ruixin | PRC | | | 49 | Note 2 | | Equity | |
-| 瑞信 | 中國 | | | | 附註2 | | 權益 | |
+
+| December 2025. |  |  |  | 三十一日的聯營公司。 |  |
+| --- | --- | --- | --- | --- | --- |
+|  | Place of |  | % of |  |  |
+|  | business/country | ownership |  | Nature of the | Measurement |
+| Name of entity | of incorporation | interest |  | relationship | method |
+|  | 營業地點╱ | 擁有權權益百 |  |  |  |
+| 實體名稱 | 註冊成立國家 |  | 分比 | 關係性質 | 計量方法 |
+| Jilin Zero Plastic (a) | PRC |  | 30 | Note 1 | Equity |
+| 吉林零塑(a) | 中國 |  | 30 | 附註1 | 權益 |
+| Ruixin | PRC |  | 49 | Note 2 | Equity |
+| 瑞信 | 中國 |  |  | 附註2 | 權益 |
+
 49
-| Hailin | PRC | | | 20 | Note 3 | | Equity | |
-| ------ | --- | --- | --- | --- | ------ | --- | ------ | --- |
-| 海鄰 | 中國 | | | 20 | 附註3 | | 權益 | |
-| | | | | | | | | |
+
+| Hailin | PRC | 20 | Note 3 | Equity |
+| --- | --- | --- | --- | --- |
+| 海鄰 | 中國 | 20 | 附註3 | 權益 |
+
 Note 1 Jilin Zero Plastic manufactures products and provides services relating 附註1 吉林零塑製造生物基塑料產品及提供相關
 to bio-based plastics. It is a strategic business partner for the Group, 服務。其為本集團藉以向市場提供新產品的
 providing access to the market of new products. The associate has paid- 戰略業務夥伴。該聯營公司的實繳股本為人
 in capital of RMB100,000,000, of which 30% are held by the Group. 民幣100,000,000元，其中本集團持有30%。
 Note 2 Ruixin provides services relating agricultural professional and ancillary 附註2 瑞信提供與農業專業及輔助活動相關的服務。
 activities. The associate has paid-in capital of RMB1,000,000, of which 該聯營公司實繳資本為人民幣1,000,000元，
-| 49% are held by the Group. | | | | | 其中本集團持有49%。 | | | |
-| -------------------------- | --- | --- | --- | --- | ----------- | --- | --- | --- |
+
+| 49% are held by the Group. | 其中本集團持有49%。 |
+| --- | --- |
+
 Note 3 Hailin manufactures and sells animal nutrition products. The associate has 附註3 海鄰製造及銷售動物營養產品。該聯營公司
 registered capital of RMB60,000,000, of which 20% are subscribed by 的註冊資本為人民幣60,000,000元，其中本
 the Group. As at 31 December 2025, the associate has paid-in capital of 集團認購20%。於二零二五年十二月三十一
@@ -5130,47 +5254,53 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 13. INVESTMENTS ACCOUNTED FOR USING 13. 採用權益法入賬的投資（續）
 THE EQUITY METHOD (Continued)
-| Investment in associates (Continued) | 於聯營公司的投資（續） | | | | |
-| ------------------------------------ | ----------- | --- | --- | --- | --- |
+
+| Investment in associates (Continued) | 於聯營公司的投資（續） |
+| --- | --- |
+
 (a) As at 31 December 2025, impairment provision on the (a) 於二零二五年十二月三十一日，投
-investment in Jilin Zero Plastic to reduce the carrying 資於吉林零塑的減值撥備減少賬面
-值至按使用價值計算的可收回金額，
-amount to its recoverable amount based on value-in-
-use calculations, amounted to RMB7,483,000 (2024: 金額為人民幣7,483,000 元（二零
-| RMB7,483,000). | | 二四年：人民幣7,483,000元）。 | | | |
-| -------------- | --- | ------------------- | --- | --- | --- |
-The associates are private companies and there is no quoted 該等聯營公司為私人公司，其股份並無
-可用市場報價。本集團已承諾根據相
-market price available for their shares. The Group has
-committed to contribute total capital of RMB12,000,000 to 關投資協議向海鄰出資總額為人民幣
+investment in Jilin Zero Plastic to reduce the carrying 資於吉林零塑的減值撥備減少賬面值至按使用價值計算的可收回金額，
+amount to its recoverable amount based on value-in-use calculations, amounted to RMB7,483,000 (2024: 金額為人民幣7,483,000 元（二零
+
+| RMB7,483,000). | 二四年：人民幣7,483,000元）。 |
+| --- | --- |
+
+The associates are private companies and there is no quoted 該等聯營公司為私人公司，其股份並無可用市場報價。本集團已承諾根據相
+market price available for their shares. The Group has committed to contribute total capital of RMB12,000,000 to 關投資協議向海鄰出資總額為人民幣
 Hailin pursuant to the related investment agreement and has 12,000,000元，且直至二零二五年十二
 contributed RMB10,030,000 up to 31 December 2025 (2024: 月三十一日已注資人民幣10,030,000元
-| RMB200,000). | （二零二四年：人民幣200,000元）。 | | | | |
-| ---------------------------------------------- | -------------------- | --- | --- | --- | --- |
-| Summarised financial information of associates | 聯營公司的財務資料概要 | | | | |
-| Jilin Zero Plastic | 吉林零塑 | | | | |
+
+| RMB200,000). | （二零二四年：人民幣200,000元）。 |
+| --- | --- |
+| Summarised financial information of associates | 聯營公司的財務資料概要 |
+| Jilin Zero Plastic | 吉林零塑 |
+
 下文載列吉林零塑於二零二五年及二零
 Set out below are the summarised financial information for Jilin
 Zero Plastic as at and for the years ended 31 December 2025 二四年十二月三十一日及截至該日止年
 and 2024 which is accounted for using the equity method. 度採用權益法入賬的財務資料概要。
 Jilin Zero Plastic
 吉林零塑
-| | | | 2025 | | 2024 |
-| --- | --- | --- | ------- | --- | ------- |
-| | | | 二零二五年 | | 二零二四年 |
-| | | | RMB’000 | | RMB’000 |
+
+| 2025 | 2024 |
+| --- | --- |
+| 二零二五年 | 二零二四年 |
+| RMB’000 | RMB’000 |
+
 人民幣千元
-| | | | 人民幣千元 | | |
-| ------------ | ---- | --- | ------- | --- | ------- |
-| Total assets | 資產總值 | | 215,430 | | 223,320 |
+
+|  |  | 人民幣千元 |  |
+| --- | --- | --- | --- |
+| Total assets | 資產總值 | 215,430 | 223,320 |
+
 負債總額
-| Total liabilities | | | 308,787 | | 304,618 |
-| ----------------- | ---- | --- | -------- | --- | -------- |
-| Net liabilities | 負債淨額 | | (93,357) | | (81,298) |
-| Revenue | 收入 | | 333 | | 19,909 |
+
+| Total liabilities |  | 308,787 | 304,618 |
+| --- | --- | --- | --- |
+| Net liabilities | 負債淨額 | (93,357) | (81,298) |
+| Revenue | 收入 | 333 | 19,909 |
+
 Net loss and total comprehensive loss 虧損淨額及綜合虧損總額 (12,059) (42,068)
-| | | | | | |
-| --- | --- | --- | --- | --- | --- |
 
 121
 阜豐集團有限公司 年報 2025
@@ -5181,178 +5311,212 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 THE EQUITY METHOD (Continued)
 Summarised financial information of associates 聯營公司的財務資料概要（續）
 (Continued)
-| Ruixin | 瑞信 | | | |
-| ------ | --- | --- | --- | --- |
+
+| Ruixin | 瑞信 |
+| --- | --- |
+
 Set out below are the summarised financial information for 下文載列瑞信於二零二五年及二零二四
 Ruixin as at and for the years ended 31 December 2025 and 年十二月三十一日及截至該日止年度採
 2024 which is accounted for using the equity method. 用權益法入賬的財務資料概要。
 Ruixin
 瑞信
-| | | | 2025 | 2024 |
-| --- | --- | --- | ------- | ------- |
-| | | | 二零二五年 | 二零二四年 |
-| | | | RMB’000 | RMB’000 |
-| | | | 人民幣千元 | 人民幣千元 |
-| | | | | |
+
+| 2025 | 2024 |
+| --- | --- |
+| 二零二五年 | 二零二四年 |
+| RMB’000 | RMB’000 |
+| 人民幣千元 | 人民幣千元 |
+
 資產總值
-| Total assets | | | 1,290 | 76,664 |
-| ----------------- | ---- | --- | -------- | ------- |
-| Total liabilities | 負債總額 | | 22,471 | 84,836 |
-| Net liabilities | 負債淨額 | | (21,181) | (8,172) |
-| Revenue | 收入 | | 57,904 | 24,017 |
+
+| Total assets |  | 1,290 | 76,664 |
+| --- | --- | --- | --- |
+| Total liabilities | 負債總額 | 22,471 | 84,836 |
+| Net liabilities | 負債淨額 | (21,181) | (8,172) |
+| Revenue | 收入 | 57,904 | 24,017 |
+
 Net loss and total comprehensive loss 虧損淨額及綜合虧損總額 (9,021) (7,995)
-| | | | | |
-| ------ | --- | --- | --- | --- |
-| Hailin | 海鄰 | | | |
+
+| Hailin | 海鄰 |
+| --- | --- |
+
 下文載列海鄰於二零二五年及二零二四
-Set out below are the summarised financial information for Hailin
-as at and for the year ended 31 December 2025 and 2024 年十二月三十一日及截至該日止年度採
+Set out below are the summarised financial information for Hailin as at and for the year ended 31 December 2025 and 2024 年十二月三十一日及截至該日止年度採
 which is accounted for using the equity method. 用權益法入賬的財務資料概要。
 Hailin
 海鄰
-| | | | 2025 | 2024 |
-| ------------ | ---- | --- | ------- | ------- |
-| | | | 二零二五年 | 二零二四年 |
-| | | | RMB’000 | RMB’000 |
-| | | | 人民幣千元 | 人民幣千元 |
-| | | | | |
-| Total assets | 資產總值 | | 95,805 | 476 |
+
+|  |  | 2025 | 2024 |
+| --- | --- | --- | --- |
+|  |  | 二零二五年 | 二零二四年 |
+|  |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |
+| Total assets | 資產總值 | 95,805 | 476 |
+
 負債總額
-| Total liabilities | | | 43,440 | 44 |
-| ----------------- | ---- | --- | ------ | --- |
-| Net assets | 資產淨額 | | 52,365 | 432 |
-| Revenue | 收入 | | 36,431 | – |
+
+| Total liabilities |  | 43,440 | 44 |
+| --- | --- | --- | --- |
+| Net assets | 資產淨額 | 52,365 | 432 |
+| Revenue | 收入 | 36,431 | – |
+
 Net loss and total comprehensive loss 虧損淨額及綜合虧損總額 (1,067) (568)
-| | | | | |
-| --- | --- | --- | --- | --- |
 
 122
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 14. PROPERTY, PLANT AND EQUIPMENT | | | | | 14. 物業、廠房及設備 | | | | | |
-| --------------------------------- | --- | --- | --- | --- | ------------ | --- | --- | --- | --- | --- |
+
+| 14. PROPERTY, PLANT AND EQUIPMENT | 14. 物業、廠房及設備 |
+| --- | --- |
+
 2025
 二零二五年
-| | | Plant and | | | Furniture | | | Construction | | |
-| ---- | --- | ---------- | --- | --------- | ------------ | --- | -------- | ------------- | ----------- | ------- |
-| | | buildings | | Machinery | and fixtures | | Vehicles | | in progress | Total |
-| | | 廠房及大樓 | | 機器 | 傢私及裝置 | | | 汽車 | 在建工程 | 總計 |
-| | | RMB’000 | | RMB’000 | RMB’000 | | RMB’000 | | RMB’000 | RMB’000 |
-| | | 人民幣千元 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | 人民幣千元 |
-| | | | | | | | | | | |
-| Cost | 成本 | | | | | | | | | |
+
+|  |  | Plant and |  | Furniture |  | Construction |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | buildings | Machinery | and fixtures | Vehicles |  | in progress | Total |
+|  |  | 廠房及大樓 | 機器 | 傢私及裝置 |  | 汽車 | 在建工程 | 總計 |
+|  |  | RMB’000 | RMB’000 | RMB’000 | RMB’000 |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |
+| Cost | 成本 |  |  |  |  |  |  |  |
+
 At 1 January 2025 於二零二五年一月一日 6,109,289 16,548,316 430,938 155,254 1,875,495 25,119,292
 添置
-| Additions | | | – | 74,811 | | 7,854 | 26,729 | | 2,749,460 | 2,858,854 |
-| --------- | --- | --- | --- | ------ | --- | ----- | ------ | --- | --------- | --------- |
+
+| Additions | – | 74,811 | 7,854 | 26,729 | 2,749,460 | 2,858,854 |
+| --- | --- | --- | --- | --- | --- | --- |
+
 Transfer upon completion 於完成時轉移 555,746 855,692 31,329 4,059 (1,446,826) –
-| Transfer to intangible assets | 轉移至無形資產 | | | | | | | | | |
-| ------------------------------- | -------- | --- | --- | -------- | --- | ------- | ------- | --- | --------- | --------- |
-| (Note 16) | （附註16） | | – | | – | – | | – | (5,511) | (5,511) |
-| Disposals | 出售 | | – | (62,634) | | (1,919) | (3,070) | | (204,775) | (272,398) |
+
+| Transfer to intangible assets | 轉移至無形資產 |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| (Note 16) | （附註16） | – |  | – | – |  | – | (5,511) | (5,511) |
+| Disposals | 出售 | – | (62,634) |  | (1,919) | (3,070) |  | (204,775) | (272,398) |
+
 撇銷減值資產
-| Write-off of impaired assets | | | – | | – | – | | – | (59,006) | (59,006) |
-| ---------------------------- | ------- | --- | --- | --- | --- | --- | --- | --- | -------- | -------- |
-| Exchange differences | 匯兌差額 | | – | | – | – | | – | (5,821) | (5,821) |
-| | | | | | | | | | | |
-| At 31 December 2025 | 於二零二五年 | | | | | | | | | |
+
+| Write-off of impaired assets |  | – | – | – | – | (59,006) | (59,006) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Exchange differences | 匯兌差額 | – | – | – | – | (5,821) | (5,821) |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |  |  |
+
 十二月三十一日
-| | | 6,665,035 | | 17,416,185 | | 468,202 | 182,972 | | 2,903,016 | 27,635,410 |
-| ------------------------ | ---- | ----------- | --- | ---------- | --- | ------- | --------- | --- | --------- | ------------ |
-| Accumulated depreciation | 累計折舊 | | | | | | | | | |
+
+|  | 6,665,035 | 17,416,185 | 468,202 | 182,972 | 2,903,016 | 27,635,410 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Accumulated depreciation | 累計折舊 |  |  |  |  |  |
+
 At 1 January 2025 於二零二五年一月一日 (2,525,912) (9,595,775) (287,537) (104,934) – (12,514,158)
 年內開支（附註8）
 Charge for the year (Note 8) (282,480) (935,466) (27,864) (16,629) – (1,262,439)
-| Disposals | 出售 | | – | 41,788 | | 1,008 | 2,498 | | | – 45,294 |
-| ------------------- | ------- | --- | --- | ------ | --- | ----- | ----- | --- | --- | -------- |
-| | | | | | | | | | | |
-| At 31 December 2025 | 於二零二五年 | | | | | | | | | |
+
+| Disposals | 出售 | – | 41,788 | 1,008 | 2,498 | – 45,294 |
+| --- | --- | --- | --- | --- | --- | --- |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |  |
+
 十二月三十一日
-| | | (2,808,392) | (10,489,453) | | (314,393) | | (119,065) | | | – (13,731,303) |
-| ----------------------------- | ------ | ------------- | -------------- | --- | ----------- | --- | ----------- | --- | --- | ---------------- |
-| Provision for impairment loss | 減值虧損撥備 | | | | | | | | | |
+
+|  | (2,808,392) | (10,489,453) | (314,393) | (119,065) | – (13,731,303) |
+| --- | --- | --- | --- | --- | --- |
+| Provision for impairment loss | 減值虧損撥備 |  |  |  |  |
+
 At 1 January 2025 於二零二五年一月一日 (40,495) (67,202) (194) (704) (87,715) (196,310)
 添置（附註8）
-| Additions (Note 8) | | | – | (20,423) | | – | | – | (44,350) | (64,773) |
-| ---------------------------- | ------- | --- | --- | -------- | --- | --- | --- | --- | -------- | -------- |
-| Disposals | 出售 | | – | | – | – | | – | 63,989 | 63,989 |
-| Write-off of impaired assets | 撇銷減值資產 | | – | | – | – | | – | 59,006 | 59,006 |
-| Exchange differences | 匯兌差額 | | – | | – | – | | – | 2,292 | 2,292 |
-| | | | | | | | | | | |
-| At 31 December 2025 | 於二零二五年 | | | | | | | | | |
+
+| Additions (Note 8) |  | – | (20,423) |  | – | – | (44,350) | (64,773) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Disposals | 出售 | – |  | – | – | – | 63,989 | 63,989 |
+| Write-off of impaired assets | 撇銷減值資產 | – |  | – | – | – | 59,006 | 59,006 |
+| Exchange differences | 匯兌差額 | – |  | – | – | – | 2,292 | 2,292 |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |  |  |  |
+
 十二月三十一日 (40,495) (87,625) (194) (704) (6,778) (135,796)
 賬面淨值
 Net book value
-| At 31 December 2025 | 於二零二五年 | | | | | | | | | |
-| ------------------- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+| At 31 December 2025 | 於二零二五年 |
+| --- | --- |
+
 十二月三十一日 3,816,148 6,839,107 153,615 63,203 2,896,238 13,768,311
-| | | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 123
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 14. PROPERTY, PLANT AND EQUIPMENT | | | | | 14. 物業、廠房及設備（續） | | | | | |
-| ---------------------------------- | --- | --- | --- | --- | --------------- | --- | --- | --- | --- | --- |
+
+| 14. PROPERTY, PLANT AND EQUIPMENT | 14. 物業、廠房及設備（續） |
+| --- | --- |
+
 (Continued)
 2024
 二零二四年
-| | | | Plant and | | | Furniture | | | Construction | |
-| ---- | --- | ----- | ---------- | --------- | -------- | ------------ | -------- | --- | ------------- | ------- |
-| | | | buildings | Machinery | | and fixtures | Vehicles | | in progress | Total |
-| | | 廠房及大樓 | | | 機器 傢私及裝置 | | | 汽車 | 在建工程 | 總計 |
-| | | | RMB’000 | RMB’000 | | RMB’000 | RMB’000 | | RMB’000 | RMB’000 |
-| | | 人民幣千元 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | 人民幣千元 |
-| | | | | | | | | | | |
-| Cost | 成本 | | | | | | | | | |
+
+|  |  |  | Plant and |  |  | Furniture |  |  | Construction |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | buildings | Machinery |  | and fixtures | Vehicles |  | in progress | Total |
+|  |  | 廠房及大樓 |  |  | 機器 傢私及裝置 |  |  | 汽車 | 在建工程 | 總計 |
+|  |  |  | RMB’000 | RMB’000 |  | RMB’000 | RMB’000 |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |
+| Cost | 成本 |  |  |  |  |  |  |  |  |  |
+
 於二零二四年一月一日
 At 1 January 2024 5,333,572 13,777,596 388,861 138,329 3,617,579 23,255,937
 Additions 添置 16,462 381,485 42,256 19,799 1,512,078 1,972,080
 Transfer upon completion 於完成時轉移 759,276 2,490,642 – – (3,249,918) –
-| Transfer to intangible assets | 轉移至無形資產（附註16） | | | | | | | | | |
-| ------------------------------- | ------------- | --- | --- | --- | --- | --- | --- | --- | ------- | ------- |
-| (Note 16) | | | | – | – | – | | – | (8,214) | (8,214) |
+
+| Transfer to intangible assets | 轉移至無形資產（附註16） |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| (Note 16) | – | – | – | – | (8,214) | (8,214) |
+
 出售
-| Disposals | | | (21) | (101,407) | | (179) | (2,874) | | | – (104,481) |
-| -------------------- | ------- | --- | ---- | --------- | --- | ----- | ------- | --- | ----- | ----------- |
-| Exchange differences | 匯兌差額 | | | – | – | – | | – | 3,970 | 3,970 |
-| | | | | | | | | | | |
-| At 31 December 2024 | 於二零二四年 | | | | | | | | | |
+
+| Disposals |  | (21) | (101,407) |  | (179) | (2,874) |  |  | – (104,481) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Exchange differences | 匯兌差額 |  | – | – | – |  | – | 3,970 | 3,970 |
+| At 31 December 2024 | 於二零二四年 |  |  |  |  |  |  |  |  |
+
 十二月三十一日
-| | | | 6,109,289 | 16,548,316 | | 430,938 | 155,254 | | 1,875,495 | 25,119,292 |
-| ------------------------ | ---- | --- | --------- | ------------ | --- | --------- | ------- | --- | --------- | ------------ |
-| Accumulated depreciation | 累計折舊 | | | | | | | | | |
+
+|  | 6,109,289 | 16,548,316 | 430,938 | 155,254 | 1,875,495 | 25,119,292 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Accumulated depreciation | 累計折舊 |  |  |  |  |  |
+
 At 1 January 2024 於二零二四年一月一日 (2,279,589) (8,780,823) (262,048) (94,237) – (11,416,697)
 年內開支（附註8）
 Charge for the year (Note 8) (246,324) (894,337) (25,645) (12,963) – (1,179,269)
-| Disposals | 出售 | | 1 | 79,385 | | 156 | 2,266 | | | – 81,808 |
-| ------------------- | ------- | --- | --- | ------ | --- | --- | ----- | --- | --- | -------- |
-| | | | | | | | | | | |
-| At 31 December 2024 | 於二零二四年 | | | | | | | | | |
+
+| Disposals | 出售 | 1 | 79,385 | 156 | 2,266 | – 81,808 |
+| --- | --- | --- | --- | --- | --- | --- |
+| At 31 December 2024 | 於二零二四年 |  |  |  |  |  |
+
 十二月三十一日
-| | | (2,525,912) | | (9,595,775) | | (287,537) | (104,934) | | | – (12,514,158) |
-| ----------------------------- | ------ | ------------- | --- | ------------- | --- | ----------- | --------- | --- | --- | ---------------- |
-| Provision for impairment loss | 減值虧損撥備 | | | | | | | | | |
+
+|  | (2,525,912) | (9,595,775) | (287,537) | (104,934) | – (12,514,158) |
+| --- | --- | --- | --- | --- | --- |
+| Provision for impairment loss | 減值虧損撥備 |  |  |  |  |
+
 At 1 January 2024 於二零二四年一月一日 (40,495) (66,368) (194) (704) (86,525) (194,286)
 添置（附註8）
-| Additions (Note 8) | | | | – | (834) | – | | – | | – (834) |
-| -------------------- | ------- | --- | --- | --- | ----- | --- | --- | --- | ------- | ------- |
-| Exchange differences | 匯兌差額 | | | – | – | – | | – | (1,190) | (1,190) |
-| | | | | | | | | | | |
-| At 31 December 2024 | 於二零二四年 | | | | | | | | | |
+
+| Additions (Note 8) |  | – | (834) | – | – |  | – (834) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Exchange differences | 匯兌差額 | – | – | – | – | (1,190) | (1,190) |
+| At 31 December 2024 | 於二零二四年 |  |  |  |  |  |  |
+
 十二月三十一日
-| | | | (40,495) | (67,202) | | (194) | | (704) | (87,715) | (196,310) |
-| ------------------- | ------- | --- | -------- | ---------- | --- | ------- | --- | ------- | -------- | ----------- |
-| Net book value | 賬面淨值 | | | | | | | | | |
-| At 31 December 2024 | 於二零二四年 | | | | | | | | | |
+
+|  | (40,495) | (67,202) | (194) | (704) | (87,715) | (196,310) |
+| --- | --- | --- | --- | --- | --- | --- |
+| Net book value | 賬面淨值 |  |  |  |  |  |
+| At 31 December 2024 | 於二零二四年 |  |  |  |  |  |
+
 十二月三十一日
-| | | | 3,542,882 | 6,885,339 | | 143,207 | 49,616 | | 1,787,780 | 12,408,824 |
-| --- | --- | --- | --------- | ----------- | --- | --------- | ------ | --- | --------- | ------------ |
-| | | | | | | | | | | |
+
+| 3,542,882 | 6,885,339 | 143,207 | 49,616 | 1,787,780 | 12,408,824 |
+| --- | --- | --- | --- | --- | --- |
 
 124
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -5362,31 +5526,30 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 14. PROPERTY, PLANT AND EQUIPMENT 14. 物業、廠房及設備（續）
 (Continued)
 (a) As at 31 December 2025, no plant and machinery was (a) 於二零二五年十二月三十一日，並
-pledged as security for the Group’s borrowings (2024: nil). 無抵押任何廠房及機器作為本集團
-借貸的抵押品（二零二四年：無）。
+pledged as security for the Group’s borrowings (2024: nil). 無抵押任何廠房及機器作為本集團借貸的抵押品（二零二四年：無）。
 (b) Depreciation expense included in the consolidated income (b) 計入合併利潤表的折舊開支如下：
 statement is as follows:
-| | | | 2025 | | | 2024 |
-| ----------------------- | ---- | --- | --------- | --- | --------- | ---- |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
-| Cost of sales | 銷售成本 | | 1,125,374 | | 1,049,045 | |
-| Administrative expenses | 行政開支 | | 137,065 | | 130,224 | |
-| | | | | | | |
-| | | | 1,262,439 | | 1,179,269 | |
-| | | | | | | |
-| | | | | | | |
+
+|  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- |
+|  |  | 二零二五年 | 二零二四年 |  |
+|  |  | RMB’000 | RMB’000 |  |
+|  |  | 人民幣千元 | 人民幣千元 |  |
+| Cost of sales | 銷售成本 | 1,125,374 | 1,049,045 |  |
+| Administrative expenses | 行政開支 | 137,065 | 130,224 |  |
+|  |  | 1,262,439 | 1,179,269 |  |
+
 (c) As at 31 December 2025, plant and buildings of the Group (c) 於二零二五年十二月三十一日，
 with a total net book value of RMB1,419,343,000 were 本 集 團 賬 面 淨 值 總 額 人 民 幣
 without real estate titles and the Group is in the process 1,419,343,000元（二零二四年：人
 to secure the relevant real estate certificates (2024: 民幣978,108,000元）的廠房及大樓
-| RMB978,108,000). | | 並無擁有房地產權，而本集團正作 | | | | |
-| ---------------- | --- | --------------- | --- | --- | --- | --- |
+
+| RMB978,108,000). | 並無擁有房地產權，而本集團正作 |
+| --- | --- |
+
 出擔保以獲取相關房地產權證。
 
-阜豐集團有限公司 年報 2025 125
+<!-- p.125 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -5414,32 +5577,29 @@ there is a significant adverse change in the projected 能須在合併利潤表�
 performance and resulting future cash flow projections, 倘有跡象顯示減值虧損可能已減少，
 it may be necessary to take an impairment charge to the 則可收回金額不得超過假設並無確
 consolidated income statement. If there is an indication that 認減值的情況下已折舊歷史成本。
-an impairment loss may have decreased, the recoverable
-amount should not be more than what the depreciated
-historical cost would have been if the impairment had not
-been recognised.
+an impairment loss may have decreased, the recoverable amount should not be more than what the depreciated historical cost would have been if the impairment had not been recognised.
 
 126
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 14. PROPERTY, PLANT AND EQUIPMENT | 14. 物業、廠房及設備（續） | | |
-| ---------------------------------- | --------------- | --- | --- |
+
+| 14. PROPERTY, PLANT AND EQUIPMENT | 14. 物業、廠房及設備（續） |
+| --- | --- |
+
 (Continued)
-| (d) Impairment loss (Continued) | | (d) 減值虧損（續） | |
-| -------------------------------- | --- | ------------ | --- |
+
+| (d) Impairment loss (Continued) | (d) 減值虧損（續） |
+| --- | --- |
+
 As at 31 December 2024, the impairment provision 於二零二四年十二月三十一日，在
-of construction in progress included amounts of 建工程減值撥備包括大福克斯項目
-終止後就Fufeng USA Incorporated
-USD11,259,000 (equivalent to RMB80,937,000) for the
-construction in progress of Fufeng USA Incorporated （「USA CIP」）的在建工程金額
+of construction in progress included amounts of 建工程減值撥備包括大福克斯項目終止後就Fufeng USA Incorporated
+USD11,259,000 (equivalent to RMB80,937,000) for the construction in progress of Fufeng USA Incorporated （「USA CIP」）的在建工程金額
 (the “USA CIP”) following the termination of the Grand 11,259,000美元（相當於人民幣
 Forks Project. The carrying amounts of the USA CIP 80,937,000元）。USA CIP的賬面
-mainly comprised costs of land, equipments and 值主要包括土地、設備及設計費
-用的成本，其為工程直接應佔及
-designing expenditure which are directly attributable
-to the construction and were written down to their 撇減至根據外部獨立估值師的估
+mainly comprised costs of land, equipments and 值主要包括土地、設備及設計費用的成本，其為工程直接應佔及
+designing expenditure which are directly attributable to the construction and were written down to their 撇減至根據外部獨立估值師的估
 recoverable amounts determined by reference to the fair 值並參照公平值減出售成本釐定
 value less costs of disposal based on the valuations by 的可收回金額。於本年度，賬面值
 external independent valuers. During the Year, land and 為20,030,000美元（相當於人民幣
@@ -5451,25 +5611,31 @@ RMB209,805,000), resulting in aggregate disposal gains of 元），產生出售�
 USD9,819,000 (equivalent to RMB69,018,000) recognised 美元（相當於人民幣69,018,000
 元），已於合併利潤表內「其他利得－
 in “Other gains – net” in the consolidated income
-| statement. | | 淨額」確認。 | |
-| ---------- | --- | ------ | --- |
+
+| statement. | 淨額」確認。 |
+| --- | --- |
+
 折舊方式及可使用年期
-| (e) Depreciation methods and useful lives | | (e) | |
-| ------------------------------------------ | --- | ---- | --- |
+
+| (e) Depreciation methods and useful lives | (e) |
+| --- | --- |
+
 除在建工程外，物業、廠房及設備
-Depreciation on property, plant and equipment, except for
-construction in progress, is calculated using the straight- 的折舊於其估計可使用年期，以直
+Depreciation on property, plant and equipment, except for construction in progress, is calculated using the straight- 的折舊於其估計可使用年期，以直
 line method to allocate their costs to their residual values 線法分配其成本至其剩餘價值，計
-| over their estimated useful lives, as follows: | | 算年期如下： | |
-| ---------------------------------------------- | ----------- | ------ | ------ |
-| | | 廠房及大樓 | 15–20年 |
-| Plant and buildings | 15–20 years | | |
+
+| over their estimated useful lives, as follows: |  | 算年期如下： |  |
+| --- | --- | --- | --- |
+|  |  | 廠房及大樓 | 15–20年 |
+| Plant and buildings | 15–20 years |  |  |
 | Machinery | 5–20 years | 機器 | 5–20年 |
 | Furniture and fixtures | 3–8 years | 傢俬及裝置 | 3–8年 |
 | Vehicles | 4–8 years | 汽車 | 4–8年 |
+
 See Note 39.5 for the other accounting policies relevant to 有關物業、廠房及設備的其他會計
-| property, plant and equipment. | | 政策見附註39.5。 | |
-| ------------------------------ | --- | ---------- | --- |
+
+| property, plant and equipment. | 政策見附註39.5。 |
+| --- | --- |
 
 127
 阜豐集團有限公司 年報 2025
@@ -5478,43 +5644,51 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 15. LEASES 15. 租賃
 This note provides information for leases where the Group is a 倘本集團為承租人，則本附註就租賃提
-| lessee. | 供資料。 | | | | | |
-| ------- | ---- | --- | --- | --- | --- | --- |
+
+| lessee. | 供資料。 |
+| --- | --- |
+
 於合併資產負債表確認的金額
-| (i) Amounts recognised in the consolidated | (i) | | | | | |
-| -------------------------------------------- | ---- | --- | --- | --- | --- | --- |
+
+| (i) Amounts recognised in the consolidated | (i) |
+| --- | --- |
+
 balance sheet
 The balance sheet shows the following amounts relating to 資產負債表顯示以下與租賃有關的
-| leases: | | 金額： | | | | |
-| ------- | --- | --- | --- | ---- | --- | ---- |
-| | | | | 2025 | | 2024 |
+
+| leases: | 金額： |  |  |
+| --- | --- | --- | --- |
+|  |  | 2025 | 2024 |
+
 二零二四年
 二零二五年
-| | | | RMB’000 | | RMB’000 | |
-| ----------------------------- | ---------- | --- | ------- | --- | ------- | --- |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
-| Right-of-use assets | 使用權資產 | | | | | |
-| Leasehold land-use rights (a) | 租賃土地使用權(a) | | 981,577 | | 933,940 | |
+
+|  |  | RMB’000 | RMB’000 |
+| --- | --- | --- | --- |
+|  |  | 人民幣千元 | 人民幣千元 |
+| Right-of-use assets | 使用權資產 |  |  |
+| Leasehold land-use rights (a) | 租賃土地使用權(a) | 981,577 | 933,940 |
+
 樓宇
-| Buildings | | | | 1,427 | | 1,935 |
-| ----------------- | ---- | --- | ------- | ----- | ------- | ----- |
-| Equipment | 設備 | | | 18 | | 54 |
-| | | | | | | |
-| | | | 983,022 | | 935,929 | |
-| | | | | | | |
-| Lease liabilities | 租賃負債 | | | | | |
+
+| Buildings |  |  | 1,427 |  | 1,935 |
+| --- | --- | --- | --- | --- | --- |
+| Equipment | 設備 |  | 18 |  | 54 |
+|  |  | 983,022 |  | 935,929 |  |
+| Lease liabilities | 租賃負債 |  |  |  |  |
+
 流動
-| Current | | | | 1,112 | | 845 |
-| ----------- | --- | --- | --- | ----- | --- | ----- |
-| Non-current | 非流動 | | | 428 | | 1,298 |
-| | | | | | | |
-| | | | | 1,540 | | 2,143 |
-| | | | | | | |
-| | | | | | | |
+
+| Current |  | 1,112 | 845 |
+| --- | --- | --- | --- |
+| Non-current | 非流動 | 428 | 1,298 |
+|  |  | 1,540 | 2,143 |
+
 Additions to the right-of-use assets during the Year were 於本年度，使用權資產添置為人民
-| RMB72,789,000 (2024: RMB67,474,000). | | 幣72,789,000元（二零二四年：人 | | | | |
-| ------------------------------------ | --- | -------------------- | --- | --- | --- | --- |
+
+| RMB72,789,000 (2024: RMB67,474,000). | 幣72,789,000元（二零二四年：人 |
+| --- | --- |
+
 民幣67,474,000 元）。
 
 128
@@ -5524,108 +5698,118 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 15. LEASES (Continued) 15. 租賃（續）
 (i) Amounts recognised in the consolidated (i) 於合併資產負債表確認的金額
-| balance sheet (Continued) | | （續） | | | | |
-| ------------------------------ | --- | ---- | ------- | --- | --- | --- |
-| (a) Leasehold land-use rights | | (a) | 租賃土地使用權 | | | |
-租賃土地使用權指就本集團位
-Leasehold land-use rights represent prepaid operating
-lease payments for the leasehold land (with lease 於中國山東省、陝西省、黑龍
-| terms of 40 to 70 years) located in Shandong | | | 江省、內蒙古自治區、新疆維 | | | |
-| --------------------------------------------- | --- | --- | ------------- | --- | --- | --- |
-Province, Shaanxi Province, Heilongjiang Province, 吾爾自治區及北京市的租賃土
-Inner Mongolia Autonomous Region, Xinjiang Uygur 地（租期為40至70年）所預付
-的經營租賃款項。其賬面淨值
-Autonomous Region, and Beijing in the PRC. Their net
-| book values are analysed as follows: | | | 分析如下： | | | |
-| ------------------------------------ | --- | --- | --------- | ---- | --------- | ---- |
-| | | | | 2025 | | 2024 |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
-| Cost | 成本 | | | | | |
-| At beginning of the year | 年初 | | 1,127,983 | | 1,062,744 | |
-| Additions | 添置 | | 72,362 | | 65,239 | |
 
-| At end of the year | 年末 | | 1,200,345 | | 1,127,983 | |
-| ------------------ | --- | --- | --------- | --- | --------- | --- |
+| balance sheet (Continued) | （續） |  |
+| --- | --- | --- |
+| (a) Leasehold land-use rights | (a) | 租賃土地使用權 |
+
+租賃土地使用權指就本集團位
+Leasehold land-use rights represent prepaid operating lease payments for the leasehold land (with lease 於中國山東省、陝西省、黑龍
+
+| terms of 40 to 70 years) located in Shandong | 江省、內蒙古自治區、新疆維 |
+| --- | --- |
+
+Province, Shaanxi Province, Heilongjiang Province, 吾爾自治區及北京市的租賃土
+Inner Mongolia Autonomous Region, Xinjiang Uygur 地（租期為40至70年）所預付的經營租賃款項。其賬面淨值
+Autonomous Region, and Beijing in the PRC. Their net
+
+| book values are analysed as follows: |  | 分析如下： |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  | 2025 |  | 2024 |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Cost | 成本 |  |  |  |  |
+| At beginning of the year | 年初 | 1,127,983 |  | 1,062,744 |  |
+| Additions | 添置 | 72,362 |  | 65,239 |  |
+
+| At end of the year | 年末 | 1,200,345 | 1,127,983 |
+| --- | --- | --- | --- |
+
 折舊
 Depreciation
-| At beginning of the year | 年初 | | (194,043) | | (170,509) | |
-| ------------------------ | -------- | --- | --------- | --- | --------- | --- |
-| Charge for the year (ii) | 年內開支(ii) | | (24,725) | | (23,534) | |
-| At end of the year | 年末 | | | | (194,043) | |
-| | | | (218,768) | | | |
-| Net book value | 賬面淨值 | | | | | |
-| At end of the year | 年末 | | 981,577 | | 933,940 | |
-| | | | | | | |
-| | | | | | | |
-As at 31 December 2025, there was no leasehold 於二零二五年十二月三十一日，
-本集團並無抵押租賃土地作為
+
+| At beginning of the year | 年初 | (194,043) | (170,509) |
+| --- | --- | --- | --- |
+| Charge for the year (ii) | 年內開支(ii) | (24,725) | (23,534) |
+| At end of the year | 年末 |  | (194,043) |
+|  |  | (218,768) |  |
+| Net book value | 賬面淨值 |  |  |
+| At end of the year | 年末 | 981,577 | 933,940 |
+
+As at 31 December 2025, there was no leasehold 於二零二五年十二月三十一日，本集團並無抵押租賃土地作為
 land pledged as security for the Group’s borrowings
-| (2024: nil). | | | 獲取借貸的抵押品（二零二四 | | | |
-| ------------ | --- | --- | ------------- | --- | --- | --- |
+
+| (2024: nil). | 獲取借貸的抵押品（二零二四 |
+| --- | --- |
+
 年：無）。
-Depreciation expense is recorded in “Administrative 折舊開支於合併利潤表中入賬
-為「行政開支」。
+Depreciation expense is recorded in “Administrative 折舊開支於合併利潤表中入賬為「行政開支」。
 expenses” in the consolidated income statement.
 As at 31 December 2025, the Group was still in the 於二零二五年十二月三十一日，
 process of applying for the ownership certificates 本集團仍就總賬面值為人民幣
 for various parcels of leasehold land with a total 240,667,000元（二零二四年：
 人民幣172,108,000元）的多幅
 carrying amount of RMB240,667,000 (2024:
-| RMB172,108,000). | | | 租賃土地申請擁有權證。 | | | |
-| ---------------- | --- | --- | ----------- | --- | --- | --- |
+
+| RMB172,108,000). | 租賃土地申請擁有權證。 |
+| --- | --- |
 
 129
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 15. LEASES (Continued) | | 15. 租賃（續） | | | | |
-| ---------------------- | --- | --------- | --- | --- | --- | --- |
+
+| 15. LEASES (Continued) | 15. 租賃（續） |
+| --- | --- |
+
 (ii) Amounts recognised in the consolidated income (ii) 於合併利潤表確認的金額
 statement
 The consolidated income statement shows the following 合併利潤表顯示以下與租賃有關的
-| amounts relating to leases: | | 金額： | | | | |
-| --------------------------- | --- | ---- | ------- | ---- | ------- | ---- |
-| | | | | 2025 | | 2024 |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | Note | RMB’000 | | RMB’000 | |
-| | | 附註 | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
+
+| amounts relating to leases: | 金額： |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  | 2025 |  | 2024 |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  | Note | RMB’000 |  | RMB’000 |  |
+|  | 附註 | 人民幣千元 |  | 人民幣千元 |  |
+
 使用權資產折舊支出
 Depreciation charge of
 right-of-use assets
-| Leasehold land-use rights | 租賃土地使用權 | | | 24,725 | | 23,534 |
-| ------------------------- | ------- | --- | --- | ------ | --- | ------ |
-| Buildings | 大樓 | | | 935 | | 728 |
-| Equipment | 設備 | | | 36 | | 36 |
-| | | | | | | |
-| | | 8 | | 25,696 | | 24,298 |
+
+| Leasehold land-use rights | 租賃土地使用權 |  | 24,725 | 23,534 |
+| --- | --- | --- | --- | --- |
+| Buildings | 大樓 |  | 935 | 728 |
+| Equipment | 設備 |  | 36 | 36 |
+|  |  | 8 | 25,696 | 24,298 |
+
 利息開支（包括財務成本）
-| Interest expenses (included in | | 10 | | | | |
-| ----------------------------------- | ----------- | --- | --- | ------ | --- | ------ |
-| finance costs) | | | | 89 | | 42 |
-| Expense relating to short-term | 與短期租賃有關的開支 | | | | | |
-| leases (included in administrative | （包括行政開支） | | | | | |
-| expenses) | | | | 26,418 | | 21,684 |
-| | | | | | | |
-| | | | | | | |
-The total cash outflow for leases in 2025 was 於二零二五年租賃現金流出總額為
-人民幣27,537,000 元（二零二四年：
+
+| Interest expenses (included in | 10 |  |  |
+| --- | --- | --- | --- |
+| finance costs) |  | 89 | 42 |
+| Expense relating to short-term | 與短期租賃有關的開支 |  |  |
+| leases (included in administrative | （包括行政開支） |  |  |
+| expenses) |  | 26,418 | 21,684 |
+
+The total cash outflow for leases in 2025 was 於二零二五年租賃現金流出總額為人民幣27,537,000 元（二零二四年：
 RMB27,537,000 (2024: RMB22,383,000).
 人民幣22,383,000元）。
 (iii) The Group’s leasing activities and how these (iii) 本集團租賃活動及該等租賃如
-| are accounted for | | 何入賬 | | | | |
-| ----------------- | --- | --- | --- | --- | --- | --- |
+
+| are accounted for | 何入賬 |
+| --- | --- |
+
 The Group leases various offices, warehouses and 本集團租賃眾多辦公室、倉庫及設
 equipment. Rental contracts are typically made for fixed 備。租賃合約通常為一至五年的固
-| periods of 1 to 5 years. | | 定期限。 | | | | |
-| ------------------------ | --- | ---- | --- | --- | --- | --- |
+
+| periods of 1 to 5 years. | 定期限。 |
+| --- | --- |
+
 租期可根據個別基準磋商，包括各
-Lease terms are negotiated on an individual basis and
-contain a wide range of different terms and conditions. 種不同條款及條件。租賃協議並不
+Lease terms are negotiated on an individual basis and contain a wide range of different terms and conditions. 種不同條款及條件。租賃協議並不
 The lease agreements do not impose any covenants. 施加任何契約。租賃資產不得用作
 Leased assets may not be used as security for borrowing 借貸的抵押品。
 purposes.
@@ -5635,71 +5819,77 @@ FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 16. INTANGIBLE ASSETS | | | 16. 無形資產 | | | | | |
-| --------------------- | --- | --- | -------- | --- | --- | --- | --- | --- |
+
+| 16. INTANGIBLE ASSETS | 16. 無形資產 |
+| --- | --- |
+
 Patents and
-| | | | unpatented | | Computer | | | |
-| --- | --- | --- | ----------- | --- | --------- | --- | --- | ----- |
-| | | | technology | | software | | | Total |
+
+| unpatented | Computer |  |
+| --- | --- | --- |
+| technology | software | Total |
+
 專利及
-| | | | 非專利技術 | | 電腦軟件 | | | 總計 |
-| ----------------- | ---------- | --- | ------- | ------ | ------- | ------ | ------- | ------ |
-| | | | RMB’000 | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | |
-| At 1 January 2024 | 於二零二四年一月一日 | | | | | | | |
-| Cost | 成本 | | | 12,971 | | 77,815 | | 90,786 |
+
+|  |  | 非專利技術 | 電腦軟件 |  | 總計 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | RMB’000 | RMB’000 | RMB’000 |  |
+|  |  | 人民幣千元 | 人民幣千元 | 人民幣千元 |  |
+| At 1 January 2024 | 於二零二四年一月一日 |  |  |  |  |
+| Cost | 成本 | 12,971 | 77,815 |  | 90,786 |
+
 累計攤銷
-| Accumulated amortisation | | | | (3,375) | (36,082) | | (39,457) | |
-| --------------------------- | -------- | --- | --- | ------- | -------- | ------ | -------- | ------ |
-| Accumulated impairment | 累計減值 | | | – | | – | | – |
-| Net book amount | 賬面淨值 | | | 9,596 | | 41,733 | | 51,329 |
-| | | | | | | | | |
-| Year ended 31 December 2024 | 截至二零二四年 | | | | | | | |
+
+| Accumulated amortisation |  | (3,375) | (36,082) |  | (39,457) |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Accumulated impairment | 累計減值 | – |  | – |  | – |
+| Net book amount | 賬面淨值 | 9,596 |  | 41,733 |  | 51,329 |
+| Year ended 31 December 2024 | 截至二零二四年 |  |  |  |  |  |
+
 十二月三十一日止年度
-| Opening net book amount | 年初賬面淨值 | | | 9,596 | | 41,733 | | 51,329 |
-| ----------------------- | ------ | --- | --- | ----- | --- | ------ | --- | ------ |
+
+| Opening net book amount | 年初賬面淨值 | 9,596 | 41,733 | 51,329 |
+| --- | --- | --- | --- | --- |
+
 添置
-| Additions | | | | 11,784 | | 10,884 | | 22,668 |
-| ---------------------------------------- | ------------- | --- | --- | ------- | --- | ------- | --- | ------- |
-| Transfer from construction in progress | 由在建工程轉移（附註14） | | | | | | | |
-| (Note 14) | | | | – | | 8,214 | | 8,214 |
-| Amortisation (Note 8) | 攤銷（附註8） | | | (2,440) | | (7,553) | | (9,993) |
-| | | | | | | | | |
-| Closing net book amount | 年末賬面淨值 | | | 18,940 | | 53,278 | | 72,218 |
-| | | | | | | | | |
-| At 31 December 2024 | 於二零二四年 | | | | | | | |
+
+| Additions |  | 11,784 | 10,884 | 22,668 |
+| --- | --- | --- | --- | --- |
+| Transfer from construction in progress | 由在建工程轉移（附註14） |  |  |  |
+| (Note 14) |  | – | 8,214 | 8,214 |
+| Amortisation (Note 8) | 攤銷（附註8） | (2,440) | (7,553) | (9,993) |
+| Closing net book amount | 年末賬面淨值 | 18,940 | 53,278 | 72,218 |
+| At 31 December 2024 | 於二零二四年 |  |  |  |
+
 十二月三十一日
 成本
-| Cost | | | | 24,755 | | 96,913 | 121,668 | |
-| --------------------------- | -------- | --- | --- | ------- | -------- | ------ | -------- | ------ |
-| Accumulated amortisation | 累計攤銷 | | | (5,815) | (43,635) | | (49,450) | |
-| Accumulated impairment | 累計減值 | | | – | | – | | – |
-| | | | | | | | | |
-| Net book amount | 賬面淨值 | | | 18,940 | | 53,278 | | 72,218 |
-| | | | | | | | | |
-| Year ended 31 December 2025 | 截至二零二五年 | | | | | | | |
+
+| Cost |  | 24,755 |  | 96,913 | 121,668 |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Accumulated amortisation | 累計攤銷 | (5,815) | (43,635) |  | (49,450) |  |
+| Accumulated impairment | 累計減值 | – |  | – |  | – |
+| Net book amount | 賬面淨值 | 18,940 |  | 53,278 |  | 72,218 |
+| Year ended 31 December 2025 | 截至二零二五年 |  |  |  |  |  |
+
 十二月三十一日止年度
 年初賬面淨值
-| Opening net book amount | | | | 18,940 | | 53,278 | | 72,218 |
-| ---------------------------------------- | ------------- | --- | --- | ------- | --- | ------- | -------- | ------ |
-| Additions | 添置 | | | 13,121 | | 10,615 | | 23,736 |
-| Transfer from construction in progress | 由在建工程轉移（附註14） | | | | | | | |
-| (Note 14) | | | | – | | 5,511 | | 5,511 |
-| Amortisation (Note 8) | 攤銷（附註8） | | | (3,953) | | (9,228) | (13,181) | |
-| | | | | | | | | |
-| Closing net book amount | 年末賬面淨值 | | | 28,108 | | 60,176 | | 88,284 |
-| | | | | | | | | |
-| At 31 December 2025 | 於二零二五年 | | | | | | | |
+
+| Opening net book amount |  | 18,940 | 53,278 |  | 72,218 |
+| --- | --- | --- | --- | --- | --- |
+| Additions | 添置 | 13,121 | 10,615 |  | 23,736 |
+| Transfer from construction in progress | 由在建工程轉移（附註14） |  |  |  |  |
+| (Note 14) |  | – | 5,511 |  | 5,511 |
+| Amortisation (Note 8) | 攤銷（附註8） | (3,953) | (9,228) | (13,181) |  |
+| Closing net book amount | 年末賬面淨值 | 28,108 | 60,176 |  | 88,284 |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |
+
 十二月三十一日
-| Cost | 成本 | | | 37,876 | 113,039 | | 150,915 | |
-| ------------------------ | ---- | --- | --- | ------- | -------- | ------ | -------- | ------ |
-| Accumulated amortisation | 累計攤銷 | | | (9,768) | (52,863) | | (62,631) | |
-| Accumulated impairment | 累計減值 | | | – | | – | | – |
-| | | | | | | | | |
-| Net book amount | 賬面淨值 | | | 28,108 | | 60,176 | | 88,284 |
-| | | | | | | | | |
-| | | | | | | | | |
+
+| Cost | 成本 | 37,876 | 113,039 |  | 150,915 |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Accumulated amortisation | 累計攤銷 | (9,768) | (52,863) |  | (62,631) |  |
+| Accumulated impairment | 累計減值 | – |  | – |  | – |
+| Net book amount | 賬面淨值 | 28,108 |  | 60,176 |  | 88,284 |
 
 131
 阜豐集團有限公司 年報 2025
@@ -5707,52 +5897,55 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 16. INTANGIBLE ASSETS (Continued) 16. 無形資產（續）
-| (i) Patents and unpatented technology | (i) | 專利及非專利技術 | | |
-| -------------------------------------- | ---- | -------- | --- | --- |
+
+| (i) Patents and unpatented technology | (i) | 專利及非專利技術 |
+| --- | --- | --- |
+
 Separately acquired patents and unpatented technology 個別取得的專利及非專利技術按歷
 are shown at historical cost. Patents and unpatented 史成本列示。專利及非專利技術可
-technology have a finite useful life and are carried at cost 使用年期有限，並按成本減累計攤
-銷及減值虧損列賬。攤銷乃按其3
+technology have a finite useful life and are carried at cost 使用年期有限，並按成本減累計攤銷及減值虧損列賬。攤銷乃按其3
 less accumulated amortisation and impairment losses.
 Amortisation is calculated using the straight-line method 至10年的估計收益期間以直線法將
 to allocate the cost of patents and unpatented technology 專利及非專利技術成本分攤計算。
 over their estimated beneficial period of 3 to 10 years.
-| (ii) Computer software | (ii) | 電腦軟件 | | |
-| ----------------------- | ----- | ---- | --- | --- |
+
+| (ii) Computer software | (ii) | 電腦軟件 |
+| --- | --- | --- |
+
 Acquired computer software is capitalised on the basis of 購買電腦軟件按購買特定軟件及特
 the costs incurred to acquire and bring to use the specific 定軟件達到可使用狀態所產生的成
-software. These costs are amortised over their estimated 本為基準予以資本化。該等成本乃
-按其估計可使用年期（2至10年）攤
+software. These costs are amortised over their estimated 本為基準予以資本化。該等成本乃按其估計可使用年期（2至10年）攤
 useful lives of 2 to 10 years.
 銷。
 17. 按公平值計入損益的金融資產
 17. FINANCIAL ASSETS AT FAIR VALUE
 THROUGH PROFIT AND LOSS
 (i) Classification of financial assets at fair value (i) 按公平值計入損益的金融資產
-| through profit or loss | | 分類 | | |
-| ---------------------- | --- | --- | --- | --- |
-The Group classifies the equity investments for which the 本集團將實體未選擇透過其他綜合
-收益確認公平值利得及虧損的股權
+
+| through profit or loss | 分類 |
+| --- | --- |
+
+The Group classifies the equity investments for which the 本集團將實體未選擇透過其他綜合收益確認公平值利得及虧損的股權
 entity has not elected to recognise fair value gains and
-| losses through OCI at FVPL. | | 投資分類為按公平值計入損益。 | | |
-| --------------------------- | --- | -------------- | --- | --- |
+
+| losses through OCI at FVPL. | 投資分類為按公平值計入損益。 |
+| --- | --- |
+
 Financial assets mandatorily measured at FVPL include the 強制性按公平值計入損益計量的金
-| following: | | 融資產包括以下各項： | | |
-| ------------------- | ----- | ---------- | ----- | ------- |
-| | | | 2025 | 2024 |
-| | | 二零二五年 | 二零二四年 | |
-| | | RMB’000 | | RMB’000 |
-| | | 人民幣千元 | 人民幣千元 | |
-| | | | | |
-| Non-current assets | 非流動資產 | | | |
-| – Equity investment | －股權投資 | | 4,007 | 5,232 |
-| | | | | |
-| | | | | |
+
+| following: |  | 融資產包括以下各項： |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  | 2025 | 2024 |
+|  |  | 二零二五年 | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |  |
+| Non-current assets | 非流動資產 |  |  |  |
+| – Equity investment | －股權投資 |  | 4,007 | 5,232 |
+
 Pursuant to an agreement dated during the year ended 31 根據於截至二零二零年十二月
 December 2020, the Group subscribed 10% share capital 三十一日止年度內訂立的協議，本
 of a company at a consideration of RMB10,000,000. The 集團以代價人民幣10,000,000元認
-company is engaged in biological techniques research and 購一家公司的10%股本。該公司從
-事生物技術研發。
+company is engaged in biological techniques research and 購一家公司的10%股本。該公司從事生物技術研發。
 development.
 See Note 39.8 for the remaining relevant accounting 有關其餘相關會計政策見附註39.8。
 policies.
@@ -5763,53 +5956,56 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 17. FINANCIAL ASSETS AT FAIR VALUE 17. 按公平值計入損益的金融資產
-| THROUGH PROFIT AND LOSS (Continued) | （續） | | | |
-| ------------------------------------------ | ----- | --------- | --- | --- |
-| (ii) Amounts recognised in profit or loss | (ii) | 於損益中確認的金額 | | |
+
+| THROUGH PROFIT AND LOSS (Continued) | （續） |  |
+| --- | --- | --- |
+| (ii) Amounts recognised in profit or loss | (ii) | 於損益中確認的金額 |
+
 During the year, the following losses were recognised in 年內，下列虧損於損益中確認：
 profit or loss:
-| | | | 2025 | 2024 |
-| --- | --- | ----- | ------- | ------- |
-| | | 二零二五年 | 二零二四年 | |
-| | | | RMB’000 | RMB’000 |
-| | | 人民幣千元 | 人民幣千元 | |
-| | | | | |
+
+|  | 2025 | 2024 |
+| --- | --- | --- |
+| 二零二五年 | 二零二四年 |  |
+|  | RMB’000 | RMB’000 |
+| 人民幣千元 | 人民幣千元 |  |
+
 於其他利得確認按公平值計入損益
 Fair value losses on equity investment
-| at FVPL recognised in other gains | 的權益投資的公平值虧損－淨額 | | | |
-| ---------------------------------- | -------------- | ----- | ----- | ----- |
-| – net (Note 7) | （附註7） | | 1,225 | 4,768 |
-| | | | | |
-| (iii) Fair value measurements | (iii) | 公平值計量 | | |
-For information about the methods and assumptions used 有關釐定公平值所用的方法及假設
-的資料見附註3.3。
+
+| at FVPL recognised in other gains | 的權益投資的公平值虧損－淨額 |  |  |
+| --- | --- | --- | --- |
+| – net (Note 7) | （附註7） | 1,225 | 4,768 |
+| (iii) Fair value measurements | (iii) | 公平值計量 |  |
+
+For information about the methods and assumptions used 有關釐定公平值所用的方法及假設的資料見附註3.3。
 in determining fair value see Note 3.3.
 18. DERIVATIVE FINANCIAL INSTRUMENTS 18. 衍生金融工具
-Derivatives are only used for economic hedging purposes and 衍生工具僅用於經濟上的對沖且不用作
-投機性投資。然而，倘衍生工具不符合
-not as speculative investments. However, where derivatives do
-not meet the hedging accounting criteria, they are accounted for 對沖會計準則，則其按以下公平值計入
+Derivatives are only used for economic hedging purposes and 衍生工具僅用於經濟上的對沖且不用作投機性投資。然而，倘衍生工具不符合
+not as speculative investments. However, where derivatives do not meet the hedging accounting criteria, they are accounted for 對沖會計準則，則其按以下公平值計入
 at FVPL below. The Group has the following derivative financial 損益入賬。本集團的衍生金融工具如下：
 instruments:
-| | | | 2025 | 2024 |
-| ---------------------- | ------- | ----- | ------- | ------- |
-| | | 二零二五年 | 二零二四年 | |
-| | | | RMB’000 | RMB’000 |
-| | | 人民幣千元 | 人民幣千元 | |
-| | | | | |
-| Current assets | 流動資產 | | | |
-| – Cross currency swaps | －交叉貨幣掉期 | | – | 4,706 |
-| | | | | |
+
+|  |  |  | 2025 | 2024 |
+| --- | --- | --- | --- | --- |
+|  |  | 二零二五年 | 二零二四年 |  |
+|  |  |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |  |
+| Current assets | 流動資產 |  |  |  |
+| – Cross currency swaps | －交叉貨幣掉期 |  | – | 4,706 |
+
 流動負債
 Current liabilities
-| – Cross currency swaps | －交叉貨幣掉期 | | 6,708 | – |
-| ---------------------- | ------- | --- | ----- | --- |
-– Cross currency and interest rate swaps －交叉貨幣與利率掉期 2,559 2,184
-| | | | 9,267 | 2,184 |
-| --- | --- | --- | ------- | ----- |
-| | | | | |
 
-阜豐集團有限公司 年報 2025 133
+| – Cross currency swaps | －交叉貨幣掉期 | 6,708 | – |
+| --- | --- | --- | --- |
+
+– Cross currency and interest rate swaps －交叉貨幣與利率掉期 2,559 2,184
+
+| 9,267 | 2,184 |
+| --- | --- |
+
+<!-- p.133 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -5832,9 +6028,7 @@ rate swaps contracts of RMB2,559,000 (2024: RMB2,184,000) （二零二四年：�
 were recognised respectively based on the fair value of these 約相關的衍生金融資產人民幣4,706,000
 contracts. For information about the methods and assumptions 元）以及交叉貨幣與利率掉期合約人民
 used in determining the fair value of these derivative, please refer 幣2,559,000元（二零二四年：人民幣
-to Note 3.3. 2,184,000元）分別根據該等合約的公平
-值確認。有關釐定該等衍生工具公平值
-所用的方法及假設的資料，請參閱附註
+to Note 3.3. 2,184,000元）分別根據該等合約的公平值確認。有關釐定該等衍生工具公平值所用的方法及假設的資料，請參閱附註
 3.3。
 The total notional principal amounts of these outstanding cross 於二零二五年十二月三十一日，該等
 currency swaps contracts and cross currency and interest rate 未償還交叉貨幣掉期合約及交叉貨幣
@@ -5848,56 +6042,63 @@ FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 19. FINANCIAL INSTRUMENTS BY CATEGORY | | 19. 按類別分類的金融工具 | | | | |
-| ------------------------------------- | --- | -------------- | --- | --- | --- | --- |
+
+| 19. FINANCIAL INSTRUMENTS BY CATEGORY | 19. 按類別分類的金融工具 |
+| --- | --- |
+
 The Group holds the following financial instruments: 本集團持有以下金融工具：
-| | | | | 2025 | | 2024 |
-| ---------------------------------- | ------------ | ---- | ------- | ---- | ------- | ---- |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | Note | RMB’000 | | RMB’000 | |
-| | | 附註 | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
-| Financial assets | 金融資產 | | | | | |
-| Financial assets at amortised cost | 按攤銷成本列賬的金融資產 | | | | | |
+
+|  |  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | Note | RMB’000 |  | RMB’000 |  |
+|  |  | 附註 | 人民幣千元 |  | 人民幣千元 |  |
+| Financial assets | 金融資產 |  |  |  |  |  |
+| Financial assets at amortised cost | 按攤銷成本列賬的金融資產 |  |  |  |  |  |
+
 Trade and other receivables* 應收貿易賬款及其他應收款項* 875,571 1,351,765
-| Cash and cash equivalents | 現金及現金等值物 | 22 | 13,465,776 | | 9,902,194 | |
-| ------------------------- | -------- | --- | ---------- | --- | --------- | --- |
+
+| Cash and cash equivalents | 現金及現金等值物 | 22 | 13,465,776 | 9,902,194 |
+| --- | --- | --- | --- | --- |
+
 受限制的銀行結餘
-| Restricted bank balances | | 22 | 6,030,251 | | 3,009,115 | |
-| ------------------------- | ------------- | ----- | --------- | ----- | --------- | ----- |
-| Time deposits | 定期存款 | 22 | | – | 745,840 | |
-| Financial assets at FVOCI | 按公平值計入其他綜合收益的 | | | | | |
-| | 金融資產 | 21(g) | 481,765 | | 915,336 | |
-| Financial assets at FVPL | 按公平值計入損益的金融資產 | 17 | | 4,007 | | 5,232 |
+
+| Restricted bank balances |  | 22 | 6,030,251 |  | 3,009,115 |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Time deposits | 定期存款 | 22 |  | – | 745,840 |  |
+| Financial assets at FVOCI | 按公平值計入其他綜合收益的 |  |  |  |  |  |
+|  | 金融資產 | 21(g) | 481,765 |  | 915,336 |  |
+| Financial assets at FVPL | 按公平值計入損益的金融資產 | 17 |  | 4,007 |  | 5,232 |
+
 按公平值計入損益的衍生金融
 Derivative Financial instruments
-| at FVPL | 工具 | 18 | | – | | 4,706 |
-| --------------------- | ---- | --- | ---------- | --- | ---------- | ----- |
-| | | | | | | |
-| | | | 20,857,370 | | 15,934,188 | |
-| | | | | | | |
-| Financial liabilities | 金融負債 | | | | | |
+
+| at FVPL | 工具 | 18 |  | – |  | 4,706 |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 20,857,370 |  | 15,934,188 |  |
+| Financial liabilities | 金融負債 |  |  |  |  |  |
+
 按攤銷成本列賬的金融負債
 Financial Liabilities at amortised
 cost
-| Trade and other payables* | 應付貿易賬款及其他應付款項* | | 3,506,252 | | 3,667,842 | |
-| ------------------------- | -------------- | --- | ---------- | ----- | ---------- | ----- |
-| Borrowings | 借貸 | 28 | 17,645,810 | | 11,364,468 | |
-| Lease liabilities | 租賃負債 | 15 | | 1,540 | | 2,143 |
+
+| Trade and other payables* | 應付貿易賬款及其他應付款項* |  | 3,506,252 |  | 3,667,842 |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Borrowings | 借貸 | 28 | 17,645,810 |  | 11,364,468 |  |
+| Lease liabilities | 租賃負債 | 15 |  | 1,540 |  | 2,143 |
+
 按公平值計入損益的衍生金融
 Derivative financial instruments
-| at FVPL | 工具 | 18 | | 9,267 | | 2,184 |
-| ------- | --- | --- | ---------- | ----- | ---------- | ----- |
-| | | | | | | |
-| | | | 21,162,869 | | 15,036,637 | |
-| | | | | | | |
-| | | | | | | |
+
+| at FVPL | 工具 | 18 |  | 9,267 |  | 2,184 |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 21,162,869 |  | 15,036,637 |  |
+
 * Excluding non-financial assets and liabilities and notes receivable. * 不包括非金融資產及負債以及應收票據。
 The Group’s exposure to various risks associated with the 本集團面臨附註3所述與金融工具有關
 financial instruments is described in Note 3. The maximum 的多項風險。於報告期末面臨的最大信
 exposure to credit risk at the end of the reporting period is the 貸風險敞口為上述各類金融資產的賬面值。
-carrying amount of each class of financial assets mentioned
-above.
+carrying amount of each class of financial assets mentioned above.
 
 135
 阜豐集團有限公司 年報 2025
@@ -5905,32 +6106,38 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 20. INVENTORIES 20. 存貨
-| | | | 2025 | | 2024 |
-| --- | --- | --- | ------- | --- | ------- |
-| | | | 二零二五年 | | 二零二四年 |
-| | | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
+
+| 2025 | 2024 |
+| --- | --- |
+| 二零二五年 | 二零二四年 |
+| RMB’000 | RMB’000 |
+| 人民幣千元 | 人民幣千元 |
+
 原材料
-| Raw materials | | | 2,889,494 | | 3,167,076 |
-| ---------------- | --- | --- | --------- | --- | --------- |
-| Work-in-progress | 在製品 | | 467,185 | | 433,611 |
-| Finished goods | 製成品 | | 3,400,069 | | 2,433,606 |
-| | | | 6,756,748 | | 6,034,293 |
-| | | | | | |
+
+| Raw materials |  | 2,889,494 | 3,167,076 |
+| --- | --- | --- | --- |
+| Work-in-progress | 在製品 | 467,185 | 433,611 |
+| Finished goods | 製成品 | 3,400,069 | 2,433,606 |
+|  |  | 6,756,748 | 6,034,293 |
+
 (a)
 Inventories recognised as an expense during the (a) 於本年度確認為開支的存貨為
 Year amounted to RMB19,540,570,000 (2024: 人民幣19,540,570,000 元（二零
 RMB20,158,707,000). These were included in cost 二四年：人民幣20,158,707,000
-| of sales amounted to RMB19,274,808,000 (2024: | | 元）。其計入銷售成本人民幣 | | | |
-| ---------------------------------------------- | --- | ------------- | --- | --- | --- |
+
+| of sales amounted to RMB19,274,808,000 (2024: | 元）。其計入銷售成本人民幣 |
+| --- | --- |
+
 RMB19,864,154,000) and administrative expenses 19,274,808,000元（二零二四年：人
 amounted to RMB265,762,000 (2024: RMB294,553,000).
 民幣19,864,154,000元）及行政開
 支人民幣265,762,000元（二零二四
 年：人民幣294,553,000元）。
-| (b) Net realisable value of inventories | (b) | 存貨的可變現淨值 | | | |
-| ---------------------------------------- | ---- | -------- | --- | --- | --- |
+
+| (b) Net realisable value of inventories | (b) | 存貨的可變現淨值 |
+| --- | --- | --- |
+
 Net realisable value of inventories is the estimated selling 存貨的可變現淨值乃於日常業務過
 price in the ordinary course of business, less estimated 程中作出的估計售價減估計完成成
 costs of completion and selling expenses. These estimates 本及銷售開支。該等估計根據現時
@@ -5943,8 +6150,7 @@ each reporting date.
 Write-downs of inventories to net realizable value amounted 撇減存貨至可變現淨值人民幣
 to RMB242,146,000 (2024: RMB127,649,000). These were 242,146,000元（二零二四年：人民
 recognised as an expense during the Year and included in 幣127,649,000元），於本年度確認
-“Cost of sales” in the consolidated income statement. 為開支，並計入合併利潤表中的「銷
-售成本」。
+“Cost of sales” in the consolidated income statement. 為開支，並計入合併利潤表中的「銷售成本」。
 
 136
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -5952,59 +6158,61 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 21. TRADE AND OTHER RECEIVABLES, NOTES 21. 應收貿易賬款及其他應收款
-| RECEIVABLE AND PREPAYMENTS | | 項、應收票據及預付款項 | | | | | |
-| ------------------------------------ | ------------- | ------------- | --- | ------- | ---- | --------- | ---- |
-| | | | | | 2025 | | 2024 |
-| | | | | 二零二五年 | | 二零二四年 | |
-| | | | | RMB’000 | | RMB’000 | |
-| | | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | |
-| Trade receivables (a) | | 應收貿易賬款(a) | | 703,322 | | 1,114,601 | |
-| Less: provision for impairment loss | | 減：計提減值虧損撥備(b) | | | | | |
-| | allowance (b) | | | (3,058) | | (27,368) | |
-| | | | | | | | |
-| Trade receivables – net | | 應收貿易賬款－淨額 | | 700,264 | | 1,087,233 | |
-| Deposits and others | | 按金及其他 | | 164,567 | | 126,416 | |
-| Consideration receivables (c) | | 應收代價(c) | | | – | 73,498 | |
+
+| RECEIVABLE AND PREPAYMENTS |  | 項、應收票據及預付款項 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  | 2025 |  | 2024 |
+|  |  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  |  | RMB’000 |  | RMB’000 |  |
+|  |  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Trade receivables (a) |  | 應收貿易賬款(a) | 703,322 |  | 1,114,601 |  |
+| Less: provision for impairment loss |  | 減：計提減值虧損撥備(b) |  |  |  |  |
+|  | allowance (b) |  | (3,058) |  | (27,368) |  |
+| Trade receivables – net |  | 應收貿易賬款－淨額 | 700,264 |  | 1,087,233 |  |
+| Deposits and others |  | 按金及其他 | 164,567 |  | 126,416 |  |
+| Consideration receivables (c) |  | 應收代價(c) |  | – | 73,498 |  |
+
 Loan to a related party (Note 34(c))(e) 給予一名關連方的貸款（附註34(c)）(e) 16,442 50,614
 減：計提減值虧損撥備
 Less: provision for impairment loss
-| | allowance | | | (11,242) | | | – |
-| ----------------------------- | --------- | ------------- | --- | -------- | ----- | ------ | --- |
-| | | | | | | | |
-| Loan to a related party – net | | 給予一名關連方的貸款—淨額 | | | 5,200 | 50,614 | |
-| Loan to a third party (d) | | 給予一名第三方的貸款(d) | | 50,000 | | 50,000 | |
+
+|  | allowance |  | (11,242) |  |  | – |
+| --- | --- | --- | --- | --- | --- | --- |
+| Loan to a related party – net |  | 給予一名關連方的貸款—淨額 |  | 5,200 | 50,614 |  |
+| Loan to a third party (d) |  | 給予一名第三方的貸款(d) | 50,000 |  | 50,000 |  |
+
 減：計提減值虧損撥備
 Less: provision for impairment loss
-| | allowance | | | (50,000) | | (50,000) | |
-| --------------------------- | --------- | ------------- | --- | -------- | ----- | -------- | ----- |
-| | | | | | | | |
-| Loan to a third party – net | | 給予一名第三方的貸款－淨額 | | | – | | – |
-| Loans to employees | | 給予僱員的貸款 | | | 3,900 | | 3,709 |
+
+|  | allowance |  | (50,000) |  | (50,000) |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Loan to a third party – net |  | 給予一名第三方的貸款－淨額 |  | – |  | – |
+| Loans to employees |  | 給予僱員的貸款 |  | 3,900 |  | 3,709 |
+
 Value-added tax for future deduction 用於日後扣減的增值稅 206,385 132,458
 預付即期所得稅
-| Prepaid current income tax | | | | | – | | 1,957 |
-| -------------------------- | --- | ---- | --- | --- | ----- | ------ | ----- |
-| Interest receivables | | 應收利息 | | | 1,640 | 10,295 | |
-| | | | | | | | |
+
+| Prepaid current income tax |  | – |  | 1,957 |
+| --- | --- | --- | --- | --- |
+| Interest receivables | 應收利息 | 1,640 | 10,295 |  |
+
 Trade and other receivables (f) 應收貿易賬款及其他應收款項(f) 1,081,956 1,486,180
 應收票據(g)
-| Notes receivable (g) | | | | 481,765 | | 915,336 | |
-| ------------------------- | --- | ------- | --- | --------- | --- | --------- | --- |
-| | | | | 1,563,721 | | 2,401,516 | |
-| Prepayments to suppliers | | 供應商預付款項 | | 876,953 | | 412,531 | |
-| | | | | | | | |
-| | | | | 2,440,674 | | 2,814,047 | |
-| Less: non-current portion | | 減：非流動部分 | | | | | |
+
+| Notes receivable (g) |  | 481,765 | 915,336 |
+| --- | --- | --- | --- |
+|  |  | 1,563,721 | 2,401,516 |
+| Prepayments to suppliers | 供應商預付款項 | 876,953 | 412,531 |
+|  |  | 2,440,674 | 2,814,047 |
+| Less: non-current portion | 減：非流動部分 |  |  |
+
 Prepayments for non-current assets (h) 非流動資產預付款項(h) (407,344) (78,329)
 將於一年後收回之增值稅
 Value-added tax to be recovered beyond
-| one year | | | | (105,463) | | | – |
-| -------- | --- | --- | --- | --------- | --- | --------- | --- |
-| | | | | | | | |
-| | | | | 1,927,867 | | 2,735,718 | |
-| | | | | | | | |
-| | | | | | | | |
+
+| one year | (105,463) |  | – |
+| --- | --- | --- | --- |
+|  | 1,927,867 | 2,735,718 |  |
 
 137
 阜豐集團有限公司 年報 2025
@@ -6012,44 +6220,47 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 21. TRADE AND OTHER RECEIVABLES, NOTES 21. 應收貿易賬款及其他應收款
-| RECEIVABLE AND PREPAYMENTS (Continued) | 項、應收票據及預付款項（續） | | | | | |
-| -------------------------------------- | -------------- | --- | --- | --- | --- | --- |
+
+| RECEIVABLE AND PREPAYMENTS (Continued) | 項、應收票據及預付款項（續） |
+| --- | --- |
+
 (a) As at 31 December 2025 and 2024, the ageing analysis of (a) 於二零二五年及二零二四年十二月
-trade receivables based on invoice date was as follows: 三十一日，應收貿易賬款按發票日
-期的賬齡分析如下：
-| | | | | 2025 | | 2024 |
-| --------------- | ---- | --- | ------- | ---- | --------- | ---- |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
-| Within 3 months | 三個月內 | | 692,310 | | 1,070,254 | |
+trade receivables based on invoice date was as follows: 三十一日，應收貿易賬款按發票日期的賬齡分析如下：
+
+|  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Within 3 months | 三個月內 | 692,310 |  | 1,070,254 |  |
+
 三至十二個月
-| 3 to 12 months | | | | 8,300 | 36,694 | |
-| -------------- | ------ | --- | ------- | ----- | --------- | ----- |
-| Over 12 months | 超過十二個月 | | | 2,712 | | 7,653 |
-| | | | | | | |
-| | | | 703,322 | | 1,114,601 | |
-| | | | | | | |
-| | | | | | | |
+
+| 3 to 12 months |  |  | 8,300 | 36,694 |  |
+| --- | --- | --- | --- | --- | --- |
+| Over 12 months | 超過十二個月 |  | 2,712 |  | 7,653 |
+|  |  | 703,322 |  | 1,114,601 |  |
+
 The Group generally sells its products to domestic 本集團一般向國內客戶銷售其產品，
 customers and receives settlement either in cash or in the 並於送交貨品時以現金或以銀行承
 form of bank acceptance notes (Note (g)) upon delivery of 兌票據（附註(g)）形式收取結算款
 goods. The bank acceptance notes usually have maturity 項。銀行承兌票據一般為六個月內
 dates within six months. Certain major customers in the 到期。具備良好還款記錄的若干中
 PRC and overseas with good repayment history are offered 國及海外主要客戶會獲給予三個月
-| credit terms of not more than three months. | | 以內的信貸期。 | | | | |
-| ------------------------------------------- | ---- | ------- | --- | --- | --- | --- |
-| (b) Impairment and risk exposure | (b) | 減值及風險敞口 | | | | |
+
+| credit terms of not more than three months. |  | 以內的信貸期。 |
+| --- | --- | --- |
+| (b) Impairment and risk exposure | (b) | 減值及風險敞口 |
+
 The Group applies the HKFRS 9 simplified approach to 本集團採用香港財務報告準則第
 9號簡化方法計量預期信貸虧損，
-measuring expected credit losses which uses a lifetime
-expected loss allowance for all trade receivables. Note 該方法對所有應收貿易賬款採用整
+measuring expected credit losses which uses a lifetime expected loss allowance for all trade receivables. Note 該方法對所有應收貿易賬款採用整
 3.1(b) provides for details about the calculation of the 個存續期內的預期虧損撥備。附註
-| allowance. | | 3.1(b)提供有關撥備計算的詳情。 | | | | |
-| ---------- | --- | ------------------ | --- | --- | --- | --- |
 
-138 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+| allowance. | 3.1(b)提供有關撥備計算的詳情。 |
+| --- | --- |
+
+<!-- p.138 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -6089,9 +6300,7 @@ the third party was in financial difficulties. A full provision 三十一日止�
 of RMB50,000,000 was recorded on the balance sheet 入財務困難，該貸款已逾期。已於
 to reflect the increase in credit risk. As there has been a 資產負債表錄得全數撥備人民幣
 significant increase in credit risk, the Group measured the 50,000,000元，以反映信貸風險的
-impairment as lifetime expected credit losses. 增加。因信貸風險顯著增加，本集
-團按整個存續期的預期信貸虧損計
-量減值。
+impairment as lifetime expected credit losses. 增加。因信貸風險顯著增加，本集團按整個存續期的預期信貸虧損計量減值。
 (e) Except for the consideration receivables as discussed (e) 除上述附註(c)所討論之應收代價
 above in Note(c) and the loan to a related party (Note 34(c)), 和給予一名關連方的貸款外（附註
 trade and other receivables are unsecured and interest- 34(c)），應收貿易賬款及其他應收
@@ -6105,31 +6314,35 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 21. TRADE AND OTHER RECEIVABLES, NOTES 21. 應收貿易賬款及其他應收款
-| RECEIVABLE AND PREPAYMENTS (Continued) | | 項、應收票據及預付款項（續） | | | | |
-| -------------------------------------- | --- | -------------- | --- | --- | --- | --- |
+
+| RECEIVABLE AND PREPAYMENTS (Continued) | 項、應收票據及預付款項（續） |
+| --- | --- |
+
 (f) The carrying amounts of the Group’s trade and other (f) 本集團的應收貿易賬款及其他應收
 receivables were denominated in the following currencies: 款項的賬面值以下列貨幣計值：
-| | | | | 2025 | | 2024 |
-| ----- | ---- | --- | --- | ------- | --- | ------- |
-| | | | | 二零二五年 | | 二零二四年 |
-| | | | | RMB’000 | | RMB’000 |
-| | | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | |
-| – USD | －美元 | | | 544,043 | | 701,786 |
-| – RMB | －人民幣 | | | 481,025 | | 765,888 |
+
+|  |  | 2025 | 2024 |
+| --- | --- | --- | --- |
+|  |  | 二零二五年 | 二零二四年 |
+|  |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |
+| – USD | －美元 | 544,043 | 701,786 |
+| – RMB | －人民幣 | 481,025 | 765,888 |
+
 －歐元
-| – EUR | | | | 48,792 | | 6,583 |
-| ----- | ---- | --- | --- | --------- | --- | --------- |
-| – VND | －越南盾 | | | 8,096 | | 11,923 |
-| | | | | | | |
-| | | | | 1,081,956 | | 1,486,180 |
-| | | | | | | |
-| | | | | | | |
+
+| – EUR |  | 48,792 | 6,583 |
+| --- | --- | --- | --- |
+| – VND | －越南盾 | 8,096 | 11,923 |
+|  |  | 1,081,956 | 1,486,180 |
+
 The maximum exposure to credit risk at the reporting 於報告日期，所面臨最高的信貸風
 date was the carrying value of each class of receivables 險乃上述各類別應收款項的賬面值。
 mentioned above. The Group does not hold any collateral 本集團概無持有任何抵押品作為抵
-| as security. | | | 押。 | | | |
-| ------------ | --- | --- | --- | --- | --- | --- |
+
+| as security. | 押。 |
+| --- | --- |
+
 (g) As at 31 December 2025, notes receivable were all bank (g) 於二零二五年十二月三十一日，
 acceptance notes aged less than one year, and included a 應收票據均為賬齡少於一年的銀
 total amount of RMB441,319,000 (2024: RMB866,195,000) 行承兌票據，包括總額為人民幣
@@ -6137,26 +6350,26 @@ that have been endorsed to the suppliers. As the notes 441,319,000元（二零�
 receivables are held for collection of contractual cash flows 幣866,195,000元）已背書予供應商
 and for selling the financial assets, where the assets’ cash 的票據。由於應收票據持作收回合
 flows represent solely payments of principal and interest, 約現金流量及出售金融資產，倘該
-| they are measured at FVOCI. | | | 等資產現金流量僅作為支付本金及 | | | |
-| --------------------------- | --- | --- | --------------- | --- | --- | --- |
+
+| they are measured at FVOCI. | 等資產現金流量僅作為支付本金及 |
+| --- | --- |
+
 利息，則按公平值計入其他綜合收
 益計量。
-| | | | 31 December | | | 31 December |
-| ---------------------------------- | --- | ------------- | ------------ | ------- | --- | ------------ |
-| | | | | 2025 | | 2024 |
-| | | | | 二零二五年 | | 二零二四年 |
-| | | | | 十二月 | | 十二月 |
-| | | | | 三十一日 | | 三十一日 |
-| | | | | RMB’000 | | RMB’000 |
-| | | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | |
-| Current assets | | 流動資產 | | | | |
-| Notes receivable measured at FVOCI | | 按公平值計入其他綜合收益計 | | | | |
-| | | 量的應收票據 | | 481,765 | | 915,336 |
-| | | | | | | |
-| | | | | | | |
 
-140 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+|  |  | 31 December |  | 31 December |
+| --- | --- | --- | --- | --- |
+|  |  |  | 2025 | 2024 |
+|  |  |  | 二零二五年 | 二零二四年 |
+|  |  |  | 十二月 | 十二月 |
+|  |  |  | 三十一日 | 三十一日 |
+|  |  |  | RMB’000 | RMB’000 |
+|  |  |  | 人民幣千元 | 人民幣千元 |
+| Current assets | 流動資產 |  |  |  |
+| Notes receivable measured at FVOCI | 按公平值計入其他綜合收益計 |  |  |  |
+|  | 量的應收票據 |  | 481,765 | 915,336 |
+
+<!-- p.140 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -6174,8 +6387,7 @@ All of the financial assets at FVOCI are denominated in 按公平值計入其他
 RMB. 金融資產均以人民幣計值。
 As at 31 December 2025, no notes receivable (2024: 於二零二五年十二月三十一日，並
 RMB8,043,000) were pledged as security for bank 無應收票據（二零二四年：人民幣
-borrowings of the Group (Note 28(a)). 8,043,000元）已抵押為本集團銀行
-借貸的抵押品（附註28(a)）。
+borrowings of the Group (Note 28(a)). 8,043,000元）已抵押為本集團銀行借貸的抵押品（附註28(a)）。
 (h) As at 31 December 2025, the prepayments for non-current (h) 於二零二五年十二月三十一日，非
 assets comprised amounts of RMB407,344,000 (2024: 流動資產的預付款項包括購買物業、
 RMB78,329,000) for purchase of property, plant and 廠房及設備人民幣407,344,000元
@@ -6191,54 +6403,58 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 22. CASH AND CASH EQUIVALENTS, 22. 現金及現金等值物、受限制的
-| RESTRICTED BANK BALANCES AND TIME | 銀行結餘及定期存款 | | | | |
-| ---------------------------------- | ---------- | --- | --- | --- | --- |
+
+| RESTRICTED BANK BALANCES AND TIME | 銀行結餘及定期存款 |
+| --- | --- |
+
 DEPOSITS
-| | | | 2025 | | 2024 |
-| ------------------------- | -------- | ------------ | ---- | --------- | ----- |
-| | | 二零二五年 | | 二零二四年 | |
-| | | RMB’000 | | RMB’000 | |
-| | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | |
-| Cash and cash equivalents | 現金及現金等值物 | | | | |
-| – Cash on hand | －手頭現金 | | 670 | | 1,203 |
-| – Cash in banks | －銀行現金 | 13,465,106 | | 9,900,991 | |
-| | | | | | |
-| | | 13,465,776 | | 9,902,194 | |
+
+|  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Cash and cash equivalents | 現金及現金等值物 |  |  |  |  |
+| – Cash on hand | －手頭現金 |  | 670 |  | 1,203 |
+| – Cash in banks | －銀行現金 | 13,465,106 |  | 9,900,991 |  |
+|  |  | 13,465,776 |  | 9,902,194 |  |
+
 受限制的銀行結餘(a)
-| Restricted bank balances (a) | | 6,030,251 | | 3,009,115 | |
-| ---------------------------- | ------- | ----------- | --- | ---------- | --- |
-| Time deposits (b) | 定期存款(b) | | – | 745,840 | |
-| | | | | | |
-| | | 19,496,027 | | 13,657,149 | |
-| | | | | | |
-| | | | | | |
+
+| Restricted bank balances (a) |  | 6,030,251 |  | 3,009,115 |
+| --- | --- | --- | --- | --- |
+| Time deposits (b) | 定期存款(b) |  | – | 745,840 |
+|  |  | 19,496,027 |  | 13,657,149 |
+
 (a) As at 31 December 2025, restricted bank balances (a) 於二零二五年十二月三十一日，
 were comprised of: (i) amounts of RMB5,762,637,000 受限制的銀行結餘包括(i) 人民幣
 5,762,637,000元（二零二四年：人
-(2024: RMB2,599,103,000) was pledged as security for
-bank borrowings of the Group (Note 28); (ii) amounts 民幣2,599,103,000元）已抵押為本
+(2024: RMB2,599,103,000) was pledged as security for bank borrowings of the Group (Note 28); (ii) amounts 民幣2,599,103,000元）已抵押為本
 of RMB249,000,000 (2024: RMB386,109,000) was 集團銀行借貸的抵押品（附註28）；
 pledged as security for issuing notes payable of the Group (ii)人民幣249,000,000元（二零二四
-(Note 27(c)); (iii) amounts of RMB18,614,000 (2024: 年：人民幣386,109,000元）已抵押
-為本集團發行應付票據的抵押品（附
+(Note 27(c)); (iii) amounts of RMB18,614,000 (2024: 年：人民幣386,109,000元）已抵押為本集團發行應付票據的抵押品（附
 RMB19,903,000) was pledged as security for cross
 currency swaps; and (iv) nil (2024: RMB4,000,000) was 註27(c)）；(iii)人民幣18,614,000元
-| frozen due to certain law suit. | | （二零二四年：人民幣19,903,000 | | | |
-| ------------------------------- | --- | -------------------- | --- | --- | --- |
+
+| frozen due to certain law suit. | （二零二四年：人民幣19,903,000 |
+| --- | --- |
+
 元）已抵押為交叉貨幣掉期的抵押
 品；及(iv)概無（二零二四年：人民
 幣4,000,000元）因若干法律訴訟而
 被凍結。
 As at 31 December 2025, restricted bank balances were 於二零二五年十二月三十一日，受
 with interest rates between 1.00% and 1.70% (2024: 0.85% 限制的銀行結餘的利率介乎1.00%
-| and 4.75%). | | 至1.70%（二零二四年：0.85%至 | | | |
-| ----------- | --- | ------------------- | --- | --- | --- |
+
+| and 4.75%). | 至1.70%（二零二四年：0.85%至 |
+| --- | --- |
+
 4.75%）。
 (b) As at 31 December 2024, the terms of time deposits were (b) 於二零二四年十二月三十一日，定
 over 3 months and within 1 year and the interest rates were 期存款的年期為三個月以上及一年
-| between 1.10% and 4.28% per annum. | | 內，而年利率介乎1.10%至4.28%。 | | | |
-| ---------------------------------- | --- | -------------------- | --- | --- | --- |
+
+| between 1.10% and 4.28% per annum. | 內，而年利率介乎1.10%至4.28%。 |
+| --- | --- |
 
 142
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -6246,45 +6462,52 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 22. CASH AND CASH EQUIVALENTS, 22. 現金及現金等值物、受限制的
-| RESTRICTED BANK BALANCES AND TIME | 銀行結餘及定期存款（續） | | | | | |
-| ---------------------------------- | ------------- | --- | --- | --- | --- | --- |
+
+| RESTRICTED BANK BALANCES AND TIME | 銀行結餘及定期存款（續） |
+| --- | --- |
+
 DEPOSITS (Continued)
 (c) Total cash and cash equivalents, restricted bank balances (c) 現金及現金等值物、受限制的銀行
 結餘及定期存款總額以下列貨幣計
 and time deposits are denominated in the following
-| currencies: | | 值： | | | | |
-| ----------- | --- | --- | ------- | ---- | ------- | ---- |
-| | | | | 2025 | | 2024 |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
+
+| currencies: | 值： |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  | 2025 |  | 2024 |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+
 －美元
-| – USD | | | 11,088,186 | | 9,612,075 | |
-| ----- | ---- | --- | ---------- | ------ | --------- | ------ |
-| – RMB | －人民幣 | | 8,025,728 | | 3,907,878 | |
-| – EUR | －歐元 | | 314,818 | | | 90,509 |
-| – HKD | －港元 | | | 20,568 | | 36,495 |
-| – VND | －越南盾 | | | 19,865 | | 10,115 |
+
+| – USD |  | 11,088,186 |  | 9,612,075 |  |
+| --- | --- | --- | --- | --- | --- |
+| – RMB | －人民幣 | 8,025,728 |  | 3,907,878 |  |
+| – EUR | －歐元 | 314,818 |  |  | 90,509 |
+| – HKD | －港元 |  | 20,568 |  | 36,495 |
+| – VND | －越南盾 |  | 19,865 |  | 10,115 |
+
 －堅戈
-| – KZT | | | | 18,998 | | – |
-| ----- | ----- | --- | ---------- | ------ | ---------- | --- |
-| – RUB | －盧布 | | | 7,853 | | – |
-| – SGD | －新加坡元 | | | 11 | | 77 |
-| | | | 19,496,027 | | 13,657,149 | |
-| | | | | | | |
+
+| – KZT |  |  | 18,998 |  | – |
+| --- | --- | --- | --- | --- | --- |
+| – RUB | －盧布 |  | 7,853 |  | – |
+| – SGD | －新加坡元 |  | 11 |  | 77 |
+|  |  | 19,496,027 |  | 13,657,149 |  |
+
 The Group’s cash and cash equivalents, restricted bank 本集團以人民幣計值的現金及現金
 balances and time deposits denominated in RMB were 等值物、受限制的銀行結餘及定期
 mainly deposited with banks in the PRC. Conversion of 存款主要存放於中國的銀行。將該
 these RMB denominated balances into foreign currencies 等以人民幣計值的結餘兌換為外幣
 is subject to the rules and regulations of foreign exchange 須受中國政府頒佈的外匯管制規則
-| control promulgated by the PRC government. | | 及規例限制。 | | | | |
-| ------------------------------------------ | --- | ------ | --- | --- | --- | --- |
+
+| control promulgated by the PRC government. | 及規例限制。 |
+| --- | --- |
+
 (d) The weighted average effective interest rate on cash (d) 於二零二五年十二月三十一日，本
 and cash equivalents, restricted bank balances and time 集團存放於銀行的現金及現金等值
 deposits placed with banks by the Group was 2.13% per 物、受限制的銀行結餘及定期存款
-annum as at 31 December 2025 (2024: 2.95%). 的加權平均實際年利率為2.13%（二
-零二四年：2.95%）。
+annum as at 31 December 2025 (2024: 2.95%). 的加權平均實際年利率為2.13%（二零二四年：2.95%）。
 
 143
 阜豐集團有限公司 年報 2025
@@ -6292,35 +6515,39 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 23. PROPERTIES UNDER DEVELOPMENT 23. 發展中物業
-| | | | 2025 | 2024 |
-| --- | --- | ------- | ---- | ------- |
-| | | 二零二五年 | | 二零二四年 |
-| | | RMB’000 | | RMB’000 |
-| | | 人民幣千元 | | 人民幣千元 |
-| | | | | |
+
+|  | 2025 | 2024 |
+| --- | --- | --- |
+| 二零二五年 |  | 二零二四年 |
+| RMB’000 |  | RMB’000 |
+| 人民幣千元 |  | 人民幣千元 |
+
 發展中物業包括：
 Properties under development comprise:
-| – Land use rights | －土地使用權 | 96,610 | | 96,445 |
-| ------------------------------------- | ----------- | ------ | --- | ------ |
-| – Construction costs and capitalised | －建築成本及資本化支出 | | | |
-| expenditures | | 26,861 | | 3,826 |
+
+| – Land use rights | －土地使用權 | 96,610 | 96,445 |
+| --- | --- | --- | --- |
+| – Construction costs and capitalised | －建築成本及資本化支出 |  |  |
+| expenditures |  | 26,861 | 3,826 |
+
 —已資本化財務成本
-| – Finance cost capitalised | | | 2,043 | – |
-| -------------------------- | --- | ------- | ------- | ------- |
-| | | 125,514 | | 100,271 |
-| | | | | |
-| | | | | |
+
+| – Finance cost capitalised |  | 2,043 | – |
+| --- | --- | --- | --- |
+|  | 125,514 |  | 100,271 |
+
 發展中物業以成本與可變現淨值兩者中
-Properties under development are stated at the lower of cost
-and net realizable value. Development cost of properties 的較低者列賬。物業的發展成本包括建
+Properties under development are stated at the lower of cost and net realizable value. Development cost of properties 的較低者列賬。物業的發展成本包括建
 comprises cost of land use rights, construction costs and 築期間產生的土地使用權成本、建築成
 borrowing costs incurred during the construction period. 本及借貸成本。完成後，該等物業轉移
 Upon completion, the properties are transferred to completed 至持作銷售的已完成物業。
 properties held for sale.
 Net realisable value takes into account the price ultimately 可變現淨值考慮到最終預期變現的價格，
 expected to be realised, less applicable variable selling expenses 減去適用的可變銷售開支及完成交易的
-| and the anticipated costs to completion. | 預期成本。 | | | |
-| ---------------------------------------- | ----- | --- | --- | --- |
+
+| and the anticipated costs to completion. | 預期成本。 |
+| --- | --- |
+
 Properties under development are classified as current 除非相關物業發展項目的建築期間預期
 assets unless the construction period of the relevant property 要超出正常經營週期方能完成，否則發
 development project is expected to complete beyond normal 展中物業分類為流動資產。於二零二五
@@ -6333,62 +6560,72 @@ the PRC. The related land use rights are on leases of 40 to 70 地使用權的�
 years.
 As at 31 December 2025 and 2024, no properties under 於二零二五年及二零二四年十二月
 development were pledged as security for bank borrowings of 三十一日，概無發展中物業抵押為本集
-| the Group. | 團銀行借貸的抵押品。 | | | |
-| ---------- | ---------- | --- | --- | --- |
+
+| the Group. | 團銀行借貸的抵押品。 |
+| --- | --- |
 
 144
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 24. SHARE CAPITAL AND PREMIUM, | | | | | 24. 股本及溢價、庫存股份 | | | | | |
-| ------------------------------- | --- | --- | --- | --- | --------------- | --- | --- | --- | --- | --- |
+
+| 24. SHARE CAPITAL AND PREMIUM, | 24. 股本及溢價、庫存股份 |
+| --- | --- |
+
 TREASURY SHARES
-| (a) Share Capital and Premium | | | | | | (a) 股本及溢價 | | | | |
-| ------------------------------ | --- | --- | --- | --- | --- | ---------- | --- | --- | --- | --- |
+
+| (a) Share Capital and Premium | (a) 股本及溢價 |
+| --- | --- |
+
 Amount
-| | | | | | | | | 金額 | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+金額
+
 Number
-| | | | | of shares | | Ordinary | | Share | | |
-| --- | --- | --- | --- | ----------- | --- | --------- | --- | ------- | --- | ----- |
-| | | | | (thousands) | | shares | | premium | | Total |
+
+| of shares | Ordinary | Share |  |
+| --- | --- | --- | --- |
+| (thousands) | shares | premium | Total |
+
 股份數目
-| | | | | （千股） | | 普通股 | | 股份溢價 | | 總計 |
-| ----------------- | ------- | ---- | --- | ---- | --- | ------- | --- | ------- | --- | ------- |
-| | | Note | | | | RMB’000 | | RMB’000 | | RMB’000 |
-| | | 附註 | | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | | | | |
-| At 1 January 2024 | 於二零二四年 | | | | | | | | | |
+
+|  |  |  | （千股） | 普通股 | 股份溢價 | 總計 |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  | Note |  | RMB’000 | RMB’000 | RMB’000 |
+|  |  | 附註 |  | 人民幣千元 | 人民幣千元 | 人民幣千元 |
+| At 1 January 2024 | 於二零二四年 |  |  |  |  |  |
+
 一月一日
-| | | | | 2,536,489 | | 243,510 | | 267,716 | | 511,226 |
-| ------------------------- | ------- | --- | --- | --------- | --- | ------- | --- | --------- | --- | --------- |
-| Exercise of options | 行使期權 | | 25 | | 550 | | 50 | 1,422 | | 1,472 |
-| Cancellation of treasury | 註銷庫存股份 | | | | | | | | | |
-| shares | | | | (30,389) | | (2,774) | | (116,428) | | (119,202) |
-| | | | | | | | | | | |
-| At 31 December 2024 | 於二零二四年 | | | | | | | | | |
-| | 十二月三十一日 | | | 2,506,650 | | 240,786 | | 152,710 | | 393,496 |
+
+|  |  |  | 2,536,489 |  | 243,510 |  | 267,716 | 511,226 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Exercise of options | 行使期權 | 25 |  | 550 |  | 50 | 1,422 | 1,472 |
+| Cancellation of treasury | 註銷庫存股份 |  |  |  |  |  |  |  |
+| shares |  |  | (30,389) |  | (2,774) |  | (116,428) | (119,202) |
+| At 31 December 2024 | 於二零二四年 |  |  |  |  |  |  |  |
+|  | 十二月三十一日 |  | 2,506,650 |  | 240,786 |  | 152,710 | 393,496 |
+
 行使期權
-| Exercise of options | | | 25 | | 591 | | 54 | 2,650 | | 2,704 |
-| ------------------- | ------- | --- | ---- | --------- | ----- | ------- | ---- | ------- | --- | ------- |
-| At 31 December 2025 | 於二零二五年 | | | | | | | | | |
-| | 十二月三十一日 | | | 2,507,241 | | 240,840 | | 155,360 | | 396,200 |
-| | | | | | | | | | | |
-| | | | | | | | | | | |
-The total number of authorised share capital of the 於二零二五年及二零二四年十二月
-三十一日，本公司法定股本總數包
-Company comprised 10,000,000,000 ordinary shares with
-a par value of HKD0.10 each as at 31 December 2025 and 括10,000,000,000股每股面值0.10
-| 2024. | | | | | | 港元的普通股。 | | | | |
-| ----- | --- | --- | --- | --- | --- | ------- | --- | --- | --- | --- |
+
+| Exercise of options |  | 25 |  | 591 |  | 54 | 2,650 | 2,704 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |  |  |  |
+|  | 十二月三十一日 |  | 2,507,241 |  | 240,840 |  | 155,360 | 396,200 |
+
+The total number of authorised share capital of the 於二零二五年及二零二四年十二月三十一日，本公司法定股本總數包
+Company comprised 10,000,000,000 ordinary shares with a par value of HKD0.10 each as at 31 December 2025 and 括10,000,000,000股每股面值0.10
+
+| 2024. | 港元的普通股。 |
+| --- | --- |
+
 According to the Companies Law, Cap 22 (Law 3 of 根 據 開 曼 群 島 第22 章 公 司 法
 （一九六一年法例三，經綜合及修訂）
-1961, as consolidated and revised) of Cayman Islands and
-the articles of association of the Company, dividends of 及本公司組織章程細則，本公司通
+1961, as consolidated and revised) of Cayman Islands and the articles of association of the Company, dividends of 及本公司組織章程細則，本公司通
 the Company can be declared out of its share premium 過償債能力測試後，可從股份溢價
-| account subject to a solvency test. | | | | | | 賬宣派股息。 | | | | |
-| ----------------------------------- | --- | --- | --- | --- | --- | ------ | --- | --- | --- | --- |
+
+| account subject to a solvency test. | 賬宣派股息。 |
+| --- | --- |
 
 145
 阜豐集團有限公司 年報 2025
@@ -6397,100 +6634,98 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 24. SHARE CAPITAL AND PREMIUM, 24. 股本及溢價、庫存股份（續）
 TREASURY SHARES (Continued)
-| (b) Treasury Shares | (b) | 庫存股份 | | |
-| -------------------- | ---- | ---- | --- | --- |
+
+| (b) Treasury Shares | (b) | 庫存股份 |
+| --- | --- | --- |
+
 During the year ended 31 December 2024, the Company 截至二零二四年十二月三十一
 bought back 18,647,000 ordinary shares on-market. The 日止年度，本公司於市場購回
 18,647,000股普通股。股份以每股
 shares were acquired at an average price of HKD4.38
 per share, with prices ranging from HKD4.07 to HKD4.80 4.38港元的平均價格收購，價格介
 and had been cancelled in 2024. No treasury shares were 乎4.07港元至4.80港元，及已於二
-| acquired or cancelled during the Year. | | 零二四年註銷。於本年度，概無收 | | |
-| -------------------------------------- | --- | --------------- | --- | --- |
+
+| acquired or cancelled during the Year. | 零二四年註銷。於本年度，概無收 |
+| --- | --- |
+
 購或註銷庫存股份。
 Number
 of shares
-| | | | (thousands) | Amount |
-| --- | --- | --- | ----------- | ------ |
+
+| (thousands) | Amount |
+| --- | --- |
+
 股份數目
-| | | | （千股） | 金額 |
-| --- | --- | --- | ---- | --- |
+
+| （千股） | 金額 |
+| --- | --- |
+
 RMB’000
 人民幣千元
-| | | | | |
-| ------------------------------- | ------------- | --- | -------- | -------- |
-| At 1 January 2024 | 於二零二四年一月一日 | | 11,742 | (44,241) |
-| | | | | |
-| Acquisition of treasury shares | 收購庫存股份 | | 18,647 | (74,822) |
-| Cancellation of treasury shares | 註銷庫存股份 | | (30,389) | 119,063 |
-| | | | | |
-| At 31 December 2024 and 2025 | 於二零二四年及二零二五年 | | | |
-| | 十二月三十一日 | | – | – |
-| | | | | |
-| | | | | |
+
+| At 1 January 2024 | 於二零二四年一月一日 | 11,742 | (44,241) |
+| --- | --- | --- | --- |
+| Acquisition of treasury shares | 收購庫存股份 | 18,647 | (74,822) |
+| Cancellation of treasury shares | 註銷庫存股份 | (30,389) | 119,063 |
+| At 31 December 2024 and 2025 | 於二零二四年及二零二五年 |  |  |
+|  | 十二月三十一日 | – | – |
+
 25. SHARE-BASED PAYMENT 25. 股份付款
 (a) Share options granted on 31 March 2021 (a) 於二零二一年三月三十一日授
 出的購股權
-The Company granted to certain eligible employee share 本公司於二零二一年三月三十一
-日向若干合資格僱員授出可認購
-options to subscribe for an aggregate of 2,200,000 ordinary
-shares of the Company on 31 March 2021. These options 合共2,200,000股本公司普通股的
+The Company granted to certain eligible employee share 本公司於二零二一年三月三十一日向若干合資格僱員授出可認購
+options to subscribe for an aggregate of 2,200,000 ordinary shares of the Company on 31 March 2021. These options 合共2,200,000股本公司普通股的
 vest in tranches over a period of up to 5 years. There 購股權。該等購股權於長達5年期
 were no options being exercised during the year. Options 間內分批歸屬。於本年度概無購股
-exercised during the year ended 31 December 2024 權獲行使。截至二零二四年十二月
-三十一日止年度，因購股權獲行使
+exercised during the year ended 31 December 2024 權獲行使。截至二零二四年十二月三十一日止年度，因購股權獲行使
 resulted in 550,000 shares being issued with proceeds of
 HKD1,622,500. The related weighted average share price 而發行550,000股股份，所得款項
-at the time of exercise was HKD5.18 per share. 為1,622,500港元。於行使時的相關
-加權平均股價為每股5.18港元。
+at the time of exercise was HKD5.18 per share. 為1,622,500港元。於行使時的相關加權平均股價為每股5.18港元。
 
 146
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 25. SHARE-BASED PAYMENT (Continued) | | | 25. 股份付款（續） | | | | |
-| ----------------------------------- | --- | --- | ----------- | --- | --- | --- | --- |
+
+| 25. SHARE-BASED PAYMENT (Continued) | 25. 股份付款（續） |
+| --- | --- |
+
 (a) Share options granted on 31 March 2021 (a) 於二零二一年三月三十一日授
-| (Continued) | | | | | 出的購股權（續） | | |
-| ----------- | --- | --- | --- | --- | -------- | --- | --- |
+
+| (Continued) | 出的購股權（續） |
+| --- | --- |
+
 Movements in the number of share options outstanding 尚未行使購股權數目的變動及其相
 and their related weighted average exercise prices are as 關加權平均行使價如下：
 follows:
-| | | | 2025 | | | 2024 | |
-| -------------- | -------- | ------------- | ---------- | ----------- | ------------- | ---------- | ----------- |
-| | | | 二零二五年 | | | 二零二四年 | |
-| | | | Average | | | Average | |
-| | | | exercise | | | exercise | |
-| | | price in HKD | | | price in HKD | | |
-| | | | per share | Options | | per share | Options |
-| | | | option | (thousands) | | option | (thousands) |
-| | | 平均行使價 | | 購股權 | 平均行使價 | | 購股權 |
-| | | | | | 每份購股權港元 | | （千份） |
-| | | 每份購股權港元 | | （千份） | | | |
-| | | | | | | | |
-| At 1 January | 於一月一日 | | 2.95 | 1,100 | | 2.95 | 1,650 |
-| Exercised | 已行使 | | – | | – | 2.95 | (550) |
-| Forfeited | 已沒收 | | 2.95 | (1,100) | | – | – |
-| | | | | | | | |
-| At 31 December | 於十二月三十一日 | | – | | – | 2.95 | 1,100 |
-| | | | | | | | |
-| | | | | | | | |
+
+|  |  |  | 2025 |  |  | 2024 |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 二零二五年 |  |  | 二零二四年 |  |
+|  |  |  | Average |  |  | Average |  |
+|  |  |  | exercise |  |  | exercise |  |
+|  |  | price in HKD |  |  | price in HKD |  |  |
+|  |  |  | per share | Options |  | per share | Options |
+|  |  |  | option | (thousands) |  | option | (thousands) |
+|  |  | 平均行使價 |  | 購股權 | 平均行使價 |  | 購股權 |
+|  |  |  |  |  | 每份購股權港元 |  | （千份） |
+|  |  | 每份購股權港元 |  | （千份） |  |  |  |
+| At 1 January | 於一月一日 |  | 2.95 | 1,100 |  | 2.95 | 1,650 |
+| Exercised | 已行使 |  | – |  | – | 2.95 | (550) |
+| Forfeited | 已沒收 |  | 2.95 | (1,100) |  | – | – |
+| At 31 December | 於十二月三十一日 |  | – |  | – | 2.95 | 1,100 |
+
 In 2025, one employee resigned and thus all the related 於二零二五年，一名僱員辭職，因
-1,100,000 share options were forfeited during the year. 此所有相關的1,100,000份購股權
-於本年度被沒收。
+1,100,000 share options were forfeited during the year. 此所有相關的1,100,000份購股權於本年度被沒收。
 於本年度，與歸屬期屆滿後失效的
-The attributable amount in related to the share options
-lapsed after the vesting period reclassified from other 購股權相關並自其他儲備重新分類
+The attributable amount in related to the share options lapsed after the vesting period reclassified from other 購股權相關並自其他儲備重新分類
 reserves to retained earnings during the year was 至保留收益的應佔金額約為人民幣
 approximately RMB540,000. The net attributable amount 540,000元。與歸屬期內沒收購股
-in related to the share options forfeited during the vesting 權相關的應佔淨額，於年內計入合
-併利潤表約人民幣545,000元。
-period credited to the consolidated income statement
-during the year was approximately RMB545,000.
+in related to the share options forfeited during the vesting 權相關的應佔淨額，於年內計入合併利潤表約人民幣545,000元。
+period credited to the consolidated income statement during the year was approximately RMB545,000.
 The attributable amount charged to the consolidated 截至二零二四年十二月三十一日止
-income statement during the year ended 31 December 年度，自合併利潤表扣除的應佔金
-額約為人民幣152,000元。
+income statement during the year ended 31 December 年度，自合併利潤表扣除的應佔金額約為人民幣152,000元。
 2024 was approximately RMB152,000.
 
 147
@@ -6498,15 +6733,16 @@ income statement during the year ended 31 December 年度，自合併利潤表�
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 25. SHARE-BASED PAYMENT (Continued) | | | 25. 股份付款（續） | | | | | |
-| ----------------------------------- | --- | --- | ----------- | --- | --- | --- | --- | --- |
+
+| 25. SHARE-BASED PAYMENT (Continued) | 25. 股份付款（續） |
+| --- | --- |
+
 (b) Share options granted on 4 July 2022 (b) 於二零二二年七月四日授出的
 購股權
 The Company granted to certain eligible employees share 本公司於二零二二年七月四日向
 options to subscribe for an aggregate of 2,000,000 ordinary 若干合資格僱員授出可認購合共
 2,000,000股本公司普通股的購股
-shares of the Company on 4 July 2022. These options
-vest in tranches over a period of up to 5 years. Options 權。該等購股權於長達5年期間內
+shares of the Company on 4 July 2022. These options vest in tranches over a period of up to 5 years. Options 權。該等購股權於長達5年期間內
 exercised during the year resulted in 591,000 shares (2024: 分批歸屬。於本年度，因購股權獲
 nil) being issued with proceeds of HKD2,931,000 (2024: 行使而發行591,000股股份（二零
 nil). The related weighted average share price at the time of 二四年：無），所得款項為2,931,000
@@ -6514,84 +6750,80 @@ nil). The related weighted average share price at the time of 二四年：無）
 exercise was HKD6.86 (2024: nil) per share.
 的相關加權平均股價為每股6.86港
 元（二零二四年：無）。
-Movements in the number of share options outstanding 尚未行使購股權數目的變動及其相
-關加權平均行使價如下：
-and their related weighted average exercise prices are as
-follows:
-| | | | 2025 | | | | 2024 | |
-| -------------- | -------- | ------------- | ---------- | ----------- | ------- | ------------- | ------ | ----------- |
-| | | | 二零二五年 | | | | 二零二四年 | |
-| | | | Average | | | Average | | |
-| | | | exercise | | | exercise | | |
-| | | price in HKD | | | | price in HKD | | |
-| | | | per share | Options | | per share | | Options |
-| | | | option | (thousands) | | | option | (thousands) |
-| | | | | | | 平均行使價 | | 購股權 |
-| | | 平均行使價 | | 購股權 | | | | |
-| | | 每份購股權港元 | | （千份） | 每份購股權港元 | | | （千份） |
-| | | | | | | | | |
-| At 1 January | 於一月一日 | | 4.96 | 2,000 | | | 4.96 | 2,000 |
-| Exercised | 已行使 | | 4.96 | | (591) | | – | – |
-| | | | | | | | | |
-| At 31 December | 於十二月三十一日 | | 4.96 | 1,409 | | | 4.96 | 2,000 |
-| | | | | | | | | |
-| | | | | | | | | |
-The attributable amount charged to the consolidated 於本年度，自合併利潤表扣除的應
-佔金額約為人民幣404,000元（二零
+Movements in the number of share options outstanding 尚未行使購股權數目的變動及其相關加權平均行使價如下：
+and their related weighted average exercise prices are as follows:
+
+|  |  |  | 2025 |  |  |  | 2024 |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 二零二五年 |  |  |  | 二零二四年 |  |
+|  |  |  | Average |  |  | Average |  |  |
+|  |  |  | exercise |  |  | exercise |  |  |
+|  |  | price in HKD |  |  |  | price in HKD |  |  |
+|  |  |  | per share | Options |  | per share |  | Options |
+|  |  |  | option | (thousands) |  |  | option | (thousands) |
+|  |  |  |  |  |  | 平均行使價 |  | 購股權 |
+|  |  | 平均行使價 |  | 購股權 |  |  |  |  |
+|  |  | 每份購股權港元 |  | （千份） | 每份購股權港元 |  |  | （千份） |
+| At 1 January | 於一月一日 |  | 4.96 | 2,000 |  |  | 4.96 | 2,000 |
+| Exercised | 已行使 |  | 4.96 |  | (591) |  | – | – |
+| At 31 December | 於十二月三十一日 |  | 4.96 | 1,409 |  |  | 4.96 | 2,000 |
+
+The attributable amount charged to the consolidated 於本年度，自合併利潤表扣除的應佔金額約為人民幣404,000元（二零
 income statement during the Year was approximately
-| RMB404,000 (2024: RMB668,000). | | | | | 二四年：人民幣668,000元）。 | | | |
-| ------------------------------ | --- | --- | --- | --- | ----------------- | --- | --- | --- |
+
+| RMB404,000 (2024: RMB668,000). | 二四年：人民幣668,000元）。 |
+| --- | --- |
 
 148
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 25. SHARE-BASED PAYMENT (Continued) | | | 25. 股份付款（續） | | | | | |
-| ----------------------------------- | --- | --- | ----------- | --- | --- | --- | --- | --- |
+
+| 25. SHARE-BASED PAYMENT (Continued) | 25. 股份付款（續） |
+| --- | --- |
+
 (c) Share options granted on 29 April 2024 (c) 於二零二四年四月二十九日授
 出的購股權
 The Company granted to certain eligible employee share 本公司於二零二四年四月二十九日
 options to subscribe for an aggregate of 888,000 ordinary 向若干合資格僱員授出可認購合共
 888,000股本公司普通股的購股權。
-shares of the Company on 29 April 2024. These options
-vest in tranches over a period of up to 5 years. There were 該等購股權於長達5年期間內分批
+shares of the Company on 29 April 2024. These options vest in tranches over a period of up to 5 years. There were 該等購股權於長達5年期間內分批
 no options being exercised during the years ended 31 歸屬。截至二零二五年及二零二四
-| December 2025 and 2024. | | | | | 年十二月三十一日止年度概無行使 | | | |
-| ----------------------- | --- | --- | --- | --- | --------------- | --- | --- | --- |
+
+| December 2025 and 2024. | 年十二月三十一日止年度概無行使 |
+| --- | --- |
+
 購股權。
 Movements in the number of share options outstanding 尚未行使購股權數目的變動及其相
 and their related weighted average exercise prices are as 關加權平均行使價如下：
 follows:
-| | | | 2025 | | | | 2024 | |
-| ------------ | ----- | ------------- | ---------- | ----------- | ------- | ------------- | ------ | ----------- |
-| | | | 二零二五年 | | | | 二零二四年 | |
-| | | | Average | | | Average | | |
-| | | | exercise | | | exercise | | |
-| | | price in HKD | | | | price in HKD | | |
-| | | | per share | Options | | per share | | Options |
-| | | | option | (thousands) | | | option | (thousands) |
-| | | 平均行使價 | | 購股權 | | 平均行使價 | | 購股權 |
-| | | 每份購股權港元 | | （千份） | 每份購股權港元 | | | （千份） |
-| | | | | | | | | |
-| At 1 January | 於一月一日 | | 5.52 | | 888 | | – | – |
+
+|  |  |  | 2025 |  |  |  | 2024 |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 二零二五年 |  |  |  | 二零二四年 |  |
+|  |  |  | Average |  |  | Average |  |  |
+|  |  |  | exercise |  |  | exercise |  |  |
+|  |  | price in HKD |  |  |  | price in HKD |  |  |
+|  |  |  | per share | Options |  | per share |  | Options |
+|  |  |  | option | (thousands) |  |  | option | (thousands) |
+|  |  | 平均行使價 |  | 購股權 |  | 平均行使價 |  | 購股權 |
+|  |  | 每份購股權港元 |  | （千份） | 每份購股權港元 |  |  | （千份） |
+| At 1 January | 於一月一日 |  | 5.52 |  | 888 |  | – | – |
+
 已授出
-| Granted | | | – | | – | | 5.52 | 888 |
-| -------------- | -------- | --- | ---- | --- | ----- | --- | ---- | --- |
-| Forfeited | 已沒收 | | 5.52 | | (888) | | – | – |
-| | | | | | | | | |
-| At 31 December | 於十二月三十一日 | | – | | – | | 5.52 | 888 |
-| | | | | | | | | |
-| | | | | | | | | |
-In 2025, one employee resigned and thus all the related 於二零二五年，一名僱員辭職，因
-此所有相關的888,000份購股權於
+
+| Granted |  | – | – | 5.52 | 888 |
+| --- | --- | --- | --- | --- | --- |
+| Forfeited | 已沒收 | 5.52 | (888) | – | – |
+| At 31 December | 於十二月三十一日 | – | – | 5.52 | 888 |
+
+In 2025, one employee resigned and thus all the related 於二零二五年，一名僱員辭職，因此所有相關的888,000份購股權於
 888,000 share options were forfeited during the year.
 本年度被沒收。
 The net attributable amount in relation to the share 於本年度，與歸屬期內沒收的購股
-options forfeited during the vesting period credited to 權相關並計入合併利潤表的應佔淨
-額約為人民幣204,000元（二零二四
-the consolidated income statement during the year was
-approximately RMB204,000 (2024: the attributable amount 年：自合併利潤表扣除的應佔金額
+options forfeited during the vesting period credited to 權相關並計入合併利潤表的應佔淨額約為人民幣204,000元（二零二四
+the consolidated income statement during the year was approximately RMB204,000 (2024: the attributable amount 年：自合併利潤表扣除的應佔金額
 charged to the consolidated income statement was 約為人民幣204,000元）。
 approximately RMB204,000).
 
@@ -6600,110 +6832,131 @@ approximately RMB204,000).
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 25. SHARE-BASED PAYMENT (Continued) | | | 25. 股份付款（續） | | | | | | |
-| ----------------------------------- | --- | --- | ----------- | --- | --- | --- | --- | --- | --- |
+
+| 25. SHARE-BASED PAYMENT (Continued) | 25. 股份付款（續） |
+| --- | --- |
+
 The fair values, which were determined by an independent 下表顯示於授出日期所授出購股權的公
 qualified appraiser using Binomial Option Pricing Model, of the 平值，此乃由獨立合資格估值師使用二
-options granted as at the grant dates are noted in the following 項式期權定價模式釐定。計算於授出日
-期購股權公平值採納的假設如下：
-table. The following assumptions were adopted to calculate the
-fair values of the options on the grant dates:
+options granted as at the grant dates are noted in the following 項式期權定價模式釐定。計算於授出日期購股權公平值採納的假設如下：
+table. The following assumptions were adopted to calculate the fair values of the options on the grant dates:
 Date of grant 授出日期 (a) 31 March 2021 (b) 04 July 2022 (c) 29 April 2024
-| | | | (a)二零二一年 | | (b)二零二二年 | | | (c)二零二四年 | |
-| --- | --- | --- | -------- | --- | -------- | ---- | --- | -------- | --- |
-| | | | 三月三十一日 | | | 七月四日 | | 四月二十九日 | |
-| | | | | | | | | | |
+
+| (a)二零二一年 | (b)二零二二年 |  | (c)二零二四年 |
+| --- | --- | --- | --- |
+| 三月三十一日 |  | 七月四日 | 四月二十九日 |
+
 Fair value as at the grant date 於授出日期的公平值 RMB1,164,000 RMB2,589,000 RMB832,000
-| | | 人民幣1,164,000元 | | | 人民幣2,589,000元 | | 人民幣832,000元 | | |
-| ------------------- | ---- | ------------- | ------- | --- | ------------- | ------- | ----------- | ------- | --- |
-| Assumptions: | 假設： | | | | | | | | |
-| Average share price | 平均股價 | | HKD2.80 | | | HKD4.96 | | HKD5.52 | |
-| | | | 2.80港元 | | | 4.96港元 | | 5.52港元 | |
-| Exercise price | 行使價 | | HKD2.95 | | | HKD4.96 | | HKD5.52 | |
-| | | | 2.95港元 | | | 4.96港元 | | 5.52港元 | |
+
+|  |  | 人民幣1,164,000元 |  | 人民幣2,589,000元 |  | 人民幣832,000元 |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Assumptions: | 假設： |  |  |  |  |  |  |
+| Average share price | 平均股價 |  | HKD2.80 |  | HKD4.96 |  | HKD5.52 |
+|  |  |  | 2.80港元 |  | 4.96港元 |  | 5.52港元 |
+| Exercise price | 行使價 |  | HKD2.95 |  | HKD4.96 |  | HKD5.52 |
+|  |  |  | 2.95港元 |  | 4.96港元 |  | 5.52港元 |
+
 Expected life of options 購股權預計年期 6.0 years 6.0 years 6.0 years
-| | | | | 6.0年 | | 6.0年 | | | 6.0年 |
-| ----------------------- | ----- | --- | ------ | ----- | --- | ------ | --- | ------ | ----- |
-| Expected volatility | 預計波幅 | | 44.35% | | | 42.06% | | 40.46% | |
-| Expected dividend yield | 預計股息率 | | | 6.93% | | 3.76% | | | 9.89% |
+
+|  |  |  | 6.0年 | 6.0年 |  | 6.0年 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Expected volatility | 預計波幅 | 44.35% |  | 42.06% | 40.46% |  |
+| Expected dividend yield | 預計股息率 |  | 6.93% | 3.76% |  | 9.89% |
+
 零風險利率
-| Risk free rate | | | | 1.22% | | 2.85% | | | 4.06% |
-| ---------------- | --- | --- | --- | ------- | --- | ----- | --- | --- | ----- |
+
+| Risk free rate | 1.22% | 2.85% | 4.06% |
+| --- | --- | --- | --- |
+
 The expected volatility is determined by calculating the historical 預計波幅乃根據與本集團業務相近的上
 volatility of the price of listed companies with similar business 市公司價格的過往波幅計算釐定。預計
-to the Group. The expected dividend yield is determined by 股息率由董事根據本集團預期未來表現
-及股息政策釐定。
-the Directors based on the expected future performance and
-dividend policy of the Group.
+to the Group. The expected dividend yield is determined by 股息率由董事根據本集團預期未來表現及股息政策釐定。
+the Directors based on the expected future performance and dividend policy of the Group.
 
 150
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 26. OTHER RESERVES | | | | | | | 26. 其他儲備 | | | | | | |
-| ------------------ | --- | --- | --- | --- | --- | --- | -------- | --- | --- | --- | --- | --- | --- |
+
+| 26. OTHER RESERVES | 26. 其他儲備 |
+| --- | --- |
+
 Share-based
-| | | | Capital | | Statutory | | Safety | payment | | | Foreign | | |
-| ---------------------- | ------- | --- | ---------- | --- | ---------- | --- | ----------- | --------- | -------- | ----------- | -------- | --------- | ------ |
-| | | | reserve | | reserve | | production | | reserve | currency | | | |
-| | | | (Note (a)) | | (Note (b)) | | fee | (Note 25) | | translation | | | Total |
-| | | | 資本儲備 | | 法定儲備 | | 安全 | 股份付款儲備 | | | | | |
-| | | | （附註(a)） | | （附註(b)） | | 生產費用 | （附註25） | | 外幣換算 | | | 總計 |
-| | | | RMB’000 | | RMB’000 | | RMB’000 | RMB’000 | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | | | | | | |
-| 1 January 2024 | 二零二四年 | | | | | | | | | | | | |
-| | 一月一日 | | (370,760) | | 1,613,648 | | 22,301 | | 15,841 | | (4,299) | 1,276,731 | |
-| Profit appropriation | 溢利分配 | | | – | 88,116 | | – | | – | | – | | 88,116 |
-| Employee share option | 僱員購股權計劃 | | | | | | | | | | | | |
+
+|  |  | Capital |  | Statutory | Safety | payment |  |  | Foreign |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | reserve |  | reserve | production |  | reserve | currency |  |  |  |
+|  |  | (Note (a)) |  | (Note (b)) | fee | (Note 25) |  | translation |  |  | Total |
+|  |  | 資本儲備 |  | 法定儲備 | 安全 | 股份付款儲備 |  |  |  |  |  |
+|  |  | （附註(a)） |  | （附註(b)） | 生產費用 | （附註25） |  | 外幣換算 |  |  | 總計 |
+|  |  | RMB’000 |  | RMB’000 | RMB’000 | RMB’000 |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 | 人民幣千元 | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  |
+| 1 January 2024 | 二零二四年 |  |  |  |  |  |  |  |  |  |  |
+|  | 一月一日 | (370,760) |  | 1,613,648 | 22,301 |  | 15,841 |  | (4,299) | 1,276,731 |  |
+| Profit appropriation | 溢利分配 |  | – | 88,116 | – |  | – |  | – |  | 88,116 |
+| Employee share option | 僱員購股權計劃 |  |  |  |  |  |  |  |  |  |  |
+
 schemes
-| – Value of employee | －僱員服務價值 | | | | | | | | | | | | |
-| -------------------- | -------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+| – Value of employee | －僱員服務價值 |
+| --- | --- |
+
 （附註9、25）
-| services (Notes 9, 25) | | | | – | | – | – | | 1,024 | | – | | 1,024 |
-| ---------------------- | --------- | --- | --- | --- | --- | --- | ------ | --- | ----- | --- | --- | --- | ------ |
-| Provision for safety | 安全生產費用撥備 | | | | | | | | | | | | |
-| production fee | （附註39.21） | | | | | | | | | | | | |
-| (Note 39.21) | | | | – | | – | 27,289 | | – | | – | | 27,289 |
-| Utilisation of safety | 使用安全生產費用 | | | | | | | | | | | | |
+
+| services (Notes 9, 25) | – | – | – | 1,024 | – | 1,024 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Provision for safety | 安全生產費用撥備 |  |  |  |  |  |
+| production fee | （附註39.21） |  |  |  |  |  |
+| (Note 39.21) | – | – | 27,289 | – | – | 27,289 |
+| Utilisation of safety | 使用安全生產費用 |  |  |  |  |  |
+
 （附註39.21）
 production fee
-| (Note 39.21) | | | | – | | – | (15,659) | | – | | – | | (15,659) |
-| ------------ | --- | --- | --- | --- | --- | --- | -------- | --- | --- | --- | --- | --- | -------- |
+
+| (Note 39.21) | – | – | (15,659) | – | – | (15,659) |
+| --- | --- | --- | --- | --- | --- | --- |
+
 Other currency translation 其他外幣換算差額
-| differences | | | | – | | – | – | | – | | (3,560) | | (3,560) |
-| ---------------- | ------- | --- | --------- | --- | --------- | --- | ------ | --- | ------ | --- | ------- | --------- | ------- |
-| 31 December 2024 | 二零二四年 | | | | | | | | | | | | |
-| | 十二月三十一日 | | (370,760) | | 1,701,764 | | 33,931 | | 16,865 | | (7,859) | 1,373,941 | |
-| | | | | | | | | | | | | | |
-| | | | | | | | | | | | | | |
+
+| differences |  |  | – |  | – | – | – | (3,560) |  | (3,560) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 31 December 2024 | 二零二四年 |  |  |  |  |  |  |  |  |  |
+|  | 十二月三十一日 | (370,760) |  | 1,701,764 |  | 33,931 | 16,865 | (7,859) | 1,373,941 |  |
+
 溢利分配
-| Profit appropriation | | | | – | 119,425 | | – | | – | | – | | 119,425 |
-| ---------------------- | ------- | --- | --- | --- | ------- | --- | --- | --- | --- | --- | --- | --- | ------- |
-| Employee share option | 僱員購股權計劃 | | | | | | | | | | | | |
+
+| Profit appropriation | – | 119,425 | – | – | – | 119,425 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Employee share option | 僱員購股權計劃 |  |  |  |  |  |
+
 schemes
-| – Value of employee | －僱員服務價值 | | | | | | | | | | | | |
-| ---------------------- | -------- | --- | --- | --- | --- | --- | --- | --- | ----- | --- | --- | --- | ----- |
-| services (Notes 9, 25) | （附註9、25） | | | – | | – | – | | (345) | | – | | (345) |
+
+| – Value of employee | －僱員服務價值 |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| services (Notes 9, 25) | （附註9、25） | – | – | – | (345) | – | (345) |
+
 －已發行購股權失效
-| – Lapse of options issued | | | | – | | – | – | | (540) | | – | | (540) |
-| ------------------------- | --------- | --- | --- | --- | --- | --- | ------ | --- | ----- | --- | --- | --- | ------ |
-| Provision for safety | 安全生產費用撥備 | | | | | | | | | | | | |
-| production fee | （附註39.21） | | | | | | | | | | | | |
-| (Note 39.21) | | | | – | | – | 37,419 | | – | | – | | 37,419 |
-| Utilisation of safety | 使用安全生產費用 | | | | | | | | | | | | |
+
+| – Lapse of options issued | – | – | – | (540) | – | (540) |
+| --- | --- | --- | --- | --- | --- | --- |
+| Provision for safety | 安全生產費用撥備 |  |  |  |  |  |
+| production fee | （附註39.21） |  |  |  |  |  |
+| (Note 39.21) | – | – | 37,419 | – | – | 37,419 |
+| Utilisation of safety | 使用安全生產費用 |  |  |  |  |  |
+
 （附註39.21）
 production fee
-| (Note 39.21) | | | | – | | – | (25,828) | | – | | – | | (25,828) |
-| ------------ | --- | --- | --- | --- | --- | --- | -------- | --- | --- | --- | --- | --- | -------- |
+
+| (Note 39.21) | – | – | (25,828) | – | – | (25,828) |
+| --- | --- | --- | --- | --- | --- | --- |
+
 Other currency translation 其他外幣換算差額
-| differences | | | | – | | – | – | | – | | (6,525) | | (6,525) |
-| ---------------- | ------- | --- | --------- | --- | --------- | --- | ------ | --- | ------ | --- | -------- | --------- | ------- |
-| 31 December 2025 | 二零二五年 | | | | | | | | | | | | |
-| | 十二月三十一日 | | (370,760) | | 1,821,189 | | 45,522 | | 15,980 | | (14,384) | 1,497,547 | |
-| | | | | | | | | | | | | | |
-| | | | | | | | | | | | | | |
+
+| differences |  |  | – |  | – | – | – | (6,525) |  | (6,525) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 31 December 2025 | 二零二五年 |  |  |  |  |  |  |  |  |  |
+|  | 十二月三十一日 | (370,760) |  | 1,821,189 |  | 45,522 | 15,980 | (14,384) | 1,497,547 |  |
 
 151
 阜豐集團有限公司 年報 2025
@@ -6711,51 +6964,53 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 26. OTHER RESERVES (Continued) 26. 其他儲備（續）
-| (a) Capital reserve | (a) | 資本儲備 | | | | |
-| -------------------- | ---- | ---- | --- | --- | --- | --- |
+
+| (a) Capital reserve | (a) | 資本儲備 |
+| --- | --- | --- |
+
 It mainly represents reserve arising from the Group’s 資本儲備主要指本集團於二零零六
-| reorganisation completed in July 2006. | | 年七月完成重組後產生的儲備。 | | | | |
-| -------------------------------------- | ---- | -------------- | --- | --- | --- | --- |
-| (b) Statutory reserve | (b) | 法定儲備 | | | | |
+
+| reorganisation completed in July 2006. |  | 年七月完成重組後產生的儲備。 |
+| --- | --- | --- |
+| (b) Statutory reserve | (b) | 法定儲備 |
+
 In accordance with the PRC regulations and the articles 根據中國規例及組成本集團的旗下
 of the association of the PRC companies comprising the 各中國公司的組織章程細則規定，
-Group, before distributing the net profit of each year, each 在分派各年純利前，每間在中國註
-冊的公司均須按中國會計準則規定，
-of the companies registered in the PRC is required to
-set aside 10% of its statutory net profit for the year after 於對銷任何上一年度虧損後，將該
+Group, before distributing the net profit of each year, each 在分派各年純利前，每間在中國註冊的公司均須按中國會計準則規定，
+of the companies registered in the PRC is required to set aside 10% of its statutory net profit for the year after 於對銷任何上一年度虧損後，將該
 offsetting any prior year’s losses as determined under the 年度的法定純利10%撥入法定盈餘
 PRC accounting regulations to the statutory surplus reserve 儲備基金。倘該儲備的結餘達到各
-fund. When the balance of such reserve reaches 50% of 公司股本的50%，其後可自行決定
-任何撥調。法定盈餘儲備基金可用
-each company’s share capital, any further appropriation is
-optional. The statutory surplus reserve fund can be utilised 以對銷過往年度虧損或發行紅股，
+fund. When the balance of such reserve reaches 50% of 公司股本的50%，其後可自行決定任何撥調。法定盈餘儲備基金可用
+each company’s share capital, any further appropriation is optional. The statutory surplus reserve fund can be utilised 以對銷過往年度虧損或發行紅股，
 to offset prior years’ losses or to issue bonus shares, 惟有關儲備結餘不少於發行紅股後
 provided that the balance of such reserve is not less than 實體註冊資本的25%。
 25% of the entity’s registered capital after the bonus issue.
 27. TRADE, OTHER PAYABLES, ACCRUALS 27. 應付貿易賬款、其他應付款項、
-| AND ADVANCES | 應計費用及預收款項 | | | | | |
-| --------------------------------- | ----------- | --- | --------- | ---- | --------- | ---- |
-| | | | | 2025 | | 2024 |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
-| Trade payables (a, b) | 應付貿易賬款(a、b) | | 920,145 | | 1,409,871 | |
-| Payables for property, plant and | 物業、廠房及設備應付 | | | | | |
-| equipment (b) | 款項(b) | | 1,249,197 | | 1,155,624 | |
+
+| AND ADVANCES | 應計費用及預收款項 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  | 2025 |  | 2024 |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Trade payables (a, b) | 應付貿易賬款(a、b) | 920,145 |  | 1,409,871 |  |
+| Payables for property, plant and | 物業、廠房及設備應付 |  |  |  |  |
+| equipment (b) | 款項(b) | 1,249,197 |  | 1,155,624 |  |
+
 應付薪金、工資及
 Salaries, wages and staff welfares
-| payables | 員工褔利 | | 506,460 | | 513,034 | |
-| --------------------------- | ----------- | --- | ------- | ----- | ------- | --- |
-| Notes payable (c) | 應付票據(c) | | 734,409 | | 563,465 | |
-| Interest payable | 應付利息 | | | 9,897 | 16,946 | |
-| Other payables and accruals | 其他應付款項及應計費用 | | 593,604 | | 522,937 | |
+
+| payables | 員工褔利 | 506,460 |  | 513,034 |
+| --- | --- | --- | --- | --- |
+| Notes payable (c) | 應付票據(c) | 734,409 |  | 563,465 |
+| Interest payable | 應付利息 |  | 9,897 | 16,946 |
+| Other payables and accruals | 其他應付款項及應計費用 | 593,604 |  | 522,937 |
+
 預收款項
-| Received in advance | | | 22,060 | | | – |
-| ------------------- | --- | --- | --------- | --- | --------- | --- |
-| | | | 4,035,772 | | 4,181,877 | |
-| | | | | | | |
-| | | | | | | |
+
+| Received in advance | 22,060 |  | – |
+| --- | --- | --- | --- |
+|  | 4,035,772 | 4,181,877 |  |
 
 152
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -6763,49 +7018,55 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 27. TRADE, OTHER PAYABLES, ACCRUALS 27. 應付貿易賬款、其他應付款項、
-| AND ADVANCES (Continued) | 應計費用及預收款項（續） | | | | |
-| ------------------------ | ------------ | --- | --- | --- | --- |
+
+| AND ADVANCES (Continued) | 應計費用及預收款項（續） |
+| --- | --- |
+
 (a) As at 31 December 2025 and 2024, the ageing analysis of (a) 於二零二五年及二零二四年十二月
-trade payables based on invoice date was as follows: 三十一日，應付貿易賬款按發票日
-期的賬齡分析如下：
-| | | | 2025 | | 2024 |
-| --------------- | ---- | --- | ------- | --- | --------- |
-| | | | 二零二五年 | | 二零二四年 |
-| | | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
-| Within 3 months | 三個月內 | | 806,163 | | 1,297,939 |
+trade payables based on invoice date was as follows: 三十一日，應付貿易賬款按發票日期的賬齡分析如下：
+
+|  |  | 2025 | 2024 |
+| --- | --- | --- | --- |
+|  |  | 二零二五年 | 二零二四年 |
+|  |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |
+| Within 3 months | 三個月內 | 806,163 | 1,297,939 |
+
 三至六個月
-| 3 to 6 months | | | 26,350 | | 47,408 |
-| -------------- | ------ | --- | ------- | --- | --------- |
-| 6 to 12 months | 六至十二個月 | | 21,068 | | 29,718 |
-| 1 to 2 years | 一至兩年 | | 39,468 | | 12,735 |
-| Over 2 years | 兩年以上 | | 27,096 | | 22,071 |
-| | | | | | |
-| | | | 920,145 | | 1,409,871 |
-| | | | | | |
-| | | | | | |
+
+| 3 to 6 months |  | 26,350 | 47,408 |
+| --- | --- | --- | --- |
+| 6 to 12 months | 六至十二個月 | 21,068 | 29,718 |
+| 1 to 2 years | 一至兩年 | 39,468 | 12,735 |
+| Over 2 years | 兩年以上 | 27,096 | 22,071 |
+|  |  | 920,145 | 1,409,871 |
+
 (b) As disclosed in Note 21(g), notes receivable amounted (b) 如附註21(g) 所披露，應收票據
 to RMB441,319,000 (2024: RMB866,195,000) were 人民幣441,319,000 元（二零二四
 endorsed to the suppliers of trade payables and payables 年：人民幣866,195,000元）已
 for purchase of property, plant and equipment amounting 背書給供應商，用於支付分別
 to RMB253,947,000 and RMB187,372,000 respectively 為人民幣253,947,000元及人民
 (2024: RMB693,710,000 and RMB172,485,000, 幣187,372,000元（二零二四年：
-| respectively). | | 人民幣693,710,000元及人民幣 | | | |
-| -------------- | --- | ------------------- | --- | --- | --- |
+
+| respectively). | 人民幣693,710,000元及人民幣 |
+| --- | --- |
+
 172,485,000元）的應付貿易賬款及
 購買物業、廠房及設備的應付款項。
 (c) As at 31 December 2025, notes payable were secured (c) 於二零二五年十二月三十一日，應
 by restricted bank balances of RMB249,000,000 (2024: 付票據以受限制的銀行結餘人民幣
-| RMB386,109,000)(Note 22(a)). | | 249,000,000元（二零二四年：人民 | | | |
-| ---------------------------- | --- | --------------------- | --- | --- | --- |
+
+| RMB386,109,000)(Note 22(a)). | 249,000,000元（二零二四年：人民 |
+| --- | --- |
+
 幣386,109,000元）作為抵押（附註
 22(a)）。
 (d) Trade and other payables are unsecured and interest- (d) 應付貿易賬款及其他應付款項為無
 free. The carrying amounts of trade and other payables 抵押及免息。應付貿易賬款及其他
 approximate their fair values and are mainly denominated in 應付款項賬面值與公平值相若，主
-| RMB. | | 要以人民幣計值。 | | | |
-| ---- | --- | -------- | --- | --- | --- |
+
+| RMB. | 要以人民幣計值。 |
+| --- | --- |
 
 153
 阜豐集團有限公司 年報 2025
@@ -6813,101 +7074,104 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 28. BORROWINGS 28. 借貸
-| | | | | 2025 | | 2024 |
-| -------------------------- | --------- | --- | ------- | ---- | ------- | ---- |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
-| Non-current | 非流動 | | | | | |
-| Bank borrowings, unsecured | 銀行借貸（無抵押） | | 199,900 | | 348,000 | |
-| | | | | | | |
-| Current | 流動 | | | | | |
+
+|  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Non-current | 非流動 |  |  |  |  |
+| Bank borrowings, unsecured | 銀行借貸（無抵押） | 199,900 |  | 348,000 |  |
+| Current | 流動 |  |  |  |  |
+
 銀行借貸（無抵押）
-| Bank borrowings, unsecured | | | 10,865,910 | | 7,183,043 | |
-| -------------------------- | --- | --- | ---------- | --- | --------- | --- |
+
+| Bank borrowings, unsecured | 10,865,910 | 7,183,043 |
+| --- | --- | --- |
+
 Bank borrowings, secured (a) 銀行借貸（有抵押）(a) 6,580,000 3,833,425
-| | | | | | | |
-| ---------------- | ---- | --- | ---------- | --- | ---------- | --- |
-| | | | 17,445,910 | | 11,016,468 | |
-| | | | | | | |
-| Total borrowings | 借貸總額 | | 17,645,810 | | 11,364,468 | |
-| | | | | | | |
-At 31 December 2025, the Group’s borrowings were repayable 於二零二五年十二月三十一日，本集團
-需償還的借貸如下：
+
+|  |  | 17,445,910 | 11,016,468 |
+| --- | --- | --- | --- |
+| Total borrowings | 借貸總額 | 17,645,810 | 11,364,468 |
+
+At 31 December 2025, the Group’s borrowings were repayable 於二零二五年十二月三十一日，本集團需償還的借貸如下：
 as follows:
 Bank borrowings
 銀行借貸
-| | | | | 2025 | | 2024 |
-| --------------------- | ----- | --- | ---------- | ---- | ---------- | ---- |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
-| Within 1 year | 一年內 | | 17,445,910 | | 11,016,468 | |
-| Between 1 and 2 years | 一至兩年內 | | 199,900 | | 348,000 | |
-| | | | | | | |
-| | | | 17,645,810 | | 11,364,468 | |
-| | | | | | | |
-| | | | | | | |
+
+|  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Within 1 year | 一年內 | 17,445,910 |  | 11,016,468 |  |
+| Between 1 and 2 years | 一至兩年內 | 199,900 |  | 348,000 |  |
+|  |  | 17,645,810 |  | 11,364,468 |  |
 
 154
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 28. BORROWINGS (Continued) | | | | | 28. 借貸（續） | | | | | |
-| -------------------------- | --- | --- | --- | --- | --------- | --- | --- | --- | --- | --- |
+
+| 28. BORROWINGS (Continued) | 28. 借貸（續） |
+| --- | --- |
+
 The weighted average annual effective interest rates at the 於資產負債表日的加權平均實際年利率
-| balance sheet dates were as follows: | | | | | | 如下： | | | | |
-| ------------------------------------ | --- | --- | --- | --- | --- | --- | ----- | ---- | ----- | ---- |
-| | | | | | | | | 2025 | | 2024 |
-| | | | | | | | 二零二五年 | | 二零二四年 | |
-| | | | | | | | | | | |
+
+| balance sheet dates were as follows: | 如下： |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  | 2025 |  | 2024 |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+
 借貸
-| Borrowings | | | | | | | | 1.59% | | 1.90% |
-| ---------- | --- | --- | --- | --- | --- | --- | --- | ----- | --- | ----- |
-| | | | | | | | | | | |
+
+| Borrowings | 1.59% | 1.90% |
+| --- | --- | --- |
+
 The carrying amount and fair value of non-current borrowings 非流動借貸的賬面值及公平值如下：
 are as follows:
-| | | | | Carrying amount | | | | Fair value | | |
-| --- | --- | --- | ----- | --------------- | ----- | ------- | ----- | ---------- | ----- | ------- |
-| | | | | 賬面值 | | | | 公平值 | | |
-| | | | | 2025 | | 2024 | | 2025 | | 2024 |
-| | | | 二零二五年 | | 二零二四年 | | 二零二五年 | | 二零二四年 | |
-| | | | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | | | |
+
+|  | Carrying amount |  |  |  | Fair value |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  | 賬面值 |  |  |  | 公平值 |  |  |
+|  | 2025 |  | 2024 |  | 2025 |  | 2024 |
+| 二零二五年 |  | 二零二四年 |  | 二零二五年 |  | 二零二四年 |  |
+|  | RMB’000 |  | RMB’000 |  | RMB’000 |  | RMB’000 |
+| 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  | 人民幣千元 |  |
+
 銀行借貸
-| Bank borrowings | | | | 199,900 | | 348,000 | | 198,019 | | 337,278 |
-| --------------- | --- | --- | --- | --------- | --- | ------- | --- | --------- | --- | --------- |
-| | | | | | | | | | | |
+
+| Bank borrowings | 199,900 | 348,000 | 198,019 | 337,278 |
+| --- | --- | --- | --- | --- |
+
 非流動借貸的公平值乃根據採用現時借
-The fair value of non-current borrowings are based on
-discounted cash flows using a current borrowing rate. 貸利率貼現的現金流量計算。
+The fair value of non-current borrowings are based on discounted cash flows using a current borrowing rate. 貸利率貼現的現金流量計算。
 The fair value of current borrowings approximates their carrying 流動借貸的公平值與其賬面值相若，乃
 amounts, as the impact of discounting is not significant. 因貼現的影響並不重大。
 The carrying amounts of the Group’s borrowings are 本集團借貸的賬面值以下列貨幣計值：
 denominated in the following currencies:
-| | | | | | | | | 2025 | | 2024 |
-| --- | --- | --- | --- | --- | --- | --- | --- | ---- | --- | ---- |
+
+| 2025 | 2024 |
+| --- | --- |
+
 二零二四年
 二零二五年
-| | | | | | | | RMB’000 | | | RMB’000 |
-| --- | --- | --- | --- | --- | --- | --- | ---------- | --- | ---------- | ------- |
-| | | | | | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | | | |
-| RMB | | 人民幣 | | | | | 17,645,810 | | 11,364,468 | |
-| | | | | | | | | | | |
-| | | | | | | | | | | |
+
+|  |  | RMB’000 |  | RMB’000 |
+| --- | --- | --- | --- | --- |
+|  |  | 人民幣千元 | 人民幣千元 |  |
+| RMB | 人民幣 | 17,645,810 | 11,364,468 |  |
+
 (a) As at 31 December 2025, the secured current bank (a) 於二零二五年十二月三十一日，有
-borrowings were secured by restricted bank balances of 抵押的流動銀行借貸以受限制的銀
-行結餘人民幣5,762,637,000元作
-RMB5,762,637,000 (Note 22(a)). As at 31 December 2024,
-the secured current bank borrowings were secured by 為抵押（附註22(a)）。於二零二四年
+borrowings were secured by restricted bank balances of 抵押的流動銀行借貸以受限制的銀行結餘人民幣5,762,637,000元作
+RMB5,762,637,000 (Note 22(a)). As at 31 December 2024, the secured current bank borrowings were secured by 為抵押（附註22(a)）。於二零二四年
 restricted bank balances of RMB2,599,103,000 and notes 十二月三十一日，有抵押的流動銀
-| receivable of RMB8,043,000. | | | | | | 行借貸以受限制的銀行結餘人民幣 | | | | |
-| --------------------------- | --- | --- | --- | --- | --- | --------------- | --- | --- | --- | --- |
+
+| receivable of RMB8,043,000. | 行借貸以受限制的銀行結餘人民幣 |
+| --- | --- |
+
 2,599,103,000元及應收票據人民幣
 8,043,000元作為抵押。
 
@@ -6917,40 +7181,49 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 29. DEFERRED INCOME 29. 遞延收益
-| | | | 2025 | | 2024 |
-| --- | --- | --- | ------- | --- | ------- |
-| | | | 二零二五年 | | 二零二四年 |
-| | | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
+
+| 2025 | 2024 |
+| --- | --- |
+| 二零二五年 | 二零二四年 |
+| RMB’000 | RMB’000 |
+| 人民幣千元 | 人民幣千元 |
+
 與購買環保及技術改善設備有關的
 Government grants related to the
-| acquisition of environmental protection | 政府補助(a) | | | | |
-| ---------------------------------------- | ------- | --- | --- | --- | --- |
+
+| acquisition of environmental protection | 政府補助(a) |
+| --- | --- |
+
 and technology improvement
-| equipment (a) | | | 1,003,543 | | 976,813 |
-| ------------- | --- | --- | --------- | --- | ------- |
-| | | | | | |
-| | | | | | |
+
+| equipment (a) | 1,003,543 | 976,813 |
+| --- | --- | --- |
+
 The movements of the above government grants for the years 於截至二零二五年及二零二四年十二月
 ended 31 December 2025 and 2024 are as follows: 三十一日止年度上述政府補助變動如下：
-| | | | 2025 | | 2024 |
-| --- | --- | --- | ----- | --- | ----- |
-| | | | 二零二五年 | | 二零二四年 |
+
+| 2025 | 2024 |
+| --- | --- |
+| 二零二五年 | 二零二四年 |
+
 RMB’000
 RMB’000
-| | | | 人民幣千元 | | 人民幣千元 |
-| --- | --- | --- | ----- | --- | ----- |
-| | | | | | |
+
+| 人民幣千元 | 人民幣千元 |
+| --- | --- |
+
 於年初
-| At beginning of the year | | | 976,813 | | 893,009 |
-| ------------------------ | -------- | --- | ------- | --- | ------- |
-| Granted during the year | 於年內獲得的補助 | | 117,719 | | 165,992 |
+
+| At beginning of the year |  | 976,813 | 893,009 |
+| --- | --- | --- | --- |
+| Granted during the year | 於年內獲得的補助 | 117,719 | 165,992 |
+
 Amortised as income (Note 6) 攤銷列作收益（附註6） (90,989) (82,188)
 於年終
-| At end of the year | | | 1,003,543 | | 976,813 |
-| ------------------ | --- | --- | --------- | --- | ------- |
-| | | | | | |
+
+| At end of the year | 1,003,543 | 976,813 |
+| --- | --- | --- |
+
 (a) Government grants related to the acquisition of (a) 與購買環保及技術改善設備有關的
 environmental protection and technology improvement 政府補助入賬為遞延收益並於相關
 equipment are recorded as deferred income and amortised 資產預期年期內以直線法於合併利
@@ -6965,109 +7238,115 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 30. DEFERRED INCOME TAX 30. 遞延所得稅
 Deferred income tax assets and liabilities are offset when there 當具有將即期所得稅資產與即期所得稅
 is a legally enforceable right to offset current income tax assets 負債抵銷的合法強制執行權，以及當遞
-against current income tax liabilities and when the deferred 延所得稅資產及負債與同一稅務機關就
-該應課稅實體或不同應課稅實體徵收的
-income tax assets and liabilities relate to income taxed levied
-by the same taxation authority on either the taxable entity or 所得稅有關，而有關方面擬按淨額基準
+against current income tax liabilities and when the deferred 延所得稅資產及負債與同一稅務機關就該應課稅實體或不同應課稅實體徵收的
+income tax assets and liabilities relate to income taxed levied by the same taxation authority on either the taxable entity or 所得稅有關，而有關方面擬按淨額基準
 different taxable entities where there is an intention to settle the 償付結餘時，遞延所得稅資產與負債將
 balances on a net basis. The deferred income tax assets and 予抵銷。遞延所得稅資產及負債如下：
 liabilities are as follows:
-| | | | 2025 | | 2024 |
-| -------------------------------- | --------------- | --- | ------- | --- | ------- |
-| | | | 二零二五年 | | 二零二四年 |
-| | | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
-| Deferred income tax assets: | 遞延所得稅資產： | | | | |
-| – Deferred income tax assets to | － 將於超過十二個月後收回的遞 | | | | |
+
+|  |  | 2025 | 2024 |
+| --- | --- | --- | --- |
+|  |  | 二零二五年 | 二零二四年 |
+|  |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 |
+| Deferred income tax assets: | 遞延所得稅資產： |  |  |
+| – Deferred income tax assets to | － 將於超過十二個月後收回的遞 |  |  |
+
 延所得稅資產
 be recovered after more than
-| 12 months | | | 155,855 | | 146,067 |
-| ----------------------------------- | --------------- | --- | ------- | --- | ------- |
-| – Deferred income tax assets to be | － 將於十二個月內收回的遞延所 | | | | |
-| recovered within 12 months | 得稅資產 | | 105,485 | | 88,768 |
-| | | | | | |
-| | | | 261,340 | | 234,835 |
+
+| 12 months |  | 155,855 | 146,067 |
+| --- | --- | --- | --- |
+| – Deferred income tax assets to be | － 將於十二個月內收回的遞延所 |  |  |
+| recovered within 12 months | 得稅資產 | 105,485 | 88,768 |
+|  |  | 261,340 | 234,835 |
+
 Set-off of deferred income tax liabilities 抵銷遞延所得稅負債 (218,906) (177,694)
-| | | | | | |
-| -------------------------------- | -------- | --- | ------ | --- | ------ |
-| | | | 42,434 | | 57,141 |
-| | | | | | |
-| Deferred income tax liabilities: | 遞延所得稅負債： | | | | |
+
+|  | 42,434 | 57,141 |
+| --- | --- | --- |
+| Deferred income tax liabilities: | 遞延所得稅負債： |  |
+
 － 將於超過十二個月後償付的遞
 – Deferred income tax liabilities to be
-| settled after more than 12 months | 延所得稅負債 | | (260,855) | | (240,767) |
-| ---------------------------------------- | --------------- | --- | --------- | --- | --------- |
-| – Deferred income tax liabilities to be | － 將於十二個月內償付的遞延所 | | | | |
-| settled within 12 months | 得稅負債 | | (162,083) | | (117,161) |
-| | | | | | |
-| | | | (422,938) | | (357,928) |
+
+| settled after more than 12 months | 延所得稅負債 | (260,855) | (240,767) |
+| --- | --- | --- | --- |
+| – Deferred income tax liabilities to be | － 將於十二個月內償付的遞延所 |  |  |
+| settled within 12 months | 得稅負債 | (162,083) | (117,161) |
+|  |  | (422,938) | (357,928) |
+
 Set-off of deferred income tax assets 抵銷遞延所得稅資產 218,906 177,694
-| | | | | | |
-| --- | --- | --- | --------- | --- | --------- |
-| | | | (204,032) | | (180,234) |
-| | | | | | |
+
+| (204,032) | (180,234) |
+| --- | --- |
+
 Deferred income tax liabilities, net 遞延所得稅負債淨額 (161,598) (123,093)
-| | | | | | |
-| --- | --- | --- | --- | --- | --- |
-| | | | | | |
 
 157
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 30. DEFERRED INCOME TAX (Continued) | | | | | 30. 遞延所得稅（續） | | | | | | |
-| ----------------------------------- | --- | --- | --- | --- | ------------ | --- | --- | --- | --- | --- | --- |
+
+| 30. DEFERRED INCOME TAX (Continued) | 30. 遞延所得稅（續） |
+| --- | --- |
+
 The net movement on the deferred income tax account is as 遞延所得稅賬目的淨額變動如下：
 follows:
-| | | | | | | | | 2025 | | | 2024 |
-| ------------------------------- | --- | -------------- | --- | --- | --- | --- | ----- | --------- | --- | --------- | ---- |
-| | | | | | | | 二零二五年 | | | 二零二四年 | |
-| | | | | | | | | RMB’000 | | RMB’000 | |
-| | | | | | | | 人民幣千元 | | | 人民幣千元 | |
-| | | | | | | | | | | | |
-| Beginning balance of the year | | 年初結餘 | | | | | | (123,093) | | (83,048) | |
-| Charged to consolidated income | | 自合併利潤表扣除（附註11） | | | | | | | | | |
-| statement (Note 11) | | | | | | | | (38,505) | | (40,045) | |
-| | | | | | | | | | | | |
-| Ending balance of the year | | 年終結餘 | | | | | | (161,598) | | (123,093) | |
-| | | | | | | | | | | | |
+
+|  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  |  | RMB’000 | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Beginning balance of the year | 年初結餘 |  | (123,093) | (83,048) |  |
+| Charged to consolidated income | 自合併利潤表扣除（附註11） |  |  |  |  |
+| statement (Note 11) |  |  | (38,505) | (40,045) |  |
+| Ending balance of the year | 年終結餘 |  | (161,598) | (123,093) |  |
+
 The movement in deferred income tax assets and liabilities 年內遞延所得稅資產及負債的變動（並
 during the year, without taking into consideration the offsetting 無計及抵銷同一稅務司法權區的結餘）
-| of balances within the same tax jurisdiction, is as follows: | | | | | | 如下： | | | | | |
-| ------------------------------------------------------------ | --- | --- | --- | --- | --- | -------- | --- | --- | --- | --- | --- |
-| Deferred income tax assets: | | | | | | 遞延所得稅資產： | | | | | |
+
+| of balances within the same tax jurisdiction, is as follows: | 如下： |
+| --- | --- |
+| Deferred income tax assets: | 遞延所得稅資產： |
+
 Salary
 and staff
-| | | | Unrealised | Deferred | welfare | | Impairment | | | | |
-| --- | --- | --- | ----------- | --------- | -------- | --- | ----------- | --- | ------ | --- | ----- |
-| | | | profit | income | payables | | losses | | Others | | Total |
+
+| Unrealised | Deferred | welfare | Impairment |  |  |
+| --- | --- | --- | --- | --- | --- |
+| profit | income | payables | losses | Others | Total |
+
 應付薪金及
-| | | | 未變現溢利 | 遞延收益 | 員工福利 | | 減值虧損 | | 其他 | | 總計 |
-| --- | --- | --- | ------- | ------- | ------- | --- | ------- | ----- | ------- | ------- | --- |
-| | | | RMB’000 | RMB’000 | RMB’000 | | RMB’000 | | RMB’000 | RMB’000 | |
-| | | | 人民幣千元 | 人民幣千元 | 人民幣千元 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | | | | |
+
+| 未變現溢利 | 遞延收益 | 員工福利 | 減值虧損 |  | 其他 |  | 總計 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| RMB’000 | RMB’000 | RMB’000 | RMB’000 |  | RMB’000 | RMB’000 |  |
+| 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |  | 人民幣千元 |  |
+
 At 1 January 2024 於二零二四年一月一日 6,398 126,572 48,689 25,651 1,026 208,336
-| (Charged)/credited to | 在合併利潤表 | | | | | | | | | | |
-| ---------------------- | ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| consolidated income | （扣除）╱貸記 | | | | | | | | | | |
+
+| (Charged)/credited to | 在合併利潤表 |
+| --- | --- |
+| consolidated income | （扣除）╱貸記 |
+
 statement (2,104) 12,903 5,003 11,723 (1,026) 26,499
-| At 31 December 2024 | 於二零二四年 | | | | | | | | | | |
-| ---------------------- | ------- | --- | ----- | ------- | --- | ------ | ------ | --- | --- | --------- | --- |
-| | 十二月三十一日 | | 4,294 | 139,475 | | 53,692 | 37,374 | | | – 234,835 | |
-| | | | | | | | | | | | |
-| (Charged)/credited to | 在合併利潤表 | | | | | | | | | | |
+
+| At 31 December 2024 | 於二零二四年 |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 十二月三十一日 | 4,294 | 139,475 | 53,692 | 37,374 | – 234,835 |
+| (Charged)/credited to | 在合併利潤表 |  |  |  |  |  |
+
 （扣除）╱貸記
 consolidated income
-| statement | | | (2,804) | 3,920 | | 1,634 | 14,619 | | 9,136 | | 26,505 |
-| ------------------- | ------- | --- | ------- | ----- | --- | ----- | ------ | --- | ----- | --- | ------ |
-| | | | | | | | | | | | |
-| At 31 December 2025 | 於二零二五年 | | | | | | | | | | |
+
+| statement | (2,804) | 3,920 | 1,634 | 14,619 | 9,136 | 26,505 |
+| --- | --- | --- | --- | --- | --- | --- |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |  |
+
 十二月三十一日 1,490 143,395 55,326 51,993 9,136 261,340
-| | | | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 158
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -7077,75 +7356,77 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 30. DEFERRED INCOME TAX (Continued) 30. 遞延所得稅（續）
 Deferred income tax assets are recognised to the extent that the 倘有可能透過日後應課稅溢利變現相關
 realisation of the related tax benefit through future taxable profit 稅項利益，則會確認遞延所得稅資產。
-is probable. The Group did not recognise deferred income tax 於二零二五年十二月三十一日，本集團
-並無就可結轉以抵銷未來應課稅收益的
+is probable. The Group did not recognise deferred income tax 於二零二五年十二月三十一日，本集團並無就可結轉以抵銷未來應課稅收益的
 assets in respect of tax losses amounted to RMB131,278,000
 as at 31 December 2025 (2024: RMB41,030,000) that can be 稅項虧損人民幣131,278,000元（二零
 carried forward to offset against future taxable income, because 二四年：人民幣41,030,000元）確認遞延
 it was uncertain whether there would be sufficient profit to offset 所得稅資產，原因是尚未肯定不久將來
 in the near future. As at 31 December 2025 and 2024, the expiry 會否有足夠溢利抵銷有關虧損。於二零
-| date of such tax losses is as follows: | 二五年及二零二四年十二月三十一日， | | | | |
-| -------------------------------------- | ----------------- | --- | --- | --- | --- |
+
+| date of such tax losses is as follows: | 二五年及二零二四年十二月三十一日， |
+| --- | --- |
+
 有關稅項虧損到期日如下：
-| | | | 2025 | | 2024 |
-| ----------- | --- | --- | ------- | --- | ------- |
-| | | | 二零二五年 | | 二零二四年 |
-| | | | RMB’000 | | RMB’000 |
-| Expiry date | 到期日 | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
+
+|  |  | 2025 | 2024 |
+| --- | --- | --- | --- |
+|  |  | 二零二五年 | 二零二四年 |
+|  |  | RMB’000 | RMB’000 |
+| Expiry date | 到期日 | 人民幣千元 | 人民幣千元 |
+
 二零二五年
-| 2025 | | | | – | 1,025 |
-| ---- | ----- | --- | ------ | --- | ------ |
-| 2026 | 二零二六年 | | 911 | | 1,532 |
-| 2027 | 二零二七年 | | 973 | | 2,236 |
-| 2028 | 二零二八年 | | 3,849 | | 5,113 |
-| 2029 | 二零二九年 | | 31,124 | | 31,124 |
+
+| 2025 |  |  | – | 1,025 |
+| --- | --- | --- | --- | --- |
+| 2026 | 二零二六年 | 911 |  | 1,532 |
+| 2027 | 二零二七年 | 973 |  | 2,236 |
+| 2028 | 二零二八年 | 3,849 |  | 5,113 |
+| 2029 | 二零二九年 | 31,124 |  | 31,124 |
+
 二零三零年
-| 2030 | | | 94,421 | | – |
-| ---- | --- | --- | ------- | --- | ------ |
-| | | | 131,278 | | 41,030 |
-| | | | | | |
-| | | | | | |
+
+| 2030 | 94,421 | – |
+| --- | --- | --- |
+|  | 131,278 | 41,030 |
 
 159
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 30. DEFERRED INCOME TAX (Continued) | | | | 30. 遞延所得稅（續） | | | | | | |
-| ----------------------------------- | --- | --- | --- | ------------ | -------- | --- | --- | --- | --- | --- |
-| Deferred income tax liabilities: | | | | | 遞延所得稅負債： | | | | | |
+
+| 30. DEFERRED INCOME TAX (Continued) | 30. 遞延所得稅（續） |  |
+| --- | --- | --- |
+| Deferred income tax liabilities: |  | 遞延所得稅負債： |
+
 Withholding
 tax on
-| | | | | | unremitted | | Lump-sum | | | |
-| --- | --- | --------------- | ----- | --- | ------------ | --- | ------------- | --- | --- | ----- |
-| | | Capitalisation | | | earnings | | deduction of | | | |
-| | | of borrowing | | | of certain | | depreciation | | | |
-| | | | costs | | subsidiaries | | difference | | | Total |
+
+|  |  | unremitted | Lump-sum |  |
+| --- | --- | --- | --- | --- |
+| Capitalisation |  | earnings | deduction of |  |
+| of borrowing |  | of certain | depreciation |  |
+|  | costs | subsidiaries | difference | Total |
+
 若干附屬公司
-| | | | 資本化 | 未匯出盈利之 | | | 一次性扣除 | | | |
-| ---------------------- | ------------ | ----- | ------- | ------ | ------- | --- | ------- | --- | ------- | --- |
-| | | | 借貸成本 | | 預扣稅 | | 折舊差額 | | | 總計 |
-| | | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 | |
-| | | 人民幣千元 | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | | | |
-| At 1 January 2024 | 於二零二四年一月一日 | | 3,724 | | 91,650 | | 196,010 | | 291,384 | |
-| | | | | | | | | | | |
-| (Credited)/charged to | 在合併利潤表（貸記）╱ | | | | | | | | | |
-| consolidated income | 扣除 | | | | | | | | | |
-| statement | | | 2,385 | | 11,042 | | 53,117 | | 66,544 | |
-| | | | | | | | | | | |
-| At 31 December 2024 | 於二零二四年十二月 | | | | | | | | | |
-| | 三十一日 | | 6,109 | | 102,692 | | 249,127 | | 357,928 | |
-| | | | | | | | | | | |
-| (Credited)/charged to | 在合併利潤表（貸記）╱ | | | | | | | | | |
-| consolidated income | 扣除 | | | | | | | | | |
-| statement | | | 1,296 | | 38,958 | | 24,756 | | 65,010 | |
-| | | | | | | | | | | |
-| At 31 December 2025 | 於二零二五年 | | | | | | | | | |
-| | 十二月三十一日 | | 7,405 | | 141,650 | | 273,883 | | 422,938 | |
-| | | | | | | | | | | |
-| | | | | | | | | | | |
+
+|  |  |  | 資本化 | 未匯出盈利之 |  | 一次性扣除 |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 借貸成本 |  | 預扣稅 | 折舊差額 |  | 總計 |
+|  |  |  | RMB’000 |  | RMB’000 | RMB’000 | RMB’000 |  |
+|  |  | 人民幣千元 |  |  | 人民幣千元 | 人民幣千元 | 人民幣千元 |  |
+| At 1 January 2024 | 於二零二四年一月一日 |  | 3,724 |  | 91,650 | 196,010 | 291,384 |  |
+| (Credited)/charged to | 在合併利潤表（貸記）╱ |  |  |  |  |  |  |  |
+| consolidated income | 扣除 |  |  |  |  |  |  |  |
+| statement |  |  | 2,385 |  | 11,042 | 53,117 | 66,544 |  |
+| At 31 December 2024 | 於二零二四年十二月 |  |  |  |  |  |  |  |
+|  | 三十一日 |  | 6,109 |  | 102,692 | 249,127 | 357,928 |  |
+| (Credited)/charged to | 在合併利潤表（貸記）╱ |  |  |  |  |  |  |  |
+| consolidated income | 扣除 |  |  |  |  |  |  |  |
+| statement |  |  | 1,296 |  | 38,958 | 24,756 | 65,010 |  |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |  |  |  |
+|  | 十二月三十一日 |  | 7,405 |  | 141,650 | 273,883 | 422,938 |  |
+
 根據企業所得稅法，自二零零八年一月
 According to the corporate income tax law, starting from 1
 January 2008, a 10% withholding tax will be levied on the 一日起，當中國以外地點成立的直接控
@@ -7153,10 +7434,8 @@ immediate holding companies established outside the PRC 股公司之中國附屬
 when their PRC subsidiaries declare dividends out of their profits 月一日後自所賺取溢利中宣派股息，將
 earned after 1 January 2008. A lower withholding tax rate of 對該等直接控股公司徵收10%預扣稅。
 倘中國與外國直接控股公司（包括於香
-5% may be applied if there is a tax treaty arrangement between
-the PRC and the jurisdiction of the foreign immediate holding 港註冊成立的公司）所屬司法權區之間
-companies, including those incorporated in Hong Kong. 訂有稅務優惠安排，則可按較低的預扣
-稅稅率5%繳稅。
+5% may be applied if there is a tax treaty arrangement between the PRC and the jurisdiction of the foreign immediate holding 港註冊成立的公司）所屬司法權區之間
+companies, including those incorporated in Hong Kong. 訂有稅務優惠安排，則可按較低的預扣稅稅率5%繳稅。
 
 160
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -7166,10 +7445,8 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 30. DEFERRED INCOME TAX (Continued) 30. 遞延所得稅（續）
 Such withholding tax is recorded under deferred income tax. 此預扣稅記錄於遞延所得稅中。本公司
 Trans-Asia, Full Profit and Full Health Hong Kong, subsidiaries 附屬公司環亞、豐盈及康滿香港於二零
-of the Company, acquired qualification for the lower tax rate 一八年、二零二二年及二零二三年相繼
-自中國附屬公司收取的股息享有較低的
-of 5% for dividend received from its subsidiaries in PRC
-successively in 2018, 2022 and 2023. The qualification of lower 5%稅率繳稅的資格。較低稅率資格須每
+of the Company, acquired qualification for the lower tax rate 一八年、二零二二年及二零二三年相繼自中國附屬公司收取的股息享有較低的
+of 5% for dividend received from its subsidiaries in PRC successively in 2018, 2022 and 2023. The qualification of lower 5%稅率繳稅的資格。較低稅率資格須每
 tax rate is subject to renewal for each three years interval. The 隔三年予以重續。本集團修改對環亞、
 Group revised its estimate of Trans-Asia, Full Profit and Full 豐盈及康滿香港的預估應計預扣稅率，
 Health Hong Kong for the accrual based on 5% instead of 10% 從10%調整至5%，而其他香港附屬公司
@@ -7178,32 +7455,30 @@ Kong were based on 10%. During the Year, withholding tax of 集團預期中國�
 RMB125,000,000 (2024: RMB75,000,000) has been provided 截至二零二五年十二月三十一日的保留
 as the Group expects PRC subsidiaries to distribute the retained 收益人民幣2,500,000,000元（二零二四
 earnings of RMB2,500,000,000 as of 31 December 2025 (2024: 年：人民幣1,500,000,000元），故計提
-RMB1,500,000,000) in the foreseeable future. 預扣稅撥備人民幣125,000,000元（二零
-二四年：人民幣75,000,000元）。
+RMB1,500,000,000) in the foreseeable future. 預扣稅撥備人民幣125,000,000元（二零二四年：人民幣75,000,000元）。
 Deferred income tax liabilities as at 31 December 2025 of 於二零二五年十二月三十一日，並未就
 RMB568,203,000 (2024: RMB626,496,000) have not been 中國附屬公司的未匯出盈利而應付的預
 recognised for the withholding tax that would be payable on 扣稅合共人民幣8,846,396,000元（二零
 the unremitted earnings of the subsidiaries in the PRC, totalling 二四年：人民幣9,117,512,000元）確認
 RMB8,846,396,000 (2024: RMB9,117,512,000). Management 遞延所得稅負債人民幣568,203,000元
 currently has no intention to remit those earnings in the （二零二四年：人民幣626,496,000元）。
-| foreseeable future. | 管理層目前無意於可預見未來匯出該等 | | | | |
-| ------------------- | ----------------- | --- | --- | --- | --- |
+
+| foreseeable future. | 管理層目前無意於可預見未來匯出該等 |
+| --- | --- |
+
 盈利。
 31. DIVIDENDS 31. 股息
-| | | | 2025 | | 2024 |
-| ------------- | ------ | --- | --------- | ------- | ---- |
-| | | | 二零二五年 | 二零二四年 | |
-| | | | RMB’000 | RMB’000 | |
-| | | | 人民幣千元 | 人民幣千元 | |
-| | | | | | |
-| Interim, paid | 已付中期股息 | | 835,040 | 414,741 | |
-| Final | 末期股息 | | 269,207 | 508,879 | |
-| | | | | | |
-| | | | 1,104,247 | 923,620 | |
-| | | | | | |
-| | | | | | |
 
-阜豐集團有限公司 年報 2025 161
+|  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- |
+|  |  | 二零二五年 | 二零二四年 |  |
+|  |  | RMB’000 | RMB’000 |  |
+|  |  | 人民幣千元 | 人民幣千元 |  |
+| Interim, paid | 已付中期股息 | 835,040 | 414,741 |  |
+| Final | 末期股息 | 269,207 | 508,879 |  |
+|  |  | 1,104,247 | 923,620 |  |
+
+<!-- p.161 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -7229,9 +7504,7 @@ to RMB439,486,000), representing HKD19.0 cents (equivalent 二十八日舉行的
 to RMB17.5 cents) per share and a special final dividend of 保留收益賬中分派末期股息476,263,000
 HKD75,200,000 (equivalent to RMB69,393,000), representing 港元（相當於人民幣439,486,000元），
 HKD3.0 cents (equivalent to RMB2.8 cents) per share to be 即每股19.0港仙（相當於人民幣17.5分）
-distributed from the retained earnings account. 及特別末期股息75,200,000港元（相當
-於人民幣69,393,000元），即每股3.0港
-仙（相當於人民幣2.8分）。
+distributed from the retained earnings account. 及特別末期股息75,200,000港元（相當於人民幣69,393,000元），即每股3.0港仙（相當於人民幣2.8分）。
 The amount of final dividend and special final dividend are 末期股息及特別末期股息的金額乃基
 calculated based on 2,507,346,037 shares in issue as at 26 於二零二六年三月二十六日已發行
 March 2026. These proposed dividends are subject to the 2,507,346,037股股份計算。該等擬派股
@@ -7247,58 +7520,60 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 32. CASH GENERATED FROM OPERATIONS 32. 經營業務所得現金
-| (a) Cash generated from operations | (a) | 經營業務所得現金 | | | | |
-| ------------------------------------------- | -------------- | -------- | --------- | -------- | --------- | --------- |
-| | | | | 2025 | | 2024 |
-| | | | 二零二五年 | | 二零二四年 | |
-| | | | RMB’000 | | RMB’000 | |
-| | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | |
-| Profit before income tax | 除所得稅前溢利 | | 2,996,096 | | 2,837,031 | |
-| Adjustments for: | 就下列項目作出調整： | | | | | |
-| – Provision for inventory write-down | －存貨撇減撥備（附註20） | | | | | |
-| (Note 20) | | | | 242,146 | | 127,649 |
-| – Reversal of impairment losses on | －金融資產減值虧損撥回 | | | | | |
-| financial assets (Note 3.1(b)) | （附註3.1(b)） | | | (13,068) | | (7,170) |
-| – Impairment charge for property, plant | －物業、廠房及設備減值支出 | | | | | |
-| and equipment (Note 14) | （附註14） | | | 64,773 | | 834 |
-| – Depreciation of property, plant and | －物業、廠房及設備折舊 | | | | | |
-| equipment (Note 14) | （附註14） | | 1,262,439 | | 1,179,269 | |
-| – Depreciation of right-of-use assets | －使用權資產折舊（附註15） | | | | | |
-| (Note 15) | | | | 25,696 | | 24,298 |
-| – Amortisation of intangible assets | －攤銷無形資產（附註16） | | | | | |
-| (Note 16) | | | | 13,181 | | 9,993 |
-| – Amortisation of deferred income | －攤銷遞延收入（附註29） | | | | | |
-| (Note 29) | | | | (90,989) | | (82,188) |
-| – Investment gains on derivative financial | －衍生金融工具投資利得 | | | | | |
-| instruments (Note 7) | （附註7） | | | (12,006) | | (4,314) |
-| – Fair value losses on financial assets | －計入損益的金融資產的公平 | | | | | |
-| through profit or loss (Note 17) | 值虧損（附註17） | | | 1,225 | | 4,768 |
-| – Share of net loss of associates | －應佔聯營公司虧損淨額 | | | | | |
-| (Note 13) | （附註13） | | | 213 | | 114 |
-| – Loss on disposal of property, plant and | －出售物業、廠房及設備虧損 | | | | | |
-| equipment – net (Note 7) | －淨額（附註7） | | | (71,919) | | 8,552 |
-| – Employee share option schemes | －僱員購股權計劃（附註9） | | | | | |
-| (Note 9) | | | | (345) | | 1,024 |
-| – Interest income (Note 10) | －利息收入（附註10） | | (532,526) | | | (498,661) |
-| – Interest expenses (Note 10) | －利息開支（附註10） | | | 262,075 | | 203,785 |
+
+| (a) Cash generated from operations | (a) | 經營業務所得現金 |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  | 2025 |  | 2024 |
+|  |  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  |  | RMB’000 |  | RMB’000 |  |
+|  |  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Profit before income tax | 除所得稅前溢利 |  | 2,996,096 |  | 2,837,031 |  |
+| Adjustments for: | 就下列項目作出調整： |  |  |  |  |  |
+| – Provision for inventory write-down | －存貨撇減撥備（附註20） |  |  |  |  |  |
+| (Note 20) |  |  |  | 242,146 |  | 127,649 |
+| – Reversal of impairment losses on | －金融資產減值虧損撥回 |  |  |  |  |  |
+| financial assets (Note 3.1(b)) | （附註3.1(b)） |  |  | (13,068) |  | (7,170) |
+| – Impairment charge for property, plant | －物業、廠房及設備減值支出 |  |  |  |  |  |
+| and equipment (Note 14) | （附註14） |  |  | 64,773 |  | 834 |
+| – Depreciation of property, plant and | －物業、廠房及設備折舊 |  |  |  |  |  |
+| equipment (Note 14) | （附註14） |  | 1,262,439 |  | 1,179,269 |  |
+| – Depreciation of right-of-use assets | －使用權資產折舊（附註15） |  |  |  |  |  |
+| (Note 15) |  |  |  | 25,696 |  | 24,298 |
+| – Amortisation of intangible assets | －攤銷無形資產（附註16） |  |  |  |  |  |
+| (Note 16) |  |  |  | 13,181 |  | 9,993 |
+| – Amortisation of deferred income | －攤銷遞延收入（附註29） |  |  |  |  |  |
+| (Note 29) |  |  |  | (90,989) |  | (82,188) |
+| – Investment gains on derivative financial | －衍生金融工具投資利得 |  |  |  |  |  |
+| instruments (Note 7) | （附註7） |  |  | (12,006) |  | (4,314) |
+| – Fair value losses on financial assets | －計入損益的金融資產的公平 |  |  |  |  |  |
+| through profit or loss (Note 17) | 值虧損（附註17） |  |  | 1,225 |  | 4,768 |
+| – Share of net loss of associates | －應佔聯營公司虧損淨額 |  |  |  |  |  |
+| (Note 13) | （附註13） |  |  | 213 |  | 114 |
+| – Loss on disposal of property, plant and | －出售物業、廠房及設備虧損 |  |  |  |  |  |
+| equipment – net (Note 7) | －淨額（附註7） |  |  | (71,919) |  | 8,552 |
+| – Employee share option schemes | －僱員購股權計劃（附註9） |  |  |  |  |  |
+| (Note 9) |  |  |  | (345) |  | 1,024 |
+| – Interest income (Note 10) | －利息收入（附註10） |  | (532,526) |  |  | (498,661) |
+| – Interest expenses (Note 10) | －利息開支（附註10） |  |  | 262,075 |  | 203,785 |
+
 – Net foreign exchange losses/(gains) －外匯虧損╱（利得）淨額 225,169 (92,500)
-| – Others | －其他 | | | – | | 12,070 |
-| ------------------------------------- | ------------- | --- | --------- | -------- | --- | --------- |
-| Changes in working capital: | 營運資金變動： | | | | | |
-| – Inventories | －存貨 | | (966,823) | | | (38,725) |
-| – Properties under development | －發展中物業 | | | (23,200) | | (100,271) |
-| – Trade and other receivables, notes | －應收貿易賬款及其他應收款 | | | | | |
-| receivable and prepayments | 項、應收票據及預付款項 | | | 176,837 | | (897,950) |
-| – Restricted bank deposits | －受限制銀行存款 | | | 141,109 | | 43,932 |
-| – Trade, other payables and accruals | －應付貿易賬款、其他應付款 | | | | | |
-| | 項及應計費用 | | (356,385) | | | 647,251 |
+
+| – Others | －其他 |  | – | 12,070 |
+| --- | --- | --- | --- | --- |
+| Changes in working capital: | 營運資金變動： |  |  |  |
+| – Inventories | －存貨 | (966,823) |  | (38,725) |
+| – Properties under development | －發展中物業 |  | (23,200) | (100,271) |
+| – Trade and other receivables, notes | －應收貿易賬款及其他應收款 |  |  |  |
+| receivable and prepayments | 項、應收票據及預付款項 |  | 176,837 | (897,950) |
+| – Restricted bank deposits | －受限制銀行存款 |  | 141,109 | 43,932 |
+| – Trade, other payables and accruals | －應付貿易賬款、其他應付款 |  |  |  |
+|  | 項及應計費用 | (356,385) |  | 647,251 |
+
 －合約負債
-| – Contract liabilities | | | | 469,065 | | 207,561 |
-| ------------------------------ | -------- | --- | --------- | --------- | --------- | ------- |
-| Cash generated from operations | 經營業務所得現金 | | 3,812,763 | | 3,586,352 | |
-| | | | | | | |
-| | | | | | | |
+
+| – Contract liabilities |  |  | 469,065 |  | 207,561 |
+| --- | --- | --- | --- | --- | --- |
+| Cash generated from operations | 經營業務所得現金 | 3,812,763 |  | 3,586,352 |  |
 
 163
 阜豐集團有限公司 年報 2025
@@ -7308,29 +7583,30 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 32. CASH GENERATED FROM OPERATIONS 32. 經營業務所得現金（續）
 (Continued)
 (b) Proceeds from disposal of property, plant and (b) 出售物業、廠房及設備所得款
-| equipment | | 項 | | |
-| ------------------------------------ | --------------- | ------- | ------- | ------- |
-| | | | 2025 | 2024 |
-| | | | 二零二五年 | 二零二四年 |
-| | | | RMB’000 | RMB’000 |
-| | | | 人民幣千元 | 人民幣千元 |
-| | | | | |
-| Net book amount for disposals | 出售的賬面淨值（附註14） | | | |
-| (Note 14) | | | 163,115 | 22,673 |
-| Gains from/(losses on) disposal of | 出售物業、廠房及設備的利得╱ | | | |
-| property, plant and equipment – | （虧損）－淨額（附註7） | | | |
-| net (Note 7) | | | 71,919 | (8,552) |
-| | | | | |
-| Proceeds from disposal of property, | 出售物業、廠房及設備所得款項 | | | |
-| plant and equipment | | | 235,034 | 14,121 |
-| | | | | |
-| (c) Major non-cash transactions | (c) | 主要非現金交易 | | |
+
+| equipment |  | 項 |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  | 2025 | 2024 |
+|  |  |  | 二零二五年 | 二零二四年 |
+|  |  |  | RMB’000 | RMB’000 |
+|  |  |  | 人民幣千元 | 人民幣千元 |
+| Net book amount for disposals | 出售的賬面淨值（附註14） |  |  |  |
+| (Note 14) |  |  | 163,115 | 22,673 |
+| Gains from/(losses on) disposal of | 出售物業、廠房及設備的利得╱ |  |  |  |
+| property, plant and equipment – | （虧損）－淨額（附註7） |  |  |  |
+| net (Note 7) |  |  | 71,919 | (8,552) |
+| Proceeds from disposal of property, | 出售物業、廠房及設備所得款項 |  |  |  |
+| plant and equipment |  |  | 235,034 | 14,121 |
+| (c) Major non-cash transactions | (c) | 主要非現金交易 |  |  |
+
 During the Year, notes receivable with amount of 於 本 年 度 ， 金 額 為 人 民 幣
 614,677,000元（二零二四年：人民
 RMB614,677,000 (2024: RMB908,239,000) have been
 endorsed to the suppliers for purchasing property, plant 幣908,239,000元）的應收票據已背
-| and equipment. | | 書予供應商，用於購買物業、廠房 | | |
-| -------------- | --- | --------------- | --- | --- |
+
+| and equipment. | 書予供應商，用於購買物業、廠房 |
+| --- | --- |
+
 及設備。
 
 164
@@ -7338,8 +7614,10 @@ FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 32. CASH GENERATED FROM OPERATIONS | | | | | 32. 經營業務所得現金（續） | | | | | |
-| ----------------------------------- | --- | --- | --- | --- | --------------- | --- | --- | --- | --- | --- |
+
+| 32. CASH GENERATED FROM OPERATIONS | 32. 經營業務所得現金（續） |
+| --- | --- |
+
 (Continued)
 (d) Reconciliation of liabilities from financing (d) 融資活動負債對賬
 activities
@@ -7349,68 +7627,79 @@ This section sets out an analysis of liabilities from financing
 activities and the related movements for the years ended
 資活動負債及相關變動分析：
 31 December 2025 and 2024:
-| | | | Borrowings | | Borrowings | | | | | |
-| ------------------- | ------- | --- | ----------- | --- | ----------- | --- | ----------- | -------- | ------ | ------- |
-| | | | due within | | due after | | Lease | | Other | |
-| | | | 1 year | | 1 year | | liabilities | payables | | Total |
-| | | | 於一年內 | | 於一年後 | | | | | |
-| | | | 到期借款 | | 到期借款 | | 租賃負債 | 其他應付款項 | | 總計 |
-| | | | RMB’000 | | RMB’000 | | RMB’000 | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | | | | |
-| At 31 December 2023 | 於二零二三年 | | | | | | | | | |
+
+|  |  | Borrowings | Borrowings |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | due within | due after | Lease |  | Other |  |
+|  |  | 1 year | 1 year | liabilities | payables |  | Total |
+|  |  | 於一年內 | 於一年後 |  |  |  |  |
+|  |  | 到期借款 | 到期借款 | 租賃負債 | 其他應付款項 |  | 總計 |
+|  |  | RMB’000 | RMB’000 | RMB’000 | RMB’000 |  | RMB’000 |
+|  |  | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |  | 人民幣千元 |
+| At 31 December 2023 | 於二零二三年 |  |  |  |  |  |  |
+
 十二月三十一日
-| | | | 9,584,386 | | 147,440 | | 565 | | 77,481 | 9,809,872 |
-| ---------- | ---- | --- | --------- | --- | ------- | --- | --- | --- | ------ | --------- |
-| Cash flows | 現金流量 | | | | | | | | | |
+
+|  | 9,584,386 | 147,440 | 565 | 77,481 | 9,809,872 |
+| --- | --- | --- | --- | --- | --- |
+| Cash flows | 現金流量 |  |  |  |  |
+
 – Inflow from financing activities －融資活動現金流入 13,264,468 896,000 – – 14,160,468
 – Outflow from financing activities －融資活動現金流出 (12,334,000) (150,000) (699) (77,100) (12,561,799)
 其他變動
 Other movements
-| – Reclassification | －重新分類 | | 543,000 | | (543,000) | | – | | – | – |
-| --------------------------------- | --------- | --- | -------- | --- | --------- | --- | --- | --- | --- | -------- |
-| – Derecognition of notes | －終止確認應收票據 | | | | | | | | | |
-| receivable | | | (36,500) | | | – | – | | – | (36,500) |
-| – Amortisation of borrowing costs | －借貸成本攤銷 | | | – | | – | – | | 3 | 3 |
+
+| – Reclassification | －重新分類 | 543,000 |  | (543,000) |  | – | – | – |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| – Derecognition of notes | －終止確認應收票據 |  |  |  |  |  |  |  |
+| receivable |  | (36,500) |  |  | – | – | – | (36,500) |
+| – Amortisation of borrowing costs | －借貸成本攤銷 |  | – |  | – | – | 3 | 3 |
+
 －新租賃
-| – New lease | | | | – | | – | 2,235 | | – | 2,235 |
-| ----------------------------- | ------------ | --- | ------- | --- | ------ | --- | ----- | --- | --- | ------- |
-| – Increase in future finance | －有關租賃的日後財務支出 | | | | | | | | | |
-| charges on leases | 增加 | | | – | | – | 42 | | – | 42 |
-| – Interest expenses | －利息開支 | | 193,793 | | 25,888 | | – | | – | 219,681 |
-– Interest payments (presented as －利息付款（呈列為經營現金
-流量）
-| operating cash flows) | | | (182,075) | | (27,985) | | – | | – | (210,060) |
-| --------------------- | ------- | --- | ---------- | --- | -------- | --- | ----- | --- | ------- | ---------- |
-| – Others | －其他 | | | – | | – | – | | (384) | (384) |
-| At 31 December 2024 | 於二零二四年 | | | | | | | | | |
-| | 十二月三十一日 | | 11,033,072 | | 348,343 | | 2,143 | | – | 11,383,558 |
-| | | | | | | | | | | |
-| Cash flows | 現金流量 | | | | | | | | | |
+
+| – New lease |  |  | – |  | – | 2,235 | – | 2,235 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| – Increase in future finance | －有關租賃的日後財務支出 |  |  |  |  |  |  |  |
+| charges on leases | 增加 |  | – |  | – | 42 | – | 42 |
+| – Interest expenses | －利息開支 | 193,793 |  | 25,888 |  | – | – | 219,681 |
+
+– Interest payments (presented as －利息付款（呈列為經營現金流量）
+
+| operating cash flows) |  | (182,075) |  | (27,985) |  | – | – | (210,060) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| – Others | －其他 |  | – |  | – | – | (384) | (384) |
+| At 31 December 2024 | 於二零二四年 |  |  |  |  |  |  |  |
+|  | 十二月三十一日 | 11,033,072 |  | 348,343 |  | 2,143 | – | 11,383,558 |
+| Cash flows | 現金流量 |  |  |  |  |  |  |  |
+
 – Inflow from financing activities －融資活動現金流入 24,919,224 450,000 – – 25,369,224
 －融資活動現金流出
 – Outflow from financing activities (18,829,740) (250,100) (1,119) – (19,080,959)
-| Other movements | 其他變動 | | | | | | | | | |
-| ------------------ | ----- | --- | ------- | --- | --------- | --- | --- | --- | --- | --- |
-| – Reclassification | －重新分類 | | 348,000 | | (348,000) | | – | | – | – |
+
+| Other movements | 其他變動 |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| – Reclassification | －重新分類 | 348,000 | (348,000) | – | – | – |
+
 －終止確認應收票據
 – Derecognition of notes
-| receivable | | | (8,043) | | | – | – | | – | (8,043) |
-| ----------------------------- | ------------ | --- | ------- | --- | --- | --- | --- | --- | --- | ------- |
-| – New lease | －新租賃 | | | – | | – | 427 | | – | 427 |
-| – Increase in future finance | －有關租賃的日後財務支出 | | | | | | | | | |
-| charges on leases | 增加 | | | – | | – | 89 | | – | 89 |
+
+| receivable |  | (8,043) |  | – | – | – | (8,043) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| – New lease | －新租賃 |  | – | – | 427 | – | 427 |
+| – Increase in future finance | －有關租賃的日後財務支出 |  |  |  |  |  |  |
+| charges on leases | 增加 |  | – | – | 89 | – | 89 |
+
 －利息開支
-| – Interest expenses | | | 254,800 | | 17,691 | | – | | – | 272,491 |
-| ------------------- | --- | --- | ------- | --- | ------ | --- | --- | --- | --- | ------- |
+
+| – Interest expenses | 254,800 | 17,691 | – | – | 272,491 |
+| --- | --- | --- | --- | --- | --- |
+
 – Interest payments (presented as －利息付款（呈列為經營現金
-| operating cash flows) | 流量） | | (261,646) | | (17,894) | | – | | – | (279,540) |
-| --------------------- | ------- | --- | ---------- | --- | -------- | --- | ----- | --- | --- | ---------- |
-| | | | | | | | | | | |
-| At 31 December 2025 | 於二零二五年 | | | | | | | | | |
-| | 十二月三十一日 | | 17,455,667 | | 200,040 | | 1,540 | | – | 17,657,247 |
-| | | | | | | | | | | |
-| | | | | | | | | | | |
+
+| operating cash flows) | 流量） | (261,646) | (17,894) | – | – | (279,540) |
+| --- | --- | --- | --- | --- | --- | --- |
+| At 31 December 2025 | 於二零二五年 |  |  |  |  |  |
+|  | 十二月三十一日 | 17,455,667 | 200,040 | 1,540 | – | 17,657,247 |
 
 165
 阜豐集團有限公司 年報 2025
@@ -7418,54 +7707,62 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 33. COMMITMENTS 33. 承諾
-| Capital commitments | | 資本承諾 | | | | | |
-| ------------------- | --- | ---- | --- | --- | --- | --- | --- |
+
+| Capital commitments | 資本承諾 |
+| --- | --- |
+
 Capital expenditure contracted for at the end of the year but not 於年終已訂約但仍未產生的資本開支如
-| yet incurred was as follows: | | 下： | | | | | |
-| ----------------------------------------- | --- | ---------- | --- | ------- | ---- | ------- | ---- |
-| | | | | | 2025 | | 2024 |
-| | | | | 二零二五年 | | 二零二四年 | |
-| | | | | RMB’000 | | RMB’000 | |
-| | | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | |
-| Purchase of property, plant and equipment | | 購買物業、廠房及設備 | | | | | |
+
+| yet incurred was as follows: | 下： |  |  |  |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  |  | 2025 |  | 2024 |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Purchase of property, plant and equipment | 購買物業、廠房及設備 |  |  |  |  |
+
 －已訂約但仍未產生
-| – Contracted but not yet incurred | | | | 651,568 | | 108,638 | |
-| -------------------------------------- | --------- | ----------- | --- | ------- | ------- | ------- | --- |
-| Commitment to acquire another party’s | | 承諾收購另一方的所有權 | | | | | |
-| | ownership | | | | 9,500 | | – |
-| | | | | 661,068 | | 108,638 | |
-| | | | | | | | |
+
+| – Contracted but not yet incurred |  | 651,568 |  | 108,638 |  |
+| --- | --- | --- | --- | --- | --- |
+| Commitment to acquire another party’s |  | 承諾收購另一方的所有權 |  |  |  |
+|  | ownership |  | 9,500 |  | – |
+|  |  | 661,068 |  | 108,638 |  |
+
 34. RELATED PARTY TRANSACTIONS AND 34. 關連方交易及結餘
 BALANCES
 Mr. Li Xuechun is the controlling shareholder of the Group. The 李學純先生為本集團控股股東。控股股
 entities controlled by close family members of the controlling 東緊密家庭成員控制的實體被視為關連方。
 shareholder are regarded as related parties.
-| (a) | Transactions with related parties | (a) | 與關連方的交易 | | | | |
-| ---- | --------------------------------- | ---- | ------- | --- | --- | --- | --- |
+
+| (a) | Transactions with related parties | (a) | 與關連方的交易 |
+| --- | --- | --- | --- |
+
 The following transactions occurred with related parties: 與關連方進行以下交易：
-| | | | | | 2025 | | 2024 |
-| --- | ----------------------------------- | --------------- | --- | ------- | ----- | ------- | ----- |
-| | | | | 二零二五年 | | 二零二四年 | |
-| | | | | RMB’000 | | RMB’000 | |
-| | | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | |
-| | Sale of products and rendering of | 向本集團聯營公司出售產品及提供 | | | | | |
-| | services to an associate of the | 服務 | | | | | |
-| | Group | | | | 6,307 | | 3,730 |
-| | Interest charged from an associate | 向本集團聯營公司收取利息 | | | | | |
-| | of the Group | | | | 1,283 | | 2,071 |
-| | Rental income from an associate of | 本集團聯營公司的租賃收益 | | | | | |
-| | the Group | | | | 101 | | – |
+
+|  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | RMB’000 |  | RMB’000 |  |
+|  |  | 人民幣千元 |  | 人民幣千元 |  |
+| Sale of products and rendering of | 向本集團聯營公司出售產品及提供 |  |  |  |  |
+| services to an associate of the | 服務 |  |  |  |  |
+| Group |  |  | 6,307 |  | 3,730 |
+| Interest charged from an associate | 向本集團聯營公司收取利息 |  |  |  |  |
+| of the Group |  |  | 1,283 |  | 2,071 |
+| Rental income from an associate of | 本集團聯營公司的租賃收益 |  |  |  |  |
+| the Group |  |  | 101 |  | – |
+
 向本集團聯營公司購買產品
 Purchase of products from an
-| | associate of the Group | | | | – | 16,178 | |
-| --- | ---------------------- | --- | --- | --- | --- | ------ | --- |
-| | | | | | | | |
-| | | | | | | | |
+
+| associate of the Group | – | 16,178 |
+| --- | --- | --- |
+
 The above related party transactions were conducted with 上述關連方交易均與聯營公司瑞信
-| | the associate Ruixin and Hailin. | | 及海鄰進行。 | | | | |
-| --- | -------------------------------- | --- | ------ | --- | --- | --- | --- |
+
+| the associate Ruixin and Hailin. | 及海鄰進行。 |
+| --- | --- |
 
 166
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -7474,58 +7771,67 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 34. RELATED PARTY TRANSACTIONS AND 34. 關連方交易及結餘（續）
 BALANCES (Continued)
-| (b) Key management compensation | | (b) | 主要管理層酬金 | | | | |
-| -------------------------------- | --- | ---- | ------- | --- | ---- | --- | ---- |
-| | | | | | 2025 | | 2024 |
+
+| (b) Key management compensation | (b) | 主要管理層酬金 |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  | 2025 | 2024 |
+
 二零二四年
 二零二五年
-| | | | | RMB’000 | | RMB’000 | |
-| ----------------------- | --- | ----- | --- | ------- | --- | ------- | --- |
-| | | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | |
-| Salaries and allowances | | 薪金及津貼 | | 22,460 | | 27,243 | |
+
+|  |  | RMB’000 | RMB’000 |
+| --- | --- | --- | --- |
+|  |  | 人民幣千元 | 人民幣千元 |
+| Salaries and allowances | 薪金及津貼 | 22,460 | 27,243 |
+
 Pension costs – defined contribution 退休金成本－定額供款計劃
-| | plan | | | | 824 | | 928 |
-| ------------------------------------------- | ------------------- | ------------- | --------- | ------ | ------- | ------ | ----- |
-| Share options granted to key | | 向主要管理層授出的購股權 | | | | | |
-| | management (Note 9) | （附註9） | | | (345) | | 1,024 |
-| | | | | 22,939 | | 29,195 | |
-| | | | | | | | |
-| (c) Year-end balances with related parties | | (c) | 與關連方的年終結餘 | | | | |
+
+|  | plan |  |  | 824 |  | 928 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Share options granted to key |  | 向主要管理層授出的購股權 |  |  |  |  |
+|  | management (Note 9) | （附註9） |  | (345) |  | 1,024 |
+|  |  |  | 22,939 |  | 29,195 |  |
+| (c) Year-end balances with related parties |  | (c) | 與關連方的年終結餘 |  |  |  |
+
 The following balances are outstanding at the end of the 以下有關與關連方交易的結餘於報
 reporting period in relation to transactions with related 告期末尚未償付：
 parties:
-| Loans due from a related party | | | 應收一名關連方貸款 | | | | |
-| ------------------------------ | --- | --- | --------- | --- | ---- | --- | ---- |
-| | | | | | 2025 | | 2024 |
+
+| Loans due from a related party | 應收一名關連方貸款 |  |  |
+| --- | --- | --- | --- |
+|  |  | 2025 | 2024 |
+
 二零二四年
 二零二五年
-| | | | | RMB’000 | | RMB’000 | |
-| ---------------------------- | --- | --------------- | --- | ------- | --- | ------- | --- |
-| | | | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | |
-| – Loans to an associate of | | －向本集團一間聯營公司提供貸款 | | | | | |
+
+|  |  | RMB’000 | RMB’000 |
+| --- | --- | --- | --- |
+|  |  | 人民幣千元 | 人民幣千元 |
+| – Loans to an associate of | －向本集團一間聯營公司提供貸款 |  |  |
+
 the Group
-| | Beginning of the year | 年初 | | 50,614 | | | 9,698 |
-| --- | --------------------- | ---- | --- | ------ | ----- | ------ | ----- |
-| | Loans advanced | 墊付貸款 | | | 2,672 | 75,500 | |
+
+| Beginning of the year | 年初 | 50,614 |  |  | 9,698 |
+| --- | --- | --- | --- | --- | --- |
+| Loans advanced | 墊付貸款 |  | 2,672 | 75,500 |  |
+
 已收貸款還款
-| | Loan repayments received | | | (38,127) | | (34,584) | |
-| --- | ------------------------------ | -------- | --- | -------- | ----- | -------- | ----- |
-| | Interest charged | 利息支出 | | | 1,283 | | 2,071 |
-| | Interest received | 已收利息 | | | – | (2,071) | |
-| | Provision for impairment loss | 計提減值虧損撥備 | | | | | |
-| | allowance | | | (11,242) | | | – |
-| | | | | | | | |
-| | End of year | 年終 | | | 5,200 | 50,614 | |
-| | | | | | | | |
-| | | | | | | | |
-The balance with related party was unsecured and at 與關連方結餘為無抵押及按與一
-年期貸款優惠利率(LPR)掛鈎的浮
+
+| Loan repayments received |  | (38,127) |  | (34,584) |  |
+| --- | --- | --- | --- | --- | --- |
+| Interest charged | 利息支出 |  | 1,283 |  | 2,071 |
+| Interest received | 已收利息 |  | – | (2,071) |  |
+| Provision for impairment loss | 計提減值虧損撥備 |  |  |  |  |
+| allowance |  | (11,242) |  |  | – |
+| End of year | 年終 |  | 5,200 | 50,614 |  |
+
+The balance with related party was unsecured and at 與關連方結餘為無抵押及按與一年期貸款優惠利率(LPR)掛鈎的浮
 floating interest rate linked to one-year Loan Prime Rate
 (LPR), which was 3.00% as at 31 December 2025 (2024: 動利率計息，於二零二五年十二月
-| 3.10%). | | | 三十一日為3.00%（二零二四年： | | | | |
-| ------- | --- | --- | ----------------- | --- | --- | --- | --- |
+
+| 3.10%). | 三十一日為3.00%（二零二四年： |
+| --- | --- |
+
 3.10%）。
 
 167
@@ -7536,149 +7842,161 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 34. RELATED PARTY TRANSACTIONS AND 34. 關連方交易及結餘（續）
 BALANCES (Continued)
 (c) Year-end balances with related parties (Continued) (c) 與關連方的年終結餘（續）
-| Loans due from a related party (Continued) | | 應收一名關連方貸款（續） | | |
-| ------------------------------------------ | --- | ------------ | --- | --- |
+
+| Loans due from a related party (Continued) | 應收一名關連方貸款（續） |
+| --- | --- |
+
 於二零二五年十二月三十一日，
-As at 31 December 2025, the loans were past due for
-collection as the related party continues to incur losses 由於關連方持續產生虧損且無力
+As at 31 December 2025, the loans were past due for collection as the related party continues to incur losses 由於關連方持續產生虧損且無力
 and is unable to fully repay the loans. A provision of 悉數償還貸款，該筆貸款已逾期。
 RMB11,242,000 was recorded on the balance sheet to 已於資產負債表中計提人民幣
-reflect the increase in credit risk and the remaining balance 11,242,000元以反映信貸風險的增
-加，其餘人民幣5,200,000元餘額已
+reflect the increase in credit risk and the remaining balance 11,242,000元以反映信貸風險的增加，其餘人民幣5,200,000元餘額已
 of RMB5,200,000 was fully received in January 2026.
 於二零二六年一月全數收回。
-| Prepayments | | 預付款項 | | |
-| ----------------------------- | ---------- | ------- | ------- | ---- |
-| | | | 2025 | 2024 |
-| | | 二零二五年 | 二零二四年 | |
-| | | RMB’000 | RMB’000 | |
-| | | 人民幣千元 | 人民幣千元 | |
-| | | | | |
-| – Prepayment for non-current | －非流動資產預付款項 | | | |
-| assets | | | 474 | – |
-| | | | | |
-| | | | | |
+
+| Prepayments |  | 預付款項 |  |  |
+| --- | --- | --- | --- | --- |
+|  |  |  | 2025 | 2024 |
+|  |  | 二零二五年 | 二零二四年 |  |
+|  |  | RMB’000 | RMB’000 |  |
+|  |  | 人民幣千元 | 人民幣千元 |  |
+| – Prepayment for non-current | －非流動資產預付款項 |  |  |  |
+| assets |  |  | 474 | – |
+
 Outstanding-balances arising from sales of goods and 銷售商品及提供服務所產生之未償
-| rendering of services: | | 還餘額： | | |
-| ---------------------- | --- | ---- | ---- | ---- |
-| | | | 2025 | 2024 |
+
+| rendering of services: | 還餘額： |  |  |
+| --- | --- | --- | --- |
+|  |  | 2025 | 2024 |
+
 二零二四年
 二零二五年
-| | | RMB’000 | RMB’000 | |
-| ------------------------- | ------- | ------- | ------- | --- |
-| | | 人民幣千元 | 人民幣千元 | |
-| | | | | |
-| – Trade receivables | －應付貿易賬款 | | 2,840 | – |
-| – Other payables | －其他應付款項 | | (500) | – |
-| | | | | |
-| | | | | |
-| (d) Terms and conditions | (d) | 條款及條件 | | |
+
+|  |  | RMB’000 | RMB’000 |  |
+| --- | --- | --- | --- | --- |
+|  |  | 人民幣千元 | 人民幣千元 |  |
+| – Trade receivables | －應付貿易賬款 |  | 2,840 | – |
+| – Other payables | －其他應付款項 |  | (500) | – |
+| (d) Terms and conditions | (d) | 條款及條件 |  |  |
+
 Transactions conducted with related parties were based on 與關連方進行的交易乃根據有效的
 the price lists in force and terms that would be available to 價格清單以及第三方可獲得的條款
-| third parties. | | 進行。 | | |
-| -------------- | --- | --- | --- | --- |
+
+| third parties. | 進行。 |
+| --- | --- |
 
 168
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 35. EVENTS AFTER THE BALANCE SHEET | | 35. 結算日後事項 | | | | | |
-| ----------------------------------- | --- | ---------- | --- | --- | --- | --- | --- |
+
+| 35. EVENTS AFTER THE BALANCE SHEET | 35. 結算日後事項 |
+| --- | --- |
+
 DATE
 (a) Details of the final dividend proposed are described in Note
 (a) 建議派發末期股息詳情載於附註
-| 31. | | | 31。 | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+
+| 31. | 31。 |
+| --- | --- |
+
 除上文所披露者外，本集團於結算日後
 Save as disclosed above, no significant event of the Group
-| occurred after the balance sheet date. | | 並無發生重大事項。 | | | | | |
-| -------------------------------------- | --- | ----------------- | --- | --- | --- | --- | --- |
-| 36. BALANCE SHEET AND RESERVE | | 36. 本公司資產負債表及儲備變動 | | | | | |
+
+| occurred after the balance sheet date. | 並無發生重大事項。 |
+| --- | --- |
+| 36. BALANCE SHEET AND RESERVE | 36. 本公司資產負債表及儲備變動 |
+
 MOVEMENT OF THE COMPANY
 Balance sheet of the Company
 本公司資產負債表
 As at 31 December
 於十二月三十一日
-| | | | | | 2025 | | 2024 |
-| ------------------------------ | --------- | ---- | --- | --------- | ------- | --------- | ----- |
-| | | | | 二零二五年 | | 二零二四年 | |
-| | | Note | | RMB’000 | | RMB’000 | |
-| | | 附註 | | | | 人民幣千元 | |
-| | | | | 人民幣千元 | | | |
-| ASSETS | 資產 | | | | | | |
-| Non-current assets | 非流動資產 | | | | | | |
-| Property, plant and equipment | 物業、廠房及設備 | | | | 3 | | 7 |
-| Investment in subsidiaries | 於附屬公司的投資 | | | | 460,066 | 460,066 | |
-| Right-of-use assets | 使用權資產 | | | | 1,187 | | 1,589 |
-| | | | | | | | |
-| Total non-current assets | 非流動資產總值 | | | | 461,256 | 461,662 | |
-| | | | | | | | |
-| Current assets | 流動資產 | | | | | | |
-| Loans to subsidiaries | 給予附屬公司的貸款 | | | 1,067,285 | | 1,095,028 | |
-| Due from subsidiaries | 應收附屬公司款項 | | | 3,739,328 | | 3,514,954 | |
-| Deposits and other receivables | 按金及其他應收款項 | | | | 793 | | 1,030 |
+
+|  |  |  |  | 2025 |  | 2024 |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  | 二零二五年 |  | 二零二四年 |  |
+|  |  | Note | RMB’000 |  | RMB’000 |  |
+|  |  | 附註 |  |  | 人民幣千元 |  |
+|  |  |  | 人民幣千元 |  |  |  |
+| ASSETS | 資產 |  |  |  |  |  |
+| Non-current assets | 非流動資產 |  |  |  |  |  |
+| Property, plant and equipment | 物業、廠房及設備 |  |  | 3 |  | 7 |
+| Investment in subsidiaries | 於附屬公司的投資 |  |  | 460,066 | 460,066 |  |
+| Right-of-use assets | 使用權資產 |  |  | 1,187 |  | 1,589 |
+| Total non-current assets | 非流動資產總值 |  |  | 461,256 | 461,662 |  |
+| Current assets | 流動資產 |  |  |  |  |  |
+| Loans to subsidiaries | 給予附屬公司的貸款 |  | 1,067,285 |  | 1,095,028 |  |
+| Due from subsidiaries | 應收附屬公司款項 |  | 3,739,328 |  | 3,514,954 |  |
+| Deposits and other receivables | 按金及其他應收款項 |  |  | 793 |  | 1,030 |
+
 現金及現金等值物
-| Cash and cash equivalents | | | | | 215,071 | 298,858 | |
-| ------------------------- | ------ | --- | --- | --------- | --------- | --------- | --- |
-| Total current assets | 流動資產總值 | | | 5,022,477 | | 4,909,870 | |
-| | | | | | | | |
-| Total assets | 資產總值 | | | 5,483,733 | | 5,371,532 | |
-| | | | | | | | |
+
+| Cash and cash equivalents |  |  | 215,071 | 298,858 |
+| --- | --- | --- | --- | --- |
+| Total current assets | 流動資產總值 | 5,022,477 |  | 4,909,870 |
+| Total assets | 資產總值 | 5,483,733 |  | 5,371,532 |
 
 169
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 36. BALANCE SHEET AND RESERVE | | 36. 本公司資產負債表及儲備變動 | | | | | |
-| ---------------------------------------- | --- | ----------------- | --- | --- | --- | --- | --- |
-| MOVEMENT OF THE COMPANY (Continued) | | （續） | | | | | |
-| Balance sheet of the Company (Continued) | | 本公司資產負債表（續） | | | | | |
+
+| 36. BALANCE SHEET AND RESERVE | 36. 本公司資產負債表及儲備變動 |
+| --- | --- |
+| MOVEMENT OF THE COMPANY (Continued) | （續） |
+| Balance sheet of the Company (Continued) | 本公司資產負債表（續） |
+
 As at 31 December
 於十二月三十一日
-| | | | | | 2025 | | 2024 |
-| --- | --- | --- | --- | --- | ---- | --- | ---- |
+
+| 2025 | 2024 |
+| --- | --- |
+
 二零二四年
 二零二五年
-| | | Note | | RMB’000 | | RMB’000 | |
-| ------ | --- | ---- | --- | ------- | --- | ------- | --- |
-| | | 附註 | | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | |
-| EQUITY | 權益 | | | | | | |
+
+|  |  | Note | RMB’000 | RMB’000 |
+| --- | --- | --- | --- | --- |
+|  |  | 附註 | 人民幣千元 | 人民幣千元 |
+| EQUITY | 權益 |  |  |  |
+
 Capital and reserves attributable 股東應佔股本及儲備
 to the shareholders
-| Share capital | 股本 | | | | 240,840 | | 240,786 |
-| ----------------------------- | ------- | --- | --- | --------- | ------- | --------- | ------- |
-| Share premium | 股份溢價 | | | | 155,360 | | 152,710 |
-| Other reserves | 其他儲備 | (a) | | | 15,980 | | 16,865 |
-| Retained earnings | 保留收益 | (a) | | | | 4,576,714 | |
-| | | | | 3,194,104 | | | |
-| Total equity | 權益總值 | | | 3,606,284 | | 4,987,075 | |
-| | | | | | | | |
-| LIABILITIES | 負債 | | | | | | |
-| Non-current liabilities | 非流動負債 | | | | | | |
-| Lease liabilities | 租賃負債 | | | | 307 | | 1,032 |
-| | | | | | | | |
-| Total non-current liabilities | 非流動負債總額 | | | | 307 | | 1,032 |
-| | | | | | | | |
-| Current liabilities | 流動負債 | | | | | | |
+
+| Share capital | 股本 |  |  | 240,840 |  | 240,786 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Share premium | 股份溢價 |  |  | 155,360 |  | 152,710 |
+| Other reserves | 其他儲備 | (a) |  | 15,980 |  | 16,865 |
+| Retained earnings | 保留收益 | (a) |  |  | 4,576,714 |  |
+|  |  |  | 3,194,104 |  |  |  |
+| Total equity | 權益總值 |  | 3,606,284 |  | 4,987,075 |  |
+| LIABILITIES | 負債 |  |  |  |  |  |
+| Non-current liabilities | 非流動負債 |  |  |  |  |  |
+| Lease liabilities | 租賃負債 |  |  | 307 |  | 1,032 |
+| Total non-current liabilities | 非流動負債總額 |  |  | 307 |  | 1,032 |
+| Current liabilities | 流動負債 |  |  |  |  |  |
+
 應付附屬公司款項
-| Due to subsidiaries | | | | 1,853,367 | | | 359,453 |
-| --------------------------- | ----------- | --- | --- | --------- | ------ | --- | ------- |
-| Lease liabilities | 租賃負債 | | | | 973 | | 710 |
-| Other payables and accruals | 其他應付款項及應計費用 | | | | 22,802 | | 23,262 |
+
+| Due to subsidiaries |  | 1,853,367 |  | 359,453 |
+| --- | --- | --- | --- | --- |
+| Lease liabilities | 租賃負債 |  | 973 | 710 |
+| Other payables and accruals | 其他應付款項及應計費用 |  | 22,802 | 23,262 |
+
 流動負債總額
-| Total current liabilities | | | | 1,877,142 | | | 383,425 |
-| ---------------------------- | ------- | --- | --- | --------- | --- | --------- | ------- |
-| Total liabilities | 負債總額 | | | 1,877,449 | | | 384,457 |
-| | | | | | | | |
-| Total equity and liabilities | 權益及負債總額 | | | 5,483,733 | | 5,371,532 | |
-| | | | | | | | |
-| | | | | | | | |
+
+| Total current liabilities |  | 1,877,142 |  | 383,425 |
+| --- | --- | --- | --- | --- |
+| Total liabilities | 負債總額 | 1,877,449 |  | 384,457 |
+| Total equity and liabilities | 權益及負債總額 | 5,483,733 | 5,371,532 |  |
+
 The balance sheet of the Company was approved by the Board 本公司資產負債表已於二零二六年三月
-| of Directors on 26 March 2026. | | 二十六日經董事會批准。 | | | | | |
-| ------------------------------ | --- | ----------- | --- | --- | --- | --- | --- |
+
+| of Directors on 26 March 2026. | 二十六日經董事會批准。 |
+| --- | --- |
 
 170
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
@@ -7686,86 +8004,95 @@ NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
 36. BALANCE SHEET AND RESERVE 36. 本公司資產負債表及儲備變動
-| MOVEMENT OF THE COMPANY (Continued) | （續） | | | | |
-| ------------------------------------ | ---------- | ------- | --------- | --- | -------- |
-| (a) Reserve movement of the Company | (a) | 本公司儲備變動 | | | |
-| | | | Retained | | Other |
-| | | | earnings | | reserves |
-| | | | 保留收益 | | 其他儲備 |
-| | | | RMB’000 | | RMB’000 |
-| | | | 人民幣千元 | | 人民幣千元 |
-| | | | | | |
-| At 1 January 2024 | 於二零二四年一月一日 | | 5,817,686 | | 15,841 |
+
+| MOVEMENT OF THE COMPANY (Continued) | （續） |  |  |  |
+| --- | --- | --- | --- | --- |
+| (a) Reserve movement of the Company | (a) | 本公司儲備變動 |  |  |
+|  |  |  | Retained | Other |
+|  |  |  | earnings | reserves |
+|  |  |  | 保留收益 | 其他儲備 |
+|  |  |  | RMB’000 | RMB’000 |
+|  |  |  | 人民幣千元 | 人民幣千元 |
+| At 1 January 2024 | 於二零二四年一月一日 |  | 5,817,686 | 15,841 |
+
 年內虧損
-| Loss for the year | | | | (23,453) | – |
-| ------------------------------ | ------------- | --- | ----------- | -------- | ------ |
-| Dividends | 股息 | | (1,217,519) | | – |
-| Employee share option schemes: | 僱員購股權計劃： | | | | |
-| – Value of employee services | －僱員服務價值 | | | – | 1,024 |
-| | | | | | |
-| At 31 December 2024 | 於二零二四年十二月三十一日 | | 4,576,714 | | 16,865 |
-| | | | | | |
-| At 1 January 2025 | 於二零二五年一月一日 | | 4,576,714 | | 16,865 |
-| Loss for the year | 年內虧損 | | | (39,140) | – |
-| Dividends | 股息 | | (1,344,010) | | – |
-| Employee share option schemes: | 僱員購股權計劃： | | | | |
+
+| Loss for the year |  |  | (23,453) | – |
+| --- | --- | --- | --- | --- |
+| Dividends | 股息 | (1,217,519) |  | – |
+| Employee share option schemes: | 僱員購股權計劃： |  |  |  |
+| – Value of employee services | －僱員服務價值 |  | – | 1,024 |
+| At 31 December 2024 | 於二零二四年十二月三十一日 | 4,576,714 |  | 16,865 |
+| At 1 January 2025 | 於二零二五年一月一日 | 4,576,714 |  | 16,865 |
+| Loss for the year | 年內虧損 |  | (39,140) | – |
+| Dividends | 股息 | (1,344,010) |  | – |
+| Employee share option schemes: | 僱員購股權計劃： |  |  |  |
+
 －僱員服務價值
-| – Value of employee services | | | | – | (345) |
-| ---------------------------- | ------------- | --- | --------- | --- | ------ |
-| – Lapse of options issued | －已發行購股權失效 | | | 540 | (540) |
-| | | | | | |
-| At 31 December 2025 | 於二零二五年十二月三十一日 | | 3,194,104 | | 15,980 |
-| | | | | | |
-| | | | | | |
+
+| – Value of employee services |  |  | – | (345) |
+| --- | --- | --- | --- | --- |
+| – Lapse of options issued | －已發行購股權失效 |  | 540 | (540) |
+| At 31 December 2025 | 於二零二五年十二月三十一日 | 3,194,104 |  | 15,980 |
 
 171
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 37. BENEFITS AND INTERESTS OF DIRECTORS | | | | 37. 董事福利及權益 | | | | |
-| --------------------------------------- | --- | --- | --- | ----------- | --- | --- | --- | --- |
+
+| 37. BENEFITS AND INTERESTS OF DIRECTORS | 37. 董事福利及權益 |
+| --- | --- |
+
 (a) Directors’ and chief executive’s emoluments (a) 董事及最高行政人員酬金
 The emoluments of every director for the years ended 31 於截至二零二五年及二零二四年
-| December 2025 and 2024 are set out as below: | | | | | 十二月三十一日止年度，每名董事 | | | |
-| -------------------------------------------- | --- | --- | --- | --- | --------------- | --- | --- | --- |
+
+| December 2025 and 2024 are set out as below: | 十二月三十一日止年度，每名董事 |
+| --- | --- |
+
 的酬金載列如下：
 2025
 二零二五年
 Employer’s
 contribution
-| | | | | Discretionary | | Other | to pension | |
-| ---------------- | --- | --- | ---- | -------------- | -------- | ------ | ----------- | ----- |
-| Name of Director | | | Fees | Salary bonuses | benefits | | scheme | Total |
+
+|  |  | Discretionary |  | Other | to pension |  |
+| --- | --- | --- | --- | --- | --- | --- |
+| Name of Director | Fees | Salary bonuses | benefits |  | scheme | Total |
+
 僱主向退休金
-| 董事姓名 | | | 袍金 | 薪金 酌情花紅 | 其他福利 | | 計劃的供款 | 總計 |
-| -------------------- | -------- | --- | --------------- | ------- | ------- | --- | ------- | ------- |
-| | | | RMB’000 RMB’000 | RMB’000 | RMB’000 | | RMB’000 | RMB’000 |
-| | | | 人民幣千元 人民幣千元 | 人民幣千元 | 人民幣千元 | | 人民幣千元 | 人民幣千元 |
-| | | | | | | | | |
-| Executive Directors: | 執行董事： | | | | | | | |
-| Li, Xuechun | 李學純 | | – | 7,482 | – | – | – | 7,482 |
-| Li, Guangyu | 李廣玉 | | – | 3,131 | – | – | 87 | 3,218 |
-| Li, Deheng | 李德衡 | | – | 2,538 | – | – | 87 | 2,625 |
-| Independent Non- | 獨立非執行董事： | | | | | | | |
+
+| 董事姓名 |  | 袍金 | 薪金 酌情花紅 | 其他福利 |  | 計劃的供款 | 總計 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | RMB’000 RMB’000 | RMB’000 | RMB’000 |  | RMB’000 | RMB’000 |
+|  |  | 人民幣千元 人民幣千元 | 人民幣千元 | 人民幣千元 |  | 人民幣千元 | 人民幣千元 |
+| Executive Directors: | 執行董事： |  |  |  |  |  |  |
+| Li, Xuechun | 李學純 | – | 7,482 | – | – | – | 7,482 |
+| Li, Guangyu | 李廣玉 | – | 3,131 | – | – | 87 | 3,218 |
+| Li, Deheng | 李德衡 | – | 2,538 | – | – | 87 | 2,625 |
+| Independent Non- | 獨立非執行董事： |  |  |  |  |  |  |
+
 executive Directors:
-| Liu, Zhongwei | 劉仲緯 | | 165 | – | – | – | – | 165 |
-| ------------- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Li, Ming | 李銘 | | 165 | – | – | – | – | 165 |
+
+| Liu, Zhongwei | 劉仲緯 | 165 | – | – | – | – | 165 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Li, Ming | 李銘 | 165 | – | – | – | – | 165 |
+
 張友明
-| Zhang, Youming | | | 100 | – | – | – | – | 100 |
-| -------------- | --- | --- | ----- | ------ | --- | --- | ----- | ------ |
-| | | | 430 | 13,151 | – | – | 174 | 13,755 |
-| | | | | | | | | |
-| | | | | | | | | |
+
+| Zhang, Youming | 100 | – | – | – | – | 100 |
+| --- | --- | --- | --- | --- | --- | --- |
+|  | 430 | 13,151 | – | – | 174 | 13,755 |
 
 172
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 37. BENEFITS AND INTERESTS OF DIRECTORS | | | | | 37. 董事福利及權益（續） | | | | |
-| ---------------------------------------- | --- | --- | --- | --- | -------------- | --- | --- | --- | --- |
+
+| 37. BENEFITS AND INTERESTS OF DIRECTORS | 37. 董事福利及權益（續） |
+| --- | --- |
+
 (Continued)
 (a) Directors’ and chief executive’s emoluments (a) 董事及最高行政人員酬金（續）
 (Continued)
@@ -7773,39 +8100,42 @@ For the year ended 31 December 2025 截至二零二五年十二月三十一日�
 二零二四年
 Employer’s
 contribution
-| | | | | | Discretionary | Other | to pension | | |
-| ---------------- | --- | --- | ---- | ------ | -------------- | -------- | ----------- | ------ | ----- |
-| Name of Director | | | Fees | Salary | bonuses | benefits | | scheme | Total |
+
+|  |  |  | Discretionary | Other | to pension |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Name of Director | Fees | Salary | bonuses | benefits |  | scheme | Total |
+
 僱主向退休金
-| 董事姓名 | | | 袍金 | 薪金 | 酌情花紅 | 其他福利 | 計劃的供款 | | 總計 |
-| ---- | --- | ----- | --------------- | --- | ------- | ------- | ------- | --- | ------- |
-| | | | RMB’000 RMB’000 | | RMB’000 | RMB’000 | RMB’000 | | RMB’000 |
-| | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | 人民幣千元 | 人民幣千元 | | 人民幣千元 |
-| | | | | | | | | | |
+
+| 董事姓名 |  | 袍金 | 薪金 | 酌情花紅 | 其他福利 | 計劃的供款 | 總計 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | RMB’000 RMB’000 |  | RMB’000 | RMB’000 | RMB’000 | RMB’000 |
+|  | 人民幣千元 | 人民幣千元 |  | 人民幣千元 | 人民幣千元 | 人民幣千元 | 人民幣千元 |
+
 執行董事：
 Executive Directors:
-| Li, Xuechun | 李學純 | | – | 6,351 | 1,588 | | – | 16 | 7,955 |
-| ----------- | --- | --- | --- | ----- | ----- | --- | --- | --- | ----- |
-| Li, Deheng | 李德衡 | | – | 2,567 | – | | – | 60 | 2,627 |
-| Li, Guangyu | 李廣玉 | | – | 2,277 | – | | – | 60 | 2,337 |
+
+| Li, Xuechun | 李學純 | – | 6,351 | 1,588 | – | 16 | 7,955 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Li, Deheng | 李德衡 | – | 2,567 | – | – | 60 | 2,627 |
+| Li, Guangyu | 李廣玉 | – | 2,277 | – | – | 60 | 2,337 |
+
 獨立非執行董事：
 Independent Non-
 executive Directors:
-| Liu, Zhongwei | 劉仲緯 | | 184 | – | – | | – | – | 184 |
-| -------------- | --- | --- | --- | ------ | ----- | --- | --- | --- | ------ |
-| Li, Ming | 李銘 | | 184 | – | – | | – | – | 184 |
-| Zhang, Youming | 張友明 | | 113 | – | – | | – | – | 113 |
-| | | | | | | | | | |
-| | | | 481 | 11,195 | 1,588 | | – | 136 | 13,400 |
-| | | | | | | | | | |
+
+| Liu, Zhongwei | 劉仲緯 | 184 | – | – | – | – | 184 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Li, Ming | 李銘 | 184 | – | – | – | – | 184 |
+| Zhang, Youming | 張友明 | 113 | – | – | – | – | 113 |
+|  |  | 481 | 11,195 | 1,588 | – | 136 | 13,400 |
+
 Discretionary bonuses are determined based on 酌情花紅乃根據董事的表現釐定。
 performance of the directors.
 截至二零二五年及二零二四年十二
-No payment was made to directors as retirement benefits
-during the years ended 31 December 2025 and 2024. 月三十一日止年度，概無向董事作
-出付款以作為退任福利。
+No payment was made to directors as retirement benefits during the years ended 31 December 2025 and 2024. 月三十一日止年度，概無向董事作出付款以作為退任福利。
 
-阜豐集團有限公司 年報 2025 173
+<!-- p.173 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -7822,11 +8152,9 @@ December 2025 and 2024. 事服務向任何第三方作出付款。
 There are no loans, quasi-loans and other dealings in 截至二零二五年及二零二四年十二
 favour of directors, controlled bodies corporate by and 月三十一日止年度，概無有關以董
 connected entities with such directors during the years 事、該等董事的受控制法團及關連
-ended 31 December 2025 and 2024. 實體為受益人的貸款、準貸款及其
-他交易。
+ended 31 December 2025 and 2024. 實體為受益人的貸款、準貸款及其他交易。
 No director waived or agreed to waive any remuneration for 概無董事放棄或同意放棄截至二零
-the year ended 31 December 2025 and 2024. 二五年及二零二四年十二月三十一
-日止年度的任何薪酬。
+the year ended 31 December 2025 and 2024. 二五年及二零二四年十二月三十一日止年度的任何薪酬。
 (b) Directors’ material interests in transactions, (b) 董事於交易、安排或合約的重大
 arrangements or contracts 權益
 Save as disclosed in Note 34, no significant transactions, 除附註34所披露者外，於年底或年
@@ -7841,347 +8169,404 @@ FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 38. SUBSIDIARIES | | | 38. 附屬公司 | |
-| ---------------- | --- | --- | -------- | --- |
+
+| 38. SUBSIDIARIES | 38. 附屬公司 |
+| --- | --- |
+
 As at 31 December 2025, the Company had direct and indirect 於二零二五年十二月三十一日，本公司
-interests in the following wholly-owned subsidiaries: 於以下全資附屬公司擁有直接及間接權
-益：
-| | Place of incorporation and | | | Principal activities & |
-| ---- | --------------------------- | --- | --------------- | ----------------------- |
-| Name | kind of legal entity | | Paid-up capital | place of operation |
-| 名稱 | 註冊成立地點及法人實體類別 | | 已繳股本 | 主要業務及營業地點 |
-| | | | | |
+interests in the following wholly-owned subsidiaries: 於以下全資附屬公司擁有直接及間接權益：
+
+|  | Place of incorporation and |  | Principal activities & |
+| --- | --- | --- | --- |
+| Name | kind of legal entity | Paid-up capital | place of operation |
+| 名稱 | 註冊成立地點及法人實體類別 | 已繳股本 | 主要業務及營業地點 |
+
 Directly held:
 直接持有：
 Acquest Honour Holdings Limited BVI, limited liability company USD2 Investment holding in BVI
-| | 英屬處女群島，有限責任公司 | | | 2美元 於英屬處女群島的投資控股 |
-| --- | ------------- | --- | --- | ---------------- |
+
+| 英屬處女群島，有限責任公司 | 2美元 於英屬處女群島的投資控股 |
+| --- | --- |
+
 Acquest Honour Holdings Limited
 Shenhua Health Holdings Limited Cayman Islands, limited liability company HKD1 Investment holding in Cayman Islands
-| 神華維康控股有限公司 | 開曼群島，有限責任公司 | | | 1港元 於開曼群島的投資控股 |
-| ---------- | ----------- | --- | --- | -------------- |
+
+| 神華維康控股有限公司 | 開曼群島，有限責任公司 | 1港元 於開曼群島的投資控股 |
+| --- | --- | --- |
+
 Indirectly held:
 間接持有：
 Absolute Divine BVI, limited liability company USD1 Investment holding in BVI
-| Absolute Divine | 英屬處女群島，有限責任公司 | | | 1美元 於英屬處女群島的投資控股 |
-| --------------- | ------------- | --- | --- | ---------------- |
-Baoji Fufeng PRC, limited liability company HKD273,310,000 Manufacture and sales of glutamic
-acid, monosodium glutamate, corn
-refined products, fertilisers and other
-related products in the PRC
-| 寶雞阜豐 | 中國，有限責任公司 | | 273,310,000港元 | 在中國製造及銷售谷氨酸、味精、玉 |
-| ---- | --------- | --- | ------------- | ---------------- |
+
+| Absolute Divine | 英屬處女群島，有限責任公司 | 1美元 於英屬處女群島的投資控股 |
+| --- | --- | --- |
+
+Baoji Fufeng PRC, limited liability company HKD273,310,000 Manufacture and sales of glutamic acid, monosodium glutamate, corn refined products, fertilisers and other related products in the PRC
+
+| 寶雞阜豐 | 中國，有限責任公司 | 273,310,000港元 | 在中國製造及銷售谷氨酸、味精、玉 |
+| --- | --- | --- | --- |
+
 米提煉產品、肥料及其他相關產品
 Beijing Huijinhuaying Commercial PRC, limited liability company RMB21,000,000 Own and operate self-used office
-| Co., Ltd. | | | | building in the PRC |
-| ------------ | --------- | -------------- | --- | ------------------- |
-| 北京匯金華瀛商貿有限公司 | 中國，有限責任公司 | 人民幣21,000,000元 | | 在中國擁有及經營自用的辦公大樓 |
+
+| Co., Ltd. |  |  | building in the PRC |
+| --- | --- | --- | --- |
+| 北京匯金華瀛商貿有限公司 | 中國，有限責任公司 | 人民幣21,000,000元 | 在中國擁有及經營自用的辦公大樓 |
+
 Essential Biotech Inc. US, limited liability company USD0 Sales of biological products in the US
-| Essential Biotech Inc. | 美國，有限責任公司 | | | 0美元 在美國銷售生物產品 |
-| ---------------------- | --------- | --- | --- | ------------- |
+
+| Essential Biotech Inc. | 美國，有限責任公司 | 0美元 在美國銷售生物產品 |
+| --- | --- | --- |
+
 Expand Base BVI, limited liability company USD1 Investment holding in BVI
-| | 英屬處女群島，有限責任公司 | | | 1美元 於英屬處女群島的投資控股 |
-| --- | ------------- | --- | --- | ---------------- |
+
+| 英屬處女群島，有限責任公司 | 1美元 於英屬處女群島的投資控股 |
+| --- | --- |
+
 Expand Base
 First Biotech Inc. US, limited liability company USD100,000 Sales of biological products in the US
-| First Biotech Inc. | 美國，有限責任公司 | | 100,000美元 | 在美國銷售生物產品 |
-| ------------------ | --------- | --- | --------- | --------- |
+
+| First Biotech Inc. | 美國，有限責任公司 | 100,000美元 | 在美國銷售生物產品 |
+| --- | --- | --- | --- |
+
 Fufeng (Hong Kong) Import and Hong Kong, limited liability company HKD2 Sales of monosodium glutamate and
-| Export Co., Ltd. | | | | other related products abroad |
-| ---------------- | --------- | --- | --- | ----------------------------- |
-| 阜豐（香港）進出口有限公司 | 香港，有限責任公司 | | | 2港元 在海外銷售味精及其他相關產品 |
-| | | | | |
+
+| Export Co., Ltd. |  | other related products abroad |
+| --- | --- | --- |
+| 阜豐（香港）進出口有限公司 | 香港，有限責任公司 | 2港元 在海外銷售味精及其他相關產品 |
 
 175
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 38. SUBSIDIARIES (Continued) | | | 38. 附屬公司（續） | |
-| ---------------------------- | --------------------------- | --- | --------------- | ----------------------- |
-| | Place of incorporation and | | | Principal activities & |
-| Name | kind of legal entity | | Paid-up capital | place of operation |
-| 名稱 | 註冊成立地點及法人實體類別 | | 已繳股本 | 主要業務及營業地點 |
-| | | | | |
+
+| 38. SUBSIDIARIES (Continued) |  | 38. 附屬公司（續） |  |
+| --- | --- | --- | --- |
+|  | Place of incorporation and |  | Principal activities & |
+| Name | kind of legal entity | Paid-up capital | place of operation |
+| 名稱 | 註冊成立地點及法人實體類別 | 已繳股本 | 主要業務及營業地點 |
+
 Fufeng International (Asia-Euro) Singapore, private limited liability company SGD100 Investment holding in Singapore
 Pte. Ltd. (a)
 Fufeng Internationa（l Asia-Euro） 新加坡，私人有限責任公司 100新加坡元 於新加坡的投資控股
 Pte. Ltd. (a)
-Fufeng International Trade Hong Kong, limited liability company HKD2 Investment holding in Hong Kong
-(Hong Kong) Limited
-| 阜豐國際貿易（香港）有限公司 | 香港，有限責任公司 | | | 2港元 於香港的投資控股 |
-| -------------- | --------- | --- | --- | ------------ |
-Fufeng Marketing Co., Ltd. PRC, limited liability company RMB220,000,000 Sales of monosodium glutamate and
-other related products in the PRC
-| 阜豐營銷有限公司 | 中國，有限責任公司 | 人民幣220,000,000元 | | 在中國銷售味精及其他相關產品 |
-| -------- | --------- | --------------- | --- | -------------- |
-Fufeng Singapore Singapore, private limited liability company SGD1,300,000 Sales of monosodium glutamate
-and other related products in the
+Fufeng International Trade Hong Kong, limited liability company HKD2 Investment holding in Hong Kong (Hong Kong) Limited
+
+| 阜豐國際貿易（香港）有限公司 | 香港，有限責任公司 | 2港元 於香港的投資控股 |
+| --- | --- | --- |
+
+Fufeng Marketing Co., Ltd. PRC, limited liability company RMB220,000,000 Sales of monosodium glutamate and other related products in the PRC
+
+| 阜豐營銷有限公司 | 中國，有限責任公司 | 人民幣220,000,000元 | 在中國銷售味精及其他相關產品 |
+| --- | --- | --- | --- |
+
+Fufeng Singapore Singapore, private limited liability company SGD1,300,000 Sales of monosodium glutamate and other related products in the
 Southeast Asia
-| Fufeng Singapore | 新加坡，私人有限責任公司 | 1,300,000新加坡元 | | 在東南亞銷售味精及其他相關產品 |
-| ---------------- | ------------ | ------------- | --- | --------------- |
+
+| Fufeng Singapore | 新加坡，私人有限責任公司 | 1,300,000新加坡元 | 在東南亞銷售味精及其他相關產品 |
+| --- | --- | --- | --- |
+
 Fufeng USA US, limited liability company USD100,000 Sales of biological products in the US
-| Fufeng USA | 美國，有限責任公司 | | 100,000美元 | 在美國銷售生物產品 |
-| ---------- | --------- | --- | --------- | --------- |
+
+| Fufeng USA | 美國，有限責任公司 | 100,000美元 | 在美國銷售生物產品 |
+| --- | --- | --- | --- |
+
 Fufeng USA Holdings Limited Hong Kong, limited liability company HKD2 Investment holding in Hong Kong
-| | 香港，有限責任公司 | | | 2港元 於香港的投資控股 |
-| --- | --------- | --- | --- | ------------ |
+
+| 香港，有限責任公司 | 2港元 於香港的投資控股 |
+| --- | --- |
+
 Fufeng USA Holdings Limited
 Full Health Global Limited BVI, limited liability company USD100 Investment holding in BVI
-| Full Health Global Limited | 英屬處女群島，有限責任公司 | | 100美元 | 於英屬處女群島的投資控股 |
-| -------------------------- | ------------- | --- | ----- | ------------ |
+
+| Full Health Global Limited | 英屬處女群島，有限責任公司 | 100美元 | 於英屬處女群島的投資控股 |
+| --- | --- | --- | --- |
+
 Full Health Hong Kong Hong Kong, limited liability company HKD100 Investment holding in Hong Kong
-| 康滿香港 | 香港，有限責任公司 | | 100港元 | 於香港的投資控股 |
-| ---- | --------- | --- | ----- | -------- |
+
+| 康滿香港 | 香港，有限責任公司 | 100港元 | 於香港的投資控股 |
+| --- | --- | --- | --- |
+
 Full Profit Hong Kong, limited liability company HKD2 Investment holding in Hong Kong
-| 豐盈 | 香港，有限責任公司 | | | 2港元 於香港的投資控股 |
-| --- | --------- | --- | --- | ------------ |
-| | | | | |
+
+| 豐盈 | 香港，有限責任公司 | 2港元 於香港的投資控股 |
+| --- | --- | --- |
 
 176
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 38. SUBSIDIARIES (Continued) | | 38. 附屬公司（續） | | |
-| ---------------------------- | --------------------------- | --------------- | ---- | ----------------------- |
-| | Place of incorporation and | | | Principal activities & |
-| Name | kind of legal entity | Paid-up capital | | place of operation |
-| 名稱 | 註冊成立地點及法人實體類別 | | 已繳股本 | 主要業務及營業地點 |
-| | | | | |
-Hulunbeier Fufeng PRC, limited liability company RMB1,000,000,000 Manufacture and sales of starch,
-starch sweeteners, amino acids,
-monosodium glutamate, glutamic
-acid, fertilisers and other related
-products in the PRC
-| 呼倫貝爾阜豐 | 中國，有限責任公司 | 人民幣1,000,000,000 元 | | 在中國製造及銷售澱粉、澱粉甜味劑、 |
-| ------ | --------- | ------------------ | --- | ----------------- |
+
+| 38. SUBSIDIARIES (Continued) |  | 38. 附屬公司（續） |  |  |
+| --- | --- | --- | --- | --- |
+|  | Place of incorporation and |  |  | Principal activities & |
+| Name | kind of legal entity | Paid-up capital |  | place of operation |
+| 名稱 | 註冊成立地點及法人實體類別 |  | 已繳股本 | 主要業務及營業地點 |
+
+Hulunbeier Fufeng PRC, limited liability company RMB1,000,000,000 Manufacture and sales of starch, starch sweeteners, amino acids, monosodium glutamate, glutamic acid, fertilisers and other related products in the PRC
+
+| 呼倫貝爾阜豐 | 中國，有限責任公司 | 人民幣1,000,000,000 元 | 在中國製造及銷售澱粉、澱粉甜味劑、 |
+| --- | --- | --- | --- |
+
 氨基酸、味精、谷氨酸、化肥及其
 他相關產品
 Hulunbeier Rich Source Supply PRC, limited liability company RMB300,000,000 Provide logistics service and sales of
-| Chain Co., Ltd. | | | | related products in the PRC |
-| --------------- | --------- | --------------- | --- | --------------------------- |
-| 呼倫貝爾豐源供應鏈有限公司 | 中國，有限責任公司 | 人民幣300,000,000元 | | 在中國提供物流服務及銷售相關產品 |
+
+| Chain Co., Ltd. |  |  | related products in the PRC |
+| --- | --- | --- | --- |
+| 呼倫貝爾豐源供應鏈有限公司 | 中國，有限責任公司 | 人民幣300,000,000元 | 在中國提供物流服務及銷售相關產品 |
+
 Hulunbeier Shengmin Agricultural PRC, limited liability company RMB10,000,000 Does not carry out any business
-| Development Co., Ltd. | | | | activities currently |
-| --------------------- | --------- | -------------- | --- | -------------------- |
-| 呼倫貝爾市晟民農業開發有限 | 中國，有限責任公司 | 人民幣10,000,000元 | | 目前並無開展任何業務活動 |
+
+| Development Co., Ltd. |  |  | activities currently |
+| --- | --- | --- | --- |
+| 呼倫貝爾市晟民農業開發有限 | 中國，有限責任公司 | 人民幣10,000,000元 | 目前並無開展任何業務活動 |
+
 責任公司
-IM Fufeng PRC, limited liability company HKD640,000,000 Manufacture and sales of glutamic
-acid, monosodium glutamate, corn
-refined products, xanthan gum,
-fertilisers, starch sweeteners and
-other related products, autoclaved
-aerated concrete block in the PRC
-| 內蒙古阜豐 | 中國，有限責任公司 | 640,000,000港元 | | 在中國製造及銷售谷氨酸、味精、玉 |
-| ----- | --------- | ------------- | --- | ---------------- |
+IM Fufeng PRC, limited liability company HKD640,000,000 Manufacture and sales of glutamic acid, monosodium glutamate, corn refined products, xanthan gum, fertilisers, starch sweeteners and other related products, autoclaved aerated concrete block in the PRC
+
+| 內蒙古阜豐 | 中國，有限責任公司 | 640,000,000港元 | 在中國製造及銷售谷氨酸、味精、玉 |
+| --- | --- | --- | --- |
+
 米提煉產品、黃原膠、肥料、澱粉
 甜味劑及其他相關產品、蒸壓加氣
 混凝土磚
 Inner Mongolia Wofeng Agriculture PRC, limited liability company RMB40,000,000 Sales of fertilisers and other related
-| Development Co., Ltd. | | | | products in the PRC |
-| --------------------- | --------- | -------------- | --- | ------------------- |
-| 內蒙古沃豐農業發展有限公司 | 中國，有限責任公司 | 人民幣40,000,000元 | | 在中國銷售肥料及其他相關產品 |
+
+| Development Co., Ltd. |  |  | products in the PRC |
+| --- | --- | --- | --- |
+| 內蒙古沃豐農業發展有限公司 | 中國，有限責任公司 | 人民幣40,000,000元 | 在中國銷售肥料及其他相關產品 |
+
 Inner Mongolia Xiangfeng chemical PRC, limited liability company RMB100,000,000 Sales of synthetic ammonia in the PRC
 Co., Ltd.
-| 內蒙古翔豐化工有限公司 | 中國，有限責任公司 | 人民幣100,000,000元 | | 在中國銷售合成氨 |
-| ----------- | --------- | --------------- | --- | -------- |
-| | | | | |
+
+| 內蒙古翔豐化工有限公司 | 中國，有限責任公司 | 人民幣100,000,000元 | 在中國銷售合成氨 |
+| --- | --- | --- | --- |
 
 177
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 38. SUBSIDIARIES (Continued) | | | 38. 附屬公司（續） | |
-| ---------------------------- | --------------------------- | --- | --------------- | ----------------------- |
-| | Place of incorporation and | | | Principal activities & |
-| Name | kind of legal entity | | Paid-up capital | place of operation |
-| 名稱 | 註冊成立地點及法人實體類別 | | 已繳股本 | 主要業務及營業地點 |
-| | | | | |
-Longjiang Fufeng PRC, limited liability company RMB1,300,000,000 Manufacture and sales of threonine,
-lysine, starch sweeteners, amino
-acids and other related products in
-the PRC
-| 龍江阜豐 | 中國，有限責任公司 | 人民幣1,300,000,000元 | | 在中國生產及銷售蘇氨酸、賴氨酸、 |
-| ---- | --------- | ----------------- | --- | ---------------- |
+
+| 38. SUBSIDIARIES (Continued) |  | 38. 附屬公司（續） |  |
+| --- | --- | --- | --- |
+|  | Place of incorporation and |  | Principal activities & |
+| Name | kind of legal entity | Paid-up capital | place of operation |
+| 名稱 | 註冊成立地點及法人實體類別 | 已繳股本 | 主要業務及營業地點 |
+
+Longjiang Fufeng PRC, limited liability company RMB1,300,000,000 Manufacture and sales of threonine, lysine, starch sweeteners, amino acids and other related products in the PRC
+
+| 龍江阜豐 | 中國，有限責任公司 | 人民幣1,300,000,000元 | 在中國生產及銷售蘇氨酸、賴氨酸、 |
+| --- | --- | --- | --- |
+
 澱粉甜味劑、氨基酸及其他相關
 產品
 Power Sword International Limited BVI, limited liability company USD1 Investment holding in BVI
 Power Sword International Limited 英屬處女群島，有限責任公司 1美元 於英屬處女群島的投資控股
 Profit Champion International Hong Kong, limited liability company HKD2 Investment holding in Hong Kong
 Limited
-| 凱溢國際有限公司 | 香港，有限責任公司 | | | 2港元 於香港的投資控股 |
-| -------- | --------- | --- | --- | ------------ |
+
+| 凱溢國際有限公司 | 香港，有限責任公司 | 2港元 於香港的投資控股 |
+| --- | --- | --- |
+
 Profit Royalty Limited Hong Kong, limited liability company HKD1 Investment holding in Hong Kong
-| 盈御有限公司 | 香港，有限責任公司 | | | 1港元 於香港的投資控股 |
-| ------ | --------- | --- | --- | ------------ |
+
+| 盈御有限公司 | 香港，有限責任公司 | 1港元 於香港的投資控股 |
+| --- | --- | --- |
+
 Qingdao Hongfeng International PRC, limited liability company RMB10,000,000 Own and operate self-used office
-| Trade Co., Ltd. | | | | building in the PRC |
-| --------------- | --------- | -------------- | --- | ------------------- |
-| 青島鴻豐國際貿易有限公司 | 中國，有限責任公司 | 人民幣10,000,000元 | | 在中國擁有及經營自用的辦公大樓 |
+
+| Trade Co., Ltd. |  |  | building in the PRC |
+| --- | --- | --- | --- |
+| 青島鴻豐國際貿易有限公司 | 中國，有限責任公司 | 人民幣10,000,000元 | 在中國擁有及經營自用的辦公大樓 |
+
 Qingdao Huanwan Kaifeng PRC, limited liability company RMB 200,000,000 Sales of food additives and feed raw
-| International Trade Co., Ltd. | | | | materials in the PRC |
-| ----------------------------- | --------- | --------------- | --- | -------------------- |
-| 青島環灣凱豐國際貿易有限公司 | 中國，有限責任公司 | 人民幣200,000,000元 | | 在中國銷售食品添加劑及飼料原材料 |
+
+| International Trade Co., Ltd. |  |  | materials in the PRC |
+| --- | --- | --- | --- |
+| 青島環灣凱豐國際貿易有限公司 | 中國，有限責任公司 | 人民幣200,000,000元 | 在中國銷售食品添加劑及飼料原材料 |
+
 Qingdao Yuemei Cosmetics Co., PRC, limited liability company RMB15,843,000 Sales of cosmetic products in the PRC
 Ltd.
-| 青島悅美生活化妝品有限公司 | 中國，有限責任公司 | 人民幣15,843,000元 | | 在中國銷售化妝品 |
-| ------------- | --------- | -------------- | --- | -------- |
+
+| 青島悅美生活化妝品有限公司 | 中國，有限責任公司 | 人民幣15,843,000元 | 在中國銷售化妝品 |
+| --- | --- | --- | --- |
+
 Qingdao Wanchuang International PRC, limited liability company RMB0 Sales of monosodium glutamate and
-| Trading Co., Ltd. | | | | other related products abroad and |
-| ----------------- | --- | --- | --- | ---------------------------------- |
+
+| Trading Co., Ltd. | other related products abroad and |
+| --- | --- |
+
 exports of goods
-| 青島萬創國際經貿有限公司 | 中國，有限責任公司 | | 人民幣0元 | 向海外銷售味精及其他相關產品以及 |
-| ------------ | --------- | --- | ----- | ---------------- |
+
+| 青島萬創國際經貿有限公司 | 中國，有限責任公司 | 人民幣0元 | 向海外銷售味精及其他相關產品以及 |
+| --- | --- | --- | --- |
+
 出口貨品
-| | | | | |
-| --- | --- | --- | --- | --- |
 
 178
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 38. SUBSIDIARIES (Continued) | | | 38. 附屬公司（續） | |
-| ---------------------------- | --------------------------- | --- | --------------- | ----------------------- |
-| | Place of incorporation and | | | Principal activities & |
-| Name | kind of legal entity | | Paid-up capital | place of operation |
-| 名稱 | 註冊成立地點及法人實體類別 | | 已繳股本 | 主要業務及營業地點 |
-| | | | | |
+
+| 38. SUBSIDIARIES (Continued) |  | 38. 附屬公司（續） |  |
+| --- | --- | --- | --- |
+|  | Place of incorporation and |  | Principal activities & |
+| Name | kind of legal entity | Paid-up capital | place of operation |
+| 名稱 | 註冊成立地點及法人實體類別 | 已繳股本 | 主要業務及營業地點 |
+
 Qiqihar Hefeng Investment Center PRC, limited liability company RMB0 Does not carry out any business
-| (Limited partnership) | | | | activities currently |
-| --------------------- | --------- | --- | ----- | -------------------- |
-| 齊齊哈爾市鶴豐投資中心 | 中國，有限責任公司 | | 人民幣0元 | 目前並無開展任何業務活動 |
+
+| (Limited partnership) |  |  | activities currently |
+| --- | --- | --- | --- |
+| 齊齊哈爾市鶴豐投資中心 | 中國，有限責任公司 | 人民幣0元 | 目前並無開展任何業務活動 |
+
 （有限合夥）
 Qiqihar Longjiang Li Feng Supply PRC, limited liability company RMB5,000,000 Provide logistics service in the PRC
 Chain Co., Ltd. (formerly named
 as Qiqihar Lifeng Logistics Co.,
 Ltd.)
-| 齊齊哈爾龍江利豐供應鏈有限 | 中國，有限責任公司 | 人民幣5,000,000元 | | 在中國提供物流服務 |
-| -------------- | --------- | ------------- | --- | --------- |
+
+| 齊齊哈爾龍江利豐供應鏈有限 | 中國，有限責任公司 | 人民幣5,000,000元 | 在中國提供物流服務 |
+| --- | --- | --- | --- |
+
 公司（曾用名：齊齊哈爾利豐
 物流有限公司）
 Qingdao Shengfeng Biotechnology PRC, limited liability company RMB0 Sales of xanthan gum and other related
-| Co., Ltd.(formerly named as | | | | products in the PRC |
-| ---------------------------- | --- | --- | --- | ------------------- |
+
+| Co., Ltd.(formerly named as | products in the PRC |
+| --- | --- |
+
 Qingdao Huanwan Shengfeng
 International Trade Co., Ltd.)
-| 青島晟豐生物科技有限公司（曾 | 中國，有限責任公司 | | 人民幣0元 | 在中國銷售黃原膠及其他相關產品 |
-| -------------- | --------- | --- | ----- | --------------- |
+
+| 青島晟豐生物科技有限公司（曾 | 中國，有限責任公司 | 人民幣0元 | 在中國銷售黃原膠及其他相關產品 |
+| --- | --- | --- | --- |
+
 用名：青島環灣晟豐國際貿易
 有限公司）
 Qiqihar Shengfeng Heating Co., PRC, limited liability company RMB3,000,000 Provide heating service in the PRC
 Ltd.
-| 齊齊哈爾盛豐供熱有限公司 | 中國，有限責任公司 | 人民幣3,000,000元 | | 在中國提供供熱服務 |
-| ------------ | --------- | ------------- | --- | --------- |
+
+| 齊齊哈爾盛豐供熱有限公司 | 中國，有限責任公司 | 人民幣3,000,000元 | 在中國提供供熱服務 |
+| --- | --- | --- | --- |
+
 Seres Biotech B.V. Netherlands, limited liability company EUR 500,000 Sales of lysine and amino acids in
 Netherlands
-| Seres Biotech B.V. | 荷蘭，有限責任公司 | | 500,000歐元 | 在荷蘭銷售賴氨酸及氨基酸 |
-| ------------------ | --------- | --- | --------- | ------------ |
-Shandong Fufeng PRC, limited liability company RMB443,000,000 Manufacture and sales of glutamic
-acid, monosodium glutamate, corn
-refined products, xanthan gum,
-fertilisers, starch sweetener and
-other related products in the PRC
-| 山東阜豐 | 中國，有限責任公司 | 人民幣443,000,000元 | | 在中國製造及銷售谷氨酸、味精、玉 |
-| ---- | --------- | --------------- | --- | ---------------- |
+
+| Seres Biotech B.V. | 荷蘭，有限責任公司 | 500,000歐元 | 在荷蘭銷售賴氨酸及氨基酸 |
+| --- | --- | --- | --- |
+
+Shandong Fufeng PRC, limited liability company RMB443,000,000 Manufacture and sales of glutamic acid, monosodium glutamate, corn refined products, xanthan gum, fertilisers, starch sweetener and other related products in the PRC
+
+| 山東阜豐 | 中國，有限責任公司 | 人民幣443,000,000元 | 在中國製造及銷售谷氨酸、味精、玉 |
+| --- | --- | --- | --- |
+
 米提煉產品、黃原膠、肥料、澱粉
 甜味劑及其他相關產品
-| | | | | |
-| --- | --- | --- | --- | --- |
 
 179
 阜豐集團有限公司 年報 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 38. SUBSIDIARIES (Continued) | | 38. 附屬公司（續） | | |
-| ---------------------------- | --------------------------- | --------------- | ---- | ----------------------- |
-| | Place of incorporation and | | | Principal activities & |
-| Name | kind of legal entity | Paid-up capital | | place of operation |
-| 名稱 | 註冊成立地點及法人實體類別 | | 已繳股本 | 主要業務及營業地點 |
-| | | | | |
+
+| 38. SUBSIDIARIES (Continued) |  | 38. 附屬公司（續） |  |  |
+| --- | --- | --- | --- | --- |
+|  | Place of incorporation and |  |  | Principal activities & |
+| Name | kind of legal entity | Paid-up capital |  | place of operation |
+| 名稱 | 註冊成立地點及法人實體類別 |  | 已繳股本 | 主要業務及營業地點 |
+
 Shandong Fufeng Biotechnology PRC, limited liability company RMB5,500,000 Biological techniques research and
-| Development Company Limited | | | | development, promotion and |
-| --------------------------- | --- | --- | --- | --------------------------- |
+
+| Development Company Limited | development, promotion and |
+| --- | --- |
+
 industrialisation of new biological
 techniques and achievements,
 information services of biological
 technique in the PRC
-| 山東阜豐生物科技開發有限公司 | 中國，有限責任公司 | 人民幣5,500,000元 | | 在中國研究及開發生物技術、推廣新 |
-| -------------- | --------- | ------------- | --- | ---------------- |
+
+| 山東阜豐生物科技開發有限公司 | 中國，有限責任公司 | 人民幣5,500,000元 | 在中國研究及開發生物技術、推廣新 |
+| --- | --- | --- | --- |
+
 生物技術及成果並將其工業化，以
 及有關生物技術的信息服務
-Shengtai Biotech Co., Ltd. (b) Kazakhstan, limited liability company KZT103,648,335,000 Manufacture and sales of threonine,
-amino acids and other related
-products in Kazakhstan
-Shengtai Biotech Co., Ltd. (b) 哈薩克斯坦，有限責任公司 103,648,335,000堅戈 在哈薩克斯坦製造及銷售蘇氨酸、氨
-基酸及其他相關產品
-Sinian Biotech Co., Ltd. Vietnam, limited liability company VND11,885,000,000 Sales of starch sweeteners, lysine and
-xanthan gum in Vietnam
-Sinian Biotech Co., Ltd. 越南，有限責任公司 11,885,000,000越南盾 在越南銷售澱粉甜味劑、賴氨酸及
-黃原膠
+Shengtai Biotech Co., Ltd. (b) Kazakhstan, limited liability company KZT103,648,335,000 Manufacture and sales of threonine, amino acids and other related products in Kazakhstan
+Shengtai Biotech Co., Ltd. (b) 哈薩克斯坦，有限責任公司 103,648,335,000堅戈 在哈薩克斯坦製造及銷售蘇氨酸、氨基酸及其他相關產品
+Sinian Biotech Co., Ltd. Vietnam, limited liability company VND11,885,000,000 Sales of starch sweeteners, lysine and xanthan gum in Vietnam
+Sinian Biotech Co., Ltd. 越南，有限責任公司 11,885,000,000越南盾 在越南銷售澱粉甜味劑、賴氨酸及黃原膠
 Starry Horizon International Limited BVI, limited liability company USD1 Investment holding in BVI
 Starry Horizon International Limited 英屬處女群島，有限責任公司 1美元 於英屬處女群島的投資控股
 Summit Challenge Limited BVI, limited liability company USD1 Investment holding in BVI
-| | 英屬處女群島，有限責任公司 | | | 1美元 於英屬處女群島的投資控股 |
-| --- | ------------- | --- | --- | ---------------- |
+
+| 英屬處女群島，有限責任公司 | 1美元 於英屬處女群島的投資控股 |
+| --- | --- |
+
 Summit Challenge Limited
 Trans-Asia Hong Kong, limited liability company HKD2 Investment holding in Hong Kong
-| 環亞 | 香港，有限責任公司 | | | 2港元 於香港的投資控股 |
-| --- | --------- | --- | --- | ------------ |
+
+| 環亞 | 香港，有限責任公司 | 2港元 於香港的投資控股 |
+| --- | --- | --- |
+
 Team Praise Limited Hong Kong, limited liability company HKD1 Investment holding in Hong Kong
-| 天頌有限公司 | 香港，有限責任公司 | | | 1港元 於香港的投資控股 |
-| ------ | --------- | --- | --- | ------------ |
-Xinjiang Fufeng PRC, limited liability company RMB500,000,000 Manufacture and sales of amino acids,
-xanthan gum and other related
-products in the PRC
-| 新疆阜豐 | 中國，有限責任公司 | 人民幣500,000,000元 | | 在中國製造及銷售氨基酸、黃原膠及 |
-| ---- | --------- | --------------- | --- | ---------------- |
+
+| 天頌有限公司 | 香港，有限責任公司 | 1港元 於香港的投資控股 |
+| --- | --- | --- |
+
+Xinjiang Fufeng PRC, limited liability company RMB500,000,000 Manufacture and sales of amino acids, xanthan gum and other related products in the PRC
+
+| 新疆阜豐 | 中國，有限責任公司 | 人民幣500,000,000元 | 在中國製造及銷售氨基酸、黃原膠及 |
+| --- | --- | --- | --- |
+
 其他相關產品
-| | | | | |
-| --- | --- | --- | --- | --- |
 
 180
 FUFENG GROUP LIMITED ANNUAL REPORT 2025
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-| 38. SUBSIDIARIES (Continued) | | 38. 附屬公司（續） | | |
-| ---------------------------- | --------------------------- | --------------- | ---- | ----------------------- |
-| | Place of incorporation and | | | Principal activities & |
-| Name | kind of legal entity | Paid-up capital | | place of operation |
-| 名稱 | 註冊成立地點及法人實體類別 | | 已繳股本 | 主要業務及營業地點 |
-| | | | | |
-Zhalantun Puhui Qianjia Real PRC, limited liability company RMB5,000,000 Development and sales of real estate in
-| Estate Development Co., Ltd. | | | | the PRC |
-| ---------------------------- | --------- | -------------- | --- | ----------- |
-| 紮蘭屯市普惠千家房地產開發 | 中國，有限責任公司 | 人民幣5,000,000 元 | | 在中國開發及銷售房地產 |
-有限公司
-| | | | | |
+
+| 38. SUBSIDIARIES (Continued) |  | 38. 附屬公司（續） |  |  |
 | --- | --- | --- | --- | --- |
+|  | Place of incorporation and |  |  | Principal activities & |
+| Name | kind of legal entity | Paid-up capital |  | place of operation |
+| 名稱 | 註冊成立地點及法人實體類別 |  | 已繳股本 | 主要業務及營業地點 |
+
+Zhalantun Puhui Qianjia Real PRC, limited liability company RMB5,000,000 Development and sales of real estate in
+
+| Estate Development Co., Ltd. |  |  | the PRC |
+| --- | --- | --- | --- |
+| 紮蘭屯市普惠千家房地產開發 | 中國，有限責任公司 | 人民幣5,000,000 元 | 在中國開發及銷售房地產 |
+
+有限公司
 (a) Fufeng Internationa（l Asia-Euro）Pte.
 (a) Fufeng International (Asia-Euro) Pte. Ltd. was established
-on 25 February 2025, with a registered capital of SGD100 Ltd.成立於二零二五年二月二十五
-日，註冊資本為100新加坡元，實
+on 25 February 2025, with a registered capital of SGD100 Ltd.成立於二零二五年二月二十五日，註冊資本為100新加坡元，實
 and paid-up capital of SGD100. It is wholly owned by
 Fufeng (Hong Kong) Import and Export Co., Ltd. 繳資本為100新加坡元。其由阜豐
 （香港）進出口有限公司全資擁有。
 (b) Shengtai Biotech Co., Ltd. was established on 5 March (b) Shengtai Biotech Co., Ltd.成立於
 二零二五年三月五日，註冊資本為
-2025, with a registered capital of KZT176,920,975,000 and
-paid-up capital of KZT 103,648,335,000. It is wholly owned 176,920,975,000堅戈，實繳資本為
-| by Seres Biotech B.V. | | | 103,648,335,000堅戈。其由Seres | |
-| --------------------- | --- | --- | -------------------------- | --- |
+2025, with a registered capital of KZT176,920,975,000 and paid-up capital of KZT 103,648,335,000. It is wholly owned 176,920,975,000堅戈，實繳資本為
+
+| by Seres Biotech B.V. | 103,648,335,000堅戈。其由Seres |
+| --- | --- |
+
 Biotech B.V.全資擁有。
 於本年度，本集團附屬公司Golden
-| (c) During the year, Golden Fufeng Fertilizer Co., Ltd., a | | | (c) | |
-| ------------------------------------------------------------ | --- | --- | ---- | --- |
+
+| (c) During the year, Golden Fufeng Fertilizer Co., Ltd., a | (c) |
+| --- | --- |
+
 subsidiary of the Group was deregistered pursuant to the Fufeng Fertilizer Co., Ltd.已根據相
 approval of the relevant regulatory authority. 關監管機關批准辦理註銷登記。
 
-阜豐集團有限公司 年報 2025 181
+<!-- p.181 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -8204,9 +8589,7 @@ the entity and has the ability to affect those returns 享有可變回報的權�
 through its power to direct the activities of the entity. 力透過控制該實體活動的權力
 Subsidiaries are fully consolidated from the date on 影響此等回報時，本集團即控
 which control is transferred to the Group. They are 制該實體。附屬公司在控制權
-deconsolidated from the date that control ceases. 轉移至本集團之日起全部合併
-入賬。附屬公司在控制權終止
-之日起停止合併入賬。
+deconsolidated from the date that control ceases. 轉移至本集團之日起全部合併入賬。附屬公司在控制權終止之日起停止合併入賬。
 Inter-company transactions, balances and unrealised 公司間交易、結餘及本集團旗
 gains on transactions between Group companies 下公司之間的交易未變現利得
 are eliminated. Unrealised losses are also eliminated 均予以抵銷。未變現虧損亦會
@@ -8224,7 +8607,7 @@ Investments in associates are accounted for using 的股權。於聯營公司的
 the equity method of accounting (see (iii) below), after 初按成本確認，之後以權益會
 initially being recognised at cost. 計法入賬（見下文(iii)）。
 
-182 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.182 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
@@ -8248,8 +8631,7 @@ accounted investment equals or exceeds its interest 虧損等於或超過其於�
 in the entity, including any other unsecured long-term 權益（包括任何其他無抵押長
 receivables, the Group does not recognise further 期應收款項），則本集團不會
 losses, unless it has incurred obligations or made 確認進一步虧損，除非其已代
-payments on behalf of the other entity. 表另一實體承擔責任或作出付
-款。
+payments on behalf of the other entity. 表另一實體承擔責任或作出付款。
 Unrealised gains on transactions between the Group 本集團與其聯營公司之間交易
 and its associates are eliminated to the extent of the 的未變現利得按本集團於該等
 Group’s interest in these entities. Unrealised losses 實體的權益予以對銷。未變現
@@ -8262,11 +8644,10 @@ The carrying amount of equity-accounted investments 權益入賬投資的賬面�
 is tested for impairment in accordance with the policy 附註39.7所述政策進行減值測
 described in Note 39.7. 試。
 
-阜豐集團有限公司 年報 2025 183
+<!-- p.183 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.1 Principles of consolidation and equity 39.1 合併及權益會計法原則（續）
 accounting (Continued)
@@ -8302,11 +8683,10 @@ financial statements exceeds the carrying amount in the 譽）的賬面值，則
 consolidated financial statements of the investee’s net 減值測試。
 assets including goodwill.
 
-184 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.184 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.3 Segment reporting 39.3 分部報告
 Operating segments are reported in a manner consistent 經營分部按與向最高營運決策者提
@@ -8341,11 +8721,10 @@ income – net”. All other foreign exchange gains and 他外匯利得及虧損
 losses are presented in the consolidated income 表內「其他利得－淨額」中呈列。
 statement within “Other gains – net”.
 
-阜豐集團有限公司 年報 2025 185
+<!-- p.185 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.4 Foreign currency translation (Continued) 39.4 外幣換算（續）
 (iii) Group companies (iii) 集團公司
@@ -8366,8 +8745,7 @@ transaction dates, in which case income and 此情況下，收入及開支按
 expenses are translated at the dates of the 交易日期的匯率換算），
 transactions), and 及
 • all resulting exchange differences are recognised • 所有由此產生的匯兌差額
-in other comprehensive income or loss. 在其他綜合收益或虧損中
-確認。
+in other comprehensive income or loss. 在其他綜合收益或虧損中確認。
 On consolidation, exchange differences arising from 綜合入賬時，換算海外實體任
 the translation of any net investment in foreign entities, 何投資淨額以及指定為該等投
 and of borrowings and other financial instruments 資之對沖項目的借貸及其他金
@@ -8378,11 +8756,10 @@ forming part of the net investment are repaid, the 何借貸時，相關匯兌�
 associated exchange differences are reclassified to 分類至損益，作為銷售利得或
 profit or loss, as part of the gain or loss on sale. 虧損之一部分。
 
-186 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.186 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.5 Property, plant and equipment 39.5 物業、廠房及設備
 Property, plant and equipment, comprising plant and 物業、廠房及設備包括廠房、樓宇、
@@ -8419,11 +8796,10 @@ An asset’s carrying amount is written down immediately 倘一項資產的賬�
 to its recoverable amount if the asset’s carrying amount is 收回金額（附註39.7），則該項資產
 greater than its estimated recoverable amount (Note 39.7). 賬面值將立即撇減至其可收回金額。
 
-阜豐集團有限公司 年報 2025 187
+<!-- p.187 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.5 Property, plant and equipment (Continued) 39.5 物業、廠房及設備（續）
 Gains and losses on disposals are determined by 出售利得及虧損乃比較所得款項與
@@ -8458,11 +8834,10 @@ assets and amortised from the point at which the asset is 起，在其可使用�
 ready for use on a straight-line basis over its useful life not 以直線法攤銷。
 exceeding five years.
 
-188 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.188 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.7 Impairment of non-financial assets 39.7 非金融資產減值
 Assets that are subject to amortisation are reviewed for 當出現事件或情況改變顯示未必能
@@ -8476,15 +8851,13 @@ purposes of assessing impairment, assets are grouped at 流量的最低水平（
 the lowest levels for which there are separately identifiable 類。商譽以外的已減值非金融資產，
 cash flows (cash-generating units). Non-financial assets 於各報告期末檢討是否可能撥回減
 other than goodwill that suffered an impairment are 值。
-reviewed for possible reversal of the impairment at the end
-of each reporting period.
+reviewed for possible reversal of the impairment at the end of each reporting period.
 39.8 Financial assets 39.8 金融資產
 (i) Classification (i) 分類
 The Group classifies its financial assets in the following 本集團按以下計量類別對其金
 measurement categories: 融資產進行分類：
 • those to be measured subsequently at fair value • 後續按公平值（計入其他
-(either through OCI through profit or loss), and 綜合收益或損益）計量的
-金融資產；及
+(either through OCI through profit or loss), and 綜合收益或損益）計量的金融資產；及
 • those to be measured at amortised cost. • 以攤餘成本計量的金融資
 產。
 The classification depends on the entity’s business 該分類取決於實體管理金融資
@@ -8499,11 +8872,10 @@ recognition to account for the equity investment at 時是否作出不可撤銷�
 FVOCI. 將其指定為按公平值計入其他
 綜合收益的股權投資。
 
-阜豐集團有限公司 年報 2025 189
+<!-- p.189 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.8 Financial assets (Continued) 39.8 金融資產（續）
 (i) Classification (Continued) (i) 分類（續）
@@ -8517,8 +8889,7 @@ Group commits to purchase or sell the asset. Financial 本集團承諾購買或�
 assets are derecognised when the rights to receive 日期。當收取金融資產現金流
 cash flows from the financial assets have expired or 量的權利已到期或已轉讓，且
 have been transferred and the Group has transferred 本集團已經轉移金融資產所有
-substantially all the risks and rewards of ownership. 權上絕大部分的風險和報酬，
-金融資產即終止確認。
+substantially all the risks and rewards of ownership. 權上絕大部分的風險和報酬，金融資產即終止確認。
 (iii) Measurement (iii) 計量
 At initial recognition, the Group measures a financial 於初始確認時，本集團按公平
 asset at its fair value plus, in the case of a financial 值計量金融資產；倘該金融資
@@ -8532,11 +8903,10 @@ considered in their entirety when determining whether 融資產，本集團會�
 their cash flows are solely payment of principal and 現金流量是否僅代表對本金和
 interest. 利息的支付。
 
-190 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.190 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.8 Financial assets (Continued) 39.8 金融資產（續）
 (iii) Measurement (Continued) (iii) 計量（續）
@@ -8557,16 +8927,12 @@ on derecognition is recognised directly in profit 算，計入財務收入。終
 or loss and presented in “Other gains – net” 確認時產生的任何利得或
 together with foreign exchange gains and losses. 虧損直接於損益中確認，
 Impairment losses are presented as separate line 並與外匯利得和虧損一
-item in the consolidated income statement. 同列示於「其他利得－淨
-額」。減值虧損作為單獨
-的科目在合併利潤表中呈
-列。
+item in the consolidated income statement. 同列示於「其他利得－淨額」。減值虧損作為單獨的科目在合併利潤表中呈列。
 
-阜豐集團有限公司 年報 2025 191
+<!-- p.191 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.8 Financial assets (Continued) 39.8 金融資產（續）
 (iii) Measurement (Continued) (iii) 計量（續）
@@ -8589,24 +8955,18 @@ finance income using the effective interest rate 並於「其他利得－淨額�
 method. Foreign exchange gains and losses are 確認。該等金融資產的利
 presented in “Other gains – net” and impairment 息收入按實際利率法計入
 expenses are presented as separate line item in 財務收入。外匯利得及虧
-the consolidated income statement. 損於「其他利得－淨額」呈
-列，而減值開支作為單獨
-項目於合併利潤表內呈列。
+the consolidated income statement. 損於「其他利得－淨額」呈列，而減值開支作為單獨項目於合併利潤表內呈列。
 • FVPL: Assets that do not meet the criteria for • 按公平值計入損益：不符
 amortised cost or FVOCI are measured at FVPL. 合按攤餘成本及按公平值
 A gain or loss on a debt investment that is 計入其他綜合收益標準的
 subsequently measured at FVPL is recognised in 資產乃按公平值計入損益
 profit or loss and presented net with “Other gains 計量。其後按公平值計入
-– net” in the period in which it arises. 損益計量的債務投資的利
-得或虧損於損益確認，並
-於其產生期間在「其他利
-得－淨額」內以淨額呈列。
+– net” in the period in which it arises. 損益計量的債務投資的利得或虧損於損益確認，並於其產生期間在「其他利得－淨額」內以淨額呈列。
 
-192 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.192 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.8 Financial assets (Continued) 39.8 金融資產（續）
 (iii) Measurement (Continued) (iii) 計量（續）
@@ -8626,15 +8986,13 @@ FVPL are recognised in “Other gains – net” in the 的公平值變動乃於
 consolidated income statement as applicable. 內的「其他利得－淨額」確認
 Impairment losses (and reversal of impairment losses) （如適用）。按公平值計入其他
 on equity investments measured at FVOCI are not 綜合收益計量的股權投資的減
-reported separately from other changes in fair value. 值虧損（及撥回減值虧損）並無
-與其他公平值變動分開呈報。
+reported separately from other changes in fair value. 值虧損（及撥回減值虧損）並無與其他公平值變動分開呈報。
 (iv) Impairment (iv) 減值
 The Group assesses on a forward-looking basis 本集團按前瞻性基準評估按攤
 the expected credit losses associated with its debt 餘成本及按公平值計入其他綜
 instruments carried at amortised cost and FVOCI. The 合收益列賬的債務工具相關的
 impairment methodology applied depends on whether 預期信貸虧損。所採用減值方
-there has been a significant increase in credit risk. 法視乎信貸風險是否顯著增加
-而定。
+there has been a significant increase in credit risk. 法視乎信貸風險是否顯著增加而定。
 For trade receivables, the Group applies the simplified 就應收貿易賬款而言，本集團
 approach permitted by HKFRS 9, which requires 採用香港財務報告準則第9號
 expected lifetime losses to be recognised from initial 允許的簡化方法，在初始確認
@@ -8642,11 +9000,10 @@ recognition of the receivables, see Note 21 for further 時計量應收賬款整
 details. 預期信貸虧損，有關進一步詳
 情參見附註21。
 
-阜豐集團有限公司 年報 2025 193
+<!-- p.193 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.9 Offsetting financial instruments 39.9 抵銷金融工具
 Financial assets and liabilities are offset and the net amount 當有法定可執行權力可抵銷已確認
@@ -8659,8 +9016,7 @@ criteria for offsetting but still allow for the related amounts 但仍允許相�
 to be set off in certain circumstances, such as bankruptcy 合約的若干情況下予以抵銷。
 or the termination of a contract.
 The Group has no financial assets and liabilities that need 於二零二五年及二零二四年十二月
-to be offset as at 31 December 2025 and 2024. 三十一日，本集團並無金融資產及
-負債需要抵銷。
+to be offset as at 31 December 2025 and 2024. 三十一日，本集團並無金融資產及負債需要抵銷。
 39.10 Derivative financial instruments 39.10 衍生金融工具
 Derivatives are initially recognised at fair value on the date 衍生工具於訂立衍生工具合約之日
 a derivative contract is entered into and are subsequently 按公平值進行初始確認，後續以各
@@ -8678,11 +9034,10 @@ the remaining maturity of the derivative is less than 12 為流動資產或負�
 months. Trading derivatives are classified as a current asset 分類為流動資產或負債。
 or liability.
 
-194 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.194 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.11 Inventories 39.11 存貨
 Inventories including raw materials, work in progress and 存貨包括原材料、在製品及製成品，
@@ -8720,11 +9075,10 @@ three months or less that are readily convertible to known 其他短期高流通
 amounts of cash and which are subject to an insignificant 個月或以內的投資。
 risk of changes in value.
 
-阜豐集團有限公司 年報 2025 195
+<!-- p.195 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.14 Share capital 39.14 股本
 Ordinary shares are classified as equity (Note 24(a)). 普通股分類為權益（附註24(a)）。
@@ -8755,18 +9109,16 @@ will be drawn down. In this case, the fee is deferred until 止。如並無證�
 the draw-down occurs. To the extent there is no evidence 資很有可能被提取，則該項費用資
 that it is probable that some or all of the facility will be 本化以作為流動資金服務的預付款
 drawn down, the fee is capitalised as a pre-payment for 項，並於有關融資期間攤銷。
-liquidity services and amortised over the period of the
-facility to which it relates.
+liquidity services and amortised over the period of the facility to which it relates.
 Borrowings are classified as current liabilities unless at the 於報告期末，除非本集團有權將債
 end of the reporting period, the Group has a right to defer 務遞延至報告期末後至少十二個月
 settlement of the liability for at least 12 months after the 償還，否則借貸將分類為流動負債。
 end of the reporting period.
 
-196 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.196 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.16 Borrowings (Continued) 39.16 借貸（續）
 Covenants that the Group is required to comply with, on 將附帶契約的貸款安排分類為流動
@@ -8808,11 +9160,10 @@ to interpretation. It establishes provisions where 根據預期須向稅務機�
 appropriate on the basis of amounts expected to be 稅款設定撥備。
 paid to the tax authorities.
 
-阜豐集團有限公司 年報 2025 197
+<!-- p.197 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.18 Current and deferred income tax (Continued) 39.18 即期及遞延所得稅（續）
 (b) Deferred income tax (b) 遞延所得稅
@@ -8829,12 +9180,10 @@ income tax is determined using tax rates (and laws) 計算入賬。遞延所得�
 that have been enacted or substantially enacted by 資產負債表日已頒佈或實質頒
 the balance sheet date and are expected to apply 佈之稅率（及法例）釐定，並預
 when the related deferred income tax asset is realised 期在變現有關遞延所得稅資產
-or the deferred income tax liability is settled. 或償付遞延所得稅負債時將會
-適用。
+or the deferred income tax liability is settled. 或償付遞延所得稅負債時將會適用。
 Deferred income tax assets are recognised only if it is 遞延所得稅資產僅在很有可能
 probable that future taxable amounts will be available 將未來應課稅款項與可動用之
-to utilise those temporary differences and losses. 暫時性差額及虧損抵銷情況下
-確認。
+to utilise those temporary differences and losses. 暫時性差額及虧損抵銷情況下確認。
 Deferred income tax liabilities and assets are not 倘本公司可控制暫時性差額撥
 recognised for temporary differences between the 回的時間，且該差額於可預見
 carrying amount and tax bases of investments in 的將來很可能不會撥回，則不
@@ -8852,11 +9201,10 @@ enforceable right to offset and intends either to settle 基準結算或變現�
 on a net basis, or to realise the asset and settle the 清負債時，方可抵銷即期所得
 liability simultaneously. 稅資產及負債。
 
-198 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.198 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.18 Current and deferred income tax (Continued) 39.18 即期及遞延所得稅（續）
 (b) Deferred income tax (Continued) (b) 遞延所得稅（續）
@@ -8891,11 +9239,10 @@ described above. The assets of these plans are held 集團資產分開，由中�
 separately from those of the Group in an independent 理的獨立基金持有。
 fund managed by the PRC government.
 
-阜豐集團有限公司 年報 2025 199
+<!-- p.199 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.19 Employee benefits (Continued) 39.19 僱員福利（續）
 (b) Post-employment obligations – pension (b) 退休後義務－退休金責任（續）
@@ -8934,11 +9281,10 @@ period), and 體僱員，及
 conditions (e.g. the requirement for employees to 響，例如在指定期間內規
 save or hold shares for a specific period of time). 定僱員儲蓄或持有股份。
 
-200 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.200 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.20 Share-based payments (Continued) 39.20 以股份支付（續）
 (a) Equity-settled share-based payment transactions (a) 權益結算股份支付交易（續）
@@ -8962,14 +9308,12 @@ contribution. The fair value of employee services 公平值參考授出日期的
 received, measured by reference to the grant date 計量，於歸屬期間確認，列作
 fair value, is recognised over the vesting period as 一家附屬公司的投資增加，並
 an increase to investment in a subsidiary, with a 相應計入母公司賬目中的權益。
-corresponding credit to equity in the parent company
-accounts.
+corresponding credit to equity in the parent company accounts.
 
-阜豐集團有限公司 年報 2025 201
+<!-- p.201 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.21 Safety production fee 39.21 安全生產費用
 Pursuant to regulation No. [2012]16 and No. [2022]136, 根據財政部及國家安全生產監督
@@ -8998,11 +9342,10 @@ adjusted for bonus elements in ordinary shares 本年度已發行普通股的花
 issued during the year and excluding treasury 紅成分進行調整（不包括
 shares. 庫存股份）。
 
-202 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.202 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.22 Earnings per share (Continued) 39.22 每股盈利（續）
 (ii) Diluted earnings per share (ii) 每股攤薄盈利
@@ -9034,11 +9377,10 @@ the funds necessary to obtain an asset of similar value in 條件借入獲得與
 a similar economic environment with similar terms and 的資產所需資金而必須支付的利率。
 conditions.
 
-阜豐集團有限公司 年報 2025 203
+<!-- p.203 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.23 Leases (Continued) 39.23 租賃（續）
 To determine the incremental borrowing rate, the Group: 為釐定增量借款利率，本集團應：
@@ -9065,11 +9407,10 @@ are recognised on a straight-line basis as an expense in 線法於損益中確�
 profit or loss. Short-term leases are leases with a lease 賃是指租賃期為12個月或少於12
 term of 12 months or less. 個月的租賃。
 
-204 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.204 -->
 NOTES TO THE CONSOLIDATED FINANCIAL STATEMENTS (Continued)
 合併財務報表附註（續）
 For the year ended 31 December 2025 截至二零二五年十二月三十一日止年度
-39. SUMMARY OF OTHER ACCOUNTING 39. 其他會計政策資料摘要（續）
 POLICIES INFORMATION (Continued)
 39.24 Dividend distribution 39.24 股息分派
 Dividend distribution to the Company’s shareholders is 對本公司股東作出的股息分派，於
@@ -9083,7 +9424,7 @@ will be received and the Group will comply with all attached 則政府補助將�
 conditions. Note 6 provides further information on how the 關本集團就政府補助的會計處理的
 Group accounts for government grants. 進一步資料載於附註6。
 
-阜豐集團有限公司 年報 2025 205
+<!-- p.205 -->
 CORPORATE INFORMATION
 公司資料
 Executive Directors 執行董事
@@ -9118,7 +9459,7 @@ Mr. Lau Chung Wai (Chairman) 劉仲緯先生（主席）
 Mr. Zhang Youming 張友明先生
 Ms. Li Ming 李銘女士
 
-206 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.206 -->
 CORPORATE INFORMATION (Continued)
 公司資料（續）
 Remuneration Committee 薪酬委員會
@@ -9155,13 +9496,12 @@ Hong Kong Stock Exchange: 00546 香港聯合交易所：00546
 Website 網址
 www.fufeng-group.com www.fufeng-group.com
 
-阜豐集團有限公司 年報 2025 207
+<!-- p.207 -->
 BIOGRAPHIES OF DIRECTORS AND SENIOR MANAGEMENT
 董事及高級管理層履歷
 Executive Directors 執行董事
 李學純 (Li Xuechun), aged 74, is the principal founder of the Group, 李學純，現年74歲，本集團主要發起人、本
-the chairman of the Company and an executive Director. Mr. Li is also 公司董事長兼執行董事。李先生亦為Acquest
-a director of Acquest Honour, Summit Challenge, Absolute Divine, Honour、Summit Challenge、Absolute
+the chairman of the Company and an executive Director. Mr. Li is also 公司董事長兼執行董事。李先生亦為Acquest a director of Acquest Honour, Summit Challenge, Absolute Divine, Honour、Summit Challenge、Absolute
 Expand Base, Fufeng Singapore, Shandong Fufeng, Baoji Fufeng, Divine、Expand Base、Fufeng Singapore、山
 IM Fufeng, Hulunbeier Fufeng, Xinjiang Fufeng and Longjiang Fufeng. 東阜豐、寶雞阜豐、內蒙古阜豐、呼倫貝爾
 Mr. Li is responsible for the strategic planning and formulation of the 阜豐、新疆阜豐及龍江阜豐的董事。李先生
@@ -9170,29 +9510,24 @@ a bachelor’s degree in industrial fermentation from 山東輕工業學院 展�
 (Shandong Institute of Light Industry) in 1982. Mr. Li was honoured 業學院的工業發酵學士學位。李先生於二零
 with “Outstanding Achievement” by the government of Shandong 零三年四月獲山東省政府評選為「省優秀民
 Province in April 2003. In the same year, he was also labelled as 營企業家」。同年，彼亦獲評為山東省「勞動
-“Model Labour” of Shandong Province. Mr. Li first joined 山東福瑞 模範」。李先生首先於一九八二年加入山東福
-酒廠 (Shandong Furui Brewery Group) in 1982 as a factory manager. 瑞酒廠，出任廠長。李先生於一九九九年六
+“Model Labour” of Shandong Province. Mr. Li first joined 山東福瑞 模範」。李先生首先於一九八二年加入山東福酒廠 (Shandong Furui Brewery Group) in 1982 as a factory manager. 瑞酒廠，出任廠長。李先生於一九九九年六
 Mr. Li established the Group by setting up Shandong Fufeng in June 月藉成立山東阜豐創辦本集團，並於山東阜
 1999. He was appointed as a director of Shandong Fufeng upon its 豐成立時獲委任為其董事。彼在發酵行業累
-establishment. He has 44 years of experience in the fermentation 積44年經驗。李先生為Motivator Enterprises
-industry. Mr. Li is the sole director of and is beneficially interested Limited的唯一董事，並實益擁有該公司的全
+establishment. He has 44 years of experience in the fermentation 積44年經驗。李先生為Motivator Enterprises industry. Mr. Li is the sole director of and is beneficially interested Limited的唯一董事，並實益擁有該公司的全
 in the entire issued share capital of Motivator Enterprises Limited 部已發行股本，該公司則擁有約39.90%股份，
 which in turn is interested in approximately 39.90% Share and is a 為本公司的控股股東。彼為李廣玉（執行董事）
 controlling shareholder of the Company. He is the father of 李廣玉 (Li 的父親及李德衡（執行董事）的內兄。除上文
 Guangyu) (an executive Director) and the brother-in-law of 李德衡 (Li 所披露者外，李先生於過去三年並無於其他
 Deheng) (an executive Director). Save as disclosed above, Mr. Li did 上市公眾公司擔任任何董事職務。
-not hold any directorship in other listed public companies in the last
-three years.
+not hold any directorship in other listed public companies in the last three years.
 李德衡 (Li Deheng), aged 57, is an executive Director and Co-chief 李德衡，現年57歲，本集團執行董事兼聯席
 executive officer of the Group who is responsible for the general 行政總裁，負責本集團生產及採購的整體運
 operation of production and purchasing of the Group. He is also a 作。彼亦為山東阜豐、寶雞阜豐、內蒙古阜豐、
 director of Shandong Fufeng, Baoji Fufeng, IM Fufeng, Hulunbeier 呼倫貝爾阜豐及龍江阜豐的董事。李先生於
-Fufeng and Longjiang Fufeng. Mr. Li graduated from the 山東聊 一九九二年畢業於山東聊城師範學院，取得
-城師範學院 (Shandong Liaocheng Teacher’s College) in 1992 and 化學教育學士學位。彼於二零零一年一月加
+Fufeng and Longjiang Fufeng. Mr. Li graduated from the 山東聊 一九九二年畢業於山東聊城師範學院，取得城師範學院 (Shandong Liaocheng Teacher’s College) in 1992 and 化學教育學士學位。彼於二零零一年一月加
 obtained a bachelor’s degree in chemistry education. He joined the 入本集團，並於二零零三年十一月獲委任為
 Group in January 2001 and was appointed as a director of Shandong 山東阜豐董事，在業務管理方面累積逾25年
-Fufeng in November 2003 and has over 25 years of experience in 經驗。李先生擁有Empire Spring Investments
-business management. Mr. Li is interested in 100% of the issued Limited全部已發行股本的權益，而該公司則
+Fufeng in November 2003 and has over 25 years of experience in 經驗。李先生擁有Empire Spring Investments business management. Mr. Li is interested in 100% of the issued Limited全部已發行股本的權益，而該公司則
 share capital of Empire Spring Investments Limited, which in turn is 於本公司已發行股本約1.41%（即35,320,160
 interested in 35,320,160 Shares, representing approximately 1.41% 股股份）中擁有權益。李德衡先生為李學純先
 of the issued share capital of the Company. Mr. Li Deheng is the 生的妹夫。除上文所披露者外，李先生於過
@@ -9200,21 +9535,19 @@ brother-in-law of Mr. Li Xuechun. Save as disclosed above, Mr. Li did 去三年�
 not hold any directorship in other listed public companies in the last 事職務。
 three years.
 
-208 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.208 -->
 BIOGRAPHIES OF DIRECTORS AND SENIOR MANAGEMENT (Continued)
 董事及高級管理層履歷（續）
 李廣玉 (Li Guangyu), aged 47, is an executive Director and Co-chief 李廣玉，現年47歲，本集團執行董事兼聯席
 executive officer of the Group who is responsible for the Group’s 行政總裁，負責本集團的整體營運。李先生
 overall operation. Mr. Li has over 20 years of experience in the 於發酵行業累積逾20年經驗。李先生於二零
-fermentation industry. Mr. Li graduated from 華東政法大學研究 零六年畢業於華東政法大學研究生院，並取
-生院 (East China University of Political Science and Law Graduate 得法律碩士學位。根據證券及期貨條例第XV
+fermentation industry. Mr. Li graduated from 華東政法大學研究 零六年畢業於華東政法大學研究生院，並取生院 (East China University of Political Science and Law Graduate 得法律碩士學位。根據證券及期貨條例第XV
 School) in 2006 and obtained a master’s degree in Laws. Mr. Li is 部，李先生並無於任何股份中擁有權益。李
 not interested in any Shares pursuant to Part XV of the SFO. Mr. Li 先生為李學純先生的兒子。除上文所披露者
 is the son of Mr. Li Xuechun. Save as disclosed above, Mr. Li did not 外，李先生於過去三年並無於其他上市公眾
 hold any directorship in other listed public companies in the last three 公司擔任任何董事職務。
 years.
-Independent Non-Executive Directors 獨立非執行董事
-劉仲緯 (Lau Chung Wai), aged 43, was appointed as an Independent 劉仲緯，現年43歲，於二零一九年六月十二
+Independent Non-Executive Directors 獨立非執行董事劉仲緯 (Lau Chung Wai), aged 43, was appointed as an Independent 劉仲緯，現年43歲，於二零一九年六月十二
 non-executive Director on 12 June 2019. Mr. Lau Chung Wai has 日獲委任為獨立非執行董事。劉仲緯先生於
 over 20 years’ experience in the field of accounting and financial 會計及財務管理領域擁有逾20年經驗。劉先
 management. Mr. Lau graduated from the Hong Kong University of 生於二零零四年十一月畢業於香港科技大學，
@@ -9242,7 +9575,7 @@ position with the Company and any of its subsidiaries. Mr. Lau does 務，亦無
 not have any interests in the Shares within the meaning of Part XV of 何其他職務。劉先生於股份中並無擁有證券
 the SFO. 及期貨條例第XV部所界定的任何權益。
 
-阜豐集團有限公司 年報 2025 209
+<!-- p.209 -->
 BIOGRAPHIES OF DIRECTORS AND SENIOR MANAGEMENT (Continued)
 董事及高級管理層履歷（續）
 張友明 (Zhang Youming), aged 62, was appointed as an Independent 張友明，現年62歲，於二零二一年四月一
@@ -9290,7 +9623,7 @@ last three years nor has held any other positions with the Company 其任何附�
 and any of its subsidiaries. Ms. Li does not have any interests in the 於股份中並無擁有證券及期貨條例第XV部所
 Shares within the meaning of Part XV of the SFO. 界定的任何權益。
 
-210 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.210 -->
 BIOGRAPHIES OF DIRECTORS AND SENIOR MANAGEMENT (Continued)
 董事及高級管理層履歷（續）
 Senior Management 高級管理層
@@ -9319,23 +9652,28 @@ FIVE-YEAR SUMMARY
 五年摘要
 Year
 年度
-| | | | 2021 | | 2022 | | 2023 | | 2024 | | 2025 |
-| -------------------- | ------- | ----- | ------- | --- | ------- | --- | ------- | ----- | ------- | ----- | ------- |
-| | | 二零二一年 | | | 二零二二年 | | 二零二三年 | 二零二四年 | | 二零二五年 | |
-| | | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 | | RMB’000 |
-| | | 人民幣千元 | | | 人民幣千元 | | 人民幣千元 | 人民幣千元 | | 人民幣千元 | |
-| | | | | | | | | | | | |
-| Operating results – | 經營業績－概要 | | | | | | | | | | |
+
+|  |  |  | 2021 | 2022 | 2023 |  | 2024 |  | 2025 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  |  | 二零二一年 |  | 二零二二年 | 二零二三年 | 二零二四年 |  | 二零二五年 |  |
+|  |  |  | RMB’000 | RMB’000 | RMB’000 |  | RMB’000 |  | RMB’000 |
+|  |  | 人民幣千元 |  | 人民幣千元 | 人民幣千元 | 人民幣千元 |  | 人民幣千元 |  |
+| Operating results – | 經營業績－概要 |  |  |  |  |  |  |  |  |
+
 Summary
 營業額
 Turnover 21,539,841 27,474,639 28,006,875 27,757,310 27,879,194
 Gross profit 毛利 3,905,276 7,212,467 6,247,385 5,056,822 5,481,935
 Profit before income tax 除所得稅前溢利 1,515,974 4,860,309 3,850,245 2,837,031 2,996,096
-| Profit attributable to | 股東應佔溢利 | | | | | | | | | | |
-| ----------------------- | ------ | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+| Profit attributable to | 股東應佔溢利 |
+| --- | --- |
+
 Shareholders 1,280,640 3,861,078 3,144,124 2,312,384 2,465,228
-| Balance sheets – Summary | 資產負債表－概要 | | | | | | | | | | |
-| ------------------------ | -------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+| Balance sheets – Summary | 資產負債表－概要 |
+| --- | --- |
+
 Non-current assets 非流動資產 10,309,548 10,536,175 12,845,624 13,557,759 15,408,568
 Current assets 流動資產 11,201,258 15,852,449 19,715,263 22,532,137 28,306,156
 資產總值
@@ -9345,33 +9683,39 @@ Current liabilities 流動負債 5,373,665 9,387,995 14,044,560 16,240,497 22,84
 Net assets 資產淨值 12,677,754 15,493,624 17,324,214 18,343,054 19,460,106
 財務比率
 Financial ratio
-| Earnings per share (Basic) | 每股盈利（基本） | | | | | | | | | | |
-| ------------------------------ | ------------- | --- | ----- | --- | ------ | --- | ------ | --- | ----- | --- | ----- |
-| (RMB Cents) | （人民幣分） | | 50.55 | | 152.34 | | 124.02 | | 91.86 | | 98.33 |
-| Gross profit margin (%) | 毛利率(%（) 附註1） | | | | | | | | | | |
-| (Note 1) | | | | 18 | | 26 | | 22 | | 18 | 20 |
-| ROE (%) (Note 2) | 股權收益(%（) 附註2） | | | 10 | | 25 | | 18 | | 13 | 13 |
-| Current ratio (Note 3) | 流動比率（附註3） | | 2.08 | | 1.69 | | 1.40 | | 1.39 | | 1.24 |
-| Inventory turnover days (Day) | 存貨周轉期（日） | | | | | | | | | | |
-| (Note 4) | （附註4） | | | 96 | | 106 | | 104 | | 100 | 115 |
+
+| Earnings per share (Basic) | 每股盈利（基本） |  |  |  |  |  |  |  |  |  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| (RMB Cents) | （人民幣分） | 50.55 |  | 152.34 |  | 124.02 |  | 91.86 |  | 98.33 |
+| Gross profit margin (%) | 毛利率(%（) 附註1） |  |  |  |  |  |  |  |  |  |
+| (Note 1) |  |  | 18 |  | 26 |  | 22 |  | 18 | 20 |
+| ROE (%) (Note 2) | 股權收益(%（) 附註2） |  | 10 |  | 25 |  | 18 |  | 13 | 13 |
+| Current ratio (Note 3) | 流動比率（附註3） | 2.08 |  | 1.69 |  | 1.40 |  | 1.39 |  | 1.24 |
+| Inventory turnover days (Day) | 存貨周轉期（日） |  |  |  |  |  |  |  |  |  |
+| (Note 4) | （附註4） |  | 96 |  | 106 |  | 104 |  | 100 | 115 |
+
 應收賬款周轉期（日）
 Debtors’ turnover days (Day)
-| (Note 5) | （附註5） | | | 31 | | 24 | | 29 | | 27 | 16 |
-| -------- | ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+| (Note 5) | （附註5） | 31 | 24 | 29 | 27 | 16 |
+| --- | --- | --- | --- | --- | --- | --- |
+
 Trade receivable turnover days 應收貿易賬款周轉期
-| (Day) (Note 6) | （日（）附註6） | | | 19 | | 15 | | 15 | | 15 | 10 |
-| -------------- | -------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+| (Day) (Note 6) | （日（）附註6） | 19 | 15 | 15 | 15 | 10 |
+| --- | --- | --- | --- | --- | --- | --- |
+
 Creditors’ turnover days (Day) 應付賬款周轉期（日）
 （附註7）
-| (Note 7) | | | | 32 | | 27 | | 24 | | 32 | 27 |
-| ---------------------------- | ---------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Trade payable turnover days | 應付貿易賬款周轉期 | | | | | | | | | | |
-| (Day) (Note 8) | （日（）附註8） | | | 32 | | 25 | | 23 | | 23 | 15 |
-| Gearing ratio (%) (Note 9) | 資產負債比率(%) | | | | | | | | | | |
-| | （附註9） | | | 20 | | 23 | | 30 | | 32 | 40 |
-| | | | | | | | | | | | |
 
-212 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+| (Note 7) |  | 32 | 27 | 24 | 32 | 27 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Trade payable turnover days | 應付貿易賬款周轉期 |  |  |  |  |  |
+| (Day) (Note 8) | （日（）附註8） | 32 | 25 | 23 | 23 | 15 |
+| Gearing ratio (%) (Note 9) | 資產負債比率(%) |  |  |  |  |  |
+|  | （附註9） | 20 | 23 | 30 | 32 | 40 |
+
+<!-- p.212 -->
 FIVE-YEAR SUMMARY (Continued)
 五年摘要（續）
 Notes: 附註：
@@ -9397,7 +9741,7 @@ year divided by the cost of sales for the corresponding year and then multiplied
 9. Gearing ratio is equal to total debts at the end of the year divided by total assets at 9. 資產負債比率相等於年終時的債務總額除以對應年
 the end of the corresponding year. 度年終時的資產總值。
 
-阜豐集團有限公司 年報 2025 213
+<!-- p.213 -->
 PRODUCTION BASES
 生產基地
 Hulunbeier
@@ -9443,62 +9787,78 @@ MAJOR PRODUCTS PROCESSING MAP
 Corn
 kernels
 玉米顆粒
-| | | | | Cornstarch | | | | Coal | | |
-| --- | --- | --- | --- | ---------- | --- | --- | --- | ---- | --- | --- |
-| | | | | 玉米澱粉 | | | | 煤炭 | | |
+
+| Cornstarch | Coal |
+| --- | --- |
+| 玉米澱粉 | 煤炭 |
+
 noitcudorP
 產生
 Waste Cornstarch syrup Yeast Power plant Chemicals (including synthetic ammonia)
-| | | 廢物 | | 玉米澱粉漿 | | 酵母 | | 發電廠 | 化學品（包括合成氨） | |
-| --- | --- | --- | --- | ----- | --- | --- | --- | --- | ----------- | --- |
+
+| 廢物 | 玉米澱粉漿 | 酵母 | 發電廠 | 化學品（包括合成氨） |
+| --- | --- | --- | --- | --- |
+
 Fermentation Tank
 發酵罐
 tnemgeS
 部分
 Food additives Animal nutrition High-end amino acid Colloid Others
-| | | 食品添加劑 | | 動物營養 | | 高檔氨基酸 | | 膠體 | | 其他 |
-| --- | --- | ----- | --- | ---- | --- | ----- | --- | --- | --- | --- |
 
-| | | MSG | | Threonine | | | | Xanthan gum | | Fertilisers |
-| --- | --- | --- | --- | --------- | --- | --- | --- | ----------- | --- | ----------- |
-| | | 味精 | | 蘇氨酸 | | | | 黃原膠 | | 肥料 |
+| 食品添加劑 | 動物營養 | 高檔氨基酸 | 膠體 | 其他 |
+| --- | --- | --- | --- | --- |
+
+| MSG | Threonine | Xanthan gum | Fertilisers |
+| --- | --- | --- | --- |
+| 味精 | 蘇氨酸 | 黃原膠 | 肥料 |
+
 Small packed
 amino acid
 小品種氨基酸
-| | | Glutamic acid | | Lysine | | | | | | Bricks |
-| --- | --- | ------------- | --- | ------ | --- | --- | --- | --- | --- | ------ |
-| | | 谷氨酸 | | | | | | | | 磚 |
+
+| Glutamic acid | Lysine | Bricks |
+| --- | --- | --- |
+| 谷氨酸 |  | 磚 |
+
 賴氨酸
 tcudorP
-| 品產 | Starch sweeteners | | | | | | | | | |
-| --- | ----------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+| 品產 | Starch sweeteners |
+| --- | --- |
+
 澱粉甜味劑
 Corn oil
-| | | 玉米油 | | Corn refined | | | | | | |
-| --- | --- | --- | --- | ------------ | --- | --- | --- | --- | --- | --- |
+
+| 玉米油 | Corn refined |
+| --- | --- |
+
 products
 玉米提煉產品
 Chicken powder
 雞粉
-| | | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 Oil drilling
-| | | | | Animal | | Healthcare | | | | Agricultural |
-| --- | --- | ----------- | --- | ------- | --- | ----------- | --- | ---------- | --- | ------------- |
-| | | Frozen food | | | | | | and mining | | |
-| | | | | feeding | | products | | | | planting |
-| | | 急凍食品 | | 動物飼料 | | 保健產品 | | 石油鑽探及 | | 農業耕種 |
+
+|  | Animal | Healthcare |  | Agricultural |
+| --- | --- | --- | --- | --- |
+| Frozen food |  |  | and mining |  |
+|  | feeding | products |  | planting |
+| 急凍食品 | 動物飼料 | 保健產品 | 石油鑽探及 | 農業耕種 |
+
 採礦
-| | | Syrup | | | | Animal | | | | |
-| ----------- | --- | ----- | --- | --- | --- | ------- | --- | ---- | --- | --- |
-| | | | | | | feeding | | Food | | |
-| noitacilppA | | 糖漿 | | | | | | 食品 | | |
+
+|  | Syrup | Animal |  |
+| --- | --- | --- | --- |
+|  |  | feeding | Food |
+| noitacilppA | 糖漿 |  | 食品 |
+
 動物飼料
 用應
-| | | Sauce | | | | Beverage | | | | |
-| --- | --- | ----- | --- | --- | --- | -------- | --- | --- | --- | --- |
-| | | 醬料 | | | | 飲料 | | | | |
+
+| Sauce | Beverage |
+| --- | --- |
+| 醬料 | 飲料 |
+
 Beauty
 Beverage
 products
@@ -9509,49 +9869,59 @@ products
 阜豐集團有限公司 年報 2025
 SHARE INFORMATION
 股份資料
-| Stock Code | | | | | | | | | 00546.HK | |
-| ----------- | --- | --- | --- | --- | --- | --- | --- | --- | -------- | --- |
+
+| Stock Code | 00546.HK |
+| --- | --- |
+
 Lockpage不要加減頁
-| 股份代號 | | | | | | | | | 00546.HK | |
-| ---------- | --- | --- | --- | --- | --- | --- | --- | --- | ------------ | --- |
-| Board lot | | | | | | | | | 1,000 Shares | |
-| 每手買賣單位 | | | | | | | | | 1,000股股份 | |
+
+| 股份代號 | 00546.HK |
+| --- | --- |
+| Board lot | 1,000 Shares |
+| 每手買賣單位 | 1,000股股份 |
+
 Price, shares and dividend
 價格、股份及股息
-| | At 31 December | | | | | For the year | | | | |
-| --- | -------------- | --- | --- | --- | --- | ------------ | --- | --- | --- | --- |
+
+| At 31 December | For the year |
+| --- | --- |
+
 年內
 於十二月三十一日
-| | | | | Dividend | | Earnings per share | | Share repurchased | | |
-| --- | -------- | --------- | --- | -------- | --- | ------------------ | --- | ----------------- | --- | -------- |
-| | | | | 股息 | | 每股盈利 | | 已購回股份 | | |
-| | Closing | | | | | Basic | | | | |
-| | price at | Number of | | | | earnings | | | | Average |
-last trading issued Payout per P/E# Number Consideration repurchase
-day shares Dividend per share ratio Yield* share ratio of shares paid price
+
+|  |  | Dividend | Earnings per share | Share repurchased |  |
+| --- | --- | --- | --- | --- | --- |
+|  |  | 股息 | 每股盈利 | 已購回股份 |  |
+| Closing |  |  | Basic |  |  |
+| price at | Number of |  | earnings |  | Average |
+
+last trading issued Payout per P/E# Number Consideration repurchase day shares Dividend per share ratio Yield* share ratio of shares paid price
 最後
-| | 交易日的 | 已發行 | | | | 每股 | | | | 平均 |
-| ------- | ---- | ---- | ---- | -------- | --- | ---- | --------- | ---- | --- | ---- |
-| Year 年度 | 收市價 | 股份數目 | 每股股息 | 派息率 股息率* | | 基本盈利 | 市盈率# 股份數目 | 已付代價 | | 購回價格 |
+
+|  | 交易日的 | 已發行 |  |  | 每股 |  |  | 平均 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Year 年度 | 收市價 | 股份數目 | 每股股息 | 派息率 股息率* | 基本盈利 | 市盈率# 股份數目 | 已付代價 | 購回價格 |
+
 (HKD) (shares) (HKD) (RMB) (%) (%) (RMB) (Times) (shares) (HKD) (HKD)
-| | （港元） | （股） | （港元）（人民幣） | (%) | (%) （人民幣） | | (倍) | （股） | （港元） | （港元） |
-| --- | ---- | --- | --------- | --- | --------- | --- | --- | --- | ---- | ---- |
+
+| （港元） | （股） | （港元）（人民幣） | (%) | (%) （人民幣） | (倍) | （股） | （港元） | （港元） |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
 2025 二零二五年 7.88 2,507,241,037 0.487 0.4400 44.8 6.18 0.9833 7.24 – – –
 2024 二零二四年 5.48 2,506,650,037 0.400 0.3670 40.0 7.30 0.9186 5.52 18,647,000 81,744,640 4.38
 2023 二零二三年 4.33 2,536,489,037@ 0.580 0.5290 42.5 13.39 1.2402 3.16 11,742,000 48,302,170 4.11
 二零二二年
 2022 4.75 2,535,939,037 0.697 0.6090 40.0 14.67 1.5234 2.79 – – –
 2021 二零二一年 2.69 2,533,639,037 0.215 0.1766 35.0 7.99 0.5055 4.35 – – –
-| | | | | | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 @ Before the cancellation of repurchased Share
  股份回購取消前
 * Dividend yield is equal to dividend per share divided by closing price at last trading day of the year
  股息率等於每股股息除以該年度最後交易日的收市價
+
 # P/E ratio is equal to the closing price on the last trading day of the year divided by the HKD equivalent of basic earnings per Share
  市盈率等於該年度最後交易日的收市價除以港元等值的每股基本盈利
 
-216 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.216 -->
 GLOSSARY
 詞彙
 In this annual report (other than the independent auditor’s report as 於本年報內（載於第55至61頁之獨立核數師
@@ -9565,8 +9935,7 @@ ASP average selling price(s) of the products of the Group
 平均售價 本集團產品的平均售價
 Audit Committee audit committee of the Board
 審計委員會 董事會審計委員會
-Baoji Fufeng 寶雞阜豐生物科技有限公司 (Baoji Fufeng Biotechnologies Co., Ltd.), an indirect
-wholly-owned subsidiary of the Company
+Baoji Fufeng 寶雞阜豐生物科技有限公司 (Baoji Fufeng Biotechnologies Co., Ltd.), an indirect wholly-owned subsidiary of the Company
 寶雞阜豐 寶雞阜豐生物科技有限公司，本公司間接全資附屬公司
 Board the board of Directors
 董事會 董事會
@@ -9585,7 +9954,7 @@ ESG 環境、社會及管治
 ESG Committee ESG committee
 ESG 委員會 ESG委員會
 
-阜豐集團有限公司 年報 2025 217
+<!-- p.217 -->
 GLOSSARY (Continued)
 詞彙（續）
 Expand Base Expand Based Limited, an indirect wholly-owned subsidiary of the Company
@@ -9605,8 +9974,7 @@ FVPL fair value through profit or loss
 按公平值計入損益 按公平值計入損益
 Group the Company and its subsidiaries
 本集團 本公司及其附屬公司
-Hailin Hulunbeier Hailin Biotechnology Co., Ltd., an associate of which 20% of its equity are
-held by the Group
+Hailin Hulunbeier Hailin Biotechnology Co., Ltd., an associate of which 20% of its equity are held by the Group
 海鄰 呼倫貝爾市海鄰生物科技有限公司，本集團持有20%權益的聯繫人
 HKAS Hong Kong Accounting Standard issued by HKICPA
 香港會計準則 香港會計師公會頒佈之香港會計準則
@@ -9620,18 +9988,16 @@ Hulunbeier Fufeng 呼倫貝爾東北阜豐生物科技有限公司 (Hulunbeier N
 Co., Ltd.), an indirect wholly-owned subsidiary of the Company
 呼倫貝爾阜豐 呼倫貝爾東北阜豐生物科技有限公司，本公司間接全資附屬公司
 
-218 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.218 -->
 GLOSSARY (Continued)
 詞彙（續）
 INED The Independent Non-Executive Director(s) of the Company
 獨立非執行董事 本公司獨立非執行董事
-IM Fufeng 內蒙古阜豐生物科技有限公司 (Neimenggu Fufeng Biotechnologies Co., Ltd.), an
-indirect wholly-owned subsidiary of the Company
+IM Fufeng 內蒙古阜豐生物科技有限公司 (Neimenggu Fufeng Biotechnologies Co., Ltd.), an indirect wholly-owned subsidiary of the Company
 內蒙古阜豐 內蒙古阜豐生物科技有限公司，本公司間接全資附屬公司
 Jilin Zero Plastic Jilin Zero Plastic Ark Biomaterial Co., Ltd. (formerly named as “Jilin COFCO Biomaterial
 Co., Ltd.”) an associate of which 30% are held by the Group
-吉林零塑 吉林零塑方舟生物材料有限公司（曾用名：吉林中糧生物材料有限公司），本集團
-持有30%權益的聯繫人
+吉林零塑 吉林零塑方舟生物材料有限公司（曾用名：吉林中糧生物材料有限公司），本集團持有30%權益的聯繫人
 Listing Rules the Rules Governing the Listing of Securities on the Stock Exchange
 上市規則 聯交所證券上市規則
 Longjiang Fufeng 齊齊哈爾龍江阜豐生物科技有限公司 (Qiqihar Longjiang Fufeng Biotechnologies Co.,
@@ -9642,8 +10008,7 @@ Appendix C3 of the Listing Rules
 標準守則 上市規則附錄C3所載上市發行人董事進行證券交易的標準守則
 MPF mandatory provident fund
 強積金 強制性公積金
-MSG monosodium glutamate, a salt of glutamic acid which is commonly used as a flavour
-enhancer and additive in the food industry, restaurant and household application
+MSG monosodium glutamate, a salt of glutamic acid which is commonly used as a flavour enhancer and additive in the food industry, restaurant and household application
 味精 谷氨酸納，為食品業、食肆及家庭普遍用作調味劑及添加劑的谷氨酸鹽
 Nomination Committee nomination committee of the Board
 提名委員會 董事會提名委員會
@@ -9655,30 +10020,23 @@ Kong, the Macau Special Administrative Region of the PRC and Taiwan
 Remuneration Committee remuneration committee of the Board
 薪酬委員會 董事會薪酬委員會
 
-阜豐集團有限公司 年報 2025 219
+<!-- p.219 -->
 GLOSSARY (Continued)
 詞彙（續）
-Ruixin Hulunbeier Ruixin Agricultural Development Co., Ltd., an associate of which 49% are
-held by the Group
+Ruixin Hulunbeier Ruixin Agricultural Development Co., Ltd., an associate of which 49% are held by the Group
 瑞信 呼倫貝爾瑞信農業發展有限公司，本集團持有49%權益的聯繫人
 SFO the Securities and Futures Ordinance (Chapter 571 of the Laws of Hong Kong)
 證券及期貨條例 香港法例第571章證券及期貨條例
-Shandong Fufeng 山東阜豐發酵有限公司 (Shandong Fufeng Fermentation Co., Ltd.), an indirect wholly-
-owned company of the Company
+Shandong Fufeng 山東阜豐發酵有限公司 (Shandong Fufeng Fermentation Co., Ltd.), an indirect wholly-owned company of the Company
 山東阜豐 山東阜豐發酵有限公司，本公司間接全資附屬公司
 Share(s) ordinary share(s) in the share capital of the Company
 股份 本公司股本中的普通股
 Shareholder(s) holder(s) of the Share(s)
 股東 股份持有人
-Share Option Scheme the share option scheme adopted by the Company on 12 May 2017 for granting the
-share options to Eligible Participants as defined in the scheme
-購股權計劃 本公司於二零一七年五月十二日採納的購股權計劃，以向計劃以下所界定的合資
-格參與者授出購股權
-Shenhua Pharmaceutical 江蘇神華藥業有限公司 (Jiangsu Shenhua Pharmaceutical Co., Ltd.), a company with
-limited liability established in the Jiangsu Province of the PRC, a former indirect wholly-
-owned subsidiary of the Company up to 19 July 2023
-神華藥業 江蘇神華藥業有限公司，於中國江蘇省成立的有限公司，截至二零二三年七月
-十九日為本公司前間接全資附屬公司
+Share Option Scheme the share option scheme adopted by the Company on 12 May 2017 for granting the share options to Eligible Participants as defined in the scheme
+購股權計劃 本公司於二零一七年五月十二日採納的購股權計劃，以向計劃以下所界定的合資格參與者授出購股權
+Shenhua Pharmaceutical 江蘇神華藥業有限公司 (Jiangsu Shenhua Pharmaceutical Co., Ltd.), a company with limited liability established in the Jiangsu Province of the PRC, a former indirect wholly-owned subsidiary of the Company up to 19 July 2023
+神華藥業 江蘇神華藥業有限公司，於中國江蘇省成立的有限公司，截至二零二三年七月十九日為本公司前間接全資附屬公司
 Stock Exchange the Stock Exchange of Hong Kong Limited
 聯交所 香港聯合交易所有限公司
 Summit Challenge Summit Challenge Limited, an indirect wholly-owned subsidiary of the Company
@@ -9686,13 +10044,12 @@ Summit Challenge Summit Challenge Limited，本公司間接全資附屬公司
 Trans-Asia Trans-Asia Capital Resources Ltd., an indirect wholly-owned subsidiary of the
 Company
 環亞 環亞資本有限公司，本公司間接全資附屬公司
-Xinjiang Fufeng 新疆阜豐生物科技有限公司 (Xinjiang Fufeng Biotechnologies Co., Ltd.), an indirect
-wholly-owned subsidiary of the Company
+Xinjiang Fufeng 新疆阜豐生物科技有限公司 (Xinjiang Fufeng Biotechnologies Co., Ltd.), an indirect wholly-owned subsidiary of the Company
 新疆阜豐 新疆阜豐生物科技有限公司，本公司間接全資附屬公司
 Year year ended 31 December 2025
 本年度 截至二零二五年十二月三十一日止年度
 
-220 FUFENG GROUP LIMITED ANNUAL REPORT 2025
+<!-- p.220 -->
 GLOSSARY (Continued)
 詞彙（續）
 U.S. United States of America
