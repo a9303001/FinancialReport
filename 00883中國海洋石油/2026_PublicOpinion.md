@@ -1,3 +1,14 @@
+<!-- MdClean:v1 | sha1:5b0a7102b232 | cleaned:2026-11-01 | mode:light -->
+<!-- AI-META
+company_folder: 00883中國海洋石油
+file: 2026_PublicOpinion.md
+doc_type_guess: public_opinion (輿情彙整)
+period_hint_from_filename: 2026
+source_format: markdown (AI／人工撰寫)
+clean_mode: light (AI 筆記；內容未改寫，只清空白與失效連結)
+cleanup_applied: control_chars_removed=1
+-->
+
 # [00883中國海洋石油] 2026 年 輿情彙整
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
@@ -19,19 +30,6 @@
 - [2026-09 · 輿情新聞 (更新)](#2026-09--輿情新聞-更新)
 
 <!-- body:start -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## 2026-05 · HKET
 
@@ -572,7 +570,7 @@
 
 <!-- source-file: 202608_輿情新聞.md | bytes: 14050 | sha1: 6719375aaad3 | merged-at: 2026-09-17 -->
 
-﻿# [00883 / 600938 中國海洋石油 CNOOC] 輿情與新聞整理 (2026/08)
+# [00883 / 600938 中國海洋石油 CNOOC] 輿情與新聞整理 (2026/08)
 
 - **分析月份**：2026/08
 - **資料範圍**：過去三個月 (2026-06 ~ 2026-08)

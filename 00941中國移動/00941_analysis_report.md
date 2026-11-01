@@ -1,3 +1,14 @@
+<!-- MdClean:v1 | sha1:3041ae025ddb | cleaned:2026-11-01 | mode:light -->
+<!-- AI-META
+company_folder: 00941中國移動
+file: 00941_analysis_report.md
+doc_type_guess: analysis_note (AI 分析)
+period_hint_from_filename: unknown
+source_format: markdown (AI／人工撰寫)
+clean_mode: light (AI 筆記；內容未改寫，只清空白與失效連結)
+cleanup_applied: none
+-->
+
 # 中國移動 (00941/600941) 深度基本面與財務分析報告
 
 - **分析日期**：2026-06-26
