@@ -158,7 +158,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR | 照 §5.5，不需 MCP [2026-09] |
 | moomoo 社區 `moomoo.com/hk/stock/{5碼}-HK/community` | Firecrawl 需額度；Bright Data 回 403「Operations too frequent」或 `Document` 外殼；Apify `rag-web-browser` 回 200 但只有 `Document` 外殼 | **直接用 Playwright**（會導向 `/hant/stock/...`），snapshot 內含作者、`MM/DD HH:MM` 時間連結與貼文摘要；冷門港股常數月才一則 [2026-10] |
 | LIHKG | `api_v2/thread/search` 直接打回 `error_code 5`；頁面自己發出的 `api_v2/thread/search` 時好時壞（2026-10 上旬 503、10-22 起多次回 200） | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`，用 `browser_network_requests`（`filter: thread/search`）看頁面 API 狀態；200 時用 `browser_network_request` 讀回應（在頁內自行 `fetch` 仍回 error 5；`create_time` 為 Unix 秒），503 時試 2 次即記 ❌；200 但內容為 `{"success":0,"error_code":100,"error_message":"沒有相關文章"}` 代表站內確實沒有符合的討論串，記 ⭕。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo，並刪除 repo 內 `.playwright-mcp/` [2026-10] |
-| 香港經濟日報 `hket.com` | `inews` 回 HTTP 405 真人驗證；`invest.hket.com/article/{id}` 用 `curl` 回 200 但只有約 1.3KB 外殼；搜尋頁 404 | 用 `WebSearch` 搭 `allowed_domains: ["hket.com"]` 找文章網址，再 `firecrawl_scrape`（basic proxy）取標題、作者、發布日期與導言；後段為會員牆，不必再跑 MCP 鏈 [2026-10] |
+| 香港經濟日報 `hket.com` | `inews` 回 HTTP 405 真人驗證；`invest.hket.com/article/{id}` 用 `curl` 回 200 但只有約 1.3KB 外殼；搜尋頁 404 | 用 `WebSearch` 搭 `allowed_domains: ["hket.com"]` 找文章網址，再 `firecrawl_scrape`（basic proxy）取標題、作者、發布日期與導言（網址要帶搜尋結果中的完整 slug，只填 `article/{id}` 會全引擎失敗）；後段為會員牆，不必再跑 MCP 鏈 [2026-11] |
 
 ### 4.4 日股
 
@@ -277,7 +277,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 1. 先用 Bright Data `scrape_as_markdown` 抓 `https://xueqiu.com/S/{代號}`（雪球用 Bright Data 成功率最高，可跳過內建工具）。單篇長文 `xueqiu.com/{用戶id}/{貼文id}` 也用 Bright Data，第一次常回空白，重試 1 次即可取得全文與「发布于」時間 [2026-10]。
 2. Bright Data 失敗或回 `bad_endpoint`（KYC）→ `firecrawl_scrape` 搭 `proxy: stealth`，再依序 Apify → Playwright。
-   - 整條鏈都失敗時，用 Exa `web_search_exa`（query 寫「雪球 {公司名} {代號} 讨论 {年月}」）：它回傳雪球單篇頁的索引全文，含「发布于 YYYY-MM-DD HH:MM」、回覆數與部分留言，比搜尋摘要完整；仍依 §3.6 標註為索引。要逐則確認是否屬該公司（留言頁常是其他個股的討論串）。
+   - 整條鏈都失敗時，用 Exa `web_search_exa`（query 寫「雪球 {公司名} {代號} 讨论 {年月}」）：它回傳雪球單篇頁的索引全文，含「发布于 YYYY-MM-DD HH:MM」、回覆數與部分留言，比搜尋摘要完整（Exa `Published` 欄位標 `Z` 但實為北京時間，以「发布于」為準）；仍依 §3.6 標註為索引。要逐則確認是否屬該公司（留言頁常是其他個股的討論串）。
 3. 雙重上市公司的 A 股頁（`SH601318`）與 H 股頁（`02318`）互為備援。
 4. **時間要校準**：討論流顯示相對時間，且 Firecrawl 渲染時區是 `America/New_York`；一律以單篇頁的「发布于 YYYY-MM-DD HH:MM」（北京時間）為準。
 5. 只抓討論，不從雪球抓財報。
