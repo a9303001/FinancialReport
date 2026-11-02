@@ -1,25 +1,19 @@
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0001-00.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0001-01.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0001-02.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0001-03.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0001-04.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0002-00.png)
 
 
 ### **ABOUT SPRING REIT** 
@@ -33,14 +27,12 @@ Spring REIT offers investors direct exposure to two premium office buildings str
 Spring REIT is managed by Spring Asset Management Limited (as manager of Spring REIT, the “ **Manager** ”), a company incorporated in Hong Kong for the sole purpose of managing Spring REIT. As at 30 June 2026, the Manager is 80.4% owned by Mercuria Holdings Co., Ltd. (“ **Mercuria Holdings** ”), which is an investment holding company listed on the Tokyo Stock Exchange (Stock Code: 7347) with notable shareholders such as Development Bank of Japan, Itochu Corporation and Sumitomo Mitsui Trust Bank, Limited. 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0002-06.png)
 
 
 <!-- Start of picture text -->
 Stock Exchange (Stock Code: 7347) with notable<br>shareholders such as Development Bank<br>of Japan, Itochu Corporation and<br>Sumitomo Mitsui Trust Bank, Limited.<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0002-07.png)
 
 
 
@@ -50,7 +42,6 @@ Stock Exchange (Stock Code: 7347) with notable<br>shareholders such as Developme
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0003-03.png)
 
 
 
@@ -58,11 +49,9 @@ Stock Exchange (Stock Code: 7347) with notable<br>shareholders such as Developme
 # **CONTENTS** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0003-06.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0003-07.png)
 
 
 - **2** Performance Highlights 
@@ -98,7 +87,6 @@ Stock Exchange (Stock Code: 7347) with notable<br>shareholders such as Developme
 - **47** Condensed Consolidated Statement of Cash Flows 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0003-22.png)
 
 
 - Notes to the Condensed Consolidated Interim 
@@ -108,63 +96,52 @@ Stock Exchange (Stock Code: 7347) with notable<br>shareholders such as Developme
 - **73** Performance Table 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0003-25.png)
 
 
 - **74** Corporate Information 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0003-27.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0003-28.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-00.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-01.png)
 
 
 ## **PERFORMANCE HIGHLIGHTS** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-03.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-04.png)
 
 
 <!-- Start of picture text -->
 Total Revenue<br>(RMB million)<br>1H<br>2026 289.62<br>2H<br>2025 298.49<br>1H<br>2025 322.56<br>Net Property Income Margin<br>(%)<br>1H<br>2026 70.8<br>2H<br>2025 67.6<br>1H<br>2025 73.4<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-05.png)
 
 
 <!-- Start of picture text -->
 Net Property Income<br>(RMB million)<br>1H<br>2026 205.03<br>2H<br>2025 201.80<br>1H<br>2025 236.64<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-06.png)
 
 
 <!-- Start of picture text -->
 Total Distributable Income<br>(RMB million)<br>1H<br>2026 58.14<br>2H<br>2025 66.14<br>1H<br>2025 102.33<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-07.png)
 
 
 <!-- Start of picture text -->
 DPU<br>(HK cents)<br>1H<br>2026 4.0<br>2H<br>2025 3.6<br>1H<br>2025 7.6<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-08.png)
 
 
 <!-- Start of picture text -->
@@ -173,21 +150,18 @@ Net Asset Value Attributable to Unitholders<br>(RMB million)<br>30 Jun<br>2026 5
 **Net Asset Value Attributable to Unitholders** (RMB million) 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-10.png)
 
 
 <!-- Start of picture text -->
 Property Valuation 1<br>(RMB million)<br>30 Jun<br>2026 10,718.00<br>31 Dec<br>11,081.00<br>2025<br>30 Jun<br>2025 11,244.00<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-11.png)
 
 
 <!-- Start of picture text -->
 Gearing Ratio<br>(%)<br>30 Jun<br>39.4<br>2026<br>31 Dec<br>39.3<br>2025<br>30 Jun<br>39.4<br>2025<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-12.png)
 
 
 <!-- Start of picture text -->
@@ -196,7 +170,6 @@ Gearing Ratio<br>(%)<br>30 Jun<br>39.4<br>2026<br>31 Dec<br>39.3<br>2025<br>30 J
 > 1. As appraised by the Principal Valuer 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0004-14.png)
 
 
 Spring Real Estate Investment Trust   | 2026 Interim Report 
@@ -204,7 +177,6 @@ Spring Real Estate Investment Trust   | 2026 Interim Report
 **2** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0005-00.png)
 
 
 ## **DISTRIBUTION** 
@@ -226,11 +198,9 @@ The Record Date for the 2026 Interim Distribution will be 7 October 2026. The re
 In order to qualify for the 2026 Interim Distribution, all completed transfer forms in respect of transfer of Units (accompanied by the relevant Unit certificates) must be lodged for registration with Tricor Investor Services Limited, Spring REIT’s Unit registrar in Hong Kong, whose address is 17/F, Far East Finance Centre, 16 Harcourt Road, Hong Kong, no later than 4:30 p.m. on 5 October 2026. 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0005-10.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0005-11.png)
 
 
 2026 Interim Report |   Spring Real Estate Investment Trust 
@@ -238,23 +208,19 @@ In order to qualify for the 2026 Interim Distribution, all completed transfer fo
 **3** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0006-00.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0006-01.png)
 
 
 ## **OVERVIEW OF SPRING REIT’S PROPERTIES** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0006-03.png)
 
 
 ### **THE CCP PROPERTY** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0006-05.png)
 
 
 <!-- Start of picture text -->
@@ -263,20 +229,17 @@ Premium grade office<br>Office Tower 1 & Office Tower 2,<br>China Central Place,
 Spring REIT currently offers investors exposure to two premium grade office buildings in Beijing’s CBD, namely Office Tower 1 and Office Tower 2 in China Central Place, with a total of approximately 600 car parking lots located in the underground area. The two office buildings have in aggregate a total gross floor area of 120,245 sqm, including 25,127 sqm of car parking space. The CCP Property is strategically located in the southeast corner of Beijing’s traditional CBD, in Chaoyang District to the east of the city centre. 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0006-07.png)
 
 
 ### **HUAMAO PLACE** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0006-09.png)
 
 
 <!-- Start of picture text -->
 High-end destination mall<br>Huizhou, Greater Bay Area<br>Through Huamao Place, Spring REIT offers investors<br>exposure to the retail scene in the GBA. With a gross<br>floor area of 144,925.07 sqm, the asset comprises:<br>(a) the entire seven-storey shopping mall (including<br>two basement floors); and (b) 700 underground and<br>50 above-ground carpark spaces. The property is the<br>retail component of a larger integrated development<br>known as “Huizhou Central Place”, which is served by<br>major roads and surrounded by other public facilities<br>and attractions such as Huizhou West Lake, Huizhou<br>Museum, Huizhou Science & Technology Museum and<br>Dayun Temple. Expressways and an intercity railway<br>link Huamao Place to the rest of the GBA.<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0006-10.png)
 
 
 Spring Real Estate Investment Trust   | 2026 Interim Report 
@@ -284,7 +247,6 @@ Spring Real Estate Investment Trust   | 2026 Interim Report
 **4** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0007-00.png)
 
 
 ## **OVERVIEW OF CHINA CENTRAL PLACE** 
@@ -320,37 +282,30 @@ Spring Real Estate Investment Trust   | 2026 Interim Report
 #### **HOTELS** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0007-14.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0007-15.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0007-16.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0007-17.png)
 
 
 <!-- Start of picture text -->
 Apart-ments Apart-ments Apart-ments<br>Apart-ments Apart-ments Apart-ments BusinessCenter<br>Business Center<br>Apart-ments<br>Club<br>House<br>Apart-ments Apart-ments Apart-ments<br>JW Marriott<br>Hotel Beijing<br>SKP Beijing<br>China Central  China Central<br>Mall Mall<br>Ritz-CarltonHotel Beijing<br>Office Tower 3<br>Office Tower 1 Office Tower 2<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0007-18.png)
 
 
 <!-- Start of picture text -->
 3rd Ring Road<br>2nd Ring Road<br>Forbidden City<br>China Central<br>Tiananmen Square<br>Place<br>Chang’an Avenue<br>GuoMao Dawanglu<br>Station Station<br>Central Business<br>District<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0007-19.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0007-20.png)
 
 
 2026 Interim Report |   Spring Real Estate Investment Trust 
@@ -358,37 +313,31 @@ Apart-ments Apart-ments Apart-ments<br>Apart-ments Apart-ments Apart-ments Busin
 **5** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0008-00.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0008-01.png)
 
 
 ## **OVERVIEW OF HUAMAO PLACE** 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0008-03.png)
 
 
 **Huamao Place** , located in Jiangbei area at the heart of Huizhou’s CBD, is the retail component of a larger integrated development known as “Huizhou Central Place” (惠州華貿中心), which includes, among other things, three Grade-A office buildings, three residential buildings and a serviced apartment building. 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0008-05.png)
 
 
 <!-- Start of picture text -->
 Huizhoubei<br>High Speed Rail Station<br>CBD<br>People’s Government<br>of Huizhou City<br>Huamao Place<br>Huizhou<br>West Lake<br>Dongjiang<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0008-06.png)
 
 
 <!-- Start of picture text -->
 Huizhoubei<br>High Speed Rail Station<br>CBD<br>People’s Government<br>of Huizhou City<br>Huamao Place<br>Huizhou<br>West Lake<br>Huizhounan<br>High Speed Rail Station<br>Dongjiang<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0008-07.png)
 
 
 Spring Real Estate Investment Trust   | 2026 Interim Report 
@@ -469,74 +418,57 @@ Property operating expenses are mainly comprised of tax expenses, namely propert
 Occupancy at the CCP Property remained stable, standing at approximately 90.8% as at 30 June 2026 (30 June 2025: 85.9%; 31 December 2025: 90.0%). Average monthly unit rent<sup>1</sup> decreased to RMB333 per sqm in 1H 2026 (2H 2025: RMB341 per sqm; 1H 2025: RMB348 per sqm). Leasing demand remained relatively weak during the period, with tenants continuing to focus on cost controls and space optimisation. As part of the Manager’s leasing strategy during the Reporting Period, certain incentives, such as rent-free periods and other concessions, were provided in line with prevailing market conditions to support tenant retention and maintain occupancy levels. 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-05.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-06.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-07.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-08.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-09.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-10.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-11.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-12.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-13.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-14.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-15.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-16.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-17.png)
 
 
 <!-- Start of picture text -->
 20.8%<br>16.5%<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-18.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-19.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-20.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0011-21.png)
 
 
 1. The average monthly unit rent represents the contractual rent, excluding management fee and net of value-added tax (“ **VAT** ”). 
@@ -563,7 +495,6 @@ The CCP Property had a total of 187 tenancies as at 30 June 2026. Over half of t
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0012-04.png)
 
 
 <!-- Start of picture text -->
@@ -572,14 +503,12 @@ Tenancy Mix By Monthly Rental Income<br><!-- End of picture text -->
 (For the month June 2026) 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0012-06.png)
 
 
 <!-- Start of picture text -->
 5% Energy/ resources/ shipping/ trading<br>Business center and others<br>5%<br>Real estate/ retail/<br>consumer products   29%<br>Financial institution/<br>insurance/investment<br>3%<br>Education/<br>media/ sports<br>9%<br>Pharmaceutical/<br>healthcare/<br>hospitality 25%<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0012-07.png)
 
 
 <!-- Start of picture text -->
@@ -634,7 +563,6 @@ During the Reporting Period, Huamao Place reported revenue of RMB113.46 million,
 (for the six months period ended 30 June 2026) 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0014-03.png)
 
 
 <!-- Start of picture text -->
@@ -657,96 +585,75 @@ As at 30 June 2026, the occupancy rate was 95.2% (31 December 2025: 98.5%; 30 Ju
 As at 30 June 2026, leases expiring in the second half of 2026 and in 2027 accounted for 16.9% and 26.4% of the total leased GFA respectively. 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-03.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-04.png)
 
 
 <!-- Start of picture text -->
 20 19 21<br>158 149<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-05.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-06.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-07.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-08.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-09.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-10.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-11.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-12.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-13.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-14.png)
 
 
 <!-- Start of picture text -->
 Expiry Profile by Leased GFA<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-15.png)
 
 
 <!-- Start of picture text -->
 28.6%<br>26.4%<br>16.9% 17.7%<br>10.4%<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-16.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-17.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-18.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-19.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-20.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-21.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-22.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0015-23.png)
 
 
 <!-- Start of picture text -->
@@ -772,14 +679,12 @@ Huamao Place had a total of 548 tenancies as at 30 June 2026. Details of the GFA
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0016-03.png)
 
 
 <!-- Start of picture text -->
 Others<br>Healthcare and Beauty<br>6%<br>Household<br>6%<br>Jewellery and Accessories<br>28%<br>6% Food and Beverages<br>Tech and Automobiles<br>8%<br>Sports Goods<br>9% 27%<br><!-- End of picture text -->
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0016-04.png)
 
 
 <!-- Start of picture text -->
@@ -2784,10 +2689,8 @@ www.springreit.com
 **74** Spring Real Estate Investment Trust   | 2026 Interim Report 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0077-00.png)
 
 
 
-![](C:/Users/a9303/.gemini/antigravity/brain/e4fda031-68d7-48a9-971d-6b485732fe6b/scratch/pdf_images/01426_InterimReport_2026.pdf-0077-01.png)
 
 

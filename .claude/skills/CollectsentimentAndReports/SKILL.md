@@ -86,7 +86,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | Apify `Monthly usage hard limit exceeded` | 月額度用盡 | 本次不再呼叫任何 Actor |
 | Bright Data `Residential Failed (bad_endpoint)` | 帳號未完成 KYC | 需 residential 的站（雪球、LIHKG）改走其他 MCP |
 | Bright Data `502 origin_bad_gateway` | MCP 閘道故障 | 照 §3.1 試 2 次即換，不要空等 `retry_after` |
-| Bright Data `needs you to sign in again` | MCP 授權過期，本次無法自行重新登入 | 本次全程停用，報告註明請使用者重新授權；改走 Apify / Exa |
+| Bright Data `needs you to sign in again` 或 `Customer is not active` | MCP 授權過期／帳號停用，本次無法自行處理 | 本次全程停用，報告註明請使用者重新授權或檢查帳號；改走 Apify / Exa（雪球改 `firecrawl_scrape` 搭 `proxy: stealth`，可讀 `/S/{代號}` 討論流與即時報價）|
 
 不要對每個網站重踩同一顆地雷；先找 §4 的免 MCP 替代路徑，也不可因此直接改用搜尋摘要打發。所有帳號級錯誤都寫進 §10 報告的 MCP 紀錄。
 
@@ -148,11 +148,11 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 站點 / 網址 | 狀況 | 做法 |
 | :--- | :--- | :--- |
 | HKEXnews 披露易 | 有官方 JSON API | **港股財報與公告第一站**，照 §5.4 [2026-09] |
-| HKEX 權益披露 `di.hkex.com.hk` | SSR，`curl` 可讀 | 入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` → 明細 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。核實「大股東增持」類新聞最準；交易代碼 3104「Services」是以單位支付酬金，不是自掏腰包買進 [2026-10] |
+| HKEX 權益披露 `di.hkex.com.hk` | SSR，`curl` 可讀 | 入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` → 明細 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。核實「大股東增持」類新聞最準；交易代碼 3104「Services」是以單位支付酬金，不是自掏腰包買進。代碼 1201「sale」搭代價 3102「Assets other than cash」時要看大股東 Form 2 第 27 欄 Supplementary information（例：春泉管理人以基金單位派實物股息），新浪/智通自動快訊一律寫成「減持」，不可直接當市場拋售 [2026-11] |
 | 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | 只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天，冷門期可涵蓋約 1 個月）；`curl` 時而 SSR、時而只回約 11KB `<title>Document` JS 外殼 | `curl` 有 SSR 時解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span；回外殼時直接改 Playwright（snapshot 每則 link 含標題、摘要、來源與時間，時間為 UTC，+8 小時；`curl` SSR 拿到的時間已是香港時間，不必換算）。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購/CCASS 快訊偶爾漏日，要與 HKEX 披露交叉核對。較早期間改看 AAStocks／股吧 [2026-10] |
 | 富途個股頁 `/quote`、`/announcement`、新聞內文 `news.futunn.com/hk/post/*` | JS 外殼；`/community` 導向登入頁 | 內文改用 Playwright 可取全文（MT Newswires 文章仍需登入）；Playwright 渲染出的發文時間是 UTC，+8 小時才是香港時間 [2026-10] |
-| AAStocks | 列表 `aastocks.com/tc/stocks/analysis/stock-aafn/{代號}/0/hk-stock-news/1` 為 SSR；`http://` 會 302 | `curl -L` 抓列表（約 20 則；`/hk-stock-news/2` 回傳與第 1 頁相同，無法翻頁）；單篇 `.../stock-aafn-con/{代號}/{來源}/{ID}/hk-stock-news` 正文就在 SSR HTML（`og:description` 只有約 50 字，不要只取它）。頁頭附沽空金額與比率 [2026-10] |
-| 新浪港股新聞 `stock.finance.sina.com.cn/hkstock/news/{代號}.html` | SSR，最新；只列約 30 則（財報後熱門期僅涵蓋約 2 天，冷門期可涵蓋約 1 個月），含券商研報標題 | `curl`（gb18030 解碼）可讀；研報頁 `stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/{id}/` 為 SSR（gb18030），正文在 `div.blk_container`、機構/研究員/日期在 `div.creab`，可取研報摘要全文 [2026-10] |
+| AAStocks | 列表 `aastocks.com/tc/stocks/analysis/stock-aafn/{代號}/0/hk-stock-news/1` 為 SSR；`http://` 會 302 | `curl -L` 抓列表（約 20 則；`/hk-stock-news/2` 回傳與第 1 頁相同，無法翻頁）；單篇 `.../stock-aafn-con/{代號}/{來源}/{ID}/hk-stock-news` 正文就在 SSR HTML（`og:description` 只有約 50 字，不要只取它）。頁頭附沽空金額與比率。市場異動快訊 `aastocks.com/tc/stocks/news/aamm-content/{id}/price-dropped`（`id` 如 `aad2611022327`，前 6 碼為 yyMMdd）不在個股新聞列表內，用 `WebSearch`「{公司名} {代號} 急跌 {月日}」找網址，`curl -L` 單篇可取標題與分鐘級時間；約 3 週後頁面只剩框架，只能引用搜尋標題 [2026-11] |
+| 新浪港股新聞 `stock.finance.sina.com.cn/hkstock/news/{代號}.html` | SSR，最新；只列約 30 則（財報後熱門期僅涵蓋約 2 天，冷門期可涵蓋約 1 個月），含券商研報標題 | `curl`（gb18030 解碼）可讀；研報頁 `stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/{id}/` 為 SSR（gb18030），正文在 `div.blk_container`、機構/研究員/日期在 `div.creab`，可取研報摘要全文。即時／收市報價 `curl -H "Referer: https://finance.sina.com.cn" https://hq.sinajs.cn/list=rt_hk{5碼}`（gb18030）：逗號分隔依序為英文名、中文名、開、前收、高、低、現價、漲跌、漲跌%、買、賣、成交額、成交量…日期、時間；yfinance 港股最新一日 OHLC 常為空值時用它補 [2026-11] |
 | 新浪財經內文 `finance.sina.com.cn`、`t.cj.sina.cn` | 時好時壞，且依路徑不同：`/stock/relnews/`、`/stock/aiassist/`（平台 AI 稿）可讀，同時 `/stock/hkstock/marketalerts/`、`/stock/hkstock/hkstocknews/`、`/stock/aigc/` 回 curl rc=35（SSL connect error）；10 月上旬也曾持續 `Connection reset`（UTF-8） | 先 `curl -m 10` 試 1 次；正文在 `id="artibody"` 之後、時間在 `span.date`。連線錯誤時依 §3.3 零重試，改找轉載全文：智通「港股異動」稿用富途 `news.futunn.com/hk/post/*`（§4.3 富途列）；或 Exa `web_search_exa`（依 §3.6 標註為索引）。都沒有才只引用列表標題 [2026-10] |
 | 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 + WAF；Apify `rag-web-browser` 只拿到 WAF JS 外殼，Playwright 回 HTTP 567「请求异常已被安全策略拦截」（對 AI Agent 限制數小時） | 照 §5.6 [2026-10] |
 | 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR | 照 §5.5，不需 MCP [2026-09] |
