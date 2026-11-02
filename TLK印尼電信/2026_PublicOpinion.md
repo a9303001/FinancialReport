@@ -787,3 +787,31 @@
 - **關鍵要點**：11/1 前無新進展；MSCI 收意見至 2027-04-30、最遲 2027-06 公布，預設照案執行；IDX 要求 MSCI 正式說明理由。
 
 ---
+
+#### [2026-11-02 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/2 台北 09:30 前蒐集；IDX 尚未開盤，TLK 11.17 USD、TLKM 1,980 IDR 仍為 10/30 收盤；USD/IDR 早盤 18,138。
+
+##### 🎯 HSC 股票 11/2 起不計入 JCI
+- **來源連結**：[Monitor Indonesia 2026-11-02](https://monitorindonesia.com/ekonomi/read/2026/11/637879/mulai-hari-ini-saham-hsc-tak-lagi-masuk-penghitungan-ihsg)、[Liputan6](https://www.liputan6.com/saham/read/8326269/saham-hsc-keluar-dari-perhitungan-ihsg-mulai-2-november-2026)
+- **關鍵要點**：81 檔 HSC 股票（含 BREN、BYAN、DSSA）退出 JCI 計算但仍可交易；JCI 評估改為 1／4／7／10 月；TLKM 不在名單內。
+
+##### 🎯 外資賣壓與本週展望
+- **來源連結**：[Liputan6 2026-11-01](https://www.liputan6.com/saham/read/8326227/ihsg-sepekan-berpeluang-kembali-lesu-sentimen-ini-membayangi)
+- **關鍵要點**：10/30 外資全市場淨賣 1,760 億 IDR，年初至今約 126 兆 IDR；分析師預估 11/2–11/6 JCI 區間 4,907–5,317。
+
+##### 🎯 Mitratel 9M2026 實績
+- **來源連結**：[Kontan 2026-11-01](https://insight.kontan.co.id/news/mtel-sukses-cetak-laba-bersih-rp-155-triliun-di-kuartal-iii-2026-simak-rahasianya)
+- **關鍵要點**：營收 7.01 兆（+1.8%）、淨利 1.55 兆（+0.8%）；鐵塔 40,704 座、租戶 65,037。
+
+##### 🎯 Stockbit 社群：營業費用暴增
+- **來源連結**：[Stockbit TLKM](https://stockbit.com/symbol/TLKM)
+- **關鍵要點**：網友認為 3Q 最大問題是營業費用增速高於營收（與 6-K G&A 9M +19% 一致）。
+
+##### 🎯 共識與法說時程（Yahoo Finance）
+- **關鍵要點**：TLKM.JK 23 位分析師，平均評等 1.4；目標價平均 3,279.78、中位數 3,400、最低 2,080 IDR；FY2026E EPS 仍 202.08 IDR 未下修。法說時間：TLK 頁標 11/2 04:00 WIB（非推估）、TLKM 頁標 11/2 16:15 WIB（推估），兩者衝突。
+
+##### 🎯 日本論壇
+- **關鍵要點**：搜尋「テルコム・インドネシア」「TLK 株 掲示板」僅得自動生成垃圾頁（引用 2026-04 舊股價），無 minkabu／kabutan／5ch 有效討論。
+
+---
