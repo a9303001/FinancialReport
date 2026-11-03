@@ -815,3 +815,23 @@
 - **關鍵要點**：搜尋「テルコム・インドネシア」「TLK 株 掲示板」僅得自動生成垃圾頁（引用 2026-04 舊股價），無 minkabu／kabutan／5ch 有效討論。
 
 ---
+
+#### [2026-11-03 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/3 台北 09:30 前蒐集；TLK 11/2 收 10.85 USD（−2.9%）、TLKM 11/2 收 1,960 IDR（−1.0%）；USD/IDR 11/2 收 18,113.9。
+
+##### 🎯 3Q2026 官方新聞稿（11/2）
+- **來源連結**：[CNBC Indonesia 2026-11-02](https://www.cnbcindonesia.com/market/20261102145554-17-781557/andalkan-empat-segmen-bisnis-utama-telkom-raup-pendapatan-rp1135-t)、[StockWatch 2026-11-02](https://stockwatch.id/telkom-raup-pendapatan-rp1135-triliun-laba-bersih-normalisasi-naik-39-pada-kuartal-iii-2026/)
+- **關鍵要點**：9M 營收 113.5 兆（+3.5%）；EBITDA 55.5 兆（+2.0%，率 48.9%）；淨利 14.4 兆（margin 12.7%）；normalized net profit 16.5 兆（+3.9%，margin 14.6%）。Telkomsel 營收 82.9 兆（+1.8%）、digital 60.7 兆（+7.7%）、ARPU 45,400（+7.1%）、data yield +6.5%。IndiHome 營收 19.1 兆、用戶 9.63 百萬（QoQ +1.2%）、ARPU 217,700（QoQ +3.2%）。NeutraDC 營收 1.39 兆（+17%）、EBITDA +35%、率 40.9%，正洽談策略夥伴。國際網路營收 1.37 兆（+50.2%）；INSICA 海纜目標 4Q26。CapEx 15.7 兆（C2R 13.8%）。9M 整併 14 個子公司；wholesale fiber 9/30 移轉 InfraNexia 完成。新聞稿未提股利、補稅案、減損。
+
+##### 🎯 MSCI 11 月審查時程與市場評論
+- **來源連結**：[Okezone 2026-11-03](https://economy.okezone.com/read/2026/11/03/278/3251734/ihsg-dibayangi-tren-pelemahan-jelang-pengumuman-msci-november-2026-cek-rekomendasi-saham-pilihan)
+- **關鍵要點**：MSCI 11 月審查 11/11 公布、12/1 生效；10/30 外資淨賣 1,760 億、年初至今約 126 兆 IDR；Republik Investor 稱外資撤出反映治理與法規的信心危機，JCI 支撐 4,980／4,907。11/2 JCI 收 5,099（+0.83%）。
+
+##### 🎯 共識下修（Yahoo Finance）
+- **關鍵要點**：TLKM.JK FY2026E 共識 EPS 由 202.08 降到 191.65 IDR（−5.2%）；目標價平均 3,275.43（上次 3,279.78）、中位數 3,400、最低 2,080、最高 4,030 IDR；23 位分析師、評等 1.39。TLK 美元口徑 FY26E 1.071 USD、Forward EPS 1.2282 USD；Yahoo ROE 16.3%。
+
+##### 🎯 TLK ADR 財報後反應
+- **關鍵要點**：11/2 NYSE TLK 10.85 USD（−2.9%），成交 237 萬股（3 個月均量 135 萬）；ADR 對 TLKM 平價溢價由 +1.9% 縮到 +0.3%。下跌原因無報導。
+
+---
