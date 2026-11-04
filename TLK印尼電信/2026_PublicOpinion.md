@@ -835,3 +835,14 @@
 - **關鍵要點**：11/2 NYSE TLK 10.85 USD（−2.9%），成交 237 萬股（3 個月均量 135 萬）；ADR 對 TLKM 平價溢價由 +1.9% 縮到 +0.3%。下跌原因無報導。
 
 ---
+
+#### [2026-11-04 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/4 台北 09:30 前後蒐集；TLK 11/3 收 10.40 USD（−4.1%，成交 500 萬股，3 個月均量 137 萬）；TLKM 11/3 收 1,880 IDR（−4.1%）；USD/IDR 11/4 早盤 18,148（Yahoo 11/3 日線收盤 17,472 疑為資料錯誤）。
+
+##### 🎯 11/3 印尼股市全面大跌
+- **來源連結**：[Media Indonesia 2026-11-03](https://mediaindonesia.com/ekonomi/951839/ihsg-anjlok-378-persen-ke-level-4904-pada-3-november-2026-ini-penyebabnya)、[Kontan 2026-11-04](https://insight.kontan.co.id/news/ihsg-mendekati-4900-intip-prediksi-arah-dan-rekomendasi-saham-hari-ini-411)
+- **關鍵要點**：JCI −192.54 點（−3.78%）收 4,904.29；LQ45 −3.98%；一週 −6.87%、年初至今 −43.28%；11 個產業類股全跌（原物料 −5.86%、能源 −4.56%）；717 跌／69 漲。Pilarmas 歸因：美股 AI 科技股賣壓帶動亞洲 risk-off（Kospi −3.59%）、美國期中選舉不確定、10 月食品通膨 5.03% → 5.81%、核心通膨 2.84% → 2.56%（被解讀為消費轉弱）；油價跌約 7%（美伊外交進展）。其他媒體另提外資賣超與 MSCI 疑慮，MSCI 審查 11/11–12。
+
+##### 🎯 共識與目標價（Yahoo Finance）
+- **關鍵要點**：TLKM.JK FY2026E 共識 EPS 顯示 202.74 IDR（11/3 為 191.65，數據跳動、可信度低）；TLK ADR FY26E 1.071 USD 不變、Forward EPS 1.119 USD；平均目標價 3,223.26 IDR（11/3 為 3,275.43，−1.6%）、中位數 3,400、最低 2,080、最高 4,030；23 位分析師、評等 1.39。
