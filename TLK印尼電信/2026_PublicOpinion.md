@@ -846,3 +846,24 @@
 
 ##### 🎯 共識與目標價（Yahoo Finance）
 - **關鍵要點**：TLKM.JK FY2026E 共識 EPS 顯示 202.74 IDR（11/3 為 191.65，數據跳動、可信度低）；TLK ADR FY26E 1.071 USD 不變、Forward EPS 1.119 USD；平均目標價 3,223.26 IDR（11/3 為 3,275.43，−1.6%）、中位數 3,400、最低 2,080、最高 4,030；23 位分析師、評等 1.39。
+
+---
+
+#### [2026-11-06 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/6 台北 09:20 前後蒐集；TLK 11/5 收 10.95 USD（+1.9%，成交 138 萬股）；TLKM 11/5 收 1,990 IDR（+5.6%，日高 2,020）；USD/IDR 11/5 收 18,082（Bloomberg，+0.47%；JISDOR 18,094）。Yahoo IDR=X 11/3–11/5 日線收盤（17,472／17,536／17,509）仍與開高價不一致，判定資料錯誤。
+
+##### 🎯 BRI Danareksa 11/5 TLKM 公司更新報告（Buy，TP 3,500 不變）
+- **來源連結**：[BRIDS Equity Snapshot 2026-11-05](https://www.brights.id/en/research-and-news/research-report/bri-danareksa-sekuritas-equity-snapshot-thursday-november-05-2026)、[報告 PDF](https://link.brights.id/brids/storage/47732/20261105-TLKM.pdf)
+- **關鍵要點**：3Q26 ARPU 季減 2.4% 至 44.9k IDR、data yield 季減 4.0%、行動營收季減 3.3%；預付卡用戶季減 2.7 百萬（生物辨識新制）；管理層預期 12 月 exit ARPU 較強（BRIDS 認為主要是季節性）。9M26 CapEx 13.7 兆（佔營收 12.1%），FY26 指引 17%–19% 維持，FY27–28F CapEx 將因資料中心與海纜上升（尚未納入預估）。9M26 ECL（預期信用損失）1.9 兆 IDR，年增 33.4%；原假設 2H26 的 1 兆 ERP（提前退休）費用移到 FY27。FY26F 淨利下修 3.6%（主因投資損失）。預估：EPS FY26F 187.4／FY27F 202.4／FY28F 222.0 IDR（比共識 203.5／221.5／229.2 低 7.9%／8.5%／3.1%）；DPS 2026F 222.0（FY25 已發）、2027F 215.6、2028F 210.5 IDR；淨利 FY26F 18,568 十億。TP 以 DCF 計，相當於 5.1x／5.0x FY26／27F EV/EBITDA。催化劑：InfraNexia 股權出售、2027 年資料中心策略夥伴；風險：FY27 CapEx 上升、MSCI 降級外資流出。
+
+##### 🎯 11/5 JCI 大漲 2.25%，外資買超 TLKM 第二名
+- **來源連結**：[CNBC Indonesia 2026-11-06](https://www.cnbcindonesia.com/market/20261106065346-17-782810/asing-diam-diam-borong-10-saham-ini-saat-ihsg-bangkit-ke-5030)、[Kontan 2026-11-05（匯率）](https://investasi.kontan.co.id/news/rupiah-ditutup-menguat-ke-rp-18082-per-dolar-as-hari-ini-511-dolar-as-terkoreksi)
+- **關鍵要點**：JCI +110.49 點（+2.25%）收 5,030.26，全日未翻黑；科技類股 +4.6%。全市場外資淨賣 655 億 IDR（買 3.4 兆、賣 3.5 兆；部分媒體把 3.4 兆毛買誤寫成淨買）；個股外資淨買 BBCA 3,030 億、TLKM 870 億、ASII 840 億。印尼盾升值主因：美國民主黨拿下參眾兩院、油價大跌、印尼 3Q GDP 年增 5.47% 優於預期。
+
+##### 🎯 11/6 亞洲股市重挫
+- **來源連結**：[Kontan 2026-11-06](https://internasional.kontan.co.id/news/indeks-kospi-anjlok-86-jumat-611-korea-selatan-aktifkan-circuit-breaker)
+- **關鍵要點**：KOSPI −8.6% 觸發熔斷、日經 −5.5%、ASX 200 跌破 9,000，主因 AI 監管疑慮與 Nasdaq 19 個月來最大回檔；TLKM 11/6 盤中數據本輪未取得。
+
+##### 🎯 共識與目標價（Yahoo Finance）
+- **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.87 IDR；平均目標價 3,192.83 IDR（11/4 為 3,223.26，−0.9%）、中位數 3,400、最低 2,080、最高 4,030；23 位分析師、評等 1.39。TLK ADR FY26E 1.071 USD、Forward EPS 1.119 USD、Forward PE 9.78 倍。
