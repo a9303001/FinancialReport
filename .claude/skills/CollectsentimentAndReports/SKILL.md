@@ -110,7 +110,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 | 站點 / 網址 | 狀況 | 做法 |
 | :--- | :--- | :--- |
-| Reddit | 內建工具 400、Firecrawl 不支援、Playwright 與 `search.json` 回 403 | **跳過 §3.1，直接用 Apify Reddit Actor（§5.3）**。Apify 不可用時只能用 Bright Data `search_engine` 取索引並註明 [2026-10] |
+| Reddit | 內建工具 400、Firecrawl 不支援、Playwright 與 `search.json` 回 403 | **跳過 §3.1，直接用 Apify Reddit Actor（§5.3）**。Apify 不可用時只能用 Bright Data `search_engine` 取索引並註明 [2026-11] |
 | X (Twitter) | 未登入即封鎖：Firecrawl 全引擎失敗、Playwright 被導到登入頁 | 日股先用 Yahoo 株つぶやき（§4.4）。其他用 `firecrawl_search`，query 內寫 `site:x.com`（`includeDomains` 參數會回 0 筆）；Firecrawl 沒額度時用 `WebSearch` 搭 `allowed_domains: ["x.com", "twitter.com"]` 取索引。索引沒有時間時，用網址的 status ID 還原：`(id >> 22) + 1288834974657` 毫秒（UTC） [2026-10] |
 | Reuters `reuters.com` | 內建 `WebSearch` 被擋（`allowed_domains` 含 reuters.com 會直接回 400） | `firecrawl_scrape`（basic proxy）可抓公司頁與文章頁全文。Firecrawl 沒額度時用 Exa `web_search_exa` 找轉載頁（`tradingview.com/news/reuters.com,...`、`marketscreener.com`），可取標題與時間，正文多半沒有 [2026-10] |
 | Bloomberg | 付費牆，不是封鎖 | 取摘要即可，報告註明「付費牆」 |
@@ -235,30 +235,33 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 | 400 `不支援的類型` | 型別段拼錯 |
 | 每頁內容都一樣 | 改用 `cursor` 分頁 |
 
-### 5.3 Reddit（Apify Actor `trudax/reddit-scraper-lite`）
+### 5.3 Reddit（Apify Actor `harshmaur/reddit-scraper`）
 
 ```json
 {
-  "actor": "trudax/reddit-scraper-lite",
+  "actor": "harshmaur/reddit-scraper",
   "input": {
-    "searches": ["{代號}", "{公司英文全名}"],
-    "searchCommunityName": "wallstreetbets",
+    "searchTerms": ["\"{公司英文全名}\"", "{代號} stock {產業詞}"],
     "searchPosts": true,
-    "sort": "new",
-    "maxItems": 10,
-    "maxPostCount": 10
+    "searchComments": false,
+    "searchCommunities": false,
+    "searchSort": "new",
+    "searchTime": "month",
+    "maxPostsCount": 10,
+    "maxItems": 15
   },
   "waitSecs": 45,
   "callOptions": { "maxTotalChargeUsd": 0.1 }
 }
 ```
 
+- 原用的 `trudax/reddit-scraper-lite` 自 2026-11 起約 1.6 秒即 FAILED（exitCode 4，run log：「Actor is under maintainence. Runs are currently disabled.」），改用本 Actor（約 20 秒完成、約 0.003 CU）。看失敗原因用 `ReadMcpResourceTool` 讀 `https://api.apify.com/v2/actor-runs/{runId}/log` [2026-11]。
 - `callOptions.maxTotalChargeUsd` **必填**，低於 0.04 會報 `less than the allowed minimum`。
-- `searchCommunityName` 依序試 `wallstreetbets`、`stocks`、`investing` 或產業版。
-- **關鍵字不可用泛用詞**（如單獨的 `stock` 會抓到卡車避震、商品補貨）。短代號（如 `UHS`）也常誤配，要再用公司全名搜一次，逐則核對是否真與該公司相關。
-- 回 `RUNNING` 也不用等：直接拿 `datasetId` 呼叫 `get-dataset-items`（`fields: "title,communityName,url,createdAt,username,body"`）。
-- 排除 `AutoModerator` 制式文、純表情回覆、標題與內文都沒提到該公司的貼文。
-- Actor 下架時，用 Apify Actor 搜尋 `Reddit`，挑月用量高、有評分的替代品。
+- 要限定版面時用 `withinCommunity`（依序試 `wallstreetbets`、`stocks`、`investing` 或產業版）；不限定時是全站搜尋。
+- **關鍵字不可用泛用詞**（如單獨的 `stock` 會抓到卡車避震、商品補貨）。短代號（如 `UHS`）也常誤配（`University Health Services` 等），公司全名要加引號精確比對，逐則核對是否真與該公司相關。
+- 取結果：`get-dataset-items`（`fields: "title,communityName,postUrl,createdAt,authorName,upVotes,commentsCount"`，需要內文再取 `body`）。
+- 排除 `AutoModerator` 制式文、純表情回覆、標題與內文都沒提到該公司的貼文；r/TickerWorth、r/EverHint 等是平台自動生成文，要標明。
+- Actor 下架時，用 Apify `search-actors`（keywords `Reddit posts`）挑月用量高、有評分的替代品。
 
 ### 5.4 HKEXnews 官方 JSON API（港股財報/公告）
 
