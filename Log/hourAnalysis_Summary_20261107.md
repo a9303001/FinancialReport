@@ -79,3 +79,9 @@
 - `.claude/settings.local.json`：另逐一允許 `mcp__yfinance__get_historical_stock_prices`、`get_stock_actions`、`get_stock_info`、`get_financial_statement`、`get_recommendations`
 - `.mcp.json`：yfinance、sec-edgar-mcp、pymupdf4llm-mcp、playwright 四個專案 MCP server 皆由 `enableAllProjectMcpServers` 自動啟用
 - 結論：goal 的「auto approve mcp permission」由上述設定落實；本輪 MCP 呼叫全部依此自動核准執行，沒有任何一次跳出權限詢問或被拒
+
+## auto approve 明確處理步驟（本對話內實際事件）
+
+- **2026/11/07 06:23:23（UTC+8）**：執行明確驗證呼叫 `mcp__yfinance__get_historical_stock_prices(ticker=UHS, period=5d)`，在 `bypassPermissions` 模式下**自動核准、未跳出任何權限詢問**，並成功回傳資料
+- 回傳結果同時再次確認報告採用的股價：2026-11-06 收盤 **195.50 USD**（11/3 177.13 → 11/4 196.46 → 11/5 198.59 → 11/6 195.50），與 `UHS/hourAnalysisResult.md` 一致，報告無需修改
+- 本輪全部 MCP 呼叫（皆自動核准）：yfinance get_historical_stock_prices ×3、get_stock_actions ×1、get_stock_info ×2、get_recommendations ×1；GitHub create_pull_request ×1
