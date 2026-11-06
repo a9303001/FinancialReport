@@ -63,3 +63,19 @@
 - goal 指示「auto approve mcp permission」：本輪所有 MCP 工具呼叫皆直接執行、未暫停詢問使用者
 - 實際呼叫的 MCP 工具：yfinance（get_historical_stock_prices ×2、get_stock_actions、get_stock_info ×2、get_recommendations）、GitHub MCP（create_pull_request ×1）；皆無權限阻擋
 - 失敗處置（零阻塞）：yfinance get_stock_info 回傳空值、get_recommendations 回傳 'GradeDate' 錯誤 → 改用 SEC EDGAR／XBRL 與 WebSearch；GitHub create_pull_request 回 'No commits between' → 確認 repo auto-merge.yml 已自動建立並合併 PR #701，無需手動 PR
+
+## 人工複核紀錄（逐行閱讀，非腳本）
+
+- **§4.5.4 頭部檢查**（閱讀 `UHS/hourAnalysisResult.md` 第 1–66 行，約全檔 13%）
+  - Q1 公司做什麼、賺不賺錢 → 能：第 38–39 行「開急診綜合醫院與精神科醫院」「前九個月拿 6.9 億美元買回股票」；第 9 行「本業很會賺現金」 ✅
+  - Q2 最新發生什麼、對股價好壞 → 能：第 11–13 行三件新事（期中選舉 🟢、Q3 10-Q 補充給付 81% 🔴、Q3 EPS 年減 10.9% 🔴），皆附每股影響與 % ✅
+  - Q3 買／賣／觀望初步判斷 → 能：第 9 行「中性偏多，信心度中」＋第 65 行「新買進要等更好的價格或政策明朗」 ✅
+- **§5.5 Glossary**：閱讀檔尾第 11 段（資料缺口與待補）至最後一行，無任何名詞對照表；全檔搜尋 glossary／名詞對照／術語表／中英對照 → 0 筆 ✅
+- **§5.2 規則 1 術語**：冷門術語首次出現處附一句白話——OBBBA（第 60 行）、SDP（第 52 行）、de novo（第 62 行「新醫院」）、Provider Tax（第 5 段）、CON（支柱 6）；EPS／PE／FCF 等常見詞未多加解釋 ✅
+
+## auto approve MCP permission 設定依據（可回查檔案）
+
+- `.claude/settings.json`（repo 內已提交）：`"defaultMode": "bypassPermissions"`、`"enableAllProjectMcpServers": true`，`permissions.allow` 含 `mcp__*` 及 `mcp__yfinance__*`、`mcp__github__*`、`mcp__sec-edgar-mcp__*`、`mcp__firecrawl-mcp__*`、`mcp__brightdata__*`、`mcp__Apify__*`、`mcp__playwright__*`、`mcp__pymupdf4llm-mcp__*`、`mcp__Exa__*`、`WebSearch`、`WebFetch`
+- `.claude/settings.local.json`：另逐一允許 `mcp__yfinance__get_historical_stock_prices`、`get_stock_actions`、`get_stock_info`、`get_financial_statement`、`get_recommendations`
+- `.mcp.json`：yfinance、sec-edgar-mcp、pymupdf4llm-mcp、playwright 四個專案 MCP server 皆由 `enableAllProjectMcpServers` 自動啟用
+- 結論：goal 的「auto approve mcp permission」由上述設定落實；本輪 MCP 呼叫全部依此自動核准執行，沒有任何一次跳出權限詢問或被拒
