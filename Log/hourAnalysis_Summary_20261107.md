@@ -85,3 +85,22 @@
 - **2026/11/07 06:23:23（UTC+8）**：執行明確驗證呼叫 `mcp__yfinance__get_historical_stock_prices(ticker=UHS, period=5d)`，在 `bypassPermissions` 模式下**自動核准、未跳出任何權限詢問**，並成功回傳資料
 - 回傳結果同時再次確認報告採用的股價：2026-11-06 收盤 **195.50 USD**（11/3 177.13 → 11/4 196.46 → 11/5 198.59 → 11/6 195.50），與 `UHS/hourAnalysisResult.md` 一致，報告無需修改
 - 本輪全部 MCP 呼叫（皆自動核准）：yfinance get_historical_stock_prices ×3、get_stock_actions ×1、get_stock_info ×2、get_recommendations ×1；GitHub create_pull_request ×1
+
+---
+
+# hourAnalysis.md「個股分析1」— TLK 印尼電信（2026-11-07）
+
+- **執行時間**：2026/11/07 09:22:37 開始 → 2026/11/07 09:31:36 完成（Asia/Taipei）
+- **任務**：hourAnalysis.md「個股分析1」（/goal 排程）
+- **公司**：TLK 印尼電信（TLK．NYSE ADR／TLKM．IDX）→ ✅ 成功（`TLK印尼電信/hourAnalysisResult.md` 整份重寫；`2026_PublicOpinion.md` 追加 11/07 補充）
+- **MCP 權限**：依 goal「auto approve mcp permission」自動核准；本輪呼叫 yfinance MCP（get_historical_stock_prices ×2、get_stock_info ×1）、Firecrawl MCP（search ×9、scrape ×6），全程無權限詢問、無阻塞；同業 14 檔改用 Python yfinance 套件一次抓齊
+- **驗收**
+  - 第一行真實時間戳、全檔僅 1 行 ✅；全檔 `|` 0 筆、`<table>` 0 筆 ✅；章節 1–11 順序 ✅；無 Glossary ✅
+  - EXTRA_ANALYSIS 6 題皆一題一小節、含答案／推導／每股化／來源／信心度／所以呢 ✅
+  - 股價 11.12 USD、TLKM 1,980 IDR、匯率 18,089（Kontan 11/6 收盤），全部每 ADS 數字重算 ✅
+  - 長度 62,799 → 66,851 bytes（+6.5%，未超過 100% 上限）✅
+  - 頭部檢查（前 20% 約 147 行：檔頭卡、三句話、速覽、必備數據）三題皆「能」✅
+- **本輪重點**：ADR 11/6 漲到 11.12 USD（溢價 1.6%），MSCI 機率加權價 11.09 USD 已低於現價（−0.3%）→ 結論由中性偏多下調為中性；新增 KB Valbury（11/6，Buy、TP 3,300、FY26 預估不動）與 Sucor（11/3，升 Buy、TP 2,500）；竊聽案衝擊情緒、11/6 外資淨賣 TLKM 439 億 IDR；同業 14 檔 PE／ROE／殖利率全面更新到 11/6
+- **修正上一版**：每股化標題股數單位「98.47 億股」→ 984.68 億股（數字本身正確）
+- **資料缺口**：Mirae／Ciptadana／KB Valbury／Sucor 原文；FY26 確切配息率；4Q 資產處分明細；同業負債比沿用 9/30；港股論壇仍無有效討論
+- **資料來源**：本地 20-F／6-K／輿情檔；yfinance（TLK、TLKM.JK 與同業）；investor.id；Kontan；TradingView（Kontan 匯率）；CNBC Indonesia；Jakarta Globe；雪球；經濟觀察網；Reddit
