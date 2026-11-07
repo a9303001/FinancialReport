@@ -846,3 +846,53 @@
 
 ##### 🎯 共識與目標價（Yahoo Finance）
 - **關鍵要點**：TLKM.JK FY2026E 共識 EPS 顯示 202.74 IDR（11/3 為 191.65，數據跳動、可信度低）；TLK ADR FY26E 1.071 USD 不變、Forward EPS 1.119 USD；平均目標價 3,223.26 IDR（11/3 為 3,275.43，−1.6%）、中位數 3,400、最低 2,080、最高 4,030；23 位分析師、評等 1.39。
+
+---
+
+#### [2026-11-06 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/6 台北 09:20 前後蒐集；TLK 11/5 收 10.95 USD（+1.9%，成交 138 萬股）；TLKM 11/5 收 1,990 IDR（+5.6%，日高 2,020）；USD/IDR 11/5 收 18,082（Bloomberg，+0.47%；JISDOR 18,094）。Yahoo IDR=X 11/3–11/5 日線收盤（17,472／17,536／17,509）仍與開高價不一致，判定資料錯誤。
+
+##### 🎯 BRI Danareksa 11/5 TLKM 公司更新報告（Buy，TP 3,500 不變）
+- **來源連結**：[BRIDS Equity Snapshot 2026-11-05](https://www.brights.id/en/research-and-news/research-report/bri-danareksa-sekuritas-equity-snapshot-thursday-november-05-2026)、[報告 PDF](https://link.brights.id/brids/storage/47732/20261105-TLKM.pdf)
+- **關鍵要點**：3Q26 ARPU 季減 2.4% 至 44.9k IDR、data yield 季減 4.0%、行動營收季減 3.3%；預付卡用戶季減 2.7 百萬（生物辨識新制）；管理層預期 12 月 exit ARPU 較強（BRIDS 認為主要是季節性）。9M26 CapEx 13.7 兆（佔營收 12.1%），FY26 指引 17%–19% 維持，FY27–28F CapEx 將因資料中心與海纜上升（尚未納入預估）。9M26 ECL（預期信用損失）1.9 兆 IDR，年增 33.4%；原假設 2H26 的 1 兆 ERP（提前退休）費用移到 FY27。FY26F 淨利下修 3.6%（主因投資損失）。預估：EPS FY26F 187.4／FY27F 202.4／FY28F 222.0 IDR（比共識 203.5／221.5／229.2 低 7.9%／8.5%／3.1%）；DPS 2026F 222.0（FY25 已發）、2027F 215.6、2028F 210.5 IDR；淨利 FY26F 18,568 十億。TP 以 DCF 計，相當於 5.1x／5.0x FY26／27F EV/EBITDA。催化劑：InfraNexia 股權出售、2027 年資料中心策略夥伴；風險：FY27 CapEx 上升、MSCI 降級外資流出。
+
+##### 🎯 11/5 JCI 大漲 2.25%，外資買超 TLKM 第二名
+- **來源連結**：[CNBC Indonesia 2026-11-06](https://www.cnbcindonesia.com/market/20261106065346-17-782810/asing-diam-diam-borong-10-saham-ini-saat-ihsg-bangkit-ke-5030)、[Kontan 2026-11-05（匯率）](https://investasi.kontan.co.id/news/rupiah-ditutup-menguat-ke-rp-18082-per-dolar-as-hari-ini-511-dolar-as-terkoreksi)
+- **關鍵要點**：JCI +110.49 點（+2.25%）收 5,030.26，全日未翻黑；科技類股 +4.6%。全市場外資淨賣 655 億 IDR（買 3.4 兆、賣 3.5 兆；部分媒體把 3.4 兆毛買誤寫成淨買）；個股外資淨買 BBCA 3,030 億、TLKM 870 億、ASII 840 億。印尼盾升值主因：美國民主黨拿下參眾兩院、油價大跌、印尼 3Q GDP 年增 5.47% 優於預期。
+
+##### 🎯 11/6 亞洲股市重挫
+- **來源連結**：[Kontan 2026-11-06](https://internasional.kontan.co.id/news/indeks-kospi-anjlok-86-jumat-611-korea-selatan-aktifkan-circuit-breaker)
+- **關鍵要點**：KOSPI −8.6% 觸發熔斷、日經 −5.5%、ASX 200 跌破 9,000，主因 AI 監管疑慮與 Nasdaq 19 個月來最大回檔；TLKM 11/6 盤中數據本輪未取得。
+
+##### 🎯 共識與目標價（Yahoo Finance）
+- **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.87 IDR；平均目標價 3,192.83 IDR（11/4 為 3,223.26，−0.9%）、中位數 3,400、最低 2,080、最高 4,030；23 位分析師、評等 1.39。TLK ADR FY26E 1.071 USD、Forward EPS 1.119 USD、Forward PE 9.78 倍。
+
+#### [2026-11-07 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/7 台北 09:30 前後蒐集；TLK 11/6 收 11.12 USD（+1.55%，日高 11.175）；TLKM 11/6 收 1,980 IDR（−0.5%，日區間 1,920–2,000）；USD/IDR 11/6 收 18,089（Kontan，−0.04%；CNBC Indonesia 引 Refinitiv 為 18,080）。ADR 平價 10.95 USD，溢價約 1.6%。
+
+##### 🎯 KB Valbury 11/6：維持 Buy、TP 3,300
+- **來源連結**：[investor.id 2026-11-06](https://investor.id/market/461029/potensi-gain-666-saham-telkom-tlkm-valuasi-diskon-besar)
+- **關鍵要點**：分析師 Steven Gunawan；9M 營收 113.5 兆（+3.5%），Data/Internet/IT +8.3%、B2B +7.8%；FMC 用戶 6.3 百萬（+11.9%），滲透率 65.2%（9M25 為 55%）；FY26 預估維持不變。TP 3,300 IDR 以 4.4x FY26 EV/EBITDA（5 年平均 −0.5 個標準差）計；現價 EV/EBITDA 3.0x，較 5 年平均 4.8x 折價 36.6%。催化劑：價格結構更理性、FMC 與 FTTH 成長、企業需求（leased line、IoT、cloud）。風險：頻譜費與法規、利率、用戶轉向便宜方案、MSCI 與外資賣壓。將改用 2027 年預估評價。
+
+##### 🎯 Sucor 11/3：升評 Buy、TP 2,500
+- **來源連結**：[Kontan 2026-11-03](https://investasi.kontan.co.id/news/kinerja-telkom-tlkm-masih-dibayangi-tekanan-daya-beli-intip-prospeknya)
+- **關鍵要點**：分析師 Niko Pandowo；3Q 壓力主要來自非本業（匯損、資產移轉稅），G&A 與互連成本增幅超過營收；ARPU 年增靠價格紀律，季減反映季節性與消費力轉弱。同文：IndiHome 3Q ARPU 217.7k IDR（+3.2%）；中小企業營收 3.3 兆（+10.2%）；9M 已整頓 14 家子公司（出售 3、關閉 9、合併 2）。
+
+##### 🎯 11/6 JCI 由黑翻紅，外資淨賣 TLKM 439 億
+- **來源連結**：[Kontan 2026-11-06](https://pusatdata.kontan.co.id/news/ihsg-menguat-jelang-akhir-pekan-meski-mayoritas-indeks-sektoral-turun-jumat-611)
+- **關鍵要點**：JCI +0.40% 收 5,050.43（盤中低點約 4,925），週線 −0.13%、年初至今 −41.59%；全市場外資淨買 3,293 億 IDR（常規市場 1,093 億）；外資淨賣前三：GOTO 1,272 億、ANTM 472 億、TLKM 439 億。科技類股 −3.16%、基礎建設 −1.17%。同日 KOSPI −6.02%、日經 −5.96%、台股 −4.51%（Kontan 收盤表）。
+
+##### 🎯 竊聽總統案衝擊市場情緒
+- **來源連結**：[Jakarta Globe 2026-11-06](https://jakartaglobe.id/business/not-fundamentals-indonesia-says-wiretap-scandal-affects-market-sentiment)
+- **關鍵要點**：警方指前警察總長、前總統幕僚長 Listyo Sigit Prabowo 等 4 名高層未經程序監聽總統 Prabowo、政治人物與部分企業家；經濟統籌部長 Airlangga 稱衝擊在情緒面而非基本面。報導未點名任何電信業者。
+
+##### 🎯 華語與英文社群
+- **雪球（TLK 頁）**：網友稱「又跌回關稅戰價格，性價比不錯，吃息也行，但不想買」，理由是全球電信估值已回正常、印尼特殊風險高。
+- **經濟觀察網（2026-10-16）**：稱 TLK 遭外資減持約 49 億美元，屬市場身份可能變動引發的倉位重估，非業績爆雷。
+- **Reddit r/wallstreetbetsHUZZAH（2026-11-06）**：貼文稱美國眾議員 Josh Gottheimer 10/15 申報賣出 TLK、隔天印尼股災；屬情緒性話題，可信度低。
+- **香港**：以中文關鍵字搜尋未見 LIHKG／香港討論區實際討論，只有富途、moomoo 新聞稿。
+
+##### 🎯 共識與同業（Yahoo Finance，2026-11-06 收盤）
+- **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.87 IDR（未變）；平均目標價 3,192.83 IDR（未變）、23 位分析師、評等 1.39。TLK ADR FY26E 1.071 USD、Forward EPS 1.119 USD、Forward PE 9.94 倍、Trailing PE 11.71 倍。同業 Forward PE：ISAT 7.15、EXCL 8.90、中華電 30.30、台灣大 23.61、遠傳 24.42、中移動 11.18、中電信 11.81、香港電訊 15.84、NTT 11.01、軟銀 20.31、VZ 8.61、T 8.33、TMUS 11.36（KDDI Forward PE 1,216 為資料錯誤）。
