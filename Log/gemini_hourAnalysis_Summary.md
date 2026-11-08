@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 1 |
-| **last_executed_companies** | 02318 中國平安, 2971ES-CON日本REIT |
-| **last_executed_time** | 2026-11-08 11:05 |
-| **next_date** | 2 |
+| **last_executed_date** | 2 |
+| **last_executed_companies** | 00941 中國移動 |
+| **last_executed_time** | 2026-11-08 11:22 |
+| **next_date** | 3 |
 | **stock_analysis_status** | ✅ |
