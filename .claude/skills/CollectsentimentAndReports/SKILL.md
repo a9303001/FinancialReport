@@ -128,7 +128,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 股市爆料同學會 `cmoney.tw/forum/stock/{代號}` | 頁面是空殼，貼文由 API 載入 | **直接打官方 API**，照 §5.2 [2026-07] |
 | CMoney Readmo `cmoney.tw/forum/readmo/{uuid}` | SSR，`curl` 可讀，正文在 Nuxt state `content`，JSON-LD 有 `datePublished` | **屬平台 AI 自動生成文章**，引用時標為 AI 內容，不可當網友輿情 [2026-10] |
 | MOPS `mops.twse.com.tw` | `curl` 被安全性封鎖頁擋；查詢頁需 JS 表單；Firecrawl 只拿到空表單 | **不要在 MOPS 耗時**：重訊 → §5.1 鉅亨；財報版本核對 → 財報狗 e-report；上櫃進度 → TPEx。真的必要才用 Playwright 表單互動 [2026-09] |
-| TWSE 電子書 `doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id={代號}&year={民國年}&seamon=&mtype=A&` | `curl`（GET/POST 皆然）回「因為安全性考量，您所執行的頁面無法呈現」封鎖頁 | `firecrawl_scrape`（basic proxy、`formats: ["html"]`）可取得完整清單：檔名（`{yyyy}0{季}_{代號}_AI2.pdf` 個別財報、`_AIB.pdf` 英文版）、檔案大小、上傳日期 → 用來判斷新季報是否已上傳；董事會通過到上傳常隔 2 週以上，英文版再晚約 1.5 個月 [2026-11] |
+| TWSE 電子書 `doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id={代號}&year={民國年}&seamon=&mtype=A&` | `curl`（GET/POST 皆然）回「因為安全性考量，您所執行的頁面無法呈現」封鎖頁；`step=9` 下載頁與 `doc.twse.com.tw/pdf/*.pdf` 實體檔同樣被擋（依 IP 封鎖，**不可**改 header／瀏覽器去繞）；`firecrawl_scrape` basic 可能拿到快取的封鎖頁 | `firecrawl_scrape`（`formats: ["html"]`，basic 失敗或回快取封鎖頁時改 `proxy: stealth` + `maxAge: 0`）可取得完整清單：檔名（`{yyyy}0{季}_{代號}_AI1.pdf` 合併、`_AI2.pdf` 個別、英文版依公司為 `_AIA.pdf` 或 `_AIB.pdf`）、檔案大小、上傳日期 → 只用來判斷新季報是否已上傳與核對檔案大小；PDF 本體改從官網 IR 下載（§7.3）。董事會通過到上傳常隔 2 週以上，英文版再晚約 1.5 個月 [2026-11] |
 | MOPS 法說會簡報 PDF `mopsov.twse.com.tw/nas/STR/{代號}{yyyyMMdd}M001.pdf` | 不帶 cookie 會拿到封鎖頁或被截斷的 PDF | `curl -sL -c cj -b cj {URL} -o out.pdf`，下載後用 `pdfinfo` 確認完整。簡報連結可從 `poorstock.com/earningcall/{代號}` 取得 [2026-10] |
 | 財報狗 `statementdog.com/analysis/{代號}/...` | `curl` 回 202 空內容；Apify `rag-web-browser` 回 202 + `x-amzn-waf-action: challenge`（AWS WAF）；Playwright 回 403 | 只有 `firecrawl_scrape`（basic proxy）可取得完整頁（e-report 能列出 `doc.twse.com.tw` 原始檔名以核對年度/季別）。Firecrawl 沒額度時目前無替代路徑，直接記 ❌（Exa 索引的 e-report 版本落後，不可用來判斷是否有新財報）[2026-10] |
 | TPEx 申請上櫃清單 `tpex.org.tw/openapi/v1/tpex_esb_applicant_companies` | JSON API，`curl` 可讀 | 含申請日、審議會日、董事會核准日、主辦承銷商；查興櫃股是否申請轉上櫃用這個 [2026-10] |
@@ -139,7 +139,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 工商時報 `ctee.com.tw/search?q=`、旺得富 `wantrich.chinatimes.com/search?q=` | 搜尋路徑 404（站方沒有此頁） | 不跑 MCP 鏈，用 `firecrawl_search` / Bright Data `search_engine` 搭 `site:` 找個別文章 [2026-10] |
 | PTT `ptt.cc/bbs/{板名}/search?q={關鍵字}` | SSR，`curl` 帶 cookie `over18=1` 可讀；列表含標題、`M.{秒}.A.xxx.html` 網址與月/日 | 冷門股多年無新文是常態（列表日期不含年份，年份從網址內 Unix 秒數換算）；Stock 板查完可再查產業板（如 `Bicycle`）[2026-10] |
 | Dcard | 搜尋 API、Apify `rag-web-browser`、Playwright 皆 403 Cloudflare | `firecrawl_search` + `site:dcard.tw {公司名} {代號}` 取索引（含發文日期）；Firecrawl 沒額度時改用 Exa `web_search_exa` 或 `WebSearch` 索引確認有無新文並依 §3.6 加註 [2026-10] |
-| Mobile01 討論串 | `curl`、Playwright 皆 403（Akamai）；Apify `rag-web-browser` 直接給網址 403，但用 Google 搜尋模式（`query` 填關鍵字）曾以 200 取得討論串頁 | `firecrawl_search` + `site:mobile01.com {公司名}` + `tbs: qdr:m` 找文章，再 `firecrawl_scrape` 單篇（含發文時間）；Firecrawl 沒額度時改用 Apify `rag-web-browser` 搜尋模式，或 Exa `web_search_exa` 取索引 [2026-10] |
+| Mobile01 討論串 | `curl`、Playwright 皆 403（Akamai）；Apify `rag-web-browser` 直接給網址 403，但用 Google 搜尋模式（`query` 填關鍵字）曾以 200 取得討論串頁 | `firecrawl_search` + `site:mobile01.com {公司名} {代號}` + `tbs: qdr:m` 找文章（只放兩字公司名會被「胡搞瞎搞」之類字串誤配），再 `firecrawl_scrape` 單篇（含發文時間）；Firecrawl 沒額度時改用 Apify `rag-web-browser` 搜尋模式，或 Exa `web_search_exa` 取索引 [2026-11] |
 | yfinance 台股日線（`{代號}.TW` / `.TWO`） | `Date` 欄是前一天 UTC 16:00 | 加 8 小時（即日期 +1）才是台北交易日 [2026-10] |
 | Goodinfo `goodinfo.tw` | Bright Data 60 秒逾時 | 用 `firecrawl_search` 取索引，Firecrawl 沒額度時改用 Exa `web_search_exa`，依 §3.6 加註 [2026-10] |
 | 券商承銷公告頁（嘉實資訊 iframe） | Firecrawl 只拿到 iframe 外殼 | 新股申購/承銷日程改抓 HiStock 公開申購頁（靜態表格）[2026-09] |
@@ -330,7 +330,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 ### 7.3 搜尋來源（依序，找到即停）
 
-- **台股**：① MOPS/TWSE（英文年報 `_AIA.pdf`；季報多只有中文 `_AI1.pdf`）② 財報狗 e-report（§4.2）③ 官網 IR（台產 2832：`tfmi.com.tw/investors-Financial` 列出 `/Files/TFMI/各單位上傳/財務部/財務報告/{yyyy}年/{民國年}年第{N}季財務報告.pdf`，`curl` 可直接下載，上架晚於 TWSE 電子書）。想確認「是否已公告」用 §5.1 鉅亨（它給的是重訊全文，不是財報 PDF）。興櫃公司只有半年報與年報，不會有 Q1/Q3。
+- **台股**：① MOPS/TWSE（英文年報 `_AIA.pdf`；季報多只有中文 `_AI1.pdf`）② 財報狗 e-report（§4.2）③ 官網 IR（台產 2832：`tfmi.com.tw/investors-Financial` 列出 `/Files/TFMI/各單位上傳/財務部/財務報告/{yyyy}年/{民國年}年第{N}季財務報告.pdf`，`curl` 可直接下載，上架晚於 TWSE 電子書；胡連 6279：新官網 `www.hulane.com.tw/financials`（季報）與 `/conferences-and-meetings`（股東會年報）為 SSR，PDF 路徑 `/admin/uploads/Investor/財務報告/{yyyy}/胡連{民國年}Q{N}合併財報電子書.pdf`、`/admin/uploads/Investor/股東會/{yyyy}/胡連-{FY}年報(中文版).pdf`，`curl` 可直接下載、0 個 `(cid:`，季報與 TWSE `_AI1.pdf` 檔案大小相同；舊站 `product.hulane.com` 停更於 2025Q2）。想確認「是否已公告」用 §5.1 鉅亨（它給的是重訊全文，不是財報 PDF）。興櫃公司只有半年報與年報，不會有 Q1/Q3。
 - **美股**：① 官網 IR（SEC Filings）② SEC EDGAR（可用 `sec-edgar-mcp`）③ 財報狗 ④ 富途 `futunn.com/hk/stock/{代號}-US/announcement`。外國發行人（ADR）年報是 20-F、季報夾在 6-K 裡：`curl -A "{名稱} {email}" https://data.sec.gov/submissions/CIK{10碼}.json` 列出所有申報，再用 `.../Archives/edgar/data/{CIK}/{去掉 - 的 accession}/index.json` 看附件，6-K 主文件開頭會寫 "Consolidated financial statements as of …" 即為季報。
 - **日股**：① 官網 IR（英文 Annual Report 優先）② 株探開示清單（§4.4，決算短信最快）③ EDINET ④ IR Bank `irbank.net/{代碼}/ir` ⑤ 富途 `{代碼}-JP/announcement`。J-REIT 的經審計英文財報常在官網英文 IR 庫，無 cid 問題：ES-CON（2971）`escon-reit.jp/en/ir/library.html` 的「Asset Management Reports」欄；HCM（3455）`hcm3455.co.jp/en/ir/library.html` 的「Semi-annual report」欄。決算後約 1 個月內英文頁常只有 Summary of accounts，簡報要到日文頁抓；頁頂「As of …」日期不會更新，不能拿來判斷新舊。英文版還沒出時，日文 IR 庫的「資産運用報告」PDF 約在決算發表後 3 週就會上架（HCM 日文庫是 `hcm3455.co.jp/ja/ir/library.html`，`/ir/library.html` 只是首頁殼；ES-CON 日文庫是 `escon-reit.jp/ja/ir/library.html`，`/ir/library.html` 回 S3 403，第 19 期資産運用報告於決算後約 3.5 週上架，有価証券報告書 PDF 在同一列），`convert_pdf_to_markdown` 轉出 0 個 `(cid:`，可以直接當該期年報用 [2026-10]。光通信（9435）官網 IR 的決算短信 PDF 路徑固定為 `hikari.co.jp/assets/pdf/ir/{期}th/{1st|2nd|3rd|4th}_zaimu.pdf`（第 40 期＝2027 年 3 月期），`curl` 可直接下載、0 個 `(cid:` [2026-11]。3 月決算公司的季報檔名用會計年度結束年，例：2026 年 4~6 月 → `{TICKER}_Quarter_2027Q1`（與 `7203_Quarter_2027Q1` 一致）。
 - **港股**：① HKEXnews JSON API（§5.4）② 富途 `{5碼}-HK/announcement` ③ 官網 IR。（新浪 `/hkstock/notice/` 公告頁已停更，不要用）
@@ -407,6 +407,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ## 9. Phase 4 — 轉 Markdown
 
 - Phase 2 有新下載 PDF 時，主代理人呼叫 **`Convert2md` Skill**（用 `convert_pdf_to_markdown` 轉 PDF，自動刪除 CID 亂碼失敗檔）。
+- 150 頁以上的年報呼叫 `convert_pdf_to_markdown` 常回「timed out after 60s」，但 MCP 伺服器仍在背景寫檔：不要重送，等 `save_path` 的 `.md` 出現且大小不再變動，並核對最後一頁內容有轉出 [2026-11]。
 - `convert_pdf_to_markdown` 輸出的 `.md` 會含指向暫存 `pdf_images/` 的圖片連結，暫存圖刪除後會失效 → 轉檔後移除 `![](…/pdf_images/…)` 行。
 - `Convert2md` **只處理 PDF**。若下載的是 HTML（如 SEC 10-K/10-Q），要自己轉成同檔名 `.md`，移除 XBRL/iXBRL 標籤與內嵌 blob，確認正文可讀後再刪原始 HTML。
 - 沒有新檔就略過，並在報告註明。
