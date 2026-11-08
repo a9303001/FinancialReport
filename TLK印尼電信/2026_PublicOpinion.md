@@ -896,3 +896,30 @@
 
 ##### 🎯 共識與同業（Yahoo Finance，2026-11-06 收盤）
 - **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.87 IDR（未變）；平均目標價 3,192.83 IDR（未變）、23 位分析師、評等 1.39。TLK ADR FY26E 1.071 USD、Forward EPS 1.119 USD、Forward PE 9.94 倍、Trailing PE 11.71 倍。同業 Forward PE：ISAT 7.15、EXCL 8.90、中華電 30.30、台灣大 23.61、遠傳 24.42、中移動 11.18、中電信 11.81、香港電訊 15.84、NTT 11.01、軟銀 20.31、VZ 8.61、T 8.33、TMUS 11.36（KDDI Forward PE 1,216 為資料錯誤）。
+
+#### [2026-11-08 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/8 台北 09:30 前後蒐集；11/7–11/8 週末休市，TLK 仍為 11/6 收 11.12 USD、TLKM 1,980 IDR；USD/IDR 11/6 收 18,089（Kontan 引 Bloomberg，週線升 0.32%；JISDOR 18,130）。
+
+##### 🎯 MSCI 11 月審查時程與印尼特別處理
+- **來源連結**：[investortrust.id 2026-11-07](https://investortrust.id/market/121827/jadwal-lengkap-msci-review-november-penentuan-status-juni-2027)
+- **關鍵要點**：MSCI 11/4 公告，結果於 11/11 23:00 CET（WIB 11/12 05:00）公布，11/30 收盤生效。印尼 1/27 起的凍結延續：不調高 FIF、NOS，不新增成分股，不升級規模；仍可刪除 HSC 股票、以 1% 持股揭露調整自由流通。分類諮詢意見截止 2027-04-30，決定於 2027-06-30 前公布。Reuters 11/6 引投資部長 Rosan：自由流通與 1% 持股揭露有進展，執法與股權集中仍需努力。
+
+##### 🎯 Bank Danamon：外資流出估 20–60 億 USD
+- **來源連結**：[investortrust.id 2026-11-06](https://investortrust.id/market/121788/tanpa-mitigasi-risiko-msci-modal-asing-keluar-dari-indonesia-bisa-tembus-us-6-miliar)
+- **關鍵要點**：首席經濟學家 Irman Faiz 估主動加被動流出 20–60 億 USD；被動資金要實際降級才賣，時間落後到 2027 年第 2 季；主動資金更看地緣政治；最大風險是賣壓蔓延債市。印尼 5 年 CDS 102.74（11/4）。
+
+##### 🎯 上週外資淨賣 TLKM 892 億 IDR
+- **來源連結**：[Kontan 2026-11-07](https://investasi.kontan.co.id/news/asing-net-sell-rp-633-miliar-cermati-saham-yang-banyak-dijual-asing-sepekan)
+- **關鍵要點**：JCI 週線 −0.13%（11/6 收 5,050.42）；全週外資淨賣 6,339 億 IDR；淨賣前十：BBRI 6,381 億、BMRI 3,778 億、PTBA、ADRO、ANTM、TPIA、AADI、TINS、TLKM 892.4 億、UNTR。
+
+##### 🎯 Tempo：Danantara 托市
+- **來源連結**：[Tempo 2026-11-08](https://www.tempo.co/ekonomi/danantara-indeks-saham-jatuh-2303779)
+- **關鍵要點**：Danantara 投入數兆 IDR 撐指數；11/5 早盤 BBRI、TLKM、BMRI、BBNI 合計貢獻 38.6 點。Tempo 稱為「暫時支撐」（印刷版標題「接住下墜之刀的風險」）。全文在付費牆內。
+
+##### 🎯 SWA：TLKM30 轉型與子公司精簡
+- **來源連結**：[SWA 2026-11-08](https://swa.co.id/read/479318/telkom-indonesia-jalankan-agenda-menuju-model-strategic-holding-company)
+- **關鍵要點**：策略規劃副總 Anang Supriadi 受訪；朝 strategic holding（HoldCo–OpCo）轉型；1H26 出售 AdMedika、TelkoMedika，關閉 Napsindo、Sigma AIT Bhd 等；子公司由 2026 年 48 家精簡到 2030 年 10–19 家；InfraNexia 第一階段移轉超過一半光纖、資產 35.8 兆 IDR；1H26 營業現金流 34.9 兆（+7%）。
+
+##### 🎯 共識（Yahoo Finance，2026-11-08 擷取）
+- **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.87 IDR（未變，區間 189.0–219.0）；FY2027E 217.99 IDR（前次 220.26，−1.0%，最低 185.75）；平均目標價 3,192.83 IDR、中位數 3,400、23 位分析師、評等 1.39（皆未變）。
