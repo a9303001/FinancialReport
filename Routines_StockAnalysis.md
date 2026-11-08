@@ -464,9 +464,9 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 25
-- `COMPANY_NAME`：01866中國心連心化肥
-- `MARKET`：港股
-- `COMPANY_FOLDER`：01866中國心連心化肥
+- `COMPANY_NAME`: 6269 胡連
+- `MARKET`：台股
+- `COMPANY_FOLDER`：6269胡連
 - `EXTRA_ANALYSIS`：
 
 ---
