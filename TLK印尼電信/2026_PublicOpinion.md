@@ -923,3 +923,22 @@
 
 ##### 🎯 共識（Yahoo Finance，2026-11-08 擷取）
 - **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.87 IDR（未變，區間 189.0–219.0）；FY2027E 217.99 IDR（前次 220.26，−1.0%，最低 185.75）；平均目標價 3,192.83 IDR、中位數 3,400、23 位分析師、評等 1.39（皆未變）。
+
+#### [2026-11-09 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/9 台北 09:30 前後蒐集；IDX 尚未開盤（09:00 WIB＝台北 10:00），美股 11/6 後無交易。TLK 仍為 11/6 收 11.12 USD（盤後 11.20）、TLKM 1,980 IDR；USD/IDR 沿用 11/6 收 18,089。
+
+##### 🎯 Bisnis：Telkom 9M2026 已關閉 9 家子公司
+- **來源連結**：[Bisnis Premium 2026-11-09](https://premium.bisnis.com/read/20261109/656/2019496/kode-keras-untuk-pemegang-saham-tlkm-di-balik-restrukturisasi-bisnis-telkom)
+- **關鍵要點**：Telkom 2026 年前三季關閉 9 家事業實體（streamlining），聚焦核心與獲利；Bisnis 解讀為對股東的「強烈訊號」：投資人不再只看擴張故事，而看現金流、獲利與資本效率。全文在付費牆內，只讀到導言。
+
+##### 🎯 BEI 11/10 強制下市 18 檔
+- **來源連結**：[Katadata 2026-11-05](https://katadata.co.id/finansial/bursa/6aec2db53552e/12-emiten-belum-tuntas-buyback-jelang-delisting-bagaimana-nasib-investor-ritel)、[investortrust.id](https://investortrust.id/market/99790/bei-akan-delisting-18-saham-emiten-per-10-november-2026-berikut-daftar-emitennya)
+- **關鍵要點**：7 檔破產、11 檔停牌超過 50 個月（含 SRIL、TELE）；買回期 5/11–11/9，11/10 起下市；11/5 時仍有 12 檔未完成買回義務。屬清理市場、配合 MSCI 執法要求的動作，與 TLK 無直接關係。
+
+##### 🎯 Kompas：10 月 JCI −16.7%、外資淨賣 16.88 兆 IDR
+- **來源連結**：[Kompas 2026-11-05](https://money.kompas.com/read/2026/11/05/193356726/msci-bikin-ihsg-anjlok-167-persen-investor-asing-keluar-rp-1688-triliun)
+- **關鍵要點**：OJK 統計 10 月底 JCI 5,057.05，較 9 月底 −16.7%；10 月外資淨賣 16.88 兆 IDR，主因 MSCI Standalone 諮詢。
+
+##### 🎯 共識（Yahoo Finance，2026-11-09 擷取）
+- **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.87 IDR（未變）；平均目標價 3,192.83 IDR、中位數 3,400、23 位分析師、評等 1.39（皆未變）。TLK ADR Forward EPS 1.119 USD、Forward PE 9.94 倍、Trailing EPS 0.95 USD（Yahoo 口徑）、5 年平均殖利率 4.81%。
