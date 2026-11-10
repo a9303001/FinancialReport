@@ -942,3 +942,26 @@
 
 ##### 🎯 共識（Yahoo Finance，2026-11-09 擷取）
 - **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.87 IDR（未變）；平均目標價 3,192.83 IDR、中位數 3,400、23 位分析師、評等 1.39（皆未變）。TLK ADR Forward EPS 1.119 USD、Forward PE 9.94 倍、Trailing EPS 0.95 USD（Yahoo 口徑）、5 年平均殖利率 4.81%。
+
+#### [2026-11-10 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/10 台北 09:30 前後蒐集；IDX 11/10 尚未開盤。TLK 11/9 收 11.40 USD（+2.5%）、TLKM 11/9 收 2,050 IDR（+3.5%）；USD/IDR 11/9 即期收 18,085（JISDOR 18,103）。
+
+##### 🎯 Rikopedia：未具名券商把 TLKM 目標價由 3,500 砍到 2,600
+- **來源連結**：[Rikopedia Research 2026-11-10](https://www.rikopedia.com/2026/11/valuasi-tlkm-sentuh-32x-evebitda-di.html)
+- **關鍵要點**：Telkomsel data yield 1Q 3.12 → 2Q 3.10 → 3Q 3.03 IDR/MB；用戶 151.1 百萬（年減 4.1%）；3Q Telkomsel 營收 27.3 兆（季減 2.7%）、EBITDA 12.3 兆（季減 5.3%）；折舊多 1.23 兆。FY27F／FY28F 營收 −2.4%／−4.8%（154.0／158.4 兆）、淨利 −4.1%／−10.3%（19.9／20.9 兆）。現價約 3.2 倍 FY26F EV/EBITDA，目標價 2,600 IDR＝4.0 倍 FY27F EV/EBITDA。資料中心營收 +17%、EBITDA +35%，目標 2030 年 400MW。券商名稱未揭露。
+
+##### 🎯 CNBC Indonesia：MSCI 11 月審查前瞻
+- **來源連結**：[CNBC Indonesia 2026-11-09](https://www.cnbcindonesia.com/research/20261109134144-128-783568/review-msci-pekan-ini-apakah-bakal-bikin-jantungan-lagi)
+- **關鍵要點**：結果 11/11（美國時間）公布，即印尼 11/12 早上；今年前三次審查後 JCI 首日 2 月 +1.96%、5 月 −1.98%、8 月 −1.13%；降級決定不在本次，最晚 2027-06-30。OJK 10/16 對 DSSA、BREN、CUAN 相關人士罰 2.1 兆 IDR；投資人分類由 9 類擴到 39 類。截至 11/6 外資今年全市場淨賣 97.68 兆 IDR。
+
+##### 🎯 11/9 外資淨買 TLKM 207.6 億 IDR
+- **來源連結**：[CNBC Indonesia 2026-11-10](https://www.cnbcindonesia.com/market/20261110065737-17-783722/meski-ihsg-awal-pekan-menguat-asing-lepas-10-saham-ini)、[Bisnis 2026-11-09](https://market.bisnis.com/read/20261109/7/2019729/ihsg-ditutup-menguat-ke-5073-saham-tlkm-asii-hingga-bbca-tancap-gas)
+- **關鍵要點**：JCI +0.46% 到 5,073.77；外資全市場淨買 982.4 億、一般盤 1,166.2 億 IDR；TLKM 淨買 207.6 億 IDR（第 7 名），股價 +3.54% 到 2,050，貢獻指數 8 點。
+
+##### 🎯 匯率與市場清理
+- **來源連結**：[Antara 2026-11-09](https://www.antaranews.com/berita/5841643/rupiah-senin-ditutup-menguat-ke-rp18085-ditopang-cadangan-devisa-ri)、[Kontan HSC 名單](https://stocksetup.kontan.co.id/news/ini-83-saham-hsc-terbaru-per-9-november-2026-mknt-masuk-dalam-daftar)、[Kontan 下市買回](https://investasi.kontan.co.id/news/jelang-delisting-18-emiten-baru-dua-perusahaan-sampaikan-rencana-buyback)
+- **關鍵要點**：印尼盾 11/9 收 18,085（+4 點）；HSC 名單 11/9 更新為 83 檔；BEI 11/10 下市 18 檔，只有 2 家提出買回散戶股份計畫。
+
+##### 🎯 共識（Yahoo Finance，2026-11-10 擷取）
+- **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.34 IDR（7 日前 202.01）、FY2027E 217.57 IDR（7 日前 219.77）；平均目標價 3,103.70 IDR（上次 3,192.83）、中位數 3,200（上次 3,400）、最高 4,030、最低 2,080；23 位分析師、評等 1.39。TLK ADR Forward EPS 1.119 USD、Forward PE 10.19 倍。
