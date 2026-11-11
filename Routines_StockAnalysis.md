@@ -22,6 +22,7 @@
 | 4 | **防幻覺**：所有財務數據必須有來源佐證，**嚴禁用訓練資料捏造** | 捏造 = 任務失敗 |
 | 5 | **本地優先**：財報／輿情直接讀 `<REPO_ROOT>/<COMPANY_FOLDER>/`，不重複從線上倉庫下載 | — |
 | 6 | **整份重寫**：交付前必須對輸出檔執行 SKILL.md §7 Final Rewrite，且第一行為**真實系統時間戳** | 流水帳 = 任務失敗 |
+| 7 | **500 行上限**：`hourAnalysisResult.md` 全檔不得超過 500 行；超過就刪掉沒有投資價值的分析行（SKILL.md §7.5），並用 `awk 'END{print NR}'` 實測 | 超標交付 = 任務失敗 |
 
 > `<REPO_ROOT>` = FinancialReport repo 根目錄（Windows 本機通常為 `d:\FinancialReport`）。
 
@@ -113,6 +114,7 @@ Step 5  交付：commit & push（依當前環境的分支規範）
 | **全檔零表格**：含純數據在內一律 key-value 條列（條目式／欄位式／序列式／比較式） | §4.7 |
 | 交付前**整份重寫**（Final Rewrite） | §7 |
 | 第一行為**真實系統時間戳** `yyyy/MM/dd HH:mm:ss (UTC+8)` | §4.2 第 0 項 |
+| **全檔 ≤ 500 行**：超過先刪沒有投資價值的行，保護項目不可動 | §7.5 |
 
 ### Step 4 — 驗收（Acceptance · 不過就修，修完重跑本步）
 
@@ -123,6 +125,7 @@ Step 5  交付：commit & push（依當前環境的分支規範）
 - [ ] 通過 §7.6 Final Rewrite Checklist（A 結構／B 零表格版面／C 每股化／D 汰除／E 基本面與幣別）
 - [ ] 通過 §5.5 可讀性 checklist 與 §4.5.4 頭部檢查三題
 - [ ] `EXTRA_ANALYSIS` 每一項都有對應段落與數字（查不到的要寫明原因）
+- [ ] **`awk 'END{print NR}' <COMPANY_FOLDER>/hourAnalysisResult.md` 實測 ≤ 500 行**（超過 → 依 SKILL.md §7.5.3 刪減後重測；上一版本來就超標者也必須降到 ≤ 500）
 - [ ] 版面符合 §4.7：**全檔零表格**（搜過 `|` 與 `<table>` 皆無殘留），數據與敘述都是 **key-value 條列**；歷年數據用序列式、同業比較與佔比用比較式
 - [ ] 今日每間公司都做完（多公司日期不可漏）
 
@@ -137,7 +140,7 @@ git commit -m "StockAnalysis: 執行日期 {今日} - {公司清單}"
 
 - **推送分支依當前環境規範**：Claude Code 於指定 feature 分支開發時 push 該分支並開 PR；本機直跑時 push `master`。
 - 被拒絕（non-fast-forward）：`git pull --rebase` 後重推；網路失敗重試最多 4 次（間隔 2s / 4s / 8s / 16s）。
-- （選配）寫執行日誌 `Log/hourAnalysis_Summary_{yyyyMMdd}.md`：本輪公司、成功／失敗、資料缺口。
+- （選配）寫執行日誌 `Log/hourAnalysis_Summary_{yyyyMMdd}.md`：本輪公司、成功／失敗、**每間公司 hourAnalysisResult.md 的實測行數**、資料缺口。
 
 ---
 
@@ -160,7 +163,7 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ```
 ✅ StockAnalysis — YYYY-MM-DD HH:MM
 - 本輪：執行日期 {N}（{公司名稱}）
-- 分析：✅ 成功（hourAnalysisResult.md）
+- 分析：✅ 成功（hourAnalysisResult.md，實測 {NNN} 行 ≤ 500）
 - Git：✅ 已 push {分支}
 - 下一輪：執行日期 {N+1}（{下輪公司}）
 ```
