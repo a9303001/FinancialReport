@@ -965,3 +965,34 @@
 
 ##### 🎯 共識（Yahoo Finance，2026-11-10 擷取）
 - **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.34 IDR（7 日前 202.01）、FY2027E 217.57 IDR（7 日前 219.77）；平均目標價 3,103.70 IDR（上次 3,192.83）、中位數 3,200（上次 3,400）、最高 4,030、最低 2,080；23 位分析師、評等 1.39。TLK ADR Forward EPS 1.119 USD、Forward PE 10.19 倍。
+
+#### [2026-11-11 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/11 台北 09:30 前後蒐集；IDX 11/11 尚未開盤。TLK 11/10 收 11.23 USD（−1.5%）、TLKM 11/10 收 2,040 IDR（−0.5%）；USD/IDR 11/10 即期收 18,062（+0.13%）。MSCI 11 月審查結果台北 11/12 06:00 公布，尚未出爐。
+
+##### 🎯 11/10 外資淨賣 TLKM 694 億 IDR，全市場第 1 名
+- **來源連結**：[Kontan 2026-11-10](https://investasi.kontan.co.id/news/asing-banyak-melepas-saham-saham-ini-saat-ihsg-menguat-1-ke-5125-selasa-1011)、[investortrust.id](https://investortrust.id/market/122106/pemodal-asing-kembali-serbu-bursa-asii-jadi-saham-terbanyak-diborong)、[CNBC Indonesia](https://www.cnbcindonesia.com/market/20261110125921-17-783875/meski-ihsg-hijau-tapi-dana-asing-lari-rp299-m-lepas-10-saham-ini/amp)
+- **關鍵要點**：JCI +1.02% 到 5,125.73（連漲 5 天）；外資全市場小幅淨賣；TLKM 全日淨賣 694.2 億 IDR（早盤 869.7 億），其次 BRPT 510.5 億、BREN 411.9 億；ASII 為外資淨買第一。
+
+##### 🎯 CNBC Indonesia：MSCI 11 月審查預測，MTEL 為 Small Cap 剔除首選
+- **來源連結**：[CNBC Indonesia 2026-11-10](https://www.cnbcindonesia.com/research/20261110144326-128-783923/msci-bakal-umumkan-review-kamis-seperti-apa-kisi-kisi-skenarionya)
+- **關鍵要點**：結果 11/12 05:00 WIB 公布、11/30 收盤生效；凍結期間仍可刪除與降級。Small Cap 可能剔除 MTEL（HSC 名單、自由流通市值約 1.77 億 USD）、WIFI、RAJA；Standard 只有 BRMS 可能降到 Small Cap。TLKM 不在名單。MTEL 11/10 收 330 IDR（−2.9%，52 週新低）。
+
+##### 🎯 BEI 改 HSC 方法：名單由 83 檔擴到 383 檔
+- **來源連結**：[Kompas 2026-11-11](https://www.kompas.id/artikel/bursa-akan-keluarkan-383-saham-dari-ihsg-usai-ubah-metodologi-hsc)、[Kontan 2026-11-11](https://investasi.kontan.co.id/news/kriteria-diperluas-saham-hsc-di-bei-akan-naik-jadi-383-cek-daftarnya)
+- **關鍵要點**：取消 5 兆 IDR 市值門檻與 price-impact ratio；前 10 大股東合計 ≥92.5%（原 95%）即列入；新增 300 檔約佔 JCI 市值 6.16%，將排除於 JCI 計算；名單待資料商準備好再公布。HSC 委員會 7 人（BEI、KSEI、KPEI、Mardiasmo、Mandiri Sekuritas、UGM 教授、Danantara 顧問 Chapman Taylor）。MTEL 已在原 83 檔名單內（BEI 10/13：前幾大股東合計 95.58%）。
+
+##### 🎯 Telkom 11/10：兩件子公司合併，加速 streamlining
+- **來源連結**：[Telkom 官網 2026-11-10](https://www.telkom.co.id/sites/berita/id_ID/news/percepat-streamlining-telkom-rampingkan-anak-usaha-lewat-dua-merger-sekaligus-4064)、[Antara](https://gorontalo.antaranews.com/berita/435155/telkom-rampingkan-anak-usaha-melalui-dua-merger-percepat-streamlining)
+- **關鍵要點**：Telkominfra 併入 Telkom Akses、NSI 併入 GSD；已完成整理 28 家子公司，其餘 22 家目標 2026 年底前完成；定位為 strategic holding。
+
+##### 🎯 Telkomsel 一年少 6.519 百萬用戶
+- **來源連結**：[Sindonews 2026-11-10](https://tekno.sindonews.com/read/1770211/207/ada-apa-dengan-telkomsel-65-juta-pelanggan-minggat-dalam-setahun-1794229905)、[Kontan Insight 2026-11-10](https://insight.kontan.co.id/news/jumlah-pelanggan-telkomsel-menyusut-bisnis-seluler-jadi-ujian-profitabilitas-tlkm)
+- **關鍵要點**：截至 2026-09 一年少 6.519 百萬用戶；Telkomsel 行銷總監 Lionel Chng 稱 7 月起生物辨識登記影響低消費族群新增；ITB 學者 Agung Harsoyo 認為浮動用戶流失屬正常；Indosat 同樣流失、XLSmart 增加。Kontan Insight 稱手機業務是 TLK 獲利考驗（全文付費）。
+
+##### 🎯 政治：副總統 Gibran 表態辭職
+- **來源連結**：[industry.co.id 2026-11-11](https://www.industry.co.id/read/159007/ihsg-tak-goyah-oleh-isu-gibran-mundur-analis-investor-lebih-cermati-fundamental-dan-msci)、[Kontan 2026-11-10](https://investasi.kontan.co.id/news/wapres-gibran-berniat-mundur-simak-prospek-ihsg-selanjutnya)
+- **關鍵要點**：國務秘書證實 Gibran 向 Prabowo 表達辭職意願（學歷文件爭議、國會討論罷免）；JCI 當天仍 +1.02%、印尼盾升 0.13%；分析師稱市場更在意基本面與 MSCI。
+
+##### 🎯 共識（Yahoo Finance，2026-11-11 擷取）
+- **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.98 IDR（7 日前 202.01）、FY2027E 218.23 IDR（7 日前 219.77）；4Q2026 單季共識 41.67 IDR（2 位），9M 實績 146.31 ＋ 4Q 共識 ＝ 187.98 IDR，比全年共識低 8.3%。平均目標價 3,074.13 IDR（上次 3,103.70）、中位數 3,200、最高 3,700（上次 4,030）、最低 2,080；23 位分析師、評等 1.39。TLK ADR Forward EPS 1.119 USD、Forward PE 10.04 倍；MTEL.JK 目標價平均 598 IDR。
