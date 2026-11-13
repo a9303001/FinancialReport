@@ -357,12 +357,13 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 16
-- `COMPANY_NAME`：00546 阜豐
-- `MARKET`：港股
-- `COMPANY_FOLDER`：00546阜豐
+- `COMPANY_NAME`：3451
+- `MARKET`：日股
+- `COMPANY_FOLDER`：3451東誠REIT
 - `EXTRA_ANALYSIS`：
-  1. 有哪些產品，各佔 EPS 比重
-  2. 各產品的主要競爭對手，市佔率
+  1. 租金佔配息比重
+  2. 配息佔EPS比重
+  3. 風險
 
 ---
 - 執行日期: 17
