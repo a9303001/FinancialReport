@@ -996,3 +996,22 @@
 
 ##### 🎯 共識（Yahoo Finance，2026-11-11 擷取）
 - **關鍵要點**：TLKM.JK FY2026E 共識 EPS 204.98 IDR（7 日前 202.01）、FY2027E 218.23 IDR（7 日前 219.77）；4Q2026 單季共識 41.67 IDR（2 位），9M 實績 146.31 ＋ 4Q 共識 ＝ 187.98 IDR，比全年共識低 8.3%。平均目標價 3,074.13 IDR（上次 3,103.70）、中位數 3,200、最高 3,700（上次 4,030）、最低 2,080；23 位分析師、評等 1.39。TLK ADR Forward EPS 1.119 USD、Forward PE 10.04 倍；MTEL.JK 目標價平均 598 IDR。
+
+#### [2026-11-13 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/13 台北 09:30 前後蒐集；IDX 11/13 尚未開盤。TLK 11/12 收 11.49 USD（+0.5%）、TLKM 11/12 收 2,130 IDR（+3.4%）；USD/IDR 11/12 即期收 18,239（−0.50%）；11/11 收 18,140。
+
+##### MSCI 11 月審查結果（2026-11-12 公布）
+- **關鍵要點**：Standard 無新增；BRPT 剔除、BRMS 降到 Small Cap；Small Cap 剔除 AVIA、CTRA、MTEL、EMTK、JSMR、RAJA、WIFI；全球 Small Cap 新增 171、刪除 243。11/30 收盤後執行、12/1 生效。TLKM 不變。MTEL 11/11 收 326、11/12 收 304 IDR（−6.7%）。
+- **來源連結**：[Liputan6 2026-11-12](https://www.liputan6.com/saham/read/8333557/msci-keluarkan-7-saham-emiten-indonesia-dari-small-cap)、[EmitenNews](https://www.emitennews.com/news/hasil-rebalancing-msci-8-saham-out-1-turun-kasta)、[Kompas 2026-11-12](https://money.kompas.com/read/2026/11/12/132456726/ihsg-menguat-220-persen-saham-big-caps-reli-msci-ubah-komposisi-indeks)
+
+##### 市場反應與分析師
+- **關鍵要點**：11/11 JCI −0.21% 收 5,115.04，外資淨賣 207.6 億；11/12 JCI +2.65% 收 5,250.89，外資全市場淨買 443.53 億 IDR，TLKM 仍為外資淨賣第 7 名（276.9 億）；TLKM 11/12 上午盤一度 +3.9%。Infovesta：結果已被預期，年底前仍波動；Mirae：符合負面預期，可再累積；Panin：JCI 年底 4,700–5,300、樂觀 5,400。
+- **來源連結**：[Kontan 2026-11-13](https://investasi.kontan.co.id/news/simak-saham-yang-banyak-dijual-asing-saat-ihsg-melesat-265-ke-5250-kemarin)、[Kontan 2026-11-13](https://investasi.kontan.co.id/news/pasar-saham-tetap-hijau-meski-ada-rebalancing-msci-apakah-kenaikan-ihsg-akan-lanjut)
+
+##### 匯率與政治
+- **關鍵要點**：美國 10 月 CPI 月增 0.4%（預期 0.3%），美元指數 102.843 創 2025-04-10 以來新高，Fed 12 月升息機率上升；副總統 Gibran 11/11 遞交辭呈，120 位國會議員提出 Hak Menyatakan Pendapat；分析師稱 MSCI 剔除名單反映透明度、流動性、治理問題。
+- **來源連結**：[Digivestasi 2026-11-12](https://www.digivestasi.com/news/detail/bisnis_ekonomi/rupiah-ditutup-melemah-0-50-ke-rp18-239-per-dolar-as-pasar-cermati-politik-dan)、CNBC Indonesia（Red Signal 轉述，2026-11-12）
+
+##### 🎯 共識（Yahoo Finance，2026-11-13 擷取）
+- TLKM 23 位分析師，平均評等 1.39；目標價平均 3,048.04、中位數 3,120、最低 2,080、最高 3,650 IDR；FY26 EPS 共識 204.98 IDR（未變）。TLK ADR：FY26 EPS 1.071、NTM 1.119 USD。
