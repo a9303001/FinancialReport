@@ -202,7 +202,7 @@ curl -s -A "<UA>" "https://ess.api.cnyes.com/ess/api/v1/news/keyword?q={公司�
 curl -s -A "<UA>" "https://news.cnyes.com/news/id/{newsId}"
 ```
 
-- 公司名、代號、常用簡稱（如 `AES-KY` 與 `AES`）各查一次，用 `newsId` 去重（代號常命中盤後速報，公司名常命中重訊；代號索引可能落後數週，不可只查代號）。
+- 公司名、代號、常用簡稱（如 `AES-KY` 與 `AES`）各查一次，用 `newsId` 去重（代號常命中盤後速報，公司名常命中重訊；代號索引可能落後數週，不可只查代號；純數字代號也會命中內文含該數字的無關文章，如「鏈文」加密貨幣稿，要依 `category` 與標題逐則排除）[2026-11]。
 - `items` 欄位：`newsId`、`title`、`summary`、`publishAt`（**秒級** timestamp，不要除以 1000）、`category[].name`（`台股公告` = MOPS 重訊轉載）。
 - 用中文名查時 `title` / `summary` 會被包上 `<mark>`，寫檔前用 regex 移除 `</?mark>`。
 - 全文取頁面 JSON-LD 的 `"articleBody"`（純文字）。引用網址：`https://news.cnyes.com/news/id/{newsId}`。
