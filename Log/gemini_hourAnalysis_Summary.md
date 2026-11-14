@@ -1,9 +1,21 @@
-# Rotation Progress — StockAnalysis (Gemini)
+# gemini_hourAnalysis.md 執行摘要（Gemini 版）
 
-| 欄位 | 值 |
-|:-----|:---|
-| **last_executed_date** | 1 |
-| **last_executed_companies** | 02318 中國平安, 2971ES-CON日本REIT |
-| **last_executed_time** | 2026-11-15 00:38 |
-| **next_date** | 2 |
-| **stock_analysis_status** | ✅ |
+- **last_executed_date**: 2
+- **last_executed_companies**: 00941 中國移動
+- **last_executed_time**: 2026-11-15 00:54
+- **next_date**: 3
+- **stock_analysis_status**: ✅
+
+---
+
+## 本次執行詳情（日期 2）
+
+### 00941 中國移動
+- **StockAnalysis 狀態**：✅ 已完成深度重寫並寫入 `00941中國移動/hourAnalysisResult.md`（共 418 行 ≤ 500 行，全檔 0 表格、0 半形 `|`）
+- **分析輸出檔案**：`d:\FinancialReport\00941中國移動\hourAnalysisResult.md`
+- **同資料夾其他 md 校驗**：✅ 已同步更新 `00941_analysis_report.md` 匯率與最新收盤價校準註記；年報與季報不修改
+- **主要發現摘要**：
+  - 2026Q1–Q3 營運收入 9,345.67 億 HKD（+0.4% YoY，每股 43.21 HKD）、股東應佔利潤 1,357.10 億 HKD（+4.0% YoY，每股 6.28 HKD），EBITDA 利潤率 33.4%。
+  - 附加分析 1（人民幣轉港幣）：全檔財務絕對金額與每股金額均以 `1 RMB = 1.1760 HKD` 轉換為港幣主幣別並附人民幣原幣。
+  - 附加分析 2（AI 算力佔營收%與 EPS）：AI 直接收入 2025 全年破百億 RMB（佔比約 1.0%），預計 2026 全年佔總營收 1.5%–1.8%、貢獻 EPS 約 0.08–0.12 HKD；廣義算力（移動雲 + IDC + AI）2025 全年達 1,563.92 億 HKD（佔比 12.16%，每股 7.23 HKD），預計 2026 全年佔總營收約 14.2%、貢獻 EPS 約 0.65–0.85 HKD（佔全年預估 EPS 約 9.2%–12.0%）。
+  - 2026 年 11 月中旬花旗維持買入評級（目標價 97 HKD），公司完成單波 1.6Tb/s 超高速光傳輸現網試驗，派息率承諾於 2026 年提升至 75% 以上（預估殖利率約 6.62%）。
