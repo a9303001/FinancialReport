@@ -1015,3 +1015,19 @@
 
 ##### 🎯 共識（Yahoo Finance，2026-11-13 擷取）
 - TLKM 23 位分析師，平均評等 1.39；目標價平均 3,048.04、中位數 3,120、最低 2,080、最高 3,650 IDR；FY26 EPS 共識 204.98 IDR（未變）。TLK ADR：FY26 EPS 1.071、NTM 1.119 USD。
+
+#### [2026-11-14 補充（StockAnalysis 例行更新蒐集）]
+
+> 11/14 台北 09:30 前後蒐集。TLK 11/13 收 11.67 USD（+1.6%，盤後 11.45）；TLKM 11/13 收 2,160 IDR（+1.4%）；MTEL 11/13 收 322 IDR（+5.9%）；USD/IDR 11/13 收 18,206（+0.18%，Stockbit 口徑 18,213、Bloomberg 18,195）。
+
+##### NeutraDC 出售與 MNC 目標價
+- **關鍵要點**：MNC Sekuritas（Christian Sitorus）稱 Telkom 正評估約 70% NeutraDC 股權的 binding offers，市場估交易值 10–15 億 USD，相當 TLKM 每股 184–276 IDR、市值的 9%–14%；Batam AI 資料中心擴到約 78MW、Cikarang 潛在 200MW。9M 淨利 14.4 兆（−3.9%）達 MNC 全年估 77.8%、共識 74.6%；有效稅率 24.3%。MNC 評等 Buy、目標價 2,850 IDR（EV/EBITDA 4.2 倍 FY26），預估淨利 FY26 +4.2%、FY27 +5.9%。
+- **來源連結**：[investor.id 2026-11-13](https://investor.id/market/461897/telkom-tlkm-bersiap-transaksi-jumbo-target-harga-saham-berubah)
+
+##### FTSE Russell 對印尼的態度
+- **關鍵要點**：FTSE Russell 未把印尼列入 Watch List，維持 Secondary Emerging；9 月審查的特別處理延續到 12 月審查，是否恢復正常調整在 2027 年 3 月審查前決定；認可透明度改善，但需更多時間評估持股透明、監管與執法成效。
+- **來源連結**：[investor.id 2026-11-13](https://investor.id/market/461961/ftse-russell-akui-perkembangan-positif-indonesia-tapi-masih-butuh-waktu)
+
+##### 市場與匯率
+- **關鍵要點**：11/13 JCI +1.78% 收 5,344.41，11 個產業全漲、科技類 +3.94%，成交 12.38 兆；印尼盾仍貼近歷史低點，美 10 年債殖利率 5.12%、Fed 鷹派。11/11 InfraNexia 2026 年新增光纖 1,408 公里。
+- **來源連結**：[Katadata Databoks](https://databoks.katadata.co.id/pasar/statistik/6af6d89bbf7e4/ihsg-ditutup-naik-178-ke-level-5344-jumat-13-november-2026)、[Bloomberg Technoz](https://www.bloombergtechnoz.com/detail-news/127660/rupiah-ditutup-menguat-tapi-risiko-pelemahan-belum-berlalu)、[IDX Channel](https://www.idxchannel.com/market-news/perkuat-infrastruktur-ai-telkom-tlkm-tambah-jaringan-fiber-optik-1408-km-sepanjang-2026)
