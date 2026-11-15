@@ -5,9 +5,9 @@
 
 > **載入並執行 `StockAnalysis` Skill**（`.agents/skills/StockAnalysis/SKILL.md`），傳入以下參數：
   
- - `COMPANY_NAME`：3492MIRARTH
+ - `COMPANY_NAME`：3451東誠REIT
 - `MARKET`：日股
-- `COMPANY_FOLDER`：3492MIRARTH
+- `COMPANY_FOLDER`：3451東誠REIT
 - `EXTRA_ANALYSIS`：
   1.物件都在哪裡
 
