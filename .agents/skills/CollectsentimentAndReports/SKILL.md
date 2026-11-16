@@ -179,7 +179,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 東洋経済オンライン `toyokeizai.net/articles/-/{id}` | SSR，後段付費；`/search/?q=` 404；四季報 `shikiho.toyokeizai.net` 為 JS 外殼 + 付費 | 找文章用全文搜尋 `toyokeizai.net/list/search?fulltext={關鍵字}`（SSR，`curl` 可讀）；單篇要 `curl -L`（會 302 到 `?display=b`，不加 `-L` 只拿到約 116 bytes 轉址頁），取公開段落與 `datePublished`；付費牆不必跑 MCP 鏈 [2026-11] |
 | 日経 `nikkei.com/nkd/company/news/?scode={代碼}&ba=1` | SSR，`curl` 可讀；日期在 `m-listItem_time`，付費文章有標記 | 單篇 `curl` 取 `datePublished` 與導言段；付費牆不必跑 MCP 鏈 [2026-10] |
 | E-IR 代管的官網 IR 頁（如小糸 `koito.co.jp/english/ir/info/earningsreport/`） | PDF 連結由 `eir-parts` JS 注入，`curl` 看不到 | Playwright `browser_evaluate` 列出連結；PDF 實體在 `ssl4.eir-parts.net/doc/{代碼}/{tdnet\|yuho_pdf\|…}/{id}/00.pdf`，`curl` 可直接下載（`yuho_pdf` = 有価証券報告書全文）[2026-10] |
-| JAPAN-REIT.COM `japan-reit.com/meigara/{代碼}/` | `curl` 回 SSL 憑證鏈錯誤（站方問題，**不可**關閉 TLS 驗證）；`WebFetch` 回 503 | `firecrawl_scrape` 可讀：價格、利回り、排名、近一年日線、銘柄ニュース與開示。`/news/` 404，改用 `/topic/` 或 `/release/` [2026-10] |
+| JAPAN-REIT.COM `japan-reit.com/meigara/{代碼}/` | `curl` 回 SSL 憑證鏈錯誤（站方問題，**不可**關閉 TLS 驗證）；`WebFetch` 回 503；2026-11 起 `firecrawl_scrape` 也回 SSL 憑證錯誤、Bright Data 45 秒逾時 | **直接用 Apify `apify/rag-web-browser`**（`query` 填網址、`maxResults: 1`，約 10 秒、200）：價格、時價總額、利回り、排名（含 NOI 利回り）、業績預測、銘柄ニュース與開示清單。`/news/` 404，改用 `/topic/` 或 `/release/` [2026-11] |
 | Shared Research `sharedresearch.jp/ja/companies/{代碼}` | J-REIT 回 404（沒有覆蓋） | 小型股常是唯一的第三方研究覆蓋；J-REIT 不必查 [2026-10] |
 
 ### 4.5 印尼（美股 ADR 的母股，如 TLK ↔ IDX `TLKM`）
