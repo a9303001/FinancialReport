@@ -1,0 +1,4 @@
+# 衝突時保留兩邊內容（union merge），僅適用 Markdown 文字檔
+# 注意：只對本機 / 雲端 session 的 git merge、git pull 生效；GitHub 網頁 PR 的 Merge 按鈕不會套用
+*.md merge=union
+*.MD merge=union
