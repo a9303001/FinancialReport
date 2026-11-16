@@ -75,13 +75,13 @@ FinancialReport/
 ├── StkScreenerResult/             # 選股器篩選結果與候選名單
 ├── Log/                           # 排程執行紀錄與彙總
 ├── Prompt/                        # 可重複使用的提示詞與參考文件
-├── gemini/                        # Gemini 專用 routine / prompt 版本
+├── Analysis/                      # 總經／REIT／新聞分析 routine、prompt 與結果檔（原 gemini/）
 │
 ├── Routines_CollectsentimentAndReports.md  # ★ 每日輪替表（Single Source of Truth）
 ├── Routines_StockAnalysis.md      # 每日深度分析排程
 ├── Routines_Move2History.md       # 根目錄 ↔ History 雙向歸檔同步
-├── gemini/Reit_Hk.md              # 港股 REIT 殖利率 Top10 篩選（需持有非香港物件）
-├── gemini/Reit_Jp.md              # 日股 REIT 殖利率 Top20 篩選（Top10 詳細檔）
+├── Analysis/Reit_Hk.md            # 港股 REIT 殖利率 Top10 篩選（需持有非香港物件）
+├── Analysis/Reit_Jp.md            # 日股 REIT 殖利率 Top20 篩選（Top10 詳細檔）
 ├── hourAnalysis.md                # 臨時指定的個股分析任務
 │
 └── .claude/skills/ , .agents/skills/   # Skill 定義（兩份內容相同，供不同 agent 載入）
@@ -160,7 +160,7 @@ OPM (%)      = 營業利益率 / 稅前淨利率 × 100%    （本 repo 自定�
 | **Claude Opus**（Claude Code / Desktop） | 自動載入 `CLAUDE.md` → `AGENTS.md`；可直接執行 `.claude/skills/` 下的 Skill 跑完整流程，並一次讀多份年報做跨年度交叉比對 | 3–5 檔 | 仍建議先 Glob/Grep 定位，別無腦整包載入 |
 | **Claude Sonnet** | 主力日常模型：先 Glob 列檔 → Grep 關鍵字 → 只讀命中的檔案段落；適合「一間公司完整分析」單一任務 | 2–4 檔 | 同時處理 3 間以上公司容易混淆年度與幣別，請拆任務 |
 | **Claude Haiku**（低成本、快） | 只讀 `hourAnalysisResult.md` + `*_PublicOpinion.md` 的摘要段落；需要原文時再針對性 grep 關鍵字 | 1–2 檔 | 不要一次塞整份 10-K，會擠掉推理空間 |
-| **Gemini Pro** | 長上下文可整包讀年報；可載入 `gemini/` 下的專用 routine 與 `AGENTS.md`，適合多年度趨勢比較 | 3–5 檔 | 中文資料夾名在 URL 需 percent-encoding |
+| **Gemini Pro** | 長上下文可整包讀年報；可載入 `Analysis/` 下的專用 routine 與 `AGENTS.md`，適合多年度趨勢比較 | 3–5 檔 | 中文資料夾名在 URL 需 percent-encoding |
 | **Gemini Flash** | **分段讀**：先讀 §檔名規則 → 只抓 1–2 個目標檔；每次回答聚焦單一公司 | 1–2 檔 | 避免同時處理多公司多年報，易混淆年度與幣別 |
 | **Gemini Flash-Lite**（及各家 nano / mini 級） | 只做「取檔 + 摘要」：直接複製 [`index.md` §9](index.md#s9) 的現成 URL 抓 `hourAnalysisResult.md`，**不要自行組 URL** | 1 檔 | 自行做 percent-encoding 失敗率高；估值推算請交給上位模型 |
 | **ChatGPT / GPT / Codex** | 有瀏覽能力時走 raw URL；先抓 `index.md` 取得公司清單再進資料夾 | 2–4 檔 | GitHub API 未帶 token 易 403，直接用 raw URL |
@@ -245,7 +245,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | `Routines_CollectsentimentAndReports.md` | 每日 | 依「今天幾號」對照輪替表，收集當日公司的財報與輿情 |
 | `Routines_StockAnalysis.md` | 每日 | 依同一輪替表執行深度分析，輸出 `hourAnalysisResult.md` |
 | `Routines_Move2History.md` | 不定期 | 讓根目錄公司資料夾集合等於輪替表；不在表上的移入 `History/`（雙向搬移、不刪資料） |
-| `gemini/Reit_Hk.md` / `gemini/Reit_Jp.md` | 不定期 | 港股 REIT 殖利率 Top10 / 日股 REIT 殖利率 Top20（Top10 詳細檔）篩選與分析 |
+| `Analysis/Reit_Hk.md` / `Analysis/Reit_Jp.md` | 不定期 | 港股 REIT 殖利率 Top10 / 日股 REIT 殖利率 Top20（Top10 詳細檔）篩選與分析 |
 
 > **輪替表是唯一真實依據**：要新增或停止追蹤公司，改 `Routines_CollectsentimentAndReports.md`，再跑 `Routines_Move2History.md` 同步資料夾。
 

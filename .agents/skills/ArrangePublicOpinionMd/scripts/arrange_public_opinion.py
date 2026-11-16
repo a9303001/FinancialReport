@@ -24,7 +24,7 @@ from pathlib import Path
 # --------------------------------------------------------------------------
 
 SKIP_DIRS = {'.git', '.github', '.claude', '.agents', 'Log', 'Prompt',
-             'AnalysisResult', 'StkScreenerResult', 'discard', 'History', 'gemini'}
+             'AnalysisResult', 'StkScreenerResult', 'discard', 'History', 'Analysis'}
 
 MERGED_RE = re.compile(r'^(\d{4})_PublicOpinion(_part\d+)?\.md$')
 LEGACY_RE = re.compile(r'^(\d{4})_輿情彙整(_part\d+)?\.md$')

@@ -4,13 +4,13 @@
 
 ## 0. 一句話任務
 
-每輪**先掃 repo 根目錄有哪些股票資料夾**，只蒐集「這些股票」近 30 天的新聞與輿情，查核、每股化、依重要性排名後，**整份重寫** `gemini/LatestNewsResult.md`，跑腳本驗收，最後 commit / push。
+每輪**先掃 repo 根目錄有哪些股票資料夾**，只蒐集「這些股票」近 30 天的新聞與輿情，查核、每股化、依重要性排名後，**整份重寫** `Analysis/LatestNewsResult.md`，跑腳本驗收，最後 commit / push。
 
 - **以股票為主**：每一則都必須對應到至少 1 個根目錄股票資料夾。宏觀新聞（利率、油價、匯率、政策）只有在能寫出「→ 某檔持股每股 EPS／配息／淨值變多少」時才收；寫不出就不收。
 - **持股清單每輪重抓**：以根目錄資料夾為準，不寫死、不沿用上一輪清單。資料夾被刪 = 已出清，不搜；新增資料夾 = 本輪就要搜。
 - **讀者**：初級分析師（懂財報三大表，沒追新聞）＋下一輪的 AI。
 - **全自動**：`/goal` = 不中途提問，一路做到 Step 7；`/boost` = 每條都讀原文、交叉驗證。遇錯記進第八區後繼續，不停下。
-- **檔案**：本 prompt（規則，本輪不改）＝`gemini/LatestNews.md`；唯一輸出檔＝`gemini/LatestNewsResult.md`；驗收腳本＝`gemini/LatestNews_check.py`。
+- **檔案**：本 prompt（規則，本輪不改）＝`Analysis/LatestNews.md`；唯一輸出檔＝`Analysis/LatestNewsResult.md`；驗收腳本＝`Analysis/LatestNews_check.py`。
 
 ---
 
@@ -92,11 +92,11 @@ Step 7  commit / push ＋ 摘要
 1. 執行：
 
    ```bash
-   python3 gemini/LatestNews_check.py --list
+   python3 Analysis/LatestNews_check.py --list
    ```
 
    每行輸出：`資料夾｜代號｜市場（HK/JP/TW/US/?）｜本地分析：有/無｜輿情：檔名`。市場是 `?` 就讀該資料夾的檔案自行判斷。
-   - 沒有 Python：列出根目錄資料夾，排除 `History`、`Log`、`Prompt`、`gemini`、`StkScreenerResult`、`HkReitScreenerResult`、`JpReitScreenerResult` 與 `.` 開頭者；5 位數 = 港股、英文代碼 = 美股（`-KY` 結尾 = 台股）、4 位數看本地檔判斷日股／台股。
+   - 沒有 Python：列出根目錄資料夾，排除 `History`、`Log`、`Prompt`、`Analysis`、`StkScreenerResult`、`HkReitScreenerResult`、`JpReitScreenerResult` 與 `.` 開頭者；5 位數 = 港股、英文代碼 = 美股（`-KY` 結尾 = 台股）、4 位數看本地檔判斷日股／台股。
 2. 每檔只讀需要的段落，記進事件卡：
    - **搜尋關鍵字**：本地分析檔「一句話結論」「本輪最重要的 3 件新事」「後續追蹤／資料缺口」；`Routines_StockAnalysis.md` 輪替表該公司的 `EXTRA_ANALYSIS`（使用者問過的問題，最優先）。
    - **每股基準**：股數口徑（股數＋單位＋日期）、本年預估 EPS／DPU、最新收盤、主要幣別。
@@ -173,8 +173,8 @@ Step 7  commit / push ＋ 摘要
 ### Step 6：驗收
 
 ```bash
-python3 gemini/LatestNews_check.py --today TODAY --prev "PREV_TS"   # 首輪省略 --prev
-git diff --stat gemini/LatestNewsResult.md                          # 必須有變動
+python3 Analysis/LatestNews_check.py --today TODAY --prev "PREV_TS"   # 首輪省略 --prev
+git diff --stat Analysis/LatestNewsResult.md                          # 必須有變動
 ```
 
 最後一行必須是「問題 0 個」。不過 → 回 Step 5 **整份重寫**，不是局部修。沒有 Python 時，照第 6 節自檢逐項人工檢查。
@@ -187,7 +187,7 @@ git diff --stat gemini/LatestNewsResult.md                          # 必須有�
 
 ### Step 7：交付
 
-1. `git add gemini/LatestNewsResult.md`
+1. `git add Analysis/LatestNewsResult.md`
 2. commit：`LatestNews: YYYY-MM-DD 30-day scan (CUTOFF ~ TODAY)`
 3. push：Gemini 本機 `git push origin master`；Claude 雲端推到指定工作分支。失敗重試 3 次（2s／4s／8s）。
 4. 對話中輸出摘要：
@@ -282,7 +282,7 @@ YYYY/MM/DD HH:MM:SS (UTC+8)
 > 匯率：1 USD = X HKD｜1 RMB = X HKD｜1 USD = X JPY｜1 USD = X TWD（YYYY-MM-DD 收盤，來源）
 > 每股化規則：港股 HKD（原幣放括號）｜日股 JPY｜台股 TWD｜美股 USD（ADR 每 1 ADS）｜股數見第四區
 > 上一版：PREV_TS｜本版：整份重寫（Final Rewrite）
-> 產出規則：`gemini/LatestNews.md`｜⚠️ 自動化產出，投資前請回原始來源核實。
+> 產出規則：`Analysis/LatestNews.md`｜⚠️ 自動化產出，投資前請回原始來源核實。
 
 ## 一、30 秒看完
 

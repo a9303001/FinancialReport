@@ -1,7 +1,7 @@
 /boost /goal
 # Routines — 中國房地產景氣 × 香港 REIT 進場時點判斷（Gemini 版）
 
-> **任務**：每輪回答「**中國房地產走到哪一階段？土地制度會不會變？香港 REIT 該買、該等、還是該避開？**」，結果**全文重寫**到 `gemini/HkStateResult.md`。
+> **任務**：每輪回答「**中國房地產走到哪一階段？土地制度會不會變？香港 REIT 該買、該等、還是該避開？**」，結果**全文重寫**到 `Analysis/HkStateResult.md`。
 >
 > **執行模式**：`/boost /goal` 全自動，**嚴禁中途停下提問**，自主走完 Step 0 → Step 7。
 >
@@ -60,8 +60,8 @@
 
 | 用途 | 路徑（本機 `d:\FinancialReport\`） |
 |---|---|
-| 本規格（每輪必讀） | `gemini/gemini_HkState.md` |
-| **唯一輸出檔** | `gemini/HkStateResult.md` |
+| 本規格（每輪必讀） | `Analysis/gemini_HkState.md` |
+| **唯一輸出檔** | `Analysis/HkStateResult.md` |
 | 進度 ／ 日誌 | `Log/gemini_HkState_Summary.md` ／ `Log/gemini_HkState_{yyyyMMdd}.md` |
 | REIT 財報 ／ 輿情 | `01426春泉Reit/`、`87001匯賢Reit/`（**先讀本機再上網**） |
 | 總規則 | `AGENTS.md` |
@@ -74,7 +74,7 @@
 
 | # | 規則 |
 |:-:|:-----|
-| 1 | **檔案隔離**：只寫 `gemini/HkStateResult.md` 與 §0.4 兩個 Log 檔（§1.4） |
+| 1 | **檔案隔離**：只寫 `Analysis/HkStateResult.md` 與 §0.4 兩個 Log 檔（§1.4） |
 | 2 | **全文重寫**：每輪最後整份重寫，不追加 |
 | 3 | **零阻塞**：任何錯誤記錄後繼續 |
 | 4 | **防幻覺**：數據必附**來源＋發布日**；查不到寫 `N/A`＋原因；自算數字必附公式或標 `(估)` |
@@ -118,7 +118,7 @@
 
 | 檔案 | 本排程權限 |
 |:-----|:-----------:|
-| `gemini/HkStateResult.md` | ✅ 唯一結果檔（可讀寫） |
+| `Analysis/HkStateResult.md` | ✅ 唯一結果檔（可讀寫） |
 | `Log/gemini_HkState_Summary.md`、`Log/gemini_HkState_{yyyyMMdd}.md` | ✅ 可讀寫 |
 | `HkStateResult.md`（repo 根目錄）、`AnalysisResult/ChinaStateAnalysisResult.md`、`Prompt/hourAnalysis.hkreit.md` | ❌ 不可讀寫引用 |
 
@@ -731,7 +731,7 @@
 
 ---
 
-## 15. 結果檔骨架（`gemini/HkStateResult.md`）
+## 15. 結果檔骨架（`Analysis/HkStateResult.md`）
 
 > 結論最上、附錄最下。大標題 **11 個**（一～十一）＋附錄。
 

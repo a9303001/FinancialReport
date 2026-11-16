@@ -204,7 +204,7 @@ last_updated:    2026-09-15
 | `StkScreenerResult/` | 選股器（Stock Screener）篩選結果與候選名單 |
 | `Log/` | 排程執行紀錄與彙總報告 |
 | `Prompt/` | 可重複使用的提示詞與參考文件 |
-| `gemini/` | Gemini 專用的 routine / prompt 版本 |
+| `Analysis/` | 總經／REIT／新聞分析 routine、prompt 與結果檔（原 `gemini/`） |
 | `.claude/skills/`、`.agents/skills/` | Skill 定義（兩份內容相同，供不同 agent 載入） |
 
 ---
@@ -237,7 +237,7 @@ Step 8  明確回報：找到哪些年報/季報、缺哪些、缺的可能原�
 | **Claude Opus** | 自動吃 `CLAUDE.md` → `AGENTS.md`；可載 `.claude/skills/` 跑完整流程，多份年報交叉比對 | 3–5 檔 |
 | **Claude Sonnet** | 同上，但先 Glob/Grep 定位再讀檔，避免整包載入 | 2–4 檔 |
 | **Claude Haiku** | 只讀 `hourAnalysisResult.md`；需要原文時再 grep 關鍵字段落 | 1–2 檔 |
-| **Gemini Pro** | 長上下文可整包讀年報；可載 `gemini/` 下專用 routine | 3–5 檔 |
+| **Gemini Pro** | 長上下文可整包讀年報；可載 `Analysis/` 下專用 routine | 3–5 檔 |
 | **Gemini Flash** | **分段讀**：先讀 §3 檔名規則 → 只抓目標檔；一次只處理一間公司 | 1–2 檔 |
 | **Gemini Flash-Lite** | 只走 §9 現成 URL 抓 `hourAnalysisResult.md`，不要自行組 URL（易 percent-encoding 出錯） | 1 檔 |
 | **ChatGPT / GPT / Codex** | 有瀏覽能力走 raw URL；先抓 `index.md` 再進資料夾 | 2–4 檔 |

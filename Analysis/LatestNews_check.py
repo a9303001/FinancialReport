@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-"""LatestNewsResult.md 機械驗收（規則見 gemini/LatestNews.md Step 7）。
+"""LatestNewsResult.md 機械驗收（規則見 Analysis/LatestNews.md Step 7）。
 
 檢查範圍：表頭（時間戳／覆蓋期間／匯率）、八大區結構、零表格、1.1 短句、排行榜
 （編號、日期、分級、分數、欄位、排序、降溫、篇幅）、⑤ 每股化、港股每股港幣化、
 傳聞日期、下一輪項目、第四區持股完整。
 
 用法（在 REPO_ROOT 執行）：
-    python gemini/LatestNews_check.py --today 2026-09-30 --prev "2026/09/30 23:41:07"
+    python Analysis/LatestNews_check.py --today 2026-09-30 --prev "2026/09/30 23:41:07"
     --today 省略 = 取台北今天；--prev 省略 = 不檢查「晚於上一版」；--file 可指定其他檔；
     --days 窗口天數（預設 30，CUTOFF = TODAY − days）。
 輸出最後一行「問題 0 個」才算通過；有問題時 exit code = 1。
 
 列出本輪持股（Step 1，每輪開頭跑一次）：
-    python gemini/LatestNews_check.py --list
+    python Analysis/LatestNews_check.py --list
     每行：資料夾｜代號｜市場（HK/JP/TW/US/?）｜本地分析檔有無｜本地輿情檔
 
 """
@@ -22,7 +22,7 @@ import os
 import re
 import sys
 
-NON_COMPANY = {"History", "Log", "Prompt", "gemini", "StkScreenerResult",
+NON_COMPANY = {"History", "Log", "Prompt", "Analysis", "StkScreenerResult",
                "HkReitScreenerResult", "JpReitScreenerResult"}
 ZONES = "一二三四五六七八"
 NEED = {"HIGH": "①②③④⑤⑥⑦⑧⑨⑩", "MEDIUM": "①②④⑤⑧⑩", "LOW": "①⑤⑩"}
