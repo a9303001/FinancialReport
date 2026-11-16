@@ -11,7 +11,7 @@
 - `ROTATION_FILE`：`Routines_CollectsentimentAndReports.md`（輪值表，**唯一真實依據 / Single Source of Truth**）
 - `HISTORY_DIR`：`History`
 - `EXCLUDE_DIRS`（非公司資料夾，兩個方向都不參與搬移）：
-  - `History`、`AnalysisResult`、`StkScreenerResult`、`Log`、`Prompt`、`gemini`
+  - `History`、`AnalysisResult`、`StkScreenerResult`、`Log`、`Prompt`、`Analysis`
   - 任何以 `.` 開頭的隱藏資料夾（`.git`、`.claude`、`.github` …）
 - `TODAY`：執行當日日期，格式 `YYYY-MM-DD`（用於合併註記）
 

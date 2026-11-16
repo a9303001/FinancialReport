@@ -54,7 +54,7 @@ python .claude/skills/ArrangePublicOpinionMd/scripts/arrange_public_opinion.py -
 | `git status` 可執行 | 繼續，但報告註明「無 git 保護，刪除不可復原」 |
 | 工作區乾淨（無未提交 `.md` 變更） | 提醒使用者本 Skill 會刪檔、建議先 commit/stash；使用者堅持則繼續 |
 
-**公司資料夾** = `ROOT` 第一層目錄，排除：`.git` `.github` `.claude` `.agents` `Log` `Prompt` `AnalysisResult` `StkScreenerResult` `discard` `History` `gemini` 與任何以 `.` 開頭的目錄。每個資料夾**只掃第一層**，不遞迴。
+**公司資料夾** = `ROOT` 第一層目錄，排除：`.git` `.github` `.claude` `.agents` `Log` `Prompt` `AnalysisResult` `StkScreenerResult` `discard` `History` `Analysis` 與任何以 `.` 開頭的目錄。每個資料夾**只掃第一層**，不遞迴。
 
 ## 3. Phase 2 — 分類
 

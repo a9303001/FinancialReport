@@ -1,7 +1,7 @@
 /boost /goal
 # Routines — 日本房地產景氣 × J-REIT 未來投資價值與進場時點判斷（Gemini 版）
 
-> **任務**：每輪回答「**日本房地產走到景氣循環哪一階段？日銀升息傳導到哪？J-REIT 該買、該等、還是該避開？關鍵政策（日銀退場/外資管制/塔樓稅改/導管法）如何影響評價？**」，結果**全文重寫**到 `gemini/JpStateResult.md`。
+> **任務**：每輪回答「**日本房地產走到景氣循環哪一階段？日銀升息傳導到哪？J-REIT 該買、該等、還是該避開？關鍵政策（日銀退場/外資管制/塔樓稅改/導管法）如何影響評價？**」，結果**全文重寫**到 `Analysis/JpStateResult.md`。
 >
 > **執行模式**：`/boost /goal` 全自動，**嚴禁中途停下提問**，自主走完 Step 0 → Step 7。
 >
@@ -64,8 +64,8 @@
 
 | 用途 | 路徑（本機 `d:\FinancialReport\`） |
 |---|---|
-| 本規格（每輪必讀） | `gemini/gemini_JPState.md` |
-| **唯一輸出檔** | `gemini/JpStateResult.md` |
+| 本規格（每輪必讀） | `Analysis/gemini_JPState.md` |
+| **唯一輸出檔** | `Analysis/JpStateResult.md` |
 | 進度 ／ 日誌 | `Log/gemini_JPState_Summary.md` ／ `Log/gemini_JPState_{yyyyMMdd}.md` |
 | J-REIT 財報 ／ 輿情（本機優先） | 本機公司資料夾（如 `2971ES-CON日本REIT/`、`3455醫療保健投資法人/` 等） ＋ `JpReitScreenerResult/`（**先讀本機再上網**） |
 | 總規則 | `AGENTS.md` |
@@ -78,7 +78,7 @@
 
 | # | 規則 |
 |:-:|:-----|
-| 1 | **檔案隔離**：只寫 `gemini/JpStateResult.md` 與 §0.4 兩個 Log 檔（§1.4）。不污染其他目錄。 |
+| 1 | **檔案隔離**：只寫 `Analysis/JpStateResult.md` 與 §0.4 兩個 Log 檔（§1.4）。不污染其他目錄。 |
 | 2 | **全文重寫**：每輪最後整份重寫，不追加，確保前後邏輯連貫。 |
 | 3 | **零阻塞**：任何單項查詢錯誤記錄後繼續，不可中斷流程。 |
 | 4 | **防幻覺**：數據必附**來源＋發布日**；查不到寫 `N/A`＋原因；自算數字必附公式或標 `(估)`。 |
@@ -130,12 +130,12 @@
 
 | 檔案／目錄 | 本排程權限 |
 |:-----|:-----------:|
-| `gemini/JpStateResult.md` | ✅ 唯一結果檔（可讀寫） |
+| `Analysis/JpStateResult.md` | ✅ 唯一結果檔（可讀寫） |
 | `Log/gemini_JPState_Summary.md`、`Log/gemini_JPState_{yyyyMMdd}.md` | ✅ 可讀寫 |
 | `2971ES-CON日本REIT/`、`3455醫療保健投資法人/` 等本機 J-REIT 公司資料夾 | ✅ 僅讀取（財報、輿情） |
 | `JpReitScreenerResult/` | ✅ 僅讀取（參考既有篩選數據） |
 | `JpStateResult.md`（repo 根目錄，防呆防錯） | ❌ 不可讀寫建立 |
-| `gemini/HkStateResult.md`、`gemini/gemini_HkState.md`、`AnalysisResult/*` | ❌ 不可讀寫引用 |
+| `Analysis/HkStateResult.md`、`Analysis/gemini_HkState.md`、`AnalysisResult/*` | ❌ 不可讀寫引用 |
 
 - `grep`/`find` 命中 ❌ 檔案**跳過**；push 前 `git diff --cached --name-only` 確認只含 ✅ 檔案。
 
@@ -641,7 +641,7 @@
 | Step | 動作 |
 |:--:|---|
 | **0** | `git pull origin master`（衝突 stash → pull → pop；失敗重試 3 次 2s/4s/8s）＋ 取時間戳 ＋ 讀進度檔 ＋ 判定是否輕量輪（§2.4） |
-| **1** | 讀本規格 ＋ 讀自己上版結果檔（§1.4 只讀自己的 `gemini/JpStateResult.md`） |
+| **1** | 讀本規格 ＋ 讀自己上版結果檔（§1.4 只讀自己的 `Analysis/JpStateResult.md`） |
 | **2** | A 段 Delta Scan（含 §10.3 政策里程碑與 J-REIT 最新公告） |
 | **3** | B 段 Deep Dive（Focus A/B/C/D 四輪輪替，輕量輪改做來源回查） |
 | **4** | C 段 Backlog 清償 |
@@ -767,7 +767,7 @@
 
 ---
 
-## 15. 結果檔骨架（`gemini/JpStateResult.md`）
+## 15. 結果檔骨架（`Analysis/JpStateResult.md`）
 
 > 結論最上、附錄最下。大標題 **11 個**（一～十一）＋附錄。
 

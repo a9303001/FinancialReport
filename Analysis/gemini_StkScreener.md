@@ -115,7 +115,7 @@ clamp(下限, 上限, x) = 把 x 壓在下限與上限之間
 
 | 項目 | 路徑 |
 |:---|:---|
-| 規格檔（本檔） | `gemini\gemini_StkScreener.md` |
+| 規格檔（本檔） | `Analysis\gemini_StkScreener.md` |
 | 主結果檔 | `StkScreenerResult\0.StkScreenerResult_gemini.md` |
 | 個股詳細檔 | `StkScreenerResult\<排名>-<代號>-<公司>.md` |
 | 抽樣母體 | `StkScreenerResult\TW.csv`、`US.csv`、`hk.csv`、`jp.csv` |
