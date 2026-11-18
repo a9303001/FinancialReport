@@ -38,7 +38,7 @@ curl -s "https://raw.githubusercontent.com/a9303001/FinancialReport/master/02318
 git clone --branch master https://github.com/a9303001/FinancialReport.git
 ```
 
-> 51 間公司（31 現役 + 20 封存）的現成 URL 全列在 [`index.md` §9](index.md#s9)。
+> 61 間公司（32 現役 + 29 封存）的現成 URL 全列在 [`index.md` §9](index.md#s9)。
 
 ---
 
@@ -46,8 +46,8 @@ git clone --branch master https://github.com/a9303001/FinancialReport.git
 
 整理台股、美股、日股及港股個股的**基本面分析、歷史財報追蹤、成長潛力與潛在投資風險**，並把 PDF 財報全部轉為 `.md`，讓 LLM 無需 PDF 解析即可讀取。
 
-- **現役追蹤**：31 間公司（根目錄），每月依日期輪替自動更新
-- **封存資料**：20 間公司（`History/`）
+- **現役追蹤**：32 間公司（根目錄），每月依日期輪替自動更新
+- **封存資料**：29 間公司（`History/`）
 - **資料型態**：年報 / 季報 / 中期報告 / IR 公告 / 月度輿情 / 年度輿情彙整 / 深度分析報告
 - **完整索引**：見 [`index.md`](index.md)（含公司清單、檔名規則、取檔 URL 樣板、直通 URL 索引）
 
@@ -66,22 +66,22 @@ FinancialReport/
 │
 ├── <代號><公司名>/                # 現役公司資料夾，如 02318中國平安、2881富邦金、UHS
 │   ├── AnalysisResult.md      #   ★ 最新深度分析（先讀這個）
-│   ├── <代號>_annual_<年>.md      #   年報全文
-│   ├── <代號>_Quarter_<年>Q<季>.md #   季報全文
+│   ├── <代號>_AnnualReport_<年>.md #   年報全文（舊檔可能為 _annual_ / F04 等，見 §檔名規則）
+│   ├── <代號>_Quarter_<年>Q<季>.md #   季報全文（半年報為 _Quarter_<年>H1）
 │   ├── <年>_PublicOpinion.md      #   年度輿情彙整總檔
 │   └── <年月>_輿情新聞.md          #   月度輿情原始檔
 │
 ├── History/<代號><公司名>/        # 已停止追蹤的公司（結構同上）
 ├── StkScreenerResult/             # 選股器篩選結果與候選名單
+├── HkReitScreenerResult/          # 港股 REIT 殖利率 Top10 篩選結果（Analysis/Reit_Hk.md 產出）
+├── JpReitScreenerResult/          # 日股 REIT 殖利率篩選結果（Analysis/Reit_Jp.md 產出）
 ├── Log/                           # 排程執行紀錄與彙總
 ├── Prompt/                        # 可重複使用的提示詞與參考文件
-├── Analysis/                      # 總經／REIT／新聞分析 routine、prompt 與結果檔（原 gemini/）
+├── Analysis/                      # 總經／REIT／新聞分析 routine、prompt 與結果檔（原 gemini/），含 Reit_Hk.md、Reit_Jp.md
 │
 ├── Routines_CollectsentimentAndReports.md  # ★ 每日輪替表（Single Source of Truth）
 ├── Routines_StockAnalysis.md      # 每日深度分析排程
 ├── Routines_Move2History.md       # 根目錄 ↔ History 雙向歸檔同步
-├── Analysis/Reit_Hk.md            # 港股 REIT 殖利率 Top10 篩選（需持有非香港物件）
-├── Analysis/Reit_Jp.md            # 日股 REIT 殖利率 Top20 篩選（Top10 詳細檔）
 ├── hourAnalysis.md                # 臨時指定的個股分析任務
 │
 └── .claude/skills/ , .agents/skills/   # Skill 定義（兩份內容相同，供不同 agent 載入）
@@ -97,8 +97,8 @@ FinancialReport/
 | :--- | :--- | :-: |
 | `AnalysisResult.md` | 最新深度分析報告（結論、估值、每股化數據、風險/利多） | 1 |
 | `*_PublicOpinion.md` | 年度輿情彙整總檔（含各論壇原文合併） | 2 |
-| `*_annual_*.md`・`*_AnnualReport_*.md`・`*年年報.md`・`*_FY*_annual_results.md` | 年報 / 10-K / 有價證券報告書 | 3 |
-| `*_Quarter_*Q*.md`・`*_10Q_*.md`・`*Q*-10-Q.md` | 季報 / 10-Q | 3 |
+| `*_AnnualReport_*.md`（新制）・`*_annual_*.md`・`*年年報.md`・`*_FY*_annual_results.md`・`*_10K_*.md` | 年報 / 10-K / 有價證券報告書 | 3 |
+| `*_Quarter_*Q*.md`（新制）・`*_10Q_*.md`・`*Q*-10-Q.md` | 季報 / 10-Q | 3 |
 | `*_interim_*.md`・`*中期報告*.md`・`*_Quarter_*H1.md` | 港股中期報告 | 3 |
 | `*_輿情新聞.md`（前綴 `YYYYMM`） | 單月輿情 / 新聞原始檔 | 4 |
 | `*_Official_IR.md` | 官方 IR 公告整理 | 4 |
@@ -125,7 +125,7 @@ FinancialReport/
 
 ### 讀取管道優先序（成功即止）
 
-1. 本機檔案系統：`d:\FinancialReport\<資料夾>\`（零延遲、無 API 限制）
+1. 本機檔案系統：`<REPO_ROOT>/<資料夾>/`（Windows 如 `d:\FinancialReport`；Claude Code 雲端如 `/home/user/FinancialReport`；零延遲、無 API 限制）
 2. GitHub MCP 工具：`repo=a9303001/FinancialReport`、`ref=master`
 3. GitHub Contents API：`https://api.github.com/repos/a9303001/FinancialReport/contents/<資料夾>?ref=master`
    → 遇 `403` 表示額度耗盡，改用下一項
@@ -190,7 +190,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 
 1. 幣別要對：港股 / 中股以 **HKD** 為主要幣別；美股用 **USD**；日股用 **JPY**；台股用 **TWD**。
 2. 期別要對：日股會計年度跨年（FY2026 可能結束於 2026/3）；港股有中期報告而非 Q2。
-3. 語言：回覆以**繁體中文**為主，專有名詞首次出現附英文（如「每股盈餘（EPS）」）。
+3. 語言：回覆以**繁體中文**為主，專有名詞首次出現附英文（如「每股盈餘（EPS）」）；`AnalysisResult.md` 例外，術語直接寫英文（依 `StockAnalysis` Skill §6）。
 4. 時效：財報與輿情有時間性，引用時一律附上**報告期別或日期**。
 5. 沒有的資料就說沒有——缺口要明講原因（尚未公布 / 資料庫未更新 / 公司剛上市）。
 
@@ -237,23 +237,25 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | `CollectsentimentAndReports` | 收集個股最新財務報告與輿情討論 / 新聞 |
 | `ArrangePublicOpinionMd` | 把零散月度輿情 `.md` 依年份合併成 `<YYYY>_PublicOpinion.md`，驗證後刪除原檔（年報 / 季報不動） |
 | `Convert2md` | 用 MCP `convert_pdf_to_markdown` 把 PDF 轉 Markdown，檢查 CID 亂碼並刪除失敗檔 |
+| `rg` | ripgrep 執行檔選用規範（PATH／內建 Grep → `D:\Prog_install\ripgrep\rg.exe` → 其他搜尋方式） |
 
 ### 排程（Routines）
 
 | 檔案 | 觸發 | 行為 |
 | :--- | :--- | :--- |
 | `Routines_CollectsentimentAndReports.md` | 每日 | 依「今天幾號」對照輪替表，收集當日公司的財報與輿情 |
-| `Routines_StockAnalysis.md` | 每日 | 依同一輪替表執行深度分析，輸出 `AnalysisResult.md` |
+| `Routines_StockAnalysis.md` | 每日 | 依同一組執行日期 × 公司資料夾（本檔另列 `MARKET`／`EXTRA_ANALYSIS`）執行深度分析，輸出 `AnalysisResult.md` |
 | `Routines_Move2History.md` | 不定期 | 讓根目錄公司資料夾集合等於輪替表；不在表上的移入 `History/`（雙向搬移、不刪資料） |
 | `Analysis/Reit_Hk.md` / `Analysis/Reit_Jp.md` | 不定期 | 港股 REIT 殖利率 Top10 / 日股 REIT 殖利率 Top20（Top10 詳細檔）篩選與分析 |
 
-> **輪替表是唯一真實依據**：要新增或停止追蹤公司，改 `Routines_CollectsentimentAndReports.md`，再跑 `Routines_Move2History.md` 同步資料夾。
+> **輪替表是唯一真實依據**：要新增或停止追蹤公司，改 `Routines_CollectsentimentAndReports.md`，同步更新 `Routines_StockAnalysis.md` 的對應條目，再跑 `Routines_Move2History.md` 同步資料夾。
+> **推送分支**：所有 Skill／Routine 依 [`AGENTS.md`](AGENTS.md)「Git 推送規則」（雲端／feature 分支 → PR + auto-merge；本機直跑 → `master`）。
 
 ---
 
 ## ➕ 新增一間公司（How to Add a Company）
 
-1. 在 `Routines_CollectsentimentAndReports.md` 輪替表加一列：執行日期、`COMPANY_TICKER`、`COMPANY_NAME`、資料夾名稱、市場。
+1. 在 `Routines_CollectsentimentAndReports.md` 輪替表加一列：執行日期、`COMPANY_TICKER`、`COMPANY_NAME`、資料夾名稱、市場；並在 `Routines_StockAnalysis.md` 輪替表加同日期、同資料夾的條目（`MARKET`、`EXTRA_ANALYSIS`）。
 2. 建立資料夾，命名沿用慣例：`<代號><中文名>`（台股 / 港股 / 日股）或純代碼（美股，如 `UHS`）。
 3. 放入年報 / 季報：PDF 先用 `Convert2md` Skill 轉 `.md`，檔名沿用 §檔名規則。
 4. 執行 `StockAnalysis` Skill 產生 `AnalysisResult.md`。

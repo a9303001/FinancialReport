@@ -54,7 +54,7 @@ python .claude/skills/ArrangePublicOpinionMd/scripts/arrange_public_opinion.py -
 | `git status` 可執行 | 繼續，但報告註明「無 git 保護，刪除不可復原」 |
 | 工作區乾淨（無未提交 `.md` 變更） | 提醒使用者本 Skill 會刪檔、建議先 commit/stash；使用者堅持則繼續 |
 
-**公司資料夾** = `ROOT` 第一層目錄，排除：`.git` `.github` `.claude` `.agents` `Log` `Prompt` `AnalysisResult` `StkScreenerResult` `discard` `History` `Analysis` 與任何以 `.` 開頭的目錄。每個資料夾**只掃第一層**，不遞迴。
+**公司資料夾** = `ROOT` 第一層目錄，排除：`.git` `.github` `.claude` `.agents` `Log` `Prompt` `StkScreenerResult` `HkReitScreenerResult` `JpReitScreenerResult` `discard` `History` `Analysis`、任何以 `ScreenerResult` 結尾的目錄與任何以 `.` 開頭的目錄（與 `Routines_Move2History.md` 的 `EXCLUDE_DIRS` 一致）。每個資料夾**只掃第一層**，不遞迴。
 
 ## 3. Phase 2 — 分類
 
@@ -224,4 +224,4 @@ git rm "2881富邦金/202607_PTT.md"      # 逐檔、寫全路徑
 
 1. 回覆中呈現 §6 統計概覽與各公司明細（中文）。
 2. 明確回報：產生幾份彙整檔、刪了幾個原檔、哪些被排除（年報／季報／公告）、哪些需人工確認。
-3. 在 git repo 內則提交變更（如 `chore: 合併各公司輿情 md 為年度彙整檔`）；**推送分支依使用者指示**，不要自行推 `master`。
+3. 在 git repo 內則提交變更（如 `chore: 合併各公司輿情 md 為年度彙整檔`）；推送分支依 AGENTS.md「Git 推送規則」（雲端／指定 feature 分支 → push 該分支並開 PR；本機直跑 → push `master`），使用者另有指示時從其指示。

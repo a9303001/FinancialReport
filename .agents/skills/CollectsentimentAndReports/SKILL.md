@@ -452,7 +452,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ````
 
 > [!IMPORTANT]
-> **報告寫完後，必須把所有新增與變更的檔案 commit 並 push 到 `master`，任務才算完成。不可因分支限制停下來詢問使用者。**
+> **報告寫完後，必須把所有新增與變更的檔案 commit 並 push，任務才算完成。** 推送分支依 AGENTS.md「Git 推送規則」：雲端／指定 feature 分支 → push 該分支並開 PR（auto-merge workflow 會合併進 `master`）；本機直跑 → push `master`。不可因分支限制停下來詢問使用者。
 
 ---
 
@@ -467,7 +467,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
    - 重複的說明、與 §3 通用規則重複的敘述 → 刪除。
    - 一次性的除錯過程、實測流水帳（某天抓到幾筆、檔案多大）、指向已不存在檔案的連結 → 刪除，只留結論。
    - 環境設定細節（如 Playwright 啟動器原理）不寫在這裡；需要時看 `.claude/scripts/playwright-mcp.mjs` 開頭註解。
-4. **檢查一致性**：確認內文的 § 編號引用都還對得上；`Analysis/gemini_CollectsentimentAndReports.md` 若有引用本 Skill 的章節，一併更新。
+4. **檢查一致性**：確認內文的 § 編號引用都還對得上；`Analysis/` 底下若有檔案引用本 Skill 的章節（用 `rg -n "CollectsentimentAndReports" Analysis/` 檢查），一併更新。
 5. **兩份同步**：`.claude/skills/CollectsentimentAndReports/SKILL.md` 與 `.agents/skills/CollectsentimentAndReports/SKILL.md` 內容必須完全相同（改完用 `diff` 確認）。
 6. 在 §10 報告的「Skill 維護」寫明本次新增、修改、刪除了什麼。
 

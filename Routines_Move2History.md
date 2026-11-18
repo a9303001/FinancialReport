@@ -11,7 +11,8 @@
 - `ROTATION_FILE`：`Routines_CollectsentimentAndReports.md`（輪值表，**唯一真實依據 / Single Source of Truth**）
 - `HISTORY_DIR`：`History`
 - `EXCLUDE_DIRS`（非公司資料夾，兩個方向都不參與搬移）：
-  - `History`、`AnalysisResult`、`StkScreenerResult`、`Log`、`Prompt`、`Analysis`
+  - `History`、`Analysis`、`Log`、`Prompt`、`StkScreenerResult`、`HkReitScreenerResult`、`JpReitScreenerResult`、`discard`
+  - 任何以 `ScreenerResult` 結尾的資料夾（選股結果，非公司資料夾）
   - 任何以 `.` 開頭的隱藏資料夾（`.git`、`.claude`、`.github` …）
 - `TODAY`：執行當日日期，格式 `YYYY-MM-DD`（用於合併註記）
 
@@ -27,7 +28,7 @@
 
 解析 `T` 的注意事項：
 - 去除反引號與前後空白；忽略表頭列、`|:---:|` 分隔列、以及值為 `—` 的 Skip 列。
-- 同一資料夾可能出現在多列（例如 `3445RS` 同時對應日股 `3445` 與中股 `688432`）→ 去重後視為同一項。
+- 同一資料夾可能出現在多列（例如雙重上市公司同時列出兩地代號）→ 去重後視為同一項；同一日期有多列（如日期 1、14）則各列都要納入 `T`。
 
 ---
 

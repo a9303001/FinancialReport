@@ -430,7 +430,7 @@ description: 個股深度分析 Skill — 讀回既有資料 → deep research �
 
 ### 6.2 寫作規則（Must-do）
 
-1. **專有名詞寫英文**：`EPS`、`ROE`、`CapEx`、`FCF`、`AFFO`、`Forward EPS` 直接寫，不寫中文譯名、不展開全名。
+1. **專有名詞寫英文**：`EPS`、`ROE`、`CapEx`、`FCF`、`AFFO`、`Forward EPS` 直接寫，不寫中文譯名、不展開全名（AGENTS.md「回應語言規則」§3 已明列本檔為例外，對話回覆仍用「中文名稱（英文）」）。
    冷門或自定義指標才在**新的首次出現處**補一句，例：`AFFO（扣掉維修性資本支出後、真正能拿來配息的現金）`。
 2. **非英文原文轉英文**：`経常利益` → `ordinary income（本業＋業外的常態性獲利，日本會計特有科目）`；`10-K` 等英文原文直接寫。
 3. **代碼標市場**：`688432.SH（上海證交所科創板）`、`3445（日本東證）`、`02318（港交所）`。
@@ -653,5 +653,5 @@ description: 個股深度分析 Skill — 讀回既有資料 → deep research �
 ## 10. 收尾（Finalize）
 
 - **commit 前再實測一次行數**（§8.3）；超過 1000 行不可 commit。
-- 每完成一間公司就 **commit ＋ push**，並依當前環境的分支規範合併回 `master`（不必等整個 session 結束）。
+- 每完成一間公司就 **commit ＋ push**（不必等整個 session 結束）；推送分支依 AGENTS.md「Git 推送規則」（雲端／指定 feature 分支 → push 該分支並開 PR，由 auto-merge 合併進 `master`；本機直跑 → push `master`）。
 - 對話回覆寫出：公司、輸出檔路徑、**實測行數**、資料缺口摘要。
