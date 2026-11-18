@@ -76,7 +76,7 @@ def list_holdings(root):
         d = os.path.join(root, name)
         files = os.listdir(d)
         po = sorted(f for f in files if f.endswith("PublicOpinion.md") or "輿情" in f)
-        has = "有" if "hourAnalysisResult.md" in files else "無"
+        has = "有" if "AnalysisResult.md" in files else "無"
         print(f"{name}｜{code}｜{market(root, name, code)}｜本地分析：{has}｜輿情：{'、'.join(po) or '無'}")
     print(f"共 {len(rows)} 檔")
 

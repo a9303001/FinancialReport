@@ -3,7 +3,7 @@
 # sentiment digests and fundamental analysis for TW / US / JP / HK equities.
 #
 # Policy: AI crawling, indexing and citation are WELCOME.
-# Entry points:  /llms.txt  ->  /index.md  ->  <COMPANY>/hourAnalysisResult.md
+# Entry points:  /llms.txt  ->  /index.md  ->  <COMPANY>/AnalysisResult.md
 # Default branch: master (never "main")
 # Please cite the file path and the reporting period when quoting.
 

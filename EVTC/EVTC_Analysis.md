@@ -94,7 +94,7 @@ EVERTEC 是**波多黎各（Puerto Rico）規模最大的全方位交易處理�
 | FY2024 | $112.6 | $472.5 | ~21.1%（平均權益）|
 | FY2025 | $141.6 | $621.6 | ~22.8%（期末）/ ~25.9%（平均權益）|
 > 中位數約 **25.9%**（平均權益口徑）。FY2022 因 PayGroup 出售一次性收益致 ROE 異常偏高。
-> 🔧 2026-10-19 修正：股東權益改用 SEC XBRL `StockholdersEquity`（歸屬 EVERTEC 股東，期末值），原表 FY2023–FY2025 權益數字有誤；口徑與 `hourAnalysisResult.md` 一致。
+> 🔧 2026-10-19 修正：股東權益改用 SEC XBRL `StockholdersEquity`（歸屬 EVERTEC 股東，期末值），原表 FY2023–FY2025 權益數字有誤；口徑與 `AnalysisResult.md` 一致。
 
 ### 3.4 淨利潤 / 營收 CAGR
 - **營收 CAGR（FY2023→FY2025，2 年）**：$694.7M → $931.8M = **+15.8%**（乾淨、可驗證）

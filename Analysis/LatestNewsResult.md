@@ -82,13 +82,13 @@
   - **⑥ 市場反應**：2971 10/08 觸及 100,100 円；10/27 收 101,200 円 → 10/28 收 99,600 円（−1.6%）→ 10/29 收 97,900 円（−1.7%），較 10/16 的 101,800 円累計 −3.8%；依年化 DPU 約 7,000 JPY 推算殖利率約 7.15%（yfinance；10/30 收盤尚未取得）。
   - **⑦ 反方觀點／不確定性**：都心 5 區辦公空室率降至 1.85%、商辦租金連漲 32 個月，若 BOJ 放慢升息或 2971 提高固定利率比，近 7% 殖利率具防禦吸引力。
   - **⑧ 接下來看什麼**：日銀 12 月會議（日期以 BOJ 官網為準；市場約 75% 定價升息，見 N4）；2971 第 20 期決算與 DPU 實績；2971 能否守住 99,600 円。
-  - **⑨ 與本地分析**：一致（`2971ES-CON日本REIT/hourAnalysisResult.md` 2026-10-04 版及 `Analysis/JpStateResult.md` 列為 🟢 可買／深入研究）。
+  - **⑨ 與本地分析**：一致（`2971ES-CON日本REIT/AnalysisResult.md` 2026-10-04 版及 `Analysis/JpStateResult.md` 列為 🟢 可買／深入研究）。
   - **⑩ 來源**：[日本經濟新聞：新發 10 年債票息 3.1%](https://www.nikkei.com/)、[TradingEconomics：Japan 10Y Bond](https://tradingeconomics.com/japan/government-bond-yield)、[japan-reit.com：2971 價格](https://www.japan-reit.com/meigara/2971/)、yfinance 2971.T
 
 - 🔴 **N2｜[10-26] 印度 IPL 尿素標案開標大跌近一成、美國 Gulf 尿素期貨月跌 9%，CF 反壟斷訴訟累積 34 案；心連心 10/26 公布前三季淨利 +42%，但 Q3 單季僅 +8%**｜〔宏觀〕｜重要性：HIGH｜分數：9（幅3 廣2 急2 險1 注1）｜可信度：⭐
   - **① 發生什麼**：全球尿素招標與期貨報價自高點回落，且 CF Industries 面臨獲利下修與反壟斷訴訟更新：
     - 09-24～10-08：印度鉀肥公司（IPL）170 萬噸尿素進口標案開標，西岸最低得標報價（L1）356.25 美元/噸、東岸 352.10 美元/噸，投標總量逾 300 萬噸大幅超額，報價較 8 月標案大跌近 10%
-    - 10-14～10-18：依 `CF/hourAnalysisResult.md`（10/18 更新），美國美灣（Gulf）尿素期貨近 1 個月下跌約 9% 至約 435 USD／短噸；市場對 CF Q3 EPS 共識降至約 2.99 USD（較 Q2 實績 4.73 USD 大減 37%），FY2027 EPS 共識 11.16 USD 較 FY2026 共識 14.83 USD 下滑 24.7%（最悲觀 KeyBanc 估 8.80 USD，−40.7%）；同時反壟斷多區合併訴訟（MDL No. 3187，指控聯合減產抬價並求償三倍賠償）已累積達 34 件，美國司法部（DOJ）與聯邦貿易委員會（FTC）亦同步展開調查
+    - 10-14～10-18：依 `CF/AnalysisResult.md`（10/18 更新），美國美灣（Gulf）尿素期貨近 1 個月下跌約 9% 至約 435 USD／短噸；市場對 CF Q3 EPS 共識降至約 2.99 USD（較 Q2 實績 4.73 USD 大減 37%），FY2027 EPS 共識 11.16 USD 較 FY2026 共識 14.83 USD 下滑 24.7%（最悲觀 KeyBanc 估 8.80 USD，−40.7%）；同時反壟斷多區合併訴訟（MDL No. 3187，指控聯合減產抬價並求償三倍賠償）已累積達 34 件，美國司法部（DOJ）與聯邦貿易委員會（FTC）亦同步展開調查
     - 10-26：心連心（01866）公告未經審計前三季業績：營收 230.47 億 RMB（+28%）、歸母淨利 11.38 億 RMB（+42%）、每股盈餘 1.068 HKD（原始 0.907 RMB，1 RMB = 1.1779 HKD；約當本地 2026E EPS 1.30 HKD 的 82%）；Q3 單季營收 73.07 億 RMB（+38%）、歸母淨利 2.17 億 RMB（÷ 12.7255 億股 = 每股 0.201 HKD〔原始 0.171 RMB〕，僅 +8%），公司稱各基地集中檢修壓抑單季；期內回購 652.6 萬股（0.51%）
   - **② 關鍵數字**：
     - 印度 IPL 最低報價 352.10～356.25 美元/噸（較 8 月約 400 美元跌近 10%）；美國 Gulf 尿素期貨跌約 9% 至 435 USD／短噸 → 高峰氮肥價格開始鬆動
@@ -103,8 +103,8 @@
   - **⑥ 市場反應**：心連心 10/16 收 9.825 → 10/30 收 9.365 HKD（−4.7%）；CF 10/16 收 120.85 → 10/29 收 118.09 USD（−2.3%）（yfinance）；中國尿素現貨自 2,150 走軟至 2,050 RMB／噸（舊版數字）。
   - **⑦ 反方觀點／不確定性**：荷莫茲海峽通行量仍僅 2%（見 N3），且歐洲天然氣 TTF 高達 26.7 USD/MMBtu（為美國 Henry Hub 2.93 USD 的 9 倍），歐洲尿素廠損益兩平高達 605 美元/噸，支撐 CF 處於全球成本曲線最低端。
   - **⑧ 接下來看什麼**：CF Q3 財報預計 11/04 盤後（日期待 CF IR 確認，11/05 法說會）；印度下一輪尿素標案報價；心連心江西二期與新化工材料項目放量對 Q4 的貢獻。
-  - **⑨ 與本地分析**：一致（已完全同步 `CF/hourAnalysisResult.md` 2026-10-18 最新版之 1.5134 億股口徑與三大新事，及 `01866中國心連心化肥/hourAnalysisResult.md` 2026-09-29 版之 12.7255 億股口徑）。
-  - **⑩ 來源**：[百川盈孚：印度 IPL 招標結果](https://www.bainfo.com/)、[`CF/hourAnalysisResult.md`](file:///d:/FinancialReport/CF/hourAnalysisResult.md)、[心連心公告（港交所披露易）](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1026/2026102600985.pdf)、[AASTOCKS 業績報導](https://hk.finance.yahoo.com/news/%E6%A5%AD%E7%B8%BE-%E5%BF%83%E9%80%A3%E5%BF%83%E5%8C%96%E8%82%A5-01866-hk-%E9%A6%96%E4%B8%89%E5%AD%A3%E6%B7%A8%E5%88%A9%E6%BD%A411-005118593.html)
+  - **⑨ 與本地分析**：一致（已完全同步 `CF/AnalysisResult.md` 2026-10-18 最新版之 1.5134 億股口徑與三大新事，及 `01866中國心連心化肥/AnalysisResult.md` 2026-09-29 版之 12.7255 億股口徑）。
+  - **⑩ 來源**：[百川盈孚：印度 IPL 招標結果](https://www.bainfo.com/)、[`CF/AnalysisResult.md`](file:///d:/FinancialReport/CF/AnalysisResult.md)、[心連心公告（港交所披露易）](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1026/2026102600985.pdf)、[AASTOCKS 業績報導](https://hk.finance.yahoo.com/news/%E6%A5%AD%E7%B8%BE-%E5%BF%83%E9%80%A3%E5%BF%83%E5%8C%96%E8%82%A5-01866-hk-%E9%A6%96%E4%B8%89%E5%AD%A3%E6%B7%A8%E5%88%A9%E6%BD%A411-005118593.html)
 
 - 🟢 **N3｜[10-30] 中國海油 10/30 公布前三季歸母淨利 1,191.18 億 RMB（年增 16.8%），但第三季僅 333 億 RMB（+2.7%）；實現油價 86.32 美元／桶低於本地模型假設，荷莫茲海峽通行量仍僅約 2%**｜〔宏觀〕｜重要性：HIGH｜分數：8（幅3 廣2 急2 險0 注1）｜可信度：⭐｜🆕
   - **① 發生什麼**：中東地緣衝突急劇升溫帶動國際原油暴漲，並逢中海油（00883）派息入帳、綠色航運合作與季報日程揭曉：
@@ -135,8 +135,8 @@
     - 空方／疑慮（同上）：10/30 盤中有貼文擔心「三季度業績不及預期」「感覺有雷，控制仓位」；Q3 單季只增 2.7%，且減值損失大增，疑慮有部分成真
     - 假消息已澄清：10/23 雪球流傳『前三季 976.45 億（−10.23%）、Q3 338.84 億（−8.13%）』的數字，同串網友指出是 2023 年資料，與公司實際公布不符（見第六區）
   - **⑧ 接下來看什麼**：11/04 美股盤後 CF 公布 Q3 財報（日期待確認）；中海油 Q4 實現油價與年度股息政策（季報未宣布）；荷莫茲海峽每日通行量是否由 2 艘回升；港股 11/02 對中海油 Q3 業績的首個交易日反應。
-  - **⑨ 與本地分析**：🔄 本地 `00883中國海洋石油/hourAnalysisResult.md`（2026-09-29 版）以布蘭特 101.25 美元為基準、2026E EPS 4.42 HKD；前三季實現油價僅 86.32 美元／桶、每股淨利 2.95 HKD，以 Q3 速率外推全年約 3.78 HKD，本地模型可能偏高，已列第五區 P0；CF 部分一致（`CF/hourAnalysisResult.md` 2026-10-18 版）。
-  - **⑩ 來源**：[EnergyNow／Reuters：Oil settles near $110](https://energynow.com/)、[港交所披露易：00883 董事會召開日期與派息公告](https://www.hkexnews.hk/)、[`CF/hourAnalysisResult.md`](file:///d:/FinancialReport/CF/hourAnalysisResult.md)、[CNBC：油價 10/29 收盤](https://www.cnbc.com/2026/10/29/oil-price-today-wti-brent.html)、[QNA：10/26 油價結算](https://qna.org.qa/en/News-Area/News/2026-10/27/oil-prices-fall-at-settlement)、[新浪財經：中國海油前三季度](https://finance.sina.com.cn/stock/companyt/2026-10-30/doc-iniwzazt8147666.shtml)、[每經網](https://www.nbd.com.cn/articles/2026-10-30/4632020.html)、[財聯社](https://m.cls.cn/detail/2520685)、[東方財富股吧 600938](https://gubapost.eastmoney.com/list,600938.html)、[路透（MarketScreener）：中海油第三季淨利 +2.7%](https://uk.marketscreener.com/news/cnooc-s-third-quarter-net-income-rises-2-7-on-higher-oil-prices-ce785fdbdc8aff22)、[Quartr：CNOOC 2026 Q3 摘要](https://quartr.com/events/cnooc-883-q3-2026_FGIImiEE)
+  - **⑨ 與本地分析**：🔄 本地 `00883中國海洋石油/AnalysisResult.md`（2026-09-29 版）以布蘭特 101.25 美元為基準、2026E EPS 4.42 HKD；前三季實現油價僅 86.32 美元／桶、每股淨利 2.95 HKD，以 Q3 速率外推全年約 3.78 HKD，本地模型可能偏高，已列第五區 P0；CF 部分一致（`CF/AnalysisResult.md` 2026-10-18 版）。
+  - **⑩ 來源**：[EnergyNow／Reuters：Oil settles near $110](https://energynow.com/)、[港交所披露易：00883 董事會召開日期與派息公告](https://www.hkexnews.hk/)、[`CF/AnalysisResult.md`](file:///d:/FinancialReport/CF/AnalysisResult.md)、[CNBC：油價 10/29 收盤](https://www.cnbc.com/2026/10/29/oil-price-today-wti-brent.html)、[QNA：10/26 油價結算](https://qna.org.qa/en/News-Area/News/2026-10/27/oil-prices-fall-at-settlement)、[新浪財經：中國海油前三季度](https://finance.sina.com.cn/stock/companyt/2026-10-30/doc-iniwzazt8147666.shtml)、[每經網](https://www.nbd.com.cn/articles/2026-10-30/4632020.html)、[財聯社](https://m.cls.cn/detail/2520685)、[東方財富股吧 600938](https://gubapost.eastmoney.com/list,600938.html)、[路透（MarketScreener）：中海油第三季淨利 +2.7%](https://uk.marketscreener.com/news/cnooc-s-third-quarter-net-income-rises-2-7-on-higher-oil-prices-ce785fdbdc8aff22)、[Quartr：CNOOC 2026 Q3 摘要](https://quartr.com/events/cnooc-883-q3-2026_FGIImiEE)
 
 - 🔴 **N4｜[10-30] 日銀 10/30 維持利率 1.25%（8 比 1，1 人主張升到 1.5%）並宣告物價已達 2% 目標 → 12 月升息機率約 75%，借浮動利率的 2971 壓力未解除**｜〔宏觀〕｜重要性：HIGH｜分數：8（幅2 廣2 急2 險1 注1）｜可信度：⭐｜🆕
   - **① 發生什麼**：日本央行（BOJ）10/30 結束兩天會議，政策利率維持 1.25%，投票 8 比 1，高田委員提案升到 1.5% 被否決。同時首度表示基調物價「大致符合」2% 目標，並把 ETF（上市基金）年賣出量從 3,300 億 JPY 提高到 8,600 億 JPY（簿價，2027 年 1 月起；J-REIT 維持每年 50 億 JPY）。
@@ -156,7 +156,7 @@
   - **⑥ 市場反應**：美元兌日圓 157.51 → 157.11（10/30 12:14）；日經 225 指數 62,950 → 62,690；2971 10/30 收盤價本版未取得。
   - **⑦ 反方觀點／不確定性**：植田總裁 15:30 記者會內容本版未取得；若美國 12 月不升息或日本食品消費稅暫時降低（日銀估使 2027 年度核心 CPI 少 1.3 個百分點），12 月升息可能延後。
   - **⑧ 接下來看什麼**：植田總裁記者會要點（OANDA 稱會後更新，本版未取得）；12 月 BOJ 會議（日期以 BOJ 官網為準）；11/05 豐田決算。
-  - **⑨ 與本地分析**：一致（`2971ES-CON日本REIT/hourAnalysisResult.md` 2026-10-04 版：浮動借款近 8 成、年底升息情境）；舊版 N1 的「10/30 BOJ 會議」已落幕，改寫於本卡。
+  - **⑨ 與本地分析**：一致（`2971ES-CON日本REIT/AnalysisResult.md` 2026-10-04 版：浮動借款近 8 成、年底升息情境）；舊版 N1 的「10/30 BOJ 會議」已落幕，改寫於本卡。
   - **⑩ 來源**：[OANDA：10 月日銀會合結果（含聲明全文）](https://www.oanda.jp/lab-education/market_news/boj-oct-2026-review/)、[共同通信（Yahoo!ニュース）：政策金利の維持に高田委員が反対](https://news.yahoo.co.jp/articles/18a26145640f97f21d2f0469e846562bd8c906b0)、[日本經濟新聞：外為17時](https://www.nikkei.com/article/DGXZQOFL308FM0Q6A031C2000000/)、[BOJ 聲明頁](https://www.boj.or.jp/mopo/mpmdeci/mpr_2026/index.htm)
 
 - 🔴 **N5｜[10-28] 聯準會 10/28 維持利率 3.75–4.00% 不動，但 2 位委員要求再升息，12 月升息機率約 8 成 → 借錢多的持股利息壓力延續**｜〔宏觀〕｜重要性：HIGH｜分數：8（幅2 廣2 急2 險1 注1）｜可信度：⭐｜🆕
@@ -206,8 +206,8 @@
     - 空方：投資公允價值損失拖累全年 EPS 預估下修至 0.98–1.04 USD（低於共識 1.12 USD）；Telkomsel 14.47 兆 IDR 補稅若敗訴衝擊巨大；MSCI 降評賣壓仍在。
     - 社群（X）：@illyquid（10/18）稱 TLK 在 MSCI 警告後再跌約 13%；@Hidupsebagai62（10/20）列 Telkom 為 MSCI Indonesia 第 4 大權重（市值約 102.7 兆 IDR，權重 10.70%）；@idx_channel（10/24）稱外資當週賣超 BBCA、BBRI 最多，但 IHSG 該週反彈 4.90%。
   - **⑧ 接下來看什麼**：12/14 Telkomsel 補稅案上訴截止日；4Q 年度減損測試（光纖分拆資產）；MSCI 諮詢進展；10/30 股數回購後續進度。
-  - **⑨ 與本地分析**：一致（TLK印尼電信/hourAnalysisResult.md，2026-10-31 版）。
-  - **⑩ 來源**：[SEC EDGAR：TLK 9M2026 6-K 財報（2026-10-30）](https://www.sec.gov/edgar/browse/?CIK=0001001807)、[TLK印尼電信/hourAnalysisResult.md](file:///d:/FinancialReport/TLK印尼電信/hourAnalysisResult.md)、[BRI Danareksa 研報](https://www.bridanareksa.co.id/)、[MSCI 印尼諮詢文件](https://d1e00ek4ebabms.cloudfront.net/production/uploaded-files/Indonesia_Consultation_Oct_26-b03c0366-cc78-4d96-83bb-c9fb8fadaf79.pdf)、[SEC EDGAR：TLK 6-K（2026-10-22 股份買回報告）](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000074/0001001807-26-000074-index.htm)
+  - **⑨ 與本地分析**：一致（TLK印尼電信/AnalysisResult.md，2026-10-31 版）。
+  - **⑩ 來源**：[SEC EDGAR：TLK 9M2026 6-K 財報（2026-10-30）](https://www.sec.gov/edgar/browse/?CIK=0001001807)、[TLK印尼電信/AnalysisResult.md](file:///d:/FinancialReport/TLK印尼電信/AnalysisResult.md)、[BRI Danareksa 研報](https://www.bridanareksa.co.id/)、[MSCI 印尼諮詢文件](https://d1e00ek4ebabms.cloudfront.net/production/uploaded-files/Indonesia_Consultation_Oct_26-b03c0366-cc78-4d96-83bb-c9fb8fadaf79.pdf)、[SEC EDGAR：TLK 6-K（2026-10-22 股份買回報告）](https://www.sec.gov/Archives/edgar/data/1001807/000100180726000074/0001001807-26-000074-index.htm)
 - 🔴 **N7｜[10-15] 美國 9 月 CPI 年增 3.7%、PPI 年增狂飆 6.3% 雙超預期，推翻非農降溫預期、10 月底再升息機率重燃**｜〔宏觀〕｜重要性：HIGH｜分數：8（幅2 廣2 急2 險1 注1）｜可信度：⭐
   - **① 發生什麼**：美國通膨與就業數據於近兩週出現重大反轉：
     - 10-02：9 月非農就業僅增 2.9 萬人（預期 14.5 萬人）、失業率升至 4.3%，一度壓低升息預期
@@ -226,7 +226,7 @@
   - **⑥ 市場反應**：UHS 10/16 收 185.89 USD、CF 收 120.85 USD；01426 春泉收 1.395 HKD；USD/TWD 報 32.46。
   - **⑦ 反方觀點／不確定性**：9 月非農就業僅增 2.9 萬人顯示勞動市場疲軟，聯準會若過度升息恐引發經濟衰退，部分委員可能傾向觀望核心個人消費支出物價指數（PCE）。
   - **⑧ 接下來看什麼**：美國 Q3 GDP 初估年增 3.4%（預期 3.2%）與 9 月核心 PCE 年增 3.1%（符合預期）已於 10/29 公布（OANDA 轉述；見 N5）；下一個是 11/06 美國 10 月非農就業報告（美東 08:30，台北 21:30）與 12 月 FOMC。
-  - **⑨ 與本地分析**：一致（呼應 `UHS/hourAnalysisResult.md` 2026-10-07 版之 0.5894 億股口徑與 `01426春泉Reit/hourAnalysisResult.md` 高利率風險預警）。
+  - **⑨ 與本地分析**：一致（呼應 `UHS/AnalysisResult.md` 2026-10-07 版之 0.5894 億股口徑與 `01426春泉Reit/AnalysisResult.md` 高利率風險預警）。
   - **⑩ 來源**：[美國勞工統計局（BLS）：CPI 與 PPI 報告](https://www.bls.gov/)、[工商時報：美國 9 月通膨超預期](https://www.ctee.com.tw/)
 
 - 🔴 **N8｜[10-29] 鹽野義（4507）10/29 上半年純益年增 44%、全年純益預估小幅上修到 2,125 億円並加配 10 円；先前宣布 20 億美元收購 IntraBio 的攤銷仍是變數**｜〔個股〕｜重要性：HIGH｜分數：7（幅4 廣0 急1 險1 注1）｜可信度：⭐｜🆕
@@ -244,7 +244,7 @@
   - **⑥ 市場反應**：10/16 收 2,934 JPY；10/28 收 2,991 JPY → 10/29 收 2,989 JPY（決算當日幾乎不動；yfinance）。
   - **⑦ 反方觀點／不確定性**：罕見病患基數小，若新適應症擴張不如預期，20 億美元溢價（每股 370.87 JPY）恐面臨商譽減損風險；惟若 AQNEURSA 放量順利則有望填補 2028 專利缺口。；決算短信顯示稅前中間利益僅 +9.9%，純益 +44.0% 主要是美國子公司承繼 edaravone 事業後認列稅務虧損的遞延稅金資產、使稅費減少，成長品質低於表面數字；並有中國兩家子公司股權轉讓的減損損失（以上為決算短信原文）
   - **⑧ 接下來看什麼**：IntraBio 交割（預計 11～12 月）與 PPA 攤銷金額（TDnet 適時開示）；下半年財測是否再上修。
-  - **⑨ 與本地分析**：🔄 本地 `4507鹽野義製藥/hourAnalysisResult.md`（2026-09-26 版）尚未納入 IntraBio 與上半年決算，已列第五區 P0。
+  - **⑨ 與本地分析**：🔄 本地 `4507鹽野義製藥/AnalysisResult.md`（2026-09-26 版）尚未納入 IntraBio 與上半年決算，已列第五區 P0。
   - **⑩ 來源**：[鹽野義決算短信 PDF（已開啟原文）](https://www.shionogi.com/content/dam/shionogi/jp/investors/ir-library/presentation-materials/fy2026/2q/2026.2Q_tanshin.pdf)、[鹽野義官網：IntraBio 完全子會社化公告](https://www.shionogi.com/)、[47NEWS：上半年決算](https://www.47news.jp/15162091.html)
 
 - 🔴 **N9｜[10-27] UHS（NYSE）Q3 每股盈餘 5.22 美元（年減 8%）略高於共識，但獲利低於公司自己預期、財測落在區間低端，2027 年醫療補助補貼逆風 1.75–2.00 億美元**｜〔個股〕｜重要性：HIGH｜分數：7（幅4 廣0 急1 險1 注1）｜可信度：⭐｜🆕
@@ -264,7 +264,7 @@
   - **⑥ 市場反應**：10/26 收 185.71 USD → 10/27 收 177.32 USD（−4.5%，即 MarketBeat 所稱「跌 8.39 美元至 177.32 美元」）→ 10/28 收 172.18 USD → 10/29 收 176.61 USD（yfinance）；較 10/26 累計 −4.9%。
   - **⑦ 反方觀點／不確定性**：每股盈餘仍小幅勝過多數共識；公司持續買回股票；補貼逆風金額為管理層初步估計，稅後與是否可被其他收入抵銷尚未說明。
   - **⑧ 接下來看什麼**：UHS 提交 10-Q（SEC EDGAR，日期以公告為準）中的補貼逆風細節；2027 年財測（預計 2027 年 2 月第四季財報時給出）；12 月以後 Fed 利率路徑（見 N5）。
-  - **⑨ 與本地分析**：🔄 舊版寫 Q3 共識 EPS 6.07 USD，與多家來源的 5.15–5.20 USD 不同，已改用多數來源；本地 `UHS/hourAnalysisResult.md`（2026-10-07 版）預估 2026E EPS 22.97 USD，管理層「低端」指向約 22.64 USD，差距每股 −0.33 USD（−1.4%），待 StockAnalysis 對帳。
+  - **⑨ 與本地分析**：🔄 舊版寫 Q3 共識 EPS 6.07 USD，與多家來源的 5.15–5.20 USD 不同，已改用多數來源；本地 `UHS/AnalysisResult.md`（2026-10-07 版）預估 2026E EPS 22.97 USD，管理層「低端」指向約 22.64 USD，差距每股 −0.33 USD（−1.4%），待 StockAnalysis 對帳。
   - **⑩ 來源**：[UHS 新聞稿（GlobeNewswire）](https://www.globenewswire.com/news-release/2026/10/27/3389648/0/en/universal-health-services-inc-announces-financial-results-for-the-three-and-nine-month-periods-ended-september-30-2026.html)、[Yahoo Finance](https://finance.yahoo.com/healthcare/articles/universal-health-services-inc-q3-123000023.html)、[MarketBeat](https://www.marketbeat.com/instant-alerts/earnings-universal-health-services-nyse-uhs-releases-quarterly-earnings-results-beats-expectations-by-003-eps-2026-10-27/)
 
 - 🔴 **N10｜[10-22] 湧盛初次上櫃承銷價 66 元正式掛牌上櫃、增資稀釋 12.5%，終結興櫃折價邁入 TPEx 交易體系**｜〔個股〕｜重要性：HIGH｜分數：7（幅4 廣0 急1 險1 注1）｜可信度：⭐
@@ -283,7 +283,7 @@
   - **⑥ 市場反應**：yfinance（2249.TWO）：10/27 收 66.10、10/28 收 67.00、10/29 收 66.80、10/30 收 65.60 TWD，10/30 已低於承銷價 66 元（−0.6%）。🔄 舊版寫「10/22 首日最高 88 元、收 82 元附近（+24%）」找不到來源，與行情資料不符，已移除。
   - **⑦ 反方觀點／不確定性**：掛牌後股價貼近承銷價、並無明顯蜜月行情；股本膨脹後第四季與明年 EPS 需具備同等獲利成長才能維持估值。
   - **⑧ 接下來看什麼**：11/10 前申報之 10 月自結營收；11 月中旬公布之 Q3 財務季報。
-  - **⑨ 與本地分析**：一致（`2249湧盛/hourAnalysisResult.md`，2026-10-28 版）。
+  - **⑨ 與本地分析**：一致（`2249湧盛/AnalysisResult.md`，2026-10-28 版）。
   - **⑩ 來源**：[公開資訊觀測站](https://mops.twse.com.tw/)、[櫃買中心 TPEx](https://www.tpex.org.tw/)
 
 - 🔴 **N11｜[10-28] 中國平安（02318）前三季歸母淨利年減 27.3%、Q3 單季僅 40.6 億 RMB（年減 93.7%），但營運利潤年增 8.3%、新業務價值年減 13.3%**｜〔個股〕｜重要性：HIGH｜分數：6（幅4 廣0 急0 險1 注1）｜可信度：⭐｜🆕
@@ -306,7 +306,7 @@
   - **⑥ 市場反應**：10/16 收 50.05 HKD → 10/30 收 49.74 HKD（−0.6%；yfinance）；10/28 當日 +2.6%（48.38 → 49.62 HKD）。
   - **⑦ 反方觀點／不確定性**：空方：雪球轉載長文稱五大險企前三季歸母淨利合計 2,765.77 億 RMB、年減 35.08%，Q3 單季各家皆減少（單一說法，未對照各家公告）；NBV 年減 13.3%。多方：營運利潤、產險與銀行都在成長，公司稱投資波動會隨市場修復改善；雪球個人貼文多為持倉心得（如 53.15 元建倉、51 元賣出部分），無數字可查核。
   - **⑧ 接下來看什麼**：Q4 權益市場走勢（決定全年淨利）；2026 年全年業績與 NBV 趨勢（2027 年 3 月）；12 月前賣方對 2026E EPS 的調整；中期息之後的年度配息政策。
-  - **⑨ 與本地分析**：🔄 本地 `02318中國平安/hourAnalysisResult.md` 寫 BVPS 58 HKD，用公告換算為 67.93 HKD（57.67 RMB），疑似 RMB 與 HKD 混用；🔄 公告的基本每股盈餘 5.55 RMB 對應加權股數約 174.1 億股，與本地 181.08 億股口徑差 3.8%；🔄 本地 2026E EPS 9.70 HKD 須視 Q4 市場而定。已列第五區 P0。
+  - **⑨ 與本地分析**：🔄 本地 `02318中國平安/AnalysisResult.md` 寫 BVPS 58 HKD，用公告換算為 67.93 HKD（57.67 RMB），疑似 RMB 與 HKD 混用；🔄 公告的基本每股盈餘 5.55 RMB 對應加權股數約 174.1 億股，與本地 181.08 億股口徑差 3.8%；🔄 本地 2026E EPS 9.70 HKD 須視 Q4 市場而定。已列第五區 P0。
   - **⑩ 來源**：[港交所公告：2026 年前三季未經審計業績（英文）](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1028/2026102800402.pdf)、[港交所：2026 年第三季度報告（中文，已開啟原文）](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1028/2026102800953_c.pdf)、[雪球：601318 討論](https://xueqiu.com/S/SH601318)
 
 - ⚪ **N12｜[10-31] 中國 10 月製造業 PMI 回落至 49.3% 重回榮枯線下；前三季 GDP 4.6%、首套房貸貼息與 1M HIBOR 降至 2.75% 仍支撐底線**｜〔宏觀〕｜重要性：HIGH｜分數：6（幅1 廣2 急2 險0 注1）｜可信度：⭐｜🆕
@@ -344,7 +344,7 @@
   - **⑥ 市場反應**：10/16 桂盟股價站上 90.30 元新台幣。
   - **⑦ 反方觀點／不確定性**：11/08 第四次無擔保可轉債（CB4）到期需動用 9.94 億元現金（每股 7.89 元）贖回。
   - **⑧ 接下來看什麼**：11/05 股東臨時會與最終私募定價；11/08 CB4 到期還本 9.94 億元（每股 7.89 元）。
-  - **⑨ 與本地分析**：🔄 新進展（`5306桂盟/hourAnalysisResult.md` 2026-09-23 版尚未納入 SHIMANO 認購與 9 月營收，已列第五區 P0）。
+  - **⑨ 與本地分析**：🔄 新進展（`5306桂盟/AnalysisResult.md` 2026-09-23 版尚未納入 SHIMANO 認購與 9 月營收，已列第五區 P0）。
   - **⑩ 來源**：[公開資訊觀測站：桂盟私募與營收公告](https://mops.twse.com.tw/)、[中時新聞網](https://www.chinatimes.com/)
 
 - 🟢 **N14｜[10-05] AES-KY 9 月營收 17.60 億元（每股 20.60 元）再創歷史新高，新普 IT 營收月減 10.4% 但受惠子公司 AI 電池撐盤**｜〔個股〕｜重要性：HIGH｜分數：6（幅3 廣1 急1 險0 注1）｜可信度：⭐
@@ -362,7 +362,7 @@
   - **⑥ 市場反應**：10/16 AES-KY 收 944.00 元、新普收 370.00 元。
   - **⑦ 反方觀點／不確定性**：TrendForce 示警 2027 年筆電出貨衰退，且二線廠切入 BBU 競價。
   - **⑧ 接下來看什麼**：11 月初 10 月合併營收；11 月中旬 Q3 季報毛利率與獲利實績。
-  - **⑨ 與本地分析**：一致（`6121新普/hourAnalysisResult.md` 2026-10-14 版）。
+  - **⑨ 與本地分析**：一致（`6121新普/AnalysisResult.md` 2026-10-14 版）。
   - **⑩ 來源**：[公開資訊觀測站：AES-KY 與新普營收公告](https://mops.twse.com.tw/)
 
 - 🟢 **N15｜[10-28] 中廣核電力（01816）10/28 公布 Q3 歸母淨利 34.98 億 RMB（年增 36.08%）、前三季 96.03 億（+12.75%），前三季每股盈餘已達全年預估的 95%**｜〔個股〕｜重要性：HIGH｜分數：5（幅4 廣0 急0 險0 注1）｜可信度：⭐｜🆕
@@ -380,7 +380,7 @@
   - **⑥ 市場反應**：01816 10/16 收 3.32 HKD → 10/30 收 3.43 HKD（+3.3%；yfinance）；10/28 當日放量上漲 3.5%（成交約 3.2 億股）。
   - **⑦ 反方觀點／不確定性**：Q3 營收年增 17% 含新機組，但前三季營收僅 +3.98%，成長集中在近期投產；核電機組大修與電價因素可能使 Q4 低於 Q3。外推全年為簡單假設，並非公司財測。
   - **⑧ 接下來看什麼**：港股對 Q3 業績的後續反應與賣方 EPS 上修（11 月初）；陸豐 3、4 號機進度；12 月起明年電價與市場化交易比例。
-  - **⑨ 與本地分析**：🔄 本地 `01816中廣核電力/hourAnalysisResult.md`（2026-09-23 版）預估 2026E EPS 0.235 HKD，前三季已達 95.3%，已列第五區 P1。
+  - **⑨ 與本地分析**：🔄 本地 `01816中廣核電力/AnalysisResult.md`（2026-09-23 版）預估 2026E EPS 0.235 HKD，前三季已達 95.3%，已列第五區 P1。
   - **⑩ 來源**：[中廣核電力 2026 Q3 報告（巨潮資訊 PDF）](http://static.cninfo.com.cn/finalpage/2026-10-29/1225634227.PDF)、[界面新聞](https://www.jiemian.com/article/15256345.html)、[格隆匯（富途）](https://news.futunn.com/post/1002556776/cgn-power-01816-hk-q3-net-profit-reached-rmb-3)、[智通財經](https://www.zhitongcaijing.com/content/detail/1516531.html)
 
 - 🔴 **N16｜[10-20] 福耀玻璃（03606）前三季淨利年減 15%、Q3 單季年減 9.9%，財報後 10/21 股價單日約跌 6.5%**｜〔個股〕｜重要性：HIGH｜分數：5（幅3 廣0 急0 險1 注1）｜可信度：⭐
@@ -399,7 +399,7 @@
   - **⑦ 反方觀點／不確定性**：歐美車市銷量若持續低迷，可能進一步延遲新產能稼動率提升與獲利釋放。
     - 季報註記（公司原文）：前三季匯兌損失 4.81 億 RMB（÷ 26.097 億股 = 每股 −0.217 HKD〔原始 −0.184 RMB，1 RMB = 1.1779 HKD〕），去年同期為匯兌收益 5.86 億 RMB（每股 +0.265 HKD），一正一負擺盪 10.67 億 RMB（每股 −0.482 HKD）；扣除匯兌因素後前三季利潤總額仍增 1.18%。前三季營業成本率約 61.4%（毛利率約 38.6%，依季報損益表計算）
   - **⑧ 接下來看什麼**：全年汽車玻璃高附加價值產品營收佔比能否突破 60%；美國福耀工廠二期獲利擴張進度。
-  - **⑨ 與本地分析**：一致（`03606福耀玻璃/hourAnalysisResult.md`，2026-10-18 版）。
+  - **⑨ 與本地分析**：一致（`03606福耀玻璃/AnalysisResult.md`，2026-10-18 版）。
   - **⑩ 來源**：[港交所披露易 Q3 報告](https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1020/)、[`03606福耀玻璃/03606_Quarter_2026Q3.md`](file:///d:/FinancialReport/03606福耀玻璃/03606_Quarter_2026Q3.md)、[福耀玻璃 2026 年第三季度報告（公司官網 PDF，已開啟原文）](https://www.fuyaogroup.com/upfiles/investor/202610/1792488108164.pdf)
 
 - 🔴 **N17｜[10-18] 大億確認已被小糸列為「實質支配」連結子公司併表、Q3 營收年減更正為 8.2%，Marelli 10/16 送出修正版重整計畫迎 10/20 聽證**｜〔個股〕｜重要性：HIGH｜分數：5（幅2 廣1 急1 險1 注0）｜可信度：⭐
@@ -419,8 +419,8 @@
   - **⑥ 市場反應**：10/16 收 25.65 TWD → 10/30 收 25.00 TWD（−2.5%；yfinance）。
   - **⑦ 反方觀點／不確定性**：若 Marelli 重整導致北美 Stellantis 轉單大億 +10%，可增厚大億每股 EPS +0.10～+0.16 元；國瑞新車年化 4 萬輛可貢獻每股 +0.22～+0.41 元。
   - **⑧ 接下來看什麼**：11/10 前公布大億 10 月營收（能否達 3.79 億元，每股 4.97 元，年增 10%）；Marelli 重整案後續（10/20 聽證結果本版未查到）；小糸 10/28 決算已公布（見 N21），對大億損益無直接影響。
-  - **⑨ 與本地分析**：一致（完全同步 [`1521大億/hourAnalysisResult.md`](file:///d:/FinancialReport/1521大億/hourAnalysisResult.md) 2026-10-19 09:27 最新版及 [`1521大億/2026_PublicOpinion.md`](file:///d:/FinancialReport/1521大億/2026_PublicOpinion.md)）。
-  - **⑩ 來源**：[`1521大億/hourAnalysisResult.md`](file:///d:/FinancialReport/1521大億/hourAnalysisResult.md)、[`7276小糸製作所/7276_AnnualReport_2025.md`](file:///d:/FinancialReport/7276小糸製作所/7276_AnnualReport_2025.md)
+  - **⑨ 與本地分析**：一致（完全同步 [`1521大億/AnalysisResult.md`](file:///d:/FinancialReport/1521大億/AnalysisResult.md) 2026-10-19 09:27 最新版及 [`1521大億/2026_PublicOpinion.md`](file:///d:/FinancialReport/1521大億/2026_PublicOpinion.md)）。
+  - **⑩ 來源**：[`1521大億/AnalysisResult.md`](file:///d:/FinancialReport/1521大億/AnalysisResult.md)、[`7276小糸製作所/7276_AnnualReport_2025.md`](file:///d:/FinancialReport/7276小糸製作所/7276_AnnualReport_2025.md)
 
 - 🟢 **N18｜[10-16] 富邦金前三季大賺 1,272.2 億元（每股 EPS 8.80 元）穩居金控獲利王、保留盈餘貢獻每股 17.56 元，10/16 股價強漲衝上 161.50 元再創歷史新高**｜〔個股〕｜重要性：HIGH｜分數：5（幅3 廣0 急1 險0 注1）｜可信度：⭐
   - **① 發生什麼**：台灣金控獲利龍頭富邦金（2881）公布前 9 月亮眼自結獲利後股價創高：
@@ -438,7 +438,7 @@
   - **⑥ 市場反應**：10/16 收 161.50 TWD → 10/30 收 161.50 TWD（持平；yfinance），10/30 大盤跌 2.49% 時僅 −0.3%。PTT Stock 版有 10/15「[情報] 2881富邦金9月0.5 累計8.8」（16 則推文）與 10/05 新聞文（董座蔡明興談台股上 5 萬點，65 則推文）等資訊型貼文，未見明顯多空論戰。
   - **⑦ 反方觀點／不確定性**：富邦人壽 9 月單月損益表稅後僅 6.7 億元（÷ 140.07 億股 ＝ 每股 0.048 元），且美國通膨反彈與油價破 110 美元加劇第 4 季匯率避險與美債評價壓力。
   - **⑧ 接下來看什麼**：11/10 前公布之 10 月自結獲利；11 月下旬 Q3 正式財報淨值與避險成本率。
-  - **⑨ 與本地分析**：一致（`2881富邦金/hourAnalysisResult.md` 2026-10-11 版預估趨勢吻合，補入 9 月實績與 161.50 元創高價）。
+  - **⑨ 與本地分析**：一致（`2881富邦金/AnalysisResult.md` 2026-10-11 版預估趨勢吻合，補入 9 月實績與 161.50 元創高價）。
   - **⑩ 來源**：[公開資訊觀測站：富邦金 9 月自結獲利](https://mops.twse.com.tw/)、[鉅亨網](https://news.cnyes.com/)
 
 - 🟢 **N19｜[10-15] 光通信集團提交大量保有變更報告增持 OAT Agrio 突破 10.01%（110.84 萬株），9 月買回 6.59 億円自社株（每股 15.04 円）、Leopalace 收購案多空論戰**｜〔個股〕｜重要性：HIGH｜分數：5（幅2 廣1 急1 險0 注1）｜可信度：⭐
@@ -456,8 +456,8 @@
   - **⑥ 市場反應**：10/16 收 37,600 JPY → 10/29 收 36,890 JPY（−1.9%）；OAT Agrio 10/29 收 2,777 JPY（10/16 為 2,809 JPY，−1.1%）（yfinance）。
   - **⑦ 反方觀點／不確定性**：OAT Agrio 上半年應收帳款高達每股 1,157 JPY 仍待 Q3 財報驗證收現。
   - **⑧ 接下來看什麼**：Leopalace21 公開收購（每股 1,000 JPY）收購期間至 10/30 截止，結果本版未查到，以 TDnet 為準；11/11 OAT Agrio 公布 Q3 財報、同日光通信公布 Q2（中間）決算。
-  - **⑨ 與本地分析**：🔄 新進展（已同步 `9435光通訊/hourAnalysisResult.md` 2026-10-04 版之 4,382.25 萬株口徑與 Leopalace TOB 核實；`4979OAT/hourAnalysisResult.md` 尚未納入光通信突破 10.01% 報告）。
-  - **⑩ 來源**：[Kabutan／EDINET：OATアグリオ大量保有報告書](https://kabutan.jp/)、[東證適時開示](https://www.release.tdnet.info/)、[`9435光通訊/hourAnalysisResult.md`](file:///d:/FinancialReport/9435光通訊/hourAnalysisResult.md)、[日本經濟新聞：Leopalace21 TOB](https://www.nikkei.com/article/DGXZQOUC1496P0U6A910C2000000/)
+  - **⑨ 與本地分析**：🔄 新進展（已同步 `9435光通訊/AnalysisResult.md` 2026-10-04 版之 4,382.25 萬株口徑與 Leopalace TOB 核實；`4979OAT/AnalysisResult.md` 尚未納入光通信突破 10.01% 報告）。
+  - **⑩ 來源**：[Kabutan／EDINET：OATアグリオ大量保有報告書](https://kabutan.jp/)、[東證適時開示](https://www.release.tdnet.info/)、[`9435光通訊/AnalysisResult.md`](file:///d:/FinancialReport/9435光通訊/AnalysisResult.md)、[日本經濟新聞：Leopalace21 TOB](https://www.nikkei.com/article/DGXZQOUC1496P0U6A910C2000000/)
 
 ### 2.2 MEDIUM
 本層重點：台股大跌、小糸與鹽野義財報上修、中國平安前三季業績、福耀玻璃與中國移動季報，以及各公司 9 月營收與 11 月初的觀察點。
@@ -503,7 +503,7 @@
   - **⑤ 對持股**：
     - 87001 匯賢 REIT（港交所）：🔴 🔄 本地分析更正為淨負債每單位 −0.367 HKD（原始 −0.313 RMB，1 RMB = 1.1738 HKD）及清算上限 0.39 HKD；🟢 真如流拍消解治理折讓約每單位 +0.025 HKD（原始 +0.021 RMB；推估；常態性）
   - **⑧ 接下來看什麼**：10/20 上海鐵路運輸法院真如案開庭結果本版未查到，待港交所或法院公告；匯賢 10 月月報表（11 月初）單位數是否仍為 65.232 億。
-  - **⑩ 來源**：[`87001匯賢Reit/hourAnalysisResult.md`](file:///d:/FinancialReport/87001匯賢Reit/hourAnalysisResult.md)、[`87001匯賢Reit/2026_PublicOpinion.md`](file:///d:/FinancialReport/87001匯賢Reit/2026_PublicOpinion.md)
+  - **⑩ 來源**：[`87001匯賢Reit/AnalysisResult.md`](file:///d:/FinancialReport/87001匯賢Reit/AnalysisResult.md)、[`87001匯賢Reit/2026_PublicOpinion.md`](file:///d:/FinancialReport/87001匯賢Reit/2026_PublicOpinion.md)
 
 - 🔴 **N23｜[10-30] 台股 10/30 加權指數大跌 2.49% 收 45,211.83 點，兩天合計跌約 3.9%；外資 10/29 單日賣超約 6,882 億元**｜〔宏觀〕｜重要性：MEDIUM｜分數：5（幅1 廣2 急1 險1 注0）｜可信度：◐｜🆕
   - **① 發生什麼**：台灣加權指數 10/29 跌 667.25 點（−1.42%）收 46,368.33 點，10/30 再跌 1,156.50 點（−2.49%）收 45,211.83 點（盤中低點 44,726 點）。媒體歸因於美國科技股財報與 AI 資本支出疑慮、美國數據強勁，以及油價。
@@ -582,7 +582,7 @@
   - **⑤ 對持股**：
     - 2832 台產（台灣證交所）：🟢 前三季累計每股 EPS 4.63 元新台幣（實績），全年預估每股 5.97 元較 2025 年同股本 4.90 元成長 +21.8%（實績與推估；常態性）
   - **⑧ 接下來看什麼**：11 月中旬 2026 Q3 正式財報。
-  - **⑩ 來源**：[公開資訊觀測站：台產自結獲利](https://mops.twse.com.tw/)、[`2832台產/hourAnalysisResult.md`](file:///d:/FinancialReport/2832台產/hourAnalysisResult.md)
+  - **⑩ 來源**：[公開資訊觀測站：台產自結獲利](https://mops.twse.com.tw/)、[`2832台產/AnalysisResult.md`](file:///d:/FinancialReport/2832台產/AnalysisResult.md)
 
 - 🔴 **N28｜[10-09] RS 科技決議解散中國惠州子公司 RSPDH 並中止車載相機事業，認列特別損失止血停損**｜〔個股〕｜重要性：LOW｜分數：4（幅3 廣0 急0 險1 注0）｜可信度：⭐｜（降溫）
   - **① 發生什麼**：晶圓再生大廠 RS 科技（3445）於 10/09 決議解散中國廣東惠州子公司「艾索精密部件（惠州）（RSPDH）」並中止車載相機模組事業，預計 2026 年 12 月底結束營運、2027 年 5 月完成清算，將計提固定資產除卻等特別損失。
@@ -598,7 +598,7 @@
   - **① 發生什麼**：恒安國際創辦人兼長期主要股東施文博（享年 74 歲）於 10/06 因病逝世，公司於 10/09 完成派發 2026 年中期股息每股 0.8233 HKD（原始 0.70 RMB，匯率 1 RMB = 1.1761 HKD），接班與股權繼承引發市場關注。
   - **⑤ 對持股**：
     - 01044 恒安國際（港交所）：🔴 創辦人辭世引發二代治理考驗，中期息每股 0.8233 HKD 入帳；推估若二代接班順暢每股影響可忽略（< 每股 0.01 HKD），關鍵在後續營運方針與紙漿成本控制
-  - **⑩ 來源**：[港交所公告](https://www1.hkexnews.hk/)、[`01044恒安國際/hourAnalysisResult.md`](file:///d:/FinancialReport/01044恒安國際/hourAnalysisResult.md)
+  - **⑩ 來源**：[港交所公告](https://www1.hkexnews.hk/)、[`01044恒安國際/AnalysisResult.md`](file:///d:/FinancialReport/01044恒安國際/AnalysisResult.md)
 
 - 🟢 **N30｜[10-08] 金洲 9 月營收 3.41 億元（每股 4.07 元），Q3 營收 11.04 億元年增 26.6% 推估每股賺 1.71～1.97 元**｜〔個股〕｜重要性：LOW｜分數：4（幅3 廣0 急0 險0 注1）｜可信度：⭐｜（降溫）
   - **① 發生什麼**：漁網龍頭金洲（4417）公告 9 月營收 3.41 億元新台幣（÷ 0.8397 億股 ＝ 每股 4.07 元，年增 2.67%），Q3 單季營收 11.04 億元（每股 13.15 元，年增 26.6%），推估 Q3 單季 EPS 達 1.71～1.97 元；惟法說會示警歐洲佔比降至 16% 及聖嬰現象風險。
@@ -866,7 +866,7 @@
   - **為什麼重要**：減損若達 8 兆 IDR，每 1 ADS 淨利 −0.45 USD（約當全年 EPS 的 −40%）；本版尚未查到 Q3 財報
   - **交給**：StockAnalysis（TLK印尼電信）
   - **要回答**：1. 3Q 減損是否認列、金額多少？2. EBITDA 利潤率是否守穩 50%？3. MSCI 最終決定最晚 2027-06-30 下，近期外資賣壓的情境與規模？
-  - **資料從哪裡找**：SEC EDGAR 6-K、TLK IR、MSCI 諮詢文件、本地 `TLK印尼電信/hourAnalysisResult.md`
+  - **資料從哪裡找**：SEC EDGAR 6-K、TLK IR、MSCI 諮詢文件、本地 `TLK印尼電信/AnalysisResult.md`
   - **建立日**：2026-10-28
 
 - **P0｜02318 中國平安（港交所）｜對帳每股淨值、股數口徑與全年 EPS 預估**
@@ -874,7 +874,7 @@
   - **為什麼重要**：前三季每股 6.54 HKD 只達本地 2026E EPS 9.70 HKD 的 67.4%，Q4 需賺每股 3.16 HKD；每股淨值公告換算 67.93 HKD，本地寫 58 HKD（差 9.93 HKD）；公告基本每股盈餘對應股數約 174.1 億股，本地用 181.08 億股
   - **交給**：StockAnalysis（02318中國平安）
   - **要回答**：1. 本地 BVPS 是否把 RMB 當 HKD？2. 2026E EPS 要下修多少（投資收益敏感度）？3. NBV −13.3% 的原因與 Q4 趨勢？
-  - **資料從哪裡找**：港交所 2026 年前三季公告 PDF、`02318中國平安/hourAnalysisResult.md`
+  - **資料從哪裡找**：港交所 2026 年前三季公告 PDF、`02318中國平安/AnalysisResult.md`
   - **建立日**：2026-10-30
 
 - **P0｜UHS（NYSE）｜2027 年醫療補助補貼逆風與財測低端的每股影響**
@@ -882,7 +882,7 @@
   - **為什麼重要**：稅前每股 −2.97～−3.39 USD，約當 2026E EPS 22.97 USD 的 −12.9%～−14.8%
   - **交給**：StockAnalysis（UHS）
   - **要回答**：1. 逆風稅後每股多少？2. 2026 財測低端為多少？3. 買回是否能抵銷？
-  - **資料從哪裡找**：UHS 10-Q（SEC EDGAR）、新聞稿、`UHS/hourAnalysisResult.md`
+  - **資料從哪裡找**：UHS 10-Q（SEC EDGAR）、新聞稿、`UHS/AnalysisResult.md`
   - **建立日**：2026-10-30
 
 - **P0｜00883 中國海洋石油（港交所）｜對帳 Q3 業績與本地 EPS 預估**
@@ -890,7 +890,7 @@
   - **為什麼重要**：前三季每股 2.95 HKD，以 Q3 速率外推全年約 3.78 HKD，較本地 2026E EPS 4.42 HKD 低 −14.5%；本地以布蘭特 101.25 美元為基準，與實現油價差約 14.9 美元
   - **交給**：StockAnalysis（00883中國海洋石油）
   - **要回答**：1. 本地 EPS 預估要下修多少？2. 減值損失 72.43 億 RMB（每股 −0.18 HKD）是否一次性？3. Q4 實現油價與股息政策？
-  - **資料從哪裡找**：港交所 Q3 公告、`00883中國海洋石油/hourAnalysisResult.md`
+  - **資料從哪裡找**：港交所 Q3 公告、`00883中國海洋石油/AnalysisResult.md`
   - **建立日**：2026-10-30
 
 - **P0｜4507 鹽野義製藥（東證）｜納入 IntraBio 收購與上半年決算**
@@ -898,7 +898,7 @@
   - **為什麼重要**：收購對價每股 370.87 JPY（約當 EPS 的 150%），PPA 攤銷推估每股 −10～−20 JPY；本地分析 2026-09-26 版未納入
   - **交給**：StockAnalysis（4507鹽野義製藥）
   - **要回答**：1. PPA 攤銷金額與期間？2. 2028 專利懸崖的接班藥貢獻？3. 全年財測 2,125 億 JPY 是否保守？
-  - **資料從哪裡找**：決算短信 PDF、TDnet、`4507鹽野義製藥/hourAnalysisResult.md`
+  - **資料從哪裡找**：決算短信 PDF、TDnet、`4507鹽野義製藥/AnalysisResult.md`
   - **建立日**：2026-10-30
 
 - **P1｜7276 小糸製作所（東證）｜首次 StockAnalysis 並納入上半年決算**

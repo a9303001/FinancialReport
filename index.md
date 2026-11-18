@@ -35,7 +35,7 @@ schema_version: "3.0"
   "dataset": {
     "@type": "Dataset",
     "name": "Per-company filing and analysis folders",
-    "description": "One folder per company named <ticker><name>. Each folder holds hourAnalysisResult.md (latest deep-dive analysis), annual reports, quarterly / interim reports, IR announcements and yearly market-sentiment digests, all as UTF-8 Markdown.",
+    "description": "One folder per company named <ticker><name>. Each folder holds AnalysisResult.md (latest deep-dive analysis), annual reports, quarterly / interim reports, IR announcements and yearly market-sentiment digests, all as UTF-8 Markdown.",
     "distribution": {
       "@type": "DataDownload",
       "encodingFormat": "text/markdown",
@@ -79,7 +79,7 @@ file_format:     Markdown (UTF-8)  # 沒有 PDF，不需要解析器
 active_folders:  31                # 根目錄
 archived_folders: 20               # History/
 markets:         [TW, US, JP, HK]
-best_first_read: <FOLDER>/hourAnalysisResult.md   # 最新結論，比整包年報省約 90% token
+best_first_read: <FOLDER>/AnalysisResult.md   # 最新結論，比整包年報省約 90% token
 url_template:    {raw_base}/{FOLDER_percent_encoded}/{FILE}.md
 last_updated:    2026-09-15
 ```
@@ -132,7 +132,7 @@ last_updated:    2026-09-15
 
 | 檔名樣式（Glob） | 內容 | 讀取優先序 |
 | :--- | :--- | :-: |
-| `hourAnalysisResult.md` | **最新深度分析報告**（結論、估值、每股化數據、風險/利多，第一行為更新時間戳） | ★★★ 先讀這個 |
+| `AnalysisResult.md` | **最新深度分析報告**（結論、估值、每股化數據、風險/利多，第一行為更新時間戳） | ★★★ 先讀這個 |
 | `*_PublicOpinion.md` | 該年度**輿情彙整總檔**（合併所有月度討論區 / 新聞） | ★★★ |
 | `*_annual_*.md`、`*_AnnualReport_*.md`、`*年年報.md`、`*_FY*_annual_results.md` | 年報全文（Annual Report / 10-K / 有價證券報告書） | ★★ |
 | `*_Quarter_*Q*.md`、`*_quarter_*Q*.md`、`*_10Q_*.md`、`*Q*-10-Q.md` | 季報全文（Quarterly / 10-Q） | ★★ |
@@ -142,7 +142,7 @@ last_updated:    2026-09-15
 | `*_AI1.md`、`*F04.md`、`*FE4.md`、`*FE6.md` | 台股公開資訊觀測站財報原檔轉換 | ★ |
 | `orange.md` / `Orange.md` | 補充筆記 | ☆ |
 
-**若該公司沒有 `hourAnalysisResult.md`**（目前僅 `AES-KY` 尚未產出）：直接從年報與季報讀起，並在回覆中註明「本資料庫尚無該公司分析檔」。
+**若該公司沒有 `AnalysisResult.md`**（目前僅 `AES-KY` 尚未產出）：直接從年報與季報讀起，並在回覆中註明「本資料庫尚無該公司分析檔」。
 
 **年份判讀**：檔名中的 4 位數字即會計年度或報告年度（例：`02318_annual_2025.md` = 2025 年報；`7203_Quarter_2027Q1.md` = FY2027 第一季，日股會計年度跨年，**不是未來資料**）。
 
@@ -170,7 +170,7 @@ last_updated:    2026-09-15
 | 12 | `2249湧盛` | 2249 | 台股 TW | |
 | 13 | `2245詠勝昌` | 2245 | 台股 TW | |
 | 14 | `6121新普` | 6121 | 台股 TW | |
-| 14 | `AES-KY` | 6781 | 台股 TW | 尚無 `hourAnalysisResult.md` |
+| 14 | `AES-KY` | 6781 | 台股 TW | 尚無 `AnalysisResult.md` |
 | 15 | `87001匯賢Reit` | 87001 | 港股 HK | **REIT** |
 | 16 | `00546阜豐` | 00546 | 港股 HK | |
 | 17 | `8117中央自動車工業` | 8117 | 日股 JP | |
@@ -216,7 +216,7 @@ last_updated:    2026-09-15
   ↓
 Step 1  以代號或名稱比對 §4 公司清單 → 取得 <FOLDER>
 Step 2  列出 <FOLDER> 檔案清單（§2 取檔方式）；或直接用 §9 的現成 URL
-Step 3  先讀 hourAnalysisResult.md（最新結論 + 每股化數據）
+Step 3  先讀 AnalysisResult.md（最新結論 + 每股化數據）
 Step 4  再讀最新年報 + 最新季報（§3 檔名規則）
 Step 5  讀 *_PublicOpinion.md（市場輿情、利多利空觀點）
 Step 6  上網 deep research 補最新股價與新聞 → 與本地資料交叉驗證
@@ -236,14 +236,14 @@ Step 8  明確回報：找到哪些年報/季報、缺哪些、缺的可能原�
 | :--- | :--- | :--- |
 | **Claude Opus** | 自動吃 `CLAUDE.md` → `AGENTS.md`；可載 `.claude/skills/` 跑完整流程，多份年報交叉比對 | 3–5 檔 |
 | **Claude Sonnet** | 同上，但先 Glob/Grep 定位再讀檔，避免整包載入 | 2–4 檔 |
-| **Claude Haiku** | 只讀 `hourAnalysisResult.md`；需要原文時再 grep 關鍵字段落 | 1–2 檔 |
+| **Claude Haiku** | 只讀 `AnalysisResult.md`；需要原文時再 grep 關鍵字段落 | 1–2 檔 |
 | **Gemini Pro** | 長上下文可整包讀年報；可載 `Analysis/` 下專用 routine | 3–5 檔 |
 | **Gemini Flash** | **分段讀**：先讀 §3 檔名規則 → 只抓目標檔；一次只處理一間公司 | 1–2 檔 |
-| **Gemini Flash-Lite** | 只走 §9 現成 URL 抓 `hourAnalysisResult.md`，不要自行組 URL（易 percent-encoding 出錯） | 1 檔 |
+| **Gemini Flash-Lite** | 只走 §9 現成 URL 抓 `AnalysisResult.md`，不要自行組 URL（易 percent-encoding 出錯） | 1 檔 |
 | **ChatGPT / GPT / Codex** | 有瀏覽能力走 raw URL；先抓 `index.md` 再進資料夾 | 2–4 檔 |
-| **Grok / DeepSeek / Qwen / Llama / Mistral** | `index.md` → `hourAnalysisResult.md`；工具受限時請人工貼入內容，**不要憑印象作答** | 1–2 檔 |
+| **Grok / DeepSeek / Qwen / Llama / Mistral** | `index.md` → `AnalysisResult.md`；工具受限時請人工貼入內容，**不要憑印象作答** | 1–2 檔 |
 | **Perplexity / 搜尋型引擎** | 以 `index.md` 為索引頁、raw URL 為引用來源；引用需標明檔案路徑與報告期別 | 1–3 檔 |
-| **GitHub Copilot / IDE agent** | 直接用工作區檔案系統搜尋最快；分析結果一律寫 `hourAnalysisResult.md`，勿改年報原檔 | 不限 |
+| **GitHub Copilot / IDE agent** | 直接用工作區檔案系統搜尋最快；分析結果一律寫 `AnalysisResult.md`，勿改年報原檔 | 不限 |
 | **一般爬蟲 / 無 LLM** | 讀 `llms.txt` → `index.md` → §9 URL 清單 | — |
 
 **共通守則（All models）**
@@ -251,7 +251,7 @@ Step 8  明確回報：找到哪些年報/季報、缺哪些、缺的可能原�
 1. **幣別**：港股 / 中股 **HKD**、美股 **USD**、日股 **JPY**、台股 **TWD**，換算須標明匯率與日期。
 2. **期別**：日股會計年度跨年（FY2026 可能結束於 2026/3）；港股有中期報告（Interim）而非 Q2。
 3. **語言**：回覆以繁體中文為主，專有名詞首次出現附英文，如「每股盈餘（EPS）」。
-4. **時效**：一律附上報告期別或日期；`hourAnalysisResult.md` 第一行即資料新鮮度。
+4. **時效**：一律附上報告期別或日期；`AnalysisResult.md` 第一行即資料新鮮度。
 5. **防幻覺**：沒有的資料就說沒有，並說明缺口原因（尚未公布 / 資料庫未更新 / 公司剛上市）。**嚴禁杜撰檔案路徑、數字或財報期別。**
 
 ---
@@ -289,7 +289,7 @@ A: 台股 / 美股 / 日股 / 港股 31 間現役公司（另 20 間封存）的
 A: **`master`**。用 `main` 組任何 URL 都會 404。
 
 **Q: 一間公司該先讀哪個檔？**
-A: `<FOLDER>/hourAnalysisResult.md` —— 最新深度分析結論，第一行是更新時間戳，比整包年報省約 90% token。
+A: `<FOLDER>/AnalysisResult.md` —— 最新深度分析結論，第一行是更新時間戳，比整包年報省約 90% token。
 
 **Q: 有 PDF 嗎？要不要 PDF parser？**
 A: 沒有，不需要。所有 PDF 已由 `Convert2md` Skill 轉成 UTF-8 Markdown。
@@ -316,41 +316,41 @@ A: 不算。這是公開資訊整理與研究筆記，資料可能延遲或有�
 ## 9. 直通 URL 索引（Direct Raw URL Index）
 
 每間公司的「最新深度分析」直接 URL，**已完成 percent-encoding，可直接 GET**。
-要讀其他檔，把結尾的 `hourAnalysisResult.md` 換成目標檔名即可（檔名規則見 §3）；要列出整個資料夾，把 `raw.githubusercontent.com/a9303001/FinancialReport/master` 換成 `api.github.com/repos/a9303001/FinancialReport/contents` 並加上 `?ref=master`。
+要讀其他檔，把結尾的 `AnalysisResult.md` 換成目標檔名即可（檔名規則見 §3）；要列出整個資料夾，把 `raw.githubusercontent.com/a9303001/FinancialReport/master` 換成 `api.github.com/repos/a9303001/FinancialReport/contents` 並加上 `?ref=master`。
 
 ### 9.1 現役公司（Active）
 
-- `00546阜豐` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/00546%E9%98%9C%E8%B1%90/hourAnalysisResult.md
-- `00883中國海洋石油` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/00883%E4%B8%AD%E5%9C%8B%E6%B5%B7%E6%B4%8B%E7%9F%B3%E6%B2%B9/hourAnalysisResult.md
-- `00941中國移動` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/00941%E4%B8%AD%E5%9C%8B%E7%A7%BB%E5%8B%95/hourAnalysisResult.md
-- `01044恒安國際` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/01044%E6%81%92%E5%AE%89%E5%9C%8B%E9%9A%9B/hourAnalysisResult.md
-- `01426春泉Reit` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/01426%E6%98%A5%E6%B3%89Reit/hourAnalysisResult.md
-- `01816中廣核電力` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/01816%E4%B8%AD%E5%BB%A3%E6%A0%B8%E9%9B%BB%E5%8A%9B/hourAnalysisResult.md
-- `01866中國心連心化肥` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/01866%E4%B8%AD%E5%9C%8B%E5%BF%83%E9%80%A3%E5%BF%83%E5%8C%96%E8%82%A5/hourAnalysisResult.md
-- `02232晶苑國際` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/02232%E6%99%B6%E8%8B%91%E5%9C%8B%E9%9A%9B/hourAnalysisResult.md
-- `02318中國平安` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/02318%E4%B8%AD%E5%9C%8B%E5%B9%B3%E5%AE%89/hourAnalysisResult.md
-- `02633雅各臣科研製藥` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/02633%E9%9B%85%E5%90%84%E8%87%A3%E7%A7%91%E7%A0%94%E8%A3%BD%E8%97%A5/hourAnalysisResult.md
-- `03606福耀玻璃` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/03606%E7%A6%8F%E8%80%80%E7%8E%BB%E7%92%83/hourAnalysisResult.md
-- `1264德麥` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/1264%E5%BE%B7%E9%BA%A5/hourAnalysisResult.md
-- `2245詠勝昌` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/2245%E8%A9%A0%E5%8B%9D%E6%98%8C/hourAnalysisResult.md
-- `2249湧盛` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/2249%E6%B9%A7%E7%9B%9B/hourAnalysisResult.md
-- `2832台產` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/2832%E5%8F%B0%E7%94%A2/hourAnalysisResult.md
-- `2881富邦金` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/2881%E5%AF%8C%E9%82%A6%E9%87%91/hourAnalysisResult.md
-- `3445RS` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/3445RS/hourAnalysisResult.md
-- `4417金洲` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/4417%E9%87%91%E6%B4%B2/hourAnalysisResult.md
-- `4979OAT` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/4979OAT/hourAnalysisResult.md
-- `5306桂盟` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/5306%E6%A1%82%E7%9B%9F/hourAnalysisResult.md
-- `6121新普` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/6121%E6%96%B0%E6%99%AE/hourAnalysisResult.md
-- `7203Toyota` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/7203Toyota/hourAnalysisResult.md
-- `8117中央自動車工業` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/8117%E4%B8%AD%E5%A4%AE%E8%87%AA%E5%8B%95%E8%BB%8A%E5%B7%A5%E6%A5%AD/hourAnalysisResult.md
-- `8433弘帆` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/8433%E5%BC%98%E5%B8%86/hourAnalysisResult.md
-- `8435鉅邁` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/8435%E9%89%85%E9%82%81/hourAnalysisResult.md
-- `87001匯賢Reit` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/87001%E5%8C%AF%E8%B3%A2Reit/hourAnalysisResult.md
-- `9435光通訊` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/9435%E5%85%89%E9%80%9A%E8%A8%8A/hourAnalysisResult.md
-- `AES-KY` → *(尚無 hourAnalysisResult.md，改列資料夾)* https://api.github.com/repos/a9303001/FinancialReport/contents/AES-KY?ref=master
-- `CF` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/CF/hourAnalysisResult.md
-- `EVTC` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/EVTC/hourAnalysisResult.md
-- `UHS` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/UHS/hourAnalysisResult.md
+- `00546阜豐` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/00546%E9%98%9C%E8%B1%90/AnalysisResult.md
+- `00883中國海洋石油` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/00883%E4%B8%AD%E5%9C%8B%E6%B5%B7%E6%B4%8B%E7%9F%B3%E6%B2%B9/AnalysisResult.md
+- `00941中國移動` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/00941%E4%B8%AD%E5%9C%8B%E7%A7%BB%E5%8B%95/AnalysisResult.md
+- `01044恒安國際` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/01044%E6%81%92%E5%AE%89%E5%9C%8B%E9%9A%9B/AnalysisResult.md
+- `01426春泉Reit` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/01426%E6%98%A5%E6%B3%89Reit/AnalysisResult.md
+- `01816中廣核電力` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/01816%E4%B8%AD%E5%BB%A3%E6%A0%B8%E9%9B%BB%E5%8A%9B/AnalysisResult.md
+- `01866中國心連心化肥` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/01866%E4%B8%AD%E5%9C%8B%E5%BF%83%E9%80%A3%E5%BF%83%E5%8C%96%E8%82%A5/AnalysisResult.md
+- `02232晶苑國際` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/02232%E6%99%B6%E8%8B%91%E5%9C%8B%E9%9A%9B/AnalysisResult.md
+- `02318中國平安` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/02318%E4%B8%AD%E5%9C%8B%E5%B9%B3%E5%AE%89/AnalysisResult.md
+- `02633雅各臣科研製藥` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/02633%E9%9B%85%E5%90%84%E8%87%A3%E7%A7%91%E7%A0%94%E8%A3%BD%E8%97%A5/AnalysisResult.md
+- `03606福耀玻璃` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/03606%E7%A6%8F%E8%80%80%E7%8E%BB%E7%92%83/AnalysisResult.md
+- `1264德麥` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/1264%E5%BE%B7%E9%BA%A5/AnalysisResult.md
+- `2245詠勝昌` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/2245%E8%A9%A0%E5%8B%9D%E6%98%8C/AnalysisResult.md
+- `2249湧盛` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/2249%E6%B9%A7%E7%9B%9B/AnalysisResult.md
+- `2832台產` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/2832%E5%8F%B0%E7%94%A2/AnalysisResult.md
+- `2881富邦金` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/2881%E5%AF%8C%E9%82%A6%E9%87%91/AnalysisResult.md
+- `3445RS` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/3445RS/AnalysisResult.md
+- `4417金洲` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/4417%E9%87%91%E6%B4%B2/AnalysisResult.md
+- `4979OAT` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/4979OAT/AnalysisResult.md
+- `5306桂盟` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/5306%E6%A1%82%E7%9B%9F/AnalysisResult.md
+- `6121新普` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/6121%E6%96%B0%E6%99%AE/AnalysisResult.md
+- `7203Toyota` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/7203Toyota/AnalysisResult.md
+- `8117中央自動車工業` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/8117%E4%B8%AD%E5%A4%AE%E8%87%AA%E5%8B%95%E8%BB%8A%E5%B7%A5%E6%A5%AD/AnalysisResult.md
+- `8433弘帆` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/8433%E5%BC%98%E5%B8%86/AnalysisResult.md
+- `8435鉅邁` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/8435%E9%89%85%E9%82%81/AnalysisResult.md
+- `87001匯賢Reit` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/87001%E5%8C%AF%E8%B3%A2Reit/AnalysisResult.md
+- `9435光通訊` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/9435%E5%85%89%E9%80%9A%E8%A8%8A/AnalysisResult.md
+- `AES-KY` → *(尚無 AnalysisResult.md，改列資料夾)* https://api.github.com/repos/a9303001/FinancialReport/contents/AES-KY?ref=master
+- `CF` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/CF/AnalysisResult.md
+- `EVTC` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/EVTC/AnalysisResult.md
+- `UHS` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/UHS/AnalysisResult.md
 
 ### 9.2 封存公司（Archived · `History/`）
 
@@ -359,23 +359,23 @@ A: 不算。這是公開資訊整理與研究筆記，資料可能延遲或有�
 - `History/00386中石化` → *(無分析檔)* https://api.github.com/repos/a9303001/FinancialReport/contents/History/00386%E4%B8%AD%E7%9F%B3%E5%8C%96?ref=master
 - `History/00598中國外運` → *(無分析檔)* https://api.github.com/repos/a9303001/FinancialReport/contents/History/00598%E4%B8%AD%E5%9C%8B%E5%A4%96%E9%81%8B?ref=master
 - `History/00857中石油` → *(無分析檔)* https://api.github.com/repos/a9303001/FinancialReport/contents/History/00857%E4%B8%AD%E7%9F%B3%E6%B2%B9?ref=master
-- `History/01378中國宏橋` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/01378%E4%B8%AD%E5%9C%8B%E5%AE%8F%E6%A9%8B/hourAnalysisResult.md
+- `History/01378中國宏橋` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/01378%E4%B8%AD%E5%9C%8B%E5%AE%8F%E6%A9%8B/AnalysisResult.md
 - `History/01571信邦控股` → *(無分析檔)* https://api.github.com/repos/a9303001/FinancialReport/contents/History/01571%E4%BF%A1%E9%82%A6%E6%8E%A7%E8%82%A1?ref=master
-- `History/1301極洋` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/1301%E6%A5%B5%E6%B4%8B/hourAnalysisResult.md
-- `History/1333Umios` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/1333Umios/hourAnalysisResult.md
+- `History/1301極洋` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/1301%E6%A5%B5%E6%B4%8B/AnalysisResult.md
+- `History/1333Umios` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/1333Umios/AnalysisResult.md
 - `History/1787Nakabohtec` → *(無分析檔)* https://api.github.com/repos/a9303001/FinancialReport/contents/History/1787Nakabohtec?ref=master
-- `History/1878大東建托` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/1878%E5%A4%A7%E6%9D%B1%E5%BB%BA%E6%89%98/hourAnalysisResult.md
-- `History/6361荏原製作所` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/6361%E8%8D%8F%E5%8E%9F%E8%A3%BD%E4%BD%9C%E6%89%80/hourAnalysisResult.md
+- `History/1878大東建托` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/1878%E5%A4%A7%E6%9D%B1%E5%BB%BA%E6%89%98/AnalysisResult.md
+- `History/6361荏原製作所` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/6361%E8%8D%8F%E5%8E%9F%E8%A3%BD%E4%BD%9C%E6%89%80/AnalysisResult.md
 - `History/6458新晃工業` → *(無分析檔)* https://api.github.com/repos/a9303001/FinancialReport/contents/History/6458%E6%96%B0%E6%99%83%E5%B7%A5%E6%A5%AD?ref=master
-- `History/6605帝寶` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/6605%E5%B8%9D%E5%AF%B6/hourAnalysisResult.md
-- `History/6902Denso` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/6902Denso/hourAnalysisResult.md
-- `History/6951青新` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/6951%E9%9D%92%E6%96%B0/hourAnalysisResult.md
-- `History/7736虎山` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/7736%E8%99%8E%E5%B1%B1/hourAnalysisResult.md
-- `History/8002丸紅` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/8002%E4%B8%B8%E7%B4%85/hourAnalysisResult.md
-- `History/9022JR東海` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/9022JR%E6%9D%B1%E6%B5%B7/hourAnalysisResult.md
-- `History/9503關西電力` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/9503%E9%97%9C%E8%A5%BF%E9%9B%BB%E5%8A%9B/hourAnalysisResult.md
-- `History/INGR宜瑞安` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/INGR%E5%AE%9C%E7%91%9E%E5%AE%89/hourAnalysisResult.md
-- `History/PBR巴西石油` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/PBR%E5%B7%B4%E8%A5%BF%E7%9F%B3%E6%B2%B9/hourAnalysisResult.md
+- `History/6605帝寶` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/6605%E5%B8%9D%E5%AF%B6/AnalysisResult.md
+- `History/6902Denso` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/6902Denso/AnalysisResult.md
+- `History/6951青新` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/6951%E9%9D%92%E6%96%B0/AnalysisResult.md
+- `History/7736虎山` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/7736%E8%99%8E%E5%B1%B1/AnalysisResult.md
+- `History/8002丸紅` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/8002%E4%B8%B8%E7%B4%85/AnalysisResult.md
+- `History/9022JR東海` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/9022JR%E6%9D%B1%E6%B5%B7/AnalysisResult.md
+- `History/9503關西電力` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/9503%E9%97%9C%E8%A5%BF%E9%9B%BB%E5%8A%9B/AnalysisResult.md
+- `History/INGR宜瑞安` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/INGR%E5%AE%9C%E7%91%9E%E5%AE%89/AnalysisResult.md
+- `History/PBR巴西石油` → https://raw.githubusercontent.com/a9303001/FinancialReport/master/History/PBR%E5%B7%B4%E8%A5%BF%E7%9F%B3%E6%B2%B9/AnalysisResult.md
 
 ---
 
