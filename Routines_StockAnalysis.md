@@ -18,7 +18,7 @@
 |:-:|:-----|:---------|
 | 1 | **單輪單日**：每次啟動只做**今天這一個執行日期**的所有公司（同一日期可能有多間，全部做完才收工） | 跨日會導致進度混亂 |
 | 2 | **零阻塞**：遇到任何錯誤（逾時、被擋、API 額度用盡）→ 記錄後繼續，不停下等人 | 停下 = 任務失敗 |
-| 3 | **繁體中文**輸出；專有名詞依 SKILL.md §6 直接寫英文（如 `EPS`、`FCF`），不做中英對照 | — |
+| 3 | **繁體中文**輸出；專有名詞依 SKILL.md §6 直接寫英文（如 `EPS`、`FCF`），不做中英對照（AGENTS.md「回應語言規則」§3 已明列此例外） | — |
 | 4 | **防幻覺**：所有財務數據必須有來源佐證，**嚴禁用訓練資料捏造** | 捏造 = 任務失敗 |
 | 5 | **本地優先**：財報／輿情直接讀 `<REPO_ROOT>/<COMPANY_FOLDER>/`，不重複從線上倉庫下載 | — |
 | 6 | **整份重寫**：交付前必須對輸出檔執行 SKILL.md §8 Final Rewrite，且第一行為**真實系統時間戳** | 流水帳 = 任務失敗 |
@@ -33,7 +33,7 @@
 | 參數 | 值 | 說明 |
 |:-----|:---|:-----|
 | `SKILL_PATH` | `.claude/skills/StockAnalysis/SKILL.md` | 內容同 `.agents/skills/StockAnalysis/SKILL.md` |
-| `ROTATION_TABLE` | 本檔「## 每日輪替表」 | 唯一真實依據（Single Source of Truth） |
+| `ROTATION_TABLE` | 本檔「## 每日輪替表」 | 本 routine 的執行清單（提供 `MARKET`、`EXTRA_ANALYSIS`）。**追蹤哪些公司、資料夾名稱與執行日期**以 `Routines_CollectsentimentAndReports.md` 為唯一真實依據（Single Source of Truth），兩表的「執行日期 × COMPANY_FOLDER」必須一致 |
 | `TIMEZONE` | `Asia/Taipei (UTC+8)` | 取日期與時間戳一律用此時區 |
 
 > **輸出檔固定為 `<COMPANY_FOLDER>/AnalysisResult.md`**，不接受其他檔名；SKILL.md 中的 `<OUTPUT_FILENAME>` 使用其預設值 `AnalysisResult.md`。
@@ -82,7 +82,7 @@ Step 5  交付：commit & push（依當前環境的分支規範）
 | # | 檢查 | 做法 | 缺了怎麼辦（零阻塞） |
 |:-:|:-----|:-----|:---------------------|
 | 1 | 公司資料夾存在？ | 列出 `<REPO_ROOT>/<COMPANY_FOLDER>/` | 不存在 → 建立空資料夾，記「本地無資料，全靠 deep research」 |
-| 2 | 年報／季報 md 齊全？ | 找 `*_AnnualReport_*.md`、`*_Quarter_*.md` | 缺 → 照樣分析，並在輸出檔附錄寫明缺哪一期與可能原因 |
+| 2 | 年報／季報 md 齊全？ | 依 `index.md` §3 檔名規則找（新制 `*_AnnualReport_*.md`、`*_Quarter_*.md`；舊制 `*_annual_*`、`*_interim_*`、`*年年報*`、台股 `*F04*`／`*_AI1*`、美股 `*10K*`／`*10Q*` 等） | 缺 → 照樣分析，並在輸出檔附錄寫明缺哪一期與可能原因 |
 | 3 | 輿情檔存在？ | 找 `{yyyy}_PublicOpinion.md`、`{yyyyMM}_輿情新聞.md` | 缺 → 改用 web search 補足並記錄 |
 | 4 | 上一版報告存在？ | 找 `AnalysisResult.md` | 不存在 → 視為**首輪**全新產出 |
 
@@ -138,9 +138,9 @@ git add -A
 git commit -m "StockAnalysis: 執行日期 {今日} - {公司清單}"
 ```
 
-- **推送分支依當前環境規範**：Claude Code 於指定 feature 分支開發時 push 該分支並開 PR；本機直跑時 push `master`。
+- **推送分支依當前環境規範**（全 repo 統一規則，見 AGENTS.md「Git 推送規則」）：Claude Code 雲端／指定 feature 分支 → push 該分支並開 PR（`.github/workflows/auto-merge.yml` 會自動合併進 `master`）；本機直跑 → push `master`。
 - 被拒絕（non-fast-forward）：`git pull --rebase` 後重推；網路失敗重試最多 4 次（間隔 2s / 4s / 8s / 16s）。
-- （選配）寫執行日誌 `Log/hourAnalysis_Summary_{yyyyMMdd}.md`：本輪公司、成功／失敗、**每間公司 AnalysisResult.md 的實測行數**、資料缺口。
+- （選配）寫執行日誌 `Log/StockAnalysis_Summary_{yyyyMMdd}.md`：本輪公司、成功／失敗、**每間公司 AnalysisResult.md 的實測行數**、資料缺口。
 
 ---
 
@@ -184,11 +184,11 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 
 ---
 - 執行日期: 1
-- `COMPANY_NAME`： 2971ES-CON日本REIT
+- `COMPANY_NAME`：2971 ES-CON日本REIT
 - `MARKET`：日股
 - `COMPANY_FOLDER`：2971ES-CON日本REIT
 - `EXTRA_ANALYSIS`：
-1.物件都在哪裡?市中心嗎？
+  1. 物件都在哪裡？市中心嗎？
 
 ---
 
@@ -198,7 +198,8 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 - `COMPANY_FOLDER`：00941中國移動
 - `EXTRA_ANALYSIS`：
   1. 如果財務數據單位是人民幣時，要轉成港幣
- 2. Ai 算力佔營收多少%？eps多少？
+  2. AI 算力佔營收多少%？EPS 多少？
+
 ---
 
 - 執行日期: 3
@@ -224,12 +225,12 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 5
-- `COMPANY_NAME`：3445 RS科技 
+- `COMPANY_NAME`：3445 RS科技
 - `MARKET`：日股
 - `COMPANY_FOLDER`：3445RS
 - `EXTRA_ANALYSIS`：
-  1. 未來三年總產能規畫，總產能增加百分比(%),EPS預估
-  
+  1. 未來三年總產能規畫，總產能增加百分比（%），EPS 預估
+
 ---
 - 執行日期: 6
 - `COMPANY_NAME`：7203 Toyota（美股 ADR: TM）
@@ -339,6 +340,14 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 
 ---
 
+- 執行日期: 14
+- `COMPANY_NAME`：6781 AES-KY
+- `MARKET`：台股
+- `COMPANY_FOLDER`：AES-KY
+- `EXTRA_ANALYSIS`：無
+
+---
+
 - 執行日期: 15
 - `COMPANY_NAME`：87001 匯賢產業信託 REIT
 - `MARKET`：港股
@@ -357,7 +366,7 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 16
-- `COMPANY_NAME`：3451
+- `COMPANY_NAME`：3451 東誠REIT
 - `MARKET`：日股
 - `COMPANY_FOLDER`：3451東誠REIT
 - `EXTRA_ANALYSIS`：
@@ -367,19 +376,20 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 
 ---
 - 執行日期: 17
-- `COMPANY_NAME`：1521大億
+- `COMPANY_NAME`：1521 大億
 - `MARKET`：台股
 - `COMPANY_FOLDER`：1521大億
 - `EXTRA_ANALYSIS`：
   1. 跟小系製造所關係
-  2. 吳家未來還會繼續經驗大億嗎？
+  2. 吳家未來還會繼續經營大億嗎？
   3. 經營權交給小系製造所後，EPS還會弱化嗎？毛利率會變低嗎？
   4. 為什麼EPS從2019高峰掉到2026 1.X
   5. 外銷和內銷各佔營收及EPS比重
   6. 前五大客戶各佔營收和EPS比重
   7. 外銷只能賣給小系製造所嗎？毛利率多少?跟內銷毛利率比呢
   8. 以後會被小系製造所併購嗎？
-  9. Stellantis（北美）車燈都跟誰買?為什麼會跟大億買?各佔比重
+  9. Stellantis（北美）車燈都跟誰買？為什麼會跟大億買？各佔比重
+
 ---
 
 - 執行日期: 18
@@ -419,7 +429,7 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 21
-- `COMPANY_NAME`：2989東海道REIT
+- `COMPANY_NAME`：2989 東海道REIT
 - `MARKET`：日股
 - `COMPANY_FOLDER`：2989東海道REIT
 - `EXTRA_ANALYSIS`：
@@ -439,8 +449,8 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 23
-- `COMPANY_NAME`：01816 中廣核電力 / 中股雙重上市 (003816)
-- `MARKET`：港股
+- `COMPANY_NAME`：01816 中廣核電力（中股: 003816 中廣核電力）
+- `MARKET`：港股/中股
 - `COMPANY_FOLDER`：01816中廣核電力
 - `EXTRA_ANALYSIS`：
   1. 未來 10 年每年新增核電機組，每機組貢獻多少 EPS
@@ -451,20 +461,19 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 24
-- `COMPANY_NAME`：3492MIRARTH
+- `COMPANY_NAME`：3492 MIRARTH不動產投資法人
 - `MARKET`：日股
 - `COMPANY_FOLDER`：3492MIRARTH
 - `EXTRA_ANALYSIS`：
-  1.物件都在哪裡
-  
+  1. 物件都在哪裡
 
 ---
 
 - 執行日期: 25
-- `COMPANY_NAME`: 6269 胡連
+- `COMPANY_NAME`：6279 胡連
 - `MARKET`：台股
-- `COMPANY_FOLDER`：6269胡連
-- `EXTRA_ANALYSIS`：
+- `COMPANY_FOLDER`：6279胡連
+- `EXTRA_ANALYSIS`：無
 
 ---
 
@@ -481,25 +490,25 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 - `MARKET`：日股
 - `COMPANY_FOLDER`：3455醫療保健投資法人
 - `EXTRA_ANALYSIS`：
-- reit
+  1. REIT 配息品質與「REIT分析規則」必備數據（依 SKILL.md §3.3）
+
 ---
 
 - 執行日期: 28
-- `COMPANY_NAME`：01044 恒安國際 /美國adr HEGIY
-- `MARKET`港股
+- `COMPANY_NAME`：01044 恒安國際（美股 ADR: HEGIY）
+- `MARKET`：港股
 - `COMPANY_FOLDER`：01044恒安國際
 - `EXTRA_ANALYSIS`：
-1. 七度空间：卫生巾評價，有什麼缺評嗎？
-2. 心相印：生活用纸評價，有什麼缺評嗎？
-3. 安儿乐/Q·MO：婴儿纸尿裤品評價，有什麼缺評嗎？
-4. 
+  1. 七度空间：卫生巾評價，有什麼缺評嗎？
+  2. 心相印：生活用纸評價，有什麼缺評嗎？
+  3. 安儿乐/Q·MO：婴儿纸尿裤品評價，有什麼缺評嗎？
 
 ---
 
 - 執行日期: 29
-- `COMPANY_NAME`：`00883` `中國海洋石油`
-- `MARKET`：港股/中股雙重上市 (600938)
-- `COMPANY_FOLDER`：`00883中國海洋石油`
+- `COMPANY_NAME`：00883 中國海洋石油（中股: 600938 中國海洋石油）
+- `MARKET`：港股/中股
+- `COMPANY_FOLDER`：00883中國海洋石油
 - `EXTRA_ANALYSIS`：
   1. 油價對 EPS 的影響
   2. 油價 50 美元，預估 EPS 多少
@@ -511,15 +520,14 @@ Step 0 ~ 5 完成後，先輸出精簡摘要，再附上本輪分析報告重點
 ---
 
 - 執行日期: 30
-- `COMPANY_NAME`：`02633` `雅各臣科研製藥`
+- `COMPANY_NAME`：02633 雅各臣科研製藥
 - `MARKET`：港股
-- `COMPANY_FOLDER`：`02633雅各臣科研製藥`
+- `COMPANY_FOLDER`：02633雅各臣科研製藥
 - `EXTRA_ANALYSIS`：
-1. 為什麼pe這麼低
-2. 競爭對手有誰???市佔率???
-3. 提供學名藥嗎???為什麼香港市佔率這麼高???沒人跟他搶市場嗎????
-4. 香港有健保嗎????是怎麼跟雅各臣科研製藥買藥????為什麼只跟他買
-5.滿貫集團（Tycoon Group，03390）與 YNBY（00030）投資衝擊，對EPS和淨值影響
-
+  1. 為什麼 PE 這麼低？
+  2. 競爭對手有誰？市佔率？
+  3. 提供學名藥嗎？為什麼香港市佔率這麼高？沒人跟他搶市場嗎？
+  4. 香港有健保嗎？是怎麼跟雅各臣科研製藥買藥？為什麼只跟他買？
+  5. 滿貫集團（Tycoon Group，03390）與 YNBY（00030）投資衝擊，對 EPS 和淨值影響
 
 ---

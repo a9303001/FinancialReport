@@ -1,6 +1,6 @@
 # Financial Report Analysis（財報分析資料庫）
 
-> Plain-Markdown database of annual reports, quarterly / interim reports, IR announcements, market-sentiment digests and fundamental analysis for 31 active and 20 archived Taiwan (TW), US, Japan (JP) and Hong Kong (HK) listed companies and REITs. Every file is UTF-8 Markdown — no PDF parsing required. Built to be read directly by LLMs and AI crawlers.
+> Plain-Markdown database of annual reports, quarterly / interim reports, IR announcements, market-sentiment digests and fundamental analysis for 32 active and 29 archived Taiwan (TW), US, Japan (JP) and Hong Kong (HK) listed companies and REITs. Every file is UTF-8 Markdown — no PDF parsing required. Built to be read directly by LLMs and AI crawlers.
 > 台股 / 美股 / 日股 / 港股個股與 REIT 的年報、季報、官方公告、輿情彙整與深度分析資料庫，全部為純 Markdown。
 
 Repo: `a9303001/FinancialReport` — the default branch is **`master`**. Any URL built with `main` returns 404.
@@ -8,7 +8,7 @@ Repo: `a9303001/FinancialReport` — the default branch is **`master`**. Any URL
 Raw base: `https://raw.githubusercontent.com/a9303001/FinancialReport/master`
 API base: `https://api.github.com/repos/a9303001/FinancialReport/contents` (add `?ref=master`)
 
-Layout: one folder per company, named `<ticker><name>` (e.g. `02318中國平安`) or the bare US ticker (e.g. `UHS`). Chinese folder names need UTF-8 percent-encoding in URLs — ready-made encoded URLs for all 51 companies are listed in `index.md` §9.
+Layout: one folder per company, named `<ticker><name>` (e.g. `02318中國平安`) or the bare US ticker (e.g. `UHS`). Chinese folder names need UTF-8 percent-encoding in URLs — ready-made encoded URLs for all 61 companies are listed in `index.md` §9.
 
 Read order for a single company: `AnalysisResult.md` (latest deep-dive analysis, timestamp on line 1) → latest annual report → latest quarterly / interim report → `<YYYY>_PublicOpinion.md` (market sentiment).
 

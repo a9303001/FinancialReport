@@ -18,7 +18,7 @@ description: 掃描 FinancialReport 內公司資料夾，用 MCP 工具 convert_
 
 ## 名詞
 
-- `<REPO>`：`D:\FinancialReport`（儲存庫根目錄絕對路徑）
+- `<REPO>`：儲存庫根目錄絕對路徑（Windows 本機如 `D:\FinancialReport`；Claude Code 雲端如 `/home/user/FinancialReport`）
 - `<SCRATCH>`：暫存工作目錄絕對路徑
 - 公司資料夾：`<REPO>` 底下以公司名命名的子資料夾（如 `<REPO>/UHS`）
 - 待轉換 PDF：同目錄下沒有同名非空 `.md` 的 PDF
