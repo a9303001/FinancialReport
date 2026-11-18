@@ -89,7 +89,7 @@
    | `*_AnnualReport_<YYYY>.md` | 年份較大者；同年份取檔案較大者 |
    | `*_Quarter_<YYYY>Q<N>.md` | 年份／季度較新者；相同取檔案較大者 |
    | `<YYYY>_PublicOpinion.md` | 年份較大者；同年份取檔案較大者（條目去重不在此處理） |
-   | `hourAnalysisResult.md` / 其他分析檔 | git commit 時間較新者 |
+   | `AnalysisResult.md` / 其他分析檔 | git commit 時間較新者 |
 
 5. 合併完成後，`History/<FOLDER>` 應為空 → 移除該空資料夾（git 不追蹤空目錄，`git mv` 完即自然消失）。
 

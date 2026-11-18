@@ -10,7 +10,7 @@ API base: `https://api.github.com/repos/a9303001/FinancialReport/contents` (add 
 
 Layout: one folder per company, named `<ticker><name>` (e.g. `02318中國平安`) or the bare US ticker (e.g. `UHS`). Chinese folder names need UTF-8 percent-encoding in URLs — ready-made encoded URLs for all 51 companies are listed in `index.md` §9.
 
-Read order for a single company: `hourAnalysisResult.md` (latest deep-dive analysis, timestamp on line 1) → latest annual report → latest quarterly / interim report → `<YYYY>_PublicOpinion.md` (market sentiment).
+Read order for a single company: `AnalysisResult.md` (latest deep-dive analysis, timestamp on line 1) → latest annual report → latest quarterly / interim report → `<YYYY>_PublicOpinion.md` (market sentiment).
 
 ## Core documents
 
@@ -21,15 +21,15 @@ Read order for a single company: `hourAnalysisResult.md` (latest deep-dive analy
 
 ## Example company entries
 
-- [UHS](https://raw.githubusercontent.com/a9303001/FinancialReport/master/UHS/hourAnalysisResult.md): Universal Health Services (US) — latest deep-dive analysis.
-- [7203 Toyota](https://raw.githubusercontent.com/a9303001/FinancialReport/master/7203Toyota/hourAnalysisResult.md): Toyota Motor (JP, ADR: TM) — latest deep-dive analysis.
-- [02318 中國平安](https://raw.githubusercontent.com/a9303001/FinancialReport/master/02318%E4%B8%AD%E5%9C%8B%E5%B9%B3%E5%AE%89/hourAnalysisResult.md): Ping An Insurance (HK) — example of a percent-encoded Chinese folder name.
-- [2881 富邦金](https://raw.githubusercontent.com/a9303001/FinancialReport/master/2881%E5%AF%8C%E9%82%A6%E9%87%91/hourAnalysisResult.md): Fubon Financial (TW) — latest deep-dive analysis.
+- [UHS](https://raw.githubusercontent.com/a9303001/FinancialReport/master/UHS/AnalysisResult.md): Universal Health Services (US) — latest deep-dive analysis.
+- [7203 Toyota](https://raw.githubusercontent.com/a9303001/FinancialReport/master/7203Toyota/AnalysisResult.md): Toyota Motor (JP, ADR: TM) — latest deep-dive analysis.
+- [02318 中國平安](https://raw.githubusercontent.com/a9303001/FinancialReport/master/02318%E4%B8%AD%E5%9C%8B%E5%B9%B3%E5%AE%89/AnalysisResult.md): Ping An Insurance (HK) — example of a percent-encoded Chinese folder name.
+- [2881 富邦金](https://raw.githubusercontent.com/a9303001/FinancialReport/master/2881%E5%AF%8C%E9%82%A6%E9%87%91/AnalysisResult.md): Fubon Financial (TW) — latest deep-dive analysis.
 
 ## Optional
 
 - [Routines_CollectsentimentAndReports.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/Routines_CollectsentimentAndReports.md): Daily rotation table — the single source of truth for which companies are tracked and on which day of the month they refresh.
-- [Routines_StockAnalysis.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/Routines_StockAnalysis.md): Daily deep-analysis routine that regenerates `hourAnalysisResult.md`.
+- [Routines_StockAnalysis.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/Routines_StockAnalysis.md): Daily deep-analysis routine that regenerates `AnalysisResult.md`.
 
 ## Usage notes
 

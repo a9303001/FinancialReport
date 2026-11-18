@@ -1,5 +1,5 @@
 > **更新時間（Last Updated）：2026/09/14 11:44:00 (UTC+8)**
-# PBR.A 巴西石油（Petrobras）— 個股深度基本面與投資分析報告 (hourAnalysisResult_gemini)
+# PBR.A 巴西石油（Petrobras）— 個股深度基本面與投資分析報告 (AnalysisResult_gemini)
 
 ---
 

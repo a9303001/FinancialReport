@@ -2,7 +2,7 @@
 # 6902 デンソー（DENSO Corporation，東證 Prime 6902.T） 個股深度基本面分析報告
 
 > **分析標的**：6902 デンソー（DENSO Corporation，日本東京證券交易所 Prime 市場，代碼 6902.T；美股 ADR: DNZOY）｜ **市場**：日股 ｜ **計價幣別**：日圓（¥, JPY）
-> **報告版本**：`hourAnalysisResult_gemini.md`（依據 `StockAnalysis` Skill 與 `AGENTS.md` 規範執行全檔重寫與每股化校正）
+> **報告版本**：`AnalysisResult_gemini.md`（依據 `StockAnalysis` Skill 與 `AGENTS.md` 規範執行全檔重寫與每股化校正）
 
 ---
 

@@ -463,7 +463,7 @@
 
 | 順序 | 管道 | 結果 | 取得內容 |
 | :-: | :--- | :---: | :--- |
-| 1 | **【最優選】本機檔案系統** `INGR宜瑞安/` | ✅ 部分成功 | 上一輪 `hourAnalysisResult.md`；`2026_PublicOpinion.md`（2 檔來源合併，含 **2026-08-04 法說會逐字重點**與 Seeking Alpha 討論串）。**本資料夾無年報／季報原文** |
+| 1 | **【最優選】本機檔案系統** `INGR宜瑞安/` | ✅ 部分成功 | 上一輪 `AnalysisResult.md`；`2026_PublicOpinion.md`（2 檔來源合併，含 **2026-08-04 法說會逐字重點**與 Seeking Alpha 討論串）。**本資料夾無年報／季報原文** |
 | 2 | 全 repo 檢索 | ✅ | `StkScreenerResult/21-INGR-宜瑞安.md` 選股摘要 |
 | 3 | **SEC EDGAR 官方申報系統** | ✅ 成功（尋獲即止） | FY2025 10-K、2026 Q2 10-Q（檔號 `0001628280-26-054722`）、2026 Q1 10-Q、8-K ×3 |
 | 4 | 第三方資料庫交叉驗證 | ✅ | stockanalysis.com（股價、市值、P/E、Forward P/E、殖利率、52 週區間）、foodnavigator／foodingredientsfirst（併購表決細節）、globenewswire（併購原始新聞稿） |

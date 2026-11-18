@@ -1,5 +1,5 @@
 > **更新時間（Last Updated）：2026/07/30 00:00:00 (UTC+8)**
-# 9022 JR東海（Central Japan Railway）— 個股深度基本面分析報告 (hourAnalysisResult)
+# 9022 JR東海（Central Japan Railway）— 個股深度基本面分析報告 (AnalysisResult)
 
 > **更新時間**：2026-07-30  
 > **標的名稱**：9022 JR東海（Central Japan Railway Co. / 日股代碼：9022.T，日本東證 Prime 市場）  

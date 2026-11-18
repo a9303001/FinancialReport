@@ -3,7 +3,7 @@
 
 > **一句話任務**：按輪替表，對「一個執行日期」的所有公司，執行「深度分析 → 驗收 → 記錄 → git push」。
 >
-> **唯一輸出檔**：`{COMPANY_FOLDER}/hourAnalysisResult.md`（Claude、Gemini 或任何執行者共用同一份，不再依模型分檔）。
+> **唯一輸出檔**：`{COMPANY_FOLDER}/AnalysisResult.md`（Claude、Gemini 或任何執行者共用同一份，不再依模型分檔）。
 >
 > **前置條件**：該公司已完成 CollectsentimentAndReports（財報 + 輿情 + 轉 md），本地資料夾中已有最新資料。
 >
@@ -20,7 +20,8 @@
 | 3 | **繁體中文**輸出（專有名詞首次附英文，如「每股盈餘（EPS）」） | — |
 | 4 | **防幻覺**：所有財務數據必須有來源佐證；**嚴禁用訓練資料捏造** | 捏造 = 任務失敗 |
 | 5 | **本地優先**：財報直接讀 `d:\FinancialReport\`，**嚴禁**從 GitHub 線上倉庫下載 | — |
-| 6 | **整份重寫**：交付前必須對輸出檔執行 SKILL.md §7 Final Rewrite，且第一行為真實系統時間戳 | 流水帳 = 任務失敗 |
+| 6 | **整份重寫**：交付前必須對輸出檔執行 SKILL.md §8 Final Rewrite，且第一行為真實系統時間戳 | 流水帳 = 任務失敗 |
+| 7 | **1000 行上限**：`AnalysisResult.md` 全檔不得超過 1000 行；超過就刪掉沒有投資價值的分析行（SKILL.md §8.3），並實測行數 | 超標交付 = 任務失敗 |
 
 ---
 
@@ -113,7 +114,7 @@ companies = 輪替表中所有 [執行日期 == target_date] 的公司
 | 1 | 公司資料夾存在？ | `list_dir d:\FinancialReport\{COMPANY_FOLDER}\` | 不存在 → 建立空資料夾，日誌記「本地無資料，全靠 deep research」 |
 | 2 | 年報／季報 md 齊全？ | 看有無 `*_AnnualReport_*.md`、`*_Quarter_*.md` | 缺 → 照樣分析，並在輸出檔 §11 與日誌「資料缺失說明」寫明缺哪一期、可能原因 |
 | 3 | 輿情檔存在？ | 看有無 `{yyyy}_PublicOpinion.md`、`{yyyyMM}_輿情新聞.md` | 缺 → 改以 `search_web` 補足，並記錄 |
-| 4 | 上一版報告存在？ | 看有無 `hourAnalysisResult.md` | 不存在 → 視為**首輪**，全新產出 |
+| 4 | 上一版報告存在？ | 看有無 `AnalysisResult.md` | 不存在 → 視為**首輪**，全新產出 |
 
 ---
 
@@ -135,18 +136,20 @@ companies = 輪替表中所有 [執行日期 == target_date] 的公司
    | `COMPANY_FOLDER` | 輪替表 | `02318中國平安` |
    | `EXTRA_ANALYSIS` | 輪替表（無則留空）| `房地產曝險分析…` |
 
-   > 輸出寫入路徑固定為 `d:\FinancialReport\{COMPANY_FOLDER}\hourAnalysisResult.md`（直接覆寫，不加日期後綴）。
+   > 輸出寫入路徑固定為 `d:\FinancialReport\{COMPANY_FOLDER}\AnalysisResult.md`（直接覆寫，不加日期後綴）。
 3. 全程核心要求（細節見 SKILL.md 對應章節）：
 
    | 要求 | 依據 |
    |:-----|:-----|
-   | 頭部優先（最重要 × 最新放最前面） | §4.1、§4.5 |
-   | 七大基本面支柱全覆蓋 | §3.1.1 |
-   | 所有金額**每股化** + 每股化總表 | §4.3、§7.2 |
-   | 主要幣別正確（港股／中股用 HKD） | §4.6 |
-   | 寫給初級分析師看（說人話、術語寫英文、無 Glossary） | §5 |
-   | 交付前**整份重寫**（Final Rewrite） | §7 |
-   | 第一行為**真實系統時間戳** `yyyy/MM/dd HH:mm:ss (UTC+8)` | §4.2 第 0 項、§7.1 Step 7 |
+   | 頭部優先（最重要 × 最新放最前面） | §4、§5.4 |
+   | 七大基本面支柱全覆蓋（REIT 另加配息品質） | §3.1、§3.3 |
+   | 所有金額**每股化** + 每股化總覽 | §5.1 |
+   | 主要幣別正確（港股／中股用 HKD） | §5.2 |
+   | 寫給初級分析師看（說人話、術語寫英文、無 Glossary） | §6 |
+   | **全檔零表格**：一律 key-value 條列 | §5.3 |
+   | 交付前**整份重寫**（Final Rewrite） | §8 |
+   | 第一行為**真實系統時間戳** `yyyy/MM/dd HH:mm:ss (UTC+8)` | §4.1、§8.1 Step 8 |
+   | **全檔 ≤ 1000 行**：超過先刪沒有投資價值的行，保護項目不可動 | §8.3 |
 
 4. 時間戳一律用指令實取，**嚴禁憑印象或沿用上一版**：
 
@@ -162,10 +165,11 @@ companies = 輪替表中所有 [執行日期 == target_date] 的公司
 
 ### 交付檢查（Definition of Done）
 
-- [ ] `{COMPANY_FOLDER}\hourAnalysisResult.md` 已更新，且**第一行**是本輪真實系統時間戳（`yyyy/MM/dd HH:mm:ss (UTC+8)`）
-- [ ] 已完成 §7 Final Rewrite（整份重寫，非局部補丁、非新舊堆疊）
-- [ ] 通過 SKILL.md §7.6 Final Rewrite Checklist（A 結構／B 每股化／C 汰除／D 基本面與幣別）
-- [ ] 通過 SKILL.md §5.5 可讀性 checklist 與 §4.5.4 頭部檢查三題
+- [ ] `{COMPANY_FOLDER}\AnalysisResult.md` 已更新，且**第一行**是本輪真實系統時間戳（`yyyy/MM/dd HH:mm:ss (UTC+8)`）
+- [ ] 已完成 SKILL.md §8 Final Rewrite（整份重寫，非局部補丁、非新舊堆疊）
+- [ ] 通過 SKILL.md §9 交付前總檢查（A 結構與時間／B 版面／C 每股化與幣別／D 內容／E 汰除與行數）
+- [ ] 通過 SKILL.md §5.4 頭部檢查三題
+- [ ] **實測行數 ≤ 1000**：`run_command` 執行 `(Get-Content -LiteralPath '{COMPANY_FOLDER}\AnalysisResult.md' -Encoding UTF8).Count`（超過 → 依 SKILL.md §8.3.3 刪減後重測）
 - [ ] `EXTRA_ANALYSIS` 每一項都有對應段落與數字（沒有的要寫明查不到與原因）
 - [ ] 本輪每間公司都做完（多公司日期不可漏）
 
@@ -223,7 +227,7 @@ Step 0 ~ 5 全部完成後，輸出以下精簡摘要：
 ```
 ✅ StockAnalysis(gemini) — YYYY-MM-DD HH:MM
 - 本輪：執行日期 {N}（{公司名稱}）
-- 分析：✅ 成功（hourAnalysisResult.md）
+- 分析：✅ 成功（AnalysisResult.md，實測 {NNN} 行 ≤ 1000）
 - 記錄：✅ 已更新 Summary.md
 - Git：✅ 已 push master
 - 下一輪：執行日期 {Next}（{下輪公司}）
