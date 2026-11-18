@@ -1,5 +1,5 @@
 ## ) 核心原則
-- 每次回答問題前都先把我的問題即時翻譯成英文(考慮美國日常用法)，再開始回答問題
+- 每次回答問題前都先把我的問題即時翻譯成英文及日文(考慮美國和日本日常用法)，再開始回答問題
 - 盡可能進行 **deep research**，能搜尋就搜尋，資訊要新、要可驗證
 - 盡可能使用網路搜尋最新資料
 - 若資料缺失，需明確註記缺口與可能原因
@@ -28,7 +28,7 @@
 - 主要租戶和租約結構
 - 管理公司評估
 - 成長策略和未來展望
-- 風險因素和挑戰
+- 風險因素 and 挑戰
 ### 3 附加規則
  - 必須同步執行 "REIT分析規則"
 ---
@@ -36,26 +36,25 @@
 ## ) 個股分析規則
 ### 1 投資利多與風險
 - 只要分析公司或財經，**必須同時思考與整理：**
- - **投資風險（利空）**
- - **投資利多（利多）**
+  - **投資風險（利空）**
+  - **投資利多（利多）**
 - **要著重風險與利多**，不能只講基本面或故事
 
 ### 2 財務數據每股化（Per-Share Conversion）
 - 若分析個股內容有提及具體的財務絕對金額（如：營收、營業利益、資本支出、自由現金流等），**強制必須同步換算並標註「每股金額」**。
- - 計算基準：使用該金額除以「最新流通在外股數（Outstanding Shares）」。
- - 輸出格式範例：「2024 年 Q4 營收達到 100 億美元（換算約每股營收 5.2 美元）」。
+  - 計算基準：使用該金額除以「最新流通在外股數（Outstanding Shares）」。
+  - 輸出格式範例：「2024 年 Q4 營收達到 100 億美元（換算約每股營收 5.2 美元）」。
 
 ### 3 必備數據（需要「最新」）
 若分析公司，回覆中需包含（盡可能提供最新數據與來源）：
 - **最新 EPS**
 - **本益比（PE）**
 - **預估 EPS（Forward/Estimated EPS）**
-- **過去五年營業利益率中位數**
 - **負債比率**
 - **OPM（自定義公式）**
 - **過去五年 ROE 中位數**
 - **過去五年 殖利率中位數**
-- **5 年與 10 年淨利潤 CAGR**（見 3.3）
+- **五年淨利潤CAGR**
 
 #### 3.1 負債比率公式
 負債比率(%) = (負債 / 總資產) *100%
@@ -80,72 +79,56 @@ OPM(%) = (營業利益率 / 稅前淨利率)*100%
 **A. GitHub 本地財報資料庫**
 - **連結**：`https://github.com/a9303001/FinancialReport`
 - **分支名稱（極重要）**：預設分支為 `master`（絕對不可使用 `main`，否則會 404）。
-- **說明**：每個公司設有獨立資料夾（命名 `<代號><名稱>`，美股為純代碼，如 `UHS`）。
-  - 公司資料夾內可能有年報檔、季報檔、`AnalysisResult.md`（最新深度分析）、`<YYYY>_PublicOpinion.md`（年度輿情）及其他分析文件；檔名規則見 `index.md` §3。
+- **說明**：每個公司設有獨立資料夾（資料夾名稱即為公司名稱）。
+  - 公司資料夾內可能有年報檔、季報檔及其他有用分析文件。
 
 - **AI 讀取策略（請強制依序嘗試下列方法，直到成功為止）**：
-
-  1. **【最優選】本機檔案系統直接讀取（Workspace 已 clone）**：
-     - `<REPO_ROOT>` = 本 repo 的本機 clone 根目錄（Windows 本機通常為 `d:\FinancialReport`；Claude Code 雲端為 `/home/user/FinancialReport`）。**必須優先使用檔案系統工具**直接讀取（Claude：`Glob`／`Read`／`Grep`；Gemini：`list_dir`／`view_file`／`grep_search`；rg 選用依 `rg` Skill）。
-     - **列出公司資料夾**：列出 `<REPO_ROOT>/<公司資料夾>/`
-     - **讀取檔案內容**：讀取 `<REPO_ROOT>/<公司資料夾>/<檔案名稱>`
-     - **搜尋關鍵字**：在 `<REPO_ROOT>/<公司資料夾>/` 下搜尋
-     - **找不到公司資料夾時**：依序查根目錄 → `History/<公司資料夾>`（已封存）→ `StkScreenerResult/`（選股候選）。資料夾名稱以 `Routines_CollectsentimentAndReports.md` 輪替表為準。
-     - **優勢**：零網路延遲、無 API 限制、可讀取任意大小檔案。
-     - **注意**：若本機資料可能不是最新，需執行 `git pull` 同步後再讀取。
-
-  2. **【次選】GitHub MCP 工具讀取（僅本機資料夾不存在時使用）**：
-     - 使用已安裝的 GitHub MCP 工具，讀取 `a9303001/FinancialReport` repo 中 `<公司名稱>` 資料夾的檔案清單與內容。
-     - **分支**：務必指定 `master`（不可用 `main`）。
-
-  3. **【第三選】GitHub API 查詢與 Raw 讀取（僅前述方法皆失敗時使用）**：
+  1. ** 【優選】GitHub 工具直接讀取**：
+     - 使用 AI Chat 可用的 GitHub 工具讀取 `https://github.com/a9303001/FinancialReport/tree/master/` 來抓取財報檔案清單。
+  2. **【次選】API 查詢與 Raw 讀取（僅前面失敗時使用）**：
      - **步驟一**：呼叫 `https://api.github.com/repos/a9303001/FinancialReport/contents/<公司名稱>` 取得檔案列表 JSON。
-     - **步驟二**：組合 Raw 網址並讀取：`https://raw.githubusercontent.com/a9303001/FinancialReport/master/<公司名稱>/<檔案名稱>`
-     - **注意**：若遇到 `403 Forbidden`，表示 API 額度耗盡，請立即回報並跳至下一方法。
-
-  4. **【末選】瀏覽器工具爬取（僅前述方法皆失敗時使用）**：
-     - 使用 `browser_subagent` 或 `read_url_content` 開啟 `https://github.com/a9303001/FinancialReport/tree/master/<公司名稱>` 擷取檔案清單與內容。
-
+     - **步驟二**：組合出 Raw 網址並讀取：`https://raw.githubusercontent.com/a9303001/FinancialReport/master/<公司名稱>/<檔案名稱>`
+     - **注意**：若遇到 `403 Forbidden`，表示 API 額度耗盡，請立即回報並改用其他官方財報來源。
 
 **B. 用你覺得最好的方式搜尋**
 
 **C. StatementDog 財報狗（台股、美股適用）**
 - **網址結構**：`https://statementdog.com/analysis/<公司代號>/e-report`
 - **範例**：
- - 美股 UHS：`https://statementdog.com/analysis/UHS/e-report`
- - 台股 2412 (中華電信)：`https://statementdog.com/analysis/2412/e-report`
+  - 美股 UHS：`https://statementdog.com/analysis/UHS/e-report`
+  - 台股 2412 (中華電信)：`https://statementdog.com/analysis/2412/e-report`
 
 **D. 日股專用搜尋平台**
 - **IR Bank**：`https://irbank.net/<公司代號>/ir`
- - 範例：`https://irbank.net/3445/ir` (3445 RS科技)
+  - 範例：`https://irbank.net/3445/ir` (3445 RS科技)
 - **Ullet**：`https://www.ullet.com/<公司代號>.html#edinet/ranking/report`
- - 範例：`https://www.ullet.com/3445.html#edinet/ranking/report` (3445 RS科技)
+  - 範例：`https://www.ullet.com/3445.html#edinet/ranking/report` (3445 RS科技)
 
 **E. 港股專用搜尋平台**
 - **新浪財經**：`https://stock.finance.sina.com.cn/hkstock/notice/<公司代號>.html`
- - 範例：`https://stock.finance.sina.com.cn/hkstock/notice/02318.html` (02318 中國平安)
+  - 範例：`https://stock.finance.sina.com.cn/hkstock/notice/02318.html` (02318 中國平安)
 
 **F. 多市場通用平台（美股 / 日股 / 港股）**
 - **富途牛牛 (Futu)**：`https://www.futunn.com/hk/stock/<公司代號>-<交易所代碼>/announcement`
- - *交易所代碼：美股為 `US`、日股為 `JP`、港股為 `HK`*
+  - *交易所代碼：美股為 `US`、日股為 `JP`、港股為 `HK`*
 - **範例**：
- - 美股 UHS：`https://www.futunn.com/hk/stock/UHS-US/announcement`
- - 日股 3445：`https://www.futunn.com/hk/stock/3445-JP/announcement`
- - 港股 02318：`https://www.futunn.com/hk/stock/02318-HK/announcement`
+  - 美股 UHS：`https://www.futunn.com/hk/stock/UHS-US/announcement`
+  - 日股 3445：`https://www.futunn.com/hk/stock/3445-JP/announcement`
+  - 港股 02318：`https://www.futunn.com/hk/stock/02318-HK/announcement`
 
 #### 4.3 結果狀態與回報義務（強制執行）
 在回覆中，**必須明確告知**搜尋狀態，並說明過程與結果。若有缺漏，需主動推測並說明原因。
 - **必備回報項目**：
- 1. 是否成功找到年報和季報？
- 2. 完整搜尋過程與使用的資料來源。
- 3. 若資料為舊版或缺失，說明可能原因（如：公司剛上市、最新財報尚未發布、資料庫更新延遲等）。
+  1. 是否成功找到年報和季報？
+  2. 完整搜尋過程與使用的資料來源。
+  3. 若資料為舊版或缺失，說明可能原因（如：公司剛上市、最新財報尚未發布、資料庫更新延遲等）。
 - **回報格式範例**：
- - *「成功找到 2024 年報（最新）與 2025 Q1 季報，來源：StatementDog + 公司官網 IR，GitHub 亦有備份。」*
- - *「找到過去三年年報，但最新季報僅至 2024 Q3（2025 Q1 尚未公布）。」*
- - *「GitHub 無該公司資料夾；改用 Futu 找到 2023–2024 年報，季報缺失；經官方 EDGAR 確認，最新 10-Q 確實尚未發布。」*
+  - *「成功找到 2024 年報（最新）與 2025 Q1 季報，來源：StatementDog + 公司官網 IR，GitHub 亦有備份。」*
+  - *「找到過去三年年報，但最新季報僅至 2024 Q3（2025 Q1 尚未公布）。」*
+  - *「GitHub 無該公司資料夾；改用 Futu 找到 2023–2024 年報，季報缺失；經官方 EDGAR 確認，最新 10-Q 確實尚未發布。」*
 
 #### 4.4 輸出格式規範與模版
-進行年報與季報分析時，回覆應採用以下結構呈現（`StockAnalysis` Skill 產出的 `AnalysisResult.md` 改依該 Skill §4 的段落結構，以下四項分別落在其第 3、5、8 段與 §5.1 每股化）：
+進行年報與季報分析時，回覆應採用以下結構呈現：
 1. **報告資訊**：載明本次分析採用的年報年份（如 2024, 2025 FY）及季報季度（如 2026 Q1），並附上資料來源連結。
 2. **核心利多（成長動能）**：條列式說明。每項利多需寫明「具體事件/計畫」以及「對營收/毛利率/淨利的潛在財務影響（※）」。
 3. **核心風險（潛在隱憂）**：條列式說明。每項風險需寫明「起因與對象」以及「對公司競爭優勢或財務表現的具體損害程度」。
@@ -154,39 +137,39 @@ OPM(%) = (營業利益率 / 稅前淨利率)*100%
 
 ### 5 流通股/在外股數變化
 - 分析該公司過去二年的流通股（在外流通股數）是否有顯著變化
-- 若變化超過 10%：
-  - 說明變化的具體數據（增減數量與百分比）
-  - 分析變化原因（如：股票回購、增發新股、員工股權激勵、可轉債轉換等）
-  - 評估對每股盈餘（EPS）及股東權益的潛在影響
-- 若流通股/在外股數變化不超過 10%：可省略此部分說明（或壓成 1–2 行）
+- 若有變化：
+  -說明變化的具體數據（增減數量與百分比）
+  -分析變化原因（如：股票回購、增發新股、員工股權激勵、可轉債轉換等）
+  -評估對每股盈餘（EPS）及股東權益的潛在影響
+-若流通股/在外股數變化不超過10%：可省略此部分說明
 
 
 ### 6 討論區/社群輿情蒐集（多平台）
-- 需搜尋並整理網路討論區對該公司的 **利多/利空**觀點（嘗試辨識真假消息/偏誤）。
-- **先讀本 repo**：必須確認 `https://github.com/a9303001/FinancialReport`（分支 `master`）的公司資料夾是否已有討論區/社群輿情（`<YYYY>_PublicOpinion.md`、`<yyyyMM>_輿情新聞.md`），有的話，也要拿下來分析；讀取管道同 4.2 A。
-- **再上網補最新**，平台包含但不限於：
+- 需搜尋並整理網路討論區對該公司的 **利多/利空**觀點（嘗試辨識真假消息/偏誤），平台包含但不限於：
+- 讀取 `https://github.com/a9303001/FinancialReport/tree/master/` 來抓取該公司的輿情。
+- 必須確認 `https://github.com/a9303001/FinancialReport` 是不是有指定公司的討論區/社群輿情，有的話，也要拿下來分析。
 - **英文圈**
- - X（Twitter）, Reddit, Yahoo Finance Forums, Wall Street Oasis
- - Seeking Alpha, Motley Fool Community, TipRanks
+  - X（Twitter）, Reddit, Yahoo Finance Forums, Wall Street Oasis
+  - Seeking Alpha, Motley Fool Community, TipRanks
 - **台灣**
- - PTT, Dcard, Mobile01
- - 股市爆料同學會, HiStock 嗨投資, 財報狗
+  - PTT, Dcard, Mobile01
+  - 股市爆料同學會, HiStock 嗨投資, 財報狗
 - **中國/華語**
- - 雪球（xueqiu）, moomoo 社區, 淘股吧（TGB）
- - 東方財富股吧,新浪財經股吧
+  - 雪球（xueqiu, moomoo 社區,淘股吧（TGB）
+  - 東方財富股吧,新浪財經股吧
 - **香港**
- - LIHKG,香港討論區（香討）, 香港高登財經台
+  - LIHKG,香港討論區（香討）, 香港高登財經台
 - **日本**
- - minkabu.jp, kabutan.jp, Yahoo Finance JP, 5ch
+  - minkabu.jp, kabutan.jp, Yahoo Finance JP, 5ch
 
 ---
 ## ) REIT分析規則
 ### 1 分析準則
 - 不包含也不需要分析 REITs ETF
-- **必須同步執行** `個股分析規則`
+- **必須同步執行**`個股分析規則`**
 
 ### 2 必備數據（需要「最新」）
-若分析 REIT，回覆中需包含（盡可能提供最新數據與來源）：
+若分析 REIT：，回覆中需包含（盡可能提供最新數據與來源）：
 - **股價淨值比**
 - **殖利率**
 - **租金報酬率**
@@ -199,40 +182,32 @@ OPM(%) = (營業利益率 / 稅前淨利率)*100%
 ### 1 主要語言
 - 使用 **中文** 回應
 
-### 2 專有名詞處理
+### 3 專有名詞處理
 - 技術術語、產品名稱、公司名稱等專有名詞：
   - 首次出現時附上英文，格式：`中文名稱（英文）`
-  - 後續可僅使用英文或常用簡稱
+  - 後續可僅使用英文 or 常用簡稱
 
-### 3 例外情況
+### 4 例外情況
 - 使用者明確指定其他語言時，依使用者要求
 - 程式碼、指令、路徑等維持原文不翻譯
 - 觸發翻譯規則（`translate` / `tr`）時，依翻譯規則處理
-- `StockAnalysis` Skill 產出的 `AnalysisResult.md`：依該 Skill §6，專有名詞直接寫英文（如 `EPS`、`FCF`）、不做中英對照與 Glossary；本節「中文名稱（英文）」格式只適用於對話回覆
 
----
-## ) Git 推送規則（全 repo 統一）
-- 所有 Skill／Routine 的 commit 與 push 一律依本規則；各檔內的推送說明若與本節不同，以本節為準。
-- **Claude Code 雲端或已指定 feature 分支**：commit 並 push 到該分支、開 PR；`.github/workflows/auto-merge.yml` 會自動合併進 `master`。
-- **本機直跑（無指定分支）**：直接 push `master`。
-- 預設分支是 `master`，**絕對不可使用 `main`**。
-- 零阻塞：不因分支限制停下來詢問使用者；push 被拒（non-fast-forward）先 `git pull --rebase` 再推，網路失敗最多重試 4 次（2s／4s／8s／16s）。
-
----
+--- 
 ## ) 翻譯規則（`translate` / `tr`）
 ### 1. 觸發條件
-- 當使用者訊息以 `translate` 或 `tr` 開頭，且後方包含內容時，將後方內容翻譯為英文。
-- 當使用者僅輸入 `translate` 或 `tr`（忽略前後空白）時，將上一則AI回覆轉換為英文。
+- 當使用者訊息以 `translate` 或 `tr` 開頭，且後方包含內容時，將後方內容翻譯為英文和日文。
+- 當使用者僅輸入 `translate` 或 `tr`（忽略前後空白）時，將上一則AI回覆轉換為英文和日文。
 - 觸發詞不區分大小寫；觸發詞與待翻譯內容之間可使用空白、冒號或換行分隔。
 
 ### 2. 轉換原則
 - 中文內容：翻譯為自然、完整且符合語境的英文。
+- 日文內容：翻譯為自然、完整且符合語境的日文。
 - 英文內容：潤飾文法、措辭與可讀性，不改變原意。
 - 中英混合內容：統一整理為自然、完整的英文；保留程式碼、指令、路徑、產品名稱及其他必要專有名詞。
 
 ### 3. 品質標準
 - 預設採用美國軟體業與公司會議常見的語氣、文法及用字。
-- 譯文應自然、清楚，讓美國母語人士能直接理解。
+- 譯文應自然、清楚，讓美國與日本母語人士能直接理解。
 - 使用者若明確指定情境、受眾或語氣，優先遵循其要求。
 
 ### 4. 輸出格式
@@ -240,3 +215,5 @@ OPM(%) = (營業利益率 / 稅前淨利率)*100%
 1. **日常生活**：自然、口語的日常表達。
 2. **技術表達**：適合技術討論、程式碼審查或工程文件。
 3. **一般公司行號用法**：適合一般職場溝通、電子郵件與會議。
+每次只提供**日常生活**日文版本
+
