@@ -241,7 +241,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | `StockAnalysis` | 個股深度分析：讀回既有資料 → deep research → 每股化 → 整份重寫 `AnalysisResult.md` |
 | `CollectsentimentAndReports` | 收集個股最新財務報告與輿情討論 / 新聞 |
 | `ArrangePublicOpinionMd` | 把零散月度輿情 `.md` 依年份合併成 `<YYYY>_PublicOpinion.md`，驗證後刪除原檔（年報 / 季報不動） |
-| `Convert2md` | 用 MCP `convert_pdf_to_markdown` 把 PDF 轉 Markdown，檢查 CID 亂碼並刪除失敗檔 |
+| `Convert2md` | 用 MCP `convert_pdf_to_markdown` 把 PDF 轉 Markdown，檢查 CID 亂碼並刪除失敗檔（可帶掃描範圍參數只轉指定資料夾，如 `collectState` 只轉 `<cc>_state/`） |
 | `collectState` | `jp /collectState`、`hk /collectState`：先刪 `<cc>_state/` 三個月前資料，再收集該國過去 1 個月的房地產／REIT 新聞、報告與輿情（hk 加中國房地產），全部轉 Markdown，重寫 `StateAnalysis.md` 作 REIT 投資分析 |
 | `rg` | ripgrep 執行檔選用規範（PATH／內建 Grep → `D:\Prog_install\ripgrep\rg.exe` → 其他搜尋方式） |
 
