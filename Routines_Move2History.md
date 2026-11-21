@@ -13,6 +13,7 @@
 - `EXCLUDE_DIRS`（非公司資料夾，兩個方向都不參與搬移）：
   - `History`、`Analysis`、`Log`、`Prompt`、`StkScreenerResult`、`HkReitScreenerResult`、`JpReitScreenerResult`、`discard`
   - 任何以 `ScreenerResult` 結尾的資料夾（選股結果，非公司資料夾）
+  - 任何以 `_state` 結尾的資料夾（`collectState` Skill 的國家層級資料，如 `jp_state`、`hk_state`）
   - 任何以 `.` 開頭的隱藏資料夾（`.git`、`.claude`、`.github` …）
 - `TODAY`：執行當日日期，格式 `YYYY-MM-DD`（用於合併註記）
 

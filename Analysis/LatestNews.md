@@ -96,7 +96,7 @@ Step 7  commit / push ＋ 摘要
    ```
 
    每行輸出：`資料夾｜代號｜市場（HK/JP/TW/US/?）｜本地分析：有/無｜輿情：檔名`。市場是 `?` 就讀該資料夾的檔案自行判斷。
-   - 沒有 Python：列出根目錄資料夾，排除 `History`、`Log`、`Prompt`、`Analysis`、`StkScreenerResult`、`HkReitScreenerResult`、`JpReitScreenerResult` 與 `.` 開頭者；5 位數 = 港股、英文代碼 = 美股（`-KY` 結尾 = 台股）、4 位數看本地檔判斷日股／台股。
+   - 沒有 Python：列出根目錄資料夾，排除 `History`、`Log`、`Prompt`、`Analysis`、`StkScreenerResult`、`HkReitScreenerResult`、`JpReitScreenerResult`、`*_state`（國家層級資料）與 `.` 開頭者；5 位數 = 港股、英文代碼 = 美股（`-KY` 結尾 = 台股）、4 位數看本地檔判斷日股／台股。
 2. 每檔只讀需要的段落，記進事件卡：
    - **搜尋關鍵字**：本地分析檔「一句話結論」「本輪最重要的 3 件新事」「後續追蹤／資料缺口」；`Routines_StockAnalysis.md` 輪替表該公司的 `EXTRA_ANALYSIS`（使用者問過的問題，最優先）。
    - **每股基準**：股數口徑（股數＋單位＋日期）、本年預估 EPS／DPU、最新收盤、主要幣別。
