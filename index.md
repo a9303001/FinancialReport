@@ -408,6 +408,8 @@ A: 不算。這是公開資訊整理與研究筆記，資料可能延遲或有�
 | `.claude/skills/Convert2md/SKILL.md` | PDF → Markdown 轉換 Skill |
 | `.claude/skills/collectState/SKILL.md` | 國家層級 REIT 情報收集與分析 Skill（`jp /collectState`、`hk /collectState`） |
 | `.claude/skills/stateAnalysis/SKILL.md` | 國家層級房地產景氣 × REIT 深度分析 Skill（`jp /stateAnalysis`、`hk /stateAnalysis`，輸出 `<cc>_state/AnalysisResult.md`） |
+| `.claude/skills/stateAnalysis/references/` | stateAnalysis 的輸出樣板 `output_template.md` 與國家模組 `jp.md`、`hk.md`（門檻、標的池、錨點、行事曆） |
+| `.claude/skills/stateAnalysis/scripts/state_analysis_tools.py` | stateAnalysis 輔助腳本：`skeleton`、`series`、`budget`、`check`、`selftest` |
 | `.claude/skills/rg/SKILL.md` | ripgrep 執行檔選用規範 |
 | `Routines_*.md` | 排程任務定義（每日輪替收集、每日深度分析、根目錄 ↔ History 歸檔同步） |
 | `Analysis/Reit_Hk.md`、`Analysis/Reit_Jp.md` | 港股／日股 REIT 殖利率篩選 routine |
