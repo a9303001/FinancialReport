@@ -3,17 +3,20 @@
 """stateAnalysis 輔助腳本（Windows / Linux / macOS 皆可，Python 3.9+，只用標準函式庫，只讀不寫）
 
 子命令：
+  budget  逐章行數預算：各章「實際／上限」、超標行數、全檔距 1000 行還剩多少，並提示先砍哪裡（寫作中隨時跑）
   check   驗證 {cc}_state/AnalysisResult.md：第一行時間戳、章節骨架與順序、檔頭資訊卡七欄、
           行數／字元／單行長度上限、零表格（含 code block、Tab、HTML table）、禁用空話與裝飾標題、
-          第〇章（大小、每行長度、免責、「上次：」、禁用詞、⚠️／(舊)）、四個強制輸出行、長序列格式
+          第〇章（大小、每行長度、免責、「上次：」、禁用詞、⚠️／(舊)）、四個強制輸出行、長序列格式、
+          連續空行、逐章行數預算（附 budget 同一段輸出）
   series  讀檔內「MoM 序列」區塊，算出每區累計、自高點、近 6 月均值、YoY(估)、連續達標月數、
           4／5 個月規則與「房價 × 租金」聯合判定，供第七、八章填寫
 
 用法（路徑用絕對路徑）：
+  python state_analysis_tools.py budget --file <REPO>/jp_state/AnalysisResult.md
   python state_analysis_tools.py check  --cc jp [--file <REPO>/jp_state/AnalysisResult.md] [--today YYYY-MM-DD]
   python state_analysis_tools.py series --file <REPO>/jp_state/AnalysisResult.md
 check 有 FAIL 時結束碼為 1；WARN 不影響結束碼，但要逐項看過並判斷。
-上限、骨架與禁用詞要和 SKILL.md §4、§5.8、§6、§8.3 保持同步。
+上限、骨架、BUDGET 與禁用詞要和 SKILL.md §4、§4.0、§5.8、§8.3 及 references/{cc}.md 保持同步。
 """
 from __future__ import annotations
 
@@ -26,8 +29,8 @@ from pathlib import Path
 TZ8 = dt.timezone(dt.timedelta(hours=8))
 REPO = Path(__file__).resolve().parents[4]  # <REPO>/.claude/skills/stateAnalysis/scripts/本檔
 
-# ───────────────────────── 上限（SKILL.md §8.3） ─────────────────────────
-MAX_LINES, SOFT_LINES = 1000, 960
+# ───────────────────────── 上限（SKILL.md §4.0、§8.3） ─────────────────────────
+MAX_LINES, SOFT_LINES = 1000, 950
 MAX_CHARS = 70_000
 MAX_LINE, SOFT_LINE = 200, 120
 CH0_MAX_LINES, CH0_MAX_CHARS, CH0_MAX_LINE = 100, 7_500, 100
@@ -45,6 +48,30 @@ TITLES = {
     "三": "REIT 標的池逐檔分析", "四": "多空對照（詳細版）", "五": "總體、利率與匯率",
     "六": "房地產市場分板塊", "七": "房價 40 個月與 4 個月規則", "八": "租金 60 個月與 5 個月規則",
     "九": "政策與制度變數", "十": "輿情彙整", "十一": "資料來源與搜尋狀態", "十二": "資料缺口與下輪待辦",
+}
+# 逐章行數上限（SKILL.md §4 骨架括號與 §4.0；空行也算）。PRE＝第一個 `##` 之前的前置行。
+PRE = "前置"
+BUDGET = {
+    PRE: 5, CARD: 20, "〇": 100, "一": 35, "二": 55, "三": 190, "四": 80, "五": 30,
+    "六": 65, "七": 60, "八": 90, "九": 45, "十": 45, "十一": 25, "十二": 30,
+}
+# 超預算時的建議砍法（SKILL.md §8.3 刪減順序的章別版）
+CUT_HINT = {
+    PRE: "時間戳與主標題之間只留 1 個空行",
+    CARD: "變更摘要 ≤ 5 行、3 件新事各 1 行",
+    "〇": "〇.4 最多 8 檔完整寫，其餘列代號；每條 ≤ 50 字",
+    "一": "速覽各留 3 條（依重要性）",
+    "二": "機構預測與 Top 3 改比較式一行",
+    "三": "§4.0 第三章自動壓縮：精簡版 6 行 → 觀察名單前 5 → 完整版合併無事項行",
+    "四": "重要性「中」以下改一行、「低」刪",
+    "五": "只留會改變便宜度／借錢成本判定的指標",
+    "六": "每卡寫到階段＋2～3 個數字就停",
+    "七": "序列只留 40 個月；摘要一行一區",
+    "八": "序列只留 60 個月；摘要一行一區",
+    "九": "非焦點 A 輪且里程碑無變化 → 全章標＝、壓到 15 行",
+    "十": "一則一行；刪低可信度且無法量化的",
+    "十一": "一檔 REIT 一行；成功來源合併一行",
+    "十二": "已清償的刪，只留未結待辦與 30 天行事曆",
 }
 CARD_FIELDS = ["範圍與時間", "本檔主要幣別與匯率", "一句話結論", "🆕 本輪最重要的 3 件新事",
                "本輪變更摘要", "資料新鮮度", "每單位口徑"]
@@ -140,6 +167,64 @@ def sections(lines: list[str]):
         heads.append((mm.group(1), mm.group(2).strip(), i) if mm else (None, title, i))
     return [(k, t, s, heads[n + 1][2] if n + 1 < len(heads) else len(lines))
             for n, (k, t, s) in enumerate(heads)]
+
+
+# ───────────────────────── 行數預算 ─────────────────────────
+def chapter_usage(lines: list[str]):
+    """回傳 [(key, label, used, cap)]，依檔內順序；未知 `##` 併入前一章計算。"""
+    secs = sections(lines)
+    usage: dict = {}
+    order: list = []
+    first = secs[0][2] if secs else len(lines)
+    usage[PRE] = first
+    order.append(PRE)
+    last_key = PRE
+    for key, title, s, e in secs:
+        k = key if key in BUDGET else last_key
+        if k not in usage:
+            usage[k] = 0
+            order.append(k)
+        usage[k] += e - s
+        last_key = k
+    res = []
+    for k in order:
+        label = k if k in (PRE, CARD) else f"{k}、{TITLES.get(k, '')}"
+        res.append((k, label, usage[k], BUDGET.get(k)))
+    return res
+
+
+def budget_report(lines: list[str]) -> tuple[list[str], list[str]]:
+    """回傳 (輸出行, 超標警告)。"""
+    rows, warns = [], []
+    usage = chapter_usage(lines)
+    n = len(lines)
+    total_cap = sum(BUDGET.values())
+    over_list = []
+    for k, label, used, cap in usage:
+        if cap is None:
+            rows.append(f"  - {label}：{used} 行")
+            continue
+        over = used - cap
+        flag = f"　⚠️ 超標 +{over}" if over > 0 else ""
+        rows.append(f"  - {label}：{used}/{cap}{flag}")
+        if over > 0:
+            over_list.append((over, k, label))
+    blanks = sum(1 for x in lines if not x.strip())
+    head = [f"## 行數預算（SKILL.md §4.0；空行也算）",
+            f"- 全檔 {n}/{MAX_LINES} 行（目標 ≤ {SOFT_LINES}；預算合計 {total_cap}）｜距硬上限還剩 {MAX_LINES - n} 行"
+            f"｜空行 {blanks} 行"]
+    tail = []
+    if over_list:
+        over_list.sort(reverse=True)
+        tail.append("- 先砍（超標多的在前）：")
+        for over, k, label in over_list:
+            tail.append(f"  - {label} +{over} 行 → {CUT_HINT.get(k, '依 §8.3 刪減順序')}")
+            warns.append(f"{label} {over + BUDGET[k]} 行 > 預算 {BUDGET[k]}（+{over}）→ {CUT_HINT.get(k, '')}")
+    if n > MAX_LINES:
+        tail.append(f"- ❌ 至少要刪 {n - MAX_LINES} 行才合格；建議刪到 ≤ {SOFT_LINES}（再刪 {n - SOFT_LINES} 行）")
+    elif n > SOFT_LINES:
+        tail.append(f"- ⚠️ 超過目標 {SOFT_LINES}，建議再刪 {n - SOFT_LINES} 行")
+    return head + rows + tail, warns
 
 
 # ───────────────────────── 第〇章禁用詞 ─────────────────────────
@@ -356,8 +441,10 @@ def cmd_check(a) -> int:
             fails.append("檔頭資訊卡欄位順序不對（應為：" + "、".join(CARD_FIELDS) + "）")
 
     # 5. 逐行：長度、零表格、禁用空話、裝飾標題
-    too_long, soft, tables, tabs, fences, banned, decor = [], 0, [], [], [], [], []
+    too_long, soft, tables, tabs, fences, banned, decor, dblank = [], 0, [], [], [], [], [], []
     for no, line in enumerate(lines, 1):
+        if no > 1 and not line.strip() and not lines[no - 2].strip():
+            dblank.append(no)
         n_chars = len(line)
         if n_chars > MAX_LINE:
             too_long.append(f"{no}（{n_chars} 字）")
@@ -386,13 +473,17 @@ def cmd_check(a) -> int:
         fails.append(brief(banned, "禁用空話／形容詞堆疊"))
     if decor:
         fails.append(brief(decor, "裝飾標題或 Glossary 標題"))
+    if dblank:
+        warns.append(brief(dblank, "連續空行（浪費行數，刪掉）"))
 
     # 6. 全檔上限
     n_lines, n_text = len(lines), len(text)
     if n_lines > MAX_LINES:
-        fails.append(f"全檔 {n_lines} 行 > {MAX_LINES}（依 SKILL.md §8.3 刪減順序刪到合格）")
+        fails.append(f"全檔 {n_lines} 行 > {MAX_LINES}（看下方「行數預算」，依 SKILL.md §8.3 刪減順序刪到合格）")
     elif n_lines > SOFT_LINES:
-        warns.append(f"全檔 {n_lines} 行 > 建議值 {SOFT_LINES}")
+        warns.append(f"全檔 {n_lines} 行 > 目標 {SOFT_LINES}")
+    budget_lines, budget_warns = budget_report(lines)
+    warns += budget_warns
     if n_text > MAX_CHARS:
         fails.append(f"全檔 {n_text:,} 字元 > {MAX_CHARS:,}")
 
@@ -463,6 +554,9 @@ def cmd_check(a) -> int:
         want = 40 if "40 個月" in b["title"] else 60 if "60 個月" in b["title"] else None
         if want and len(b["months"]) < want:
             warns.append(f"第 {b['line']} 行序列只有 {len(b['months'])} 個月（應 {want}）→ 缺口寫進第十二章")
+        elif want and len(b["months"]) > want:
+            warns.append(f"第 {b['line']} 行序列有 {len(b['months'])} 個月 > {want} → 刪最舊 {len(b['months']) - want} 個月"
+                         f"（{'、'.join(b['months'][:len(b['months']) - want][:LIST_MAX])}）")
         if b["gaps"]:
             warns.append(brief(b["gaps"], f"第 {b['line']} 行序列缺月份（補 N/A 列）"))
     for key, label in (("七", "房價"), ("八", "租金")):
@@ -483,7 +577,23 @@ def cmd_check(a) -> int:
         out("## WARN（逐項看過並判斷）")
         for w in warns:
             out(f"  - {w}")
+    for x in budget_lines:
+        out(x)
     return 1 if fails else 0
+
+
+# ───────────────────────── budget ─────────────────────────
+def cmd_budget(a) -> int:
+    path = Path(a.file).resolve()
+    if not path.is_file():
+        out(f"# budget\n- ❌ 找不到檔案：{path}")
+        return 1
+    lines = read_text(path).splitlines()
+    out(f"# budget — {path}")
+    rows, _ = budget_report(lines)
+    for x in rows:
+        out(x)
+    return 1 if len(lines) > MAX_LINES else 0
 
 
 # ───────────────────────── series ─────────────────────────
@@ -513,6 +623,9 @@ def cmd_series(a) -> int:
         n_na = sum(v is None for row in b["values"] for v in row)
         out(f"- 期間：{months[0]} ～ {months[-1]}，共 {len(months)} 個月｜缺月 {len(b['gaps'])}｜N/A {n_na} 格"
             "｜Idx 以首月 = 100 串接 (估)")
+        want = 40 if "40 個月" in b["title"] else 60 if "60 個月" in b["title"] else None
+        if want and len(months) > want:
+            out(f"- ⚠️ 超過 {want} 個月：寫回 <OUT> 時刪最舊 {len(months) - want} 個月（SKILL.md §5.4，序列行數固定）")
         stats = {}
         for k, reg in enumerate(b["regions"]):
             st = region_stats(months, [row[k] for row in b["values"]])
@@ -548,6 +661,8 @@ def cmd_series(a) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser(description="stateAnalysis helper（只讀不寫）")
     sub = ap.add_subparsers(dest="cmd", required=True)
+    b = sub.add_parser("budget", help="逐章行數預算（寫作中隨時跑）")
+    b.add_argument("--file", required=True)
     c = sub.add_parser("check", help="驗證 {cc}_state/AnalysisResult.md")
     c.add_argument("--cc", required=True, help="國家代碼，如 jp、hk")
     c.add_argument("--file", help="預設 <REPO>/{cc}_state/AnalysisResult.md")
@@ -555,7 +670,7 @@ def main() -> int:
     s = sub.add_parser("series", help="計算長序列 4／5 個月規則")
     s.add_argument("--file", required=True)
     a = ap.parse_args()
-    return cmd_check(a) if a.cmd == "check" else cmd_series(a)
+    return {"check": cmd_check, "budget": cmd_budget, "series": cmd_series}[a.cmd](a)
 
 
 if __name__ == "__main__":
