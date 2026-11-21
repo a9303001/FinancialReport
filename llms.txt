@@ -28,7 +28,7 @@ Read order for a single company: `AnalysisResult.md` (latest deep-dive analysis,
 
 ## Optional
 
-- [Routines_CollectsentimentAndReports.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/Routines_CollectsentimentAndReports.md): Daily rotation table — the single source of truth for which companies are tracked and on which day of the month they refresh.
+- [Routines_collectStk.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/Routines_collectStk.md): Daily rotation table — the single source of truth for which companies are tracked and on which day of the month they refresh.
 - [Routines_StockAnalysis.md](https://raw.githubusercontent.com/a9303001/FinancialReport/master/Routines_StockAnalysis.md): Daily deep-analysis routine that regenerates `AnalysisResult.md`.
 
 ## Usage notes
