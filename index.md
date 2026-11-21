@@ -99,7 +99,7 @@ last_updated:    2026-11-18
 | 封存公司資料夾 | 29 個（`History/`） |
 | 檔案格式 | 一律 `.md`（UTF-8），PDF 已由 `Convert2md` Skill 轉換 |
 | 內容語言 | 繁體中文為主，原始財報保留英文 / 日文 / 簡體原文 |
-| 更新方式 | 每日輪替排程（見 `Routines_CollectsentimentAndReports.md`） |
+| 更新方式 | 每日輪替排程（見 `Routines_collectStk.md`） |
 | AI 爬取政策 | 全面開放（`robots.txt` 明列 GPTBot、ClaudeBot、Google-Extended、PerplexityBot 等） |
 
 ---
@@ -150,7 +150,7 @@ last_updated:    2026-11-18
 
 ## 4. 公司清單（Coverage Index）
 
-`Day` 欄為每月自動更新排程的執行日（來源：`Routines_CollectsentimentAndReports.md`）。
+`Day` 欄為每月自動更新排程的執行日（來源：`Routines_collectStk.md`）。
 
 ### 4.1 現役（Active · 根目錄）
 
@@ -402,7 +402,7 @@ A: 不算。這是公開資訊整理與研究筆記，資料可能延遲或有�
 | [`robots.txt`](robots.txt) | 爬蟲政策：AI 爬蟲全面開放 |
 | `CLAUDE.md` | Claude Code 進入點（內容即 `@AGENTS.md`） |
 | `.claude/skills/StockAnalysis/SKILL.md` | 個股深度分析 Skill 執行指南 |
-| `.claude/skills/CollectsentimentAndReports/SKILL.md` | 財報與輿情收集 Skill |
+| `.claude/skills/collectStk/SKILL.md` | 財報與輿情收集 Skill |
 | `.claude/skills/ArrangePublicOpinionMd/SKILL.md` | 輿情月檔合併為年檔 Skill |
 | `.claude/skills/Convert2md/SKILL.md` | PDF → Markdown 轉換 Skill |
 | `.claude/skills/rg/SKILL.md` | ripgrep 執行檔選用規範 |

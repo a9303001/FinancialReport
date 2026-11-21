@@ -1,6 +1,6 @@
 # Routines — 公司資料夾雙向歸檔同步 (Two-Way Folder Sync with History)
 
-> **目標狀態（Invariant）**：根目錄的公司資料夾集合 **完全等於** `Routines_CollectsentimentAndReports.md`「每日輪替表」的資料夾集合；不在輪值表的公司一律待在 `History/`。
+> **目標狀態（Invariant）**：根目錄的公司資料夾集合 **完全等於** `Routines_collectStk.md`「每日輪替表」的資料夾集合；不在輪值表的公司一律待在 `History/`。
 >
 > 每次執行都把實際狀態校正回這個目標狀態，**雙向搬移、永不刪除資料**。
 
@@ -8,7 +8,7 @@
 
 ## 全域參數 (Global Parameters)
 
-- `ROTATION_FILE`：`Routines_CollectsentimentAndReports.md`（輪值表，**唯一真實依據 / Single Source of Truth**）
+- `ROTATION_FILE`：`Routines_collectStk.md`（輪值表，**唯一真實依據 / Single Source of Truth**）
 - `HISTORY_DIR`：`History`
 - `EXCLUDE_DIRS`（非公司資料夾，兩個方向都不參與搬移）：
   - `History`、`Analysis`、`Log`、`Prompt`、`StkScreenerResult`、`HkReitScreenerResult`、`JpReitScreenerResult`、`discard`

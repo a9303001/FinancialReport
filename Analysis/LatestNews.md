@@ -342,7 +342,7 @@ YYYY/MM/DD HH:MM:SS (UTC+8)
 - **P0｜代號 名稱（交易所）｜一句話要分析什麼**
   - **觸發**：MM-DD 事件（見 N#）
   - **為什麼重要**：可能影響每股多少
-  - **交給**：StockAnalysis（資料夾）／CollectsentimentAndReports／HkState／Reit_Hk／Reit_Jp
+  - **交給**：StockAnalysis（資料夾）／collectStk／HkState／Reit_Hk／Reit_Jp
   - **要回答**：1–3 個可量化的問題
   - **資料從哪裡找**：官方公告、本地路徑
   - **建立日**：YYYY-MM-DD
