@@ -45,7 +45,7 @@ def holdings(root):
     """REPO_ROOT 根目錄的股票資料夾（排除 NON_COMPANY 與 . 開頭），回傳 (資料夾, 代號)。"""
     out = []
     for name in sorted(os.listdir(root)):
-        if name.startswith(".") or name in NON_COMPANY or not os.path.isdir(os.path.join(root, name)):
+        if name.startswith(".") or name in NON_COMPANY or name.endswith("_state") or not os.path.isdir(os.path.join(root, name)):
             continue
         code = re.match(r"^\d+", name)
         out.append((name, code.group(0) if code else re.match(r"^[A-Za-z\-]+", name).group(0)))

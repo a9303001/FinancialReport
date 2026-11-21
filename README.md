@@ -75,6 +75,11 @@ FinancialReport/
 ├── StkScreenerResult/             # 選股器篩選結果與候選名單
 ├── HkReitScreenerResult/          # 港股 REIT 殖利率 Top10 篩選結果（Analysis/Reit_Hk.md 產出）
 ├── JpReitScreenerResult/          # 日股 REIT 殖利率篩選結果（Analysis/Reit_Jp.md 產出）
+├── <cc>_state/                    # 國家層級 REIT 情報（collectState 產出，如 jp_state、hk_state；只留最近 3 個月）
+│   ├── StateAnalysis.md           #   ★ 該國房地產 × REIT 投資分析（先讀這個）
+│   ├── 0.Index.md                 #   資料索引（自動產生）
+│   ├── <yyyyMM>_<CC>_輿情新聞.md   #   月度輿情與新聞彙整
+│   └── <yyyyMMdd>_<類型>_<來源>_<標題>.md  # 單篇新聞／報告／官方數據（已轉 Markdown）
 ├── Log/                           # 排程執行紀錄與彙總
 ├── Prompt/                        # 可重複使用的提示詞與參考文件
 ├── Analysis/                      # 總經／REIT／新聞分析 routine、prompt 與結果檔（原 gemini/），含 Reit_Hk.md、Reit_Jp.md
@@ -237,6 +242,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | `CollectsentimentAndReports` | 收集個股最新財務報告與輿情討論 / 新聞 |
 | `ArrangePublicOpinionMd` | 把零散月度輿情 `.md` 依年份合併成 `<YYYY>_PublicOpinion.md`，驗證後刪除原檔（年報 / 季報不動） |
 | `Convert2md` | 用 MCP `convert_pdf_to_markdown` 把 PDF 轉 Markdown，檢查 CID 亂碼並刪除失敗檔 |
+| `collectState` | `jp /collectState`、`hk /collectState`：先刪 `<cc>_state/` 三個月前資料，再收集該國過去 1 個月的房地產／REIT 新聞、報告與輿情（hk 加中國房地產），全部轉 Markdown，重寫 `StateAnalysis.md` 作 REIT 投資分析 |
 | `rg` | ripgrep 執行檔選用規範（PATH／內建 Grep → `D:\Prog_install\ripgrep\rg.exe` → 其他搜尋方式） |
 
 ### 排程（Routines）

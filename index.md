@@ -205,6 +205,7 @@ last_updated:    2026-11-18
 | `StkScreenerResult/` | 選股器（Stock Screener）篩選結果與候選名單 |
 | `HkReitScreenerResult/` | 港股 REIT 殖利率 Top10 篩選結果（由 `Analysis/Reit_Hk.md` 產出） |
 | `JpReitScreenerResult/` | 日股 REIT 殖利率篩選結果（由 `Analysis/Reit_Jp.md` 產出） |
+| `<cc>_state/`（如 `jp_state/`、`hk_state/`） | 國家層級房地產 × REIT 情報：`StateAnalysis.md`（投資分析）、月度輿情新聞、已轉 Markdown 的新聞／報告；只保留最近 3 個月（由 `collectState` Skill 產出） |
 | `Log/` | 排程執行紀錄與彙總報告 |
 | `Prompt/` | 可重複使用的提示詞與參考文件 |
 | `Analysis/` | 總經／REIT／新聞分析 routine、prompt 與結果檔（原 `gemini/`） |
@@ -405,6 +406,7 @@ A: 不算。這是公開資訊整理與研究筆記，資料可能延遲或有�
 | `.claude/skills/CollectsentimentAndReports/SKILL.md` | 財報與輿情收集 Skill |
 | `.claude/skills/ArrangePublicOpinionMd/SKILL.md` | 輿情月檔合併為年檔 Skill |
 | `.claude/skills/Convert2md/SKILL.md` | PDF → Markdown 轉換 Skill |
+| `.claude/skills/collectState/SKILL.md` | 國家層級 REIT 情報收集與分析 Skill（`jp /collectState`、`hk /collectState`） |
 | `.claude/skills/rg/SKILL.md` | ripgrep 執行檔選用規範 |
 | `Routines_*.md` | 排程任務定義（每日輪替收集、每日深度分析、根目錄 ↔ History 歸檔同步） |
 | `Analysis/Reit_Hk.md`、`Analysis/Reit_Jp.md` | 港股／日股 REIT 殖利率篩選 routine |

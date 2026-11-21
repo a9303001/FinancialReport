@@ -525,7 +525,8 @@ def main() -> int:
     rep = Report()
     for d in sorted(root.iterdir()):
         if (d.is_dir() and d.name not in SKIP_DIRS and not d.name.startswith('.')
-                and not d.name.endswith('ScreenerResult')):
+                and not d.name.endswith('ScreenerResult')
+                and not d.name.endswith('_state')):  # collectState 國家層級資料夾
             process_company(d, root, use_git, rep)
 
     out = write_report(root, rep, git_note)
