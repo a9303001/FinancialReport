@@ -8,6 +8,7 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 
 > **任務**：對指定國家（市場）① 清掉三個月前的舊資料 ② 收集過去 1 個月的新聞、研究報告、官方數據與輿情 ③ 全部轉 Markdown ④ 重寫 REIT 投資分析 `StateAnalysis.md` ⑤ 寫執行報告並 push。
 > 本指南適用所有 AI（Claude / Gemini，含輕量模型），請一步一步照做。抓取技術細節**一律沿用** `collectStk` Skill，本檔不重寫。
+> **本次參數**：`$ARGUMENTS`（空白、或看起來不是國家代碼時，依 §1.1 從使用者訊息解析）
 
 ## 0. 五條底線（違反任一 = 任務失敗）
 
@@ -15,7 +16,7 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 2. **先清後收**：Phase 1 清理三個月前資料**一定先跑**，清完才收集。
 3. **全部轉 Markdown**：任務結束時 `{cc}_state/` 只能有 `.md`（`check` 子命令通過）。轉不了的原檔保留並寫進報告，不可硬刪。
 4. **即時存檔**：每抓完一份報告、一個來源，立刻寫檔並記 manifest，不要等全部做完。
-5. **檔案隔離**：只能寫入 `{cc}_state/`、`Log/collectState_*`、本 Skill（維護用）。`Analysis/*`、`*ScreenerResult/`、公司資料夾**只讀**。
+5. **檔案隔離**：只能寫入 `{cc}_state/`、`Log/collectState_*`、`Log/conversion_summary.md`（Convert2md 自動產生）、本 Skill（維護用）。`Analysis/*`、`*ScreenerResult/`、`History/`、`Prompt/`、公司資料夾**只讀**。
 
 ---
 
@@ -25,12 +26,13 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 
 | 使用者輸入 | 解析結果 |
 | :--- | :--- |
-| `jp /collectState`、`/collectState jp`、`/collectState JP` | `CC=jp` |
-| `hk /collectState`、`/collectState hk` | `CC=hk`（**加跑 §5 中國房地產**） |
-| `tw /collectState`、`us /collectState`、`sg /collectState`… | `CC=tw` 等（走 §4.3 通用清單） |
+| `jp /collectState`、`/collectState jp`、`/collectState JP` | `cc=jp` |
+| `hk /collectState`、`/collectState hk` | `cc=hk`（**加跑 §5 中國房地產**） |
+| `tw /collectState`、`us /collectState`、`sg /collectState`… | `cc=tw` 等（走 §4.3 通用清單） |
 | 沒有國家代碼 | 立刻詢問，不可自行猜 |
 
-- `CC` 一律轉小寫，只接受 2~3 個英文字母（ISO 3166 國碼慣例：`jp` 日本、`hk` 香港、`tw` 台灣、`us` 美國、`sg` 新加坡、`cn` 中國）。
+- 國家代碼只接受 2~3 個英文字母（ISO 3166 國碼慣例：`jp` 日本、`hk` 香港、`tw` 台灣、`us` 美國、`sg` 新加坡、`cn` 中國）。
+- 大小寫固定兩種寫法：`{cc}` = 小寫，用在資料夾（`jp_state/`）；`{CC}` = 大寫，用在檔名與標題（`202611_JP_輿情新聞.md`）。
 - 別名：`japan`→`jp`、`hongkong`/`hong kong`→`hk`、`taiwan`→`tw`。
 
 ### 1.2 名詞
@@ -50,7 +52,7 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 | 檔案 | 命名 | 說明 |
 | :--- | :--- | :--- |
 | 單篇資料 | `{yyyyMMdd}_{類型}_{來源}_{短標題}.md` | `yyyyMMdd` = **原文發布日**（不是下載日）；保留期依此判斷 |
-| 月度輿情新聞彙整 | `{yyyyMM}_{CC}_輿情新聞.md` | `yyyyMM` = 執行當月；Append 模式（§3.5） |
+| 月度輿情新聞彙整 | `{yyyyMM}_{CC}_輿情新聞.md`（例：`202611_JP_輿情新聞.md`） | `yyyyMM` = 執行當月；Append 模式（§3.5） |
 | REIT 投資分析 | `StateAnalysis.md` | 每次整份重寫，受保護不被清理（§6） |
 | 資料索引 | `0.Index.md` | `finalize` 自動產生，**勿手改**；下次收集用它去重 |
 
@@ -58,6 +60,7 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 - `{來源}` 用英文或原文簡稱（`BOJ`、`MLIT`、`CBRE`、`JLL`、`Nikkei`、`HKMA`、`RVD`、`NBS`、`中指`…）；`{短標題}` ≤ 30 字。
 - 檔名不可含空白與 `\ / : * ? " < > |`；不要建子資料夾。
 - 下載時保留原始副檔名（`.pdf` / `.html` / `.docx` / `.xlsx` …），Phase 4 再統一轉 `.md`。用 MCP 直接拿到 Markdown 正文的網頁，可直接存成 `.md`（仍要記 manifest）。
+- 同一份內容只下載一種格式（PDF ＞ HTML ＞ 其他）；不同內容不可共用同一個 `{短標題}`。萬一撞名，`convert` 會改存 `{原檔名}_{副檔名}.md`，不會蓋掉或丟掉內容。
 
 ### 1.4 manifest（每存一份檔就追加一筆）
 
@@ -68,17 +71,20 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
   "publisher": "CBRE Japan", "published": "2026-11-15", "type": "Report", "note": "付費牆僅摘要"}]
 ```
 
+- `file` 填存檔時的原始檔名（含副檔名，例：`…_JapanOfficeQ3.pdf`）；`finalize` 以主檔名比對，撞名時再用副檔名區分。
+- 子代理人平行收集時，**每個子代理人寫自己的** `<SCRATCH>/state_manifest_{A|B|C}.json`（或 `.jsonl`，一行一筆、最不怕寫壞），不可多人同時改同一份；`finalize` 用萬用字元一次讀全部。
+
 ---
 
 ## 2. 流程總覽
 
 | Phase | 內容 | 執行者 |
 | :--- | :--- | :--- |
-| 0 | 解析 `CC`、建立 `<FOLDER>`、同步 repo（`git fetch origin master && git merge --no-edit FETCH_HEAD`） | 主代理人 |
+| 0 | 解析 `{cc}`／`{CC}`、建立 `<FOLDER>`、同步 repo（`git fetch origin master && git merge --no-edit FETCH_HEAD`） | 主代理人 |
 | 1 | **清理三個月前資料**（§3.1） | 主代理人 |
 | 2 | 盤點既有資料、決定本次缺口（§3.2） | 主代理人 |
-| 3 | 收集：官方數據／政策 → 研究報告 → 新聞 → REIT 市場與個別 REIT → 輿情；`hk` 另加中國房地產（§3.3、§4、§5） | 可分 2~3 個子代理人平行（如：A 官方＋報告、B 新聞＋REIT、C 輿情），各自寫不同檔案 |
-| 4 | 轉 Markdown：`Convert2md` Skill（PDF）→ `convert`（其他格式）→ `finalize`（§3.4） | 主代理人 |
+| 3 | 收集：官方數據／政策 → 研究報告 → 新聞 → REIT 市場與個別 REIT → 輿情；`hk` 另加中國房地產（§3.3、§4、§5） | 可分 2~3 個子代理人平行（如：A 官方＋報告、B 新聞＋REIT、C 輿情），各自寫不同的單篇檔與自己的 manifest（§1.4）；月檔只由主代理人寫（§3.5） |
+| 4 | 轉 Markdown：`Convert2md` Skill（PDF，**掃描範圍限定 `<FOLDER>`**）→ `convert`（其他格式）→ `finalize`（§3.4） | 主代理人 |
 | 5 | 重寫 `StateAnalysis.md`（§6） | 主代理人 |
 | 6 | `check` 自檢 → 執行報告 → Skill 維護 → commit / push（§7、§8） | 主代理人 |
 
@@ -93,7 +99,7 @@ python <TOOLS> purge --folder <FOLDER>            # 先 dry-run，看清單
 python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 ```
 
-- 判斷依據：檔名 `yyyyMMdd_` 前綴（月檔 `yyyyMM_` 以該月最後一天計）；**不看 mtime**（git clone 會把 mtime 重設成今天）。
+- 判斷依據：檔名 `yyyyMMdd_` 前綴（月檔 `yyyyMM_` 以該月最後一天計）；**不看 mtime**（git clone 會把 mtime 重設成今天）。「今天」預設以 UTC+8 計，補跑或測試可加 `--today YYYY-MM-DD`。
 - 沒有日期前綴的檔案：以 git 首次加入日判斷，並在報告列為「待改名」；本次收集的新檔一律要有前綴。
 - `StateAnalysis.md`、`0.Index.md` 受保護，不會被刪（每次重寫）。
 - 刪除清單原樣貼進執行報告 §4。
@@ -106,13 +112,15 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 2. `<FOLDER>/StateAnalysis.md`：上次結論、資料缺口、下次待辦 → 本次優先補。
 3. 當月 `{yyyyMM}_{CC}_輿情新聞.md`：每個來源上次收到哪一天，只補新內容。
 4. 既有分析（存在才讀）：`jp` → `Analysis/JpStateResult.md`、`JpReitScreenerResult/0.JpReitScreenerResult.md`；`hk` → `Analysis/HkStateResult.md`、`HkReitScreenerResult/0.HkReitScreenerResult.md`。用來對齊 REIT 標的池與上次燈號，**不得修改**。
-5. 本機 REIT 公司資料夾（如 `2971ES-CON日本REIT/`、`01426春泉Reit/`）的 `AnalysisResult.md`：取最新 DPU、NAV、LTV 等數字的基準與股數口徑。
+5. 本機 REIT 公司資料夾（如 `2971ES-CON日本REIT/`、`01426春泉Reit/`）的 `AnalysisResult.md`：取最新 DPU、NAV、LTV 等數字的基準與股數口徑；同資料夾最新的 `{YYYY}_PublicOpinion.md`／`{yyyyMM}_輿情新聞.md`：個股層級已收過的輿情只引用結論，不重抓。
 
 ### 3.3 Phase 3 — 收集規則
 
 **抓取技術**：完全依 `collectStk` Skill：§0 底線、§3 通用抓取規則（固定順序、次數上限、失敗定義、網路錯誤零重試、帳號級錯誤停用、請求頻率、搜尋摘要使用條件）、§4 站點知識庫、§5 已驗證 API/SOP、§8.3 過濾規則、§8.5 失敗寫法。新發現的**國家層級**站點行為寫進本檔 §4／§5；**個股**站點行為寫回 `collectStk` §4。
 
-**窗口**：只收 `WINDOW` 內發布的內容。例外：月報／季報類指標或顧問行季報若「最新一期」發布在窗口外，仍可收，`note` 寫「最新一期，發布於窗口外」。
+**窗口**：只收 `WINDOW` 內發布的內容。例外：月報／季報／半年報／年度指標（如顧問行季報、地價公示、JREI 投資家調查）若「最新一期」發布在窗口外：
+- 發布日 ≥ `CUTOFF` → 可存單篇檔，`note` 寫「最新一期，發布於窗口外」。
+- 發布日 < `CUTOFF` → **不存單篇檔**（下次 purge 就會刪、`check` 也會擋），改把關鍵數字摘要寫進當月 `{yyyyMM}_{CC}_輿情新聞.md`，附原文 URL 與發布日。
 
 **每類最低目標**（達不到要在報告寫原因，不可灌水）：
 
@@ -131,24 +139,29 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 
 依序：
 
-1. **PDF** → 呼叫 **`Convert2md` Skill**（它會掃到 `<FOLDER>` 內的 PDF；成功刪 PDF、CID 亂碼刪 `.md` 留 PDF）。CID 失敗的 PDF：改抓英文版／HTML 版或換來源；都沒有就保留 PDF 並寫進報告。150 頁以上的報告依 `collectStk` §9 處理逾時。
+1. **PDF** → 呼叫 **`Convert2md` Skill**，步驟 1 **必須帶第 3 個參數 `<FOLDER>`** 限定掃描範圍：
+   ```bash
+   python <SCRATCH>/scan_pending.py <REPO> <SCRATCH> <FOLDER>
+   ```
+   不帶的話會掃整個 repo，把 `History/`、`Prompt/` 等資料夾的 PDF 也轉掉刪掉（違反 §0-5）。之後照 Convert2md 步驟 2~5：成功刪 PDF、CID 亂碼刪 `.md` 留 PDF。CID 失敗的 PDF：改抓英文版／HTML 版或換來源；都沒有就保留 PDF 並寫進報告。150 頁以上的報告依 `collectStk` §9 處理逾時。
 2. **其他格式**（HTML、Word `.docx/.doc`、Excel `.xlsx/.xls`、PowerPoint `.pptx/.ppt`、RTF、ODT、CSV、TXT、JSON、XML、EPUB）：
    ```bash
    python <TOOLS> convert --folder <FOLDER> --scratch <SCRATCH>
    ```
-   轉換鏈 markitdown → pandoc → BeautifulSoup+markdownify；舊版 Office 先經 LibreOffice 轉 OOXML。正文 < 200 字、JS 外殼／封鎖頁、CID 亂碼一律判失敗並**保留原檔**。圖片（`.png/.jpg`）不能轉文字：把圖表上的數字寫進對應 `.md` 後手動刪圖。
-   - 本機缺套件時：`pip install "markitdown[all]" beautifulsoup4 markdownify`；pandoc／LibreOffice 為選配。
+   轉換鏈 markitdown → pandoc → BeautifulSoup+markdownify；舊版 Office 先經 LibreOffice 轉 OOXML。網頁正文 < 200 字、JS 外殼／封鎖頁、CID 亂碼一律判失敗並**保留原檔**（Excel／CSV 等資料檔只擋空檔）。下載中斷的殘檔（`.tmp`／`.part`／`.crdownload`）直接刪。圖片（`.png/.jpg`）不能轉文字：把圖表上的數字寫進對應 `.md` 後手動刪圖。
+   - 輸出第一行會列出可用的轉換器；本機缺套件時：`pip install "markitdown[all]" beautifulsoup4 markdownify`；pandoc／LibreOffice 為選配。
 3. **補標頭＋索引**：
    ```bash
-   python <TOOLS> finalize --folder <FOLDER> --manifest <SCRATCH>/state_manifest.json
+   python <TOOLS> finalize --folder <FOLDER> --manifest "<SCRATCH>/state_manifest*.json"
    ```
-   幫每份 `.md` 加來源標頭（標題、來源、原文 URL、發布日、收集日、類型），移除失效的 `pdf_images`／base64 圖片連結，重建 `0.Index.md`。
+   幫每份 `.md` 加來源標頭（標題、來源、原文 URL、發布日、收集日、類型），移除失效的 `pdf_images`／base64 圖片連結，重建 `0.Index.md`。輸出若列「沒有 manifest 紀錄」的檔案，補記 manifest 後重跑。
 
 ### 3.5 月度輿情新聞彙整檔（`{yyyyMM}_{CC}_輿情新聞.md`）
 
 - 範本與失敗寫法沿用 `collectStk` §8.4／§8.5，標題改為 `# [{CC} 國家層級] REIT／房地產輿情與新聞整理 ({YYYY}/{MM})`。
 - 章節順序固定：`## 一、官方數據與政策` → `## 二、研究報告摘要` → `## 三、新聞` → `## 四、REIT 市場與個別 REIT` → `## 五、中國房地產`（僅 `hk`）→ `## 六、輿情（依平台）`；每個平台／來源是一個 `### [來源名稱]` 子章節，含抓取時間、抓取方式、抓取結果（✅／⚠️ 僅索引／❌／⭕ 無新內容）。
 - **Append 模式**：已存在的章節只補在末尾，不可覆蓋舊內容；每抓完一個來源立刻寫入。
+- **只有主代理人寫月檔**：子代理人把各自的章節即時寫到 `<SCRATCH>/digest_{A|B|C}.md`，主代理人收齊後依上面的章節順序併入月檔（避免多人同時改同一檔互相覆蓋）。
 - 每則：來源連結、真實發布時間、核心觀點引述、關鍵要點、🟢／🔴／⚪ 標記。提到金額時，與 REIT 相關的換算**每單位金額**（金額 ÷ 最新已發行單位數，註明口徑與日期）。
 
 ---
@@ -201,7 +214,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 
 **C 新聞**：香港經濟日報、信報、明報財經、AAStocks、新浪港股、Reuters／Bloomberg 香港地產、智通財經（照 `collectStk` §4.3）。
 
-**D REIT 市場**：全部港股 REIT 窗口內 HKEXnews 公告（照 `collectStk` §5.4）：`00823` 領展、`00405` 越秀、`01426` 春泉、`87001` 匯賢、`01503` 招商局商業、`02191` 順豐、`00778` 置富、`00435` 陽光、`02778` 冠君、`00808` 泓富、`01275` 開元（已停牌者註明）[清單未驗證，以 HKEX 上市 REIT 名單為準]；`HkReitScreenerResult/` 最新榜單對照。
+**D REIT 市場**：全部港股 REIT 窗口內 HKEXnews 公告（照 `collectStk` §5.4）。上市 REIT 共 11 檔 [2026-11，HKEX REIT 報價頁 2026-11-13 與 snowball-analytics 2026-11-06 交叉核對]：`00823` 領展、`02778` 冠君、`00778` 置富、`00435` 陽光、`00808` 泓富、`00405` 越秀、`01881` 富豪、`87001` 匯賢（人民幣計價）、`01426` 春泉、`01503` 招商局商業、`02191` 順豐；`01275` 開元已不在名單。每次先看 HKEX REIT 報價頁（`hkex.com.hk/market-data/securities-prices/real-estate-investment-trusts`）有無新上市／除牌，有變動就改寫本列；`HkReitScreenerResult/` 最新榜單對照。
 
 **E 輿情**：LIHKG（地產台、財經台）、香港討論區 `discuss.com.hk`（地產版）、高登財經台、雪球（領展／越秀等 REIT 頁與「香港REIT」話題）、東方財富股吧（`hk00823` 等）、moomoo 社區、X、Reddit（r/HongKong、r/HKinvesting，經 Apify）、PTT Stock（`港股REIT`、`領展`）、Mobile01。
 
@@ -284,6 +297,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 ## 三、REIT 市場總覽
 - REIT 指數水位與 1 個月／3 個月漲跌：
 - 平均殖利率、平均股價淨值比（P/NAV）、平均負債比率（LTV）：
+- 平均出租率／空租率、平均租金報酬率（NOI yield 或 cap rate，註明口徑）：
 - 資金動向（增資、新上市、收購、私有化、外資買賣）：
 
 ## 四、標的池逐檔核心數字（每檔一段，key-value 條列）
@@ -335,7 +349,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 python <TOOLS> check --folder <FOLDER>
 ```
 
-必須全部通過（只剩「轉換失敗而保留的原檔」可例外，並寫進報告）。另外人工確認：`StateAnalysis.md` 第一行時間戳已更新、§〇～§十 都有內容、利多與利空都有、`hk` 有第五章。
+`check` 除了檔案規格，也會自動檢查：當月 `{yyyyMM}_{CC}_輿情新聞.md` 存在、`StateAnalysis.md` 第一行時間戳是今天、§〇～§十 章節都在（`hk` 含第五章）、全檔 ≤ 600 行。必須全部通過（只剩「轉換失敗而保留的原檔」可例外，並寫進報告）。另外人工確認：每章都有實際內容（不是只有標題）、利多與利空都有。
 
 ### 7.2 執行報告
 
@@ -378,4 +392,5 @@ python <TOOLS> check --folder <FOLDER>
 3. 第一次跑新國家 → 新增 `### 4.N {國家}` 小節。
 4. 兩份同步：`.claude/skills/collectState/`（`SKILL.md`＋`scripts/state_tools.py`）與 `.agents/skills/collectState/` 必須完全相同（改完 `diff -r` 確認）。
 5. `*_state` 資料夾是**非公司資料夾**：`Routines_Move2History.md`、`ArrangePublicOpinionMd`、`Analysis/LatestNews_check.py` 已排除；新增會掃描根目錄的 Skill／Routine 時也要排除 `*_state`。
-6. 在 §7.2 報告的「Skill 維護」寫明本次改了什麼。
+6. 本 Skill 依賴 `Convert2md` 的 `scan_pending.py` 第 3 個參數（掃描範圍）；改 `Convert2md` 時要保留這個介面，並同步更新 §3.4。
+7. 在 §7.2 報告的「Skill 維護」寫明本次改了什麼。

@@ -21,6 +21,7 @@ description: 掃描 FinancialReport 內公司資料夾，用 MCP 工具 convert_
 - `<REPO>`：儲存庫根目錄絕對路徑（Windows 本機如 `D:\FinancialReport`；Claude Code 雲端如 `/home/user/FinancialReport`）
 - `<SCRATCH>`：暫存工作目錄絕對路徑
 - 公司資料夾：`<REPO>` 底下以公司名命名的子資料夾（如 `<REPO>/UHS`）
+- `<SCOPE>`（選填）：只掃描這個資料夾（`<REPO>` 內的絕對路徑）。不填 = 掃整個 `<REPO>`（預設行為）
 - 待轉換 PDF：同目錄下沒有同名非空 `.md` 的 PDF
 
 ## 流程（共 5 步）
@@ -37,7 +38,10 @@ description: 掃描 FinancialReport 內公司資料夾，用 MCP 工具 convert_
 
 ## 步驟 1 — 產生待轉換清單
 
-存成 `<SCRATCH>/scan_pending.py` 並執行 `python <SCRATCH>/scan_pending.py <REPO> <SCRATCH>`：
+存成 `<SCRATCH>/scan_pending.py` 並執行 `python <SCRATCH>/scan_pending.py <REPO> <SCRATCH> [<SCOPE>]`：
+
+- 只想轉某個資料夾時**一定要加 `<SCOPE>`**（例：`collectState` 加 `<REPO>/jp_state`），否則會把 `History/`、`Prompt/` 等不相干資料夾的 PDF 也轉掉並刪除。
+- 加不加 `<SCOPE>`，報告都寫到 `<REPO>/Log/conversion_summary.md`。
 
 ```python
 # scan_pending.py
@@ -45,11 +49,19 @@ import json, os, sys
 
 REPO = os.path.abspath(sys.argv[1])
 SCRATCH = os.path.abspath(sys.argv[2])
+# 選填第 3 個參數：只掃描這個資料夾（須在 REPO 內），不填 = 整個 REPO
+SCOPE = os.path.abspath(sys.argv[3]) if len(sys.argv) > 3 else REPO
+try:
+    inside = os.path.commonpath([REPO, SCOPE]) == REPO
+except ValueError:  # Windows 不同磁碟
+    inside = False
+if not inside or not os.path.isdir(SCOPE):
+    sys.exit(f"[錯誤] 掃描範圍必須是 REPO 內既有的資料夾：{SCOPE}")
 SKIP_DIRS = {".git", ".github", ".claude", ".agents", "Log",
              "node_modules", "__pycache__", ".venv"}
 
 pending, skipped, total = [], 0, 0
-for dirpath, dirnames, filenames in os.walk(REPO):
+for dirpath, dirnames, filenames in os.walk(SCOPE):
     dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
     for fn in filenames:
         if not fn.lower().endswith(".pdf"):
@@ -70,10 +82,11 @@ for dirpath, dirnames, filenames in os.walk(REPO):
 os.makedirs(SCRATCH, exist_ok=True)
 out = os.path.join(SCRATCH, "convert_tasks.json")
 with open(out, "w", encoding="utf-8") as f:
-    json.dump({"repo": REPO, "scratch": SCRATCH, "total_pdf": total,
+    json.dump({"repo": REPO, "scratch": SCRATCH, "scope": SCOPE, "total_pdf": total,
                "skipped": skipped, "pending": pending},
               f, ensure_ascii=False, indent=2)
 
+print(f"掃描範圍: {SCOPE}")
 print(f"總 PDF 數: {total} / 已轉換跳過: {skipped} / 待轉換: {len(pending)}")
 print(f"清單檔: {out}")
 for i, t in enumerate(pending, 1):
@@ -164,6 +177,7 @@ L = []
 L.append("# PDF 轉換總結報告\n")
 L.append(f"產生時間：{datetime.now():%Y-%m-%d %H:%M:%S}\n")
 L.append("轉換工具：`pymupdf4llm-mcp` / `convert_pdf_to_markdown`\n")
+L.append(f"掃描範圍：`{data.get('scope', REPO)}`\n")
 L.append("\n## 統計\n")
 L.append("| 指標 | 數量 |")
 L.append("|------|------|")
