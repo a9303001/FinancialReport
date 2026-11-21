@@ -60,13 +60,13 @@
 
 ---
 
-## 補跑紀錄（2026-11-21 21:30 UTC+8，排程 Routines jp_state）
+## 補跑紀錄（2026-11-21 20:15 UTC+8，排程 Routines jp_state）
 - **窗口**：2026-10-21 ~ 2026-11-21；Phase 1 purge dry-run 0 檔（無窗口外資料）；已收 URL 49 筆去重。
 - **本次新增 3 份**（皆 Firecrawl `firecrawl_scrape`，本次 Firecrawl 可正常使用）：
   - `20261028_Report_CBRE_ロジスティクスマーケットビュー2026Q3.md`（補上「物流空室率」缺口：首都圈 LMT 7.7%）
   - `20261121_Report_楽天証券経済研究所_物流リート注目三つの理由.md`
   - `20261121_News_トウシル_日銀利上げ残弾最タカ派と最ハト派.md`（含 7~9 月 GDP 年率 -0.1%）
 - **仍失敗**：REINS 月例速報——Firecrawl stealth proxy 亦回 403 AccessDenied（curl rc=60、Exa SSL 錯誤之外的新失敗型態）。
-- **StateAnalysis.md**：時間戳改 21:30，第二章物流、第四章 3281、第六／七章、第十章、附錄同步更新；`check` ✅ 全部通過。
+- **StateAnalysis.md**：時間戳改 20:15，第二章物流、第四章 3281、第六／七章、第十章、附錄同步更新；`check` ✅ 全部通過。
 - **月檔**：二、三章各 Append 補收來源。
 - **Skill 維護**：collectState §4.1 REINS 列補記 Firecrawl 403。
