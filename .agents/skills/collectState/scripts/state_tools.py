@@ -3,7 +3,8 @@
 """collectState 輔助腳本（Windows / Linux / macOS 皆可，Python 3.9+）
 
 子命令：
-  purge     刪除 {cc}_state/ 內「三個月前」的資料（預設只列出，加 --apply 才真的刪）
+  purge     刪除 {cc}_state/ 內「三個月前」的資料（預設只列出，加 --apply 才真的刪；
+            StateAnalysis.md、0.Index.md、AnalysisResult.md 受保護）
   convert   把 PDF 以外的檔案（HTML / Word / Excel / PowerPoint / RTF / TXT / CSV / JSON …）轉成 .md，
             成功才刪原檔；PDF 交給 Convert2md Skill；下載殘留暫存檔（.tmp / .part / .crdownload）直接刪
   finalize  依 manifest（可多份、可用萬用字元）幫每份 .md 補上來源標頭、移除失效圖片連結，並重建 0.Index.md
@@ -32,8 +33,11 @@ import sys
 from pathlib import Path
 
 TZ8 = dt.timezone(dt.timedelta(hours=8))
-# 不受保留期限制、也不需要日期前綴的檔案（每次執行都會整份重寫）
-PROTECTED = {"StateAnalysis.md", "0.Index.md"}
+# collectState 每次都要產生的檔（check 會確認存在）
+REQUIRED = {"StateAnalysis.md", "0.Index.md"}
+# 不受保留期限制、不需日期前綴、不補來源標頭、不列入 0.Index.md 的檔（每次執行都會整份重寫）：
+# 上面兩個 ＋ stateAnalysis Skill 產出的 AnalysisResult.md（collectState 只讀不改；還沒產生也不算錯）
+PROTECTED = REQUIRED | {"AnalysisResult.md"}
 FOLDER_RE = re.compile(r"^[a-z]{2,3}_state$")
 # yyyyMMdd_ 或 yyyyMM_ 開頭
 DATE_PREFIX_RE = re.compile(r"^(\d{4})(\d{2})(\d{2})?_")
@@ -600,7 +604,7 @@ def cmd_check(a) -> int:
         c = len(CID_RE.findall(text))
         if c >= 50:
             issues.append(f"CID 亂碼 {c} 次：{rel}")
-    for must in sorted(PROTECTED):
+    for must in sorted(REQUIRED):
         if not (folder / must).exists():
             issues.append(f"缺必要檔：{must}")
     digest = f"{today:%Y%m}_{cc.upper()}_{DIGEST_MARK}.md"
