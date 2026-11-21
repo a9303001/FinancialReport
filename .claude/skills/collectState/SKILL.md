@@ -16,7 +16,7 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 2. **先清後收**：Phase 1 清理三個月前資料**一定先跑**，清完才收集。
 3. **全部轉 Markdown**：任務結束時 `{cc}_state/` 只能有 `.md`（`check` 子命令通過）。轉不了的原檔保留並寫進報告，不可硬刪。
 4. **即時存檔**：每抓完一份報告、一個來源，立刻寫檔並記 manifest，不要等全部做完。
-5. **檔案隔離**：只能寫入 `{cc}_state/`、`Log/collectState_*`、`Log/conversion_summary.md`（Convert2md 自動產生）、本 Skill（維護用）。`Analysis/*`、`*ScreenerResult/`、`History/`、`Prompt/`、公司資料夾**只讀**。
+5. **檔案隔離**：只能寫入 `{cc}_state/`（其中 `AnalysisResult.md` 是 `stateAnalysis` Skill 的輸出，只讀）、`Log/collectState_*`、`Log/conversion_summary.md`（Convert2md 自動產生）、本 Skill（維護用）。`Analysis/*`、`*ScreenerResult/`、`History/`、`Prompt/`、公司資料夾**只讀**。
 
 ---
 
@@ -54,6 +54,7 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 | 單篇資料 | `{yyyyMMdd}_{類型}_{來源}_{短標題}.md` | `yyyyMMdd` = **原文發布日**（不是下載日）；保留期依此判斷 |
 | 月度輿情新聞彙整 | `{yyyyMM}_{CC}_輿情新聞.md`（例：`202611_JP_輿情新聞.md`） | `yyyyMM` = 執行當月；Append 模式（§3.5） |
 | REIT 投資分析 | `StateAnalysis.md` | 每次整份重寫，受保護不被清理（§6） |
+| 國家層級深度分析 | `AnalysisResult.md` | 由 `stateAnalysis` Skill 整份重寫；受保護不被清理，collectState **只讀不改** |
 | 資料索引 | `0.Index.md` | `finalize` 自動產生，**勿手改**；下次收集用它去重 |
 
 - `{類型}` 只能用：`News`（新聞）、`Report`（研究／顧問行／券商報告）、`Data`（官方統計、指數）、`Policy`（政策、法規、央行）、`REIT`（個別 REIT 公告／決算／IR）、`Sentiment`（單篇長文輿情，如 note、雪球長文）。
@@ -101,7 +102,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 
 - 判斷依據：檔名 `yyyyMMdd_` 前綴（月檔 `yyyyMM_` 以該月最後一天計）；**不看 mtime**（git clone 會把 mtime 重設成今天）。「今天」預設以 UTC+8 計，補跑或測試可加 `--today YYYY-MM-DD`。
 - 沒有日期前綴的檔案：以 git 首次加入日判斷，並在報告列為「待改名」；本次收集的新檔一律要有前綴。
-- `StateAnalysis.md`、`0.Index.md` 受保護，不會被刪（每次重寫）。
+- `StateAnalysis.md`、`0.Index.md`（每次重寫）與 `AnalysisResult.md`（stateAnalysis 產出）受保護，不會被刪。
 - 刪除清單原樣貼進執行報告 §4。
 
 ### 3.2 Phase 2 — 盤點
@@ -109,7 +110,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 依序讀（只讀不改）：
 
 1. `<FOLDER>/0.Index.md`：已收過的原文 URL → 本次**不重複下載**。
-2. `<FOLDER>/StateAnalysis.md`：上次結論、資料缺口、下次待辦 → 本次優先補。
+2. `<FOLDER>/StateAnalysis.md`：上次結論、資料缺口、下次待辦 → 本次優先補。`<FOLDER>/AnalysisResult.md`（stateAnalysis 產出，存在才讀）第十二章的資料缺口與 P0 待辦也列入本次優先收集。
 3. 當月 `{yyyyMM}_{CC}_輿情新聞.md`：每個來源上次收到哪一天，只補新內容。
 4. 既有分析（存在才讀）：`jp` → `Analysis/JpStateResult.md`、`JpReitScreenerResult/0.JpReitScreenerResult.md`；`hk` → `Analysis/HkStateResult.md`、`HkReitScreenerResult/0.HkReitScreenerResult.md`。用來對齊 REIT 標的池與上次燈號，**不得修改**。
 5. 本機 REIT 公司資料夾（如 `2971ES-CON日本REIT/`、`01426春泉Reit/`）的 `AnalysisResult.md`：取最新 DPU、NAV、LTV 等數字的基準與股數口徑；同資料夾最新的 `{YYYY}_PublicOpinion.md`／`{yyyyMM}_輿情新聞.md`：個股層級已收過的輿情只引用結論，不重抓。
@@ -264,7 +265,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 3. **利多與利空並陳**（`AGENTS.md` §1），每項寫「具體事件 → 對 DPU／NAV／殖利率的潛在影響」。
 4. 金額**每單位化**：金額 ÷ 最新已發行單位數（註明口徑、日期）。
 5. **不分析 REIT ETF**（`AGENTS.md` REIT 規則 §1）；REIT 指數只當市場溫度計。
-6. 個別 REIT 只做 §6.2 第四章的核心數字；完整個股規則（EPS、五年 ROE、CAGR、年報季報深度分析）交給 `StockAnalysis` Skill，本檔只引用其 `AnalysisResult.md` 結論。
+6. 個別 REIT 只做 §6.2 第四章的核心數字；完整個股規則（EPS、五年 ROE、CAGR、年報季報深度分析）交給 `StockAnalysis` Skill，本檔只引用其 `AnalysisResult.md` 結論。溫度計、五盞燈、長序列 4／5 個月規則、政策情境等國家層級深度判斷交給 `stateAnalysis` Skill（寫 `{cc}_state/AnalysisResult.md`）；本檔是月度摘要。
 7. 全檔 ≤ 600 行；超過就刪「不影響買賣判斷」的段落。
 
 ### 6.2 骨架（照抄標題逐次填寫）
@@ -394,3 +395,4 @@ python <TOOLS> check --folder <FOLDER>
 5. `*_state` 資料夾是**非公司資料夾**：`Routines_Move2History.md`、`ArrangePublicOpinionMd`、`Analysis/LatestNews_check.py` 已排除；新增會掃描根目錄的 Skill／Routine 時也要排除 `*_state`。
 6. 本 Skill 依賴 `Convert2md` 的 `scan_pending.py` 第 3 個參數（掃描範圍）；改 `Convert2md` 時要保留這個介面，並同步更新 §3.4。
 7. 在 §7.2 報告的「Skill 維護」寫明本次改了什麼。
+8. `AnalysisResult.md` 列在 `state_tools.py` 的 `PROTECTED`（不在 `REQUIRED`）：purge 不刪、check 不要求日期前綴也不要求存在、finalize 不加來源標頭也不列入索引；`stateAnalysis` 改輸出檔名時要同步改這裡與 §1.3。
