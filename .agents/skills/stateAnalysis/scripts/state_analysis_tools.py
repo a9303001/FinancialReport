@@ -7,8 +7,9 @@
   series    讀檔內「MoM 序列」區塊，算每區累計、自高點、近 6 月均值、YoY(估)、連續達標月數、
             4／5 個月規則與「房價 × 租金」聯合判定，供第七、八章填寫
   budget    逐章行數預算：各章「實際／上限」、超標行數、距 1000 行還剩多少，並提示先砍哪裡
-  check     交付實測：時間戳、骨架與順序、檔頭七欄、行數／字元／單行上限、零表格、禁用空話與裝飾標題、
+  check     交付實測：時間戳、骨架與順序、檔頭六欄（含禁用詞）、行數／字元／單行上限、零表格、禁用空話與裝飾標題、
             樣板殘留、第〇章（大小、免責、「上次：」、NT$10 萬、禁用詞、⚠️／(舊)／(種子)）、四個強制輸出行、
+            「白話重點／所以呢」零術語、名詞小辭典涵蓋第一～十二章術語、一行數字過多、
             第三章逐檔欄位與行數、第四章小標、長序列格式與長度、連續空行、逐章行數預算
             --draft：寫作中使用，時間戳與樣板殘留降為 WARN
   selftest  維護自檢：SKILL.md §4.1 預算＝BUDGET、樣板骨架＝TITLES／CARD_FIELDS／FORCED、
@@ -38,10 +39,12 @@ TPL = SKILL_DIR / "references" / "output_template.md"
 COPY_MARK = "<!-- COPY-START -->"
 
 # ───────────────────────── 上限（SKILL.md §4.1、§8.3） ─────────────────────────
-MAX_LINES, SOFT_LINES = 1000, 950
-MAX_CHARS = 70_000
+MAX_LINES, SOFT_LINES = 1000, 800
+MAX_CHARS = 60_000
 MAX_LINE, SOFT_LINE = 200, 120
-CH0_MAX_LINES, CH0_MAX_CHARS, CH0_MAX_LINE = 100, 7_500, 100
+CH0_MAX_LINES, CH0_MAX_CHARS, CH0_MAX_LINE = 90, 7_000, 100
+CH0_SUBS = 6  # 〇.1～〇.6
+MAX_PCT_PER_LINE = 3  # 第一～十章一行最多幾個百分比數字（序列月份行除外）
 SKILL_MAX_CHARS = 25_000
 THRESHOLD = -0.10  # 達標月：MoM ≥ −0.10%（＝ Idx(t) ≥ Idx(t−1) × 0.999）
 EPS = 1e-9
@@ -53,23 +56,28 @@ STAMP_RE = re.compile(r"^> \*\*更新時間（Last Updated）：(\d{4})/(\d{2})/
                       r"([01]\d|2[0-3]):([0-5]\d):([0-5]\d) \(UTC\+8\)\*\*\s*$")
 CARD = "檔頭資訊卡"
 PRE = "前置"
-CHAPTERS = ["〇", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
+CHAPTERS = ["〇", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二", "附"]
+BODY = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]  # 術語須進辭典的章
+GLOSSARY = "附"
 TITLES = {
-    "〇": "一般人 3 分鐘看懂", "一": "分析師決策摘要", "二": "景氣循環定位與進場時點",
-    "三": "REIT 標的池逐檔分析", "四": "多空對照（詳細版）", "五": "總體、利率與匯率",
-    "六": "房地產市場分板塊", "七": "房價 40 個月與 4 個月規則", "八": "租金 60 個月與 5 個月規則",
-    "九": "政策與制度變數", "十": "輿情彙整", "十一": "資料來源與搜尋狀態", "十二": "資料缺口與下輪待辦",
+    "〇": "一般人 3 分鐘看懂", "一": "決策摘要：現在在哪、何時買、買什麼",
+    "二": "景氣走到哪一段與進場時點", "三": "逐檔體檢：REIT 該買、該等還是避開",
+    "四": "好消息與壞消息（多空對照）", "五": "利率、物價與匯率", "六": "各類房地產冷熱（分板塊）",
+    "七": "房價走勢：40 個月紀錄與 4 個月規則", "八": "租金走勢：60 個月紀錄與 5 個月規則",
+    "九": "政策與制度會怎麼影響", "十": "網路上大家怎麼說（輿情）", "十一": "資料來源與搜尋狀態",
+    "十二": "資料缺口與下次待辦", "附": "名詞小辭典",
 }
 COUNTRY_NAME = {"jp": "日本", "hk": "香港", "tw": "台灣", "us": "美國", "sg": "新加坡", "cn": "中國"}
-CARD_FIELDS = ["範圍與時間", "本檔主要幣別與匯率", "一句話結論", "🆕 本輪最重要的 3 件新事",
-               "本輪變更摘要", "資料新鮮度", "每單位口徑"]
+CARD_FIELDS = ["範圍與時間", "本檔主要幣別與匯率", "一句話結論", "🆕 本次最重要的 3 件新事",
+               "跟上次比變了什麼", "資料新鮮度"]
 FORCED = [  # （名稱, 規則, 應出現的章）
     ("五盞燈", re.compile(r"\*\*五盞燈\*\*：\s*目前\s*(\d+)\s*綠\s*/\s*(\d+)\s*黃\s*/\s*(\d+)\s*紅"), "二"),
     ("4 個月規則", re.compile(r"\*\*4 個月規則\*\*："), "七"),
     ("5 個月規則", re.compile(r"\*\*5 個月規則\*\*："), "八"),
     ("政策結論", re.compile(r"\*\*政策結論\*\*："), "九"),
 ]
-NEED_CONCLUSION = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
+PLAIN_HEAD, PLAIN_TAIL = "白話重點", "所以呢"  # 每章開頭／結尾的零術語句
+NEED_CONCLUSION = BODY
 NEED_SO_WHAT = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"]
 # 第三章逐檔必備（SKILL.md §5.5；名稱 → 任一關鍵字出現即可）
 REIT_FIELDS = {
@@ -81,22 +89,21 @@ REIT_MAX = {"完整版": 16, "精簡版": 8}
 BANNED = ["持續觀察", "審慎樂觀", "有待觀察", "值得關注",
           "徹底崩跌", "末日毀滅", "泡沫幻滅", "徹底粉碎", "殘酷死鎖", "致命地雷", "殘酷出清"]
 DECOR_HEADING = ["本輪全新增量", "深度穿透", "穿透備忘", "⭐ 新增"]
-GLOSSARY_HEADING = ["名詞對照", "名詞解釋", "Glossary", "glossary"]
 PLACEHOLDER_RE = re.compile(r"<(?![!/\s]|table|br)[^<>\n]{1,40}>")
 DEMO_MARK = "9999 示範"
 
 # 逐章行數上限（SKILL.md §4.1；空行也算）。PRE＝第一個 `##` 之前的前置行。
 BUDGET = {
-    PRE: 5, CARD: 20, "〇": 100, "一": 35, "二": 55, "三": 190, "四": 80, "五": 30,
-    "六": 65, "七": 60, "八": 90, "九": 45, "十": 45, "十一": 25, "十二": 30,
+    PRE: 5, CARD: 18, "〇": 90, "一": 30, "二": 50, "三": 180, "四": 60, "五": 25,
+    "六": 50, "七": 55, "八": 80, "九": 35, "十": 35, "十一": 20, "十二": 25, "附": 30,
 }
 CUT_HINT = {  # 超預算時的建議砍法（SKILL.md §8.3 刪減順序的章別版）
     PRE: "時間戳與主標題之間只留 1 個空行",
-    CARD: "變更摘要 ≤ 5 行、3 件新事各 1 行",
+    CARD: "「跟上次比」≤ 5 行、3 件新事各 1 行",
     "〇": "〇.4 最多 8 檔完整寫，其餘列代號；每條 ≤ 50 字",
     "一": "速覽各留 3 條（依重要性）",
     "二": "機構預測與 Top 3 改比較式一行",
-    "三": "§4.1 第三章壓縮：精簡版 6 行 → 觀察名單前 5 → 完整版合併無事項行",
+    "三": "§4.1 第三章壓縮：觀察名單前 5 → 完整版合併無事項行 → 精簡版只寫必備欄位",
     "四": "重要性「中」以下改一行、「低」刪",
     "五": "只留會改變便宜度／借錢成本判定的指標",
     "六": "每卡寫到階段＋2～3 個數字就停",
@@ -106,6 +113,7 @@ CUT_HINT = {  # 超預算時的建議砍法（SKILL.md §8.3 刪減順序的章�
     "十": "一則一行；刪低可信度且無法量化的",
     "十一": "一檔 REIT 一行；成功來源合併一行",
     "十二": "已清償的刪，只留未結待辦與 30 天行事曆",
+    "附": "只留第一～十二章真的用到的詞，一詞一行",
 }
 
 # ───────────────────────── 第〇章禁用詞（SKILL.md §5.8 共通＋references/{cc}.md 加碼） ─────────────────────────
@@ -186,7 +194,7 @@ def report(title: str, fails: list[str], warns: list[str], extra: list[str] | No
 
 # ───────────────────────── 章節切分 ─────────────────────────
 H2_RE = re.compile(r"^##(?!#)\s*(.+?)\s*$")
-NUM_RE = re.compile(r"^(十二|十一|十|〇|一|二|三|四|五|六|七|八|九)、\s*(.*)$")
+NUM_RE = re.compile(r"^(十二|十一|十|〇|一|二|三|四|五|六|七|八|九|附)、\s*(.*)$")
 
 
 def sections(lines: list[str]):
@@ -215,7 +223,7 @@ def section_map(lines: list[str]) -> dict:
 
 
 def check_skeleton(lines: list[str], fails: list[str], warns: list[str]) -> dict:
-    """章節齊全、不重複、順序正確、標題照抄、檔頭七欄。回傳 section_map。"""
+    """章節齊全、不重複、順序正確、標題照抄、檔頭六欄。回傳 section_map。"""
     secs = sections(lines)
     expect = [CARD] + CHAPTERS
     keys = [s[0] for s in secs if s[0]]
@@ -492,6 +500,56 @@ def cmd_skeleton(a) -> int:
     return 0
 
 
+# ───────────────────────── 一般人看得懂 ─────────────────────────
+def first_jargon(lines: list[str], start: int, end: int, pats) -> dict:
+    """回傳 {術語: 第一次出現的行號}；後接代號的 REIT 正式名稱不算。"""
+    used: dict = {}
+    for i in range(start, end):
+        for name, pat in pats:
+            if name in used:
+                continue
+            if any(not TICKER_AFTER.match(lines[i][m.end():]) for m in pat.finditer(lines[i])):
+                used[name] = i + 1
+    return used
+
+
+def check_plain(lines: list[str], sec: dict, cc: str, fails: list[str], warns: list[str]) -> None:
+    pats = jargon_patterns(cc)
+    if CARD in sec:
+        s, e = sec[CARD]
+        hits = jargon_hits(lines[s + 1:e], s + 2, pats)
+        if hits:
+            fails.append(brief(hits, "檔頭資訊卡禁用詞（檔頭給一般人 30 秒看，改白話）"))
+    plain_hits, dense, used = [], [], {}
+    for k in BODY:
+        if k not in sec:
+            continue
+        s, e = sec[k]
+        for i in range(s, e):
+            if PLAIN_HEAD in lines[i] or PLAIN_TAIL in lines[i]:
+                plain_hits += jargon_hits([lines[i]], i + 1, pats)
+            if k not in ("十一", "十二") and not MONTH_RE.match(lines[i]):
+                n_pct = len(VAL_RE.findall(lines[i]))
+                if n_pct > MAX_PCT_PER_LINE:
+                    dense.append(f"{i + 1}（{n_pct} 個 %）")
+        for name, ln in first_jargon(lines, s + 1, e, pats).items():
+            used.setdefault(name, ln)
+    if plain_hits:
+        fails.append(brief(plain_hits, f"「{PLAIN_HEAD}／{PLAIN_TAIL}」句含術語（這兩句要零術語）"))
+    if dense:
+        warns.append(brief(dense, f"一行超過 {MAX_PCT_PER_LINE} 個百分比數字，一般人難讀（拆行或刪掉不影響判斷的）"))
+    if GLOSSARY not in sec:
+        return
+    gs, ge = sec[GLOSSARY]
+    gloss = "\n".join(lines[gs + 1:ge])
+    by_name = dict(pats)
+    missing = [f"{n}（第 {ln} 行）" for n, ln in used.items() if not by_name[n].search(gloss)]
+    if missing:
+        fails.append(brief(missing, "第一～十二章用到、但「附、名詞小辭典」沒收的術語（補一行白話）"))
+    if not any(re.match(r"^\s*-\s*\*\*", x) for x in lines[gs + 1:ge]):
+        fails.append("「附、名詞小辭典」沒有詞條（`- **白話名（英文）**：意思｜怎麼看：…`）")
+
+
 # ───────────────────────── check ─────────────────────────
 def cmd_check(a) -> int:
     cc = valid_cc(a.cc)
@@ -533,7 +591,7 @@ def cmd_check(a) -> int:
     elif f"stateAnalysis {cc.upper()}" not in lines[h1[0]]:
         warns.append(f"主標題建議含「（stateAnalysis {cc.upper()}）」：{lines[h1[0]][:60]}")
 
-    # 3. 骨架、檔頭七欄
+    # 3. 骨架、檔頭六欄
     sec = check_skeleton(lines, fails, warns)
 
     # 4. 逐行：長度、零表格、禁用空話、裝飾標題、樣板殘留、連續空行
@@ -554,7 +612,7 @@ def cmd_check(a) -> int:
             fences.append(no)
         banned += [f"{no}:{b}" for b in BANNED if b in line]
         if line.lstrip().startswith("#"):
-            decor += [f"{no}:{w}" for w in DECOR_HEADING + GLOSSARY_HEADING if w in line]
+            decor += [f"{no}:{w}" for w in DECOR_HEADING if w in line]
         if no > 1:  # 第 1 行由時間戳檢查負責
             holders += [f"{no}:{x}" for x in PLACEHOLDER_RE.findall(line)[:2]]
     if too_long:
@@ -570,7 +628,7 @@ def cmd_check(a) -> int:
     if banned:
         fails.append(brief(banned, "禁用空話／形容詞堆疊"))
     if decor:
-        fails.append(brief(decor, "裝飾標題或 Glossary 標題"))
+        fails.append(brief(decor, "裝飾標題"))
     if holders:
         soft_fail.append(brief(holders, "樣板殘留 `< >`（換成真實內容或 N/A（原因））"))
     if any(DEMO_MARK in x for x in lines):
@@ -610,12 +668,12 @@ def cmd_check(a) -> int:
             if must not in body:
                 fails.append(f"第〇章缺{why}")
         found = [mm.group(1) for x in ch if (mm := re.match(r"^###\s*(〇\.\d)", x))]
-        need = [f"〇.{k}" for k in range(1, 8)]
+        need = [f"〇.{k}" for k in range(1, CH0_SUBS + 1)]
         lost = [x for x in need if x not in found]
         if lost:
             fails.append("第〇章缺小節：" + "、".join(f"### {x}" for x in lost))
         elif [x for x in found if x in need] != need:
-            fails.append("第〇章小節順序不對（應為 〇.1 → 〇.7）")
+            fails.append(f"第〇章小節順序不對（應為 〇.1 → 〇.{CH0_SUBS}）")
         stale = [str(s + k + 1) for k, x in enumerate(ch)
                  if "⚠" in x or "(舊)" in x or "（舊）" in x or "種子" in x]
         if stale:
@@ -624,15 +682,18 @@ def cmd_check(a) -> int:
         if hits:
             fails.append(brief(hits, "第〇章禁用詞（改白話；必要時只在第一次出現處括號解釋）"))
 
-    # 7. 每章「這段結論」「所以呢」
+    # 7. 每章「白話重點」「所以呢」
     no_concl = [k for k in NEED_CONCLUSION if k in sec and not any(
-        "這段結論" in lines[i] for i in range(sec[k][0], min(sec[k][0] + 4, sec[k][1])))]
+        PLAIN_HEAD in lines[i] for i in range(sec[k][0], min(sec[k][0] + 4, sec[k][1])))]
     no_so = [k for k in NEED_SO_WHAT if k in sec and not any(
         "所以呢" in lines[i] for i in range(max(sec[k][0], sec[k][1] - 4), sec[k][1]))]
     if no_concl:
-        warns.append("這些章開頭 3 行內沒有「這段結論：」：第" + "、".join(no_concl) + "章")
+        warns.append(f"這些章開頭 3 行內沒有「**{PLAIN_HEAD}**：」：第" + "、".join(no_concl) + "章")
     if no_so:
         warns.append("這些章結尾沒有「**所以呢**：」：第" + "、".join(no_so) + "章")
+
+    # 7b. 一般人看得懂：檔頭、白話重點、所以呢零術語；辭典涵蓋術語；一行數字不過多
+    check_plain(lines, sec, cc, fails, warns)
 
     # 8. 四個強制輸出行
     for name, pat, want in FORCED:
@@ -757,7 +818,7 @@ def cmd_series(a) -> int:
 
 
 # ───────────────────────── selftest ─────────────────────────
-BUDGET_LINE_RE = re.compile(r"^- (前置|檔頭資訊卡|(十二|十一|十|〇|一|二|三|四|五|六|七|八|九)、(.+?))：≤ (\d+) 行\s*$")
+BUDGET_LINE_RE = re.compile(r"^- (前置|檔頭資訊卡|(十二|十一|十|〇|一|二|三|四|五|六|七|八|九|附)、(.+?))：≤ (\d+) 行\s*$")
 
 
 def cmd_selftest(_a) -> int:
