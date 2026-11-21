@@ -29,6 +29,14 @@
       "mcp__Claude_Docs__*",
       "mcp__claude-code-remote",
       "mcp__claude-code-remote__*",
+      "mcp__Google_Drive",
+      "mcp__Google_Drive__*",
+      "mcp__FMP",
+      "mcp__FMP__*",
+      "mcp__Morningstar_Credit_Analytics",
+      "mcp__Morningstar_Credit_Analytics__*",
+      "mcp__Nimble",
+      "mcp__Nimble__*",
       "WebSearch",
       "WebFetch",
       "*",
@@ -39,6 +47,20 @@
       "command(*)",
       "PowerShell(*)",
       "Bash(*)"
+    ]
+  },
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "^mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PermissionRequest\",\"decision\":{\"behavior\":\"allow\"}}}'",
+            "timeout": 10
+          }
+        ]
+      }
     ]
   }
 }
