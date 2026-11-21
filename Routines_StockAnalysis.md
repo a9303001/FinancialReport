@@ -33,7 +33,7 @@
 | 參數 | 值 | 說明 |
 |:-----|:---|:-----|
 | `SKILL_PATH` | `.claude/skills/StockAnalysis/SKILL.md` | 內容同 `.agents/skills/StockAnalysis/SKILL.md` |
-| `ROTATION_TABLE` | 本檔「## 每日輪替表」 | 本 routine 的執行清單（提供 `MARKET`、`EXTRA_ANALYSIS`）。**追蹤哪些公司、資料夾名稱與執行日期**以 `Routines_CollectsentimentAndReports.md` 為唯一真實依據（Single Source of Truth），兩表的「執行日期 × COMPANY_FOLDER」必須一致 |
+| `ROTATION_TABLE` | 本檔「## 每日輪替表」 | 本 routine 的執行清單（提供 `MARKET`、`EXTRA_ANALYSIS`）。**追蹤哪些公司、資料夾名稱與執行日期**以 `Routines_collectStk.md` 為唯一真實依據（Single Source of Truth），兩表的「執行日期 × COMPANY_FOLDER」必須一致 |
 | `TIMEZONE` | `Asia/Taipei (UTC+8)` | 取日期與時間戳一律用此時區 |
 
 > **輸出檔固定為 `<COMPANY_FOLDER>/AnalysisResult.md`**，不接受其他檔名；SKILL.md 中的 `<OUTPUT_FILENAME>` 使用其預設值 `AnalysisResult.md`。

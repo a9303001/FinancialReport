@@ -5,7 +5,7 @@
 >
 > **唯一輸出檔**：`{COMPANY_FOLDER}/AnalysisResult.md`（Claude、Gemini 或任何執行者共用同一份，不再依模型分檔）。
 >
-> **前置條件**：該公司已完成 CollectsentimentAndReports（財報 + 輿情 + 轉 md），本地資料夾中已有最新資料。
+> **前置條件**：該公司已完成 collectStk（財報 + 輿情 + 轉 md），本地資料夾中已有最新資料。
 >
 > **執行模式**：`/boost /goal` 全自動。**嚴禁中途停下向使用者提問（禁止呼叫 `ask_question`）**，必須自主走完 Step 0 → Step 5。
 

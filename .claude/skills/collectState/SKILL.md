@@ -7,12 +7,12 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 # collectState — 國家層級 REIT 情報收集與分析
 
 > **任務**：對指定國家（市場）① 清掉三個月前的舊資料 ② 收集過去 1 個月的新聞、研究報告、官方數據與輿情 ③ 全部轉 Markdown ④ 重寫 REIT 投資分析 `StateAnalysis.md` ⑤ 寫執行報告並 push。
-> 本指南適用所有 AI（Claude / Gemini，含輕量模型），請一步一步照做。抓取技術細節**一律沿用** `CollectsentimentAndReports` Skill，本檔不重寫。
+> 本指南適用所有 AI（Claude / Gemini，含輕量模型），請一步一步照做。抓取技術細節**一律沿用** `collectStk` Skill，本檔不重寫。
 > **本次參數**：`$ARGUMENTS`（空白、或看起來不是國家代碼時，依 §1.1 從使用者訊息解析）
 
 ## 0. 五條底線（違反任一 = 任務失敗）
 
-1. **防幻覺**：只記錄真實抓到的內容，附真實 URL 與真實發布日。抓不到就照 `CollectsentimentAndReports` §8.5 誠實記錄；**嚴禁**用訓練資料補數字、捏造連結或分配日期。自算數字附公式或標 `(估)`。
+1. **防幻覺**：只記錄真實抓到的內容，附真實 URL 與真實發布日。抓不到就照 `collectStk` §8.5 誠實記錄；**嚴禁**用訓練資料補數字、捏造連結或分配日期。自算數字附公式或標 `(估)`。
 2. **先清後收**：Phase 1 清理三個月前資料**一定先跑**，清完才收集。
 3. **全部轉 Markdown**：任務結束時 `{cc}_state/` 只能有 `.md`（`check` 子命令通過）。轉不了的原檔保留並寫進報告，不可硬刪。
 4. **即時存檔**：每抓完一份報告、一個來源，立刻寫檔並記 manifest，不要等全部做完。
@@ -116,7 +116,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 
 ### 3.3 Phase 3 — 收集規則
 
-**抓取技術**：完全依 `CollectsentimentAndReports` Skill：§0 底線、§3 通用抓取規則（固定順序、次數上限、失敗定義、網路錯誤零重試、帳號級錯誤停用、請求頻率、搜尋摘要使用條件）、§4 站點知識庫、§5 已驗證 API/SOP、§8.3 過濾規則、§8.5 失敗寫法。新發現的**國家層級**站點行為寫進本檔 §4／§5；**個股**站點行為寫回 `CollectsentimentAndReports` §4。
+**抓取技術**：完全依 `collectStk` Skill：§0 底線、§3 通用抓取規則（固定順序、次數上限、失敗定義、網路錯誤零重試、帳號級錯誤停用、請求頻率、搜尋摘要使用條件）、§4 站點知識庫、§5 已驗證 API/SOP、§8.3 過濾規則、§8.5 失敗寫法。新發現的**國家層級**站點行為寫進本檔 §4／§5；**個股**站點行為寫回 `collectStk` §4。
 
 **窗口**：只收 `WINDOW` 內發布的內容。例外：月報／季報／半年報／年度指標（如顧問行季報、地價公示、JREI 投資家調查）若「最新一期」發布在窗口外：
 - 發布日 ≥ `CUTOFF` → 可存單篇檔，`note` 寫「最新一期，發布於窗口外」。
@@ -143,7 +143,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
    ```bash
    python <SCRATCH>/scan_pending.py <REPO> <SCRATCH> <FOLDER>
    ```
-   不帶的話會掃整個 repo，把 `History/`、`Prompt/` 等資料夾的 PDF 也轉掉刪掉（違反 §0-5）。之後照 Convert2md 步驟 2~5：成功刪 PDF、CID 亂碼刪 `.md` 留 PDF。CID 失敗的 PDF：改抓英文版／HTML 版或換來源；都沒有就保留 PDF 並寫進報告。150 頁以上的報告依 `CollectsentimentAndReports` §9 處理逾時。
+   不帶的話會掃整個 repo，把 `History/`、`Prompt/` 等資料夾的 PDF 也轉掉刪掉（違反 §0-5）。之後照 Convert2md 步驟 2~5：成功刪 PDF、CID 亂碼刪 `.md` 留 PDF。CID 失敗的 PDF：改抓英文版／HTML 版或換來源；都沒有就保留 PDF 並寫進報告。150 頁以上的報告依 `collectStk` §9 處理逾時。
 2. **其他格式**（HTML、Word `.docx/.doc`、Excel `.xlsx/.xls`、PowerPoint `.pptx/.ppt`、RTF、ODT、CSV、TXT、JSON、XML、EPUB）：
    ```bash
    python <TOOLS> convert --folder <FOLDER> --scratch <SCRATCH>
@@ -158,7 +158,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 
 ### 3.5 月度輿情新聞彙整檔（`{yyyyMM}_{CC}_輿情新聞.md`）
 
-- 範本與失敗寫法沿用 `CollectsentimentAndReports` §8.4／§8.5，標題改為 `# [{CC} 國家層級] REIT／房地產輿情與新聞整理 ({YYYY}/{MM})`。
+- 範本與失敗寫法沿用 `collectStk` §8.4／§8.5，標題改為 `# [{CC} 國家層級] REIT／房地產輿情與新聞整理 ({YYYY}/{MM})`。
 - 章節順序固定：`## 一、官方數據與政策` → `## 二、研究報告摘要` → `## 三、新聞` → `## 四、REIT 市場與個別 REIT` → `## 五、中國房地產`（僅 `hk`）→ `## 六、輿情（依平台）`；每個平台／來源是一個 `### [來源名稱]` 子章節，含抓取時間、抓取方式、抓取結果（✅／⚠️ 僅索引／❌／⭕ 無新內容）。
 - **Append 模式**：已存在的章節只補在末尾，不可覆蓋舊內容；每抓完一個來源立刻寫入。
 - **只有主代理人寫月檔**：子代理人把各自的章節即時寫到 `<SCRATCH>/digest_{A|B|C}.md`，主代理人收齊後依上面的章節順序併入月檔（避免多人同時改同一檔互相覆蓋）。
@@ -168,7 +168,7 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 
 ## 4. 各國資料來源清單
 
-> 起始清單（2026-11 建檔）。標 `[未驗證]` 的站點第一次使用時照 `CollectsentimentAndReports` §3 抓取，結果依 §8 寫回本表並改成 `[yyyy-mm]`。已在 `CollectsentimentAndReports` §4 記載的站點（日經、株探、Yahoo JP、5ch、note、JAPAN-REIT.COM、HKEXnews、AAStocks、新浪、雪球、股吧、LIHKG、moomoo、香港經濟日報…）照該處做法。
+> 起始清單（2026-11 建檔）。標 `[未驗證]` 的站點第一次使用時照 `collectStk` §3 抓取，結果依 §8 寫回本表並改成 `[yyyy-mm]`。已在 `collectStk` §4 記載的站點（日經、株探、Yahoo JP、5ch、note、JAPAN-REIT.COM、HKEXnews、AAStocks、新浪、雪球、股吧、LIHKG、moomoo、香港經濟日報…）照該處做法。
 
 ### 4.1 日本（`jp`）
 
@@ -212,9 +212,9 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 
 **B 研究報告**：JLL `jll.com.hk`、CBRE `cbre.com.hk`、高力 Colliers、萊坊 Knight Frank（住宅／寫字樓月報 PDF）、第一太平戴維斯 Savills、戴德梁行 Cushman & Wakefield、美聯／中原研究部 [均未驗證]；評級機構（Fitch、S&P、Moody's）對港 REIT 的公開評論。
 
-**C 新聞**：香港經濟日報、信報、明報財經、AAStocks、新浪港股、Reuters／Bloomberg 香港地產、智通財經（照 `CollectsentimentAndReports` §4.3）。
+**C 新聞**：香港經濟日報、信報、明報財經、AAStocks、新浪港股、Reuters／Bloomberg 香港地產、智通財經（照 `collectStk` §4.3）。
 
-**D REIT 市場**：全部港股 REIT 窗口內 HKEXnews 公告（照 `CollectsentimentAndReports` §5.4）。上市 REIT 共 11 檔 [2026-11，HKEX REIT 報價頁 2026-11-13 與 snowball-analytics 2026-11-06 交叉核對]：`00823` 領展、`02778` 冠君、`00778` 置富、`00435` 陽光、`00808` 泓富、`00405` 越秀、`01881` 富豪、`87001` 匯賢（人民幣計價）、`01426` 春泉、`01503` 招商局商業、`02191` 順豐；`01275` 開元已不在名單。每次先看 HKEX REIT 報價頁（`hkex.com.hk/market-data/securities-prices/real-estate-investment-trusts`）有無新上市／除牌，有變動就改寫本列；`HkReitScreenerResult/` 最新榜單對照。
+**D REIT 市場**：全部港股 REIT 窗口內 HKEXnews 公告（照 `collectStk` §5.4）。上市 REIT 共 11 檔 [2026-11，HKEX REIT 報價頁 2026-11-13 與 snowball-analytics 2026-11-06 交叉核對]：`00823` 領展、`02778` 冠君、`00778` 置富、`00435` 陽光、`00808` 泓富、`00405` 越秀、`01881` 富豪、`87001` 匯賢（人民幣計價）、`01426` 春泉、`01503` 招商局商業、`02191` 順豐；`01275` 開元已不在名單。每次先看 HKEX REIT 報價頁（`hkex.com.hk/market-data/securities-prices/real-estate-investment-trusts`）有無新上市／除牌，有變動就改寫本列；`HkReitScreenerResult/` 最新榜單對照。
 
 **E 輿情**：LIHKG（地產台、財經台）、香港討論區 `discuss.com.hk`（地產版）、高登財經台、雪球（領展／越秀等 REIT 頁與「香港REIT」話題）、東方財富股吧（`hk00823` 等）、moomoo 社區、X、Reddit（r/HongKong、r/HKinvesting，經 Apify）、PTT Stock（`港股REIT`、`領展`）、Mobile01。
 
@@ -381,14 +381,14 @@ python <TOOLS> check --folder <FOLDER>
 ### 7.3 push
 
 > [!IMPORTANT]
-> 報告寫完後，把 `{cc}_state/`（含刪除）、`Log/collectState_*`、`Log/conversion_summary.md`、本 Skill 的修改一起 commit 並 push，任務才算完成。推送分支規則同 `CollectsentimentAndReports` §10：雲端／指定 feature 分支 → push 該分支並開 PR（auto-merge workflow 會合併進 `master`）；本機直跑 → push `master`。push 前 `git diff --cached --name-only` 確認沒有動到 §0-5 禁止的檔案。
+> 報告寫完後，把 `{cc}_state/`（含刪除）、`Log/collectState_*`、`Log/conversion_summary.md`、本 Skill 的修改一起 commit 並 push，任務才算完成。推送分支規則同 `collectStk` §10：雲端／指定 feature 分支 → push 該分支並開 PR（auto-merge workflow 會合併進 `master`）；本機直跑 → push `master`。push 前 `git diff --cached --name-only` 確認沒有動到 §0-5 禁止的檔案。
 
 ---
 
 ## 8. Skill 維護規則
 
 1. 國家層級站點的新行為（新封鎖、新 API、新捷徑、舊做法失效）→ 改寫 §4 對應國家表格的那一列（`[未驗證]` 改成 `[yyyy-mm]`）；多步驟用法加到 §5 或新增 `### 4.N` 小節。**合併而不是追加**，失效做法直接刪。
-2. 個股站點的新行為 → 寫回 `CollectsentimentAndReports` §4（照它的 §11 規則），本檔不重複。
+2. 個股站點的新行為 → 寫回 `collectStk` §4（照它的 §11 規則），本檔不重複。
 3. 第一次跑新國家 → 新增 `### 4.N {國家}` 小節。
 4. 兩份同步：`.claude/skills/collectState/`（`SKILL.md`＋`scripts/state_tools.py`）與 `.agents/skills/collectState/` 必須完全相同（改完 `diff -r` 確認）。
 5. `*_state` 資料夾是**非公司資料夾**：`Routines_Move2History.md`、`ArrangePublicOpinionMd`、`Analysis/LatestNews_check.py` 已排除；新增會掃描根目錄的 Skill／Routine 時也要排除 `*_state`。

@@ -84,7 +84,7 @@ FinancialReport/
 ├── Prompt/                        # 可重複使用的提示詞與參考文件
 ├── Analysis/                      # 總經／REIT／新聞分析 routine、prompt 與結果檔（原 gemini/），含 Reit_Hk.md、Reit_Jp.md
 │
-├── Routines_CollectsentimentAndReports.md  # ★ 每日輪替表（Single Source of Truth）
+├── Routines_collectStk.md         # ★ 每日輪替表（Single Source of Truth）
 ├── Routines_StockAnalysis.md      # 每日深度分析排程
 ├── Routines_Move2History.md       # 根目錄 ↔ History 雙向歸檔同步
 ├── hourAnalysis.md                # 臨時指定的個股分析任務
@@ -228,7 +228,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 
 **Q: 找不到某公司？** — 依序查 根目錄 → `History/` → `StkScreenerResult/`；都沒有請明講「本資料庫無此公司」，改用外部來源（StatementDog、SEC EDGAR、IR Bank、Ullet、新浪財經、富途牛牛），**不要杜撰路徑**。
 
-**Q: 資料多久更新？** — 每日依 `Routines_CollectsentimentAndReports.md` 輪替表更新當日對應公司。
+**Q: 資料多久更新？** — 每日依 `Routines_collectStk.md` 輪替表更新當日對應公司。
 
 ---
 
@@ -239,7 +239,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | Skill | 功能 |
 | :--- | :--- |
 | `StockAnalysis` | 個股深度分析：讀回既有資料 → deep research → 每股化 → 整份重寫 `AnalysisResult.md` |
-| `CollectsentimentAndReports` | 收集個股最新財務報告與輿情討論 / 新聞 |
+| `collectStk` | 收集個股最新財務報告與輿情討論 / 新聞 |
 | `ArrangePublicOpinionMd` | 把零散月度輿情 `.md` 依年份合併成 `<YYYY>_PublicOpinion.md`，驗證後刪除原檔（年報 / 季報不動） |
 | `Convert2md` | 用 MCP `convert_pdf_to_markdown` 把 PDF 轉 Markdown，檢查 CID 亂碼並刪除失敗檔（可帶掃描範圍參數只轉指定資料夾，如 `collectState` 只轉 `<cc>_state/`） |
 | `collectState` | `jp /collectState`、`hk /collectState`：先刪 `<cc>_state/` 三個月前資料，再收集該國過去 1 個月的房地產／REIT 新聞、報告與輿情（hk 加中國房地產），全部轉 Markdown，重寫 `StateAnalysis.md` 作 REIT 投資分析 |
@@ -249,19 +249,19 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 
 | 檔案 | 觸發 | 行為 |
 | :--- | :--- | :--- |
-| `Routines_CollectsentimentAndReports.md` | 每日 | 依「今天幾號」對照輪替表，收集當日公司的財報與輿情 |
+| `Routines_collectStk.md` | 每日 | 依「今天幾號」對照輪替表，收集當日公司的財報與輿情 |
 | `Routines_StockAnalysis.md` | 每日 | 依同一組執行日期 × 公司資料夾（本檔另列 `MARKET`／`EXTRA_ANALYSIS`）執行深度分析，輸出 `AnalysisResult.md` |
 | `Routines_Move2History.md` | 不定期 | 讓根目錄公司資料夾集合等於輪替表；不在表上的移入 `History/`（雙向搬移、不刪資料） |
 | `Analysis/Reit_Hk.md` / `Analysis/Reit_Jp.md` | 不定期 | 港股 REIT 殖利率 Top10 / 日股 REIT 殖利率 Top20（Top10 詳細檔）篩選與分析 |
 
-> **輪替表是唯一真實依據**：要新增或停止追蹤公司，改 `Routines_CollectsentimentAndReports.md`，同步更新 `Routines_StockAnalysis.md` 的對應條目，再跑 `Routines_Move2History.md` 同步資料夾。
+> **輪替表是唯一真實依據**：要新增或停止追蹤公司，改 `Routines_collectStk.md`，同步更新 `Routines_StockAnalysis.md` 的對應條目，再跑 `Routines_Move2History.md` 同步資料夾。
 > **推送分支**：所有 Skill／Routine 依 [`AGENTS.md`](AGENTS.md)「Git 推送規則」（雲端／feature 分支 → PR + auto-merge；本機直跑 → `master`）。
 
 ---
 
 ## ➕ 新增一間公司（How to Add a Company）
 
-1. 在 `Routines_CollectsentimentAndReports.md` 輪替表加一列：執行日期、`COMPANY_TICKER`、`COMPANY_NAME`、資料夾名稱、市場；並在 `Routines_StockAnalysis.md` 輪替表加同日期、同資料夾的條目（`MARKET`、`EXTRA_ANALYSIS`）。
+1. 在 `Routines_collectStk.md` 輪替表加一列：執行日期、`COMPANY_TICKER`、`COMPANY_NAME`、資料夾名稱、市場；並在 `Routines_StockAnalysis.md` 輪替表加同日期、同資料夾的條目（`MARKET`、`EXTRA_ANALYSIS`）。
 2. 建立資料夾，命名沿用慣例：`<代號><中文名>`（台股 / 港股 / 日股）或純代碼（美股，如 `UHS`）。
 3. 放入年報 / 季報：PDF 先用 `Convert2md` Skill 轉 `.md`，檔名沿用 §檔名規則。
 4. 執行 `StockAnalysis` Skill 產生 `AnalysisResult.md`。

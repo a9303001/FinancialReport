@@ -1,9 +1,9 @@
 ---
-name: CollectsentimentAndReports
-description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「近三個月輿情討論/新聞」，存入公司資料夾，轉 Markdown 後產出執行報告並 push。輸入 COMPANY_TICKER 與 COMPANY_NAME。
+name: collectStk
+description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「近三個月輿情討論/新聞」，存入公司資料夾，轉 Markdown 後產出執行報告並 push。輸入 COMPANY_TICKER 與 COMPANY_NAME。（舊名 CollectsentimentAndReports）
 ---
 /goal
-# CollectsentimentAndReports — 執行指南
+# collectStk — 執行指南
 
 > **任務**：對指定公司 ① 補齊最新財報（2 份年報 + 1 份季報）② 收集過去三個月的輿情/新聞 ③ 轉 Markdown ④ 寫執行報告並 push。
 > 本指南適用所有 AI（Claude / Gemini，含輕量模型），請一步一步照做。
@@ -295,7 +295,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ## 6. Phase 1 — 建立資料夾
 
 - 台/日/港股：`FinancialReport/{代碼}{名稱}/`（例：`2881富邦金/`）；美股：`FinancialReport/{代碼}/`（例：`UHS/`）。
-- 若 `Routines_CollectsentimentAndReports.md` 輪替表有寫資料夾名稱，以表上為準。不存在就建立。
+- 若 `Routines_collectStk.md` 輪替表有寫資料夾名稱，以表上為準。不存在就建立。
 
 ---
 
@@ -418,7 +418,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 ## 10. Phase 5 — 執行報告與 push
 
-報告寫到 `FinancialReport/Log/CollectsentimentAndReports_Summary_{yyyyMMdd}.md`（一次性報告，檔名要加日期）。
+報告寫到 `FinancialReport/Log/collectStk_Summary_{yyyyMMdd}.md`（一次性報告，檔名要加日期）。
 
 ````markdown
 # 任務執行最終報告 - YYYY/MM/DD
@@ -467,7 +467,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
    - 重複的說明、與 §3 通用規則重複的敘述 → 刪除。
    - 一次性的除錯過程、實測流水帳（某天抓到幾筆、檔案多大）、指向已不存在檔案的連結 → 刪除，只留結論。
    - 環境設定細節（如 Playwright 啟動器原理）不寫在這裡；需要時看 `.claude/scripts/playwright-mcp.mjs` 開頭註解。
-4. **檢查一致性**：確認內文的 § 編號引用都還對得上；`Analysis/` 底下若有檔案引用本 Skill 的章節（用 `rg -n "CollectsentimentAndReports" Analysis/` 檢查），一併更新。
-5. **兩份同步**：`.claude/skills/CollectsentimentAndReports/SKILL.md` 與 `.agents/skills/CollectsentimentAndReports/SKILL.md` 內容必須完全相同（改完用 `diff` 確認）。
+4. **檢查一致性**：確認內文的 § 編號引用都還對得上；`Analysis/` 底下若有檔案引用本 Skill 的章節（用 `rg -n "collectStk" Analysis/` 檢查），一併更新。
+5. **兩份同步**：`.claude/skills/collectStk/SKILL.md` 與 `.agents/skills/collectStk/SKILL.md` 內容必須完全相同（改完用 `diff` 確認）。
 6. 在 §10 報告的「Skill 維護」寫明本次新增、修改、刪除了什麼。
 
