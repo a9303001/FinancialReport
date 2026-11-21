@@ -2,22 +2,29 @@
 # -*- coding: utf-8 -*-
 """collectState 輔助腳本（Windows / Linux / macOS 皆可，Python 3.9+）
 
+「只抓最近一個月」：收集窗口與保留期是同一個日期 —— 原文發布日 ≥ TODAY − 1 個月 才收、才留。
+
 子命令：
-  purge     刪除 {cc}_state/ 內「三個月前」的資料（預設只列出，加 --apply 才真的刪；
+  window    印出本次窗口（起迄日、月檔檔名），並把 0.Index.md／既有 .md 標頭裡已收過的原文 URL
+            寫到 <SCRATCH>/state_known_urls.txt，收集時用來去重（不重複下載）
+  purge     刪除 {cc}_state/ 內發布日早於窗口起日（TODAY − 1 個月）的資料（預設只列出，加 --apply 才真的刪；
             StateAnalysis.md、0.Index.md、AnalysisResult.md 受保護）
   convert   把 PDF 以外的檔案（HTML / Word / Excel / PowerPoint / RTF / TXT / CSV / JSON …）轉成 .md，
             成功才刪原檔；PDF 交給 Convert2md Skill；下載殘留暫存檔（.tmp / .part / .crdownload）直接刪
-  finalize  依 manifest（可多份、可用萬用字元）幫每份 .md 補上來源標頭、移除失效圖片連結，並重建 0.Index.md
-  check     自檢：殘留非 .md 檔、檔名缺日期、超過保留期、缺來源標頭、空檔、CID 亂碼、
+  finalize  依 manifest（可多份、可用萬用字元）幫每份 .md 補上來源標頭、移除失效圖片連結，並重建 0.Index.md；
+            發布日落在窗口外、或與檔名日期前綴不一致的紀錄會列出警告
+  check     自檢：殘留非 .md 檔、檔名缺日期、日期在窗口外（太舊或在未來）、缺來源標頭、空檔、CID 亂碼、
             當月輿情新聞檔是否存在、StateAnalysis.md 時間戳／章節／行數
 
 所有子命令都只動 --folder 指定的 {cc}_state 資料夾，不碰其他目錄。「今天」預設以 UTC+8 計。
 
 用法（路徑一律絕對路徑）：
-  python state_tools.py purge    --folder <REPO>/jp_state [--months 3] [--today YYYY-MM-DD] [--apply]
+  python state_tools.py window   --folder <REPO>/jp_state [--scratch <SCRATCH>] [--today YYYY-MM-DD]
+  python state_tools.py purge    --folder <REPO>/jp_state [--today YYYY-MM-DD] [--apply]
   python state_tools.py convert  --folder <REPO>/jp_state --scratch <SCRATCH>
   python state_tools.py finalize --folder <REPO>/jp_state [--manifest "<SCRATCH>/state_manifest*.json" ...]
-  python state_tools.py check    --folder <REPO>/jp_state [--months 3] [--today YYYY-MM-DD]
+  python state_tools.py check    --folder <REPO>/jp_state [--today YYYY-MM-DD]
+（--months 預設 1，一般不要改；只有補跑歷史或測試才用）
 """
 from __future__ import annotations
 
@@ -33,6 +40,8 @@ import sys
 from pathlib import Path
 
 TZ8 = dt.timezone(dt.timedelta(hours=8))
+# 收集窗口＝保留期（月）。改這裡要同步改 SKILL.md §1.2
+WINDOW_MONTHS = 1
 # collectState 每次都要產生的檔（check 會確認存在）
 REQUIRED = {"StateAnalysis.md", "0.Index.md"}
 # 不受保留期限制、不需日期前綴、不補來源標頭、不列入 0.Index.md 的檔（每次執行都會整份重寫）：
@@ -92,6 +101,22 @@ def parse_today(s: str | None) -> dt.date:
     return dt.date.fromisoformat(s) if s else dt.datetime.now(TZ8).date()
 
 
+def parse_published(s) -> dt.date | None:
+    """manifest／標頭的發布日：YYYY-MM-DD、YYYY/MM/DD、YYYYMMDD 或 YYYY-MM（以該月最後一天計）。"""
+    if not s:
+        return None
+    m = re.match(r"^\s*(\d{4})[-/.]?(\d{1,2})(?:[-/.]?(\d{1,2}))?", str(s))
+    if not m:
+        return None
+    y, mo = int(m.group(1)), int(m.group(2))
+    try:
+        if m.group(3):
+            return dt.date(y, mo, int(m.group(3)))
+        return dt.date(y, mo, calendar.monthrange(y, mo)[1])
+    except ValueError:
+        return None
+
+
 def prefix_date(name: str):
     """回傳 (date, kind)。kind = 'day' | 'month' | None。月檔以該月最後一天計。"""
     m = DATE_PREFIX_RE.match(name)
@@ -143,6 +168,52 @@ def remove_empty_dirs(folder: Path) -> None:
             pass
 
 
+# ───────────────────────── window ─────────────────────────
+
+
+def known_urls(folder: Path) -> list[str]:
+    """已收過的原文 URL：0.Index.md 的「原文」欄 ＋ 各 .md 來源標頭的 [原文](...)。"""
+    urls: set[str] = set()
+    idx = folder / "0.Index.md"
+    if idx.exists():
+        for line in idx.read_text(encoding="utf-8", errors="replace").splitlines():
+            if line.startswith("|"):
+                urls.update(re.findall(r"\[link\]\((https?://[^)]+)\)", line))
+    for md in iter_files(folder):
+        if md.suffix.lower() == ".md" and md.name not in PROTECTED:
+            u = read_meta(md).get("url")
+            if u and u.startswith("http"):
+                urls.add(u)
+    return sorted(urls)
+
+
+def cmd_window(a) -> int:
+    folder = safe_folder(a.folder)
+    today = parse_today(a.today)
+    start = months_ago(today, a.months)
+    cc = folder.name.split("_")[0]
+    out("# window")
+    out(f"- TODAY：{today}（UTC+8）")
+    out(f"- WINDOW：{start} ～ {today}（只收、只留原文發布日落在此區間的內容；{start} 之前的一律不抓）")
+    out(f"- 當月彙整檔：{today:%Y%m}_{cc.upper()}_{DIGEST_MARK}.md")
+    olds = [p.name for p in iter_files(folder)
+            if not (p.name in PROTECTED and p.parent == folder)
+            and (prefix_date(p.name)[0] or today) < start]
+    out(f"- 窗口外待 purge：{len(olds)} 個" + ("（先跑 purge --apply）" if olds else ""))
+    urls = known_urls(folder)
+    if a.scratch:
+        scratch = Path(a.scratch).resolve()
+        if scratch == folder or folder in scratch.parents:
+            sys.exit("[拒絕] --scratch 不可放在 {cc}_state 資料夾裡")
+        scratch.mkdir(parents=True, exist_ok=True)
+        dst = scratch / "state_known_urls.txt"
+        dst.write_text("\n".join(urls) + ("\n" if urls else ""), encoding="utf-8")
+        out(f"- 已收過的原文 URL：{len(urls)} 筆 → {dst}（收集前比對，已收過的不重複下載）")
+    else:
+        out(f"- 已收過的原文 URL：{len(urls)} 筆（加 --scratch 可輸出清單）")
+    return 0
+
+
 # ───────────────────────── purge ─────────────────────────
 def cmd_purge(a) -> int:
     folder = safe_folder(a.folder)
@@ -157,7 +228,7 @@ def cmd_purge(a) -> int:
         d, how = file_date(p)
         (keep if d >= cutoff else drop).append((rel, how, d.isoformat()))
     out(f"# purge {'(APPLY)' if a.apply else '(dry-run，未刪除)'}")
-    out(f"- 今天：{today}｜保留期：{a.months} 個月｜截止日：{cutoff}（早於此日的資料刪除）")
+    out(f"- 今天：{today}｜窗口／保留期：{a.months} 個月｜窗口起日：{cutoff}（發布日早於此日的資料刪除）")
     out(f"- 保留 {len(keep)} 個｜刪除 {len(drop)} 個")
     for rel, how, d in drop:
         if a.apply:
@@ -479,7 +550,19 @@ def pick_entry(stem: str, by_stem: dict, alt_taken: set):
 def cmd_finalize(a) -> int:
     folder = safe_folder(a.folder)
     today = parse_today(a.today)
+    start = months_ago(today, a.months)
     files, manifest, bad = load_manifests(a.manifest)
+    date_warn = []
+    for m in manifest:
+        pub = parse_published(m.get("published"))
+        pre, kind = prefix_date(Path(m["file"]).name)
+        if not pub:
+            date_warn.append(f"{m['file']}：manifest 缺 published 或格式不對（{m.get('published')!r}）")
+            continue
+        if pub < start or pub > today:
+            date_warn.append(f"{m['file']}：發布日 {pub} 不在窗口 {start}～{today} → 不該收，刪檔並移出 manifest")
+        if pre and kind == "day" and pre != pub:
+            date_warn.append(f"{m['file']}：檔名前綴 {pre} ≠ 發布日 {pub} → 檔名改成原文發布日")
     by_stem: dict[str, list] = {}
     for m in manifest:
         by_stem.setdefault(Path(m["file"]).stem, []).append(m)
@@ -527,7 +610,7 @@ def cmd_finalize(a) -> int:
     rows.sort(key=lambda r: r[6], reverse=True)  # 新 → 舊；無日期的排最後
     idx = [f"# {folder.name} 資料索引", "",
            f"- 產生時間：{dt.datetime.now(TZ8):%Y-%m-%d %H:%M} (UTC+8)（由 collectState `state_tools.py finalize` 自動產生，勿手改）",
-           f"- 檔案數：{len(rows)}｜保留期：最近 3 個月", "",
+           f"- 檔案數：{len(rows)}｜收集窗口／保留期：最近 {a.months} 個月（{start} ～ {today}）", "",
            "| 發布日 | 類型 | 來源 | 標題 | 檔案 | 原文 |", "| :--- | :--- | :--- | :--- | :--- | :--- |"]
     for r in rows:
         link = f"[link]({r[5]})" if r[5] else "—"
@@ -542,6 +625,8 @@ def cmd_finalize(a) -> int:
         out(f"  - ⚠️ manifest 有、資料夾找不到對應 .md：{f}（下載或轉檔失敗？）")
     for f in untagged:
         out(f"  - ⚠️ 沒有 manifest 紀錄、無法補來源標頭：{f} → 補記 manifest 後重跑 finalize")
+    for w in date_warn:
+        out(f"  - ⚠️ 日期：{w}")
     return 0
 
 
@@ -587,12 +672,17 @@ def cmd_check(a) -> int:
         if p.stat().st_size == 0:
             issues.append(f"空檔：{rel}")
             continue
-        d, _ = prefix_date(p.name)
+        d, kind = prefix_date(p.name)
         if not d:
             issues.append(f"檔名缺 yyyyMMdd_／yyyyMM_ 前綴：{rel}")
         elif d < cutoff:
-            issues.append(f"超過保留期（{d} < {cutoff}）：{rel}")
+            issues.append(f"在窗口外、太舊（{d} < {cutoff}）：{rel} → purge --apply")
+        elif d > today and kind == "day":
+            issues.append(f"日期在未來（{d} > {today}）：{rel} → 檔名要用原文發布日")
         text = p.read_text(encoding="utf-8", errors="replace")
+        pub = parse_published(read_meta(p).get("published"))
+        if pub and kind == "day" and (pub < cutoff or pub > today):
+            issues.append(f"標頭發布日 {pub} 不在窗口 {cutoff}～{today}：{rel}")
         if DIGEST_MARK not in p.name and META_MARK not in text[:3000]:
             issues.append(f"缺來源標頭（finalize 未補）：{rel}")
         body = text.split("\n---\n", 1)[1] if META_MARK in text[:3000] and "\n---\n" in text else text
@@ -611,7 +701,7 @@ def cmd_check(a) -> int:
     if not (folder / digest).exists():
         issues.append(f"缺當月輿情新聞彙整檔：{digest}")
     issues += check_analysis(folder, cc, today)
-    out(f"# check（今天 {today}｜截止日 {cutoff}）")
+    out(f"# check（今天 {today}｜窗口 {cutoff} ～ {today}）")
     out("- ✅ 全部通過" if not issues else f"- ❌ {len(issues)} 項問題")
     for i in issues:
         out(f"  - {i}")
@@ -621,21 +711,25 @@ def cmd_check(a) -> int:
 def main() -> int:
     ap = argparse.ArgumentParser(description="collectState helper")
     sub = ap.add_subparsers(dest="cmd", required=True)
-    for name in ("purge", "convert", "finalize", "check"):
+    for name in ("window", "purge", "convert", "finalize", "check"):
         s = sub.add_parser(name)
         s.add_argument("--folder", required=True)
         s.add_argument("--today", help="YYYY-MM-DD，預設今天（UTC+8）")
-        if name in ("purge", "check"):
-            s.add_argument("--months", type=int, default=3)
+        if name != "convert":
+            s.add_argument("--months", type=int, default=WINDOW_MONTHS,
+                           help=f"窗口＝保留期（月），預設 {WINDOW_MONTHS}；一般不要改")
         if name == "purge":
             s.add_argument("--apply", action="store_true")
         if name == "convert":
             s.add_argument("--scratch", required=True)
+        if name == "window":
+            s.add_argument("--scratch", help="輸出 state_known_urls.txt 的暫存目錄（不可在 repo 的 _state 內）")
         if name == "finalize":
             s.add_argument("--manifest", nargs="*", default=[],
                            help="一或多個 manifest 路徑，可用萬用字元（.json 陣列或 .jsonl）")
     a = ap.parse_args()
-    return {"purge": cmd_purge, "convert": cmd_convert, "finalize": cmd_finalize, "check": cmd_check}[a.cmd](a)
+    return {"window": cmd_window, "purge": cmd_purge, "convert": cmd_convert,
+            "finalize": cmd_finalize, "check": cmd_check}[a.cmd](a)
 
 
 if __name__ == "__main__":

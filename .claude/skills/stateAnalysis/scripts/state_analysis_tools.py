@@ -1,44 +1,58 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""stateAnalysis 輔助腳本（Windows / Linux / macOS 皆可，Python 3.9+，只用標準函式庫，只讀不寫）
+"""stateAnalysis 輔助腳本（Windows / Linux / macOS，Python 3.9+，只用標準函式庫，不寫入 repo）
 
 子命令：
-  check   驗證 {cc}_state/AnalysisResult.md：第一行時間戳、章節骨架與順序、檔頭資訊卡七欄、
-          行數／字元／單行長度上限、零表格（含 code block、Tab、HTML table）、禁用空話與裝飾標題、
-          第〇章（大小、每行長度、免責、「上次：」、禁用詞、⚠️／(舊)）、四個強制輸出行、長序列格式
-  series  讀檔內「MoM 序列」區塊，算出每區累計、自高點、近 6 月均值、YoY(估)、連續達標月數、
-          4／5 個月規則與「房價 × 租金」聯合判定，供第七、八章填寫
+  skeleton  從 references/output_template.md 產生 AnalysisResult.md 草稿（印到 stdout，自行導向檔案）
+  series    讀檔內「MoM 序列」區塊，算每區累計、自高點、近 6 月均值、YoY(估)、連續達標月數、
+            4／5 個月規則與「房價 × 租金」聯合判定，供第七、八章填寫
+  budget    逐章行數預算：各章「實際／上限」、超標行數、距 1000 行還剩多少，並提示先砍哪裡
+  check     交付實測：時間戳、骨架與順序、檔頭七欄、行數／字元／單行上限、零表格、禁用空話與裝飾標題、
+            樣板殘留、第〇章（大小、免責、「上次：」、NT$10 萬、禁用詞、⚠️／(舊)／(種子)）、四個強制輸出行、
+            第三章逐檔欄位與行數、第四章小標、長序列格式與長度、連續空行、逐章行數預算
+            --draft：寫作中使用，時間戳與樣板殘留降為 WARN
+  selftest  維護自檢：SKILL.md §4.1 預算＝BUDGET、樣板骨架＝TITLES／CARD_FIELDS／FORCED、
+            樣板逐檔範例符合 REIT_FIELDS、國家模組與 COUNTRY_JARGON 對得上、.claude／.agents 兩份相同
 
 用法（路徑用絕對路徑）：
-  python state_analysis_tools.py check  --cc jp [--file <REPO>/jp_state/AnalysisResult.md] [--today YYYY-MM-DD]
-  python state_analysis_tools.py series --file <REPO>/jp_state/AnalysisResult.md
-check 有 FAIL 時結束碼為 1；WARN 不影響結束碼，但要逐項看過並判斷。
-上限、骨架與禁用詞要和 SKILL.md §4、§5.8、§6、§8.3 保持同步。
+  python state_analysis_tools.py skeleton --cc jp > <REPO>/jp_state/AnalysisResult.md
+  python state_analysis_tools.py series   --file <REPO>/jp_state/AnalysisResult.md
+  python state_analysis_tools.py budget   --file <REPO>/jp_state/AnalysisResult.md
+  python state_analysis_tools.py check    --cc jp [--file <OUT>] [--today YYYY-MM-DD] [--draft]
+  python state_analysis_tools.py selftest
+check／selftest 有 FAIL 時結束碼為 1；WARN 不影響結束碼，但要逐項看過並判斷。
 """
 from __future__ import annotations
 
 import argparse
 import datetime as dt
+import filecmp
 import re
 import sys
 from pathlib import Path
 
 TZ8 = dt.timezone(dt.timedelta(hours=8))
-REPO = Path(__file__).resolve().parents[4]  # <REPO>/.claude/skills/stateAnalysis/scripts/本檔
+SKILL_DIR = Path(__file__).resolve().parents[1]  # <REPO>/.claude/skills/stateAnalysis
+REPO = SKILL_DIR.parents[2]
+TPL = SKILL_DIR / "references" / "output_template.md"
+COPY_MARK = "<!-- COPY-START -->"
 
-# ───────────────────────── 上限（SKILL.md §8.3） ─────────────────────────
-MAX_LINES, SOFT_LINES = 1000, 960
+# ───────────────────────── 上限（SKILL.md §4.1、§8.3） ─────────────────────────
+MAX_LINES, SOFT_LINES = 1000, 950
 MAX_CHARS = 70_000
 MAX_LINE, SOFT_LINE = 200, 120
 CH0_MAX_LINES, CH0_MAX_CHARS, CH0_MAX_LINE = 100, 7_500, 100
+SKILL_MAX_CHARS = 25_000
 THRESHOLD = -0.10  # 達標月：MoM ≥ −0.10%（＝ Idx(t) ≥ Idx(t−1) × 0.999）
 EPS = 1e-9
 LIST_MAX = 12  # 同類問題最多列幾處
+SERIES_LEN = {"40 個月": 40, "60 個月": 60}
 
-# ───────────────────────── 骨架（SKILL.md §4） ─────────────────────────
+# ───────────────────────── 骨架（references/output_template.md） ─────────────────────────
 STAMP_RE = re.compile(r"^> \*\*更新時間（Last Updated）：(\d{4})/(\d{2})/(\d{2}) "
                       r"([01]\d|2[0-3]):([0-5]\d):([0-5]\d) \(UTC\+8\)\*\*\s*$")
 CARD = "檔頭資訊卡"
+PRE = "前置"
 CHAPTERS = ["〇", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
 TITLES = {
     "〇": "一般人 3 分鐘看懂", "一": "分析師決策摘要", "二": "景氣循環定位與進場時點",
@@ -46,6 +60,7 @@ TITLES = {
     "六": "房地產市場分板塊", "七": "房價 40 個月與 4 個月規則", "八": "租金 60 個月與 5 個月規則",
     "九": "政策與制度變數", "十": "輿情彙整", "十一": "資料來源與搜尋狀態", "十二": "資料缺口與下輪待辦",
 }
+COUNTRY_NAME = {"jp": "日本", "hk": "香港", "tw": "台灣", "us": "美國", "sg": "新加坡", "cn": "中國"}
 CARD_FIELDS = ["範圍與時間", "本檔主要幣別與匯率", "一句話結論", "🆕 本輪最重要的 3 件新事",
                "本輪變更摘要", "資料新鮮度", "每單位口徑"]
 FORCED = [  # （名稱, 規則, 應出現的章）
@@ -54,12 +69,46 @@ FORCED = [  # （名稱, 規則, 應出現的章）
     ("5 個月規則", re.compile(r"\*\*5 個月規則\*\*："), "八"),
     ("政策結論", re.compile(r"\*\*政策結論\*\*："), "九"),
 ]
+NEED_CONCLUSION = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
+NEED_SO_WHAT = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"]
+# 第三章逐檔必備（SKILL.md §5.5；名稱 → 任一關鍵字出現即可）
+REIT_FIELDS = {
+    "結論": ["**結論**"], "殖利率": ["殖利率"], "股價淨值比": ["股價淨值比", "P/NAV"],
+    "租金報酬率": ["租金報酬率"], "空租率": ["空租率"], "負債比率": ["負債比率", "LTV"],
+    "配息品質": ["配息品質"], "所以呢": ["**所以呢**"],
+}
+REIT_MAX = {"完整版": 16, "精簡版": 8}
 BANNED = ["持續觀察", "審慎樂觀", "有待觀察", "值得關注",
           "徹底崩跌", "末日毀滅", "泡沫幻滅", "徹底粉碎", "殘酷死鎖", "致命地雷", "殘酷出清"]
 DECOR_HEADING = ["本輪全新增量", "深度穿透", "穿透備忘", "⭐ 新增"]
 GLOSSARY_HEADING = ["名詞對照", "名詞解釋", "Glossary", "glossary"]
+PLACEHOLDER_RE = re.compile(r"<(?![!/\s]|table|br)[^<>\n]{1,40}>")
+DEMO_MARK = "9999 示範"
 
-# ───────────────────────── 第〇章禁用詞（SKILL.md §5.8 共通＋§6 各國加碼） ─────────────────────────
+# 逐章行數上限（SKILL.md §4.1；空行也算）。PRE＝第一個 `##` 之前的前置行。
+BUDGET = {
+    PRE: 5, CARD: 20, "〇": 100, "一": 35, "二": 55, "三": 190, "四": 80, "五": 30,
+    "六": 65, "七": 60, "八": 90, "九": 45, "十": 45, "十一": 25, "十二": 30,
+}
+CUT_HINT = {  # 超預算時的建議砍法（SKILL.md §8.3 刪減順序的章別版）
+    PRE: "時間戳與主標題之間只留 1 個空行",
+    CARD: "變更摘要 ≤ 5 行、3 件新事各 1 行",
+    "〇": "〇.4 最多 8 檔完整寫，其餘列代號；每條 ≤ 50 字",
+    "一": "速覽各留 3 條（依重要性）",
+    "二": "機構預測與 Top 3 改比較式一行",
+    "三": "§4.1 第三章壓縮：精簡版 6 行 → 觀察名單前 5 → 完整版合併無事項行",
+    "四": "重要性「中」以下改一行、「低」刪",
+    "五": "只留會改變便宜度／借錢成本判定的指標",
+    "六": "每卡寫到階段＋2～3 個數字就停",
+    "七": "序列只留 40 個月；摘要一行一區",
+    "八": "序列只留 60 個月；摘要一行一區",
+    "九": "非焦點 A 輪且里程碑無變化 → 全章標＝、壓到 15 行",
+    "十": "一則一行；刪低可信度且無法量化的",
+    "十一": "一檔 REIT 一行；成功來源合併一行",
+    "十二": "已清償的刪，只留未結待辦與 30 天行事曆",
+}
+
+# ───────────────────────── 第〇章禁用詞（SKILL.md §5.8 共通＋references/{cc}.md 加碼） ─────────────────────────
 COMMON_JARGON = [
     "REIT", "房託", "產業信託", "投資法人",
     "DPU", "分派", "可分派收入", "分配金", "殖利率",
@@ -120,6 +169,21 @@ def mark(ok: bool) -> str:
     return "✅" if ok else "❌"
 
 
+def report(title: str, fails: list[str], warns: list[str], extra: list[str] | None = None) -> int:
+    out(f"- ❌ FAIL {len(fails)}｜WARN {len(warns)}" if fails else f"- ✅ 0 個 FAIL｜WARN {len(warns)}")
+    if fails:
+        out(f"## FAIL（全部修正後重跑 {title}）")
+        for f in fails:
+            out(f"  - {f}")
+    if warns:
+        out("## WARN（逐項看過並判斷）")
+        for w in warns:
+            out(f"  - {w}")
+    for x in extra or []:
+        out(x)
+    return 1 if fails else 0
+
+
 # ───────────────────────── 章節切分 ─────────────────────────
 H2_RE = re.compile(r"^##(?!#)\s*(.+?)\s*$")
 NUM_RE = re.compile(r"^(十二|十一|十|〇|一|二|三|四|五|六|七|八|九)、\s*(.*)$")
@@ -140,6 +204,132 @@ def sections(lines: list[str]):
         heads.append((mm.group(1), mm.group(2).strip(), i) if mm else (None, title, i))
     return [(k, t, s, heads[n + 1][2] if n + 1 < len(heads) else len(lines))
             for n, (k, t, s) in enumerate(heads)]
+
+
+def section_map(lines: list[str]) -> dict:
+    sec = {}
+    for key, _t, s, e in sections(lines):
+        if key:
+            sec.setdefault(key, (s, e))
+    return sec
+
+
+def check_skeleton(lines: list[str], fails: list[str], warns: list[str]) -> dict:
+    """章節齊全、不重複、順序正確、標題照抄、檔頭七欄。回傳 section_map。"""
+    secs = sections(lines)
+    expect = [CARD] + CHAPTERS
+    keys = [s[0] for s in secs if s[0]]
+    for k in expect:
+        c = keys.count(k)
+        label = f"## {CARD}" if k == CARD else f"## {k}、{TITLES[k]}"
+        if c == 0:
+            fails.append(f"缺章節：{label}")
+        elif c > 1:
+            fails.append(f"章節重複 {c} 次：{label}")
+    firsts = list(dict.fromkeys(keys))
+    if firsts != [k for k in expect if k in firsts]:
+        fails.append("章節順序錯誤：" + " → ".join(firsts))
+    for key, title, s, _e in secs:
+        if key is None:
+            warns.append(f"第 {s + 1} 行：非骨架的 `## {title}`（改成 ### 或併入骨架章節）")
+        elif key in TITLES and title != TITLES[key]:
+            warns.append(f"第 {s + 1} 行：標題要照抄「{key}、{TITLES[key]}」，目前是「{key}、{title}」")
+    sec = section_map(lines)
+    if CARD in sec:
+        s, e = sec[CARD]
+        pos = []
+        for f in CARD_FIELDS:
+            hit = next((i for i in range(s, e) if f"**{f}**" in lines[i]), None)
+            if hit is None:
+                fails.append(f"檔頭資訊卡缺欄位：**{f}**")
+            else:
+                pos.append(hit)
+        if pos != sorted(pos):
+            fails.append("檔頭資訊卡欄位順序不對（應為：" + "、".join(CARD_FIELDS) + "）")
+    return sec
+
+
+def reit_blocks(lines: list[str], sec: dict):
+    """第三章 `### <燈號> …` 區塊：回傳 [(標題, 起行, 區塊行)]，區塊到下一個 ### 或 ## 為止。"""
+    if "三" not in sec:
+        return []
+    s, e = sec["三"]
+    starts = [i for i in range(s, e) if re.match(r"^###\s*[🟢🟡🔴]", lines[i])]
+    bounds = [i for i in range(s + 1, e) if lines[i].startswith("###")] + [e]
+    res = []
+    for i in starts:
+        end = next(b for b in bounds if b > i)
+        block = lines[i:end]
+        while block and not block[-1].strip():
+            block.pop()
+        res.append((lines[i].lstrip("# ").strip(), i, block))
+    return res
+
+
+def check_reits(lines: list[str], sec: dict, fails: list[str], warns: list[str]) -> None:
+    blocks = reit_blocks(lines, sec)
+    for title, i, block in blocks:
+        text = "\n".join(block)
+        kind = "完整版" if re.search(r"\*\*現價\*\*", text) else "精簡版"
+        lost = [k for k, alts in REIT_FIELDS.items() if not any(a in text for a in alts)]
+        if lost:
+            fails.append(f"第 {i + 1} 行 {title[:24]}：缺必備欄位 " + "、".join(lost) + "（查不到寫 N/A（原因））")
+        if len(block) > REIT_MAX[kind]:
+            fails.append(f"第 {i + 1} 行 {title[:24]}：{kind} {len(block)} 行 > {REIT_MAX[kind]}")
+    if "三" in sec:
+        s, e = sec["三"]
+        dist = next((lines[k] for k in range(s, e) if "燈號分布" in lines[k]), None)
+        if dist is None:
+            warns.append("第三章找不到「燈號分布：🟢 X 檔｜🟡 Y 檔｜🔴 Z 檔」")
+        else:
+            nums = re.findall(r"[🟢🟡🔴]\s*(\d+)\s*檔", dist)
+            total = sum(int(x) for x in nums)
+            if nums and total != len(blocks):
+                warns.append(f"燈號分布合計 {total} 檔，但第三章 `### <燈號>` 標題有 {len(blocks)} 檔")
+
+
+# ───────────────────────── 行數預算 ─────────────────────────
+def chapter_usage(lines: list[str]):
+    """回傳 [(key, label, used, cap)]，依檔內順序；未知 `##` 併入前一章計算。"""
+    secs = sections(lines)
+    usage: dict = {PRE: secs[0][2] if secs else len(lines)}
+    order, last_key = [PRE], PRE
+    for key, _title, s, e in secs:
+        k = key if key in BUDGET else last_key
+        if k not in usage:
+            usage[k] = 0
+            order.append(k)
+        usage[k] += e - s
+        last_key = k
+    return [(k, k if k in (PRE, CARD) else f"{k}、{TITLES.get(k, '')}", usage[k], BUDGET.get(k))
+            for k in order]
+
+
+def budget_report(lines: list[str]) -> tuple[list[str], list[str]]:
+    """回傳 (輸出行, 超標警告)。"""
+    rows, warns, over_list = [], [], []
+    n = len(lines)
+    for k, label, used, cap in chapter_usage(lines):
+        over = used - cap
+        rows.append(f"  - {label}：{used}/{cap}" + (f"　⚠️ 超標 +{over}" if over > 0 else ""))
+        if over > 0:
+            over_list.append((over, k, label))
+    blanks = sum(1 for x in lines if not x.strip())
+    head = ["## 行數預算（SKILL.md §4.1；空行也算）",
+            f"- 全檔 {n}/{MAX_LINES} 行（目標 ≤ {SOFT_LINES}；預算合計 {sum(BUDGET.values())}）"
+            f"｜距硬上限還剩 {MAX_LINES - n} 行｜空行 {blanks} 行"]
+    tail = []
+    if over_list:
+        over_list.sort(reverse=True)
+        tail.append("- 先砍（超標多的在前）：")
+        for over, k, label in over_list:
+            tail.append(f"  - {label} +{over} 行 → {CUT_HINT[k]}")
+            warns.append(f"{label} {over + BUDGET[k]} 行 > 預算 {BUDGET[k]}（+{over}）→ {CUT_HINT[k]}")
+    if n > MAX_LINES:
+        tail.append(f"- ❌ 至少要刪 {n - MAX_LINES} 行才合格；建議刪到 ≤ {SOFT_LINES}（再刪 {n - SOFT_LINES} 行）")
+    elif n > SOFT_LINES:
+        tail.append(f"- ⚠️ 超過目標 {SOFT_LINES}，建議再刪 {n - SOFT_LINES} 行")
+    return head + rows + tail, warns
 
 
 # ───────────────────────── 第〇章禁用詞 ─────────────────────────
@@ -200,6 +390,10 @@ def missing_months(months: list[str]) -> list[str]:
         if cur not in have:
             miss.append(cur)
     return miss
+
+
+def series_len(title: str):
+    return next((n for k, n in SERIES_LEN.items() if k in title), None)
 
 
 def parse_series(lines: list[str]):
@@ -277,11 +471,30 @@ def region_stats(months: list[str], vals: list):
     }
 
 
+# ───────────────────────── skeleton ─────────────────────────
+def valid_cc(raw: str) -> str:
+    cc = raw.lower().strip()
+    if not re.fullmatch(r"[a-z]{2,3}", cc):
+        sys.exit(f"[錯誤] --cc 只收 2～3 個英文字母：{raw}")
+    return cc
+
+
+def template_body(cc: str) -> str:
+    text = read_text(TPL)
+    if COPY_MARK not in text:
+        raise SystemExit(f"[錯誤] 樣板缺少 {COPY_MARK}：{TPL}")
+    body = text.split(COPY_MARK, 1)[1].lstrip("\n")
+    return body.replace("{國家}", COUNTRY_NAME.get(cc, cc.upper())).replace("{CC}", cc.upper())
+
+
+def cmd_skeleton(a) -> int:
+    sys.stdout.buffer.write(template_body(valid_cc(a.cc)).encode("utf-8"))
+    return 0
+
+
 # ───────────────────────── check ─────────────────────────
 def cmd_check(a) -> int:
-    cc = a.cc.lower().strip()
-    if not re.fullmatch(r"[a-z]{2,3}", cc):
-        sys.exit(f"[錯誤] --cc 只收 2～3 個英文字母：{a.cc}")
+    cc = valid_cc(a.cc)
     path = Path(a.file).resolve() if a.file else REPO / f"{cc}_state" / "AnalysisResult.md"
     today = dt.date.fromisoformat(a.today) if a.today else dt.datetime.now(TZ8).date()
     if not path.is_file():
@@ -295,19 +508,20 @@ def cmd_check(a) -> int:
     lines = text.splitlines()
     fails: list[str] = []
     warns: list[str] = []
+    soft_fail = warns if a.draft else fails  # 寫作中可暫緩的問題
 
     # 1. 時間戳
     first = lines[0] if lines else ""
     m = STAMP_RE.match(first)
     if not m:
-        fails.append(f"第 1 行不是時間戳樣板 `> **更新時間（Last Updated）：yyyy/MM/dd HH:mm:ss (UTC+8)**`：{first[:60]}")
+        soft_fail.append(f"第 1 行不是時間戳樣板 `> **更新時間（Last Updated）：yyyy/MM/dd HH:mm:ss (UTC+8)**`：{first[:60]}")
     else:
         try:
             d = dt.date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
             if d != today:
-                fails.append(f"時間戳日期 {d} 不是今天（{today}）→ 全檔寫完後重取系統時間")
+                soft_fail.append(f"時間戳日期 {d} 不是今天（{today}）→ 全檔寫完後重取系統時間")
         except ValueError:
-            fails.append(f"時間戳日期不存在：{first[:60]}")
+            soft_fail.append(f"時間戳日期不存在：{first[:60]}")
     n_stamp = sum("更新時間（Last Updated）" in line for line in lines)
     if n_stamp != 1:
         fails.append(f"時間戳出現 {n_stamp} 次（只能 1 次，不留版本歷史）")
@@ -319,45 +533,14 @@ def cmd_check(a) -> int:
     elif f"stateAnalysis {cc.upper()}" not in lines[h1[0]]:
         warns.append(f"主標題建議含「（stateAnalysis {cc.upper()}）」：{lines[h1[0]][:60]}")
 
-    # 3. 章節骨架與順序
-    secs = sections(lines)
-    expect = [CARD] + CHAPTERS
-    keys = [s[0] for s in secs if s[0]]
-    for k in expect:
-        c = keys.count(k)
-        label = f"## {CARD}" if k == CARD else f"## {k}、{TITLES[k]}"
-        if c == 0:
-            fails.append(f"缺章節：{label}")
-        elif c > 1:
-            fails.append(f"章節重複 {c} 次：{label}")
-    firsts = list(dict.fromkeys(keys))
-    if firsts != [k for k in expect if k in firsts]:
-        fails.append("章節順序錯誤：" + " → ".join(firsts))
-    sec = {}
-    for key, title, s, e in secs:
-        if key is None:
-            warns.append(f"第 {s + 1} 行：非骨架的 `## {title}`（改成 ### 或併入骨架章節）")
-            continue
-        sec.setdefault(key, (s, e))
-        if key in TITLES and title != TITLES[key]:
-            warns.append(f"第 {s + 1} 行：標題建議照抄「{key}、{TITLES[key]}」，目前是「{key}、{title}」")
+    # 3. 骨架、檔頭七欄
+    sec = check_skeleton(lines, fails, warns)
 
-    # 4. 檔頭資訊卡七欄
-    if CARD in sec:
-        s, e = sec[CARD]
-        pos = []
-        for f in CARD_FIELDS:
-            hit = next((i for i in range(s, e) if f"**{f}**" in lines[i]), None)
-            if hit is None:
-                fails.append(f"檔頭資訊卡缺欄位：**{f}**")
-            else:
-                pos.append(hit)
-        if pos != sorted(pos):
-            fails.append("檔頭資訊卡欄位順序不對（應為：" + "、".join(CARD_FIELDS) + "）")
-
-    # 5. 逐行：長度、零表格、禁用空話、裝飾標題
-    too_long, soft, tables, tabs, fences, banned, decor = [], 0, [], [], [], [], []
+    # 4. 逐行：長度、零表格、禁用空話、裝飾標題、樣板殘留、連續空行
+    too_long, soft, tables, tabs, fences, banned, decor, holders, dblank = [], 0, [], [], [], [], [], [], []
     for no, line in enumerate(lines, 1):
+        if no > 1 and not line.strip() and not lines[no - 2].strip():
+            dblank.append(no)
         n_chars = len(line)
         if n_chars > MAX_LINE:
             too_long.append(f"{no}（{n_chars} 字）")
@@ -372,6 +555,8 @@ def cmd_check(a) -> int:
         banned += [f"{no}:{b}" for b in BANNED if b in line]
         if line.lstrip().startswith("#"):
             decor += [f"{no}:{w}" for w in DECOR_HEADING + GLOSSARY_HEADING if w in line]
+        if no > 1:  # 第 1 行由時間戳檢查負責
+            holders += [f"{no}:{x}" for x in PLACEHOLDER_RE.findall(line)[:2]]
     if too_long:
         fails.append(brief(too_long, f"單行超過 {MAX_LINE} 字（拆行或刪字）"))
     if soft:
@@ -386,17 +571,25 @@ def cmd_check(a) -> int:
         fails.append(brief(banned, "禁用空話／形容詞堆疊"))
     if decor:
         fails.append(brief(decor, "裝飾標題或 Glossary 標題"))
+    if holders:
+        soft_fail.append(brief(holders, "樣板殘留 `< >`（換成真實內容或 N/A（原因））"))
+    if any(DEMO_MARK in x for x in lines):
+        soft_fail.append(f"樣板的虛構範例「{DEMO_MARK}」還在（換成真實 REIT）")
+    if dblank:
+        warns.append(brief(dblank, "連續空行（浪費行數，刪掉）"))
 
-    # 6. 全檔上限
+    # 5. 全檔上限
     n_lines, n_text = len(lines), len(text)
     if n_lines > MAX_LINES:
-        fails.append(f"全檔 {n_lines} 行 > {MAX_LINES}（依 SKILL.md §8.3 刪減順序刪到合格）")
+        fails.append(f"全檔 {n_lines} 行 > {MAX_LINES}（看下方「行數預算」，依 SKILL.md §8.3 刪減順序刪到合格）")
     elif n_lines > SOFT_LINES:
-        warns.append(f"全檔 {n_lines} 行 > 建議值 {SOFT_LINES}")
+        warns.append(f"全檔 {n_lines} 行 > 目標 {SOFT_LINES}")
     if n_text > MAX_CHARS:
         fails.append(f"全檔 {n_text:,} 字元 > {MAX_CHARS:,}")
+    budget_lines, budget_warns = budget_report(lines)
+    warns += budget_warns
 
-    # 7. 第〇章
+    # 6. 第〇章
     ch0_lines = ch0_chars = 0
     if "〇" in sec:
         s, e = sec["〇"]
@@ -413,7 +606,7 @@ def cmd_check(a) -> int:
             fails.append(brief(over, f"第〇章單行超過 {CH0_MAX_LINE} 字"))
         body = "\n".join(ch)
         for must, why in (("不是個人化投資建議", "免責一行"), ("資料截至", "「資料截至 YYYY-MM-DD」"),
-                          ("上次：", "溫度計「上次：X」")):
+                          ("上次：", "溫度計「上次：X」"), ("NT$10 萬", "「每投入 NT$10 萬」收益換算")):
             if must not in body:
                 fails.append(f"第〇章缺{why}")
         found = [mm.group(1) for x in ch if (mm := re.match(r"^###\s*(〇\.\d)", x))]
@@ -423,18 +616,29 @@ def cmd_check(a) -> int:
             fails.append("第〇章缺小節：" + "、".join(f"### {x}" for x in lost))
         elif [x for x in found if x in need] != need:
             fails.append("第〇章小節順序不對（應為 〇.1 → 〇.7）")
-        stale = [str(s + k + 1) for k, x in enumerate(ch) if "⚠" in x or "(舊)" in x or "（舊）" in x]
+        stale = [str(s + k + 1) for k, x in enumerate(ch)
+                 if "⚠" in x or "(舊)" in x or "（舊）" in x or "種子" in x]
         if stale:
-            fails.append(brief(stale, "第〇章不得出現 ⚠️ 或 (舊)（未證實與過舊數字不進第〇章）"))
+            fails.append(brief(stale, "第〇章不得出現 ⚠️、(舊)、(種子)（未證實、過舊、未核對的數字不進第〇章）"))
         hits = jargon_hits(ch, s + 1, jargon_patterns(cc))
         if hits:
             fails.append(brief(hits, "第〇章禁用詞（改白話；必要時只在第一次出現處括號解釋）"))
+
+    # 7. 每章「這段結論」「所以呢」
+    no_concl = [k for k in NEED_CONCLUSION if k in sec and not any(
+        "這段結論" in lines[i] for i in range(sec[k][0], min(sec[k][0] + 4, sec[k][1])))]
+    no_so = [k for k in NEED_SO_WHAT if k in sec and not any(
+        "所以呢" in lines[i] for i in range(max(sec[k][0], sec[k][1] - 4), sec[k][1]))]
+    if no_concl:
+        warns.append("這些章開頭 3 行內沒有「這段結論：」：第" + "、".join(no_concl) + "章")
+    if no_so:
+        warns.append("這些章結尾沒有「**所以呢**：」：第" + "、".join(no_so) + "章")
 
     # 8. 四個強制輸出行
     for name, pat, want in FORCED:
         locs = [i for i, line in enumerate(lines) if pat.search(line)]
         if not locs:
-            fails.append(f"缺強制輸出行：`- **{name}**：…`（格式見 SKILL.md §4.4）")
+            fails.append(f"缺強制輸出行：`- **{name}**：…`（格式見 references/output_template.md）")
             continue
         if want in sec and not any(sec[want][0] <= i < sec[want][1] for i in locs):
             warns.append(f"強制輸出行 **{name}** 應寫在第{want}章")
@@ -444,25 +648,24 @@ def cmd_check(a) -> int:
                 if g + y + r != 5:
                     fails.append(f"第 {i + 1} 行：五盞燈 {g} 綠＋{y} 黃＋{r} 紅 ≠ 5")
 
-    # 9. 第三章燈號分布
-    if "三" in sec:
-        s, e = sec["三"]
-        n_blocks = sum(1 for i in range(s, e) if re.match(r"^###\s*[🟢🟡🔴]", lines[i]))
-        dist = next((lines[i] for i in range(s, e) if "燈號分布" in lines[i]), None)
-        if dist is None:
-            warns.append("第三章找不到「燈號分布：🟢 X 檔｜🟡 Y 檔｜🔴 Z 檔」")
-        else:
-            total = sum(int(x) for x in re.findall(r"[🟢🟡🔴]\s*(\d+)\s*檔", dist))
-            if total != n_blocks:
-                warns.append(f"燈號分布合計 {total} 檔，但第三章 `### <燈號>` 標題有 {n_blocks} 檔")
+    # 9. 第三章逐檔、第四章小標
+    check_reits(lines, sec, fails, warns)
+    if "四" in sec:
+        s, e = sec["四"]
+        for sub in ("### 🟢 利多", "### 🔴 利空"):
+            if not any(lines[i].startswith(sub) for i in range(s, e)):
+                fails.append(f"第四章缺小標 `{sub}`")
 
-    # 10. 長序列格式
+    # 10. 長序列格式與長度
     blocks, errs = parse_series(lines)
     fails += errs
     for b in blocks:
-        want = 40 if "40 個月" in b["title"] else 60 if "60 個月" in b["title"] else None
-        if want and len(b["months"]) < want:
-            warns.append(f"第 {b['line']} 行序列只有 {len(b['months'])} 個月（應 {want}）→ 缺口寫進第十二章")
+        want = series_len(b["title"])
+        n_m = len(b["months"])
+        if want and n_m < want:
+            warns.append(f"第 {b['line']} 行序列只有 {n_m} 個月（應 {want}）→ 缺口寫進第十二章")
+        elif want and n_m > want:
+            warns.append(brief(b["months"][:n_m - want], f"第 {b['line']} 行序列 {n_m} 個月 > {want}，刪最舊 {n_m - want} 個月"))
         if b["gaps"]:
             warns.append(brief(b["gaps"], f"第 {b['line']} 行序列缺月份（補 N/A 列）"))
     for key, label in (("七", "房價"), ("八", "租金")):
@@ -471,19 +674,24 @@ def cmd_check(a) -> int:
 
     # 輸出
     longest = max((len(x) for x in lines), default=0)
-    out(f"# check — {path}（今天 {today}｜cc={cc}）")
+    out(f"# check{'（draft）' if a.draft else ''} — {path}（今天 {today}｜cc={cc}）")
     out(f"- 行數 {n_lines}/{MAX_LINES}｜字元 {n_text:,}/{MAX_CHARS:,}｜最長行 {longest} 字"
         f"｜第〇章 {ch0_lines}/{CH0_MAX_LINES} 行、{ch0_chars:,}/{CH0_MAX_CHARS:,} 字元")
-    out(f"- ❌ FAIL {len(fails)}｜WARN {len(warns)}" if fails else f"- ✅ 0 個 FAIL｜WARN {len(warns)}")
-    if fails:
-        out("## FAIL（全部修正後重跑）")
-        for f in fails:
-            out(f"  - {f}")
-    if warns:
-        out("## WARN（逐項看過並判斷）")
-        for w in warns:
-            out(f"  - {w}")
-    return 1 if fails else 0
+    return report("check", fails, warns, budget_lines)
+
+
+# ───────────────────────── budget ─────────────────────────
+def cmd_budget(a) -> int:
+    path = Path(a.file).resolve()
+    if not path.is_file():
+        out(f"# budget\n- ❌ 找不到檔案：{path}")
+        return 1
+    lines = read_text(path).splitlines()
+    out(f"# budget — {path}")
+    rows, _ = budget_report(lines)
+    for x in rows:
+        out(x)
+    return 1 if len(lines) > MAX_LINES else 0
 
 
 # ───────────────────────── series ─────────────────────────
@@ -513,6 +721,9 @@ def cmd_series(a) -> int:
         n_na = sum(v is None for row in b["values"] for v in row)
         out(f"- 期間：{months[0]} ～ {months[-1]}，共 {len(months)} 個月｜缺月 {len(b['gaps'])}｜N/A {n_na} 格"
             "｜Idx 以首月 = 100 串接 (估)")
+        want = series_len(b["title"])
+        if want and len(months) > want:
+            out(f"- ⚠️ 超過 {want} 個月：寫回 <OUT> 時刪最舊 {len(months) - want} 個月（SKILL.md §5.4，序列長度固定）")
         stats = {}
         for k, reg in enumerate(b["regions"]):
             st = region_stats(months, [row[k] for row in b["values"]])
@@ -545,17 +756,115 @@ def cmd_series(a) -> int:
     return 1 if errors else 0
 
 
+# ───────────────────────── selftest ─────────────────────────
+BUDGET_LINE_RE = re.compile(r"^- (前置|檔頭資訊卡|(十二|十一|十|〇|一|二|三|四|五|六|七|八|九)、(.+?))：≤ (\d+) 行\s*$")
+
+
+def cmd_selftest(_a) -> int:
+    fails: list[str] = []
+    warns: list[str] = []
+    out(f"# selftest — {SKILL_DIR}")
+
+    # 1. SKILL.md 大小與 §4.1 預算
+    text = read_text(SKILL_DIR / "SKILL.md")
+    if len(text) > SKILL_MAX_CHARS:
+        fails.append(f"SKILL.md {len(text):,} 字元 > {SKILL_MAX_CHARS:,}（Read 工具會截斷；內容移到 references/）")
+    got = {}
+    for line in text.splitlines():
+        m = BUDGET_LINE_RE.match(line)
+        if not m:
+            continue
+        key = {"前置": PRE, "檔頭資訊卡": CARD}.get(m.group(1), m.group(2))
+        got[key] = int(m.group(4))
+        if m.group(2) and m.group(3) != TITLES.get(m.group(2)):
+            fails.append(f"SKILL.md §4.1 標題「{m.group(1)}」≠ TITLES「{m.group(2)}、{TITLES.get(m.group(2))}」")
+    if got != BUDGET:
+        diff = [k for k in list(BUDGET) + [k for k in got if k not in BUDGET] if got.get(k) != BUDGET.get(k)]
+        fails.append("SKILL.md §4.1 預算與 BUDGET 不一致：" + "、".join(
+            f"{k}（SKILL {got.get(k)}／BUDGET {BUDGET.get(k)}）" for k in diff))
+    total = re.search(r"合計 (\d+) 行", text)
+    if not total or int(total.group(1)) != sum(BUDGET.values()):
+        fails.append(f"SKILL.md「合計 X 行」應為 {sum(BUDGET.values())}")
+
+    # 2. 樣板
+    if not TPL.is_file():
+        fails.append(f"找不到樣板：{TPL}")
+    else:
+        body = template_body("jp").splitlines()
+        tf: list[str] = []
+        tw: list[str] = []
+        sec = check_skeleton(body, tf, tw)
+        fails += [f"樣板：{x}" for x in tf]
+        warns += [f"樣板：{x}" for x in tw]
+        for name, _pat, want in FORCED:
+            locs = [i for i, x in enumerate(body) if f"**{name}**：" in x]
+            if not locs:
+                fails.append(f"樣板缺強制輸出行 **{name}**")
+            elif want in sec and not any(sec[want][0] <= i < sec[want][1] for i in locs):
+                fails.append(f"樣板的強制輸出行 **{name}** 不在第{want}章")
+        rf: list[str] = []
+        check_reits(body, sec, rf, [])
+        fails += [f"樣板逐檔範例：{x}" for x in rf]
+        if not reit_blocks(body, sec):
+            fails.append("樣板第三章沒有 `### <燈號>` 逐檔範例")
+        if not any(DEMO_MARK in x for x in body):
+            warns.append(f"樣板沒有虛構範例標記「{DEMO_MARK}」（check 用它偵測範例殘留）")
+        over = [f"{label} {used}/{cap}" for _k, label, used, cap in chapter_usage(body) if used > cap]
+        if over:
+            fails.append("樣板本身就超出行數預算：" + "、".join(over))
+
+    # 3. 國家模組與禁用詞
+    refs = {p.stem for p in (SKILL_DIR / "references").glob("*.md") if p.name != TPL.name}
+    for cc in COUNTRY_JARGON:
+        if cc not in refs:
+            fails.append(f"COUNTRY_JARGON 有 {cc}，但缺 references/{cc}.md")
+    for cc in sorted(refs - set(COUNTRY_JARGON)):
+        warns.append(f"references/{cc}.md 存在，但 COUNTRY_JARGON 沒有 {cc}（第〇章只套共通禁用詞）")
+    for cc in sorted(refs):
+        ref = read_text(SKILL_DIR / "references" / f"{cc}.md")
+        for must in ("標的池", "發布行事曆", "預扣稅率", "第〇章加碼禁用詞", "五盞燈", "四階段"):
+            if must not in ref:
+                fails.append(f"references/{cc}.md 缺「{must}」")
+
+    # 4. 兩份 Skill 相同
+    s = SKILL_DIR.as_posix()
+    twin = Path(s.replace("/.claude/", "/.agents/") if "/.claude/" in s else s.replace("/.agents/", "/.claude/"))
+    if twin == SKILL_DIR or not twin.is_dir():
+        warns.append(f"找不到另一份 Skill 目錄：{twin}")
+    else:
+        def walk(root: Path):
+            return sorted(p.relative_to(root).as_posix() for p in root.rglob("*")
+                          if p.is_file() and "__pycache__" not in p.parts)
+        a, b = walk(SKILL_DIR), walk(twin)
+        if a != b:
+            fails.append("兩份 Skill 檔案清單不同：" + "、".join(sorted(set(a) ^ set(b))))
+        diff = [f for f in set(a) & set(b) if not filecmp.cmp(SKILL_DIR / f, twin / f, shallow=False)]
+        if diff:
+            fails.append("兩份 Skill 內容不同：" + "、".join(sorted(diff)) + f"（同步到 {twin}）")
+
+    out(f"- SKILL.md {len(text):,}/{SKILL_MAX_CHARS:,} 字元｜預算合計 {sum(BUDGET.values())} 行"
+        f"｜國家模組 {', '.join(sorted(refs))}")
+    return report("selftest", fails, warns)
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="stateAnalysis helper（只讀不寫）")
+    ap = argparse.ArgumentParser(description="stateAnalysis helper（不寫入 repo）")
     sub = ap.add_subparsers(dest="cmd", required=True)
+    k = sub.add_parser("skeleton", help="產生 AnalysisResult.md 草稿（stdout）")
+    k.add_argument("--cc", required=True, help="國家代碼，如 jp、hk")
+    s = sub.add_parser("series", help="計算長序列 4／5 個月規則")
+    s.add_argument("--file", required=True)
+    b = sub.add_parser("budget", help="逐章行數預算（寫作中隨時跑）")
+    b.add_argument("--file", required=True)
     c = sub.add_parser("check", help="驗證 {cc}_state/AnalysisResult.md")
     c.add_argument("--cc", required=True, help="國家代碼，如 jp、hk")
     c.add_argument("--file", help="預設 <REPO>/{cc}_state/AnalysisResult.md")
     c.add_argument("--today", help="YYYY-MM-DD，預設今天（UTC+8）")
-    s = sub.add_parser("series", help="計算長序列 4／5 個月規則")
-    s.add_argument("--file", required=True)
+    c.add_argument("--draft", action="store_true", help="寫作中：時間戳、樣板殘留降為 WARN")
+    sub.add_parser("selftest", help="維護自檢（SKILL、樣板、腳本、兩份 Skill 同步）")
     a = ap.parse_args()
-    return cmd_check(a) if a.cmd == "check" else cmd_series(a)
+    return {"skeleton": cmd_skeleton, "series": cmd_series, "budget": cmd_budget,
+            "check": cmd_check, "selftest": cmd_selftest}[a.cmd](a)
 
 
 if __name__ == "__main__":

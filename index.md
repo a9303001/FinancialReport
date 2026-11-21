@@ -205,7 +205,7 @@ last_updated:    2026-11-18
 | `StkScreenerResult/` | 選股器（Stock Screener）篩選結果與候選名單 |
 | `HkReitScreenerResult/` | 港股 REIT 殖利率 Top10 篩選結果（由 `Analysis/Reit_Hk.md` 產出） |
 | `JpReitScreenerResult/` | 日股 REIT 殖利率篩選結果（由 `Analysis/Reit_Jp.md` 產出） |
-| `<cc>_state/`（如 `jp_state/`、`hk_state/`） | 國家層級房地產 × REIT 情報：`AnalysisResult.md`（深度分析，由 `stateAnalysis` Skill 產出，有就先讀）、`StateAnalysis.md`（月度摘要）、月度輿情新聞、已轉 Markdown 的新聞／報告；單篇資料只保留最近 3 個月（由 `collectState` Skill 收集） |
+| `<cc>_state/`（如 `jp_state/`、`hk_state/`） | 國家層級房地產 × REIT 情報：`AnalysisResult.md`（深度分析，由 `stateAnalysis` Skill 產出，有就先讀）、`StateAnalysis.md`（月度摘要）、月度輿情新聞、已轉 Markdown 的新聞／報告；單篇資料只收、只留最近 1 個月發布的（由 `collectState` Skill 收集） |
 | `Log/` | 排程執行紀錄與彙總報告 |
 | `Prompt/` | 可重複使用的提示詞與參考文件 |
 | `Analysis/` | 總經／REIT／新聞分析 routine、prompt 與結果檔（原 `gemini/`） |
@@ -408,6 +408,8 @@ A: 不算。這是公開資訊整理與研究筆記，資料可能延遲或有�
 | `.claude/skills/Convert2md/SKILL.md` | PDF → Markdown 轉換 Skill |
 | `.claude/skills/collectState/SKILL.md` | 國家層級 REIT 情報收集與分析 Skill（`jp /collectState`、`hk /collectState`） |
 | `.claude/skills/stateAnalysis/SKILL.md` | 國家層級房地產景氣 × REIT 深度分析 Skill（`jp /stateAnalysis`、`hk /stateAnalysis`，輸出 `<cc>_state/AnalysisResult.md`） |
+| `.claude/skills/stateAnalysis/references/` | stateAnalysis 的輸出樣板 `output_template.md` 與國家模組 `jp.md`、`hk.md`（門檻、標的池、錨點、行事曆） |
+| `.claude/skills/stateAnalysis/scripts/state_analysis_tools.py` | stateAnalysis 輔助腳本：`skeleton`、`series`、`budget`、`check`、`selftest` |
 | `.claude/skills/rg/SKILL.md` | ripgrep 執行檔選用規範 |
 | `Routines_*.md` | 排程任務定義（每日輪替收集、每日深度分析、根目錄 ↔ History 歸檔同步） |
 | `Analysis/Reit_Hk.md`、`Analysis/Reit_Jp.md` | 港股／日股 REIT 殖利率篩選 routine |
