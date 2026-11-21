@@ -204,22 +204,22 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 
 | 指標 | 來源 | 慣例發布 |
 | :--- | :--- | :--- |
-| HIBOR、基本利率、貨幣統計、按揭統計 | 金管局 HKMA `hkma.gov.hk` | 每日；每月 |
-| 私人住宅售價／租金指數、寫字樓／商舖租金與售價指數（Excel） | 差餉物業估價署 RVD `rvd.gov.hk` | 每月底（前月值） |
-| 買賣合約登記宗數與金額 | 土地註冊處 `landreg.gov.hk` | 每月初 |
-| 零售業總銷貨、失業率、GDP | 統計處 `censtatd.gov.hk` | 每月初／季 |
-| 訪港旅客 | 旅發局 `partnernet.hktb.com` [未驗證] | 每月中 |
-| 中原城市領先指數 CCL | 中原地產 `centadata.com` [未驗證] | 每週五 |
-| 美國 FOMC（港元聯繫匯率傳導） | Fed `federalreserve.gov` | 年 8 次 |
+| HIBOR、基本利率、貨幣統計、按揭統計 | 金管局 HKMA：每日隔夜／1M HIBOR 與基本利率（`disc_win_base_rate`）用 `api.hkma.gov.hk/…/daily-monetary-statistics/daily-figures-interbank-liquidity`；3M 只在 `monthly-statistical-bulletin/er-ir/hk-interbank-ir-daily`（月度更新、有延遲）[2026-11] | 每日；每月 |
+| 私人住宅售價／租金指數、寫字樓／商舖租金與售價指數（Excel） | 差餉物業估價署 RVD：`rvd.gov.hk/doc/en/statistics/his_data_{n}.xls`（3＝住宅租金、4＝住宅售價、8＝寫字樓租金、9＝寫字樓售價、12＝零售），「所有類別」在第 29 欄，HTTP Last-Modified 可當發布日；需 `xlrd` [2026-11] | 每月底（前月值） |
+| 買賣合約登記宗數與金額 | 土地註冊處新聞稿：經 `info.gov.hk/gia/general/{yyyyMM}/{dd}.htm` 逐日索引找單篇，curl 可讀 [2026-11] | 每月初 |
+| 零售業總銷貨、失業率、GDP | 統計處網站為 JS 頁；改用 `info.gov.hk/gia/general/{yyyyMM}/{dd}.htm` 找新聞稿單篇 [2026-11] | 每月初／季 |
+| 訪港旅客 | 旅發局 `partnernet.hktb.com`：2026-11 WebSearch 找不到 10 月官方數字（只有媒體 9 月摘要）[2026-11] | 每月中 |
+| 中原城市領先指數 CCL | 中原地產：`hk.centanet.com/CCI/index`（舊 centadata `cci.htm` 只回 351 bytes 外殼），漲跌正負號要解析頁內 `window.__NUXT__` [2026-11] | 每週五 |
+| 美國 FOMC（港元聯繫匯率傳導） | Fed：聲明 `federalreserve.gov/newsevents/pressreleases/monetary{yyyyMMdd}a.htm`，curl 可讀 [2026-11] | 年 8 次 |
 | 施政報告、財政預算案、印花稅／樓市措施 | 香港政府新聞公報 `info.gov.hk` | 不定期 |
 
-**B 研究報告**：JLL `jll.com.hk`、CBRE `cbre.com.hk`、高力 Colliers、萊坊 Knight Frank（住宅／寫字樓月報 PDF）、第一太平戴維斯 Savills、戴德梁行 Cushman & Wakefield、美聯／中原研究部 [均未驗證]；評級機構（Fitch、S&P、Moody's）對港 REIT 的公開評論。
+**B 研究報告**：萊坊 Knight Frank PDF `content.knightfrank.com`、第一太平戴維斯 Savills PDF `pdf.savills.asia` curl 可下載；JLL 新聞稿 `jll.com.hk` 可讀 [2026-11]；CBRE 亞太 PDF 與高力新聞稿回 403，只能取搜尋索引 [2026-11]；戴德梁行、美聯／中原研究部 [未驗證]；評級機構（Fitch、S&P、Moody's）對港 REIT 的公開評論（惠譽頁為 JS 外殼）。
 
-**C 新聞**：香港經濟日報、信報、明報財經、AAStocks、新浪港股、Reuters／Bloomberg 香港地產、智通財經（照 `collectStk` §4.3）。
+**C 新聞**：香港經濟日報、信報、明報財經、AAStocks、新浪港股、Reuters／Bloomberg 香港地產、智通財經（照 `collectStk` §4.3）。AAStocks 各 REIT 新聞列表常停在數月前（00405、01503、01426 窗口內 0 則），冷門 REIT 改用 Exa 查新聞；KPMG 稅務快訊 `kpmg.com/cn/en/insights/…` 可讀 [2026-11]。
 
-**D REIT 市場**：全部港股 REIT 窗口內 HKEXnews 公告（照 `collectStk` §5.4）。上市 REIT 共 11 檔 [2026-11，HKEX REIT 報價頁 2026-11-13 與 snowball-analytics 2026-11-06 交叉核對]：`00823` 領展、`02778` 冠君、`00778` 置富、`00435` 陽光、`00808` 泓富、`00405` 越秀、`01881` 富豪、`87001` 匯賢（人民幣計價）、`01426` 春泉、`01503` 招商局商業、`02191` 順豐；`01275` 開元已不在名單。每次先看 HKEX REIT 報價頁（`hkex.com.hk/market-data/securities-prices/real-estate-investment-trusts`）有無新上市／除牌，有變動就改寫本列；`HkReitScreenerResult/` 最新榜單對照。
+**D REIT 市場**：全部港股 REIT 窗口內 HKEXnews 公告（照 `collectStk` §5.4）。上市 REIT 共 11 檔 [2026-11，HKEX widget API 2026-11-20 16:31 核對]：`00823` 領展、`02778` 冠君、`00778` 置富、`00435` 陽光、`00808` 泓富、`00405` 越秀、`01881` 富豪、`87001` 匯賢（人民幣計價）、`01426` 春泉、`01503` 招商局商業、`02191` 順豐（2026-10-29 公布出售全部物業後清盤除牌，交易完成後從名單刪除）；`01275` 開元已不在名單。每次先核對名單有無新上市／除牌，有變動就改寫本列；`HkReitScreenerResult/` 最新榜單對照。名單＋收盤＋殖利率＋市值一次取得：curl 報價頁 `hkex.com.hk/market-data/securities-prices/real-estate-investment-trusts`，grep `return "evL…"` 取 token，再打 `www1.hkex.com.hk/hkexwidget/data/getreitfilter?lang=eng&token={token}&sort=5&order=0&all=1&qid=1&callback=cb`（帶 Referer `hkex.com.hk`）[2026-11]。每單位口徑用 HKEXnews 各 REIT「單位變動月報表」（pdftotext 後找 `Balance at close of the month`，三欄依序為不含庫存／庫存／合計）[2026-11]。恒生 REIT 指數無免授權來源，以 HKEX 殖利率表代替溫度計 [2026-11]。
 
-**E 輿情**：LIHKG（地產台、財經台）、香港討論區 `discuss.com.hk`（地產版）、高登財經台、雪球（領展／越秀等 REIT 頁與「香港REIT」話題）、東方財富股吧（`hk00823` 等）、moomoo 社區、X、Reddit（r/HongKong、r/HKinvesting，經 Apify）、PTT Stock（`港股REIT`、`領展`）、Mobile01。
+**E 輿情**：LIHKG（地產台、財經台）、香港討論區 `discuss.com.hk`（地產版）、高登財經台、雪球（領展／越秀等 REIT 頁與「香港REIT」話題）、東方財富股吧（`hk00823` 等）、moomoo 社區、X、Reddit（r/HongKong、r/HKinvesting，經 Apify）、PTT Stock（`港股REIT`、`領展`）、Mobile01。MCP 需授權時的輿情備援：Exa `web_search_exa` 可回傳 `discuss.com.hk/archiver/?tid-{id}.html` 討論串全文、LIHKG 分類頁標題快照（`lihkg.com/category/37`）、長橋社區帖（moomoo 抓不到時的替代）、雪球 `/S/{代號}/news` 討論流，依 `collectStk` §3.6 標索引；PTT 搜「領展」回 0 筆，港 REIT 討論基本不在 PTT [2026-11]。
 
 ### 4.3 其他國家（`tw`、`us`、`sg`、`cn` …）通用清單
 
@@ -241,15 +241,15 @@ python <TOOLS> purge --folder <FOLDER> --apply    # 確認無誤才真的刪
 
 | 面向 | 指標 | 來源 | 慣例發布 |
 | :--- | :--- | :--- | :--- |
-| 房價 | 70 城新建／二手住宅價格指數（環比、同比，一線逐城） | 國家統計局 NBS `stats.gov.cn` | 每月 15~17 日 |
+| 房價 | 70 城新建／二手住宅價格指數（環比、同比，一線逐城） | 國家統計局 NBS：`stats.gov.cn/sj/zxfb/{yyyyMM}/t{yyyyMMdd}_{id}.html`（約 1.4MB，內含逐城表格可直接解析）；一線／二三線摘要在解讀頁 `/sj/sjjd/` [2026-11] | 每月 15~17 日 |
 | 銷售／開發 | 商品房銷售面積與金額、開發投資、新開工、**到位資金**、待售面積 | NBS | 同上 |
-| 民間價格 | 百城新建／二手均價、漲跌城市家數 | 中指研究院 [未驗證] | 月初 |
+| 民間價格 | 百城新建／二手均價、漲跌城市家數 | 中指研究院：中指云 `cih-index.com/news/…`（UTF-8，含全表）curl 可讀 [2026-11] | 月初 |
 | 租金 ⭐ | 50 城住宅租金（含一線逐城）；CPI 租賃房房租 | 中指；NBS | 月初；每月 9~10 日 |
 | 房企 | 百強房企銷售榜；萬科、碧桂園、恒大、融創等債務展期／重組／清盤 | 克而瑞 CRIC [未驗證]；HKEXnews；財新、Reuters | 月底；不定期 |
 | 信貸 | 居民中長期貸款、LPR、房貸利率下限 | 人民銀行 PBOC `pbc.gov.cn` | 月中；每月 20 日 |
 | 政策 | 收儲、白名單融資、限購鬆綁、城中村改造、土地制度 | 國務院 `gov.cn`、住建部 `mohurd.gov.cn`、自然資源部 `mnr.gov.cn`、各地房管局 | 不定期 |
-| 財政 | 國有土地使用權出讓收入年增率 | 財政部 `mof.gov.cn` | 每月中 |
-| 一線商辦 | 京滬穗深甲級寫字樓空置率、租金、續租調整率 | 高力、JLL、戴德梁行、CBRE | 季後 2~4 週 |
+| 財政 | 國有土地使用權出讓收入年增率 | 財政部 `gks.mof.gov.cn/tongjishuju/…` curl 可讀 [2026-11] | 每月中（2026-11 為 20 日） |
+| 一線商辦 | 京滬穗深甲級寫字樓空置率、租金、續租調整率 | 萊坊各城 Q3 PDF（`content.knightfrank.com`）、JLL；高力、戴德梁行、CBRE | 季後 2~4 週 |
 | 機構預測 | Fitch、S&P、Moody's、UBS、GS、MS、Reuters Poll | 各機構新聞稿 | 不定期 |
 | 輿情 | 雪球（地產話題）、東方財富股吧房地產板塊、淘股吧、新浪財經股吧、X、Reddit（r/China_irl 等） | §3.3 E 類規則 | — |
 
