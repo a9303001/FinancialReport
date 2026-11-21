@@ -184,7 +184,7 @@ python <TOOLS> purge  --folder <FOLDER> --apply               # 確認無誤才�
 | CPI（含家賃） | 總務省統計局：固定網址 `stat.go.jp/data/cpi/sokuhou/tsuki/pdf/zenkoku.pdf`（每月覆寫；2026 起 2025 年基準），「民営家賃」在品目表 [2026-11] | 每月 20 日前後 |
 | 不動產價格指數、地價公示／基準地價、建築著工 | 國土交通省 `mlit.go.jp`；著工 PDF `mlit.go.jp/report/press/content/kencha{令和年}{月2碼}.pdf`（例 `kencha809`＝令和8年9月）[2026-11] | 月底；3 月／9 月；月底 |
 | 首都圈／近畿圈新築公寓動向 | 不動產經濟研究所：列表 `fudousankeizai.co.jp/mansion`（SSR），PDF 在 `/share/mansion/{id}/{亂碼}.pdf`，首都圏／近畿圏各一，curl 可下載 [2026-11] | 每月中旬 |
-| 中古公寓成約（月例速報 PDF） | 東日本 REINS `reins.or.jp`：curl rc=60（憑證鏈不完整，不可關 TLS 驗證）、Exa `CRAWL_SSL_ERROR`，需 Firecrawl／Playwright（授權後再試）[2026-11] | 每月中旬 |
+| 中古公寓成約（月例速報 PDF） | 東日本 REINS `reins.or.jp`：curl rc=60（憑證鏈不完整，不可關 TLS 驗證）、Exa `CRAWL_SSL_ERROR`、Firecrawl（stealth）回 403 AccessDenied；剩 Playwright 未試 [2026-11] | 每月中旬 |
 | 中古公寓價格／租金 | 東京 Kantei：列表 `kantei.ne.jp/report/`（SSR），租金 `report/rent/{id}/`、70㎡ 價格 `report/70m2/{id}/` 單篇 SSR，curl 可讀 [2026-11] | 租金月中、70㎡ 月下旬 |
 | 東京都心 5 區辦公室空室率／租金 ⭐ | 三鬼商事：月報 PDF `e-miki.com/rent/assets/prt/21_{yyyyMM}.pdf`（`yyyyMM`＝號數月，內容為前月時點，例 `21_202611`＝10 月），curl 可下載；`e-miki.com/market/` 已 404 [2026-11] | 月初 |
 | 訪日外客數 | JNTO：curl 403；Exa `web_fetch_exa` 可讀 `jnto.go.jp/news/press/{yyyyMMdd}_monthly.html`（國別細項在附件）[2026-11] | 每月中旬 |

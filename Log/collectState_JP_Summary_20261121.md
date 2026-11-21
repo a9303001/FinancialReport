@@ -57,3 +57,16 @@
 - `collectState` §3.3：新增「MCP 回 requires approval → 視同未連線、Exa 補位」規則。
 - `collectState` §4.1：改寫三鬼商事（`/market/` 404 → `/rent/assets/prt/21_{yyyyMM}.pdf`）、不動產經濟研（PDF 路徑）、REINS（SSL 失敗含 Exa）、東京カンテイ（SSR 單篇路徑）、總務省 CPI（固定 PDF 網址、2025 年基準）、國交省著工（`kencha{令和年}{月}.pdf`）、JNTO（curl 403 → Exa）、財務省 JGB（歷史 CSV 路徑）各列並標 `[2026-11]`；B 類補 ARES／ニッセイAM／JPX ファクトシート固定網址；D 類補 REIT 指數日次取得法；E 類補 5ch J-REIT 總合串解析法與 PTT／X 結果。
 - `.claude/skills/collectState/` 與 `.agents/skills/collectState/` 同步（`diff -r` 無差異）。
+
+---
+
+## 補跑紀錄（2026-11-21 21:30 UTC+8，排程 Routines jp_state）
+- **窗口**：2026-10-21 ~ 2026-11-21；Phase 1 purge dry-run 0 檔（無窗口外資料）；已收 URL 49 筆去重。
+- **本次新增 3 份**（皆 Firecrawl `firecrawl_scrape`，本次 Firecrawl 可正常使用）：
+  - `20261028_Report_CBRE_ロジスティクスマーケットビュー2026Q3.md`（補上「物流空室率」缺口：首都圈 LMT 7.7%）
+  - `20261121_Report_楽天証券経済研究所_物流リート注目三つの理由.md`
+  - `20261121_News_トウシル_日銀利上げ残弾最タカ派と最ハト派.md`（含 7~9 月 GDP 年率 -0.1%）
+- **仍失敗**：REINS 月例速報——Firecrawl stealth proxy 亦回 403 AccessDenied（curl rc=60、Exa SSL 錯誤之外的新失敗型態）。
+- **StateAnalysis.md**：時間戳改 21:30，第二章物流、第四章 3281、第六／七章、第十章、附錄同步更新；`check` ✅ 全部通過。
+- **月檔**：二、三章各 Append 補收來源。
+- **Skill 維護**：collectState §4.1 REINS 列補記 Firecrawl 403。
