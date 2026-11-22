@@ -45,7 +45,7 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 2. **窗口與清理**（一定在收集前）：
    - `python <TOOLS> window --folder <FOLDER> --scratch <SCRATCH>` → 印窗口、月檔名，輸出 `<SCRATCH>/state_known_urls.txt`
    - `python <TOOLS> purge --folder <FOLDER>`（dry-run）→ 確認後加 `--apply`。依檔名日期前綴判斷（不看 mtime）；`0.Index.md`、`AnalysisResult.md` 受保護；舊版遺留的 `StateAnalysis.md` 會被刪除。
-3. **盤點**（決定這次補什麼）：已收 URL 清單；`AnalysisResult.md` 第十二章「資料缺口與下次待辦」（優先補）；當月（或上月）月檔中每個來源最後收到的日期；標的池見 §4。
+3. **盤點**（決定這次補什麼）：已收 URL 清單；`AnalysisResult.md` 第十四章「資料缺口、待辦與行事曆」（優先補）；當月（或上月）月檔中每個來源最後收到的日期；標的池見 §4。
 4. **收集**（§3、§4、§5）：可分 2～3 個子代理人平行（A 官方＋報告、B 新聞＋REIT、C 輿情），各寫自己的單篇檔、manifest 與 `<SCRATCH>/digest_{A|B|C}.md`；月檔只由主代理人寫。
 5. **轉 Markdown**：
    - PDF → 呼叫 `Convert2md` Skill，掃描**必須帶第 3 個參數 `<FOLDER>`**：`python <SCRATCH>/scan_pending.py <REPO> <SCRATCH> <FOLDER>`（不帶會轉掉 repo 其他 PDF）。CID 亂碼 → 換英文版／HTML 版或換來源，都沒有就保留 PDF。
