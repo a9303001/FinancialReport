@@ -38,7 +38,7 @@ REPO = SKILL_DIR.parents[2]
 TPL = SKILL_DIR / "references" / "output_template.md"
 COPY_MARK = "<!-- COPY-START -->"
 
-# ───────────────────────── 上限（SKILL.md §4.1、§8.3） ─────────────────────────
+# ───────────────────────── 上限（SKILL.md §4.1、§7） ─────────────────────────
 MAX_LINES, SOFT_LINES = 1000, 800
 MAX_CHARS = 60_000
 MAX_LINE, SOFT_LINE = 200, 120
@@ -97,7 +97,7 @@ BUDGET = {
     PRE: 5, CARD: 18, "〇": 90, "一": 30, "二": 50, "三": 180, "四": 60, "五": 25,
     "六": 50, "七": 55, "八": 80, "九": 35, "十": 35, "十一": 20, "十二": 25, "附": 30,
 }
-CUT_HINT = {  # 超預算時的建議砍法（SKILL.md §8.3 刪減順序的章別版）
+CUT_HINT = {  # 超預算時的建議砍法（SKILL.md §7 刪減順序的章別版）
     PRE: "時間戳與主標題之間只留 1 個空行",
     CARD: "「跟上次比」≤ 5 行、3 件新事各 1 行",
     "〇": "〇.4 最多 8 檔完整寫，其餘列代號；每條 ≤ 50 字",
@@ -639,7 +639,7 @@ def cmd_check(a) -> int:
     # 5. 全檔上限
     n_lines, n_text = len(lines), len(text)
     if n_lines > MAX_LINES:
-        fails.append(f"全檔 {n_lines} 行 > {MAX_LINES}（看下方「行數預算」，依 SKILL.md §8.3 刪減順序刪到合格）")
+        fails.append(f"全檔 {n_lines} 行 > {MAX_LINES}（看下方「行數預算」，依 SKILL.md §7 刪減順序刪到合格）")
     elif n_lines > SOFT_LINES:
         warns.append(f"全檔 {n_lines} 行 > 目標 {SOFT_LINES}")
     if n_text > MAX_CHARS:

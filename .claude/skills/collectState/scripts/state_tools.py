@@ -8,13 +8,13 @@
   window    印出本次窗口（起迄日、月檔檔名），並把 0.Index.md／既有 .md 標頭裡已收過的原文 URL
             寫到 <SCRATCH>/state_known_urls.txt，收集時用來去重（不重複下載）
   purge     刪除 {cc}_state/ 內發布日早於窗口起日（TODAY − 1 個月）的資料（預設只列出，加 --apply 才真的刪；
-            StateAnalysis.md、0.Index.md、AnalysisResult.md 受保護）
+            0.Index.md、AnalysisResult.md 受保護；舊版遺留的 StateAnalysis.md 一律刪除）
   convert   把 PDF 以外的檔案（HTML / Word / Excel / PowerPoint / RTF / TXT / CSV / JSON …）轉成 .md，
             成功才刪原檔；PDF 交給 Convert2md Skill；下載殘留暫存檔（.tmp / .part / .crdownload）直接刪
   finalize  依 manifest（可多份、可用萬用字元）幫每份 .md 補上來源標頭、移除失效圖片連結，並重建 0.Index.md；
             發布日落在窗口外、或與檔名日期前綴不一致的紀錄會列出警告
   check     自檢：殘留非 .md 檔、檔名缺日期、日期在窗口外（太舊或在未來）、缺來源標頭、空檔、CID 亂碼、
-            當月輿情新聞檔是否存在、StateAnalysis.md 時間戳／章節／行數
+            當月輿情新聞檔是否存在
 
 所有子命令都只動 --folder 指定的 {cc}_state 資料夾，不碰其他目錄。「今天」預設以 UTC+8 計。
 
@@ -40,13 +40,15 @@ import sys
 from pathlib import Path
 
 TZ8 = dt.timezone(dt.timedelta(hours=8))
-# 收集窗口＝保留期（月）。改這裡要同步改 SKILL.md §1.2
+# 收集窗口＝保留期（月）。改這裡要同步改 SKILL.md §1
 WINDOW_MONTHS = 1
 # collectState 每次都要產生的檔（check 會確認存在）
-REQUIRED = {"StateAnalysis.md", "0.Index.md"}
-# 不受保留期限制、不需日期前綴、不補來源標頭、不列入 0.Index.md 的檔（每次執行都會整份重寫）：
-# 上面兩個 ＋ stateAnalysis Skill 產出的 AnalysisResult.md（collectState 只讀不改；還沒產生也不算錯）
+REQUIRED = {"0.Index.md"}
+# 不受保留期限制、不需日期前綴、不補來源標頭、不列入 0.Index.md 的檔：
+# 0.Index.md ＋ stateAnalysis Skill 產出的 AnalysisResult.md（collectState 不讀寫；還沒產生也不算錯）
 PROTECTED = REQUIRED | {"AnalysisResult.md"}
+# 舊版 collectState 產生、現已停用的檔：purge 一律刪除
+OBSOLETE = {"StateAnalysis.md"}
 FOLDER_RE = re.compile(r"^[a-z]{2,3}_state$")
 # yyyyMMdd_ 或 yyyyMM_ 開頭
 DATE_PREFIX_RE = re.compile(r"^(\d{4})(\d{2})(\d{2})?_")
@@ -68,7 +70,6 @@ IMAGE_EXT = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp", ".svg", ".tif", "
 JUNK_EXT = {".tmp", ".part", ".partial", ".crdownload", ".download"}
 # 同名撞檔時 convert 會產生 {stem}_{ext}.md；finalize 依此回推 manifest 的原檔名
 ALT_SPLIT_RE = re.compile(r"^(.*)_(%s)(?:_\d+)?$" % "|".join(sorted(e.lstrip(".") for e in CONVERTIBLE)))
-SA_MAX_LINES = 600
 
 
 # ───────────────────────── 共用 ─────────────────────────
@@ -198,7 +199,7 @@ def cmd_window(a) -> int:
     out(f"- 當月彙整檔：{today:%Y%m}_{cc.upper()}_{DIGEST_MARK}.md")
     olds = [p.name for p in iter_files(folder)
             if not (p.name in PROTECTED and p.parent == folder)
-            and (prefix_date(p.name)[0] or today) < start]
+            and (p.name in OBSOLETE or (prefix_date(p.name)[0] or today) < start)]
     out(f"- 窗口外待 purge：{len(olds)} 個" + ("（先跑 purge --apply）" if olds else ""))
     urls = known_urls(folder)
     if a.scratch:
@@ -224,6 +225,9 @@ def cmd_purge(a) -> int:
         rel = p.relative_to(folder).as_posix()
         if p.name in PROTECTED and p.parent == folder:
             keep.append((rel, "受保護檔", "-"))
+            continue
+        if p.name in OBSOLETE and p.parent == folder:
+            drop.append((rel, "已停用檔（collectState 不再產生）", "-"))
             continue
         d, how = file_date(p)
         (keep if d >= cutoff else drop).append((rel, how, d.isoformat()))
@@ -631,30 +635,6 @@ def cmd_finalize(a) -> int:
 
 
 # ───────────────────────── check ─────────────────────────
-def check_analysis(folder: Path, cc: str, today: dt.date) -> list[str]:
-    sa = folder / "StateAnalysis.md"
-    if not sa.exists():
-        return []
-    lines = sa.read_text(encoding="utf-8", errors="replace").splitlines()
-    issues = []
-    first = lines[0] if lines else ""
-    stamp = re.search(r"最後更新：\s*(\d{4}-\d{2}-\d{2})", first)  # 只看「最後更新」，資料窗口的日期不算
-    if not stamp:
-        issues.append(f"StateAnalysis.md 第一行不是「> 最後更新：YYYY-MM-DD …」格式：{first[:80]}")
-    elif stamp.group(1) != today.isoformat():
-        issues.append(f"StateAnalysis.md 最後更新日 {stamp.group(1)} 不是今天（{today}）")
-    chapters = ["〇", "一", "二", "三", "四", "六", "七", "八", "九", "十"]
-    if cc == "hk":
-        chapters.insert(5, "五")  # 中國房地產，hk 必備
-    text = "\n".join(lines)
-    lost = [c for c in chapters if not re.search(rf"^##\s*{c}、", text, re.M)]
-    if lost:
-        issues.append(f"StateAnalysis.md 缺章節：{'、'.join(lost)}")
-    if len(lines) > SA_MAX_LINES:
-        issues.append(f"StateAnalysis.md 超過 {SA_MAX_LINES} 行（{len(lines)} 行）")
-    return issues
-
-
 def cmd_check(a) -> int:
     folder = safe_folder(a.folder)
     today = parse_today(a.today)
@@ -664,6 +644,9 @@ def cmd_check(a) -> int:
     for p in iter_files(folder):
         rel = p.relative_to(folder).as_posix()
         if p.name in PROTECTED and p.parent == folder:
+            continue
+        if p.name in OBSOLETE and p.parent == folder:
+            issues.append(f"已停用檔仍在：{rel} → purge --apply")
             continue
         if p.suffix.lower() != ".md":
             hint = "（已有同名 .md，確認內容後可刪）" if p.with_suffix(".md").exists() else ""
@@ -700,7 +683,6 @@ def cmd_check(a) -> int:
     digest = f"{today:%Y%m}_{cc.upper()}_{DIGEST_MARK}.md"
     if not (folder / digest).exists():
         issues.append(f"缺當月輿情新聞彙整檔：{digest}")
-    issues += check_analysis(folder, cc, today)
     out(f"# check（今天 {today}｜窗口 {cutoff} ～ {today}）")
     out("- ✅ 全部通過" if not issues else f"- ❌ {len(issues)} 項問題")
     for i in issues:
