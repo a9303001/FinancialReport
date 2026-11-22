@@ -77,7 +77,6 @@ FinancialReport/
 ├── JpReitScreenerResult/          # 日股 REIT 殖利率篩選結果（Analysis/Reit_Jp.md 產出）
 ├── <cc>_state/                    # 國家層級 REIT 情報（collectState 收集、stateAnalysis 分析，如 jp_state、hk_state；只收、只留最近 1 個月發布的資料）
 │   ├── AnalysisResult.md          #   ★ 該國房地產景氣 × REIT 深度分析（stateAnalysis 產出；有就先讀這個）
-│   ├── StateAnalysis.md           #   月度收集摘要與 REIT 投資分析（collectState 產出）
 │   ├── 0.Index.md                 #   資料索引（自動產生）
 │   ├── <yyyyMM>_<CC>_輿情新聞.md   #   月度輿情與新聞彙整
 │   └── <yyyyMMdd>_<類型>_<來源>_<標題>.md  # 單篇新聞／報告／官方數據（已轉 Markdown）
@@ -243,7 +242,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | `collectStk` | 收集個股最新財務報告與輿情討論 / 新聞 |
 | `ArrangePublicOpinionMd` | 把零散月度輿情 `.md` 依年份合併成 `<YYYY>_PublicOpinion.md`，驗證後刪除原檔（年報 / 季報不動） |
 | `Convert2md` | 用 MCP `convert_pdf_to_markdown` 把 PDF 轉 Markdown，檢查 CID 亂碼並刪除失敗檔（可帶掃描範圍參數只轉指定資料夾，如 `collectState` 只轉 `<cc>_state/`） |
-| `collectState` | `jp /collectState`、`hk /collectState`：只抓最近 1 個月：先刪 `<cc>_state/` 發布日超過 1 個月的資料，再只收集該國最近 1 個月發布的房地產／REIT 新聞、報告與輿情（已收過的不重抓）（hk 加中國房地產），全部轉 Markdown，重寫 `StateAnalysis.md` 作 REIT 投資分析 |
+| `collectState` | `jp /collectState`、`hk /collectState`：只抓最近 1 個月：先刪 `<cc>_state/` 發布日超過 1 個月的資料，再只收集該國最近 1 個月發布的房地產／REIT 新聞、報告與輿情（已收過的不重抓）（hk 加中國房地產），全部轉 Markdown 並重建 `0.Index.md`；只收集不分析（分析由 `stateAnalysis` 負責） |
 | `stateAnalysis` | `jp /stateAnalysis`、`hk /stateAnalysis`：讀 `<cc>_state/` 與本機 REIT 資料夾＋deep research，依景氣溫度計、五盞燈、房價 40 個月／租金 60 個月規則、政策與土地制度情境，判斷 REIT 進場時點與逐檔燈號，整份重寫 `<cc>_state/AnalysisResult.md`（第〇章白話首頁、零表格、≤ 1000 行） |
 | `rg` | ripgrep 執行檔選用規範（PATH／內建 Grep → `D:\Prog_install\ripgrep\rg.exe` → 其他搜尋方式） |
 
