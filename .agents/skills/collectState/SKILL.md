@@ -184,15 +184,16 @@ python <TOOLS> purge  --folder <FOLDER> --apply               # 確認無誤才�
 | CPI（含家賃） | 總務省統計局：固定網址 `stat.go.jp/data/cpi/sokuhou/tsuki/pdf/zenkoku.pdf`（每月覆寫；2026 起 2025 年基準），「民営家賃」在品目表 [2026-11] | 每月 20 日前後 |
 | 不動產價格指數、地價公示／基準地價、建築著工 | 國土交通省 `mlit.go.jp`；著工 PDF `mlit.go.jp/report/press/content/kencha{令和年}{月2碼}.pdf`（例 `kencha809`＝令和8年9月）[2026-11] | 月底；3 月／9 月；月底 |
 | 首都圈／近畿圈新築公寓動向 | 不動產經濟研究所：列表 `fudousankeizai.co.jp/mansion`（SSR），PDF 在 `/share/mansion/{id}/{亂碼}.pdf`，首都圏／近畿圏各一，curl 可下載 [2026-11] | 每月中旬 |
-| 中古公寓成約（月例速報 PDF） | 東日本 REINS `reins.or.jp`：curl rc=60（憑證鏈不完整，不可關 TLS 驗證）、Exa `CRAWL_SSL_ERROR`、Firecrawl（stealth）回 403 AccessDenied；剩 Playwright 未試 [2026-11] | 每月中旬 |
+| 中古公寓成約（月例速報 PDF） | 東日本 REINS `reins.or.jp`：curl rc=60（憑證鏈不完整，不可關 TLS 驗證）、Exa `CRAWL_SSL_ERROR`、Firecrawl（stealth）回 403 AccessDenied；可改由 `住宅新報 jutaku-s.com`＋`prbase-realestate.com`（curl/Exa 可讀）交叉核對月例速報 [2026-11] | 每月中旬（10 日前後） |
+| 薪資／GDP／零售 | 厚勞省毎月勤労統計 `mhlw.go.jp/toukei/itiran/roudou/monthly/r{和曆}/…/dl/houdou*.pdf`、內閣府 GDP `esri.cao.go.jp/…/qe{yy}{q}/pdf/gaiyou*.pdf`（curl 可下載）；經產省商業動態 `meti.go.jp/statistics/tyo/syoudou/result-2.html` curl 403、XLSX 回 0B，改查 e-Stat/Exa [2026-11] | 每月上旬／季後中旬／月底 |
 | 中古公寓價格／租金 | 東京 Kantei：列表 `kantei.ne.jp/report/`（SSR），租金 `report/rent/{id}/`、70㎡ 價格 `report/70m2/{id}/` 單篇 SSR，curl 可讀 [2026-11] | 租金月中、70㎡ 月下旬 |
 | 東京都心 5 區辦公室空室率／租金 ⭐ | 三鬼商事：月報 PDF `e-miki.com/rent/assets/prt/21_{yyyyMM}.pdf`（`yyyyMM`＝號數月，內容為前月時點，例 `21_202611`＝10 月），curl 可下載；`e-miki.com/market/` 已 404 [2026-11] | 月初 |
 | 訪日外客數 | JNTO：curl 403；Exa `web_fetch_exa` 可讀 `jnto.go.jp/news/press/{yyyyMMdd}_monthly.html`（國別細項在附件）[2026-11] | 每月中旬 |
 | 不動產相關稅制、法規（12 月稅制大綱） | 財務省、國會、金融廳 | 不定期 |
 
-**B 研究報告**（公開免費 PDF 為主）：ARES 月報 `ares.or.jp/action/monthly/pdf/ares_monthly_report_{yyyyMM}.pdf`、ニッセイアセット J-REIT 月報 `nam.co.jp/news/mpdf/{yyMMdd}_tjj.pdf`（NAV 倍率、殖利率、利差）、JPX 東證 REIT 指數ファクトシート `jpx.co.jp/markets/indices/factsheets/files/102_fac2_REIT.pdf`（固定網址月更，看 `Last-Modified` 判斷是否窗口內）、Cushman & Wakefield 東京辦公室 MarketBeat（新聞頁 SSR 附 PDF）、第一生命經研 `dlri.co.jp`、信金中金 `scbri.jp`（金利見通し）——以上 curl 可下載 [2026-11]；大和AM 英文月報 PDF curl 回 HTML，只能 Exa 索引 [2026-11]；JREI `reinet.or.jp`（不動產投資家調查）、Nissay 基礎研究所 `nli-research.co.jp`、三井住友信託基礎研究所 `smtri.jp`、大和總研 `dir.co.jp`、CBRE `cbre.co.jp`、JLL `jll.co.jp`、Savills `savills.co.jp`、Colliers [未驗證]。券商報告多為客戶限定，只收公開摘要並註明。
+**B 研究報告**（公開免費 PDF 為主）：ARES 月報 `ares.or.jp/action/monthly/pdf/ares_monthly_report_{yyyyMM}.pdf`、ニッセイアセット J-REIT 月報 `nam.co.jp/news/mpdf/{yyMMdd}_tjj.pdf`（NAV 倍率、殖利率、利差）、JPX 東證 REIT 指數ファクトシート `jpx.co.jp/markets/indices/factsheets/files/102_fac2_REIT.pdf`（固定網址月更，看 `Last-Modified` 判斷是否窗口內）、Cushman & Wakefield 東京辦公室 MarketBeat（新聞頁 SSR 附 PDF）、第一生命經研 `dlri.co.jp`、信金中金 `scbri.jp`（金利見通し）、JREI `reinet.or.jp`（不動產取引市場調査 `/wp-content/uploads/…/Market-Survey_*.pdf`）——以上 curl 可下載 [2026-11]；大和AM 英文月報 PDF curl 回 HTML，只能 Exa 索引 [2026-11]；JREI 不動產投資家調査、Nissay 基礎研究所 `nli-research.co.jp`、三井住友信託基礎研究所 `smtri.jp`、大和總研 `dir.co.jp`、CBRE `cbre.co.jp`、JLL `jll.co.jp`、Savills `savills.co.jp`、Colliers [未驗證]。券商報告多為客戶限定，只收公開摘要並註明。
 
-**C 新聞**：日經（不動產、J-REIT、日銀）、Reuters／Bloomberg 日本房地產、東洋経済、住宅新報 `jutaku-s.com` [未驗證]、株探 J-REIT 市況、Yahoo JP ニュース。
+**C 新聞**：日經（不動產、J-REIT、日銀）、Reuters／Bloomberg 日本房地產、東洋経済、住宅新報 `jutaku-s.com`（curl/Exa 可讀）[2026-11]、株探 J-REIT 市況、Yahoo JP ニュース。
 
 **D REIT 市場**：東證 REIT 指數水位與平均殖利率、對 10 年 JGB 利差；增資、新上市、合併、TOB 公告（TDnet，經株探／JAPAN-REIT.COM）。**標的池** = `Analysis/gemini_JPState.md` §4.1（8951、8952、3281、3269、8985、8953、3462、8954）＋本機 J-REIT 資料夾（2971、3455、2989、3492、3451）＋ `JpReitScreenerResult/` 最新榜單前 10。
 - 指數日次：日經 `nikkei.com/marketdata/quote/TREIT/history/` 為 JS 載入，改用 Exa 搜「東証REIT指数 {日期} 終値」取 `stock-marketdata.com/reit.html` 日次表（標註來源 JPX）並與日經報價交叉核對；JAPAN-REIT.COM 需 Apify，未授權時 Exa 索引只取得首頁殖利率前 5 與週報 [2026-11]。
