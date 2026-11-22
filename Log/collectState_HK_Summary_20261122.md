@@ -38,3 +38,4 @@
 
 ## 7. Skill 維護
 - 無（本輪未修改 `collectState` Skill 檔案）。
+- **23:24 排程第 2 次複查**：`window`/`purge` 0 筆過期；複核 `info.gov.hk`、HKMA API、HKEX 11 檔 REIT 報價皆無新變動（週末休市）；補充 PBOC 1–10 月住戶中長期貸款 −501 億元及 00405／01503 2026 中期負債核對數字至 `StateAnalysis.md`。
