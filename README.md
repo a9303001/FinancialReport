@@ -243,7 +243,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | `ArrangePublicOpinionMd` | 把零散月度輿情 `.md` 依年份合併成 `<YYYY>_PublicOpinion.md`，驗證後刪除原檔（年報 / 季報不動） |
 | `Convert2md` | 用 MCP `convert_pdf_to_markdown` 把 PDF 轉 Markdown，檢查 CID 亂碼並刪除失敗檔（可帶掃描範圍參數只轉指定資料夾，如 `collectState` 只轉 `<cc>_state/`） |
 | `collectState` | `jp /collectState`、`hk /collectState`：只抓最近 1 個月：先刪 `<cc>_state/` 發布日超過 1 個月的資料，再只收集該國最近 1 個月發布的房地產／REIT 新聞、報告與輿情（已收過的不重抓）（hk 加中國房地產），全部轉 Markdown 並重建 `0.Index.md`；只收集不分析（分析由 `stateAnalysis` 負責） |
-| `stateAnalysis` | `jp /stateAnalysis`、`hk /stateAnalysis`：讀 `<cc>_state/` 與本機 REIT 資料夾＋deep research，依景氣溫度計、五盞燈、房價 40 個月／租金 60 個月規則、政策與土地制度情境，判斷 REIT 進場時點與逐檔燈號，整份重寫 `<cc>_state/AnalysisResult.md`（第〇章白話首頁、零表格、≤ 1000 行） |
+| `stateAnalysis` | `jp /stateAnalysis`、`hk /stateAnalysis`：讀 `<cc>_state/` 與本機 REIT 資料夾＋deep research，依景氣溫度計、五盞燈、房價 40 個月／租金 60 個月規則、政策與土地制度情境，判斷 REIT 進場時點與逐檔燈號，整份重寫 `<cc>_state/AnalysisResult.md`（越重要越上面：前五章白話首頁、之後佐證；零表格、≤ 1000 行） |
 | `rg` | ripgrep 執行檔選用規範（PATH／內建 Grep → `D:\Prog_install\ripgrep\rg.exe` → 其他搜尋方式） |
 
 ### 排程（Routines）
