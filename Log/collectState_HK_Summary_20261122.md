@@ -39,3 +39,4 @@
 ## 7. Skill 維護
 - 無（本輪未修改 `collectState` Skill 檔案）。
 - **23:24 排程第 2 次複查**：`window`/`purge` 0 筆過期；複核 `info.gov.hk`、HKMA API、HKEX 11 檔 REIT 報價皆無新變動（週末休市）；補充 PBOC 1–10 月住戶中長期貸款 −501 億元及 00405／01503 2026 中期負債核對數字至 `StateAnalysis.md`。
+- **23:39 排程第 3 次複查**：`window`/`purge` 0 筆過期；複核 HKMA API、HKEX 11 檔報價與 `info.gov.hk` 無新變動；從本機一手 `20261112_REIT_HKEX_00823中期業績.md` 核對並補齊領展總債 HK$550 億、浮息 39.0%（HK$215 億）、2026/27 到期 8.1%（HK$45 億）與平均借貸成本 3.29%。
