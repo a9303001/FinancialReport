@@ -1,19 +1,20 @@
 ---
 name: collectStk
-description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「近三個月輿情討論/新聞」，存入公司資料夾，轉 Markdown 後產出執行報告並 push。輸入 COMPANY_TICKER 與 COMPANY_NAME。（舊名 CollectsentimentAndReports）
+description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「近三個月輿情討論/新聞」，存入公司資料夾，轉 Markdown 後產出執行報告並 push。輸入 COMPANY_TICKER 與 COMPANY_NAME。開工先做 MCP 預檢（§3.0），連接器被擋時自動改走替代路徑。（舊名 CollectsentimentAndReports）
 ---
 /goal
 # collectStk — 執行指南
 
-> **任務**：對指定公司 ① 補齊最新財報（2 份年報 + 1 份季報）② 收集過去三個月的輿情/新聞 ③ 轉 Markdown ④ 寫執行報告並 push。
+> **任務**：對指定公司 ⓪ 預檢 MCP ① 補齊最新財報（2 份年報 + 1 份季報）② 收集過去三個月的輿情/新聞 ③ 轉 Markdown ④ 寫執行報告並 push。
 > 本指南適用所有 AI（Claude / Gemini，含輕量模型），請一步一步照做。
 
-## 0. 四條底線（違反任一 = 任務失敗）
+## 0. 五條底線（違反任一 = 任務失敗）
 
 1. **防幻覺**：只記錄真實抓到的內容，附真實 URL 與真實發布時間。抓不到就照 §8.5 誠實記錄，**嚴禁**用訓練資料補內容、捏造連結或分配日期。
-2. **不從本 repo 線上倉庫收集**：嚴禁從 GitHub `a9303001/FinancialReport` 下載財報或新聞；也嚴禁訪問 `macrotrends.net`。（本機資料夾已有的檔案可以盤點，見 §7.1）
+2. **不從本 repo 線上倉庫收集**：嚴禁從 GitHub `a9303001/FinancialReport` 下載財報或新聞；也嚴禁訪問 `macrotrends.net`。（本機資料夾已有的檔案可以盤點與回查，見 §7.1、§8.3）
 3. **即時存檔**：每下載完一份財報、每抓完一個來源，立刻寫檔，不要等全部做完。
-4. **不卡死**：抓取一律照 §3 的固定順序與次數上限，不無限重試、不空等背景任務。
+4. **不卡死**：抓取一律照 §3 的固定順序與次數上限，不無限重試、不空等背景任務；預檢判定不可用的 MCP 整輪不再呼叫。
+5. **不替使用者改帳號設定**：連接器權限、授權、額度只能由使用者處理；AI 只負責偵測、改走替代路徑、在報告寫明修法（§3.0.3）。
 
 ---
 
@@ -32,9 +33,16 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 抓網頁 | `WebFetch` | `read_url` / `read_url_content` |
 | 指令 / 下載 | `Bash`（`curl` 等） | `run_shell_command` |
 | 讀寫檔 | `Read` / `Edit` / `Write` | `view_file` / `write_file` / `edit_file` |
-| MCP 爬取 | `firecrawl_*`、Bright Data `scrape_as_markdown` / `search_engine`、`mcp__Apify__*`、`mcp__playwright__*` | 已連接的同名 MCP 工具 |
+| MCP 爬取 | `firecrawl_*`、Bright Data `scrape_as_markdown` / `search_engine`、`mcp__Apify__*`、`mcp__playwright__*`、Exa `web_search_exa` | 已連接的同名 MCP 工具 |
 
-- **內建工具** = `WebSearch` / `WebFetch` / `curl` 這類原生工具；**MCP 工具** = Firecrawl / Bright Data / Apify / Playwright。
+MCP 分兩種，壞掉的原因與修法不同：
+
+| 類型 | 成員 | 設定位置 | 常見故障 |
+| :--- | :--- | :--- | :--- |
+| 本機 MCP | Playwright、yfinance、sec-edgar-mcp、pymupdf4llm-mcp（`convert_pdf_to_markdown`） | repo `.mcp.json`（與 `.claude/mcp_config.json` 同內容），session 啟動時在本機起程序 | 啟動失敗、逾時 |
+| claude.ai 連接器 | Firecrawl、Bright Data、Apify、Exa | claude.ai 帳號的 Connectors 設定，**每個工具各自有權限** | `MCP tool call requires approval`、需重新登入、額度用盡 |
+
+- **內建工具** = `WebSearch` / `WebFetch` / `curl` 這類原生工具。
 - `curl` 一律帶瀏覽器 User-Agent：`-A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"`。
 
 ---
@@ -43,9 +51,10 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 | Phase | 內容 | 執行者 |
 | :--- | :--- | :--- |
+| 0 | MCP 預檢，建立本輪「可用工具表」（§3.0） | 主代理人 |
 | 1 | 建立/確認公司資料夾（§6） | 主代理人 |
-| 2 | 盤點並下載最新財報（§7） | 每家公司一個子代理人 |
-| 3 | 收集近三個月輿情/新聞（§8） | 同上子代理人 |
+| 2 | 盤點並下載最新財報（§7） | 每家公司一個子代理人（單一公司可由主代理人直接做） |
+| 3 | 收集近三個月輿情/新聞（§8） | 同上 |
 | 4 | 呼叫 `Convert2md` Skill 轉 Markdown（§9） | 主代理人 |
 | 5 | 寫執行報告、維護本 Skill、push（§10、§11） | 主代理人 |
 
@@ -53,24 +62,72 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 ## 3. 通用抓取規則（Phase 2、3 共用，全篇唯一抓取標準）
 
+### 3.0 Phase 0 — MCP 預檢（開工前必做，約 1 分鐘）
+
+#### 3.0.1 怎麼測
+
+**一定要測「真正要用的抓取工具」**，不要測統計／目錄類工具：連接器權限是逐工具設定，唯讀工具能用不代表抓取工具能用（2026-11 實測：Bright Data `session_stats`、Apify `search-actors` 可用，但 `scrape_as_markdown`、`search_engine`、Apify `apify--web-fetch`、所有 `firecrawl_*` 都回 `requires approval`）。
+
+同一則回應內平行送出下列探測（目標都用 `https://example.com`，花費最低）：
+
+| MCP | 探測呼叫 | 成功判準 |
+| :--- | :--- | :--- |
+| Firecrawl | `firecrawl_scrape`（url `https://example.com`、`formats: ["markdown"]`） | 回傳含 `Example Domain` |
+| Bright Data | `scrape_as_markdown`（同上） | 同上 |
+| Apify | `apify--web-fetch`（`GET /`，query `url=https://example.com`）；沒有此工具就用 `call-actor` 跑 `apify/rag-web-browser` | 同上 |
+| Exa | `web_search_exa`（`numResults: 1`，任一公司名） | 有結果 |
+| Playwright | `browser_navigate` 到 `https://example.com` | 頁面標題 `Example Domain` |
+| yfinance | `get_historical_stock_prices`（該公司代碼、`period: 5d`） | 有資料（順便取最新價） |
+
+#### 3.0.2 怎麼判讀（帳號級錯誤 → 該 MCP 本輪全程停用）
+
+| 回應 | 意義 | 本輪處置 |
+| :--- | :--- | :--- |
+| 成功 | 可用 | 列入可用工具表 |
+| `MCP tool call requires approval` | claude.ai 連接器的該工具被設成「需要核准」，雲端與排程執行沒有人能按核准 | 停用該 MCP；**不要重送、不要換同 MCP 其他抓取工具硬試**（同一連接器通常整組一起被擋）；照 §3.0.4 走替代路徑 |
+| `needs you to sign in again`、`Customer is not active`、401 | 連接器授權過期或帳號停用 | 停用，報告請使用者重新登入／檢查帳號 |
+| Firecrawl `HTTP 402`、`Insufficient credits` | 額度用盡 | 停用 Firecrawl |
+| Apify `Monthly usage hard limit exceeded` | 月額度用盡 | 停用所有 Actor |
+| Bright Data `Residential Failed (bad_endpoint)` | 帳號未完成 KYC | 只停用需要 residential 的站（雪球、LIHKG），其他照用 |
+| Bright Data `502 origin_bad_gateway` | 閘道暫時故障 | 不算帳號級；照 §3.1 試 2 次即換，不空等 `retry_after` |
+| 雲端代理回 `connect_rejected`（`curl` rc=56，host 未放行） | 環境網路政策擋直連，不是網站封鎖 | 本輪 `curl` 直連改走 MCP；新聞與公告頁用 `firecrawl_scrape` 搭 `formats: ["query"]` + `queryOptions.mode: directQuote` 只取正文；財報 PDF 無法落地時，報告列出檔名與下載網址供下次補抓 |
+
+預檢結果寫成一行記在心裡並寫進報告 §5，例：`可用：Exa、Playwright、yfinance、curl｜停用：Firecrawl、Bright Data、Apify（requires approval）`。
+
+#### 3.0.3 修法（寫進報告，給使用者照做；AI 不可自行處理）
+
+- **`requires approval`**：到 `https://claude.ai/customize/connectors` → 點該連接器（Firecrawl / Bright Data / Apify）→ 工具權限把要用的抓取工具設成「一律允許（Always allow）」。最少要開：Firecrawl `firecrawl_scrape`、`firecrawl_search`；Bright Data `scrape_as_markdown`、`search_engine`；Apify `apify--web-fetch`、`call-actor`、`get-dataset-items`。若選項是灰的，代表組織管理員鎖住，要請管理員開。
+- **repo 設定不能解決**：`.claude/settings.json` 的 `permissions.allow`（已含 `mcp__*`）與 `PermissionRequest` hook 只管 Claude Code 自己的提示，管不到 claude.ai 連接器層級的核准；雲端 session 也會忽略 `defaultMode: bypassPermissions`。不要為此改 repo 設定。
+- **需重新登入**：同一頁面點該連接器重新連線。
+- **額度**：到該服務後台加值或等下個計費週期。
+
+#### 3.0.4 連接器被停用時的替代路徑（依停用組合）
+
+| 停用 | 改走 |
+| :--- | :--- |
+| 只有 Firecrawl | 鏈上改 Bright Data → Apify `rag-web-browser` → Playwright；`site:` 索引改 Bright Data `search_engine` 或 `WebSearch` |
+| Firecrawl＋Bright Data＋Apify 全停（2026-11 雲端實況） | ① §4、§5 的免 MCP 捷徑（官方 API、SSR 頁、`curl`）照常是第一站，港股 HKEX／AAStocks／新浪／股吧、台股鉅亨／CMoney、日股株探／Yahoo JP 都不受影響 ② JS 頁改 Playwright（富途新聞、moomoo、LIHKG 已驗證可用）③ Playwright 也被擋的站（雪球 567、X 登入牆、Dcard、Mobile01、Seeking Alpha）改 Exa `web_search_exa` 取索引，依 §3.6 標註 ④ `site:` 搜尋改 `WebSearch`（`allowed_domains`）⑤ Reddit 無 Apify 時只能 `WebSearch` 搭 `allowed_domains: ["reddit.com"]` 取索引 |
+| Exa 也停 | 索引只剩 `WebSearch`；雪球記 ❌ 並寫明原因 |
+
 ### 3.1 固定順序
 
 1. **先查 §4 站點知識庫**：該站有已驗證的免 MCP 捷徑（官方 API、SSR 頁、替代站），直接用，成功即止。
 2. **內建工具**：`curl` / `WebFetch`。
-3. **MCP 鏈**：`firecrawl_scrape` → Bright Data `scrape_as_markdown` → Apify → Playwright，依序遞補，任一成功即止。Apify 抓一般網頁用 `apify/rag-web-browser`（`query` 填網址、`maxResults: 1`，一次約 0.01 CU）。
+3. **MCP 鏈**：`firecrawl_scrape` → Bright Data `scrape_as_markdown` → Apify → Playwright，依序遞補，任一成功即止；**預檢已停用的直接略過**。Apify 抓一般網頁用 `apify--web-fetch` 或 `apify/rag-web-browser`（`query` 填網址、`maxResults: 1`，一次約 0.01 CU）。
+4. **索引**：整條鏈失敗或該站在 §4 註明「只能取索引」→ `firecrawl_search` / Bright Data `search_engine` / Exa `web_search_exa` / `WebSearch`（搭 `site:` 或 `allowed_domains`），依 §3.6 標註。
 
 | 規則 | 內容 |
 | :--- | :--- |
 | 次數上限 | 每個工具最多 2 次（失敗只重試 1 次），然後換下一個；不可對同一工具無限重試 |
-| 不可跳過 | 中間的 MCP 不可略過；只有該環境確實沒連上某 MCP 才跳過，並在報告註明「{MCP} 未連線」 |
+| 不可跳過 | 中間的可用 MCP 不可略過；只有預檢停用或環境沒連上才跳過，並在報告註明原因 |
 | 「不支援此站」也算失敗 | 如 Firecrawl 對 `reddit.com` 回「we do not support this site」→ 換下一個，不代表該站抓不到 |
-| 整條鏈都不支援 | 改用 MCP 的搜尋功能（`firecrawl_search`、Bright Data `search_engine`）搭 `site:` 取索引 |
-| 四個 MCP 都失敗 | 才可放棄該站，照 §8.5 記錄，換下一個來源 |
+| 執行中才出現帳號級錯誤 | 依 §3.0.2 立刻停用該 MCP，整輪不再呼叫 |
+| 可用工具全失敗 | 才可放棄該站，照 §8.5 記錄，換下一個來源 |
 
 ### 3.2 什麼算「抓取失敗」（→ 往下一步走，不是放棄理由）
 
 - 空白、只剩選單框架、`<title>Document` 之類的 JS 外殼。
-- 網站封鎖：`not accessible to our user agent`、HTTP 403 / 429、Cloudflare `Just a moment...`、Akamai `Access Denied`。
+- 網站封鎖：`not accessible to our user agent`、HTTP 403 / 429 / 567、Cloudflare `Just a moment...`、Akamai `Access Denied`。
 
 **例外：HTTP 404 或「路徑不存在」不是封鎖**，代表站方沒有這個頁面，不必跑 MCP 鏈，直接換來源（§4 有記錄的例子）。
 
@@ -78,19 +135,9 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 `Read Timeout`、連線超過 10 秒、`EOF`、`Connection reset`、`forcibly closed`、`ECONNREFUSED`、`EHOSTUNREACH` 等 socket 錯誤：見到就放棄這個 URL，刪掉殘留暫存檔（如 `.tmp`），換下一個來源。**不可**開背景下載後空等，也不可反覆重試。
 
-### 3.4 帳號級錯誤 → 該 MCP 本次全程停用
+### 3.4 Playwright 收尾
 
-| 回應 | 意義 | 處置 |
-| :--- | :--- | :--- |
-| Firecrawl `HTTP 402` 或 `Insufficient credits` | 額度用盡 | 本次不再呼叫 Firecrawl，改用 Apify `rag-web-browser` |
-| Apify `Monthly usage hard limit exceeded` | 月額度用盡 | 本次不再呼叫任何 Actor |
-| Bright Data `Residential Failed (bad_endpoint)` | 帳號未完成 KYC | 需 residential 的站（雪球、LIHKG）改走其他 MCP |
-| Bright Data `502 origin_bad_gateway` | MCP 閘道故障 | 照 §3.1 試 2 次即換，不要空等 `retry_after` |
-| 雲端環境代理回 `connect_rejected`（`curl` rc=56，host 未放行） | 環境網路政策只放行 MCP 伺服器，非網站封鎖 | 本次所有 `curl` 直連改走 MCP 鏈；新聞與公告頁用 `firecrawl_scrape` 搭 `formats: ["query"]` + `queryOptions.mode: directQuote` 只取正文，省去選單雜訊；財報 PDF 無法落地，報告列出已確認的檔名與 step=9 網址供下次下載 |
-| 任一 MCP 回 `MCP tool call requires approval` | 環境權限設定要求人工核准，非網站或帳號問題 | 本次視同該 MCP 未連線，直接換鏈上下一個工具，不要重送；報告註明「{MCP} 需核准未執行」。2026-11 雲端環境 Bright Data、Firecrawl 皆如此，Playwright、Exa、yfinance 可直接用 |
-| Bright Data `needs you to sign in again` 或 `Customer is not active` | MCP 授權過期／帳號停用，本次無法自行處理 | 本次全程停用，報告註明請使用者重新授權或檢查帳號；改走 Apify / Exa（雪球改 `firecrawl_scrape` 搭 `proxy: stealth`，可讀 `/S/{代號}` 討論流與即時報價）|
-
-不要對每個網站重踩同一顆地雷；先找 §4 的免 MCP 替代路徑，也不可因此直接改用搜尋摘要打發。所有帳號級錯誤都寫進 §10 報告的 MCP 紀錄。
+- Playwright 的 snapshot、console log 會寫進 repo 根目錄 `.playwright-mcp/`；`browser_network_request` 的 `filename` 也只能寫在 repo 內。用完把需要的內容移出 repo，**push 前刪除 `.playwright-mcp/`**。
 
 ### 3.5 請求頻率
 
@@ -100,7 +147,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 ### 3.6 搜尋摘要的使用條件
 
-只有在 §3.1 整條鏈都失敗、或該站在 §4 註明「只能取索引」時，才可用搜尋摘要，且該筆必須加註：「⚠️ 為搜尋索引摘要，非原始頁面逐字引述」。
+只有在 §3.1 可用工具都失敗、或該站在 §4 註明「只能取索引」時，才可用搜尋摘要，且該筆必須加註：「⚠️ 為搜尋索引摘要，非原始頁面逐字引述」。索引頁標示的日期不等於發布日：新聞農場會把舊聞標成當天（§4.3），要用原文或官方資料核對。
 
 ---
 
@@ -112,7 +159,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 
 | 站點 / 網址 | 狀況 | 做法 |
 | :--- | :--- | :--- |
-| Reddit | 內建工具 400、Firecrawl 不支援、Playwright 與 `search.json` 回 403 | **跳過 §3.1，直接用 Apify Reddit Actor（§5.3）**。Apify 不可用時只能用 Bright Data `search_engine` 取索引並註明 [2026-11] |
+| Reddit | 內建工具 400、Firecrawl 不支援、Playwright 與 `search.json` 回 403 | **跳過 §3.1，直接用 Apify Reddit Actor（§5.3）**。Apify 停用時用 Bright Data `search_engine`；兩者都停用時用 `WebSearch` 搭 `allowed_domains: ["reddit.com"]` 取索引，依 §3.6 註明 [2026-11] |
 | X (Twitter) | 未登入即封鎖：Playwright 被導到登入頁；`firecrawl_scrape` 單篇 `x.com/{帳號}/status/{id}` 自 2026-11 起經 Firecrawl x-com provider 回傳全文、`created_at` 與讚數（約 5 credits） | 日股先用 Yahoo 株つぶやき（§4.4）。其他用 `firecrawl_search`，query 內寫 `site:x.com`（`includeDomains` 參數會回 0 筆）找貼文，重要的再 `firecrawl_scrape` 單篇取全文；Firecrawl 沒額度時用 `WebSearch` 搭 `allowed_domains: ["x.com", "twitter.com"]` 取索引。索引沒有時間時，用網址的 status ID 還原：`(id >> 22) + 1288834974657` 毫秒（UTC） [2026-11] |
 | Reuters `reuters.com` | 內建 `WebSearch` 被擋（`allowed_domains` 含 reuters.com 會直接回 400） | `firecrawl_scrape`（basic proxy）可抓公司頁與文章頁全文。Firecrawl 沒額度時用 Exa `web_search_exa` 找轉載頁（`tradingview.com/news/reuters.com,...`、`marketscreener.com`），可取標題與時間，正文多半沒有 [2026-10] |
 | Bloomberg | 付費牆，不是封鎖 | 取摘要即可，報告註明「付費牆」 |
@@ -154,16 +201,16 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | :--- | :--- | :--- |
 | HKEXnews 披露易 | 有官方 JSON API | **港股財報與公告第一站**，照 §5.4 [2026-09] |
 | HKEX 權益披露 `di.hkex.com.hk` | SSR，`curl` 可讀 | 入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` → 明細 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。核實「大股東增持」類新聞最準；交易代碼 3104「Services」是以單位支付酬金，不是自掏腰包買進。代碼 1201「sale」搭代價 3102「Assets other than cash」時要看大股東 Form 2 第 27 欄 Supplementary information（例：春泉管理人以基金單位派實物股息），新浪/智通自動快訊一律寫成「減持」，不可直接當市場拋售 [2026-11] |
-| 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | 只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天，冷門期可涵蓋約 1 個月）；`curl` 時而 SSR、時而只回約 11KB `<title>Document` JS 外殼 | `curl` 有 SSR 時解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span；回外殼時直接改 Playwright（snapshot 每則 link 含標題、摘要、來源與時間，時間為 UTC，+8 小時；`curl` SSR 拿到的時間已是香港時間，不必換算）。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購/CCASS 快訊偶爾漏日，要與 HKEX 披露交叉核對。較早期間改看 AAStocks／股吧 [2026-10] |
+| 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | 只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天，冷門期可涵蓋約 1 個月）；`curl` 時而 SSR、時而只回約 11KB `<title>Document` JS 外殼 | `curl` 有 SSR 時解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span；回外殼時直接改 Playwright（snapshot 每則 link 含標題、摘要、來源與時間，時間為 UTC，+8 小時；`curl` SSR 拿到的時間已是香港時間，不必換算；snapshot 存在 `.playwright-mcp/page-*.yml`，用 `grep "link "` 取各則）。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購/CCASS 快訊偶爾漏日，要與 HKEX 披露交叉核對。較早期間改看 AAStocks／股吧 [2026-11] |
 | 富途個股頁 `/quote`、`/announcement`、新聞內文 `news.futunn.com/hk/post/*` | JS 外殼；`/community` 導向登入頁 | 內文改用 Playwright 可取全文（MT Newswires 文章仍需登入）；Playwright 渲染出的發文時間是 UTC，+8 小時才是香港時間 [2026-10] |
 | AAStocks | 列表 `aastocks.com/tc/stocks/analysis/stock-aafn/{代號}/0/hk-stock-news/1` 為 SSR；`http://` 會 302 | `curl -L` 抓列表（約 20 則；`/hk-stock-news/2` 回傳與第 1 頁相同，無法翻頁）；單篇 `.../stock-aafn-con/{代號}/{來源}/{ID}/hk-stock-news` 正文就在 SSR HTML（`og:description` 只有約 50 字，不要只取它）。頁頭附沽空金額與比率。市場異動快訊 `aastocks.com/tc/stocks/news/aamm-content/{id}/price-dropped`（`id` 如 `aad2611022327`，前 6 碼為 yyMMdd）不在個股新聞列表內，用 `WebSearch`「{公司名} {代號} 急跌 {月日}」找網址，`curl -L` 單篇可取標題與分鐘級時間；約 3 週後頁面只剩框架，只能引用搜尋標題 [2026-11] |
 | 新浪港股新聞 `stock.finance.sina.com.cn/hkstock/news/{代號}.html` | SSR，最新；只列約 30 則（財報後熱門期僅涵蓋約 2 天，冷門期可涵蓋約 1 個月），含券商研報標題 | `curl`（gb18030 解碼）可讀；研報頁 `stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/{id}/` 為 SSR（gb18030），正文在 `div.blk_container`、機構/研究員/日期在 `div.creab`，可取研報摘要全文。即時／收市報價 `curl -H "Referer: https://finance.sina.com.cn" https://hq.sinajs.cn/list=rt_hk{5碼}`（gb18030）：逗號分隔依序為英文名、中文名、開、前收、高、低、現價、漲跌、漲跌%、買、賣、成交額、成交量…日期、時間；yfinance 港股最新一日 OHLC 常為空值時用它補 [2026-11] |
 | 新浪財經內文 `finance.sina.com.cn`、`t.cj.sina.cn`、`cj.sina.cn` | 時好時壞，且依路徑不同：`/stock/relnews/`、`/stock/aiassist/`（平台 AI 稿）、`/jjxw/`（2026-11 新華財經稿可讀）與研報頁可讀；`/stock/hkstock/marketalerts/`、`/stock/hkstock/hkstocknews/`、`/stock/aigc/`、`/roll/` 與 `cj.sina.cn/articles/view/*` 常回 curl rc=35（SSL connect error／agent-proxy `ws_closed_mid_exchange`） | 先 `curl -m 10` 試 1 次；正文在 `id="artibody"` 之後、時間在 `span.date`。rc=35 時改用 `firecrawl_scrape`（basic，`formats: ["query"]` directQuote，約 5 credits）2026-11 對 `cj.sina.cn`／`/roll/`／`/jjxw/` 4/4 成功，可取正文與 `publishedTime`；Firecrawl 不可用時改找轉載全文：智通「港股異動」稿用富途 `news.futunn.com/hk/post/*`（§4.3 富途列）；A+H 股的上證報／證券時報轉載稿常在東方財富股吧單篇（§5.5）可讀全文；或 Exa `web_search_exa`（依 §3.6 標註為索引）。都沒有才只引用列表標題 [2026-11] |
-| 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 + WAF；Apify `rag-web-browser` 只拿到 WAF JS 外殼，Playwright 回 HTTP 567「请求异常已被安全策略拦截」（對 AI Agent 限制數小時） | 照 §5.6 [2026-10] |
+| 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 + WAF；Apify `rag-web-browser` 只拿到 WAF JS 外殼，Playwright 回 HTTP 567「请求异常已被安全策略拦截」（對 AI Agent 限制數小時，2026-11 依舊） | 照 §5.6 [2026-11] |
 | 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR，但會連續回空殼 | 照 §5.5 [2026-11] |
 | 東方財富公告 API `np-anotice-stock.eastmoney.com/api/security/ann?sr=-1&page_size=40&page_index=1&ann_type=A&client_source=web&stock_list={A股代碼}` | JSON，`curl` 可讀 | **A 股公告／季報第一站**（子公司為 A 股時也適用，如 3445 ↔ 688432）：`list[].notice_date`、`art_code`、`title`；PDF 實體 `https://pdf.dfcfw.com/pdf/H2_{art_code}_1.pdf`，`curl` 可直接下載、`pdftotext` 0 個 `(cid:` [2026-11] |
-| moomoo 社區 `moomoo.com/hk/stock/{5碼}-HK/community` | Firecrawl 需額度；Bright Data 回 403「Operations too frequent」或 `Document` 外殼；Apify `rag-web-browser` 回 200 但只有 `Document` 外殼 | **直接用 Playwright**（會導向 `/hant/stock/...`），snapshot 內含作者、`MM/DD HH:MM` 時間連結與貼文摘要；冷門港股常數月才一則 [2026-10] |
-| LIHKG | `api_v2/thread/search` 直接打回 `error_code 5`；頁面自己發出的 `api_v2/thread/search` 時好時壞（2026-10 上旬 503、10-22 起多次回 200） | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`，用 `browser_network_requests`（`filter: thread/search`）看頁面 API 狀態；200 時用 `browser_network_request` 讀回應（在頁內自行 `fetch` 仍回 error 5；`create_time` 為 Unix 秒），503 時試 2 次即記 ❌；200 但內容為 `{"success":0,"error_code":100,"error_message":"沒有相關文章"}` 代表站內確實沒有符合的討論串，記 ⭕。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo，並刪除 repo 內 `.playwright-mcp/` [2026-10] |
+| moomoo 社區 `moomoo.com/hk/stock/{5碼}-HK/community` | Firecrawl 需額度；Bright Data 回 403「Operations too frequent」或 `Document` 外殼；Apify `rag-web-browser` 回 200 但只有 `Document` 外殼 | **直接用 Playwright**（會導向 `/hant/stock/...`），snapshot 內含作者、`yyyy/MM/dd HH:MM` 時間連結與貼文摘要；頁面下半部「Moomoo Insights」與熱門文章是平台推薦、與個股無關，要排除；冷門港股常數月才一則 [2026-11] |
+| LIHKG | `api_v2/thread/search` 直接打回 `error_code 5`；頁面自己發出的 `api_v2/thread/search` 時好時壞（2026-10 上旬 503、10-22 起多次回 200） | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`，用 `browser_network_requests`（`filter: thread/search`）看頁面 API 狀態；200 時用 `browser_network_request` 讀回應（在頁內自行 `fetch` 仍回 error 5；`create_time` 為 Unix 秒），503 時試 2 次即記 ❌；200 但內容為 `{"success":0,"error_code":100,"error_message":"沒有相關文章"}` 代表站內確實沒有符合的討論串，記 ⭕；不帶 `filename` 時回應會直接回傳在結果內，最省事（收尾見 §3.4）[2026-11] |
 | 新聞農場（如爽報 `yesdaily.com`） | Exa／搜尋常把它排在最前，頁面「发布时间」自動標成抓取當天，內容是多年前的舊公告重貼 | 一律不當新聞；若收錄須註明「假時效，與 {官方來源} 不符」（例：87001「長實 30%→70% 增持管理人」實為舊交易，2026 中報已是長實 100%）[2026-11] |
 | 香港經濟日報 `hket.com` | `inews` 回 HTTP 405 真人驗證；`invest.hket.com/article/{id}` 用 `curl` 回 200 但只有約 1.3KB 外殼；搜尋頁 404 | 用 `WebSearch` 搭 `allowed_domains: ["hket.com"]` 找文章網址，再 `firecrawl_scrape`（basic proxy）取標題、作者、發布日期與導言（網址要帶搜尋結果中的完整 slug，只填 `article/{id}` 會全引擎失敗）；後段為會員牆，不必再跑 MCP 鏈 [2026-11] |
 
@@ -287,11 +334,14 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ### 5.6 雪球
 
 1. 先用 Bright Data `scrape_as_markdown` 抓 `https://xueqiu.com/S/{代號}`（雪球用 Bright Data 成功率最高，可跳過內建工具）。單篇長文 `xueqiu.com/{用戶id}/{貼文id}` 也用 Bright Data，第一次常回空白，重試 1 次即可取得全文與「发布于」時間 [2026-10]。
-2. Bright Data 失敗或回 `bad_endpoint`（KYC）→ `firecrawl_scrape` 搭 `proxy: stealth`，再依序 Apify → Playwright。
-   - 整條鏈都失敗時，用 Exa `web_search_exa`（query 寫「雪球 {公司名} {代號} 讨论 {年月}」）：它回傳雪球單篇頁的索引全文，含「发布于 YYYY-MM-DD HH:MM」、回覆數與部分留言，比搜尋摘要完整（Exa `Published` 欄位標 `Z` 但實為北京時間，以「发布于」為準）；仍依 §3.6 標註為索引。要逐則確認是否屬該公司（留言頁常是其他個股的討論串）。
-3. 雙重上市公司的 A 股頁（`SH601318`）與 H 股頁（`02318`）互為備援。
-4. **時間要校準**：討論流顯示相對時間，且 Firecrawl 渲染時區是 `America/New_York`；一律以單篇頁的「发布于 YYYY-MM-DD HH:MM」（北京時間）為準。
-5. 只抓討論，不從雪球抓財報。
+2. Bright Data 失敗或回 `bad_endpoint`（KYC）→ `firecrawl_scrape` 搭 `proxy: stealth`。Apify 只拿到 WAF 外殼、Playwright 回 567，兩者不必再試。
+3. Bright Data 與 Firecrawl 都不可用（預檢停用或失敗）→ 直接用 Exa `web_search_exa`（query 寫「雪球 {公司名} {代號} 讨论 {年月}」）[2026-11]：
+   - 會回傳雪球單篇頁的索引全文，含「发布于 YYYY-MM-DD HH:MM」、回覆數與部分留言（Exa `Published` 欄位標 `Z` 但實為北京時間，以「发布于」為準）。
+   - 也常回傳個股的 `/S/{代號}/hots?page=N` 與 `/S/{代號}/time?page=1` 索引頁，列出最近十幾則討論的作者、`MM-DD HH:MM` 與摘要，可用來確認「最新一則是哪天」；索引可能落後數天，查不到新貼文時寫「索引內無新貼文，不能排除漏抓」。
+   - 依 §3.6 標註為索引；逐則確認是否屬該公司（留言頁常是其他個股的討論串）。
+4. 雙重上市公司的 A 股頁（`SH601318`）與 H 股頁（`02318`）互為備援。
+5. **時間要校準**：討論流顯示相對時間，且 Firecrawl 渲染時區是 `America/New_York`；一律以單篇頁的「发布于 YYYY-MM-DD HH:MM」（北京時間）為準。
+6. 只抓討論，不從雪球抓財報。
 
 ---
 
@@ -366,6 +416,8 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 3. 要寫出原作者的核心論點與細節，不能只貼網址。
 4. 平台 AI 生成的內容（如 CMoney Readmo）要標明「AI 生成」，不可當網友輿情。
 5. 遇到明顯誇大或與官方資料矛盾的說法，可註明「與 {官方來源} 不符」，但不可自行改寫原文。
+6. **具體財務事件要回查本機財報**：網友或媒體提到可驗證的事件（貸款到期、回購、增發、收購、管理費收法），先 `rg` 公司資料夾內的年報／中報 md 找原文。查得到就註明「已證實（{報告} {段落/附註}）」，查不到才寫「尚待公告確認」。例：87001 雪球說「11 月到期 15 億港元貸款」，2026 中報只寫一年內到期總額，但 2023 年報附註 18 寫明 2023-11-30 提用三年期 15 億港元 → 已證實。債務到期日要從「提用日＋期限」推算，不要只看最新一期的到期區間。
+7. **新聞日期要核對**：搜尋結果或頁面標示的日期是當天、內容卻是舊公告時（新聞農場重貼），收錄須註明「假時效，與 {官方來源} 不符」，不可當成新事件。
 
 ### 8.4 範本
 
@@ -444,10 +496,13 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ## 4. 異常檔案刪除紀錄
 （< 10KB、無公司名稱、`(cid:` 亂碼等被刪的檔案；沒有就寫「無」）
 
-## 5. 本次使用的 MCP
+## 5. MCP 預檢與使用紀錄
+- **預檢結果**：可用：{…}｜停用：{MCP}（{錯誤原文}）
+- **使用者待辦**（有停用才寫）：照 §3.0.3 寫出要開的連接器與工具名稱，例：「到 https://claude.ai/customize/connectors 把 Firecrawl `firecrawl_scrape`、`firecrawl_search` 設為一律允許」
+
 | MCP 服務名稱 | 工具/函式 | 用途 |
 | :--- | :--- | :--- |
-（用人類可讀名稱，如 Firecrawl、Bright Data、Apify、Playwright、yfinance；帳號級錯誤也寫在這裡。完全沒用 MCP 就寫「本次未使用 MCP，僅用 {內建工具}」）
+（用人類可讀名稱，如 Firecrawl、Bright Data、Apify、Exa、Playwright、yfinance；執行中才出現的帳號級錯誤也寫在這裡。完全沒用 MCP 就寫「本次未使用 MCP，僅用 {內建工具}」）
 
 ## 6. Phase 4 Convert2md
 ## 7. Skill 維護
@@ -463,7 +518,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 執行中發現新的網站行為（新封鎖、新 API、新捷徑、舊做法失效）時，在 Phase 5 更新本 Skill，**並同時做以下清理**：
 
-1. **加到正確位置**：網站行為放 §4 對應市場的表格（一個站點一列）；多步驟的 API 用法放 §5。不要另開新段落或在別處重寫抓取規則。
+1. **加到正確位置**：網站行為放 §4 對應市場的表格（一個站點一列）；多步驟的 API 用法放 §5；MCP 帳號級錯誤、預檢方法與連接器修法放 §3.0。不要另開新段落或在別處重寫抓取規則。
 2. **合併而不是追加**：同一站點已有一列時，直接改寫那一列，更新 `[yyyy-mm]`；不可再新增一列「補充」或「追蹤」。
 3. **刪除無用資料**：
    - 已失效的做法、已被新做法取代的舊寫法、改版前的網址 → 刪除。
