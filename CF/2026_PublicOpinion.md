@@ -2,7 +2,7 @@
 
 > 本檔由 **ArrangePublicOpinionMd Skill** 自動彙整，內容為本資料夾 2026 年度所有「輿情／新聞／討論區」`.md` 的原文合併。
 > 不含年報、季報、公司公告 report。
-> 最後彙整時間：2026-10-19 02:02｜本次併入：1 檔｜累計併入：3 檔
+> 最後彙整時間：2026-11-23 02:11｜本次併入：1 檔｜累計併入：4 檔
 
 ## 目錄
 
@@ -10,8 +10,10 @@
 - [2026-09 · 輿情新聞](#2026-09--輿情新聞)
 - [2026-09 · 輿情新聞 (更新)](#2026-09--輿情新聞-更新)
 - [2026-10 · 輿情新聞](#2026-10--輿情新聞)
+- [2026-11 · 輿情新聞](#2026-11--輿情新聞)
 
 <!-- body:start -->
+
 
 
 
@@ -667,5 +669,207 @@
   - 9/18 收 127.70 → 9/25 收 114.67（鉀肥雜音＋KeyBanc 看空延續，一週 −10.2%）。
   - 10/09 收 111.54 為本期最低（當日成交 481 萬股，量能為本期最大）。
   - 10/13 ~ 10/16 連漲至 120.85，回到 9/22 水準；距 11/4 Q3 財報約 2.5 週。
+
+---
+
+## 2026-11 · 輿情新聞
+
+<!-- source-file: 202611_輿情新聞.md | bytes: 16954 | sha1: 4763913634cd | merged-at: 2026-11-23 -->
+
+### [CF CF Industries Holdings, Inc.] 輿情與新聞整理 (2026/11)
+
+- **分析月份**：2026/11
+- **資料範圍**：2026-10-19 ~ 2026-11-18（接續 `2026_PublicOpinion.md` 最後收錄日 2026-10-18；更早內容見該檔）
+- **最後更新**：2026-11-18 20:30 UTC
+- **流通股數基準**：146,284,911 股（10-Q 封面，2026-11-02）
+
+---
+
+#### [SEC EDGAR 官方公告（8-K / 10-Q）]
+
+- **抓取時間**：2026-11-18
+- **抓取方式**：curl `data.sec.gov/submissions/CIK0001324404.json` + Archives 原文
+- **抓取結果**：✅ 成功
+
+##### 🎯 2026 Q3 財報（8-K Ex-99.1，2026-11-04 盤後）
+- **來源連結**：[CF Industries Reports First Nine Months 2026 Net Earnings of $1.78 Billion](https://www.sec.gov/Archives/edgar/data/1324404/000132440426000023/cf-11042026_ex991xearnings.htm)
+- **發布時間**：2026-11-04（新聞稿日期；8-K 申報日 2026-11-04）
+- **核心觀點**：
+  > "Global Nitrogen Supply-Demand Fundamentals Remain Constructive into 2027"
+  > "Third quarter 2026 net earnings of $436 million, or $2.87 per diluted share, EBITDA of $822 million, and adjusted EBITDA of $833 million"
+- **關鍵要點**：
+  - Q3 營收 18.60 億美元（約每股 12.71 美元），年增 12%；淨利 4.36 億美元（約每股 2.98 美元，以 1.463 億流通股計；官方稀釋 EPS 2.87 美元，以加權平均 1.512 億股計）。
+  - 前九月淨利 17.8 億美元（稀釋 EPS 11.60 美元）、adjusted EBITDA 30.1 億美元（約每股 20.6 美元），含約 1.70 億美元（約每股 1.16 美元）訴訟和解一次性利益。
+  - TTM 營業現金流 30.8 億美元（約每股 21.1 美元）、FCF 20.3 億美元（約每股 13.9 美元）。
+  - Q3 庫藏股 300 萬股／3.67 億美元（約每股 2.51 美元）；2025/10 啟動的 20 億美元計畫已買回 860 萬股／約 8.9 億美元，剩餘約 11.1 億美元（2029/12 到期）。
+  - Yazoo City 廠（2025/11 事故）預計 **2027 上半年**恢復營運，修復成本「substantial portion」由保險支付；全年氨毛產量指引約 950 萬噸。
+  - 2026 資本支出約 13 億美元（約每股 8.9 美元），其中 Blue Point One 合資約 6 億美元（CF 持股 40%）；Blue Point One 總成本約 37 億美元（含 5 億預備金），2029 年投產；公用設施另約 5.5 億美元（CF 100%）。
+  - 現金 28.2 億美元（約每股 19.3 美元），其中 4.96 億美元屬 Blue Point One 合資。
+  - 管理層估計中東衝突以來僅約一半的中東尿素出口離開波斯灣；歐洲 2026/10 約 37% 氨產能停機或降載；千里達約 35% 氨產能永久關閉；中國 2026 尿素出口預估比 2025 多 200~400 萬公噸。
+  - 新案：Courtright（加拿大安大略）DEF 尿素液升級廠 FEED 研究（thyssenkrupp Uhde 主導），若 FID（預計 2027）通過，增加 DEF 產能 40 萬噸/年以上。
+
+##### 🎯 2026 Q3 10-Q（2026-11-05 申報）
+- **來源連結**：[cf-20260930.htm](https://www.sec.gov/Archives/edgar/data/1324404/000132440426000025/cf-20260930.htm)（已轉存 `CF/CF_Quarter_2026Q3.md`）
+- **發布時間**：2026-11-05
+- **關鍵要點**：
+  - 封面流通股數 146,284,911 股（2026-11-02）；Q3 加權平均股數 1.512 億股 vs 2025 Q3 1.610 億股（約 -6.1%）。
+
+---
+
+#### [Yahoo Finance 新聞]
+
+- **抓取時間**：2026-11-18
+- **抓取方式**：WebFetch `finance.yahoo.com/quote/CF/news/` 與單篇文章頁
+- **抓取結果**：✅ 成功（MT Newswires 單篇為 Yahoo Plus 付費牆）
+
+##### 🎯 Zacks：Q3 EPS 略低於預期、營收優於預期
+- **來源連結**：[CF Q3 Earnings Miss Estimates as Higher Costs Offset Sales Gains](https://finance.yahoo.com/markets/stocks/articles/cf-q3-earnings-miss-estimates-145100997.html)
+- **發布時間**：2026-11-05（頁面未顯示時刻）
+- **核心觀點**：
+  > "Higher sales volumes and favorable pricing across certain segments supported growth"
+- **關鍵要點**：
+  - EPS 2.87 美元 vs Zacks 共識 2.93 美元（-2%）；營收 18.6 億美元 vs 共識 17.6 億美元（+5.6%）。
+  - 分部：Ammonia 均價 532 美元/噸（去年 418）、毛利提升；Granular Urea 均價 423（去年 450）；UAN 銷量 199 萬噸（去年 156 萬）；AN 因 Yazoo City 停產銷量僅 12.7 萬噸（去年 38.4 萬），銷售額 -45%。
+  - 成本面：外購產品、運費與維修成本上升壓縮利潤。Zacks Rank #3（Hold）。
+
+##### 🎯 GuruFocus：Q3 法說會重點
+- **來源連結**：[CF Industries Holdings Inc (CF) (Q3 2026) Earnings Call Highlights](https://finance.yahoo.com/markets/stocks/articles/cf-industries-holdings-inc-cf-171102201.html)
+- **發布時間**：2026-11-06（法說會 2026-11-05）
+- **核心觀點**：
+  > "capital spending and insurance proceeds should largely offset once the rebuild is complete"（CFO Scribner 談 Yazoo City 修復）
+- **關鍵要點**：
+  - 利多：前九月 adjusted EBITDA 約 30 億美元已高於 29 億美元的 mid-cycle 估計；約 60% EBITDA 轉為 FCF；三年內買回約 22% 股本；成長案預計至 2030 年再增加 4 億美元 mid-cycle EBITDA，達 33 億美元。
+  - 管理層（Bohn）稱歐洲產能關閉原本預期約 2030 年，可能提前 12~18 個月；中東即使恢復，供給重新流動仍需時間。
+  - 利空：年初至今非天然氣可控成本增加約 2 億美元（外購氨、Yazoo City 固定成本未吸收、物流）；巴西信用緊縮，尿素進口預估比 2025 少約 100 萬噸；中國出口政策不可預測（新設硫酸銨出口配額出乎意料）。
+  - 美加移轉訂價稅務爭議已存入 3.06 億美元（約每股 2.09 美元）保證金，壓低 TTM FCF 轉換率，尚未解決。
+  - ⚠️ 原文 NOLA 價格比較「$360s-$380s … about $4.30 per short ton」單位疑似混淆，引用時存疑。
+
+##### 🎯 RBC：營運將改善（Sector Perform，目標價上調至 125 美元）
+- **來源連結**：[CF Industries Poised to See Improving Operations, RBC Says](https://finance.yahoo.com/markets/stocks/articles/cf-industries-poised-see-improving-180206851.html)
+- **發布時間**：2026-11-09（MT Newswires；正文為付費牆）
+- **核心觀點**：
+  > "CF Industries (CF) is set to improve operations into 2027 with Yazoo City restarting and nitrogen fu…"（付費牆截斷）
+- **關鍵要點**：
+  - 評等與目標價依 Benzinga 標題：RBC Capital 維持 Sector Perform，目標價上調至 125 美元（2026-11-09 13:55 UTC）。
+
+##### 🎯 Barchart：華爾街共識仍為 Hold
+- **來源連結**：[Are Wall Street Analysts Bullish on CF Industries Stock?](https://finance.yahoo.com/markets/stocks/articles/wall-street-analysts-bullish-cf-134405693.html)
+- **發布時間**：2026-11-16 07:44 CST（作者 Neha Panjwani）
+- **核心觀點**：
+  > "This configuration is more bullish than two months ago."
+- **關鍵要點**：
+  - 20 位分析師：4 Strong Buy、13 Hold、1 Moderate Sell、2 Strong Sell（兩個月前為 3 Strong Buy、3 Strong Sell）；平均目標價 123 美元、最高 162 美元。
+  - JPMorgan（Jeffrey Zekauskas）11/12 維持 Hold、目標價 115 美元。
+  - 過去一年股價 +48.3%、2026 YTD +61.7%；分析師預估 2026 稀釋 EPS 13.59 美元（+45%）；財報後 11/4 收跌逾 4%。
+
+##### 🎯 Trefis：近 12% 現金殖利率代表什麼？
+- **來源連結**：[Why Is CF Industries Stock's Cash Yield Nearly 12%?](https://finance.yahoo.com/markets/stocks/articles/why-cf-industries-stocks-cash-141341524.html)
+- **發布時間**：2026-11-17 08:13 CST
+- **核心觀點**：
+  > "A yield that high signals either a business on sale or one the market expects to shrink."
+  > "Its free cash flow has not yet faced the return of the lost urea supply."
+- **關鍵要點**：
+  - TTM FCF 佔市值 11.5%（S&P 500 中位數 4.3%）；營業利益率 39.1%；總負債 36.6 億美元 vs 現金 28.2 億美元；利息保障倍數 10.7 倍。
+  - 偏空論點：股價隱含 CF 處於獲利高峰；中東尿素供給回歸後現金流可能下滑。文末含 Trefis 自家產品推銷，非分析內容。
+
+##### 🎯 Simply Wall St：Yazoo City 停產延至 2027 上半年
+- **來源連結**：[CF Industries Holdings (CF) Yazoo City Outage Now Stretches Into First Half Of 2027](https://finance.yahoo.com/markets/stocks/articles/cf-industries-holdings-cf-yazoo-161129103.html)
+- **發布時間**：2026-11-18 10:11 CST（頁面自註部分為 AI 生成）
+- **核心觀點**：
+  > "Management is finalizing restoration cost estimates" / "expects a significant portion of these expenses to be covered by insurance."
+- **關鍵要點**：
+  - 停產影響 UAN 與 AN 產量與毛利，英國 AN 需外購氨；文中連結社群敘事的公允價值 128 美元（未說明推導）。
+
+##### 🎯 其他列表標題（未逐篇讀取）
+- Zacks「Is CF Industries (CF) Stock Undervalued Right Now?」（約 2026-11-12）、Trefis「The One Reason To Invest In CF Industries Stock」（約 2026-11-11）、MarketBeat「What CF Industries (CF) Said on Its Q3 Earnings Call」（約 2026-11-07）、Motley Fool Q3 法說逐字稿（約 2026-11-06）。日期依列表相對時間推算。
+
+---
+
+#### [分析師評等異動（Benzinga 索引）]
+
+- **抓取時間**：2026-11-18
+- **抓取方式**：`firecrawl_search`（Firecrawl 回傳 Benzinga news/search 結構化結果）
+- **抓取結果**：⚠️ 僅標題（Benzinga 結構化資料）；yfinance `get_recommendations` 回錯誤 `'GradeDate'`
+
+- 2026-11-11 20:59 UTC：[UBS 維持 Neutral，目標價下調至 133 美元](https://www.benzinga.com/news/26/11/63168060/ubs-maintains-neutral-cf-industries-holdings-lowers-price-target-133)
+- 2026-11-11 20:19 UTC：[Freedom Broker 維持 Hold，目標價上調至 133 美元](https://www.benzinga.com/news/26/11/63165839/freedom-broker-maintains-hold-cf-industries-holdings-raises-price-target-133)
+- 2026-11-09 13:55 UTC：[RBC Capital 維持 Sector Perform，目標價上調至 125 美元](https://www.benzinga.com/news/26/11/63031289/rbc-capital-maintains-sector-perform-cf-industries-holdings-raises-price-target-125)
+- 2026-11-12：JPMorgan 維持 Hold、目標價 115 美元（來源：上方 Barchart 文）
+- 2026-11-13：Bernstein 重申 Outperform、目標價 162 美元（來源：X @MarcJacksonLA 券商動態彙整貼文 [status/2121343460242526323](https://x.com/MarcJacksonLA/status/2121343460242526323)，時間由 status ID 還原為 2026-11-13 20:44 UTC；⚠️ 為搜尋索引摘要）
+- 參考股價：2026-11-18 15:00 ET 約 114.89 美元（-3.73%，Benzinga 15 分鐘延遲報價）；當日跌幅原因本次未找到對應新聞報導。
+
+---
+
+#### [Seeking Alpha]
+
+- **抓取時間**：2026-11-18
+- **抓取方式**：`firecrawl_search`（`site:seekingalpha.com`、`tbs: qdr:m`）+ `firecrawl_scrape`（query directQuote）
+- **抓取結果**：✅ 一篇取得 metadata 與引述；其餘 ⚠️ 為搜尋索引摘要
+
+##### 🎯 CF 提出 2030 年 mid-cycle EBITDA 33 億美元
+- **來源連結**：[CF Industries outlines $3.3B mid-cycle EBITDA by 2030 as Blue Point One advances](https://seekingalpha.com/news/4667600-cf-industries-outlines-3_3b-mid-cycle-ebitda-by-2030-as-blue-point-one-advances)
+- **發布時間**：2026-11-05 23:16 UTC
+- **核心觀點**：
+  > "Yesterday afternoon, we reported results for the first 9 months of 2026 in which we generated adjusted EBITDA of approximately $3 billion," said (CEO, President & Director Christopher Bohn)
+- **關鍵要點**：
+  - 成長案預計至 2030 年增加 4 億美元，使 mid-cycle EBITDA 達 33 億美元（約每股 22.6 美元）；索引摘要稱 CF 的份額約 9.5 億美元（⚠️ 摘要語意不完整）。
+
+##### 🎯 其他 SA 文章（⚠️ 為搜尋索引摘要，非原始頁面逐字引述）
+- [Basic Materials earnings mixed, with revenue results outperforming EPS](https://seekingalpha.com/news/4668755-basic-materials-earnings-mixed-with-revenue-results-outperforming-eps)：「CF Industries (CF) shares fell 4% following its Q3 results. GAAP EPS of $2.87 missed estimates by $0.18 …」（SA 的 EPS 差額 0.18 與其 Q3 簡報頁「misses by $0.09」不一致，共識值來源不同）。
+- [CF Industries: Q3 Capitalizing On Global Disruptions While Building Long-Term Value](https://seekingalpha.com/article/4967685-cf-industries-q3-capitalizing-on-global-disruptions-while-building-long-term-value)：標題偏多；索引未含內文與日期。
+- [Bailouts Are Back: I'd Follow $20 Billion Into These 3 Stocks](https://seekingalpha.com/article/4957404-bailouts-back-i-would-follow-20-billion-into-these-3-stocks)：「Nutrien, CF Industries, and Deere are prime beneficiaries of rising farm bailouts and input cost inflation.」
+- [Positioning For The Post-Midterm War Shock](https://seekingalpha.com/article/4957566-positioning-for-the-post-midterm-war-shock)：「CF offers exposure to fertilizer supply shocks, reasonable valuation, strong profitability, and a near 2% yield.」
+
+---
+
+#### [X (Twitter)]
+
+- **抓取時間**：2026-11-18
+- **抓取方式**：`firecrawl_search`（`site:x.com $CF CF Industries`、`tbs: qdr:m`）；單篇 `firecrawl_scrape`（Firecrawl x-com provider 回傳全文）
+- **抓取結果**：✅ 1 篇全文；其餘 ⚠️ 為搜尋索引摘要（時間由 status ID 還原，UTC）
+
+##### 🎯 Frank Curzio：荷姆茲重開後化肥交易可能反轉（偏空）
+- **來源連結**：[x.com/FrankCurzio/status/2120015062580830500](https://x.com/FrankCurzio/status/2120015062580830500)
+- **發布時間**：2026-11-10 04:45 UTC（12 讚）
+- **核心觀點**：
+  > "I'm watching CF Industries $CF closely. Fertilizer makers won when Hormuz closed. That trade reverses as Gulf shipping returns."
+- **關鍵要點**：
+  - 以中國 10 月原油進口回升至 988 萬桶/日、波斯灣油輪恢復移動為依據；Brent 因荷姆茲重開協議預期跌 3.6% 至 94 美元，但作者同時提到沙烏地東西管線遇襲、海峽附近油輪起火，並不視為完全解除。
+
+##### 🎯 其他貼文（⚠️ 為搜尋索引摘要）
+- 2026-11-04 22:28 @Finsee_main [status/2118108133859991805](https://x.com/Finsee_main/status/2118108133859991805)：「$CF Q3 2026 earnings: CF Industries sales volumes rebound, but fertilizer prices slip …」
+- 2026-10-26 14:34 @theflynews [status/2114727301925744793](https://x.com/theflynews/status/2114727301925744793)：「Trump Trade: U.S. to remove 50% tariffs on certain Canadian products $CF」（CF 有加拿大 Medicine Hat、Courtright 廠，關稅鬆綁對跨境出貨偏正面；細節未取得）。
+- 2026-10-21 16:59 @OracleNYSE [status/2112951932226834930](https://x.com/OracleNYSE/status/2112951932226834930)：「$CF $NTR RUSSIA ACCEPTS WITKOFF‑KUSHNER PLAN FOR US‑RUSSIA‑UKRAINE TECHNICAL TALKS - FT」（俄烏和談若推進，俄國氮肥出口風險下降，對 CF 偏空）。
+- 2026-10-21 12:43 @Peter_Lukacs_R [status/2112887603041046759](https://x.com/Peter_Lukacs_R/status/2112887603041046759)：化肥系列，「CF and Yara focus on nitrogen … CF leads on profitability and capital allocation」。
+- 2026-10-19 13:28 @TheETFTracker [status/2112173923483910563](https://x.com/TheETFTracker/status/2112173923483910563)：CF 列入 Fundstrat Tom Lee「Granny Shots」持股清單（權重約 2.29%）。
+
+---
+
+#### [Reddit]
+
+- **抓取時間**：2026-11-18
+- **抓取方式**：Apify `harshmaur/reddit-scraper`（`"CF Industries"`、`CF stock fertilizer nitrogen`，近一個月、依新到舊）
+- **抓取結果**：⭕ 無實質散戶討論
+
+- 20 筆結果中，與 CF Industries 相關的僅有新聞轉貼機器人：r/StockTitan、r/Quantisnow（2026-11-04 21:30 UTC 轉貼財報新聞稿）、r/MarketFluxHub（2026-11-06 19:05 UTC，平台自動生成彙整文；文中稱「adjusted EBITDA above $3 billion for the third quarter」**與官方新聞稿不符**，30 億美元是前九月數字，Q3 為 8.33 億美元）。
+- 其餘為「Reg CF」群募、CF Benchmarks、Haber 歷史照片等無關貼文，已排除。
+
+---
+
+#### [Reuters]
+
+- **抓取時間**：2026-11-18
+- **抓取方式**：`firecrawl_search`（`site:reuters.com CF Industries`、`tbs: qdr:m`）
+- **抓取結果**：⭕ 無新內容
+- 近一個月索引只回傳 CF 公司資料頁與名稱含「CF」的足球俱樂部新聞（CF Montreal、Valencia CF），沒有 CF Industries 專文。
+
+---
+
+#### [Bloomberg]
+
+- **抓取時間**：2026-11-18
+- **抓取方式**：`firecrawl_search`（`site:bloomberg.com CF Industries fertilizer`、`tbs: qdr:m`）
+- **抓取結果**：⭕ 無 CF 專文（付費牆）
+- 只找到產業背景專題：[Russia's War on Ukraine Is Straining Food and Fuel Supply](https://www.bloomberg.com/graphics/2026-ukraine-russia-strikes-exports/)（摘要：「Attacks on core industries have been increasing, and the impact on food and fuel trade is reverberating globally.」⚠️ 為搜尋索引摘要；與俄國氮肥供給風險相關）。
 
 ---
