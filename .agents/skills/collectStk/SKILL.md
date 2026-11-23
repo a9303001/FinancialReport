@@ -202,7 +202,7 @@ Playwright 的 snapshot、console log 會寫進 repo 根目錄 `.playwright-mcp/
 | 站點 / 網址 | 狀況 | 做法 |
 | :--- | :--- | :--- |
 | HKEXnews 披露易 | 有官方 JSON API | **港股財報與公告第一站**，照 §5.4 [2026-09] |
-| HKEX 權益披露 `di.hkex.com.hk` | SSR，`curl` 可讀 | 入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` → 明細 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。核實「大股東增持」類新聞最準；交易代碼 3104「Services」是以單位支付酬金，不是自掏腰包買進。代碼 1201「sale」搭代價 3102「Assets other than cash」時要看大股東 Form 2 第 27 欄 Supplementary information（例：春泉管理人以基金單位派實物股息），新浪/智通自動快訊一律寫成「減持」，不可直接當市場拋售 [2026-11] |
+| HKEX 權益披露 `di.hkex.com.hk` | SSR，`curl` 可讀 | 入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` → 明細 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。核實「大股東增持」類新聞最準；交易代碼 3104「Services」是以單位支付酬金，不是自掏腰包買進。A+H 股公司的 A 股類別大股東減持若附代價 CNY 且第 27 欄寫「可交换公司债券进入换股期」（如 01816 廣東恆健，代碼 1203），是可交換債持有人換股，不是二級市場拋售。代碼 1201「sale」搭代價 3102「Assets other than cash」時要看大股東 Form 2 第 27 欄 Supplementary information（例：春泉管理人以基金單位派實物股息），新浪/智通自動快訊一律寫成「減持」，不可直接當市場拋售 [2026-11] |
 | 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | 只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天，冷門期可涵蓋約 1 個月）；`curl` 時而 SSR、時而只回約 11KB `<title>Document` JS 外殼 | `curl` 有 SSR 時解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span；回外殼時直接改 Playwright（snapshot 每則 link 含標題、摘要、來源與時間，時間為 UTC，+8 小時；`curl` SSR 拿到的時間已是香港時間，不必換算；snapshot 存在 `.playwright-mcp/page-*.yml`，用 `grep "link "` 取各則）。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購/CCASS 快訊偶爾漏日，要與 HKEX 披露交叉核對。較早期間改看 AAStocks／股吧 [2026-11] |
 | 富途個股頁 `/quote`、`/announcement`、新聞內文 `news.futunn.com/hk/post/*` | JS 外殼；`/community` 導向登入頁 | 內文改用 Playwright 可取全文（MT Newswires 文章仍需登入）；Playwright 渲染出的發文時間是 UTC，+8 小時才是香港時間 [2026-10] |
 | AAStocks | 列表 `aastocks.com/tc/stocks/analysis/stock-aafn/{代號}/0/hk-stock-news/1` 為 SSR；`http://` 會 302 | `curl -L` 抓列表（約 20 則；`/hk-stock-news/2` 回傳與第 1 頁相同，無法翻頁）；單篇 `.../stock-aafn-con/{代號}/{來源}/{ID}/hk-stock-news` 正文就在 SSR HTML（`og:description` 只有約 50 字，不要只取它）。頁頭附沽空金額與比率。市場異動快訊 `aastocks.com/tc/stocks/news/aamm-content/{id}/price-dropped`（`id` 如 `aad2611022327`，前 6 碼為 yyMMdd）不在個股新聞列表內，用 `WebSearch`「{公司名} {代號} 急跌 {月日}」找網址，`curl -L` 單篇可取標題與分鐘級時間；約 3 週後頁面只剩框架，只能引用搜尋標題 [2026-11] |
@@ -211,7 +211,7 @@ Playwright 的 snapshot、console log 會寫進 repo 根目錄 `.playwright-mcp/
 | 雪球 `xueqiu.com/S/{代號}` | JS 動態渲染 + WAF；Apify `rag-web-browser` 只拿到 WAF JS 外殼，Playwright 回 HTTP 567「请求异常已被安全策略拦截」（對 AI Agent 限制數小時，2026-11 依舊） | 照 §5.6 [2026-11] |
 | 東方財富股吧 `guba.eastmoney.com` | 第一頁是 SSR，但會連續回空殼 | 照 §5.5 [2026-11] |
 | 東方財富公告 API `np-anotice-stock.eastmoney.com/api/security/ann?sr=-1&page_size=40&page_index=1&ann_type=A&client_source=web&stock_list={A股代碼}` | JSON，`curl` 可讀 | **A 股公告／季報第一站**（子公司為 A 股時也適用，如 3445 ↔ 688432）：`list[].notice_date`、`art_code`、`title`；PDF 實體 `https://pdf.dfcfw.com/pdf/H2_{art_code}_1.pdf`，`curl` 可直接下載、`pdftotext` 0 個 `(cid:` [2026-11] |
-| moomoo 社區 `moomoo.com/hk/stock/{5碼}-HK/community` | Firecrawl 需額度；Bright Data 回 403「Operations too frequent」或 `Document` 外殼；Apify `rag-web-browser` 回 200 但只有 `Document` 外殼 | **直接用 Playwright**（會導向 `/hant/stock/...`），snapshot 內含作者、`yyyy/MM/dd HH:MM` 時間連結與貼文摘要；頁面下半部「Moomoo Insights」與熱門文章是平台推薦、與個股無關，要排除；冷門港股常數月才一則 [2026-11] |
+| moomoo 社區 `moomoo.com/hk/stock/{5碼}-HK/community` | Bright Data 回 403「Operations too frequent」或 `Document` 外殼；Apify `rag-web-browser` 回 200 但只有 `Document` 外殼；同一 session 剛用 Playwright 開過富途頁後，Playwright 與 `firecrawl_scrape` 都會被導到 `moomoo.com/403`「Operations too frequent」，Apify `apify--web-fetch`（wait 5000）MCP 60 秒逾時 | **直接用 Playwright**（會導向 `/hant/stock/...`），且**要排在富途新聞之前開**（富途與 moomoo 同屬 Futu，連續請求會觸發頻率限制）；snapshot 內含作者、`yyyy/MM/dd HH:MM` 時間連結與貼文摘要；頁面下半部「Moomoo Insights」與熱門文章是平台推薦、與個股無關，要排除；冷門港股常數月才一則；被 403 後試 2 次即記 ❌ [2026-11] |
 | LIHKG | `api_v2/thread/search` 直接打回 `error_code 5`；頁面自己發出的 `api_v2/thread/search` 時好時壞（2026-10 上旬 503、10-22 起多次回 200） | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`，用 `browser_network_requests`（`filter: thread/search`）看頁面 API 狀態；200 時用 `browser_network_request` 讀回應（在頁內自行 `fetch` 仍回 error 5；`create_time` 為 Unix 秒），503 時試 2 次即記 ❌；200 但內容為 `{"success":0,"error_code":100,"error_message":"沒有相關文章"}` 代表站內確實沒有符合的討論串，記 ⭕；不帶 `filename` 時回應會直接回傳在結果內，最省事（收尾見 §3.4）[2026-11] |
 | 新聞農場（如爽報 `yesdaily.com`） | Exa／搜尋常把它排在最前，頁面「发布时间」自動標成抓取當天，內容是多年前的舊公告重貼 | 一律不當新聞；若收錄須註明「假時效，與 {官方來源} 不符」（例：87001「長實 30%→70% 增持管理人」實為舊交易，2026 中報已是長實 100%）[2026-11] |
 | 香港經濟日報 `hket.com` | `inews` 回 HTTP 405 真人驗證；`invest.hket.com/article/{id}` 用 `curl` 回 200 但只有約 1.3KB 外殼；搜尋頁 404 | 用 `WebSearch` 搭 `allowed_domains: ["hket.com"]` 找文章網址，再 `firecrawl_scrape`（basic proxy）取標題、作者、發布日期與導言（網址要帶搜尋結果中的完整 slug，只填 `article/{id}` 會全引擎失敗）；後段為會員牆，不必再跑 MCP 鏈 [2026-11] |
@@ -335,8 +335,8 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 
 ### 5.6 雪球
 
-1. 先用 Bright Data `scrape_as_markdown` 抓 `https://xueqiu.com/S/{代號}`（雪球用 Bright Data 成功率最高，可跳過內建工具）。單篇長文 `xueqiu.com/{用戶id}/{貼文id}` 也用 Bright Data，第一次常回空白，重試 1 次即可取得全文與「发布于」時間 [2026-10]。
-2. Bright Data 失敗或回 `bad_endpoint`（KYC）→ `firecrawl_scrape` 搭 `proxy: stealth`。Apify 只拿到 WAF 外殼、Playwright 回 567，兩者不必再試。
+1. 先用 Bright Data `scrape_as_markdown` 抓 `https://xueqiu.com/S/{代號}`（可跳過內建工具）。單篇長文 `xueqiu.com/{用戶id}/{貼文id}` 也用 Bright Data，第一次常回空白，重試 1 次即可取得全文與「发布于」時間 [2026-10]。2026-11 對 `S/SZ003816` 個股頁 45 秒逾時。
+2. Bright Data 失敗或回 `bad_endpoint`（KYC）→ `firecrawl_scrape` 搭 `proxy: stealth`（`waitFor: 3000`、`formats: ["query"]` directQuote，約 5 credits）：2026-11 一次成功取得個股頁討論流（作者、相對時間「N小时前」或 `MM-DD HH:MM`、單篇網址與摘要）。Apify 只拿到 WAF 外殼、Playwright 回 567，兩者不必再試。
 3. Bright Data 與 Firecrawl 都不可用（預檢停用或失敗）→ 直接用 Exa `web_search_exa`（query 寫「雪球 {公司名} {代號} 讨论 {年月}」）[2026-11]：
    - 會回傳雪球單篇頁的索引全文，含「发布于 YYYY-MM-DD HH:MM」、回覆數與部分留言（Exa `Published` 欄位標 `Z` 但實為北京時間，以「发布于」為準）。
    - 也常回傳個股的 `/S/{代號}/hots?page=N` 與 `/S/{代號}/time?page=1` 索引頁，列出最近十幾則討論的作者、`MM-DD HH:MM` 與摘要，可用來確認「最新一則是哪天」；索引可能落後數天，查不到新貼文時寫「索引內無新貼文，不能排除漏抓」。
@@ -473,6 +473,7 @@ curl -s "https://www.cmoney.tw/api/mach/api/Article/{文章id}/Comments?fetch=50
 ## 9. Phase 4 — 轉 Markdown
 
 - Phase 2 有新 PDF 時，呼叫 **`Convert2md` Skill**（用 `convert_pdf_to_markdown` 轉檔，自動刪除 CID 亂碼失敗檔）。沒有新檔就略過並在報告註明。
+- `save_path` 要填**完整 `.md` 檔案路徑**（如 `<資料夾>/{TICKER}_Quarter_2026Q3.md`）；只填資料夾會回 `[Errno 21] Is a directory` [2026-11]。
 - 150 頁以上的年報常回「timed out after 60s」，但 MCP 伺服器仍在背景寫檔：不要重送，等 `save_path` 的 `.md` 出現且大小不再變動，再核對最後一頁有轉出。
 - 輸出的 `.md` 含指向暫存 `pdf_images/` 的圖片連結，轉檔後移除 `![](…/pdf_images/…)` 行。
 - `Convert2md` **只處理 PDF**。HTML（如 SEC 10-K/10-Q）要自己轉成同檔名 `.md`：移除 XBRL/iXBRL 標籤與內嵌 blob，確認正文可讀後刪原始 HTML。
