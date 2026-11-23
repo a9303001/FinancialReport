@@ -20,15 +20,21 @@ Workflow：`.github/workflows/sync-gdrive.yml`
 
 ### 1. 建立自己的 Google OAuth Client（強烈建議）
 
-rclone 內建的共用 client ID 常被限速，用自己的比較穩。
+rclone 文件寫明內建的共用 client ID 會在 2026 年內停用，所以一定要自己建一個。
 
-1. 開 <https://console.cloud.google.com/> → 建一個專案（例如 `rclone-sync`）
-2. **APIs & Services → Library** → 啟用 **Google Drive API**
-3. **OAuth consent screen**：User type 選 **External**，填 App name 與自己的 email，Test users 加上自己的 Gmail
-4. ⚠️ **把 Publishing status 改成「In production」**（按 *Publish App*）。
+1. 開 <https://console.cloud.google.com/> → 左上專案選單 → **New Project**（例如 `rclone-sync`）→ 建好後切換到這個專案
+2. 左側選單 **APIs & Services → Library** → 搜尋 `Google Drive API` → **Enable**
+3. 左側選單 **Google Auth Platform**（舊版叫 *OAuth consent screen*）→ **Get started**：
+   - App name：`rclone`；User support email：自己的 Gmail
+   - Audience：**External**
+   - Contact information：自己的 Gmail → 勾同意條款 → **Create**
+4. **Data Access** → **Add or remove scopes** → 勾 `https://www.googleapis.com/auth/drive`（找不到就貼到 *Manually add scopes*）→ **Update** → **Save**
+5. **Audience** → Test users **+ Add users** → 加自己的 Gmail → Save
+6. **Clients**（或 Overview → *Create OAuth client*）→ Application type 選 **Desktop app** → Name 隨意 → **Create** → 記下 *Client ID* 與 *Client secret*（可按 Download JSON 備份）
+7. ⚠️ **Audience** → Publishing status 下按 **Publish app** → Confirm，狀態變成 **In production**。
    若停留在 *Testing*，refresh token **7 天就會失效**，同步會開始報 `invalid_grant`。
-   個人使用不需要送 Google 審核，登入時出現「Google 尚未驗證這個應用程式」→ 進階 → 繼續 即可。
-5. **Credentials → Create Credentials → OAuth client ID** → Application type 選 **Desktop app** → 記下 *Client ID* 與 *Client secret*
+   個人使用（< 100 人）不需要送 Google 審核；授權時出現「Google 尚未驗證這個應用程式」→ **進階 → 前往 rclone（不安全）** 即可。
+   若 *Publish app* 是灰色的：到 **Branding** 填 App home page、Privacy policy 連結並加 Authorized domain 後再回來按。
 
 ### 2. 在自己電腦產生 rclone.conf
 
