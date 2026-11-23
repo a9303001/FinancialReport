@@ -1,0 +1,206 @@
+name: Sync to Google Drive
+
+# 把 master 分支的檔案（不含 .git）用 rclone 單向同步到 Google Drive。
+# 設定步驟見 .github/GDRIVE_SYNC.md。
+#
+# 觸發時機：
+#   push          -> 有人「直接」推到 master（例如手機端 Last Sync commit）
+#   workflow_run  -> 「Auto merge into master」跑完且成功。
+#                    auto-merge 是用 GITHUB_TOKEN 合併 PR，GitHub 規定 GITHUB_TOKEN 造成的 push
+#                    「不會」再觸發其他 workflow 的 push 事件，所以一定要靠 workflow_run 接手。
+#   schedule      -> 每天一次的保險（萬一上面兩條都漏掉）
+#   workflow_dispatch -> 手動執行；可選 dry run（只列出會改什麼）或 force（忽略「已同步」快取）
+#
+# 去重：auto-merge 每 15 分鐘排程一次，每次跑完都會觸發 workflow_run。
+#       為了不每 15 分鐘重傳一次，成功同步後會在 Actions cache 留下 gdrive-synced-<master SHA>，
+#       下次若 master SHA 沒變就直接跳過（不安裝 rclone、不連 Google）。
+on:
+  push:
+    branches: [master]
+  workflow_run:
+    workflows: ["Auto merge into master"]
+    types: [completed]
+  schedule:
+    - cron: '43 19 * * *'   # UTC 19:43 = 台灣 03:43
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 只模擬（rclone --dry-run），不實際上傳/刪除
+        type: boolean
+        default: false
+      force:
+        description: 忽略「此 commit 已同步」的快取，強制再比對一次
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: write   # actions/cache/save 需要
+
+# 全 repo 只允許一個同步在跑；新的排隊，不砍掉跑到一半的（避免 Drive 半套狀態）。
+concurrency:
+  group: gdrive-sync
+  cancel-in-progress: false
+
+env:
+  RCLONE_VERSION: '1.76.0'
+  # 可在 Settings → Secrets and variables → Actions → Variables 覆寫
+  GDRIVE_REMOTE: ${{ vars.GDRIVE_REMOTE || 'gdrive' }}             # rclone.conf 裡的 remote 名稱
+  GDRIVE_PATH: ${{ vars.GDRIVE_PATH || 'FinancialReport' }}        # Drive 上的目標資料夾
+  GDRIVE_BACKUP_PATH: ${{ vars.GDRIVE_BACKUP_PATH || 'FinancialReport_sync_backup' }}  # 被覆蓋/刪除檔案的備份處
+  GDRIVE_MAX_DELETE: ${{ vars.GDRIVE_MAX_DELETE || '1000' }}       # 單次刪除超過此數就中止（防呆）
+
+jobs:
+  sync:
+    name: rclone sync master -> Google Drive
+    # workflow_run 只在 auto-merge 成功時才跑
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Resolve master SHA
+        id: sha
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          SHA=$(gh api "repos/${GITHUB_REPOSITORY}/commits/master" --jq .sha)
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+          echo "master = $SHA"
+
+      - name: Skip if this commit was already synced
+        id: cache
+        if: ${{ !inputs.force && !inputs.dry_run }}
+        uses: actions/cache/restore@v5
+        with:
+          path: .gdrive-synced
+          key: gdrive-synced-${{ steps.sha.outputs.sha }}
+          lookup-only: true
+
+      - name: Already up to date
+        if: steps.cache.outputs.cache-hit == 'true'
+        run: |
+          echo "master ${{ steps.sha.outputs.sha }} 已同步過，跳過。" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Check secret
+        if: steps.cache.outputs.cache-hit != 'true'
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        run: |
+          if [ -z "$RCLONE_CONF" ]; then
+            echo "::error::找不到 secret RCLONE_CONF。請依 .github/GDRIVE_SYNC.md 設定 rclone.conf 後再執行。"
+            exit 1
+          fi
+
+      - name: Checkout master
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ steps.sha.outputs.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Install rclone
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP"
+          curl -fsSL --retry 3 -o rclone.zip \
+            "https://downloads.rclone.org/v${RCLONE_VERSION}/rclone-v${RCLONE_VERSION}-linux-amd64.zip"
+          unzip -q rclone.zip
+          sudo install -m 0755 "rclone-v${RCLONE_VERSION}-linux-amd64/rclone" /usr/local/bin/rclone
+          rclone version
+
+      - name: Write rclone config
+        if: steps.cache.outputs.cache-hit != 'true'
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        run: |
+          set -euo pipefail
+          umask 077
+          mkdir -p "$RUNNER_TEMP/rclone"
+          CONF="$RUNNER_TEMP/rclone/rclone.conf"
+          # 允許直接貼 rclone.conf 純文字，或貼 base64 編碼後的內容
+          if printf '%s' "$RCLONE_CONF" | grep -q '^\['; then
+            printf '%s\n' "$RCLONE_CONF" > "$CONF"
+          else
+            printf '%s' "$RCLONE_CONF" | base64 -d > "$CONF"
+          fi
+          echo "RCLONE_CONFIG=$CONF" >> "$GITHUB_ENV"
+          if ! grep -q "^\[${GDRIVE_REMOTE}\]" "$CONF"; then
+            echo "::error::rclone.conf 中找不到 remote [${GDRIVE_REMOTE}]。請確認 remote 名稱，或設定 Variable GDRIVE_REMOTE。"
+            exit 1
+          fi
+
+      - name: Sync to Google Drive
+        if: steps.cache.outputs.cache-hit != 'true'
+        env:
+          DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
+          SHA: ${{ steps.sha.outputs.sha }}
+        run: |
+          set -euo pipefail
+          DEST="${GDRIVE_REMOTE}:${GDRIVE_PATH}"
+          STAMP=$(TZ=Asia/Taipei date +%Y-%m-%d_%H%M%S)
+          BACKUP="${GDRIVE_REMOTE}:${GDRIVE_BACKUP_PATH}/${STAMP}_${SHA:0:7}"
+          LOG="$RUNNER_TEMP/rclone.log"
+
+          EXTRA=()
+          [ "$DRY_RUN" = "true" ] && EXTRA+=(--dry-run)
+
+          rclone mkdir "$DEST"
+
+          # --checksum：fresh checkout 的 mtime 都是「現在」，若用預設的 size+mtime 會每次全部重傳；
+          #             Google Drive 有 MD5，改用 checksum 比對才只傳真正有變的檔案。
+          # --backup-dir：被覆蓋或刪除的舊檔先搬到備份資料夾（同一個 remote 內搬移，不佔流量）。
+          # --max-delete：一次要刪太多檔就中止，避免誤設 GDRIVE_PATH 時清空 Drive。
+          # --tpslimit：避開 Google Drive API 的速率限制（403 rate limit exceeded）。
+          set +e
+          rclone sync . "$DEST" \
+            --exclude '/.git/**' \
+            --checksum \
+            --backup-dir "$BACKUP" \
+            --max-delete "$GDRIVE_MAX_DELETE" \
+            --fast-list \
+            --transfers 8 --checkers 16 --tpslimit 10 \
+            --drive-chunk-size 64M \
+            --retries 5 --low-level-retries 20 \
+            --stats 30s --stats-one-line \
+            --log-level INFO --log-file "$LOG" \
+            "${EXTRA[@]}"
+          RC=$?
+          set -e
+
+          tail -n 50 "$LOG" || true
+
+          {
+            echo "## Google Drive 同步 $( [ "$DRY_RUN" = "true" ] && echo '(dry run)')"
+            echo ""
+            echo "- commit：\`${SHA}\`"
+            echo "- 目的地：\`${DEST}\`"
+            echo "- 舊檔備份：\`${BACKUP}\`（沒有變動時不會建立）"
+            echo "- 上傳/更新（檔數）：$(grep -cE ': (Copied|Updated)' "$LOG" 2>/dev/null || true)"
+            echo "- 移到備份（被覆蓋或刪除）：$(grep -cE ': (Deleted|Moved)' "$LOG" 2>/dev/null || true)"
+            echo "- 結果：$( [ $RC -eq 0 ] && echo '✅ 成功' || echo "❌ 失敗（exit $RC）")"
+            echo ""
+            echo "<details><summary>rclone log（最後 200 行）</summary>"
+            echo ""
+            echo '```'
+            tail -n 200 "$LOG" 2>/dev/null || echo '(沒有 log)'
+            echo '```'
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          exit $RC
+
+      - name: Mark commit as synced
+        if: steps.cache.outputs.cache-hit != 'true' && !inputs.dry_run
+        run: |
+          mkdir -p .gdrive-synced
+          echo "${{ steps.sha.outputs.sha }}" > .gdrive-synced/sha
+
+      - name: Save synced marker
+        if: steps.cache.outputs.cache-hit != 'true' && !inputs.dry_run
+        uses: actions/cache/save@v5
+        with:
+          path: .gdrive-synced
+          key: gdrive-synced-${{ steps.sha.outputs.sha }}
