@@ -87,6 +87,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | Bright Data `Residential Failed (bad_endpoint)` | 帳號未完成 KYC | 需 residential 的站（雪球、LIHKG）改走其他 MCP |
 | Bright Data `502 origin_bad_gateway` | MCP 閘道故障 | 照 §3.1 試 2 次即換，不要空等 `retry_after` |
 | 雲端環境代理回 `connect_rejected`（`curl` rc=56，host 未放行） | 環境網路政策只放行 MCP 伺服器，非網站封鎖 | 本次所有 `curl` 直連改走 MCP 鏈；新聞與公告頁用 `firecrawl_scrape` 搭 `formats: ["query"]` + `queryOptions.mode: directQuote` 只取正文，省去選單雜訊；財報 PDF 無法落地，報告列出已確認的檔名與 step=9 網址供下次下載 |
+| 任一 MCP 回 `MCP tool call requires approval` | 環境權限設定要求人工核准，非網站或帳號問題 | 本次視同該 MCP 未連線，直接換鏈上下一個工具，不要重送；報告註明「{MCP} 需核准未執行」。2026-11 雲端環境 Bright Data、Firecrawl 皆如此，Playwright、Exa、yfinance 可直接用 |
 | Bright Data `needs you to sign in again` 或 `Customer is not active` | MCP 授權過期／帳號停用，本次無法自行處理 | 本次全程停用，報告註明請使用者重新授權或檢查帳號；改走 Apify / Exa（雪球改 `firecrawl_scrape` 搭 `proxy: stealth`，可讀 `/S/{代號}` 討論流與即時報價）|
 
 不要對每個網站重踩同一顆地雷；先找 §4 的免 MCP 替代路徑，也不可因此直接改用搜尋摘要打發。所有帳號級錯誤都寫進 §10 報告的 MCP 紀錄。
@@ -163,6 +164,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 東方財富公告 API `np-anotice-stock.eastmoney.com/api/security/ann?sr=-1&page_size=40&page_index=1&ann_type=A&client_source=web&stock_list={A股代碼}` | JSON，`curl` 可讀 | **A 股公告／季報第一站**（子公司為 A 股時也適用，如 3445 ↔ 688432）：`list[].notice_date`、`art_code`、`title`；PDF 實體 `https://pdf.dfcfw.com/pdf/H2_{art_code}_1.pdf`，`curl` 可直接下載、`pdftotext` 0 個 `(cid:` [2026-11] |
 | moomoo 社區 `moomoo.com/hk/stock/{5碼}-HK/community` | Firecrawl 需額度；Bright Data 回 403「Operations too frequent」或 `Document` 外殼；Apify `rag-web-browser` 回 200 但只有 `Document` 外殼 | **直接用 Playwright**（會導向 `/hant/stock/...`），snapshot 內含作者、`MM/DD HH:MM` 時間連結與貼文摘要；冷門港股常數月才一則 [2026-10] |
 | LIHKG | `api_v2/thread/search` 直接打回 `error_code 5`；頁面自己發出的 `api_v2/thread/search` 時好時壞（2026-10 上旬 503、10-22 起多次回 200） | Playwright 開 `lihkg.com/search?q={關鍵字}&sort=desc_create_time`，用 `browser_network_requests`（`filter: thread/search`）看頁面 API 狀態；200 時用 `browser_network_request` 讀回應（在頁內自行 `fetch` 仍回 error 5；`create_time` 為 Unix 秒），503 時試 2 次即記 ❌；200 但內容為 `{"success":0,"error_code":100,"error_message":"沒有相關文章"}` 代表站內確實沒有符合的討論串，記 ⭕。`browser_network_request` 的 `filename` 只能寫在 repo 內，用完要移出 repo，並刪除 repo 內 `.playwright-mcp/` [2026-10] |
+| 新聞農場（如爽報 `yesdaily.com`） | Exa／搜尋常把它排在最前，頁面「发布时间」自動標成抓取當天，內容是多年前的舊公告重貼 | 一律不當新聞；若收錄須註明「假時效，與 {官方來源} 不符」（例：87001「長實 30%→70% 增持管理人」實為舊交易，2026 中報已是長實 100%）[2026-11] |
 | 香港經濟日報 `hket.com` | `inews` 回 HTTP 405 真人驗證；`invest.hket.com/article/{id}` 用 `curl` 回 200 但只有約 1.3KB 外殼；搜尋頁 404 | 用 `WebSearch` 搭 `allowed_domains: ["hket.com"]` 找文章網址，再 `firecrawl_scrape`（basic proxy）取標題、作者、發布日期與導言（網址要帶搜尋結果中的完整 slug，只填 `article/{id}` 會全引擎失敗）；後段為會員牆，不必再跑 MCP 鏈 [2026-11] |
 
 ### 4.4 日股
