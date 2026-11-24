@@ -43,7 +43,8 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  RCLONE_VERSION: '1.76.0'
+  # 注意：不可命名為 RCLONE_xxx，rclone 會把 RCLONE_<FLAG> 環境變數當成命令列旗標（RCLONE_VERSION 會變成 --version 而報錯）
+  INSTALL_RCLONE_VERSION: '1.76.0'
   # 可在 Settings → Secrets and variables → Actions → Variables 覆寫
   GDRIVE_REMOTE: ${{ vars.GDRIVE_REMOTE || 'gdrive' }}             # rclone.conf 裡的 remote 名稱
   GDRIVE_PATH: ${{ vars.GDRIVE_PATH || 'FinancialReport' }}        # Drive 上的目標資料夾
@@ -106,9 +107,9 @@ jobs:
           set -euo pipefail
           cd "$RUNNER_TEMP"
           curl -fsSL --retry 3 -o rclone.zip \
-            "https://downloads.rclone.org/v${RCLONE_VERSION}/rclone-v${RCLONE_VERSION}-linux-amd64.zip"
+            "https://downloads.rclone.org/v${INSTALL_RCLONE_VERSION}/rclone-v${INSTALL_RCLONE_VERSION}-linux-amd64.zip"
           unzip -q rclone.zip
-          sudo install -m 0755 "rclone-v${RCLONE_VERSION}-linux-amd64/rclone" /usr/local/bin/rclone
+          sudo install -m 0755 "rclone-v${INSTALL_RCLONE_VERSION}-linux-amd64/rclone" /usr/local/bin/rclone
           rclone version
 
       - name: Write rclone config
