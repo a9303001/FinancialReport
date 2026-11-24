@@ -4,7 +4,7 @@ Workflow：`.github/workflows/sync-gdrive.yml`
 
 ## 運作方式
 
-- **方向**：單向。GitHub `master` → Google Drive `FinancialReport/`。Drive 上手動改的檔案會在下次同步時被 GitHub 版本蓋掉（舊版會先搬到備份夾）。
+- **方向**：單向。GitHub `master` → Google Drive `FinancialReport/`。Drive 上手動改的檔案會在下次同步時被 GitHub 版本蓋掉（不做備份）。
 - **何時跑**：
   - 有人直接 push 到 `master`
   - `Auto merge into master` workflow 成功跑完（auto-merge 用 `GITHUB_TOKEN` 合併，GitHub 不會因此發 push 事件，所以要靠 `workflow_run` 接手）
@@ -12,9 +12,8 @@ Workflow：`.github/workflows/sync-gdrive.yml`
   - 手動：Actions → Sync to Google Drive → Run workflow（可勾 dry run / force）
 - **不重傳**：用 `--checksum`（MD5）比對，只傳有變動的檔案；同一個 commit 同步成功後會記在 Actions cache，下次 master 沒變就直接跳過。
 - **不同步**：`.git/`。其餘（含 `.github/`、`.claude/`）全部同步。
-- **安全網**：
-  - 被覆蓋或刪除的檔案會先搬到 `FinancialReport_sync_backup/<台灣時間>_<commit>/`
-  - 單次要刪超過 1000 個檔案就中止（防止設錯路徑把 Drive 清空）
+- **不做備份**：被覆蓋的檔案直接換成新版；repo 已刪除的檔案會移到 Google Drive **垃圾桶**（30 天後永久刪除）。要找舊版請看 GitHub 的 git 歷史。
+- **安全網**：單次要刪超過 1000 個檔案就中止（防止設錯路徑把 Drive 清空）
 
 ## 一次性設定（約 10 分鐘）
 
@@ -82,7 +81,6 @@ team_drive =
 |---|---|---|
 | `GDRIVE_REMOTE` | `gdrive` | rclone.conf 中的 remote 名稱 |
 | `GDRIVE_PATH` | `FinancialReport` | Drive 上的目標資料夾（從 My Drive 根目錄算起，可用 `A/B/C`） |
-| `GDRIVE_BACKUP_PATH` | `FinancialReport_sync_backup` | 舊檔備份資料夾，**不可**放在 `GDRIVE_PATH` 裡面 |
 | `GDRIVE_MAX_DELETE` | `1000` | 單次最多刪幾個檔，超過就中止；`-1` 表示不限制 |
 
 ### 5. 第一次執行
@@ -98,4 +96,4 @@ Actions → **Sync to Google Drive** → Run workflow：
 - **`403 rateLimitExceeded`**：通常是用了 rclone 共用 client ID，改用自己的 client（步驟 1）。workflow 已設 `--tpslimit 10` 與重試。
 - **`Max delete limit reached`**：一次要刪的檔案超過 `GDRIVE_MAX_DELETE`。確認不是路徑設錯後，暫時把 Variable 調高再跑。
 - **為什麼不用 Service Account**：個人 Gmail 的 Service Account 沒有 My Drive 儲存空間，上傳會出現 `storageQuotaExceeded`；只有 Google Workspace 的共用雲端硬碟（Shared Drive）才適用。
-- **備份夾越來越大**：`FinancialReport_sync_backup/` 不會自動清，可定期手動刪除舊的日期資料夾（刪除後進 Drive 垃圾桶，30 天後永久刪除）。
+- **舊的 `FinancialReport_sync_backup/` 資料夾**：早期版本用 `--backup-dir` 留下的備份，現在已不再產生，可直接在 Drive 上手動刪除。

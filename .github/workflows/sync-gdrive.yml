@@ -48,7 +48,6 @@ env:
   # 可在 Settings → Secrets and variables → Actions → Variables 覆寫
   GDRIVE_REMOTE: ${{ vars.GDRIVE_REMOTE || 'gdrive' }}             # rclone.conf 裡的 remote 名稱
   GDRIVE_PATH: ${{ vars.GDRIVE_PATH || 'FinancialReport' }}        # Drive 上的目標資料夾
-  GDRIVE_BACKUP_PATH: ${{ vars.GDRIVE_BACKUP_PATH || 'FinancialReport_sync_backup' }}  # 被覆蓋/刪除檔案的備份處
   GDRIVE_MAX_DELETE: ${{ vars.GDRIVE_MAX_DELETE || '1000' }}       # 單次刪除超過此數就中止（防呆）
 
 jobs:
@@ -141,8 +140,6 @@ jobs:
         run: |
           set -euo pipefail
           DEST="${GDRIVE_REMOTE}:${GDRIVE_PATH}"
-          STAMP=$(TZ=Asia/Taipei date +%Y-%m-%d_%H%M%S)
-          BACKUP="${GDRIVE_REMOTE}:${GDRIVE_BACKUP_PATH}/${STAMP}_${SHA:0:7}"
           LOG="$RUNNER_TEMP/rclone.log"
 
           EXTRA=()
@@ -152,14 +149,13 @@ jobs:
 
           # --checksum：fresh checkout 的 mtime 都是「現在」，若用預設的 size+mtime 會每次全部重傳；
           #             Google Drive 有 MD5，改用 checksum 比對才只傳真正有變的檔案。
-          # --backup-dir：被覆蓋或刪除的舊檔先搬到備份資料夾（同一個 remote 內搬移，不佔流量）。
+          # 不做備份：被覆蓋的舊版直接取代；被刪除的檔案進 Google Drive 垃圾桶（rclone 預設 --drive-use-trash，30 天後永久刪除）。
           # --max-delete：一次要刪太多檔就中止，避免誤設 GDRIVE_PATH 時清空 Drive。
           # --tpslimit：避開 Google Drive API 的速率限制（403 rate limit exceeded）。
           set +e
           rclone sync . "$DEST" \
             --exclude '/.git/**' \
             --checksum \
-            --backup-dir "$BACKUP" \
             --max-delete "$GDRIVE_MAX_DELETE" \
             --fast-list \
             --transfers 8 --checkers 16 --tpslimit 10 \
@@ -178,9 +174,8 @@ jobs:
             echo ""
             echo "- commit：\`${SHA}\`"
             echo "- 目的地：\`${DEST}\`"
-            echo "- 舊檔備份：\`${BACKUP}\`（沒有變動時不會建立）"
             echo "- 上傳/更新（檔數）：$(grep -cE ': (Copied|Updated)' "$LOG" 2>/dev/null || true)"
-            echo "- 移到備份（被覆蓋或刪除）：$(grep -cE ': (Deleted|Moved)' "$LOG" 2>/dev/null || true)"
+            echo "- 刪除（移到 Drive 垃圾桶）：$(grep -cE ': Deleted' "$LOG" 2>/dev/null || true)"
             echo "- 結果：$( [ $RC -eq 0 ] && echo '✅ 成功' || echo "❌ 失敗（exit $RC）")"
             echo ""
             echo "<details><summary>rclone log（最後 200 行）</summary>"
