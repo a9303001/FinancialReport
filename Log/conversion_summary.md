@@ -1,20 +1,20 @@
 # PDF 轉換總結報告
 
-產生時間：2026-11-25 09:25:30
+產生時間：2026-11-25 09:33:19
 
 轉換工具：`pymupdf4llm-mcp` / `convert_pdf_to_markdown`
 
-掃描範圍：`d:\FinancialReport\hk_state`
+掃描範圍：`d:\FinancialReport\jp_state`
 
 
 ## 統計
 
 | 指標 | 數量 |
 |------|------|
-| 總掃描 PDF | 5 |
+| 總掃描 PDF | 6 |
 | 跳過（已轉換） | 0 |
-| 本次嘗試轉換 | 5 |
-| 成功 | 5 |
+| 本次嘗試轉換 | 6 |
+| 成功 | 6 |
 | 失敗：0 KB 或未產生 | 0 |
 | 失敗：CID 亂碼（已刪除） | 0 |
 
@@ -37,8 +37,9 @@
 
 | 公司 | .md |
 |------|-----|
-| hk_state | 20261123_REIT_HKEX_00405重大持有人實物分派.md |
-| hk_state | 20261123_REIT_HKEX_01426單位及現金支付管理費.md |
-| hk_state | 20261123_REIT_HKEX_01426翌日披露報表.md |
-| hk_state | 20261123_Report_KnightFrank_香港寫字樓去中環化.md |
-| hk_state | 20261124_Data_HKTB_訪港旅客10月.md |
+| jp_state | 20261124_Data_東京カンテイ_中古マンション70㎡価格2026年10月.md |
+| jp_state | 20261124_REIT_3462_野村MF資金借入金利決定.md |
+| jp_state | 20261125_Data_BOJ_企業向けサービス価格指数2026年10月.md |
+| jp_state | 20261125_Data_BOJ_貸出約定平均金利2026年9月.md |
+| jp_state | 20261125_Data_JREI_不動研住宅価格指数2026年9月.md |
+| jp_state | 20261125_Report_JREI_第55回不動産投資家調査2026年10月.md |
