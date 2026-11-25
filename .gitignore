@@ -17,3 +17,7 @@ $RECYCLE.BIN/
 scratch_convert/
 # Playwright MCP run artifacts (snapshots, console logs)
 .playwright-mcp/
+
+# EDINET API key（絕不 commit）
+.claude/skills/edinet/.env
+.env
