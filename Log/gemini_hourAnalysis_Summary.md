@@ -2,8 +2,8 @@
 
 | 欄位 | 值 |
 |:-----|:---|
-| **last_executed_date** | 6 |
-| **last_executed_companies** | 7203 Toyota |
-| **last_executed_time** | 2026-11-25 16:37 |
-| **next_date** | 7 |
+| **last_executed_date** | 7 |
+| **last_executed_companies** | UHS Universal Health Services |
+| **last_executed_time** | 2026-11-25 16:52 |
+| **next_date** | 8 |
 | **stock_analysis_status** | ✅ |
