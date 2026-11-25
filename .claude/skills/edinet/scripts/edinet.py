@@ -14,6 +14,8 @@ API key 讀取順序（找到即停，key 永遠不會被印出）:
   2. 環境變數 EDINET_API_KEY_FILE 指向的檔案
   3. <本 skill 資料夾>/.env            （已列入 .gitignore，內容一行 EDINET_API_KEY=xxxx）
   4. ~/.config/edinet/.env             （同上格式，放在使用者家目錄，跨 repo 共用）
+  5. 都沒有 → 送佔位值，由 Claude Code 雲端環境的「網路密鑰」代理注入真 key
+key 一律用 HTTP header `Ocp-Apim-Subscription-Key` 傳送（不放網址）。
 """
 from __future__ import annotations
 
@@ -85,31 +87,38 @@ def get_key() -> tuple[str | None, str]:
     return None, ""
 
 
+PROXY_PLACEHOLDER = "proxy-injected-edinet-key"  # 雲端：由網路代理把 header 換成真 key
+
+
 def require_key() -> str:
     k, _ = get_key()
-    if not k:
-        sys.exit("[edinet] 找不到 API key。請設定環境變數 EDINET_API_KEY，或建立 "
-                 f"{SKILL_DIR / '.env'}（內容：EDINET_API_KEY=你的key）。詳見 SKILL.md §2。")
-    return k
+    # 本機找不到 key 時送佔位值：Claude Code 雲端環境若已存「網路密鑰」，代理會把 header 換成真 key
+    return k or PROXY_PLACEHOLDER
+
+
+NO_KEY_HELP = ("找不到有效 API key。本機：設環境變數 EDINET_API_KEY 或建立 "
+               f"{SKILL_DIR / '.env'}；雲端：在環境的網路密鑰存 api.edinet-fsa.go.jp 的 "
+               "Ocp-Apim-Subscription-Key。詳見 SKILL.md §2。")
 
 
 # ---------------------------------------------------------------- HTTP
 def http_get(url: str, params: dict | None = None, key: str | None = None,
              retries: int = 4) -> tuple[bytes, str]:
     q = dict(params or {})
-    if key:
-        q["Subscription-Key"] = key
     full = url + ("?" + urllib.parse.urlencode(q) if q else "")
+    headers = {"User-Agent": UA}
+    if key:  # 用 header 傳 key（不會出現在網址／log），EDINET 實測接受
+        headers["Ocp-Apim-Subscription-Key"] = key
     err = None
     for i in range(retries):
         try:
-            req = urllib.request.Request(full, headers={"User-Agent": UA})
+            req = urllib.request.Request(full, headers=headers)
             with urllib.request.urlopen(req, timeout=60) as r:
                 return r.read(), r.headers.get("Content-Type", "")
         except urllib.error.HTTPError as e:
             body = e.read()[:300].decode("utf-8", "replace")
             if e.code in (401, 403):
-                sys.exit(f"[edinet] HTTP {e.code}：API key 無效或未啟用。{body}")
+                sys.exit(f"[edinet] HTTP {e.code}：{NO_KEY_HELP} 回應：{body}")
             if e.code == 404:
                 raise
             err = f"HTTP {e.code} {body}"
@@ -125,7 +134,7 @@ def api_json(path: str, params: dict, key: str) -> dict:
     meta = j.get("metadata", {})
     status = str(j.get("StatusCode") or meta.get("status") or "200")
     if status == "401":
-        sys.exit(f"[edinet] API key 無效：{j.get('message') or meta.get('message')}")
+        sys.exit(f"[edinet] {NO_KEY_HELP} 回應：{j.get('message') or meta.get('message')}")
     if status != "200":
         raise RuntimeError(f"[edinet] API 回應異常 {status}: {meta.get('message') or j}")
     return j
@@ -371,10 +380,9 @@ def main() -> None:
         return
     if a.cmd == "checkkey":
         k, src = get_key()
-        if not k:
-            sys.exit("[edinet] 未設定 API key（見 SKILL.md §2）")
-        api_json("documents.json", {"date": (date.today() - timedelta(days=1)).isoformat(), "type": 1}, k)
-        print(f"[edinet] API key 有效（來源：{src}，長度 {len(k)}，key 不顯示）")
+        api_json("documents.json", {"date": (date.today() - timedelta(days=1)).isoformat(), "type": 1},
+                 k or PROXY_PLACEHOLDER)
+        print(f"[edinet] API key 有效（來源：{src or '雲端網路密鑰（代理注入）'}，key 不顯示）")
         return
 
     key = require_key()

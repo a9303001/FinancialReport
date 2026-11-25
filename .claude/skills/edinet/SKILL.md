@@ -46,7 +46,11 @@ python .claude/skills/edinet/scripts/edinet.py download --code 3445
 
 設好後跑 `edinet.py checkkey` 確認。key 申請：EDINET 首頁 → 「API」→ API キー発行（需 Microsoft／一般帳號 + 手機簡訊認證，免費）。
 
-**雲端 Claude Code session**：容器每次重建，本機 `.env` 不會跟著走。可在雲端環境設定加環境變數 `EDINET_API_KEY`（注意：環境變數以明文保存，同環境的人看得到）。
+**雲端 Claude Code session（已設定好，永久有效）**：容器每次重建，`.env` 不會留下，所以 key 存在雲端環境的**網路密鑰**（host `api.edinet-fsa.go.jp`、header `Ocp-Apim-Subscription-Key`）。腳本在本機找不到 key 時會送佔位值，網路代理自動換成真 key → 什麼都不用設，直接跑。
+
+- 確認：`edinet.py checkkey` 顯示「來源：雲端網路密鑰（代理注入）」。
+- 換 key：claude.ai 雲端環境設定 → Network secrets → 修改 `api.edinet-fsa.go.jp` 那筆；或請 Claude 呼叫 `request_credential` 重新存。
+- 腳本一律用 header `Ocp-Apim-Subscription-Key` 傳 key（EDINET 實測接受；key 不會出現在網址或 log）。
 
 ## 3. 執行流程（AI 照做）
 
