@@ -38,8 +38,11 @@ RULES = [  # (regex on file stem, category, period-group builder)
     (r"^(?P<t>[\w-]+?)_annual_(?P<p>\d{4})$", "年報(舊名)"),
     (r"^(?P<t>[\w-]+?)_(?:quarter|QuarterlyReport)_(?P<p>\d{4}Q[1-4])$", "季報(舊名)"),
     (r"^(?P<t>[\w-]+?)_interim_(?P<p>\d{4})$", "半年報(舊名)"),
-    (r"^(?P<p>\d{4})_(?P<t>\w+?)_\d{8}F(?:04|E4)$", "年報(TWSE原名)"),
-    (r"^(?P<p>\d{6})_(?P<t>\w+?)_AI[12AB]$", "季報(TWSE原名)"),
+    # TWSE 原檔名（可帶下載時間戳 _yyyyMMdd_HHmmss 與「2022年報」之類前綴；規則與 mops.py alias_patterns 一致）
+    (r"^(?:.*?\D)?(?P<p>\d{4})_(?P<t>[0-9A-Za-z]+?)_\d{8}F(?:04|E4|E6)(?:_\d{8}_\d{6})?$", "年報(TWSE原名)"),
+    (r"^(?P<p>\d{6})_(?P<t>[0-9A-Za-z]+?)_AI[1-3A-C](?:_\d{8}_\d{6})?$", "季報(TWSE原名)"),
+    (r"^(?P<t>[\w-]+?)_(?P<p>\d{4})_annual_report$", "年報(舊名)"),
+    (r"^(?P<t>[\w-]+?)_(?P<p>\d{4}Q[1-4])_quarterly_report$", "季報(舊名)"),
     (r"^(?P<t>[\w-]+?)_10K_(?P<p>[\d-]+)$", "年報(10-K)"),
     (r"^(?P<t>[\w-]+?)_10Q_(?P<p>[\d-]+)$", "季報(10-Q)"),
     (r"^(?P<p>\d{6}).*有価証券報告書.*$", "年報(日文原名)"),

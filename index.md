@@ -404,6 +404,8 @@ A: 不算。這是公開資訊整理與研究筆記，資料可能延遲或有�
 | `CLAUDE.md` | Claude Code 進入點（內容即 `@AGENTS.md`） |
 | `.claude/skills/StockAnalysis/SKILL.md` | 個股深度分析 Skill 執行指南 |
 | `.claude/skills/collectStk/SKILL.md` | 財報與輿情收集 Skill |
+| `.claude/skills/mops/SKILL.md` | 台股年報／季報下載 Skill（TWSE 電子書／MOPS；經驗庫 `learned.json`） |
+| `.claude/skills/edinet/SKILL.md` | 日股年報／半期報下載 Skill（EDINET API v2） |
 | `.claude/skills/ArrangePublicOpinionMd/SKILL.md` | 輿情月檔合併為年檔 Skill |
 | `.claude/skills/Convert2md/SKILL.md` | PDF → Markdown 轉換 Skill |
 | `.claude/skills/collectState/SKILL.md` | 國家層級 REIT 情報收集與分析 Skill（`jp /collectState`、`hk /collectState`） |

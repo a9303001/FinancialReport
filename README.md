@@ -240,6 +240,8 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | :--- | :--- |
 | `StockAnalysis` | 個股深度分析：讀回既有資料 → deep research → 每股化 → 整份重寫 `AnalysisResult.md` |
 | `collectStk` | 收集個股最新財務報告與輿情討論 / 新聞 |
+| `mops` | 台股年報（股東會年報）／季報（財務報告書）專用下載：TWSE 電子書（MOPS）清單 → 選 2 年報 + 1 季報 → 既有檔略過 → 本機直連或依指示走 MCP（雲端 IP 被 TWSE 封鎖）→ `Convert2md` → 驗證；每次爬蟲經驗寫回 `learned.json`，下次自動調整路徑順序 |
+| `edinet` | 日股有価証券報告書／半期報告書下載（EDINET API v2）→ `Convert2md` → 驗證 |
 | `ArrangePublicOpinionMd` | 把零散月度輿情 `.md` 依年份合併成 `<YYYY>_PublicOpinion.md`，驗證後刪除原檔（年報 / 季報不動） |
 | `Convert2md` | 用 MCP `convert_pdf_to_markdown` 把 PDF 轉 Markdown，檢查 CID 亂碼並刪除失敗檔（可帶掃描範圍參數只轉指定資料夾，如 `collectState` 只轉 `<cc>_state/`） |
 | `collectState` | `jp /collectState`、`hk /collectState`：只抓最近 1 個月：先刪 `<cc>_state/` 發布日超過 1 個月的資料，再只收集該國最近 1 個月發布的房地產／REIT 新聞、報告與輿情（已收過的不重抓）（hk 加中國房地產），全部轉 Markdown 並重建 `0.Index.md`；只收集不分析（分析由 `stateAnalysis` 負責） |
