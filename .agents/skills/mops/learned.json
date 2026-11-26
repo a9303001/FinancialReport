@@ -1,0 +1,128 @@
+{
+ "_說明": "mops skill 經驗庫（機器可讀）。mops.py 每次執行自動更新 routes 成敗；AI 用 `mops.py learn` 補記 MCP 路徑結果與公司經驗。route 排序：連敗 >= 2 次往後、成功率高往前。.claude 與 .agents 兩份由 mops.py 同時寫入。敘述型知識寫在 references/sources.md。",
+ "routes": {
+  "blocked_ip": {
+   "list.direct": {
+    "ok": 0,
+    "fail": 2,
+    "streak_fail": 2,
+    "last_fail": "2026-11-26",
+    "note": "雲端容器（Google Cloud 美國 IP）：doc.twse、mops、mopsov、isin.twse 一律回 947 bytes 安全性封鎖頁；改 header／cookie 無效",
+    "last_msg": "947 bytes 安全性封鎖頁（依來源 IP）"
+   },
+   "list.firecrawl_stealth": {
+    "ok": 5,
+    "fail": 0,
+    "streak_fail": 0,
+    "last_ok": "2026-11-26",
+    "note": "proxy stealth + maxAge 0 + formats html；回 UTF-8 HTML，含說明欄（4417、6121、6781、6279 皆成功）"
+   },
+   "list.apify_webfetch_mcp": {
+    "ok": 1,
+    "fail": 0,
+    "streak_fail": 0,
+    "last_ok": "2026-11-23",
+    "note": "formats text：Big5 中文變亂碼，但檔名／大小／日期是 ASCII 可解析（年報以 F04/FE4/FE6 代碼推定）"
+   },
+   "link.firecrawl_stealth": {
+    "ok": 3,
+    "fail": 0,
+    "streak_fail": 0,
+    "last_ok": "2026-11-26",
+    "note": "step=9 頁含 doc.twse.com.tw/pdf/{檔名}_{yyyyMMdd_HHmmss}.pdf"
+   },
+   "link.apify_webfetch_mcp": {
+    "ok": 1,
+    "fail": 0,
+    "streak_fail": 0,
+    "last_ok": "2026-11-23",
+    "note": "formats links"
+   },
+   "pdf.direct": {
+    "ok": 1,
+    "fail": 2,
+    "streak_fail": 1,
+    "last_ok": "2026-11-01",
+    "last_fail": "2026-11-26",
+    "note": "拿到 step=9 連結後 curl 時好時壞（1521 成功；8433 傳 360KB 斷線後即回封鎖頁；6279 947 bytes）"
+   },
+   "pdf.apify_raw_mcp": {
+    "ok": 2,
+    "fail": 1,
+    "streak_fail": 0,
+    "last_ok": "2026-11-26",
+    "note": "call-actor apify/web-fetch formats raw → get-dataset-items fields raw（結果過大自動存檔）→ ingest。actor 抓檔上限 120 秒且 input 沒有逾時參數；逾時就用同一個 step=9 連結再跑一次（1264 Q3：第 1 次 122 秒逾時、第 2 次 79 秒成功；6279 Q3 95 秒）",
+    "last_fail": "2026-11-26"
+   },
+   "pdf.apify_markdown_mcp": {
+    "ok": 1,
+    "fail": 3,
+    "streak_fail": 0,
+    "last_ok": "2026-11-25",
+    "last_fail": "2026-11-23",
+    "note": "formats markdown 直接得全文（省 Convert2md）；actor 抓檔上限約 120 秒，成敗與檔案大小不完全相關（2330 5.3MB、8433 1.6MB×2 失敗；6279 1.59MB 成功）"
+   }
+  },
+  "open_ip": {}
+ },
+ "companies": {
+  "6279": {
+   "name": "胡連",
+   "market": "上櫃",
+   "ir": "https://www.hulane.com.tw/financials",
+   "en_lag_days": 37,
+   "notes": [
+    "2026-11-25 官網季報上架晚於 TWSE（Q3 11/11 已上傳 TWSE、官網 11/25 仍未上架）→ 先走 TWSE"
+   ]
+  },
+  "2832": {
+   "name": "台產",
+   "market": "上市",
+   "ir": "https://tfmi.com.tw/investors-Financial",
+   "notes": [
+    "2026-11-01 官網 PDF curl 可下載，上架晚於 TWSE"
+   ]
+  },
+  "6121": {
+   "name": "新普",
+   "market": "上櫃",
+   "ir": "https://simplo.com.tw/download.php?lang=tw&tb=2",
+   "notes": [
+    "2026-11-01 官網下載鈕 go_download('{base64}') 解碼後 POST include/download.php（參數 dl）取得 PDF 網址"
+   ]
+  },
+  "2249": {
+   "name": "湧盛",
+   "market": "上櫃",
+   "ir": "https://young-shine.com.tw/financialreport.html",
+   "notes": [
+    "2026-11-26 OpenAPI 顯示 2026-10-22 由興櫃轉上櫃 → 2026Q3 起有季報（不再只有半年報）",
+    "2026-11-01 官網只上架半年報與年報，季報靠 TWSE"
+   ]
+  },
+  "6781": {
+   "name": "AES-KY",
+   "market": "上市",
+   "ir": "https://advancedenergysolution.com.tw/download.php?lang=tw&tb=3&cid=-1",
+   "notes": [
+    "2026-11-01 KY 公司：年報為英文版 FE6；官網上架晚 TWSE 數月且為 JS go_download，不能直接 curl"
+   ]
+  },
+  "8433": {
+   "name": "弘帆",
+   "market": "上櫃",
+   "ir": "http://www.bonfame.com/zh-tw/company.php?act=finance",
+   "notes": [
+    "2026-11-23 官網 https 回 curl rc=35，改 http://；PDF 加密但可轉檔；上架晚 TWSE"
+   ]
+  },
+  "1264": {
+   "notes": [
+    "2026-11-26 A114／A115 清單沒有英文版財報（AIA），也沒有英文年報 → 不必等英文版"
+   ],
+   "name": "德麥",
+   "market": "上櫃"
+  }
+ },
+ "updated": "2026-11-26"
+}

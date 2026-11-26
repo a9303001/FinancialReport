@@ -8,10 +8,13 @@
 檢查項目（ERROR 會讓結束碼 = 1）：
   E1 SKILL.md / references 提到的 references/*.md、scripts/*.py、其他 skill 腳本路徑都存在
   E2 collectStk 內文的 §編號引用都對得到章節；其他 skill 引用「collectStk §X」也對得到
-  E3 collectStk、edinet 的 Python 腳本都能編譯
+  E3 collectStk、edinet、hkexnews、edgar、mops、Convert2md 的 Python 腳本都能編譯
   E4 .claude/skills 與 .agents/skills 每個 skill 資料夾內容相同（--fix：以 .claude 為準複製過去）
   E5 git 追蹤了 .env（API key 外洩風險）
   E6 edinet.py selftest --offline 失敗（edinet 自己的命名／去重／參數／鏡像檢查）
+  E7 hkexnews.py selftest --offline 失敗（hkexnews 的標題解析／FY／去重／參數／鏡像檢查）
+  E8 edgar.py selftest --offline 失敗（edgar 的命名／6-K 判斷／去重／html2md／參數／鏡像檢查）
+  E9 mops.py selftest --offline 失敗（mops 的清單解析／命名／既有檔判定／learned.json／參數／鏡像檢查）
   W1 `[yyyy-mm]` 驗證標記超過 6 個月 → 下次用到該站要重新驗證
   W2 SKILL.md 超過 450 行、references 單檔超過 150 行 → 依 §10 刪減過時內容
   W3 repo 根目錄留有 .playwright-mcp/（--fix：刪除）
@@ -60,7 +63,7 @@ def check_paths() -> None:
 HEAD_SKILL = re.compile(r"^#{2,4}\s+(\d+(?:\.\d+)*)[.\s]", re.M)
 HEAD_REF = re.compile(r"^#{2,4}\s+§(\d+(?:\.\d+)*)", re.M)
 REF = re.compile(r"§(\d+(?:\.\d+)*)")
-FOREIGN = re.compile(r"(AGENTS\.md|edinet|Convert2md|collectState|stateAnalysis|StockAnalysis)[^§\n]{0,12}$")
+FOREIGN = re.compile(r"(AGENTS\.md|edinet|hkexnews|edgar|mops|Convert2md|collectState|stateAnalysis|StockAnalysis)[^§\n]{0,12}$")
 
 
 def _unfenced(text: str) -> str:
@@ -105,7 +108,7 @@ def check_refs() -> None:
 
 # ---------------------------------------------------------------- E3 compile
 def check_compile() -> None:
-    for d in (SKILL, SKILLS / "edinet"):
+    for d in (SKILL, SKILLS / "edinet", SKILLS / "hkexnews", SKILLS / "edgar", SKILLS / "mops", SKILLS / "Convert2md"):
         for py in sorted(d.glob("scripts/*.py")):
             try:  # 只編譯不寫 .pyc
                 compile(py.read_text(encoding="utf-8"), str(py), "exec")
@@ -155,21 +158,28 @@ def check_secrets() -> None:
         errors.append("E5 git 追蹤了 .env：" + ", ".join(leaked) + "（立即 git rm --cached 並換 key）")
 
 
-# ---------------------------------------------------------------- E6 edinet selftest
+# ---------------------------------------------------------------- E6~E9 edinet、hkexnews、edgar、mops selftest
 def check_edinet() -> None:
-    py = SKILLS / "edinet" / "scripts" / "edinet.py"
+    _run_selftest("edinet", "E6")
+    _run_selftest("hkexnews", "E7")
+    _run_selftest("edgar", "E8")
+    _run_selftest("mops", "E9")
+
+
+def _run_selftest(name: str, code: str) -> None:
+    py = SKILLS / name / "scripts" / f"{name}.py"
     if not py.is_file():
         return
     try:
         r = subprocess.run([sys.executable, str(py), "selftest", "--offline"], capture_output=True,
                            text=True, encoding="utf-8", errors="replace", timeout=120)
     except (OSError, subprocess.TimeoutExpired) as e:
-        errors.append(f"E6 edinet selftest 無法執行：{e}")
+        errors.append(f"{code} {name} selftest 無法執行：{e}")
         return
     if r.returncode != 0:
         fails = [l.strip() for l in r.stdout.splitlines() if l.strip().startswith("FAIL")]
-        errors.append("E6 edinet selftest 失敗：" + ("；".join(fails[:5]) or r.stderr.strip()[-300:])
-                      + "（照 edinet SKILL.md §9 修；鏡像不一致可先 --fix）")
+        errors.append(f"{code} {name} selftest 失敗：" + ("；".join(fails[:5]) or r.stderr.strip()[-300:])
+                      + f"（照 {name} SKILL.md §9 修；鏡像不一致可先 --fix）")
 
 
 # ---------------------------------------------------------------- W1-W3

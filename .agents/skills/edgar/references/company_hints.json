@@ -1,0 +1,29 @@
+{
+ "CF": {
+  "cik": 1324404,
+  "title": "CF Industries Holdings, Inc.",
+  "folder": "CF",
+  "filer": "domestic",
+  "last_ok": "2026-11-26"
+ },
+ "EVTC": {
+  "cik": 1559865,
+  "title": "EVERTEC, Inc.",
+  "folder": "EVTC",
+  "filer": "domestic",
+  "last_ok": "2026-11-26"
+ },
+ "TLK": {
+  "cik": 1001807,
+  "title": "PERUSAHAAN PERSEROAN PERSERO PT TELEKOMUNIKASI INDONESIA TBK",
+  "filer": "fpi",
+  "last_ok": "2026-11-26"
+ },
+ "UHS": {
+  "cik": 352915,
+  "title": "UNIVERSAL HEALTH SERVICES INC",
+  "folder": "UHS",
+  "filer": "domestic",
+  "last_ok": "2026-11-26"
+ }
+}

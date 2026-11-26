@@ -8,7 +8,7 @@
 
 | 站點 / 網址 | 狀況 | 做法 |
 | :--- | :--- | :--- |
-| HKEXnews 披露易 | 有官方 JSON API | **港股財報與公告第一站**，照 §5.4 [2026-09] |
+| HKEXnews 披露易 | 有官方 JSON API | **港股財報與公告第一站**：一律用 `hkexnews` skill（財報 `download`、任意公告 `search`／`fetch`），API 細節與經驗庫都在該 skill [2026-11] |
 | HKEX 權益披露 `di.hkex.com.hk` | SSR，`curl` 可讀 | 入口 `NSSrchCorpList.aspx?sa1=cl&scsd=dd/mm/yyyy&sced=dd/mm/yyyy&sc={5碼}&src=MAIN&lang=EN` → `NSAllFormList.aspx` → 明細 `NSForm2.aspx` / `NSForm3A.aspx?fn=...`。核實「大股東增持」類新聞最準；交易代碼 3104「Services」是以單位支付酬金，不是自掏腰包買進。A+H 股公司的 A 股類別大股東減持若附代價 CNY 且第 27 欄寫「可交换公司债券进入换股期」（如 01816 廣東恆健，代碼 1203），是可交換債持有人換股，不是二級市場拋售。代碼 1201「sale」搭代價 3102「Assets other than cash」時要看大股東 Form 2 第 27 欄 Supplementary information（例：春泉管理人以基金單位派實物股息），新浪/智通自動快訊一律寫成「減持」，不可直接當市場拋售 [2026-11] |
 | 富途新聞列表 `futunn.com/hk/stock/{5碼}-HK/news` | 只列最新 20 則（財報後熱門期僅涵蓋約 1~2 天，冷門期可涵蓋約 1 個月）；`curl` 時而 SSR、時而只回約 11KB `<title>Document` JS 外殼 | `curl` 有 SSR 時解析 `li.news-item` 的 `news-title`、`news-source` 與時間 span；回外殼時直接改 Playwright（snapshot 每則 link 含標題、摘要、來源與時間，時間為 UTC，+8 小時；`curl` SSR 拿到的時間已是香港時間，不必換算；snapshot 存在 `.playwright-mcp/page-*.yml`，用 `grep "link "` 取各則）。很多連結只指向騰訊通用殼頁（無文章 ID）。智通回購/CCASS 快訊偶爾漏日，要與 HKEX 披露交叉核對。較早期間改看 AAStocks／股吧 [2026-11] |
 | 富途個股頁 `/quote`、`/announcement`、新聞內文 `news.futunn.com/hk/post/*` | JS 外殼；`/community` 導向登入頁 | 內文改用 Playwright 可取全文（MT Newswires 文章仍需登入）；Playwright 渲染出的發文時間是 UTC，+8 小時才是香港時間 [2026-10] |
@@ -25,12 +25,7 @@
 
 ## §5.4 HKEXnews 官方 JSON API（港股財報/公告）
 
-1. `https://www1.hkexnews.hk/search/prefix.do?callback=c&lang=EN&type=A&name={代號}` → 取得 `stockId`。
-2. `https://www1.hkexnews.hk/search/titleSearchServlet.do?sortDir=0&sortByOptions=DateTime&category=0&market=SEHK&stockId={stockId}&documentType=-1&fromDate={yyyyMMdd}&toDate={yyyyMMdd}&lang=EN&searchType=1`
-   - servlet 名稱**大小寫敏感**，必須是 `titleSearchServlet.do`（全小寫回 404）。
-   - 不要帶 `t1code` / `t2Gcode` / `t2code`；若一定要帶，值是 `-2`（填 `-1` 會讓任何查詢都回 0 筆）。
-3. `lang=ZH` 取中文版；`recordCnt: 0` 代表該期間確實沒有公告。中文 PDF（檔名 `_c.pdf`）用 `pdftotext` 常因缺 Adobe-GB1 字型解析失敗 → 改用 `lang=EN` 回傳的英文版 `FILE_LINK`（同編號去掉 `_c`）。季報日常有兩份英文檔：「Announcement of Unaudited Results…」才是正式季報，「ORA - … Quarterly Results」是業績簡報。
-4. PDF 連結 = `https://www1.hkexnews.hk` + `FILE_LINK`。
+**已移到 `hkexnews` skill**（`.claude/skills/hkexnews/SKILL.md`）：港股財報走 collectStk §7.5；任意公告清單用 `hkexnews.py search --code {代號} --from {起日}`，單份 PDF 用 `hkexnews.py fetch`。API 參數、分類代碼、中英文版差異與踩過的坑都在該 skill §3、§8，不要在這裡重寫。
 
 ## §5.5 東方財富股吧（A 股代碼）
 
@@ -52,4 +47,4 @@
 
 ## §7.3-HK 港股財報來源
 
-- **港股**：① HKEXnews JSON API（§5.4）② 富途 `{5碼}-HK/announcement` ③ 官網 IR。（新浪 `/hkstock/notice/` 已停更，不要用）
+- **港股**：① `hkexnews` skill（collectStk §7.5）② 富途 `{5碼}-HK/announcement` ③ 官網 IR。（新浪 `/hkstock/notice/` 已停更，不要用）
