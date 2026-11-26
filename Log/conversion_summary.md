@@ -1,10 +1,10 @@
 # PDF 轉換總結報告
 
-產生時間：2026-11-26 00:46:29
+產生時間：2026-11-26 15:05:23
 
 轉換工具：`pymupdf4llm-mcp` / `convert_pdf_to_markdown`
 
-掃描範圍：`/home/user/FinancialReport/9435光通訊`
+掃描範圍：`/home/user/FinancialReport/02318中國平安`
 
 
 ## 統計
@@ -37,4 +37,4 @@
 
 | 公司 | .md |
 |------|-----|
-| 9435光通訊 | 9435_Quarter_2027H1.md |
+| 02318中國平安 | 02318_Quarter_2026H1.md |

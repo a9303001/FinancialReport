@@ -27,17 +27,23 @@ KIND_PATTERNS = [
     ("10-K", re.compile(r"FORM\s+10-K\b|Form 10-K\b")),
     ("10-Q", re.compile(r"FORM\s+10-Q\b|Form 10-Q\b")),
     ("20-F", re.compile(r"FORM\s+20-F\b")),
+    ("港股業績公告", re.compile(r"contents of this announcement|本公告的?內容", re.I)),
+    ("中期報告", re.compile(r"interim report|中期報告", re.I)),
     ("合併財務報告", re.compile(r"合併財務報告|Consolidated Financial Statements", re.I)),
     ("年報", re.compile(r"年報|Annual Report", re.I)),
 ]
 
 RULES = [  # (regex on file stem, category, period-group builder)
-    (r"^(?P<t>[\w-]+?)_AnnualReport_(?P<p>\d{4}(?:[A-Z][a-z]{2})?)(?P<x>_EDINET)?$", "年報"),
-    (r"^(?P<t>[\w-]+?)_Quarter_(?P<p>\d{4}(?:Q[1-4]|H1|[A-Z][a-z]{2}))(?P<x>_EDINET)?$", "季報"),
+    (r"^(?P<t>[\w-]+?)_AnnualReport_(?P<p>\d{4})_Results$", "年報(業績公告)"),
+    (r"^(?P<t>[\w-]+?)_Quarter_(?P<p>\d{4}H1)_Results$", "季報(業績公告)"),
+    (r"^(?P<t>[\w-]+?)_AnnualReport_(?P<p>\d{4}(?:[A-Z][a-z]{2})?)(?P<x>_EDINET|_HKEX)?$", "年報"),
+    (r"^(?P<t>[\w-]+?)_Quarter_(?P<p>\d{4}(?:Q[1-4]|H1|[A-Z][a-z]{2}))(?P<x>_EDINET|_HKEX)?$", "季報"),
     (r"^(?P<t>[\w-]+?)_Presentation_(?P<p>.+)$", "簡報"),
     (r"^(?P<t>[\w-]+?)_annual_(?P<p>\d{4})$", "年報(舊名)"),
     (r"^(?P<t>[\w-]+?)_(?:quarter|QuarterlyReport)_(?P<p>\d{4}Q[1-4])$", "季報(舊名)"),
-    (r"^(?P<t>[\w-]+?)_interim_(?P<p>\d{4})$", "半年報(舊名)"),
+    (r"^(?P<t>[\w-]+?)_(?:interim|InterimReport)_(?P<p>\d{4})$", "半年報(舊名)"),
+    (r"^(?P<t>[\w-]+?)_InterimResults_(?P<p>\d{4})$", "半年報(舊名業績公告)"),
+    (r"^(?P<p>20\d{11})$", "港股(HKEX 編號原名)"),
     (r"^(?P<p>\d{4})_(?P<t>\w+?)_\d{8}F(?:04|E4)$", "年報(TWSE原名)"),
     (r"^(?P<p>\d{6})_(?P<t>\w+?)_AI[12AB]$", "季報(TWSE原名)"),
     (r"^(?P<t>[\w-]+?)_10K_(?P<p>[\d-]+)$", "年報(10-K)"),
@@ -113,7 +119,7 @@ def main() -> None:
         if not p.is_file() or p.suffix.lower() not in (".md", ".pdf", ".html", ".htm"):
             continue
         r = classify(p)
-        if r["category"].startswith(("年報", "季報", "半年報", "決算短信")):
+        if r["category"].startswith(("年報", "季報", "半年報", "決算短信", "港股")):
             r["content"] = content_kind(p)
         if r["category"].startswith("輿情"):
             r["latest_date"] = latest_date(p)
@@ -133,7 +139,7 @@ def main() -> None:
         return
 
     print(f"# 盤點：{folder.resolve()}")
-    for cat_prefix in ("年報", "季報", "半年報", "決算短信", "簡報", "輿情", "分析結果", "其他"):
+    for cat_prefix in ("年報", "季報", "半年報", "港股", "決算短信", "簡報", "輿情", "分析結果", "其他"):
         sel = [r for r in rows if r["category"].startswith(cat_prefix)]
         if not sel:
             continue
