@@ -32,8 +32,15 @@ import urllib.parse
 import urllib.request
 import zipfile
 from concurrent.futures import ThreadPoolExecutor
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+
+JST = timezone(timedelta(hours=9))
+
+
+def today_jst() -> date:
+    """EDINET 以日本時間換日；雲端容器是 UTC，直接用 date.today() 早上 9 點前會少掃一天。"""
+    return datetime.now(JST).date()
 
 API = "https://api.edinet-fsa.go.jp/api/v2"
 CODELIST_URL = "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/codelist/Edinetcode.zip"
@@ -102,8 +109,22 @@ NO_KEY_HELP = ("找不到有效 API key。本機：設環境變數 EDINET_API_KE
 
 
 # ---------------------------------------------------------------- HTTP
+class RateLimited(RuntimeError):
+    """EDINET 回 429 Too Many Requests（HTTP 狀態或 JSON StatusCode 皆可能）。"""
+
+
+def _rate_wait(i: int, retry_after: str | None = None) -> None:
+    try:
+        sec = float(retry_after) if retry_after else 0.0
+    except ValueError:
+        sec = 0.0
+    sec = max(sec, min(60.0, 5.0 * 2 ** i))  # 5,10,20,40,60 秒
+    print(f"[edinet] 429 Too Many Requests → 等 {sec:.0f} 秒再試", file=sys.stderr)
+    time.sleep(sec)
+
+
 def http_get(url: str, params: dict | None = None, key: str | None = None,
-             retries: int = 4) -> tuple[bytes, str]:
+             retries: int = 5) -> tuple[bytes, str]:
     q = dict(params or {})
     full = url + ("?" + urllib.parse.urlencode(q) if q else "")
     headers = {"User-Agent": UA}
@@ -122,22 +143,30 @@ def http_get(url: str, params: dict | None = None, key: str | None = None,
             if e.code == 404:
                 raise
             err = f"HTTP {e.code} {body}"
+            if e.code in (429, 503):
+                _rate_wait(i, e.headers.get("Retry-After"))
+                continue
         except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
             err = str(e)
         time.sleep(2 ** i)
     raise RuntimeError(f"[edinet] 連線失敗（已重試 {retries} 次）：{err}")
 
 
-def api_json(path: str, params: dict, key: str) -> dict:
-    data, _ = http_get(f"{API}/{path}", params, key)
-    j = json.loads(data.decode("utf-8"))
-    meta = j.get("metadata", {})
-    status = str(j.get("StatusCode") or meta.get("status") or "200")
-    if status == "401":
-        sys.exit(f"[edinet] {NO_KEY_HELP} 回應：{j.get('message') or meta.get('message')}")
-    if status != "200":
-        raise RuntimeError(f"[edinet] API 回應異常 {status}: {meta.get('message') or j}")
-    return j
+def api_json(path: str, params: dict, key: str, retries: int = 5) -> dict:
+    for i in range(retries):
+        data, _ = http_get(f"{API}/{path}", params, key)
+        j = json.loads(data.decode("utf-8"))
+        meta = j.get("metadata", {})
+        status = str(j.get("StatusCode") or meta.get("status") or "200")
+        if status == "401":
+            sys.exit(f"[edinet] {NO_KEY_HELP} 回應：{j.get('message') or meta.get('message')}")
+        if status == "429":  # 2026-11 實測：4 執行緒連打約 500 天後，HTTP 200 但 JSON 內回 429
+            _rate_wait(i)
+            continue
+        if status != "200":
+            raise RuntimeError(f"[edinet] API 回應異常 {status}: {meta.get('message') or j}")
+        return j
+    raise RateLimited(f"[edinet] 連續 {retries} 次 429，暫停一下再跑（每日清單已快取，重跑會接續）")
 
 
 # ---------------------------------------------------------------- code list
@@ -219,7 +248,7 @@ def _fmt_company(c: dict) -> str:
 # ---------------------------------------------------------------- daily lists
 def daily_list(d: date, key: str) -> list[dict]:
     p = CACHE / "lists" / f"{d.isoformat()}.json"
-    stale_limit = date.today() - timedelta(days=7)  # 一週內的清單可能還在變動 → 每次重抓
+    stale_limit = today_jst() - timedelta(days=7)  # 一週內的清單可能還在變動 → 每次重抓
     if p.is_file() and d < stale_limit:
         return json.loads(p.read_text(encoding="utf-8"))
     j = api_json("documents.json", {"date": d.isoformat(), "type": 2}, key)
@@ -234,28 +263,57 @@ def _wanted_types(include_amend: bool) -> set[str]:
     return t | ANNUAL_AMEND | PERIODIC_AMEND if include_amend else t
 
 
+MISSING_DAYS: list[date] = []  # 重試後仍抓不到清單的日子（報告要寫出來）
+
+
+def _safe_daily(d: date, key: str) -> list[dict] | None:
+    try:
+        return daily_list(d, key)
+    except (RuntimeError, json.JSONDecodeError) as e:  # 含 RateLimited；單日失敗不可讓整輪崩潰
+        print(f"[edinet] {d} 清單暫時失敗：{e}", file=sys.stderr)
+        return None
+
+
 def scan(edinet_code: str, key: str, days: int, annual_n: int | None, periodic_n: int | None,
-         include_amend: bool = False, workers: int = 4) -> list[dict]:
-    """由今天往回掃每日提出書類清單；收集夠 annual_n 份年報 + periodic_n 份季/半期報即提早停止。"""
+         include_amend: bool = False, workers: int = 3) -> list[dict]:
+    """由今天（JST）往回掃每日提出書類清單；收集夠 annual_n 份年報 + periodic_n 份季/半期報即提早停止。"""
     types = _wanted_types(include_amend)
-    today = date.today()
+    today = today_jst()
     dates = [today - timedelta(days=i) for i in range(days + 1)]
     found: list[dict] = []
     chunk = 28
+
+    def take(res: list[dict]) -> None:
+        for doc in res:
+            if (doc.get("edinetCode") == edinet_code and doc.get("docTypeCode") in types
+                    and doc.get("withdrawalStatus", "0") == "0"
+                    and doc.get("disclosureStatus", "0") == "0"):
+                found.append(doc)
+
     with ThreadPoolExecutor(max_workers=workers) as ex:
         for s in range(0, len(dates), chunk):
             batch = dates[s:s + chunk]
-            for d, res in zip(batch, ex.map(lambda x: daily_list(x, key), batch)):
-                for doc in res:
-                    if (doc.get("edinetCode") == edinet_code and doc.get("docTypeCode") in types
-                            and doc.get("withdrawalStatus", "0") == "0"
-                            and doc.get("disclosureStatus", "0") == "0"):
-                        found.append(doc)
+            failed = []
+            for d, res in zip(batch, ex.map(lambda x: _safe_daily(x, key), batch)):
+                if res is None:
+                    failed.append(d)
+                else:
+                    take(res)
+            for d in failed:  # 失敗的日子單執行緒、等一下再補一次
+                time.sleep(3)
+                res = _safe_daily(d, key)
+                if res is None:
+                    MISSING_DAYS.append(d)
+                else:
+                    take(res)
             print(f"[edinet] 已掃到 {batch[-1].isoformat()}，找到 {len(found)} 份", file=sys.stderr)
             n_a = sum(d["docTypeCode"] in ANNUAL for d in found)
             n_p = sum(d["docTypeCode"] in (QUARTERLY | HALF) for d in found)
             if annual_n is not None and periodic_n is not None and n_a >= annual_n and n_p >= periodic_n:
                 break
+    if MISSING_DAYS:
+        print(f"[edinet] ⚠ 有 {len(MISSING_DAYS)} 天清單抓不到（{', '.join(map(str, MISSING_DAYS[:10]))}"
+              f"{' …' if len(MISSING_DAYS) > 10 else ''}）→ 結果可能漏件，稍後重跑即可接續快取", file=sys.stderr)
     found.sort(key=lambda d: d.get("submitDateTime") or "", reverse=True)
     return found
 
@@ -314,27 +372,107 @@ def find_company_folder(ticker: str) -> Path | None:
     return cands[0] if len(cands) == 1 else None
 
 
+# 判斷既有 .md 是哪一種文件：取檔頭最早出現的關鍵字。
+# 不能只搜「有沒有出現」：決算短信封面固定有「半期報告書提出予定日」，會被誤判成半期報告書。
+KIND_PATTERNS = [
+    ("120", re.compile(r"有価証券報告書|Annual Securities Report")),
+    ("140", re.compile(r"四半期報告書|Quarterly Securities Report")),
+    ("160", re.compile(r"(?<!四)半期報告書(?!提出)|Semi-Annual Securities Report")),
+    ("tanshin", re.compile(r"決算短信|Summary of (?:Consolidated )?Financial Results|FINANCIAL RESULTS", re.I)),
+    ("asset", re.compile(r"資産運用報告|Asset Management Report", re.I)),
+    ("other", re.compile(r"Annual Report|Integrated Report|統合報告書|決算説明", re.I)),
+]
+
+
+def doc_kind(path: Path, head_chars: int = 6000) -> str | None:
+    """回傳 '120'/'140'/'160'/'tanshin'/'asset'/'other'；PDF 或讀不到回 None。"""
+    if path.suffix.lower() != ".md":
+        return None
+    try:
+        with path.open(encoding="utf-8", errors="replace") as f:
+            head = f.read(head_chars)
+    except OSError:
+        return None
+    best = None
+    for kind, pat in KIND_PATTERNS:
+        m = pat.search(head)
+        if m and (best is None or m.start() < best[1]):
+            best = (kind, m.start())
+    return best[0] if best else None
+
+
+def _same_kind(doc_type: str, kind: str | None) -> bool:
+    base = {"130": "120", "150": "140", "170": "160"}.get(doc_type, doc_type)
+    return kind is None or kind == base  # PDF（尚未轉檔）視為同一份
+
+
+def _legacy_hits(out: Path, doc: dict, base: str) -> list[Path]:
+    """認得舊命名：小寫 annual/quarter/interim、QuarterlyReport、檔名含文件名＋期末日的日文原檔名。"""
+    if not out.is_dir():
+        return []
+    t = doc["docTypeCode"]
+    low = base.lower()
+    alts = {low, low.replace("_annualreport_", "_annual_"), low.replace("_quarter_", "_quarterlyreport_")}
+    if low.endswith("h1"):
+        alts |= {low[:-2] + "q2", low.replace("_quarter_", "_interim_")[:-2]}
+    pe = (doc.get("periodEnd") or "").replace("-", "")
+    name_kw = DOC_NAME.get({"130": "120", "150": "140", "170": "160"}.get(t, t), "")
+    hits = []
+    for p in out.iterdir():
+        if p.suffix.lower() not in (".md", ".pdf"):
+            continue
+        stem = p.stem.lower()
+        if stem in alts and stem != low:
+            hits.append(p)
+        elif pe and name_kw and pe in p.name and name_kw in p.name and not (
+                name_kw == "半期報告書" and "四半期報告書" in p.name):
+            hits.append(p)
+    return hits
+
+
 def download_doc(doc: dict, fmt: str, out: Path, base: str, key: str, force: bool) -> str:
     typ, ext = FORMAT_TYPE[fmt]
     suffix = "" if fmt == "pdf" else f"_{fmt}"
-    dest = out / f"{base}{suffix}.{ext}"
+    t = doc["docTypeCode"]
     if not force:
-        # 半期報 H1 = 舊命名的 Q2；.md 代表已轉檔過 → 都視為已下載
-        alts = [base] + ([base[:-2] + "Q2"] if base.endswith("H1") else [])
-        hit = [p for b in alts for p in (out / f"{b}{suffix}.{ext}", out / f"{b}.md")
-               if p.exists() and (fmt == "pdf" or p.suffix != ".md")]
-        if hit:
-            return f"略過（已存在）{hit[0].name}"
+        orig, conflict = base, False
+        # ① 同名檔：內容是同一種文件才算已下載；同名但其實是決算短信／資産運用報告 → 另存 {base}_EDINET
+        for p in (out / f"{orig}{suffix}.{ext}", out / f"{orig}.md"):
+            if p.exists() and (fmt == "pdf" or p.suffix != ".md"):
+                if fmt != "pdf" or _same_kind(t, doc_kind(p)):
+                    return f"略過（已存在）{p.name}"
+                conflict = True
+        if conflict:
+            base = orig + "_EDINET"
+            for p in (out / f"{base}{suffix}.{ext}", out / f"{base}.md"):
+                if p.exists():
+                    return f"略過（已存在）{p.name}"
+        # ② 舊命名（含 H1 ↔ 舊 Q2／interim、日文原檔名）且內容確定是同一種文件
+        if fmt == "pdf":
+            for p in _legacy_hits(out, doc, orig):
+                k = doc_kind(p)
+                if (p.suffix.lower() == ".pdf" or k is not None) and _same_kind(t, k):
+                    return f"略過（舊檔名已存在）{p.name}"
+    dest = out / f"{base}{suffix}.{ext}"
     flag = {"pdf": "pdfFlag", "xbrl": "xbrlFlag", "csv": "csvFlag", "attach": "attachDocFlag",
             "english": "englishDocFlag"}[fmt]
     if doc.get(flag) not in ("1", 1):
         return f"無此格式（{flag}=0）{dest.name}"
+    if DRY_RUN:
+        return f"將下載 {dest.name}"
     data, ctype = http_get(f"{API}/documents/{doc['docID']}", {"type": typ}, key)
     if "json" in ctype:  # API 以 JSON 回錯誤
         return f"失敗 {dest.name}: {data[:200].decode('utf-8', 'replace')}"
+    if fmt == "pdf" and not data.startswith(b"%PDF"):
+        return f"失敗 {dest.name}: 回傳不是 PDF（{len(data)} bytes）"
     out.mkdir(parents=True, exist_ok=True)
     dest.write_bytes(data)
+    NEW_FILES.append(dest)
     return f"已下載 {dest}  ({len(data) / 1024:.0f} KB)"
+
+
+NEW_FILES: list[Path] = []
+DRY_RUN = False
 
 
 def select(docs: list[dict], annual_n: int, periodic_n: int, include_amend: bool) -> list[dict]:
@@ -365,13 +503,14 @@ def main() -> None:
         s.add_argument("--annual", type=int, default=2, help="年報份數（預設 2）")
         s.add_argument("--periodic", type=int, default=1, help="季報/半期報份數（預設 1）")
         s.add_argument("--include-amendments", action="store_true", help="一併納入訂正報告書")
-        s.add_argument("--workers", type=int, default=4)
+        s.add_argument("--workers", type=int, default=3, help="並發數（預設 3；太高會 429）")
         if name == "download":
             s.add_argument("--format", default="pdf",
                            help="pdf / xbrl / csv / english / attach，可逗號分隔（預設 pdf）")
             s.add_argument("--out", help="輸出資料夾（預設：repo 內以證券代碼開頭的公司資料夾）")
             s.add_argument("--ticker", help="檔名用的代碼（預設：證券代碼前 4 碼）")
             s.add_argument("--force", action="store_true", help="已存在也重新下載")
+            s.add_argument("--dry-run", action="store_true", help="只判斷要下載／略過哪些，不下載")
     a = ap.parse_args()
 
     if a.cmd == "lookup":
@@ -380,7 +519,7 @@ def main() -> None:
         return
     if a.cmd == "checkkey":
         k, src = get_key()
-        api_json("documents.json", {"date": (date.today() - timedelta(days=1)).isoformat(), "type": 1},
+        api_json("documents.json", {"date": (today_jst() - timedelta(days=1)).isoformat(), "type": 1},
                  k or PROXY_PLACEHOLDER)
         print(f"[edinet] API key 有效（來源：{src or '雲端網路密鑰（代理注入）'}，key 不顯示）")
         return
@@ -396,6 +535,8 @@ def main() -> None:
         print("\n".join(_row(d, ticker, company) for d in docs) or "此區間 EDINET 無年報/季報")
         return
 
+    global DRY_RUN
+    DRY_RUN = getattr(a, "dry_run", False)
     sel = select(docs, a.annual, a.periodic, a.include_amendments)
     out = Path(a.out) if a.out else find_company_folder(ticker)
     if out is None:
@@ -412,6 +553,10 @@ def main() -> None:
     if n_a < a.annual or n_p < a.periodic:
         print(f"[edinet] ⚠ 份數不足：{a.days} 天內 EDINET 只有上列文件（可加大 --days；"
               "第1/第3四半期的決算短信在 TDnet，不在 EDINET）")
+    if MISSING_DAYS:
+        print(f"[edinet] ⚠ {len(MISSING_DAYS)} 天的每日清單抓不到，可能漏件 → 稍後重跑同一指令（快取會接續）")
+    # 給下一步 Convert2md 用：本次新落地的檔案（絕對路徑）
+    print("[edinet] NEW_FILES=" + json.dumps([str(p.resolve()) for p in NEW_FILES], ensure_ascii=False))
 
 
 if __name__ == "__main__":

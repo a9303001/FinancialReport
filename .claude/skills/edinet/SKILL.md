@@ -28,7 +28,11 @@ python .claude/skills/edinet/scripts/edinet.py download --code 3445
 - `--out DIR`：輸出資料夾。不填時自動找 repo 根目錄下「以代碼開頭」的唯一資料夾（如 `3445RS`）；找不到會報錯並提示新資料夾名稱 → 新公司請先建 `{代碼}{公司名}` 資料夾。
 - `--days N`：最多往回掃幾天（預設 800）。掃到份數夠就提早停。
 - `--include-amendments`：一併下載訂正報告書（檔名加 `_Amend{docID}`）。
+- `--dry-run`：只列出每份「將下載／略過（已存在）／略過（舊檔名已存在）」，不下載。正式下載前先跑一次。
 - `--force`：已存在也重抓。
+- `--workers N`：並發數（預設 3；調高容易 429）。
+
+輸出最後一行 `[edinet] NEW_FILES=[...]` 是本次新落地檔案的絕對路徑（JSON），下一步交給 `Convert2md` 只轉這些。
 
 ## 2. API key 放哪裡（重要）
 
@@ -56,8 +60,8 @@ python .claude/skills/edinet/scripts/edinet.py download --code 3445
 
 1. `checkkey`；失敗 → 回報使用者依 §2 設定，**改走 AGENTS.md §4.2 D/F 的替代來源**（IR Bank、Ullet、Futu），不要卡住。
 2. `list --code {代碼}` 看清單與預定檔名；確認公司對、期別對。
-3. `download --code {代碼}`（必要時 `--out` 指定資料夾）。已存在同名 `.pdf` 或 `.md` 的期別自動略過。
-4. 下載完交給 `Convert2md` skill 把 PDF 轉 Markdown。
+3. `download --code {代碼} --dry-run` 確認會下載／略過哪些，再拿掉 `--dry-run` 正式下載（必要時 `--out` 指定資料夾）。
+4. 下載完交給 `Convert2md` skill 把 PDF 轉 Markdown（`<SCOPE>` = 公司資料夾）。由 `collectStk` 呼叫時照 collectStk §7.4、§9 做。
 5. 在回覆／執行報告中寫明：找到哪些期別、docID、提出日、哪些份數不足與原因（§4）。
 
 ## 4. 必知限制
@@ -68,6 +72,10 @@ python .claude/skills/edinet/scripts/edinet.py download --code 3445
 - `{FY}` = 會計年度結束年（3 月決算公司 2026/4–9 的半期報 → `2027H1`），沿用 collectStk §命名規則。
 - 每日清單快取在 `~/.cache/edinet/lists/`（可用 `EDINET_CACHE_DIR` 改），7 天前的清單不重抓 → 第二家公司起幾乎不用等。首次掃 800 天約 1–3 分鐘。
 - 取下（withdrawn）或非公開的文件自動排除。
+- **已存在判斷看內容不看檔名**：目標檔名已存在時，讀既有 `.md` 檔頭最早出現的文件名稱（有価証券報告書／半期報告書／四半期報告書／決算短信／資産運用報告）。同一種 → 略過；不同種（例：舊流程把決算短信存成 `_Quarter_`、把資産運用報告存成 `_AnnualReport_`）→ 新檔存成 `{名稱}_EDINET.pdf`，兩份並存不覆蓋。也認得舊命名（小寫 `annual`/`quarter`/`interim`、`H1` ↔ 舊 `Q2`、`202606有価証券報告書－第39期(20250401－20260331).md` 這類日文原檔名＋期末日）。注意：決算短信封面固定有「半期報告書提出予定日」，所以不能用「有沒有出現半期報告書」判斷。
+- **429 Too Many Requests**：EDINET 會在 HTTP 200 的 JSON 內回 `StatusCode: 429`（2026-11 實測 4 執行緒連打約 500 天後出現）。腳本自動退避（5→60 秒）重試；單日仍失敗不會中止，最後列出漏掉的日期 → 隔 1 分鐘重跑同一指令，快取會接續。
+- 「今天」以日本時間（JST）計算（雲端容器是 UTC）。
+- EDINET PDF（Producer = EDINET）經 `convert_pdf_to_markdown` 轉檔實測 0 個 `(cid:`（2026-11，4979 半期報 25 頁），不必找英文版。
 
 ## 5. docTypeCode 對照
 

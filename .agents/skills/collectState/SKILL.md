@@ -8,7 +8,7 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 
 **任務**：替指定國家 ① 刪掉窗口外舊資料 ② 只收最近 1 個月發布的原始資料（官方數據、研究報告、新聞、REIT 公告、輿情）③ 全部轉 Markdown ④ 寫執行報告並 push。
 **分工**：本 Skill 只「收」，不寫任何分析或結論；判斷由 `stateAnalysis` 讀這些檔後寫 `{cc}_state/AnalysisResult.md`。
-**抓取技術**沿用 `collectStk`（§3 抓取規則、§4 站點知識庫、§5 API/SOP、§8.3 過濾、§8.5 失敗寫法）；本檔只寫國家層級差異。
+**抓取技術**沿用 `collectStk`（§3 抓取規則、§4 站點知識庫、§5 API/SOP、§8.3 過濾、§8.5 失敗寫法；§4／§5 依市場放在 `collectStk/references/sites_*.md`）；本檔只寫國家層級差異。
 **參數**：`$ARGUMENTS`（空白或不像國家代碼 → 從使用者訊息解析；仍沒有 → 詢問，不可猜）。
 
 ## 0. 底線（違反任一＝任務失敗）
@@ -163,7 +163,7 @@ commit `{cc}_state/`（含刪除）、`Log/collectState_*`、`Log/conversion_sum
 
 ## 7. Skill 維護
 
-1. 站點新行為（封鎖、新 API、網址改變、發布日改變）→ 改寫 §4／§5 對應那行並更新 `[yyyy-mm]`；合併不追加，失效做法直接刪。個股站點寫回 `collectStk` §4。
+1. 站點新行為（封鎖、新 API、網址改變、發布日改變）→ 改寫 §4／§5 對應那行並更新 `[yyyy-mm]`；合併不追加，失效做法直接刪。個股站點寫回 `collectStk` §4（`collectStk/references/` 對應市場檔）。
 2. `.claude/skills/collectState/` 與 `.agents/skills/collectState/` 必須完全相同（`diff -r` 確認）。
 3. `AnalysisResult.md` 列在 `state_tools.py` 的 `PROTECTED`；`stateAnalysis` 改輸出檔名時同步改。
 4. `stateAnalysis` 讀當月與上月月檔，窗口不可短於 1 個月。

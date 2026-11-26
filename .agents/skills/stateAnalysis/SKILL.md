@@ -191,7 +191,7 @@ jp → JPY；hk → HKD（87001 用 RMB 附 HKD）；中國總體 → RMB。全�
   1. 國家門檻、標的池、錨點改 `references/{cc}.md`；禁用詞同步 `COUNTRY_JARGON`。
   2. 版面改 `<TPL>`、行數改 §4.1，同步 `<TOOLS>` 的 `TITLES`／`ZERO_FIELDS`／`FORCED`／`REIT_FIELDS`／`BUDGET`。
   3. 每次改完跑 `python <TOOLS> selftest`，必須 0 FAIL。
-  4. 站點細節寫回 `collectState` §4／§5 或 `collectStk` §4，本 Skill 不記。
+  4. 站點細節寫回 `collectState` §4／§5 或 `collectStk` §4（`collectStk/references/` 對應市場檔），本 Skill 不記。
   5. `.claude/` 與 `.agents/` 兩份完全相同（`diff -r`）。
   6. `<OUT>` 列在 collectState `state_tools.py` 的 `PROTECTED`；改輸出檔名或待辦章號要同步 collectState §3 盤點步驟。
   7. 本 Skill 讀者是一般人，**要求**名詞小辭典（StockAnalysis 禁 Glossary）；其餘寫作規則與 StockAnalysis 相同。
