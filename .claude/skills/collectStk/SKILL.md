@@ -1,6 +1,6 @@
 ---
 name: collectStk
-description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「近三個月輿情討論/新聞」，存入公司資料夾，轉 Markdown 後產出執行報告並 push。輸入 COMPANY_TICKER 與 COMPANY_NAME。日股年報／季報詳細版（有価証券報告書、半期報告書）一律先用 edinet skill 下載、美股（含 ADR）10-K／10-Q／20-F／6-K 一律先用 edgar skill 下載，再用 Convert2md 轉 md。開工先做 MCP 預檢（§3.0）；收工前必跑自我檢查（§10），發現本 Skill、腳本或相依 skill 有錯就直接修正並驗證。（舊名 CollectsentimentAndReports）
+description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「近三個月輿情討論/新聞」，存入公司資料夾，轉 Markdown 後產出執行報告並 push。輸入 COMPANY_TICKER 與 COMPANY_NAME。日股年報／季報詳細版（有価証券報告書、半期報告書）一律先用 edinet skill 下載、港股年報／中期報告／最新業績一律先用 hkexnews skill 下載、美股（含 ADR）10-K／10-Q／20-F／6-K 一律先用 edgar skill 下載，再用 Convert2md 轉 md。開工先做 MCP 預檢（§3.0）；收工前必跑自我檢查（§10），發現本 Skill、腳本或相依 skill 有錯就直接修正並驗證。（舊名 CollectsentimentAndReports）
 ---
 /goal
 # collectStk — 執行指南
@@ -15,7 +15,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 3. **即時存檔**：每下載完一份財報、每抓完一個來源，立刻寫檔。
 4. **不卡死**：抓取照 §3 的固定順序與次數上限，不無限重試、不空等背景任務；預檢判定停用的 MCP 整輪不再呼叫。
 5. **不碰帳號設定**：連接器權限、登入、額度只有使用者能改。AI 只負責偵測、改走替代路徑、在報告寫明修法（§3.0.3）。
-6. **錯了就修**：執行中發現本 Skill、`references/`、`scripts/`、`edinet`、`edgar`、`Convert2md` 的指示或程式有錯（網址失效、參數錯、腳本崩潰、命名規則與實際不符），收工前照 §10 修正並重新驗證，不可只在報告抱怨。
+6. **錯了就修**：執行中發現本 Skill、`references/`、`scripts/`、`edinet`、`hkexnews`、`edgar`、`Convert2md` 的指示或程式有錯（網址失效、參數錯、腳本崩潰、命名規則與實際不符），收工前照 §10 修正並重新驗證，不可只在報告抱怨。
 
 ---
 
@@ -35,7 +35,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 指令 / 下載 / 跑腳本 | `Bash`（`curl`、`python` 等） | `run_shell_command` |
 | 讀寫檔 | `Read` / `Edit` / `Write` | `view_file` / `write_file` / `edit_file` |
 | MCP 爬取 | `firecrawl_*`、Bright Data `scrape_as_markdown` / `search_engine`、`mcp__Apify__*`、`mcp__playwright__*`、Exa `web_search_exa` | 已連接的同名 MCP 工具 |
-| 呼叫其他 Skill | `Skill`（`edinet`、`edgar`、`Convert2md`） | 直接讀該 skill 的 `SKILL.md` 照做 |
+| 呼叫其他 Skill | `Skill`（`edinet`、`hkexnews`、`edgar`、`Convert2md`） | 直接讀該 skill 的 `SKILL.md` 照做 |
 
 - **內建工具** = `WebSearch` / `WebFetch` / `curl` 這類原生工具。
 - `curl` 一律帶瀏覽器 User-Agent（下文寫 `<UA>`）：`-A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"`。
@@ -47,21 +47,22 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | 檔案 | 用途 | 何時讀／跑 |
 | :--- | :--- | :--- |
 | `SKILL.md` | 流程與通用規則 | 每次 |
-| `references/sites_us_global.md` | §4.1 英文圈通用、§4.5 印尼、§5.3 Reddit、美股官網 IR 備援 | 美股；其他市場查 X／Reuters／Reddit 時 |
+| `references/sites_us_global.md` | §4.1 英文圈通用、§4.5 印尼、§5.3 Reddit、美股官網 IR 備援（SEC 已移到 `edgar` skill） | 美股；其他市場查 X／Reuters／Reddit 時 |
 | `references/sites_tw.md` | §4.2 台股站點、§5.1 鉅亨、§5.2 CMoney、台股官網 IR | 台股 |
-| `references/sites_hk_cn.md` | §4.3 港股/中國站點、§5.4 HKEX、§5.5 股吧、§5.6 雪球、港股財報來源 | 港股、A+H 股 |
+| `references/sites_hk_cn.md` | §4.3 港股/中國站點、§5.5 股吧、§5.6 雪球（HKEXnews 財報與公告已移到 `hkexnews` skill） | 港股、A+H 股 |
 | `references/sites_jp.md` | §4.4 日股站點、日股官網 IR 補充 | 日股、J-REIT |
 | `scripts/inventory.py` | 盤點資料夾已有期別、輿情涵蓋到哪天 | Phase 1 |
 | `scripts/check_md.py` | 財報 md 驗證（大小、CID、公司名）＋清圖片連結＋補來源 | Phase 4 |
 | `scripts/selfcheck.py` | Skill 自我檢查（路徑、§引用、腳本編譯、鏡像同步、過期標記） | Phase 5 |
 | `.claude/skills/edinet/scripts/edinet.py` | 日股 EDINET 下載、驗證、自檢（edinet skill） | Phase 2、4、5 日股 |
+| `.claude/skills/hkexnews/scripts/hkexnews.py` | 港股 HKEXnews 年報／中報／業績下載、公告搜尋、驗證、自檢、經驗回寫（hkexnews skill） | Phase 2、3、4、5 港股 |
 | `.claude/skills/edgar/scripts/edgar.py` | 美股 SEC EDGAR 下載、驗證、自檢、經驗學習（edgar skill） | Phase 2、4、5 美股 |
 
 MCP 分兩類，故障原因與修法不同：
 
 | 類型 | 成員 | 設定位置 | 常見故障 |
 | :--- | :--- | :--- | :--- |
-| 本機 MCP | Playwright、yfinance、sec-edgar-mcp（只查 XBRL 數字／8-K；財報全文改用 edgar skill）、pymupdf4llm-mcp（`convert_pdf_to_markdown`） | repo `.mcp.json`（與 `.claude/mcp_config.json` 同內容），session 啟動時在本機起程序 | 啟動失敗、逾時 |
+| 本機 MCP | Playwright、yfinance、sec-edgar-mcp（只查 XBRL 數字／8-K；財報全文用 edgar skill）、pymupdf4llm-mcp（`convert_pdf_to_markdown`） | repo `.mcp.json`（與 `.claude/mcp_config.json` 同內容），session 啟動時在本機起程序 | 啟動失敗、逾時 |
 | claude.ai 連接器 | Firecrawl、Bright Data、Apify、Exa | 使用者 claude.ai 帳號的 Connectors 設定，**每個工具各自有權限** | 跳出核准卡片／`MCP tool call requires approval`、需重新登入、額度用盡 |
 
 ---
@@ -72,7 +73,7 @@ MCP 分兩類，故障原因與修法不同：
 | :--- | :--- | :--- |
 | 0 | MCP 預檢，建立本輪「可用工具表」；開一個 `<SCRATCH>/collectStk_issues.md` 隨手記「Skill 寫的和實際不符」的地方 | §3.0、§10.1 |
 | 1 | 建立/確認公司資料夾，跑 `inventory.py` 盤點；讀該市場的 `references/` 檔 | §6、§7.1 |
-| 2 | 下載最新財報（日股：edinet skill；美股：edgar skill） | §7 |
+| 2 | 下載最新財報（日股：edinet skill；港股：hkexnews skill；美股：edgar skill） | §7 |
 | 3 | 收集近三個月輿情/新聞 | §8 |
 | 4 | 呼叫 `Convert2md` 轉 Markdown，跑 `check_md.py` 驗證 | §9 |
 | 5 | 自我檢查並修正 Skill／腳本（`selfcheck.py --fix` + 修 issues 清單） | §10 |
@@ -123,7 +124,6 @@ MCP 分兩類，故障原因與修法不同：
 - **修法（使用者做一次，之後所有雲端與排程執行都生效）**：開 `https://claude.ai/customize/connectors` → 點 **Firecrawl** → 工具權限（Tool permissions）設為「一律允許（Always allow）」；**Bright Data**、**Apify**、**Exa** 同樣處理。可直接整個連接器設一律允許；最少要開：Firecrawl `firecrawl_scrape`、`firecrawl_search`；Bright Data `scrape_as_markdown`、`search_engine`；Apify `apify--web-fetch`、`call-actor`、`get-dataset-items`；Exa `web_search_exa`。選項是灰的 = 組織管理員鎖住，要請管理員開。
 - **需重新登入**：同一頁面點該連接器重新連線。
 - **額度**：到該服務後台加值或等下個計費週期。
-- [2026-11-23] 雲端互動 session 實測：`firecrawl_scrape` 與 Bright Data `scrape_as_markdown` 皆回傳成功；排程執行若仍回 `requires approval`，就是上述連接器權限尚未改成一律允許。
 
 #### 3.0.4 連接器被停用時的替代路徑
 
@@ -193,11 +193,11 @@ Playwright 的 snapshot、console log 會寫進 repo 根目錄 `.playwright-mcp/
 | §5.1 | 鉅亨網關鍵字 API（台股新聞 + MOPS 重訊全文） | `references/sites_tw.md` |
 | §5.2 | 股市爆料同學會（CMoney）官方 API | `references/sites_tw.md` |
 | §5.3 | Reddit（Apify Actor） | `references/sites_us_global.md` |
-| §5.4 | HKEXnews 官方 JSON API（港股財報/公告） | `references/sites_hk_cn.md` |
+| §5.4 | HKEXnews 官方 JSON API（港股財報/公告）→ **已移到 `hkexnews` skill**（流程見本檔 §7.5） | `hkexnews` skill |
 | §5.5 | 東方財富股吧 | `references/sites_hk_cn.md` |
 | §5.6 | 雪球 | `references/sites_hk_cn.md` |
 | §7.4 | EDINET（日股年報／半期報） | 本檔 §7.4 + `edinet` skill |
-| §7.5 | SEC EDGAR（美股 10-K／10-Q、ADR 20-F／6-K） | 本檔 §7.5 + `edgar` skill |
+| §7.6 | SEC EDGAR（美股 10-K／10-Q、ADR 20-F／6-K） | 本檔 §7.6 + `edgar` skill |
 
 ---
 
@@ -226,7 +226,7 @@ python <SK>/scripts/inventory.py "<資料夾>" --ticker {TICKER}
 | 季報 | `{TICKER}_Quarter_{FY}Q{N}.{ext}` | `5306_Quarter_2026Q2.pdf` |
 | 半年報 | `{TICKER}_Quarter_{FY}H1.{ext}` | `2245_Quarter_2026H1.pdf` |
 | J-REIT（6 個月一期） | `{TICKER}_AnnualReport_{YYYY}{Mon}` / `{TICKER}_Quarter_{YYYY}{Mon}`（決算短信） | `2971_AnnualReport_2026Jul` |
-| 與既有同名但文件種類不同 | 日股加 `_EDINET`、美股加 `_EDGAR`（edinet.py／edgar.py 自動處理） | `2971_AnnualReport_2026Jul_EDINET.pdf` |
+| 與既有同名但文件種類不同 | 日股 `_EDINET`、美股 `_EDGAR`（edinet.py／edgar.py 自動處理） | `2971_AnnualReport_2026Jul_EDINET.pdf` |
 
 - `{FY}` 是財報所屬年度/期間，不是申報日或下載日；檔名不加時間戳或表單代碼。3 月決算公司用會計年度結束年（2026 年 4~6 月 → `{TICKER}_Quarter_2027Q1`；2026/4–9 半期報 → `2027H1`）。
 - 舊檔名不強制改名，`inventory.py`、`edinet.py`、`edgar.py` 都認得：`{TICKER}_annual_{FY}`、`{TICKER}_quarter_{FY}Q{N}`、`{TICKER}_interim_{FY}`、`{TICKER}_QuarterlyReport_{FY}Q{N}`、台股 `{FY}_{TICKER}_{申報日}F04/FE4`（年報）、`{yyyyMM}_{TICKER}_AI1`（季報）、美股 `{TICKER}_10K_{期末日}` / `{TICKER}_10Q_{期末日}` / SEC 原檔名 `{ticker}-{YYYYMMDD}`、日股 `…有価証券報告書…{期末日}`、`…決算短信…`。
@@ -250,8 +250,8 @@ python <SK>/scripts/inventory.py "<資料夾>" --ticker {TICKER}
 | 市場 | 順序 | 細節 |
 | :--- | :--- | :--- |
 | 台股 | ① TWSE 電子書（英文 `_AIA` 有就優先）② 財報狗 e-report ③ 官網 IR；「是否已公告」用 §5.1 鉅亨確認。興櫃只有半年報與年報 | `references/sites_tw.md` §7.3-TW、§4.2 |
-| 美股 | ① **SEC EDGAR（§7.5，edgar skill：10-K／10-Q；ADR 20-F／6-K）** ② 官網 IR（SEC Filings 頁）③ 財報狗 ④ 富途 `{代號}-US/announcement`；未在 SEC 註冊的 ADR（如 HEGIY）直接走母國市場 | 本檔 §7.5；`references/sites_us_global.md` §7.3-US |
-| 港股 | ① HKEXnews JSON API（§5.4）② 富途 `{5碼}-HK/announcement` ③ 官網 IR | `references/sites_hk_cn.md` §7.3-HK |
+| 美股 | ① **SEC EDGAR（§7.6，edgar skill：10-K／10-Q；ADR 20-F／6-K）** ② 官網 IR（SEC Filings 頁）③ 財報狗 ④ 富途 `{代號}-US/announcement`；未在 SEC 註冊的 ADR（如 HEGIY）走母國市場 | 本檔 §7.6；`references/sites_us_global.md` §7.3-US |
+| 港股 | ① **hkexnews skill（§7.5，年報、中期報告與最新業績公告）** ② 富途 `{5碼}-HK/announcement` ③ 官網 IR | 本檔 §7.5；`references/sites_hk_cn.md` §7.3-HK |
 | 日股 | ① **EDINET（§7.4，年報與半期報的詳細版）** ② 株探開示清單（決算短信：EDINET 沒有的 Q1/Q3 與最新一期速報）③ 官網 IR ④ IR Bank `irbank.net/{代碼}/ir` ⑤ 富途 `{代碼}-JP/announcement` | 本檔 §7.4；`references/sites_jp.md` §4.4、§7.3-JP |
 
 ### 7.4 日股：edinet skill → Convert2md（固定流程）
@@ -260,20 +260,23 @@ python <SK>/scripts/inventory.py "<資料夾>" --ticker {TICKER}
 
 1. **自檢與 key**：`E selftest --offline`（有 FAIL → 先照 edinet §9 修好）→ `E checkkey`。結束碼 2 = key 錯誤（已自動寫 `Log/edinet_error.md`）→ 報告寫使用者待辦，日股財報改走 §7.3 的 ②~⑤，不要卡住。雲端 session 顯示「來源：雲端網路密鑰（代理注入）」即正常。
 2. **預覽**：`E list --code {TICKER}`，確認公司、期別、預定檔名。一般日股預設 2 份有報 + 1 份半期報；**J-REIT 自動 3 份有報、0 份半期報**，不用加參數。資料夾不是唯一以代碼開頭時，下一步加 `--out "<資料夾>"`。
-3. **下載**：`E download --code {TICKER}`。
-   - 既有檔判定看**檔頭內容**：同期別已有同一種文件（含日文原檔名、舊命名）→ 略過；同名但其實是決算短信／資産運用報告／英文決算資料 → 新檔存成 `…_EDINET.pdf`，兩份並存不覆蓋。
-   - 有新 PDF 時最後會印 `CONVERT2MD_SCOPE=<資料夾>`；沒印 = 沒有新檔，跳過第 5 步的轉檔。
-   - 份數不足（新上市、變更決算期、延期提出）→ 加 `--full-scan` 再跑一次；還不足就寫進報告 §3。執行紀錄在 `Log/edinet_Summary_{yyyyMMdd}.md`，錯誤在 `Log/edinet_error.md`。
+3. **下載**：`E download --code {TICKER}`（既有檔判定與 `_EDINET` 並存見 edinet §5）。有新 PDF 時最後印 `CONVERT2MD_SCOPE=<資料夾>`，沒印就跳過第 5 步轉檔。份數不足（新上市、變更決算期、延期提出）→ 加 `--full-scan` 再跑；還不足寫進報告 §3。
 4. **補最新一期速報**：EDINET 自 2024/4 起沒有第 1、第 3 四半期報告書。若株探開示清單（`references/sites_jp.md` §4.4 株探列）有比 EDINET 最新一份更新的決算短信（Q1/Q3、有報出來前的通期決算、J-REIT 有報出來前的決算短信），下載它：一般日股命名 `{TICKER}_Quarter_{FY}Q{N}`（通期決算短信 = `Q4`），J-REIT `{TICKER}_Quarter_{YYYY}{Mon}`。已存在就跳過。
-5. **轉檔與驗證**：照 §9 呼叫 `Convert2md`（`<SCOPE>` = 第 3 步印出的資料夾）→ EDINET 的檔跑 `E verify --code {TICKER}`；株探決算短信跑 `check_md.py`（§9 第 3 步）。
-6. 報告 §1 寫：每份的 docID、提出日、期別、是否 `_EDINET` 並存、略過原因（可直接引用 `Log/edinet_Summary_{yyyyMMdd}.md`）。
+5. **轉檔與驗證**：照 §9 呼叫 `Convert2md`（`<SCOPE>` = 第 3 步印出的資料夾）→ EDINET 的檔跑 `E verify --code {TICKER}`；株探決算短信跑 `check_md.py`（§9 第 3 步）。報告 §1 引用 `Log/edinet_Summary_{yyyyMMdd}.md`（docID、提出日、是否 `_EDINET` 並存、略過原因）。
 
-### 7.5 美股：edgar skill → Convert2md（固定流程）
+### 7.5 港股：hkexnews skill → Convert2md（固定流程）
 
-10-K／10-Q（ADR：20-F／40-F／6-K）一律先走 SEC EDGAR，所有 SEC 處理（選件、命名、6-K 判斷、HTML 轉檔、驗證、經驗學習）都在 `edgar` skill（`.claude/skills/edgar/SKILL.md`），本檔不重寫。下文 `G` = `python <REPO>/.claude/skills/edgar/scripts/edgar.py`。
+年報、中期報告與最新業績公告一律先走 HKEXnews；指令、命名、既有檔判定（業績公告不能頂替完整報告）、錯誤與經驗回寫全在 `hkexnews` skill。`H` = `python <REPO>/.claude/skills/hkexnews/scripts/hkexnews.py`：
+1. 讀 hkexnews §8 經驗庫 → `H selftest --offline`（FAIL → 照 hkexnews §9 修）→ `H list --code {5碼代號}` 核對決算月、期別、檔名 → `H download --code {5碼代號}`（預設 2 年報 + 1 中報 + 1 份比報告新的業績公告；資料夾不唯一加 `--out "<資料夾>"`；`PROXY_BLOCKED`／`NETWORK` → 改走 §7.3 港股 ②③）。
+2. 印出 `CONVERT2MD_SCOPE=` → 照 §9 呼叫 `Convert2md` → `H verify --code {5碼代號}` → 照 hkexnews §9A 處理 `LEARN?`（改腳本＋selftest，或 `H learn --note "..."`）。
+3. 報告 §1 引用 `Log/hkexnews_Summary_{yyyyMMdd}.md`。Phase 3 查公告（回購、增發、月報表股數）用 `H search --code {代號} --from {起日} --type all`，單份 PDF 用 `H fetch`。
 
-1. **照 edgar §1 步驟 0–8 做**：讀經驗庫 `.claude/skills/edgar/references/lessons.md` → `G selftest --offline` → `G checkua`（結束碼 2 = 被 SEC 擋 → 報告寫使用者待辦，改走 §7.3 的 ②~④）→ `G list --code {TICKER}` → `G download --code {TICKER}`（資料夾不是 `{TICKER}/` 時加 `--out "<資料夾>"`）→ 印出 `CONVERT2MD_SCOPE=` 就照 §9 呼叫 `Convert2md`（`scan_pending.py` **加 `--html`**）→ `G verify --code {TICKER}` → 把 `LEARN:` 行照 edgar §9 寫回（`G lesson`／`G hint`）。
-2. 報告 §1 寫：每份的 accession、提交日、期末日、略過原因、最新流通股數（可直接引用 `Log/edgar_Summary_{yyyyMMdd}.md`）。最新一季 10-Q／6-K 還沒出、只有 8-K 財報新聞稿時，新聞稿收在輿情（§8），不當季報。
+### 7.6 美股：edgar skill → Convert2md（固定流程）
+
+10-K／10-Q（ADR：20-F／40-F／6-K）一律先走 SEC EDGAR；選件、命名、6-K 判斷、HTML 轉檔、驗證、經驗學習全在 `edgar` skill。`G` = `python <REPO>/.claude/skills/edgar/scripts/edgar.py`：
+1. 讀經驗庫 `.claude/skills/edgar/references/lessons.md` → `G selftest --offline` → `G checkua`（結束碼 2 = 被 SEC 擋 → 報告寫使用者待辦，改走 §7.3 美股 ②~④）→ `G list --code {TICKER}` → `G download --code {TICKER}`（資料夾不是 `{TICKER}/` 加 `--out "<資料夾>"`）。
+2. 印出 `CONVERT2MD_SCOPE=` → 照 §9 呼叫 `Convert2md`（`scan_pending.py` **加 `--html`**）→ `G verify --code {TICKER}` → `LEARN:` 行照 edgar §9 寫回（`G lesson`／`G hint`）。
+3. 報告 §1 引用 `Log/edgar_Summary_{yyyyMMdd}.md`；只有 8-K 財報新聞稿、10-Q 未出時，新聞稿收在輿情（§8），不當季報。
 
 ---
 
@@ -347,17 +350,17 @@ python <SK>/scripts/inventory.py "<資料夾>" --ticker {TICKER}
 
 ## 9. Phase 4 — 轉 Markdown 並驗證
 
-1. **有新檔才做**（`edinet.py`／`edgar.py download` 印出 `CONVERT2MD_SCOPE=`、或 `inventory.py` 列出「尚未轉 Markdown 的 PDF」）；沒有就略過並在報告註明。
-2. 呼叫 **`Convert2md` Skill**，**一定要給 `<SCOPE>` = `<資料夾>`**（只掃這家公司，避免轉到 `History/`、`Prompt/` 等不相干資料夾並刪掉 PDF）；`edgar.py` 印出 `CONVERT2MD_HTML=1` 時 `scan_pending.py` 加 `--html`。
+1. **有新檔才做**（`edinet.py`／`hkexnews.py`／`edgar.py download` 印出 `CONVERT2MD_SCOPE=`；`edgar.py` 另印 `CONVERT2MD_HTML=1` 時 `scan_pending.py` 加 `--html`、或 `inventory.py` 列出「尚未轉 Markdown 的 PDF」）；沒有就略過並在報告註明。
+2. 呼叫 **`Convert2md` Skill**，**一定要給 `<SCOPE>` = `<資料夾>`**（只掃這家公司，避免轉到 `History/`、`Prompt/` 等不相干資料夾並刪掉 PDF）。
    - `save_path` 要填**完整 `.md` 檔案路徑**（如 `<資料夾>/{TICKER}_Quarter_2026Q3.md`）；只填資料夾會回 `[Errno 21] Is a directory` [2026-11]。
-   - 150 頁以上的年報（日股有報、港股年報常見）常回「timed out after 60s」，但 MCP 伺服器仍在背景寫檔：不要重送，等 `save_path` 的 `.md` 出現且大小不再變動，再核對最後一頁有轉出。
-3. 對每個新 `.md` 跑驗證（同時清掉指向暫存 `pdf_images/` 的圖片連結、補來源標頭；EDINET／EDGAR 的檔改用 `edinet.py verify`／`edgar.py verify`）：
+   - 150 頁以上常回「timed out after 60s」→ 照 `Convert2md` 錯誤處理表等 `.md` 大小不再變動，不要重送。
+3. 對每個新 `.md` 跑驗證（同時清掉指向暫存 `pdf_images/` 的圖片連結、補來源標頭）：
    ```bash
    python <SK>/scripts/check_md.py --names "{公司名},{英文名},{TICKER}" --source "{原始網址或 EDINET docID}" "<資料夾>/{檔名}.md"
    ```
    `FAIL` → 依 §7.2 處置（刪 md 與 PDF、換英文版或換來源），寫進報告 §4。CID 亂碼的 md 已被 `Convert2md` 刪掉、PDF 保留 → 換來源後刪該 PDF。
 4. 不經 Convert2md 的 Markdown（Apify `web-fetch` 直接輸出的 TWSE PDF 全文、自己轉的 HTML）同樣要跑第 3 步。
-5. SEC 的 HTML／iXBRL 由 `edgar` skill 下載、`Convert2md --html`（`.claude/skills/Convert2md/scripts/html2md.py`）轉檔，不要自己手轉。其他來源的 HTML 財報（非 SEC）同樣可放進公司資料夾後用 `Convert2md --html` 轉，再跑第 3 步。
+5. SEC 的 HTML／iXBRL 由 `edgar` skill 下載、`Convert2md --html`（`.claude/skills/Convert2md/scripts/html2md.py`）轉檔，再跑 `edgar.py verify`，不要自己手轉。
 
 ---
 
@@ -370,13 +373,13 @@ python <SK>/scripts/inventory.py "<資料夾>" --ticker {TICKER}
 Phase 0 開 `<SCRATCH>/collectStk_issues.md`，每遇到下列狀況立刻記一行 `- [Phase N] {檔案} §{章節}：寫的是…；實際是…（證據：錯誤訊息／HTTP 狀態／檔案大小）`：
 
 - 指令、網址、API 參數照寫卻失敗，或站點行為與 `references/` 描述不同（新封鎖、新捷徑、改版）
-- 腳本（`scripts/*.py`、`edinet.py`、`edgar.py`、`Convert2md` 內嵌腳本與 `html2md.py`）報錯、結果不合理（抓錯公司、日期錯、漏件）
+- 腳本（`scripts/*.py`、`edinet.py`、`hkexnews.py`、`edgar.py`、`Convert2md` 內嵌腳本與 `html2md.py`）報錯、結果不合理（抓錯公司、日期錯、漏件）
 - 命名規則、FY 推算、流程順序與實際檔案或財報制度不符
 - 章節引用對不上、指示互相矛盾、輕量模型會看不懂而走錯的段落
 
 ### 10.2 收工前：修正流程
 
-1. 跑 `python <SK>/scripts/selfcheck.py --fix`：自動同步 `.claude/skills` → `.agents/skills`、刪 `.playwright-mcp/`，並列出 ERROR（缺檔、§ 引用斷掉、腳本語法錯、`.env` 被追蹤、`edinet.py`／`edgar.py selftest --offline` 失敗）與 WARN（超過 6 個月的 `[yyyy-mm]`、檔案過長）。改到 edinet／edgar 時另照該 skill 的 §9（補 selftest 案例、更新其 §10 變更紀錄）；美股爬取學到的經驗寫進 `.claude/skills/edgar/references/lessons.md`，不寫在本 Skill。
+1. 跑 `python <SK>/scripts/selfcheck.py --fix`：自動同步 `.claude/skills` → `.agents/skills`、刪 `.playwright-mcp/`，並列出 ERROR（缺檔、§ 引用斷掉、腳本語法錯、`.env` 被追蹤、`edinet.py`、`hkexnews.py`、`edgar.py` 的 `selftest --offline` 失敗）與 WARN（超過 6 個月的 `[yyyy-mm]`、檔案過長）。改到 edinet／hkexnews／edgar 時另照各自的 §9（補 selftest 案例、更新其 §10 變更紀錄；hkexnews 的站點經驗寫進它的 §8 經驗庫、美股經驗寫進 `.claude/skills/edgar/references/lessons.md`，不寫在本 skill）。
 2. 逐條處理 issues 清單與 selfcheck 的 ERROR：
    - **找根因**：是哪個檔哪一段錯？（站點知識 → `references/`；流程 → `SKILL.md`；程式 → 腳本）
    - **直接改**：用 `Edit` 改正確的位置（規則見 §10.4）。
@@ -389,13 +392,13 @@ Phase 0 開 `<SCRATCH>/collectStk_issues.md`，每遇到下列狀況立刻記一
 | 可以改 | 不可以改（只能寫進報告請使用者處理） |
 | :--- | :--- |
 | `collectStk/` 全部檔案（`SKILL.md`、`references/`、`scripts/`） | `.claude/settings*.json`、`.mcp.json`、`.claude/mcp_config.json`（權限與 MCP 設定） |
-| `edinet/SKILL.md`、`edinet/scripts/edinet.py`；`edgar/` 全部檔案 | claude.ai 連接器權限、帳號、額度、環境網路密鑰 |
-| `Convert2md/SKILL.md`（含內嵌腳本）、`Convert2md/scripts/html2md.py` | 其他 skill 的內容（`collectState`、`stateAnalysis` 只可改「引用 collectStk §X」的那幾個字） |
+| `edinet/`、`hkexnews/`、`edgar/` 的 SKILL.md 與腳本、`Convert2md/scripts/html2md.py` | claude.ai 連接器權限、帳號、額度、環境網路密鑰 |
+| `Convert2md/SKILL.md`（含內嵌腳本） | 其他 skill 的內容（`collectState`、`stateAnalysis` 只可改「引用 collectStk §X」的那幾個字） |
 | `.gitignore`（只增不減） | `Routines_*.md` 輪替表、公司資料夾內既有分析檔 |
 
 ### 10.4 寫法規則
 
-1. **放對位置**：網站行為放 `references/` 對應市場的 §4.x 表格（一站一列）；多步驟 API 用法放 §5.x；官網 IR 下載路徑放該檔的 §7.3-XX；MCP 帳號級錯誤、預檢與連接器修法放 §3.0；日股 EDINET 流程放 §7.4（腳本細節放 `edinet` skill）；美股 SEC 流程放 §7.5（細節、站點行為、公司特例一律放 `edgar` skill 與 `.claude/skills/edgar/references/lessons.md`）。不另開段落、不在別處重寫抓取規則。
+1. **放對位置**：網站行為放 `references/` 對應市場的 §4.x 表格（一站一列）；多步驟 API 用法放 §5.x；官網 IR 下載路徑放該檔的 §7.3-XX；MCP 帳號級錯誤、預檢與連接器修法放 §3.0；日股 EDINET 流程放 §7.4（腳本細節放 `edinet` skill）；港股 HKEXnews 流程放 §7.5（API、命名、站點經驗放 `hkexnews` skill）；美股 SEC 流程放 §7.6（細節與公司特例放 `edgar` skill）。不另開段落、不在別處重寫抓取規則。
 2. **合併不追加**：同一站點已有一列時直接改寫那一列並更新 `[yyyy-mm]`，不新增「補充」列。
 3. **刪除無用資料**：失效做法、被取代的舊寫法、改版前網址、與 §3 重複的敘述、一次性除錯流水帳（某天抓到幾筆、檔案多大）、指向不存在檔案的連結 → 刪除，只留結論。環境設定細節（如 Playwright 啟動器原理）看 `.claude/scripts/playwright-mcp.mjs` 開頭註解，不寫在這裡。
 4. **章節編號固定**：§3、§4.x、§5.x、§8.3、§8.5 被 `collectState`、`stateAnalysis` 引用，不可改號；新增站點放進既有表格。
@@ -417,7 +420,7 @@ Phase 0 開 `<SCRATCH>/collectStk_issues.md`，每遇到下列狀況立刻記一
 ## 1. 成功紀錄
 | 股號/名稱 | 資料來源 | 產生/下載的檔案 | 狀態/備註 |
 | :--- | :--- | :--- | :--- |
-（日股寫 EDINET docID、提出日、是否 `_EDINET` 並存；美股寫 SEC accession、提交日、期末日、是否 `_EDGAR` 並存、最新流通股數）
+（日股寫 EDINET docID、提出日、是否 `_EDINET` 並存；港股寫 HKEX 文件編號、刊發日、是否 `_HKEX` 並存；美股寫 SEC accession、提交日、期末日、是否 `_EDGAR` 並存、最新流通股數）
 
 **本期重點**：（條列近三個月的關鍵事件與輿情，利多與利空都要寫；提到金額時附每股金額，股數寫明來源）
 

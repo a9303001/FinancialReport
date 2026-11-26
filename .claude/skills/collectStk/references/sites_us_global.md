@@ -57,5 +57,5 @@
 
 ## §7.3-US 美股財報來源與官網 IR
 
-- **SEC EDGAR 一律走 `edgar` skill**（collectStk §7.5）：10-K／10-Q、ADR 的 20-F／40-F／6-K 選件、命名、轉檔、驗證與 SEC 端行為、公司特例都記在 `.claude/skills/edgar/SKILL.md` 與 `.claude/skills/edgar/references/lessons.md`，本檔不再重寫。
+- **SEC EDGAR 一律走 `edgar` skill**（collectStk §7.6）：10-K／10-Q、ADR 的 20-F／40-F／6-K 選件、命名、轉檔、驗證與 SEC 端行為、公司特例都記在 `.claude/skills/edgar/SKILL.md` 與 `.claude/skills/edgar/references/lessons.md`，本檔不再重寫。
 - edgar 被 SEC 擋或公司不在 SEC（unsponsored ADR，如 HEGIY）時的備援：② 官網 IR（Investor Relations → SEC Filings／Quarterly Results，PDF 存公司資料夾後跑 `Convert2md`）③ 財報狗 `statementdog.com/analysis/{代號}/e-report` ④ 富途 `futunn.com/hk/stock/{代號}-US/announcement`。
