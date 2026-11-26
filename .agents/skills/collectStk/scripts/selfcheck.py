@@ -11,6 +11,7 @@
   E3 collectStk、edinet 的 Python 腳本都能編譯
   E4 .claude/skills 與 .agents/skills 每個 skill 資料夾內容相同（--fix：以 .claude 為準複製過去）
   E5 git 追蹤了 .env（API key 外洩風險）
+  E6 edinet.py selftest --offline 失敗（edinet 自己的命名／去重／參數／鏡像檢查）
   W1 `[yyyy-mm]` 驗證標記超過 6 個月 → 下次用到該站要重新驗證
   W2 SKILL.md 超過 450 行、references 單檔超過 150 行 → 依 §10 刪減過時內容
   W3 repo 根目錄留有 .playwright-mcp/（--fix：刪除）
@@ -154,6 +155,23 @@ def check_secrets() -> None:
         errors.append("E5 git 追蹤了 .env：" + ", ".join(leaked) + "（立即 git rm --cached 並換 key）")
 
 
+# ---------------------------------------------------------------- E6 edinet selftest
+def check_edinet() -> None:
+    py = SKILLS / "edinet" / "scripts" / "edinet.py"
+    if not py.is_file():
+        return
+    try:
+        r = subprocess.run([sys.executable, str(py), "selftest", "--offline"], capture_output=True,
+                           text=True, encoding="utf-8", errors="replace", timeout=120)
+    except (OSError, subprocess.TimeoutExpired) as e:
+        errors.append(f"E6 edinet selftest 無法執行：{e}")
+        return
+    if r.returncode != 0:
+        fails = [l.strip() for l in r.stdout.splitlines() if l.strip().startswith("FAIL")]
+        errors.append("E6 edinet selftest 失敗：" + ("；".join(fails[:5]) or r.stderr.strip()[-300:])
+                      + "（照 edinet SKILL.md §9 修；鏡像不一致可先 --fix）")
+
+
 # ---------------------------------------------------------------- W1-W3
 def check_warnings(fix: bool) -> None:
     today = date.today()
@@ -191,6 +209,7 @@ def main() -> None:
     check_compile()
     check_mirror(a.fix)
     check_secrets()
+    check_edinet()  # 放在鏡像同步之後：selftest 也會檢查 .agents 鏡像
     check_warnings(a.fix)
     for x in fixed:
         print("FIXED ", x)

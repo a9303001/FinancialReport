@@ -54,7 +54,7 @@ description: 收集個股「最新財務報告（2 年報 + 1 季報）」與「
 | `scripts/inventory.py` | 盤點資料夾已有期別、輿情涵蓋到哪天 | Phase 1 |
 | `scripts/check_md.py` | 財報 md 驗證（大小、CID、公司名）＋清圖片連結＋補來源 | Phase 4 |
 | `scripts/selfcheck.py` | Skill 自我檢查（路徑、§引用、腳本編譯、鏡像同步、過期標記） | Phase 5 |
-| `.claude/skills/edinet/scripts/edinet.py` | 日股 EDINET 下載（edinet skill） | Phase 2 日股 |
+| `.claude/skills/edinet/scripts/edinet.py` | 日股 EDINET 下載、驗證、自檢（edinet skill） | Phase 2、4、5 日股 |
 
 MCP 分兩類，故障原因與修法不同：
 
@@ -254,20 +254,17 @@ python <SK>/scripts/inventory.py "<資料夾>" --ticker {TICKER}
 
 ### 7.4 日股：edinet skill → Convert2md（固定流程）
 
-有価証券報告書（年報）與半期報告書（季報）一律先走 EDINET，拿到的是監理機關版本的**詳細財報**；決算短信只是摘要，當作補最新一期的速報。
+有価証券報告書（年報）與半期報告書（季報）一律先走 EDINET，拿到的是監理機關版本的**詳細財報**；決算短信只是摘要，當作補最新一期的速報。指令細節、錯誤種類與 edinet 自己的自我修正見 `edinet` skill（`.claude/skills/edinet/SKILL.md`）。下文 `E` = `python <REPO>/.claude/skills/edinet/scripts/edinet.py`。
 
-1. **檢查 key**：`python <REPO>/.claude/skills/edinet/scripts/edinet.py checkkey`。雲端 session 顯示「來源：雲端網路密鑰（代理注入）」即可；失敗 → 依 `edinet` skill §2 在報告寫使用者待辦，日股財報改走 §7.3 的 ②~⑤，不要卡住。
-2. **預演**（不下載，確認公司、期別、檔名、哪些會略過）：
-   - 一般日股：`python <REPO>/.claude/skills/edinet/scripts/edinet.py download --code {TICKER} --dry-run`（預設 2 份有報 + 1 份半期報）
-   - J-REIT（投資法人，6 個月一期、沒有半期報）：加 `--annual 2 --periodic 0`
-   - 資料夾不是唯一以代碼開頭時加 `--out "<資料夾>"`。
-3. **下載**：同一指令拿掉 `--dry-run`。最後一行 `[edinet] NEW_FILES=[...]` 是本次新落地的 PDF 絕對路徑，Phase 4 只要轉這些。
-   - 腳本會看既有 `.md` 檔頭判斷「是不是同一種文件」：同名但其實是決算短信／資産運用報告 → 新檔自動存成 `…_EDINET.pdf`，不會覆蓋；日文原檔名（`202606有価証券報告書－第39期(…).md`）也認得，不會重抓。
-   - 遇到 `429 Too Many Requests` 腳本會自動退避重試；最後印「N 天的每日清單抓不到」時，隔 1 分鐘重跑同一指令（快取接續，不會重掃）。
-   - 「份數不足」：可能是新上市或剛轉投資法人 → 加 `--days 1200` 再跑一次，還不足就寫進報告 §3。
-4. **補最新一期速報**：EDINET 自 2024/4 起沒有第 1、第 3 四半期報告書。若株探開示清單（§4.4 株探列）有比 EDINET 最新一份更新的決算短信（Q1/Q3、或有報出來前的通期決算、J-REIT 有報出來前的決算短信），下載它：一般日股命名 `{TICKER}_Quarter_{FY}Q{N}`（通期決算短信 = `Q4`），J-REIT `{TICKER}_Quarter_{YYYY}{Mon}`。已存在就跳過。
-5. **轉檔與驗證**：照 §9 呼叫 `Convert2md`（`<SCOPE>` = 公司資料夾），再跑 `check_md.py --names "{日文社名},{英文社名},{TICKER}"`。
-6. 報告 §1 寫：每份的 docID、提出日、期別、是否 `_EDINET` 並存、略過原因。
+1. **自檢與 key**：`E selftest --offline`（有 FAIL → 先照 edinet §9 修好）→ `E checkkey`。結束碼 2 = key 錯誤（已自動寫 `Log/edinet_error.md`）→ 報告寫使用者待辦，日股財報改走 §7.3 的 ②~⑤，不要卡住。雲端 session 顯示「來源：雲端網路密鑰（代理注入）」即正常。
+2. **預覽**：`E list --code {TICKER}`，確認公司、期別、預定檔名。一般日股預設 2 份有報 + 1 份半期報；**J-REIT 自動 3 份有報、0 份半期報**，不用加參數。資料夾不是唯一以代碼開頭時，下一步加 `--out "<資料夾>"`。
+3. **下載**：`E download --code {TICKER}`。
+   - 既有檔判定看**檔頭內容**：同期別已有同一種文件（含日文原檔名、舊命名）→ 略過；同名但其實是決算短信／資産運用報告／英文決算資料 → 新檔存成 `…_EDINET.pdf`，兩份並存不覆蓋。
+   - 有新 PDF 時最後會印 `CONVERT2MD_SCOPE=<資料夾>`；沒印 = 沒有新檔，跳過第 5 步的轉檔。
+   - 份數不足（新上市、變更決算期、延期提出）→ 加 `--full-scan` 再跑一次；還不足就寫進報告 §3。執行紀錄在 `Log/edinet_Summary_{yyyyMMdd}.md`，錯誤在 `Log/edinet_error.md`。
+4. **補最新一期速報**：EDINET 自 2024/4 起沒有第 1、第 3 四半期報告書。若株探開示清單（`references/sites_jp.md` §4.4 株探列）有比 EDINET 最新一份更新的決算短信（Q1/Q3、有報出來前的通期決算、J-REIT 有報出來前的決算短信），下載它：一般日股命名 `{TICKER}_Quarter_{FY}Q{N}`（通期決算短信 = `Q4`），J-REIT `{TICKER}_Quarter_{YYYY}{Mon}`。已存在就跳過。
+5. **轉檔與驗證**：照 §9 呼叫 `Convert2md`（`<SCOPE>` = 第 3 步印出的資料夾）→ EDINET 的檔跑 `E verify --code {TICKER}`；株探決算短信跑 `check_md.py`（§9 第 3 步）。
+6. 報告 §1 寫：每份的 docID、提出日、期別、是否 `_EDINET` 並存、略過原因（可直接引用 `Log/edinet_Summary_{yyyyMMdd}.md`）。
 
 ---
 
@@ -341,7 +338,7 @@ python <SK>/scripts/inventory.py "<資料夾>" --ticker {TICKER}
 
 ## 9. Phase 4 — 轉 Markdown 並驗證
 
-1. **有新 PDF 才做**（`edinet.py` 的 `NEW_FILES`、或 `inventory.py` 列的「尚未轉 Markdown 的 PDF」）；沒有就略過並在報告註明。
+1. **有新 PDF 才做**（`edinet.py download` 印出 `CONVERT2MD_SCOPE=`、或 `inventory.py` 列出「尚未轉 Markdown 的 PDF」）；沒有就略過並在報告註明。
 2. 呼叫 **`Convert2md` Skill**，**一定要給 `<SCOPE>` = `<資料夾>`**（只掃這家公司，避免轉到 `History/`、`Prompt/` 等不相干資料夾並刪掉 PDF）。
    - `save_path` 要填**完整 `.md` 檔案路徑**（如 `<資料夾>/{TICKER}_Quarter_2026Q3.md`）；只填資料夾會回 `[Errno 21] Is a directory` [2026-11]。
    - 150 頁以上的年報（日股有報、港股年報常見）常回「timed out after 60s」，但 MCP 伺服器仍在背景寫檔：不要重送，等 `save_path` 的 `.md` 出現且大小不再變動，再核對最後一頁有轉出。
@@ -370,7 +367,7 @@ Phase 0 開 `<SCRATCH>/collectStk_issues.md`，每遇到下列狀況立刻記一
 
 ### 10.2 收工前：修正流程
 
-1. 跑 `python <SK>/scripts/selfcheck.py --fix`：自動同步 `.claude/skills` → `.agents/skills`、刪 `.playwright-mcp/`，並列出 ERROR（缺檔、§ 引用斷掉、腳本語法錯、`.env` 被追蹤）與 WARN（超過 6 個月的 `[yyyy-mm]`、檔案過長）。
+1. 跑 `python <SK>/scripts/selfcheck.py --fix`：自動同步 `.claude/skills` → `.agents/skills`、刪 `.playwright-mcp/`，並列出 ERROR（缺檔、§ 引用斷掉、腳本語法錯、`.env` 被追蹤、`edinet.py selftest --offline` 失敗）與 WARN（超過 6 個月的 `[yyyy-mm]`、檔案過長）。改到 edinet 時另照 edinet §9（補 selftest 案例、更新其 §10 變更紀錄）。
 2. 逐條處理 issues 清單與 selfcheck 的 ERROR：
    - **找根因**：是哪個檔哪一段錯？（站點知識 → `references/`；流程 → `SKILL.md`；程式 → 腳本）
    - **直接改**：用 `Edit` 改正確的位置（規則見 §10.4）。
