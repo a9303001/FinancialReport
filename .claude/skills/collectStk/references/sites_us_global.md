@@ -8,7 +8,7 @@
 
 | 站點 / 網址 | 狀況 | 做法 |
 | :--- | :--- | :--- |
-| Reddit | 內建工具 400、Firecrawl 不支援、Playwright 與 `search.json` 回 403 | **跳過 §3.1，直接用 Apify Reddit Actor（§5.3）**。Apify 停用時用 Bright Data `search_engine`；兩者都停用時用 `WebSearch` 搭 `allowed_domains: ["reddit.com"]` 取索引，依 §3.6 註明 [2026-11] |
+| Reddit | 內建工具 400、Firecrawl 不支援、Playwright 與 `search.json` 回 403 | **跳過 §3.1，直接用 Apify Reddit Actor（§5.3）**。Apify 停用時用 Bright Data `search_engine`；兩者都停用時用 Exa `web_search_exa` 取索引（`WebSearch` 搭 `allowed_domains: ["reddit.com"]` 2026-11 實測回 400「not accessible to our user agent」），依 §3.6 註明 [2026-11] |
 | X (Twitter) | 未登入即封鎖：Playwright 被導到登入頁；`firecrawl_scrape` 單篇 `x.com/{帳號}/status/{id}` 自 2026-11 起經 Firecrawl x-com provider 回傳全文、`created_at` 與讚數（約 5 credits） | 日股先用 Yahoo 株つぶやき（§4.4）。其他用 `firecrawl_search`，query 內寫 `site:x.com`（`includeDomains` 參數會回 0 筆）找貼文，重要的再 `firecrawl_scrape` 單篇取全文；Firecrawl 沒額度時用 `WebSearch` 搭 `allowed_domains: ["x.com", "twitter.com"]` 取索引。索引沒有時間時，用網址的 status ID 還原：`(id >> 22) + 1288834974657` 毫秒（UTC） [2026-11] |
 | Reuters `reuters.com` | 內建 `WebSearch` 被擋（`allowed_domains` 含 reuters.com 會直接回 400） | `firecrawl_scrape`（basic proxy）可抓公司頁與文章頁全文。Firecrawl 沒額度時用 Exa `web_search_exa` 找轉載頁（`tradingview.com/news/reuters.com,...`、`marketscreener.com`），可取標題與時間，正文多半沒有 [2026-10] |
 | Bloomberg | 付費牆，不是封鎖 | 取摘要即可，報告註明「付費牆」 |
