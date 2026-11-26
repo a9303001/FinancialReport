@@ -266,7 +266,7 @@ python <SK>/scripts/inventory.py "<資料夾>" --ticker {TICKER}
 
 年報、中期報告與最新業績公告一律先走 HKEXnews；指令、命名、既有檔判定（業績公告不能頂替完整報告）、錯誤與經驗回寫全在 `hkexnews` skill。`H` = `python <REPO>/.claude/skills/hkexnews/scripts/hkexnews.py`：
 1. 讀 hkexnews §8 經驗庫 → `H selftest --offline`（FAIL → 照 hkexnews §9 修）→ `H list --code {5碼代號}` 核對決算月、期別、檔名 → `H download --code {5碼代號}`（預設 2 年報 + 1 中報 + 1 份比報告新的業績公告；資料夾不唯一加 `--out "<資料夾>"`；`PROXY_BLOCKED`／`NETWORK` → 改走 §7.3 港股 ②③）。
-2. 印出 `CONVERT2MD_SCOPE=` → 照 §9 呼叫 `Convert2md` → `H verify --code {5碼代號}` → 照 hkexnews §9A 處理 `LEARN?`（改腳本＋selftest，或 `H learn --note "..."`）。
+2. 印出 `CONVERT2MD_SCOPE=` → 照 §9 呼叫 `Convert2md` → `H verify --code {5碼代號} --prune-zh`（英文版優先：只有中文版的期別會補抓英文版，驗證通過後刪中文重複檔）→ 照 hkexnews §9A 處理 `LEARN?`（改腳本＋selftest，或 `H learn --note "..."`）。
 3. 報告 §1 引用 `Log/hkexnews_Summary_{yyyyMMdd}.md`。Phase 3 查公告（回購、增發、月報表股數）用 `H search --code {代號} --from {起日} --type all`，單份 PDF 用 `H fetch`。
 
 ### 7.6 美股：edgar skill → Convert2md（固定流程）
