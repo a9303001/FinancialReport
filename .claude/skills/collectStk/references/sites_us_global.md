@@ -1,6 +1,6 @@
 # collectStk 參考：美股 / 英文圈通用 / 印尼
 
-> collectStk 站點知識庫（§4）／API SOP（§5）／官網 IR 路徑（§7.3）的「美股 / 英文圈通用 / 印尼 ADR」部分。
+> collectStk 站點知識庫（§4）／API SOP（§5）／官網 IR 備援（§7.3）的「美股 / 英文圈通用 / 印尼 ADR」部分。SEC EDGAR 在 `edgar` skill。
 > 只在處理該市場公司時讀。抓取規則（§3）、存檔與過濾（§8）在 `../SKILL.md`。
 > 表格格式：站點 / 網址 | 狀況 | 做法；`[yyyy-mm]` = 最後驗證月份。維護規則見 `../SKILL.md` §10。
 
@@ -57,4 +57,5 @@
 
 ## §7.3-US 美股財報來源與官網 IR
 
-- **美股**：① 官網 IR（SEC Filings）② SEC EDGAR（`sec-edgar-mcp`）③ 財報狗 ④ 富途 `futunn.com/hk/stock/{代號}-US/announcement`。外國發行人（ADR）年報是 20-F、季報夾在 6-K：`curl -A "{名稱} {email}" https://data.sec.gov/submissions/CIK{10碼}.json` 列出申報，再看 `.../Archives/edgar/data/{CIK}/{去掉 - 的 accession}/index.json` 附件，6-K 主文件開頭寫 "Consolidated financial statements as of …" 即為季報。
+- **SEC EDGAR 一律走 `edgar` skill**（collectStk §7.5）：10-K／10-Q、ADR 的 20-F／40-F／6-K 選件、命名、轉檔、驗證與 SEC 端行為、公司特例都記在 `.claude/skills/edgar/SKILL.md` 與 `.claude/skills/edgar/references/lessons.md`，本檔不再重寫。
+- edgar 被 SEC 擋或公司不在 SEC（unsponsored ADR，如 HEGIY）時的備援：② 官網 IR（Investor Relations → SEC Filings／Quarterly Results，PDF 存公司資料夾後跑 `Convert2md`）③ 財報狗 `statementdog.com/analysis/{代號}/e-report` ④ 富途 `futunn.com/hk/stock/{代號}-US/announcement`。

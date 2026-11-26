@@ -27,13 +27,15 @@ KIND_PATTERNS = [
     ("10-K", re.compile(r"FORM\s+10-K\b|Form 10-K\b")),
     ("10-Q", re.compile(r"FORM\s+10-Q\b|Form 10-Q\b")),
     ("20-F", re.compile(r"FORM\s+20-F\b")),
+    ("40-F", re.compile(r"FORM\s+40-F\b")),
+    ("6-K", re.compile(r"FORM\s+6-K\b", re.I)),
     ("合併財務報告", re.compile(r"合併財務報告|Consolidated Financial Statements", re.I)),
     ("年報", re.compile(r"年報|Annual Report", re.I)),
 ]
 
 RULES = [  # (regex on file stem, category, period-group builder)
-    (r"^(?P<t>[\w-]+?)_AnnualReport_(?P<p>\d{4}(?:[A-Z][a-z]{2})?)(?P<x>_EDINET)?$", "年報"),
-    (r"^(?P<t>[\w-]+?)_Quarter_(?P<p>\d{4}(?:Q[1-4]|H1|[A-Z][a-z]{2}))(?P<x>_EDINET)?$", "季報"),
+    (r"^(?P<t>[\w-]+?)_AnnualReport_(?P<p>\d{4}(?:[A-Z][a-z]{2})?)(?P<x>_EDINET|_EDGAR|_EX13|_EDGAR_EX13)?$", "年報"),
+    (r"^(?P<t>[\w-]+?)_Quarter_(?P<p>\d{4}(?:Q[1-4]|H1|[A-Z][a-z]{2}))(?P<x>_EDINET|_EDGAR)?$", "季報"),
     (r"^(?P<t>[\w-]+?)_Presentation_(?P<p>.+)$", "簡報"),
     (r"^(?P<t>[\w-]+?)_annual_(?P<p>\d{4})$", "年報(舊名)"),
     (r"^(?P<t>[\w-]+?)_(?:quarter|QuarterlyReport)_(?P<p>\d{4}Q[1-4])$", "季報(舊名)"),
@@ -42,6 +44,7 @@ RULES = [  # (regex on file stem, category, period-group builder)
     (r"^(?P<p>\d{6})_(?P<t>\w+?)_AI[12AB]$", "季報(TWSE原名)"),
     (r"^(?P<t>[\w-]+?)_10K_(?P<p>[\d-]+)$", "年報(10-K)"),
     (r"^(?P<t>[\w-]+?)_10Q_(?P<p>[\d-]+)$", "季報(10-Q)"),
+    (r"^(?P<t>[a-z][a-z0-9.]*)-(?P<p>20\d{6})$", "SEC原檔名(看檔頭)"),
     (r"^(?P<p>\d{6}).*有価証券報告書.*$", "年報(日文原名)"),
     (r"^(?P<p>\d{4}).*有価証券報告書.*$", "年報(日文原名)"),
     (r"^(?P<p>\d{8})?_?.*決算短信.*$", "決算短信(日文原名)"),
@@ -113,12 +116,16 @@ def main() -> None:
         if not p.is_file() or p.suffix.lower() not in (".md", ".pdf", ".html", ".htm"):
             continue
         r = classify(p)
+        if r["category"].startswith("SEC原檔名"):  # evtc-20260630.md：檔名看不出年報或季報 → 看檔頭
+            k = content_kind(p)
+            r["category"] = ("年報(SEC原檔名)" if k in ("10-K", "20-F", "40-F") else
+                             "季報(SEC原檔名)" if k in ("10-Q", "6-K") else "其他")
         if r["category"].startswith(("年報", "季報", "半年報", "決算短信")):
             r["content"] = content_kind(p)
         if r["category"].startswith("輿情"):
             r["latest_date"] = latest_date(p)
         r["size_kb"] = round(p.stat().st_size / 1024)
-        if a.ticker and r["ticker"] and r["ticker"] != a.ticker:
+        if a.ticker and r["ticker"] and r["ticker"].upper() != a.ticker.upper():
             r["other_ticker"] = True
         rows.append(r)
 
