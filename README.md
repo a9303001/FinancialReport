@@ -240,6 +240,7 @@ https://raw.githubusercontent.com/a9303001/FinancialReport/master/<已編碼資�
 | :--- | :--- |
 | `StockAnalysis` | 個股深度分析：讀回既有資料 → deep research → 每股化 → 整份重寫 `AnalysisResult.md` |
 | `collectStk` | 收集個股最新財務報告與輿情討論 / 新聞 |
+| `mops` | 台股年報（股東會年報）／季報（財務報告書）專用下載：TWSE 電子書（MOPS）清單 → 選 2 年報 + 1 季報 → 既有檔略過 → 本機直連或依指示走 MCP（雲端 IP 被 TWSE 封鎖）→ `Convert2md` → 驗證；每次爬蟲經驗寫回 `learned.json`，下次自動調整路徑順序 |
 | `ArrangePublicOpinionMd` | 把零散月度輿情 `.md` 依年份合併成 `<YYYY>_PublicOpinion.md`，驗證後刪除原檔（年報 / 季報不動） |
 | `edinet` | 用金融廳 EDINET API 下載日股（含 J-REIT）有価証券報告書／半期報告書完整版，再交給 `Convert2md` 轉檔並驗證 |
 | `edgar` | 用 SEC EDGAR 下載美股（含 ADR）10-K／10-Q／20-F／6-K 完整版，再交給 `Convert2md --html` 轉檔並驗證；每次爬完把經驗寫回 `references/lessons.md`、`company_hints.json` |

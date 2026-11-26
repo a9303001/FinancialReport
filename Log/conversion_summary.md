@@ -1,5 +1,10 @@
 # PDF 轉換總結報告
 
+產生時間：2026-11-26 15:07:07
+
+轉換工具：`pymupdf4llm-mcp` / `convert_pdf_to_markdown`
+
+掃描範圍：`/home/user/FinancialReport/1264德麥`
 產生時間：2026-11-26 15:05:23
 
 轉換工具：`pymupdf4llm-mcp` / `convert_pdf_to_markdown`
@@ -37,4 +42,5 @@
 
 | 公司 | .md |
 |------|-----|
+| 1264德麥 | 1264_Quarter_2026Q3.md |
 | 02318中國平安 | 02318_Quarter_2026H1.md |
