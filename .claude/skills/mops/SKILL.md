@@ -150,7 +150,7 @@ description: 台股（上市／上櫃／興櫃，含 KY）年報（股東會年�
 
 ## 8. 與其他 skill 的關係
 
-- **collectStk**：台股財報（Phase 2）一律呼叫本 skill（collectStk §7.5）；輿情、重訊仍歸 collectStk（鉅亨、MoneyDJ 等在 collectStk 的 `references/sites_tw.md`）。
+- **collectStk**：台股財報（Phase 2）一律呼叫本 skill（collectStk §7.7）；輿情、重訊仍歸 collectStk（鉅亨、MoneyDJ 等在 collectStk 的 `references/sites_tw.md`）。
 - **Convert2md**：只轉 PDF → `.md`；`<SCOPE>` 一定要填公司資料夾，`save_path` 填完整 `.md` 檔案路徑。
 - 鏡像：`.claude/skills/mops/` 是唯一編輯來源；collectStk 的 `selfcheck.py --fix` 會整份同步到 `.agents/skills/mops/`（`learned.json` 由 script 兩邊同時寫）。
 

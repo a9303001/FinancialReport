@@ -121,9 +121,9 @@ argument-hint: "<國家代碼：jp | hk | tw | us | sg …>"
 
 **C 新聞**：香港經濟日報、信報、明報、AAStocks、新浪港股、Reuters／Bloomberg、智通財經、KPMG 稅務快訊。AAStocks 冷門 REIT 列表常停在數月前 → 改 Exa [2026-11]。
 
-**D REIT 市場**：全部港股 REIT 的窗口內 HKEXnews 公告（`collectStk` §5.4，起日填 `WINDOW_START`）。上市 REIT 11 檔 [2026-11-20 核對]：00823 領展、02778 冠君、00778 置富、00435 陽光、00808 泓富、00405 越秀、01881 富豪、87001 匯賢（RMB）、01426 春泉、01503 招商局商業、02191 順豐（2026-10-29 公布出售全部物業後清盤除牌，完成後刪除）。每次核對新上市／除牌並改寫本列。
+**D REIT 市場**：全部港股 REIT 的窗口內 HKEXnews 公告（`hkexnews` skill：`hkexnews.py search --code {代號} --from {WINDOW_START} --type all`，PDF 用 `hkexnews.py fetch`）。上市 REIT 11 檔 [2026-11-20 核對]：00823 領展、02778 冠君、00778 置富、00435 陽光、00808 泓富、00405 越秀、01881 富豪、87001 匯賢（RMB）、01426 春泉、01503 招商局商業、02191 順豐（2026-10-29 公布出售全部物業後清盤除牌，完成後刪除）。每次核對新上市／除牌並改寫本列。
 - 名單＋收盤＋殖利率＋市值：curl `hkex.com.hk/market-data/securities-prices/real-estate-investment-trusts`，grep `return "evL…"` 取 token → `www1.hkex.com.hk/hkexwidget/data/getreitfilter?lang=eng&token={token}&sort=5&order=0&all=1&qid=1&callback=cb`（Referer `hkex.com.hk`）[2026-11]
-- 單位數：HKEXnews「單位變動月報表」，pdftotext 後找 `Balance at close of the month` [2026-11]
+- 單位數：HKEXnews「單位變動月報表」（`hkexnews.py search --type monthly-return`），pdftotext 後找 `Balance at close of the month` [2026-11]
 - 恒生 REIT 指數無免授權來源，以 HKEX 殖利率表代替 [2026-11]
 
 **E 輿情**：LIHKG（地產台、財經台）、香港討論區 `discuss.com.hk`、高登、雪球、東方財富股吧（`hk00823` 等）、moomoo／長橋社區、X、Reddit（r/HongKong，經 Apify）、Mobile01。需授權時 Exa 可取 `discuss.com.hk/archiver/?tid-{id}.html`、LIHKG `lihkg.com/category/37` 標題快照、雪球 `/S/{代號}/news`。港 REIT 討論基本不在 PTT [2026-11]。

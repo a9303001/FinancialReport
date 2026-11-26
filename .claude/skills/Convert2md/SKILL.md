@@ -1,20 +1,21 @@
 ---
 name: Convert2md
-description: 掃描 FinancialReport 內公司資料夾，用 MCP 工具 convert_pdf_to_markdown 將 PDF 轉 Markdown，檢查 CID 亂碼並刪除失敗檔案，產生報告。只做 PDF → Markdown，不處理 HTML。
+description: 掃描 FinancialReport 內公司資料夾，用 MCP 工具 convert_pdf_to_markdown 將 PDF 轉 Markdown；加 `--html` 時另用 scripts/html2md.py 把 SEC EDGAR 的 HTML／iXBRL（edgar skill 下載的 .htm）轉 Markdown。檢查 CID 亂碼並刪除失敗檔案，產生報告。
 ---
 
-# Convert2md — PDF 轉 Markdown
+# Convert2md — PDF／HTML 轉 Markdown
 
-把公司資料夾裡的 PDF 用 MCP 工具轉成 `.md`，轉壞的刪掉，最後寫報告。
+把公司資料夾裡的 PDF 用 MCP 工具轉成 `.md`（加 `--html` 時，HTML 用 `scripts/html2md.py` 轉），轉壞的刪掉，最後寫報告。
 
 ## 規則
 
-1. 轉檔**只能**用 MCP 工具 `convert_pdf_to_markdown`
+1. PDF 轉檔**只能**用 MCP 工具 `convert_pdf_to_markdown`；HTML（`.htm`/`.html`）**只能**用本 skill 的 `scripts/html2md.py`（只用 Python 標準函式庫，SEC iXBRL 實測 2026-11）
 2. 所有路徑一律用**絕對路徑**
 3. `image_path` 填 `<SCRATCH>/pdf_images`，**不可**填公司資料夾
 4. 刪檔透過本文件的 Python 腳本執行，**禁止**用萬用字元 `*`
 5. 單一檔案失敗 → 記錄後**繼續下一個**，不可中止
-6. 只能刪：①成功轉換的來源 PDF ②CID 失敗的 `.md` ③暫存圖片。**其他不可刪**
+6. 只能刪：①成功轉換的來源 PDF／HTML ②CID 失敗的 `.md` ③暫存圖片。**其他不可刪**
+7. HTML 只在加 `--html` 時才處理（目前只有 `edgar` skill 會加）；不加就和以前一樣只轉 PDF
 
 ## 名詞
 
@@ -22,14 +23,15 @@ description: 掃描 FinancialReport 內公司資料夾，用 MCP 工具 convert_
 - `<SCRATCH>`：暫存工作目錄絕對路徑
 - 公司資料夾：`<REPO>` 底下以公司名命名的子資料夾（如 `<REPO>/UHS`）
 - `<SCOPE>`（選填）：只掃描這個資料夾（`<REPO>` 內的絕對路徑）。不填 = 掃整個 `<REPO>`（預設行為）
-- 待轉換 PDF：同目錄下沒有同名非空 `.md` 的 PDF
+- 待轉換檔：同目錄下沒有同名非空 `.md` 的 PDF（加 `--html` 時含 `.htm`/`.html`）
+- `<SKILL>`：本 skill 資料夾（Claude `<REPO>/.claude/skills/Convert2md`；Gemini `<REPO>/.agents/skills/Convert2md`，內容相同）
 
 ## 流程（共 5 步）
 
 ```
 步驟 1  執行腳本 A → 產生待轉換清單 convert_tasks.json
 步驟 2  檢查工具   → convert_pdf_to_markdown 能不能用？
-步驟 3  逐一轉檔   → 對清單中每個 PDF 呼叫一次 MCP 工具
+步驟 3  逐一轉檔   → PDF：每個呼叫一次 MCP 工具；HTML：跑一次 html2md.py --tasks
 步驟 4  執行腳本 B → 品質檢查 + 刪檔 + 產生報告
 步驟 5  回報結果   → 把報告貼給使用者
 ```
@@ -38,19 +40,22 @@ description: 掃描 FinancialReport 內公司資料夾，用 MCP 工具 convert_
 
 ## 步驟 1 — 產生待轉換清單
 
-存成 `<SCRATCH>/scan_pending.py` 並執行 `python <SCRATCH>/scan_pending.py <REPO> <SCRATCH> [<SCOPE>]`：
+存成 `<SCRATCH>/scan_pending.py` 並執行 `python <SCRATCH>/scan_pending.py <REPO> <SCRATCH> [<SCOPE>] [--html]`：
 
 - 只想轉某個資料夾時**一定要加 `<SCOPE>`**（例：`collectState` 加 `<REPO>/jp_state`），否則會把 `History/`、`Prompt/` 等不相干資料夾的 PDF 也轉掉並刪除。
 - 加不加 `<SCOPE>`，報告都寫到 `<REPO>/Log/conversion_summary.md`。
+- `--html`：一併列出 `.htm`/`.html`（`edgar` skill 印出 `CONVERT2MD_HTML=1` 時要加）。
 
 ```python
 # scan_pending.py
 import json, os, sys
 
-REPO = os.path.abspath(sys.argv[1])
-SCRATCH = os.path.abspath(sys.argv[2])
+ARGS = [a for a in sys.argv[1:] if a != "--html"]
+HTML = "--html" in sys.argv[1:]           # 一併轉 SEC EDGAR 的 .htm/.html
+REPO = os.path.abspath(ARGS[0])
+SCRATCH = os.path.abspath(ARGS[1])
 # 選填第 3 個參數：只掃描這個資料夾（須在 REPO 內），不填 = 整個 REPO
-SCOPE = os.path.abspath(sys.argv[3]) if len(sys.argv) > 3 else REPO
+SCOPE = os.path.abspath(ARGS[2]) if len(ARGS) > 2 else REPO
 try:
     inside = os.path.commonpath([REPO, SCOPE]) == REPO
 except ValueError:  # Windows 不同磁碟
@@ -59,22 +64,25 @@ if not inside or not os.path.isdir(SCOPE):
     sys.exit(f"[錯誤] 掃描範圍必須是 REPO 內既有的資料夾：{SCOPE}")
 SKIP_DIRS = {".git", ".github", ".claude", ".agents", "Log",
              "node_modules", "__pycache__", ".venv"}
+EXTS = {".pdf": "pdf"} | ({".htm": "html", ".html": "html"} if HTML else {})
 
 pending, skipped, total = [], 0, 0
 for dirpath, dirnames, filenames in os.walk(SCOPE):
     dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
     for fn in filenames:
-        if not fn.lower().endswith(".pdf"):
+        kind = EXTS.get(os.path.splitext(fn)[1].lower())
+        if not kind:
             continue
         total += 1
-        pdf = os.path.abspath(os.path.join(dirpath, fn))
-        md = os.path.splitext(pdf)[0] + ".md"
+        src = os.path.abspath(os.path.join(dirpath, fn))
+        md = os.path.splitext(src)[0] + ".md"
         if os.path.exists(md) and os.path.getsize(md) > 0:
             skipped += 1
             continue
         pending.append({
             "company": os.path.basename(dirpath),
-            "pdf": pdf,
+            "type": kind,
+            "src": src,
             "md": md,
             "save_path": os.path.abspath(dirpath),
         })
@@ -82,15 +90,15 @@ for dirpath, dirnames, filenames in os.walk(SCOPE):
 os.makedirs(SCRATCH, exist_ok=True)
 out = os.path.join(SCRATCH, "convert_tasks.json")
 with open(out, "w", encoding="utf-8") as f:
-    json.dump({"repo": REPO, "scratch": SCRATCH, "scope": SCOPE, "total_pdf": total,
+    json.dump({"repo": REPO, "scratch": SCRATCH, "scope": SCOPE, "html": HTML, "total_pdf": total,
                "skipped": skipped, "pending": pending},
               f, ensure_ascii=False, indent=2)
 
 print(f"掃描範圍: {SCOPE}")
-print(f"總 PDF 數: {total} / 已轉換跳過: {skipped} / 待轉換: {len(pending)}")
+print(f"總檔數（PDF{'+HTML' if HTML else ''}）: {total} / 已轉換跳過: {skipped} / 待轉換: {len(pending)}")
 print(f"清單檔: {out}")
 for i, t in enumerate(pending, 1):
-    print(f"{i}. {t['pdf']}")
+    print(f"{i}. [{t['type']}] {t['src']}")
 ```
 
 **待轉換為 0** → 跳過步驟 2、3，直接做步驟 4。
@@ -99,17 +107,24 @@ for i, t in enumerate(pending, 1):
 
 ## 步驟 2 — 檢查工具
 
-確認 MCP 工具 `convert_pdf_to_markdown`（來自 `pymupdf4llm-mcp`）可用。不可用 → 跳到步驟 4，報告加註錯誤訊息。
+清單有 `type: pdf` 時：確認 MCP 工具 `convert_pdf_to_markdown`（來自 `pymupdf4llm-mcp`）可用。不可用 → PDF 跳過步驟 3（HTML 照轉），報告加註錯誤訊息。
+清單只有 `type: html` → 不需要 MCP。
 
 ---
 
 ## 步驟 3 — 逐一轉檔
 
-對清單中每個 PDF 呼叫 `convert_pdf_to_markdown`，參數：
+**3a. HTML**（清單有 `type: html` 才做）：一次轉完全部，單檔失敗會印 `FAIL` 並繼續：
+
+```bash
+python <SKILL>/scripts/html2md.py --tasks <SCRATCH>/convert_tasks.json
+```
+
+**3b. PDF**：對清單中每個 `type: pdf` 呼叫 `convert_pdf_to_markdown`，參數：
 
 | 參數 | 值 |
 |------|-----|
-| `file_path` | 清單的 `pdf` 欄位（PDF 絕對路徑） |
+| `file_path` | 清單的 `src` 欄位（PDF 絕對路徑） |
 | `save_path` | 清單的 `md` 欄位（**輸出 `.md` 的完整檔案絕對路徑**）。⚠️ 工具說明寫「directory」但實測（2026-09、2026-11）填資料夾會回 `[Errno 21] Is a directory`，必須填檔案路徑 |
 | `image_path` | `<SCRATCH>/pdf_images`（固定值） |
 
@@ -173,8 +188,8 @@ for t in data["pending"]:
         cid_fail.append(t)
         continue
     t["img_links_removed"] = strip_images(md)
-    if os.path.exists(t["pdf"]):
-        os.remove(t["pdf"])
+    if os.path.exists(t["src"]):
+        os.remove(t["src"])
     ok.append(t)
 
 img_dir = os.path.join(SCRATCH, "pdf_images")
@@ -188,12 +203,12 @@ report = os.path.join(log_dir, "conversion_summary.md")
 L = []
 L.append("# PDF 轉換總結報告\n")
 L.append(f"產生時間：{datetime.now():%Y-%m-%d %H:%M:%S}\n")
-L.append("轉換工具：`pymupdf4llm-mcp` / `convert_pdf_to_markdown`\n")
+L.append("轉換工具：PDF `pymupdf4llm-mcp` / `convert_pdf_to_markdown`；HTML `Convert2md/scripts/html2md.py`\n")
 L.append(f"掃描範圍：`{data.get('scope', REPO)}`\n")
 L.append("\n## 統計\n")
 L.append("| 指標 | 數量 |")
 L.append("|------|------|")
-L.append(f"| 總掃描 PDF | {data['total_pdf']} |")
+L.append(f"| 總掃描檔（PDF{'+HTML' if data.get('html') else ''}） | {data['total_pdf']} |")
 L.append(f"| 跳過（已轉換） | {data['skipped']} |")
 L.append(f"| 本次嘗試轉換 | {len(data['pending'])} |")
 L.append(f"| 成功 | {len(ok)} |")
@@ -201,18 +216,19 @@ L.append(f"| 失敗：0 KB 或未產生 | {len(empty)} |")
 L.append(f"| 失敗：CID 亂碼（已刪除） | {len(cid_fail)} |")
 L.append("\n## 異常清單\n")
 L.append("\n### 未產生或 0 KB\n")
-L.append("| 公司 | PDF | 預期 .md | 原因 |")
+L.append("| 公司 | 來源檔 | 預期 .md | 原因 |")
 L.append("|------|-----|---------|------|")
 for t in empty:
-    L.append(f"| {t['company']} | {os.path.basename(t['pdf'])} | "
-             f"{os.path.basename(t['md'])} | PDF 可能加密、損毀或純掃描 |")
+    why = "PDF 可能加密、損毀或純掃描" if t["type"] == "pdf" else "html2md 失敗（看步驟 3a 的 FAIL 訊息）"
+    L.append(f"| {t['company']} | {os.path.basename(t['src'])} | "
+             f"{os.path.basename(t['md'])} | {why} |")
 if not empty:
     L.append("| — | — | — | 無 |")
 L.append("\n### CID 亂碼過多（.md 已刪除）\n")
-L.append("| 公司 | PDF | 被刪的 .md | CID 次數 | CID 佔比% |")
+L.append("| 公司 | 來源檔 | 被刪的 .md | CID 次數 | CID 佔比% |")
 L.append("|------|-----|-----------|---------|----------|")
 for t in cid_fail:
-    L.append(f"| {t['company']} | {os.path.basename(t['pdf'])} | "
+    L.append(f"| {t['company']} | {os.path.basename(t['src'])} | "
              f"{os.path.basename(t['md'])} | {t['cid_count']} | {t['cid_ratio']} |")
 if not cid_fail:
     L.append("| — | — | — | — | 無 |")
@@ -233,13 +249,13 @@ print(f"\n報告已寫入：{report}")
 
 ### 刪檔規則
 
-| 結果 | `.md` | PDF |
+| 結果 | `.md` | 來源 PDF／HTML |
 |------|-------|-----|
 | ✅ 成功 | 保留 | 刪除 |
 | ❌ CID 亂碼 | 刪除 | **保留** |
 | ❌ 未產生/0KB | 刪除 | **保留** |
 
-> **轉換失敗時絕不刪 PDF。**
+> **轉換失敗時絕不刪來源檔。**
 
 ### CID 亂碼
 
@@ -249,7 +265,7 @@ PDF 嵌入式字型（CIDFont）解不開，產出 `(cid:123)` 亂碼。判定�
 
 ## 步驟 5 — 回報
 
-把腳本 B 印出的報告貼給使用者，說明：掃描幾個 PDF、成功幾個、失敗幾個。
+把腳本 B 印出的報告貼給使用者，說明：掃描幾個 PDF（／HTML）、成功幾個、失敗幾個。
 
 ---
 
@@ -265,3 +281,5 @@ PDF 嵌入式字型（CIDFont）解不開，產出 `(cid:123)` 亂碼。判定�
 | 公司資料夾出現 `.png/.jpg` | `image_path` 填錯了，刪圖片，改填 `<SCRATCH>/pdf_images` |
 | `.md` 內有 `![](…/pdf_images/…)` | 腳本 B 會自動移除（成功的檔才處理） |
 | 150 頁以上回「timed out after 60s」 | 伺服器仍在背景寫檔：不要重送，等 `.md` 出現且大小不再變動再做步驟 4 |
+| html2md 印 `FAIL` | 記錄錯誤訊息 → 繼續；若是腳本 bug，修 `scripts/html2md.py`（`.claude` 與 `.agents` 兩份保持相同），`edgar.py selftest --offline` 有 html2md 測試案例 |
+| HTML 轉出的 `.md` 還有大量 `<div`／`ix:` 標籤 | html2md 沒處理到的新 HTML 寫法 → 修 `scripts/html2md.py` 並在 `edgar.py selftest` 補案例 |
