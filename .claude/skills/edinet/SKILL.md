@@ -97,6 +97,8 @@ key 申請：EDINET 首頁 →「API」→ API キー発行（免費；需帳號
 同資料夾有下列任一檔（`.pdf` 或 `.md`）就視為該期別已存在：
 - 新命名；舊命名 `{代碼}_annual_{FY}`、`{代碼}_quarter_…`、`{代碼}_QuarterlyReport_…`；半期報也認 `{代碼}_Quarter_{FY}Q2`、`{代碼}_interim_{FY}`；
 - 日文原檔名：含「有価証券報告書／半期報告書／四半期報告書」、不含「訂正」、且數字裡有期末日 `YYYYMMDD`（如 `202606有価証券報告書－第39期(20250401－20260331).md`）。
+- **`.md` 還要看檔頭內容**：檔頭最早出現的文件名稱必須是同一種（有価証券報告書／半期報告書／四半期報告書）才算已有。舊流程常把**決算短信**存成 `_Quarter_{FY}Q2`、把**資産運用報告**或英文決算資料存成 `_AnnualReport_`——它們是摘要，不能頂替詳細版。不能只搜「有沒有出現」：決算短信封面固定有「半期報告書提出予定日」。
+- 目標檔名已被別種文件佔用 → 新檔存成 `{檔名}_EDINET.pdf`（例 `2971_AnnualReport_2026Jul_EDINET.pdf`），兩份並存、不覆蓋。
 
 ## 6. 必知限制
 
@@ -145,6 +147,9 @@ API 文件：EDINET API 仕様書 v2 `https://disclosure2dl.edinet-fsa.go.jp/gui
 若問題出在 `Convert2md` skill，同樣修正 `.claude/skills/Convert2md/SKILL.md` 與 `.agents/skills/Convert2md/SKILL.md`（兩份保持相同）。
 
 ## 10. 變更紀錄
+
+- 2026-11-26 v2.0.1：
+  - 修：既有檔只看檔名 → `4979_Quarter_2026Q2.md`（決算短信）被當成半期報告書、`2971_AnnualReport_2026Jul.md`（資産運用報告）被當成有報，詳細版永遠不下載。改為檢查 `.md` 檔頭文件種類；同名別種文件時另存 `_EDINET`；selftest 加 5 個案例鎖住。
 
 - 2026-11-26 v2.0.0：
   - 修：EDINET 以 HTTP 200 + JSON `StatusCode 429` 限流時舊版直接當掉 → 全域節流 + 退避重試。

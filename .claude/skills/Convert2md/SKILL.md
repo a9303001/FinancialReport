@@ -110,7 +110,7 @@ for i, t in enumerate(pending, 1):
 | 參數 | 值 |
 |------|-----|
 | `file_path` | 清單的 `pdf` 欄位（PDF 絕對路徑） |
-| `save_path` | 清單的 `md` 欄位（**輸出 `.md` 的完整檔案絕對路徑**）。⚠️ 2026-09-22 實測：填資料夾路徑會回 `[Errno 21] Is a directory`，必須填檔案路徑 |
+| `save_path` | 清單的 `md` 欄位（**輸出 `.md` 的完整檔案絕對路徑**）。⚠️ 工具說明寫「directory」但實測（2026-09、2026-11）填資料夾會回 `[Errno 21] Is a directory`，必須填檔案路徑 |
 | `image_path` | `<SCRATCH>/pdf_images`（固定值） |
 
 **`save_path` 必填**，否則工具會把整份 Markdown 吐回 context，塞爆對話。
@@ -131,6 +131,17 @@ import json, os, re, shutil, sys
 from datetime import datetime
 
 CID_RE = re.compile(r'\(cid:\d+\)')
+# 指向暫存 pdf_images/ 的圖片連結：轉檔後圖片會被刪，連結變死鏈 → 成功的 .md 一律移除
+IMG_RE = re.compile(r'^[ \t]*!\[[^\]]*\]\([^)]*pdf_images[^)]*\)[ \t]*\n?', re.M)
+
+def strip_images(path):
+    with open(path, encoding="utf-8", errors="replace") as f:
+        text = f.read()
+    new, n = IMG_RE.subn('', text)
+    if n:
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(new)
+    return n
 
 def cid_check(path):
     with open(path, encoding="utf-8", errors="replace") as f:
@@ -161,6 +172,7 @@ for t in data["pending"]:
         t.update(cid_ratio=round(ratio * 100, 2), cid_count=count)
         cid_fail.append(t)
         continue
+    t["img_links_removed"] = strip_images(md)
     if os.path.exists(t["pdf"]):
         os.remove(t["pdf"])
     ok.append(t)
@@ -251,3 +263,5 @@ PDF 嵌入式字型（CIDFont）解不開，產出 `(cid:123)` 亂碼。判定�
 | 工具不存在 | 跳過步驟 3，直接步驟 4，報告加錯誤訊息 |
 | 待轉換清單空 | 跳過步驟 2、3，直接步驟 4 |
 | 公司資料夾出現 `.png/.jpg` | `image_path` 填錯了，刪圖片，改填 `<SCRATCH>/pdf_images` |
+| `.md` 內有 `![](…/pdf_images/…)` | 腳本 B 會自動移除（成功的檔才處理） |
+| 150 頁以上回「timed out after 60s」 | 伺服器仍在背景寫檔：不要重送，等 `.md` 出現且大小不再變動再做步驟 4 |

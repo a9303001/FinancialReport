@@ -21,3 +21,6 @@ scratch_convert/
 # EDINET API key（絕不 commit）
 .claude/skills/edinet/.env
 .env
+
+# Python bytecode（skill 腳本）
+__pycache__/

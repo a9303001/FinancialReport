@@ -44,7 +44,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-VERSION = "2.0.0"
+VERSION = "2.0.1"
 
 # Windows 主控台（cp950/cp932）印日文會 UnicodeEncodeError → 一律 UTF-8
 for _s in (sys.stdout, sys.stderr):
@@ -528,8 +528,50 @@ def _aliases(base: str) -> list[str]:
     return out
 
 
+# 既有 .md 實際是哪種文件：取檔頭「最早出現」的關鍵字。不能只看有沒有出現——
+# 決算短信封面固定有「半期報告書提出予定日」，有報目次也會提到其他報告書（2026-11 實測）。
+KIND_PATTERNS = [
+    ("120", re.compile(r"有価証券報告書|Annual Securities Report")),
+    ("140", re.compile(r"四半期報告書|Quarterly Securities Report")),
+    ("160", re.compile(r"(?<!四)半期報告書(?!提出)|Semi-Annual Securities Report")),
+    ("tanshin", re.compile(r"決算短信|Summary of (?:Consolidated )?Financial Results|FINANCIAL RESULTS", re.I)),
+    ("asset", re.compile(r"資産運用報告|Asset Management Report", re.I)),
+    ("other", re.compile(r"Annual Report|Integrated Report|統合報告書|決算説明", re.I)),
+]
+
+
+def doc_kind(path: Path, head_chars: int = 6000) -> str | None:
+    """'120'/'140'/'160'/'tanshin'/'asset'/'other'；PDF、讀不到或認不出 → None。"""
+    if path.suffix.lower() != ".md":
+        return None
+    try:
+        with path.open(encoding="utf-8", errors="replace") as f:
+            head = f.read(head_chars)
+    except OSError:
+        return None
+    best = None
+    for kind, pat in KIND_PATTERNS:
+        m = pat.search(head)
+        if m and (best is None or m.start() < best[1]):
+            best = (kind, m.start())
+    return best[0] if best else None
+
+
+def _same_doc(doc_type: str, p: Path) -> bool:
+    """既有檔是否就是這種 EDINET 文件。PDF／認不出內容 → 視為是（保守：避免重複下載）。"""
+    k = doc_kind(p)
+    return k is None or k == {"130": "120", "150": "140", "170": "160"}.get(doc_type, doc_type)
+
+
+def name_taken_by_other(out: Path, base: str, doc: dict) -> Path | None:
+    """目標檔名已被「別種文件」佔用（舊流程把決算短信存成 _Quarter_、資産運用報告存成 _AnnualReport_）。"""
+    p = out / f"{base}.md"
+    return p if p.is_file() and not _same_doc(doc["docTypeCode"], p) else None
+
+
 def existing_cover(out: Path, base: str, doc: dict, fmt: str) -> Path | None:
-    """資料夾內已涵蓋該期別的檔案（新命名、舊命名、日文原檔名如「有価証券報告書－第39期(20250401－20260331)」）。"""
+    """資料夾內已涵蓋該期別的檔案（新命名、舊命名、日文原檔名如「有価証券報告書－第39期(20250401－20260331)」）。
+    .md 要檔頭內容確實是同一種文件才算（決算短信、資産運用報告不能頂替有報／半期報）。"""
     if not out.is_dir():
         return None
     typ, ext = FORMAT_TYPE[fmt]
@@ -537,8 +579,9 @@ def existing_cover(out: Path, base: str, doc: dict, fmt: str) -> Path | None:
     files = {p.name.lower(): p for p in out.iterdir() if p.is_file()}
     for b in _aliases(base):
         for name in (f"{b}{suffix}.{ext}",) + ((f"{b}.md",) if fmt == "pdf" else ()):
-            if name.lower() in files:
-                return files[name.lower()]
+            hit = files.get(name.lower())
+            if hit and (fmt != "pdf" or _same_doc(doc["docTypeCode"], hit)):
+                return hit
     if fmt != "pdf" or "_Amend" in base:
         return None
     pe = _parse(doc.get("periodEnd"))
@@ -548,7 +591,8 @@ def existing_cover(out: Path, base: str, doc: dict, fmt: str) -> Path | None:
     pe8 = pe.strftime("%Y%m%d")
     for p in files.values():
         if p.suffix.lower() in (".md", ".pdf") and kw in p.name and "訂正" not in p.name \
-                and pe8 in re.sub(r"\D", "", p.name):
+                and not (kw == "半期報告書" and "四半期報告書" in p.name) \
+                and pe8 in re.sub(r"\D", "", p.name) and _same_doc(doc["docTypeCode"], p):
             return p
     return None
 
@@ -588,8 +632,13 @@ def _valid_payload(data: bytes, ext: str) -> str | None:
 def download_doc(doc: dict, fmt: str, out: Path, base: str, key: str, force: bool) -> dict:
     typ, ext = FORMAT_TYPE[fmt]
     suffix = "" if fmt == "pdf" else f"_{fmt}"
+    other = name_taken_by_other(out, base, doc) if fmt == "pdf" else None
+    if other is not None:  # 同名檔其實是決算短信／資産運用報告 → 另存，不覆蓋
+        base = base + "_EDINET"
     dest = out / f"{base}{suffix}.{ext}"
     r = {"format": fmt, "file": dest.name, "status": "", "note": ""}
+    if other is not None:
+        r["note"] = f"{other.name} 是別種文件，改存 {dest.name}；"
     if not force and (hit := existing_cover(out, base, doc, fmt)):
         r.update(status="skipped", note=f"已存在 {hit.name}", cover=hit.name)
         return r
@@ -608,7 +657,7 @@ def download_doc(doc: dict, fmt: str, out: Path, base: str, key: str, force: boo
     os.umask(umask)
     os.chmod(tf.name, 0o666 & ~umask)  # NamedTemporaryFile 預設 0600 → 改回一般檔案權限
     Path(tf.name).replace(dest)
-    r.update(status="downloaded", note=f"{len(data) / 1024:.0f} KB", cover=dest.name)
+    r.update(status="downloaded", note=r["note"] + f"{len(data) / 1024:.0f} KB", cover=dest.name)
     return r
 
 
@@ -778,9 +827,16 @@ def _cmd_selftest(a, parser: argparse.ArgumentParser) -> int:
     print("[selftest] 既有檔判定（舊命名 / 日文原檔名）")
     with tempfile.TemporaryDirectory() as td:
         tdp = Path(td)
-        for n in ("9435_Quarter_2027Q2.md", "202606有価証券報告書－第39期(20250401－20260331).md",
-                  "3445_annual_2024.md"):
-            (tdp / n).write_text("x", encoding="utf-8")
+        for n, body in (("9435_Quarter_2027Q2.md", "EDINET提出書類 株式会社光通信 半期報告書"),
+                        ("202606有価証券報告書－第39期(20250401－20260331).md", "【提出書類】 有価証券報告書"),
+                        ("3445_annual_2024.md", "x"),
+                        # 舊流程：決算短信存成 _Quarter_Q2、資産運用報告存成 _AnnualReport_（2026-11 實際 repo 狀況）
+                        ("4979_Quarter_2026Q2.md", "2026年12月期 第２四半期（中間期）決算短信〔日本基準〕（連結）\n半期報告書提出予定日 2026年8月10日"),
+                        ("2971_AnnualReport_2026Jul.md", "# 2971 第19期 資産運用報告\n有価証券報告書")):
+            (tdp / n).write_text(body, encoding="utf-8")
+        toy = tdp / "7203Toyota"  # 期末日與上面 9435 相同 → 放獨立資料夾（實際上每家公司各一個資料夾）
+        toy.mkdir()
+        (toy / "7203_AnnualReport_2026.md").write_text("# FY2026 FINANCIAL RESULTS", encoding="utf-8")
         d_h1 = {"docID": "A", "docTypeCode": "160", "periodEnd": "2026-09-30"}
         d_an = {"docID": "B", "docTypeCode": "120", "periodEnd": "2026-03-31"}
         d_old = {"docID": "C", "docTypeCode": "120", "periodEnd": "2024-12-31"}
@@ -789,6 +845,14 @@ def _cmd_selftest(a, parser: argparse.ArgumentParser) -> int:
         check("認得日文有報原檔名", existing_cover(tdp, "9435_AnnualReport_2026", d_an, "pdf") is not None)
         check("認得 {ticker}_annual_{FY}", existing_cover(tdp, "3445_AnnualReport_2024", d_old, "pdf") is not None)
         check("不同期別不誤判", existing_cover(tdp, "9435_AnnualReport_2025", d_new, "pdf") is None)
+        d_h1b = {"docID": "E", "docTypeCode": "160", "periodEnd": "2026-12-31"}
+        d_reit = {"docID": "F", "docTypeCode": "120", "periodEnd": "2026-07-31"}
+        d_toy = {"docID": "G", "docTypeCode": "120", "periodEnd": "2026-03-31"}
+        check("決算短信 Q2 不可頂替半期報告書", existing_cover(tdp, "4979_Quarter_2026H1", d_h1b, "pdf") is None)
+        check("資産運用報告不可頂替有報", existing_cover(tdp, "2971_AnnualReport_2026Jul", d_reit, "pdf") is None)
+        check("同名資産運用報告 → 改存 _EDINET", name_taken_by_other(tdp, "2971_AnnualReport_2026Jul", d_reit) is not None)
+        check("英文決算資料不可頂替有報", existing_cover(toy, "7203_AnnualReport_2026", d_toy, "pdf") is None)
+        check("真的半期報告書 Q2 仍算已有", name_taken_by_other(tdp, "9435_Quarter_2027Q2", d_h1) is None)
 
     print("[selftest] SKILL.md 與 CLI 參數一致")
     skill_md = SKILL_DIR / "SKILL.md"
