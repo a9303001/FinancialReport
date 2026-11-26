@@ -128,7 +128,7 @@ MCP 分兩類，故障原因與修法不同：
 | 停用 | 改走 |
 | :--- | :--- |
 | 只有 Firecrawl | 鏈上改 Bright Data → Apify `rag-web-browser` → Playwright；`site:` 索引改 Bright Data `search_engine` 或 `WebSearch` |
-| Firecrawl＋Bright Data＋Apify 全停 | ① §4、§5 的免 MCP 捷徑（官方 API、SSR 頁、`curl`）照常是第一站：港股 HKEX／AAStocks／新浪／股吧、台股鉅亨／CMoney、日股株探／Yahoo JP 都不受影響 ② JS 頁改 Playwright（富途新聞、moomoo、LIHKG 已驗證）③ Playwright 也被擋的站（雪球 567、X 登入牆、Dcard、Mobile01、Seeking Alpha）改 Exa `web_search_exa` 取索引，依 §3.6 標註 ④ `site:` 搜尋改 `WebSearch`（`allowed_domains`）⑤ Reddit 只能 `WebSearch` 搭 `allowed_domains: ["reddit.com"]` 取索引 |
+| Firecrawl＋Bright Data＋Apify 全停 | ① §4、§5 的免 MCP 捷徑（官方 API、SSR 頁、`curl`）照常是第一站：港股 HKEX／AAStocks／新浪／股吧、台股鉅亨／CMoney、日股株探／Yahoo JP 都不受影響 ② JS 頁改 Playwright（富途新聞、moomoo、LIHKG 已驗證）③ Playwright 也被擋的站（雪球 567、X 登入牆、Dcard、Mobile01、Seeking Alpha）改 Exa `web_search_exa` 取索引，依 §3.6 標註 ④ `site:` 搜尋改 `WebSearch`（`allowed_domains`）⑤ Reddit 改 Exa `web_search_exa` 取索引（`WebSearch` 對 reddit.com 回 400）|
 | Exa 也停 | 索引只剩 `WebSearch`；雪球記 ❌ 並寫明原因 |
 
 ### 3.1 固定順序
