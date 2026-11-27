@@ -62,3 +62,9 @@
   - `collectStk/references/sites_us_global.md` §4.1 Reddit 列、`SKILL.md` §3.0.4：Reddit 最後備援由 `WebSearch` 改為 Exa（原因：WebSearch 回 400；驗證：Exa 可回應查詢）。
   - `.agents/skills/collectStk` 鏡像已同步。
 - **未解決**：EDINET API key（需使用者處理）。
+
+## 8. 補跑（同日第 2 次排程）
+- 今日輪替（3455）已於前一輪完成並併入 master（`e8afa40`），本輪不重抓。
+- 本輪環境 EDINET key **有效**（`edinet.py checkkey`：雲端代理注入）→ 401 僅為前一輪環境缺 network secret。
+- 補查缺口：大量保有変更報告書 `S100ZBB5`（2026-11-06）對照前次 `S100Z09F`（2026-09-01，分母已為增資後 452,358 口）→ **證實為實際淨賣出**：三井住友トラスト・AM 26,538→21,336 口（−5,202），アモーヴァ・AM 9,326→11,907 口（+2,581），合計 35,864→33,243 口（−2,621，−7.3%）。已更新 `202611_輿情新聞.md`、`AnalysisResult.md`（缺口 3 關閉）。
+- 另查得：SMBC 日興集團 9/15 降至 3.63%、三菱 UFJ 集團 9/14 新進 5.24%、三井住友 DS 集團 8/31 5.30%。
