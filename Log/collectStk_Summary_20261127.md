@@ -68,3 +68,49 @@
 - 本輪環境 EDINET key **有效**（`edinet.py checkkey`：雲端代理注入）→ 401 僅為前一輪環境缺 network secret。
 - 補查缺口：大量保有変更報告書 `S100ZBB5`（2026-11-06）對照前次 `S100Z09F`（2026-09-01，分母已為增資後 452,358 口）→ **證實為實際淨賣出**：三井住友トラスト・AM 26,538→21,336 口（−5,202），アモーヴァ・AM 9,326→11,907 口（+2,581），合計 35,864→33,243 口（−2,621，−7.3%）。已更新 `202611_輿情新聞.md`、`AnalysisResult.md`（缺口 3 關閉）。
 - 另查得：SMBC 日興集團 9/15 降至 3.63%、三菱 UFJ 集團 9/14 新進 5.24%、三井住友 DS 集團 8/31 5.30%。
+
+## 9. 同日第 2 輪正式執行 collectStk（3455）
+
+### 9.1 成功紀錄
+| 股號/名稱 | 資料來源 | 產生/下載的檔案 | 狀態/備註 |
+| :--- | :--- | :--- | :--- |
+| 3455 | EDINET API v2（`edinet.py download`） | `3455_AnnualReport_2026Jan_EDINET.md` | docID `S100Y0YD`，提出日 2026-04-27，第 22 期有報；與既有資産運用報告種類不同 → `_EDINET` 並存；PDF 1969KB → md 1023KB |
+| 3455 | EDINET API v2 | `3455_AnnualReport_2025Jul_EDINET.md` | docID `S100WXLV`，提出日 2025-10-30，第 21 期有報；`_EDINET` 並存；PDF 1932KB → md 1011KB |
+| 3455 | EDINET（既有） | `3455_AnnualReport_2026Jul_EDINET.md` | `S100ZA9E` 已存在 → skipped |
+| 3455 | EDINET 大量保有報告 `S100ZBB5`／`S100Z09F` 等 | `202611_輿情新聞.md`、`AnalysisResult.md` | 見 §8：證實 SMTAM 集團淨賣出 2,621 口 |
+| 3455 | Yahoo 掲示板（Bright Data）、株探（curl） | `202611_輿情新聞.md` 補記 | ⭕ 無新內容（最新 No.3008 / 株探 11-18 已收錄）；11/27 收 90,400 円 |
+
+- 現在 J-REIT 3 期有報皆有 EDINET 詳細版＋資産運用報告。
+
+### 9.2 失敗或被擋網站
+- **來源**：[Yahoo 掲示板](https://finance.yahoo.co.jp/quote/3455.T/forum)｜**原因**：`curl` 回錯誤頁（雲端 IP 被擋）、Firecrawl HTTP 500｜**已試過**：curl → Firecrawl → Bright Data（成功）
+- **來源**：X（`firecrawl_search site:x.com`）｜**原因**：「3455」數字誤配，全為無關貼文｜**已試過**：firecrawl_search
+
+### 9.3 資料缺失說明
+- 第 24 期（2027 年 1 月期）決算短信預計 2027-03 才公布；J-REIT 無半期報。
+
+### 9.4 異常檔案刪除紀錄
+- 無（2 份 `_EDINET.pdf` 轉檔驗證通過後依慣例刪除 PDF，保留 md）。
+
+### 9.5 MCP 預檢與使用紀錄
+- **預檢結果**：可用：Firecrawl、Bright Data、Apify、Exa、Playwright、yfinance、pymupdf4llm、curl、EDINET（代理注入 key 有效）｜停用：無
+
+| MCP 服務名稱 | 工具/函式 | 用途 |
+| :--- | :--- | :--- |
+| Firecrawl | `firecrawl_scrape`、`firecrawl_search` | 預檢；Yahoo 掲示板（500）；X 索引 |
+| Bright Data | `web_fetch` | 預檢；Yahoo 掲示板（成功） |
+| Apify | `apify--web-fetch` | 預檢 |
+| Exa | `web_search_exa` | 預檢（官網最新情報） |
+| Playwright | `browser_navigate` | 預檢 |
+| yfinance | `get_historical_stock_prices` | 3455.T 近 5 日股價 |
+| pymupdf4llm | `convert_pdf_to_markdown` | 2 份有報 PDF、大量保有報告 PDF 轉 md |
+
+### 9.6 Phase 4 Convert2md 與 check_md
+- 2 份有報 MCP 皆回 60 秒逾時，等 md 大小不再變動後完整；0 個 `(cid:`。
+- `check_md.py`：2/2 PASS（各移除 13 行 pdf_images 連結、補來源標頭）；`edinet.py verify --code 3455`：3/3 通過。
+
+### 9.7 Skill 自我檢查與修正
+- **selfcheck**：0 error；WARN：W2 SKILL.md 460 行（> 450）
+- **修正**：`collectStk/references/sites_jp.md` §4.4 Yahoo 掲示板列：補「雲端 IP 偶爾被擋 → Firecrawl 也 500 → 改用 Bright Data `web_fetch`」（原因：本輪 curl 回 4.8KB 錯誤頁、Firecrawl 500；驗證：Bright Data 成功取回 No.2938~3008）。`.agents` 鏡像已同步。
+- **小註**：`edinet.py verify` 不接受 `--out`（只有 download 接受），SKILL.md §7.4 寫法本來就只對 download 加 `--out`，無需修改。
+- **未解決**：無。

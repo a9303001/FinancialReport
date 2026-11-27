@@ -336,7 +336,7 @@
 這段結論：近兩年年報與最新一期決算文件齊全，並已線上交叉驗證。
 
 - **是否找到**：✅ 是（J-REIT 半年決算，每期出有報與決算短信）
-- **本地 repo（`3455醫療保健投資法人/`）**：第 23 期有報（`3455_AnnualReport_2026Jul.md`、`3455_AnnualReport_2026Jul_EDINET.md`）、第 22 期（`3455_AnnualReport_2026Jan.md`）、第 21 期（`3455_AnnualReport_2025Jul.md`）、第 23 期決算短信（`3455_Quarter_2026Jul.md`）、簡報（`3455_Presentation_2026Jul.md`）、輿情（`2026_PublicOpinion.md`、`202611_輿情新聞.md`）
+- **本地 repo（`3455醫療保健投資法人/`）**：第 23 期有報（`3455_AnnualReport_2026Jul.md`、`3455_AnnualReport_2026Jul_EDINET.md`）、第 22 期（`3455_AnnualReport_2026Jan.md`、`3455_AnnualReport_2026Jan_EDINET.md`）、第 21 期（`3455_AnnualReport_2025Jul.md`、`3455_AnnualReport_2025Jul_EDINET.md`）、第 23 期決算短信（`3455_Quarter_2026Jul.md`）、簡報（`3455_Presentation_2026Jul.md`）、輿情（`2026_PublicOpinion.md`、`202611_輿情新聞.md`）
 - **線上驗證**：yfinance 3455.T 日線（至 2026-11-26）；JAPAN-REIT.COM 11-26 投資口情報；日經／SBI 公告列表（10-29 投資主總會後無新開示）；Bloomberg／Reuters／朝日 11-26 日銀報導
 - **缺漏原因**：第 24 期（2027/01）尚未結算，預計 2027-03 公布
 - **所以呢**：核心資料完整，下輪重點是 12 月交割與日銀決議的實際結果。
