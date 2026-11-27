@@ -114,3 +114,9 @@
 - **修正**：`collectStk/references/sites_jp.md` §4.4 Yahoo 掲示板列：補「雲端 IP 偶爾被擋 → Firecrawl 也 500 → 改用 Bright Data `web_fetch`」（原因：本輪 curl 回 4.8KB 錯誤頁、Firecrawl 500；驗證：Bright Data 成功取回 No.2938~3008）。`.agents` 鏡像已同步。
 - **小註**：`edinet.py verify` 不接受 `--out`（只有 download 接受），SKILL.md §7.4 寫法本來就只對 download 加 `--out`，無需修改。
 - **未解決**：無。
+
+## 10. 同日第 3 次排程（增量檢查）
+- 排程仍指定舊檔名 `Routines_CollectsentimentAndReports.md` → 依 `Routines_collectStk.md` 執行；第 27 日 → 3455。
+- 3455 財報（3 期有報 EDINET 版＋資産運用報告＋決算短信）與 11 月輿情已於 §1~§9 完成並併入 master → 依「已收過的不重抓」原則不重抓。
+- 增量檢查：yfinance `get_yahoo_finance_news`（3455.T）→ 無新聞；`get_historical_stock_prices` 5d → 89,200~90,800 円窄幅、成交 1,381~3,268 口，無異常；株探新聞頁 curl 無新項目。
+- 結論：⭕ 無新內容，不新增檔案；無 Skill 修正。
