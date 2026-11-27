@@ -701,7 +701,10 @@ def _auth_causes(src: str, k: str | None) -> list[str]:
     if not k:
         return ["本機沒有設定 key（環境變數與 .env 都沒有），腳本送出佔位值，但：",
                 "（a）目前不在 Claude Code 雲端環境（沒有代理幫忙注入 key），或",
-                "（b）雲端環境的 Network secret（`api.edinet-fsa.go.jp`）沒設、已刪除、key 已失效，或 header 名稱不是 `Ocp-Apim-Subscription-Key`。"]
+                "（b）雲端環境的 Network secret（`api.edinet-fsa.go.jp`）沒設、已刪除、key 已失效，或 header 名稱不是 `Ocp-Apim-Subscription-Key`，或",
+                "（c）【最常見】這是排程任務（scheduled task）開的 session，它跑在另一個雲端環境，"
+                "而 EDINET key 只存在 `FinancialReport` 環境 → 把排程任務的環境改成 `FinancialReport`，"
+                "或在該環境的 Network secrets 也加 `api.edinet-fsa.go.jp` 這筆。"]
     return ["本機 key 被 EDINET 拒絕（來源與格式見上一行；格式異常就先修格式）。",
             "可能：key 打錯／貼到多餘空白或引號、key 已被重新發行（舊 key 失效）、EDINET 帳號被停用，"
             "或環境變數殘留舊值（`setx` 後未重開終端機）。"]
