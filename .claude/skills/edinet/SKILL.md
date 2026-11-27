@@ -60,6 +60,7 @@ description: 用金融廳 EDINET API v2 下載日股（含 J-REIT 投資法人�
 3. `.claude/skills/edinet/.env` 或 `.agents/skills/edinet/.env`（`.gitignore` 已排除 `.env`）：複製 `.env.example` 為 `.env`，填 `EDINET_API_KEY=你的key`。
 4. `~/.config/edinet/.env`（同格式，跨 repo 共用）。
 5. 都沒有 → 送佔位值，由 **Claude Code 雲端環境的網路密鑰**注入（host `api.edinet-fsa.go.jp`、header `Ocp-Apim-Subscription-Key`）。雲端已設好，`checkkey` 會顯示「來源：雲端網路密鑰（代理注入）」。換 key：claude.ai 雲端環境設定 → Network secrets；或請 Claude 呼叫 `request_credential`。
+   - ⚠️ Network secret **只綁在存它的那個環境**（目前是 `FinancialReport` 環境 `env_01VgVNgx…`）。排程任務若跑在別的環境（2026-11-26 實例：排程任務跑在 `env_01QaMJgj…`）就會 401 `invalid subscription key`。修法：把排程任務的環境改成 `FinancialReport`，或在該環境也加這筆 Network secret。
 
 key 申請：EDINET 首頁 →「API」→ API キー発行（免費；需帳號 + 手機簡訊認證；重新發行後舊 key 立即失效）。EDINET key 通常是 32 碼 0-9a-f，腳本會檢查格式（只報長度，不印內容）。
 
